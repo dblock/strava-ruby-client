@@ -1,0 +1,12 @@
+AllCops:
+  Exclude:
+    - vendor/**/*
+
+Naming/MethodName:
+  Enabled: false
+
+Naming/FileName:
+  Exclude:
+    - 'lib/strava-ruby-client.rb'
+
+inherit_from: .rubocop_todo.yml
