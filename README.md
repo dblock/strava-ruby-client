@@ -66,7 +66,7 @@ See [Strava authentication documentation](https://developers.strava.com/docs/aut
 
 ## Errors
 
-TODO
+All errors that return HTTP codes 400-600 result in either `Faraday::Error::ResourceNotFound`, `Faraday::Error::ConnectionFailed` or `Faraday::ClientError` exceptions.
 
 ## Contributing
 
