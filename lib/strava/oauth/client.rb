@@ -50,7 +50,6 @@ module Strava
         query = options.merge(
           client_id: client_id || raise(ArgumentError, 'Missing Strava client id.'),
           client_secret: client_secret || raise(ArgumentError, 'Missing Strava client secret.'),
-          code: options[:code] || raise(ArgumentError, 'Missing code.'),
           grant_type: options[:grant_type] || 'authorization_code'
         )
 

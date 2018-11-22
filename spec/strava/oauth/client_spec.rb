@@ -100,6 +100,19 @@ RSpec.describe Strava::OAuth::Client do
         expect(athlete.lastname).to eq 'Block'
         expect(athlete.city).to eq 'New York'
       end
+      it 'refreshes the token', vcr: { cassette_name: 'oauth_token_refresh_token' } do
+        token = client.oauth_token(
+          refresh_token: '8b15b6bb9d64a225d0c50db4854a8d6c8757702d',
+          grant_type: 'refresh_token'
+        )
+        expect(token).to be_a Strava::Models::Token
+        expect(token.access_token).to eq 'new-access-token'
+        expect(token.refresh_token).to eq 'new-refresh-token'
+        expect(token.token_type).to eq 'Bearer'
+        expect(token.expires_in).to eq 14_282
+        expect(token.expires_at).to eq Time.at(1_542_940_199)
+        expect(token.athlete).to be nil
+      end
     end
   end
 end
