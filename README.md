@@ -13,6 +13,8 @@ Unlike [strava-api-v3](https://github.com/jaredholdcroft/strava-api-v3) provides
 - [Installation](#installation)
 - [Usage](#usage)
   - [OAuth](#oauth)
+  - [API](#api)
+    - [Athlete](#athlete)
 - [Configuration](#configuration)
   - [Web Client Options](#web-client-options)
   - [OAuth Client Options](#oauth-client-options)
@@ -66,6 +68,24 @@ response.athlete # => Strava::Models::Athlete
 
 See [Strava authentication documentation](https://developers.strava.com/docs/authentication/), [Strava::Models::Token](lib/strava/models/token.rb) and [Strava::Models::Athlete](lib/strava/models/athlete.rb) for all available fields in the response.
 
+### API
+
+```ruby
+client = Strava::Api::Client.new(
+  access_token: "12345678987654321"
+)
+```
+
+#### Athlete
+
+Get currently logged-in athlete.
+
+```ruby
+client.athlete # => Strava::Models::Athlete
+```
+
+See [Strava::Models::Athlete](lib/strava/models/athlete.rb) for all available fields.
+
 ## Configuration
 
 ### Web Client Options
@@ -81,7 +101,7 @@ end
 The following settings are supported.
 
 setting             | description
---------------------|-------------------------------------------------------------------------------------------------
+--------------------|------------
 user_agent          | User-agent, defaults to _Strava Ruby Client/version_.
 proxy               | Optional HTTP proxy.
 ca_path             | Optional SSL certificates path.
@@ -112,7 +132,7 @@ client = Strava::OAuth::Client.new(
 The following settings are supported.
 
 setting             | description
---------------------|-------------------------------------------------------------------------------------------------
+--------------------|------------
 client_id           | Application client ID.
 client_secret       | Application client secret.
 endpoint            | Defaults to `https://www.strava.com/oauth/`.

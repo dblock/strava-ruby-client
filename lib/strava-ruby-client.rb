@@ -19,3 +19,6 @@ require_relative 'strava/web/client'
 
 require_relative 'strava/oauth/config'
 require_relative 'strava/oauth/client'
+
+require_relative 'strava/api/config'
+require_relative 'strava/api/client'

@@ -51,7 +51,7 @@ RSpec.shared_examples 'web client' do
           expect(client.user_agent).to eq 'custom/user-agent'
         end
         it 'creates a connection with the custom user-agent' do
-          expect(client.send(:connection).headers).to eq(
+          expect(client.send(:connection).headers).to include(
             'Accept' => 'application/json; charset=utf-8',
             'User-Agent' => 'custom/user-agent'
           )

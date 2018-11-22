@@ -93,11 +93,12 @@ RSpec.describe Strava::OAuth::Client do
         expect(token.token_type).to eq 'Bearer'
         expect(token.expires_in).to eq 21_600
         expect(token.expires_at).to eq Time.at(1_542_940_199)
-        expect(token.athlete).to be_a Strava::Models::Athlete
-        expect(token.athlete.updated_at).to eq Time.parse('2018-11-19 01:44:15 UTC')
-        expect(token.athlete.firstname).to eq 'Daniel'
-        expect(token.athlete.lastname).to eq 'Block'
-        expect(token.athlete.city).to eq 'New York'
+        athlete = token.athlete
+        expect(athlete).to be_a Strava::Models::Athlete
+        expect(athlete.updated_at).to eq Time.parse('2018-11-19 01:44:15 UTC')
+        expect(athlete.firstname).to eq 'Daniel'
+        expect(athlete.lastname).to eq 'Block'
+        expect(athlete.city).to eq 'New York'
       end
     end
   end

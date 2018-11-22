@@ -3,9 +3,13 @@ module Strava
     module Connection
       private
 
+      def headers
+        {}
+      end
+
       def connection
         options = {
-          headers: { 'Accept' => 'application/json; charset=utf-8' }
+          headers: headers.merge('Accept' => 'application/json; charset=utf-8')
         }
 
         options[:headers]['User-Agent'] = user_agent if user_agent

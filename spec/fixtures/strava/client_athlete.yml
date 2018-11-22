@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.strava.com/api/v3//athlete
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer access-token
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Strava Ruby Client/0.1.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 22 Nov 2018 22:16:54 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Via:
+      - 1.1 linkerd
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '600,30000'
+      X-Request-Id:
+      - 170d3e7a-ba23-4ffa-a6de-c262ed082294
+      Etag:
+      - W/"aec66d60b5541f026b3bdd4becd4a394"
+      X-Ratelimit-Usage:
+      - '1,11466'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":26462176,"username":"dblockdotorg","resource_state":2,"firstname":"Daniel","lastname":"Block","city":"New
+        York","state":"NY","country":"","sex":"M","premium":true,"summit":true,"created_at":"2017-11-28T19:05:35Z","updated_at":"2018-11-19T01:44:15Z","badge_type_id":1,"profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/athletes/26462176/7677115/2/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/athletes/26462176/7677115/2/large.jpg","friend":null,"follower":null,"email":"dblock@example.com"}'
+    http_version:
+  recorded_at: Thu, 22 Nov 2018 22:16:54 GMT
+recorded_with: VCR 4.0.0
