@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.strava.com/oauth//token
+    body:
+      encoding: UTF-8
+      string: client_id=client-id&client_secret=client-secret&code=code&grant_type=authorization_code&token
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Strava Ruby Client/0.1.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Thu, 22 Nov 2018 20:16:41 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache
+      Via:
+      - 1.1 linkerd
+      Status:
+      - 400 Bad Request
+      X-Request-Id:
+      - 168ffeae-9029-4aec-bd50-3a0430e594bd
+      X-Frame-Options:
+      - SAMEORIGIN,DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"Bad Request","errors":[{"resource":"Application","field":"client_id","code":"invalid"}]}'
+    http_version: 
+  recorded_at: Thu, 22 Nov 2018 20:16:41 GMT
+recorded_with: VCR 4.0.0

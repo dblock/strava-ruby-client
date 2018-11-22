@@ -1,30 +1,37 @@
 require 'spec_helper'
 
-RSpec.describe Strava::Client do
+RSpec.shared_examples 'web client' do
   before do
-    Strava::Config.reset
+    described_class.config.reset
+    Strava::Web::Config.reset
   end
   context 'with defaults' do
-    let(:client) { Strava::Client.new }
-    describe '#initialize' do
+    let(:client) { described_class.new }
+    context '#initialize' do
+      it 'implements endpoint' do
+        expect(client.endpoint).to_not be nil
+      end
+      it 'includes default http configuration' do
+        expect(client.user_agent).to eq 'Strava Ruby Client/0.1.0'
+      end
       it 'sets user-agent' do
-        expect(client.user_agent).to eq Strava::Config.user_agent
+        expect(client.user_agent).to eq Strava::Web::Config.user_agent
         expect(client.user_agent).to include Strava::VERSION
       end
-      (Strava::Config::ATTRIBUTES - [:logger]).each do |key|
+      (Strava::Web::Config::ATTRIBUTES - [:logger]).each do |key|
         it "sets #{key}" do
-          expect(client.send(key)).to eq Strava::Config.send(key)
+          expect(client.send(key)).to eq Strava::Web::Config.send(key)
         end
       end
     end
   end
   context 'with custom settings' do
-    describe '#initialize' do
-      Strava::Config::ATTRIBUTES.each do |key|
-        context key do
-          let(:client) { Strava::Client.new(key => 'custom') }
+    context '#initialize' do
+      Strava::Web::Config::ATTRIBUTES.each do |key|
+        context key.to_s do
+          let(:client) { described_class.new(key => 'custom') }
           it "sets #{key}" do
-            expect(client.send(key)).to_not eq Strava::Config.send(key)
+            expect(client.send(key)).to_not eq Strava::Web::Config.send(key)
             expect(client.send(key)).to eq 'custom'
           end
         end
@@ -32,17 +39,14 @@ RSpec.describe Strava::Client do
     end
   end
   context 'global config' do
-    after do
-      Strava::Client.config.reset
-    end
-    let(:client) { Strava::Client.new }
+    let(:client) { described_class.new }
     context 'user-agent' do
       before do
-        Strava::Client.configure do |config|
+        Strava::Web::Client.configure do |config|
           config.user_agent = 'custom/user-agent'
         end
       end
-      describe '#initialize' do
+      context '#initialize' do
         it 'sets user-agent' do
           expect(client.user_agent).to eq 'custom/user-agent'
         end
@@ -54,39 +58,13 @@ RSpec.describe Strava::Client do
         end
       end
     end
-    context 'token' do
-      before do
-        Strava.configure do |config|
-          config.token = 'global default'
-        end
-      end
-      it 'defaults token to global default' do
-        client = Strava::Client.new
-        expect(client.token).to eq 'global default'
-      end
-      context 'with web config' do
-        before do
-          Strava::Client.configure do |config|
-            config.token = 'custom web token'
-          end
-        end
-        it 'overrides token to web config' do
-          client = Strava::Client.new
-          expect(client.token).to eq 'custom web token'
-        end
-        it 'overrides token to specific token' do
-          client = Strava::Client.new(token: 'local token')
-          expect(client.token).to eq 'local token'
-        end
-      end
-    end
     context 'proxy' do
       before do
-        Strava::Client.configure do |config|
+        Strava::Web::Client.configure do |config|
           config.proxy = 'http://localhost:8080'
         end
       end
-      describe '#initialize' do
+      context '#initialize' do
         it 'sets proxy' do
           expect(client.proxy).to eq 'http://localhost:8080'
         end
@@ -97,12 +75,12 @@ RSpec.describe Strava::Client do
     end
     context 'SSL options' do
       before do
-        Strava::Client.configure do |config|
+        Strava::Web::Client.configure do |config|
           config.ca_path = '/ca_path'
           config.ca_file = '/ca_file'
         end
       end
-      describe '#initialize' do
+      context '#initialize' do
         it 'sets ca_path and ca_file' do
           expect(client.ca_path).to eq '/ca_path'
           expect(client.ca_file).to eq '/ca_file'
@@ -117,11 +95,11 @@ RSpec.describe Strava::Client do
     context 'logger option' do
       let(:logger) { Logger.new(STDOUT) }
       before do
-        Strava::Client.configure do |config|
+        Strava::Web::Client.configure do |config|
           config.logger = logger
         end
       end
-      describe '#initialize' do
+      context '#initialize' do
         it 'sets logger' do
           expect(client.logger).to eq logger
         end
@@ -132,12 +110,12 @@ RSpec.describe Strava::Client do
     end
     context 'timeout options' do
       before do
-        Strava::Client.configure do |config|
+        Strava::Web::Client.configure do |config|
           config.timeout = 10
           config.open_timeout = 15
         end
       end
-      describe '#initialize' do
+      context '#initialize' do
         it 'sets timeout and open_timeout' do
           expect(client.timeout).to eq 10
           expect(client.open_timeout).to eq 15

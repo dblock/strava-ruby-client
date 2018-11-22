@@ -1,5 +1,5 @@
 module Strava
-  module Faraday
+  module Web
     module Request
       def get(path, options = {})
         request(:get, path, options)

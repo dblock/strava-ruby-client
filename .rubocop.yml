@@ -9,4 +9,7 @@ Naming/FileName:
   Exclude:
     - 'lib/strava-ruby-client.rb'
 
+Style/ModuleFunction:
+  EnforcedStyle: extend_self
+
 inherit_from: .rubocop_todo.yml

@@ -9,10 +9,8 @@ A Ruby client for the [Strava API v3](https://developers.strava.com).
 # Table of Contents
 
 - [Installation](#installation)
-- [Methods Available](#methods-available)
 - [Usage](#usage)
 - [Errors](#errors)
-  - [ClientError](#clienterror)
 - [Contributing](#contributing)
 - [Copyright and License](#copyright-and-license)
 
@@ -28,7 +26,51 @@ Run `bundle install`.
 
 ## Usage
 
-TODO
+### Configure
+
+```ruby
+Strava::OAuth.configure do |config|
+  config.client_id = "..." # Strava client ID
+  config.client_secret = "..." # Strava client secret
+end
+```
+
+### OAuth
+
+Obtain a redirect URL for the user.
+
+```ruby
+redirect_url = client.authorize_url(
+  redirect_uri: 'https://example.com/oauth',
+  approval_prompt: 'force',
+  response_type: 'code',
+  scope: 'activity:read_all',
+  state: 'magic'
+)
+```
+
+Once the user is redirected to your application, perform a token exchange to obtain a refresh and access token.
+
+```ruby
+response = client.oauth_token(code: 'code from redirect url')
+```
+
+A refresh token, access token, and access token expiration date will be issued upon successful authentication. The expires_at field contains the number of seconds since the Epoch when the provided access token will expire.
+
+```json
+{
+  "token_type": "Bearer",
+  "access_token": "987654321234567898765432123456789",
+  "athlete": {
+
+  },
+  "refresh_token": "1234567898765432112345678987654321",
+  "expires_at": 1531378346,
+  "state": "magic"
+}
+```
+
+See [Strava authentication documentation](https://developers.strava.com/docs/authentication/) for details.
 
 ## Errors
 

@@ -1,5 +1,5 @@
 module Strava
-  module Faraday
+  module Web
     module Connection
       private
 

@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.strava.com/oauth//token
+    body:
+      encoding: UTF-8
+      string: client_id=12345&client_secret=secret&code=deadbeef585a6edb1f00309d3e1e0fec74973fb0&grant_type=authorization_code&token
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Strava Ruby Client/0.1.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 22 Nov 2018 20:29:59 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Via:
+      - 1.1 linkerd
+      Status:
+      - 200 OK
+      X-Request-Id:
+      - bd4a7ae2-d65e-4f94-bc0f-f01095da297c
+      Etag:
+      - W/"46fcdd016c51d7e953514dfcdb131e2c"
+      X-Frame-Options:
+      - SAMEORIGIN,DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: ASCII-8BIT
+      string: '{"token_type":"Bearer","expires_at":1542940199,"expires_in":21600,"refresh_token":"deadbeef9d64b225d0c50db4854a8d6c8757702d","access_token":"deadbeefd7ab44704fb2a146bd98c7a349a2b43d","athlete":{"id":12342176,"username":"dblockdotorg","resource_state":2,"firstname":"Daniel","lastname":"Block","city":"New
+        York","state":"NY","country":"","sex":"M","premium":true,"summit":true,"created_at":"2017-11-28T19:05:35Z","updated_at":"2018-11-19T01:44:15Z","badge_type_id":1,"profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/athletes/26462176/7677115/2/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/athletes/26462176/7677115/2/large.jpg","friend":null,"follower":null,"email":"dblock@example.com"}}'
+    http_version:
+  recorded_at: Thu, 22 Nov 2018 20:29:59 GMT
+recorded_with: VCR 4.0.0
