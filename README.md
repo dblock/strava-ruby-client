@@ -4,12 +4,18 @@ Strava Ruby Client
 [![Gem Version](https://badge.fury.io/rb/strava-ruby-client.svg)](https://badge.fury.io/rb/strava-ruby-client)
 [![Build Status](https://travis-ci.org/dblock/strava-ruby-client.svg?branch=master)](https://travis-ci.org/dblock/strava-ruby-client)
 
-A newer Ruby client for the [Strava API v3](https://developers.strava.com). Unlike [strava-api-v3](https://github.com/jaredholdcroft/strava-api-v3) provides a first class interface to Strava models and more robust error handling.
+A newer Ruby client for the [Strava API v3](https://developers.strava.com).
+
+Unlike [strava-api-v3](https://github.com/jaredholdcroft/strava-api-v3) provides a first class interface to Strava models and more consistent error handling.
 
 # Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
+  - [OAuth](#oauth)
+- [Configuration](#configuration)
+  - [Web Client Options](#web-client-options)
+  - [OAuth Client Options](#oauth-client-options)
 - [Errors](#errors)
 - [Contributing](#contributing)
 - [Copyright and License](#copyright-and-license)
@@ -26,15 +32,49 @@ Run `bundle install`.
 
 ## Usage
 
-### Configure
+### OAuth
 
-#### Web Client Options
+Obtain a redirect URL.
+
+```ruby
+client = Strava::OAuth::Client.new(
+  client_id: "12345",
+  client_secret: "12345678987654321"
+)
+
+redirect_url = client.authorize_url(
+  redirect_uri: 'https://example.com/oauth',
+  approval_prompt: 'force',
+  response_type: 'code',
+  scope: 'activity:read_all',
+  state: 'magic'
+)
+```
+
+Once the user is redirected to your application, perform a token exchange to obtain a refresh and access token.
+
+```ruby
+response = client.oauth_token(code: '1234556789901234567890')
+
+response # => Strava::Models::Token
+
+response.access_token # access token
+response.refresh_token # refresh token
+response.expires_at # timestamp when the access token expires
+response.athlete # => Strava::Models::Athlete
+```
+
+See [Strava authentication documentation](https://developers.strava.com/docs/authentication/), [Strava::Models::Token](lib/strava/models/token.rb) and [Strava::Models::Athlete](lib/strava/models/athlete.rb) for all available fields in the response.
+
+## Configuration
+
+### Web Client Options
 
 You can configure web client options used in the OAuth and API clients, globally.
 
 ```ruby
 Strava::Web::Client.configure do |config|
-  config.user_agent = 'Slack Ruby Client/1.0'
+  config.user_agent = 'Strava Ruby Client/1.0'
 end
 ```
 
@@ -42,16 +82,15 @@ The following settings are supported.
 
 setting             | description
 --------------------|-------------------------------------------------------------------------------------------------
-user_agent          | User-agent, defaults to _Slack Ruby Client/version_.
+user_agent          | User-agent, defaults to _Strava Ruby Client/version_.
 proxy               | Optional HTTP proxy.
 ca_path             | Optional SSL certificates path.
 ca_file             | Optional SSL certificates file.
-endpoint            | Slack endpoint, default is _https://slack.com/api_.
 logger              | Optional `Logger` instance that logs HTTP requests.
 timeout             | Optional open/read timeout in seconds.
 open_timeout        | Optional connection open timeout in seconds.
 
-#### OAuth Client Options
+### OAuth Client Options
 
 The OAuth client inherits web client options and provides additional application configuration. These can be configured globally or for a client instance.
 
@@ -76,35 +115,7 @@ setting             | description
 --------------------|-------------------------------------------------------------------------------------------------
 client_id           | Application client ID.
 client_secret       | Application client secret.
-
-### OAuth
-
-Obtain a redirect URL for the user.
-
-```ruby
-redirect_url = client.authorize_url(
-  redirect_uri: 'https://example.com/oauth',
-  approval_prompt: 'force',
-  response_type: 'code',
-  scope: 'activity:read_all',
-  state: 'magic'
-)
-```
-
-Once the user is redirected to your application, perform a token exchange to obtain a refresh and access token.
-
-```ruby
-response = client.oauth_token(code: 'code from redirect url')
-
-response # => Strava::Models::Token
-
-response.access_token # access token
-response.refresh_token # refresh token
-response.expires_at # timestamp when the access token expires
-response.athlete # => Strava::Models::Athlete
-```
-
-See [Strava authentication documentation](https://developers.strava.com/docs/authentication/), [Strava::Models::Token](lib/strava/models/token.rb) and [Strava::Models::Athlete](lib/strava/models/athlete.rb) for details.
+endpoint            | Defaults to `https://www.strava.com/oauth/`.
 
 ## Errors
 
