@@ -28,12 +28,54 @@ Run `bundle install`.
 
 ### Configure
 
+#### Web Client Options
+
+You can configure web client options used in the OAuth and API clients, globally.
+
+```ruby
+Strava::Web::Client.configure do |config|
+  config.user_agent = 'Slack Ruby Client/1.0'
+end
+```
+
+The following settings are supported.
+
+setting             | description
+--------------------|-------------------------------------------------------------------------------------------------
+user_agent          | User-agent, defaults to _Slack Ruby Client/version_.
+proxy               | Optional HTTP proxy.
+ca_path             | Optional SSL certificates path.
+ca_file             | Optional SSL certificates file.
+endpoint            | Slack endpoint, default is _https://slack.com/api_.
+logger              | Optional `Logger` instance that logs HTTP requests.
+timeout             | Optional open/read timeout in seconds.
+open_timeout        | Optional connection open timeout in seconds.
+
+#### OAuth Client Options
+
+The OAuth client inherits web client options and provides additional application configuration. These can be configured globally or for a client instance.
+
 ```ruby
 Strava::OAuth.configure do |config|
   config.client_id = "..." # Strava client ID
   config.client_secret = "..." # Strava client secret
 end
 ```
+
+```ruby
+client = Strava::OAuth::Client.new(
+  client_id: "...",
+  client_secret: "...",
+  user_agent: "..."
+)
+```
+
+The following settings are supported.
+
+setting             | description
+--------------------|-------------------------------------------------------------------------------------------------
+client_id           | Application client ID.
+client_secret       | Application client secret.
 
 ### OAuth
 

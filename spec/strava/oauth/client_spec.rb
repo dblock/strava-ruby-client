@@ -63,13 +63,15 @@ RSpec.describe Strava::OAuth::Client do
         expect(client.authorize_url).to eq 'https://www.strava.com/oauth/authorize?approval_prompt=auto&client_id=12345&redirect_uri=http%3A%2F%2Flocalhost&response_type=code&scope=read'
       end
       it 'returns url with custom options' do
-        expect(client.authorize_url(
-                 redirect_uri: 'https://example.com/oauth',
-                 approval_prompt: 'force',
-                 response_type: 'code',
-                 scope: 'activity:read_all',
-                 state: 'magic'
-               )).to eq 'https://www.strava.com/oauth/authorize?approval_prompt=force&client_id=12345&redirect_uri=https%3A%2F%2Fexample.com%2Foauth&response_type=code&scope=activity%3Aread_all&state=magic'
+        expect(
+          client.authorize_url(
+            redirect_uri: 'https://example.com/oauth',
+            approval_prompt: 'force',
+            response_type: 'code',
+            scope: 'activity:read_all',
+            state: 'magic'
+          )
+        ).to eq 'https://www.strava.com/oauth/authorize?approval_prompt=force&client_id=12345&redirect_uri=https%3A%2F%2Fexample.com%2Foauth&response_type=code&scope=activity%3Aread_all&state=magic'
       end
     end
     context '#oauth_token' do

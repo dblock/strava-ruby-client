@@ -9,7 +9,6 @@ module Strava
         ca_path
         ca_file
         logger
-        token
         timeout
         open_timeout
       ].freeze
@@ -20,7 +19,6 @@ module Strava
         self.user_agent = "Strava Ruby Client/#{Strava::VERSION}"
         self.ca_path = defined?(OpenSSL) ? OpenSSL::X509::DEFAULT_CERT_DIR : nil
         self.ca_file = defined?(OpenSSL) ? OpenSSL::X509::DEFAULT_CERT_FILE : nil
-        self.token = nil
         self.proxy = nil
         self.logger = nil
         self.timeout = nil
