@@ -4,7 +4,7 @@ Strava Ruby Client
 [![Gem Version](https://badge.fury.io/rb/strava-ruby-client.svg)](https://badge.fury.io/rb/strava-ruby-client)
 [![Build Status](https://travis-ci.org/dblock/strava-ruby-client.svg?branch=master)](https://travis-ci.org/dblock/strava-ruby-client)
 
-A Ruby client for the [Strava API v3](https://developers.strava.com).
+A newer Ruby client for the [Strava API v3](https://developers.strava.com). Unlike [strava-api-v3](https://github.com/jaredholdcroft/strava-api-v3) provides a first class interface to Strava models and more robust error handling.
 
 # Table of Contents
 
@@ -53,24 +53,16 @@ Once the user is redirected to your application, perform a token exchange to obt
 
 ```ruby
 response = client.oauth_token(code: 'code from redirect url')
+
+response # => Strava::Models::Token
+
+response.access_token # access token
+response.refresh_token # refresh token
+response.expires_at # timestamp when the access token expires
+response.athlete # => Strava::Models::Athlete
 ```
 
-A refresh token, access token, and access token expiration date will be issued upon successful authentication. The expires_at field contains the number of seconds since the Epoch when the provided access token will expire.
-
-```json
-{
-  "token_type": "Bearer",
-  "access_token": "987654321234567898765432123456789",
-  "athlete": {
-
-  },
-  "refresh_token": "1234567898765432112345678987654321",
-  "expires_at": 1531378346,
-  "state": "magic"
-}
-```
-
-See [Strava authentication documentation](https://developers.strava.com/docs/authentication/) for details.
+See [Strava authentication documentation](https://developers.strava.com/docs/authentication/), [Strava::Models::Token](lib/strava/models/token.rb) and [Strava::Models::Athlete](lib/strava/models/athlete.rb) for details.
 
 ## Errors
 

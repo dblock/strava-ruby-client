@@ -84,33 +84,18 @@ RSpec.describe Strava::OAuth::Client do
         end
       end
       it 'performs the initial token exchange', vcr: { cassette_name: 'oauth_token_authorization_code' } do
-        expect(client.oauth_token(code: 'deadbeef585a6edb1f00309d3e1e0fec74973fb0')).to eq(
-          'access_token' => 'deadbeefd7ab44704fb2a146bd98c7a349a2b43d',
-          'athlete' => {
-            'badge_type_id' => 1,
-            'city' => 'New York',
-            'country' => '',
-            'created_at' => '2017-11-28T19:05:35Z',
-            'email' => 'dblock@example.com',
-            'firstname' => 'Daniel',
-            'follower' => nil,
-            'friend' => nil,
-            'id' => 12_342_176,
-            'lastname' => 'Block',
-            'premium' => true,
-            'profile' => 'https://dgalywyr863hv.cloudfront.net/pictures/athletes/26462176/7677115/2/large.jpg', 'profile_medium' => 'https://dgalywyr863hv.cloudfront.net/pictures/athletes/26462176/7677115/2/medium.jpg',
-            'resource_state' => 2,
-            'sex' => 'M',
-            'state' => 'NY',
-            'summit' => true,
-            'updated_at' => '2018-11-19T01:44:15Z',
-            'username' => 'dblockdotorg'
-          },
-          'expires_at' => 1_542_940_199,
-          'expires_in' => 21_600,
-          'refresh_token' => 'deadbeef9d64b225d0c50db4854a8d6c8757702d',
-          'token_type' => 'Bearer'
-        )
+        token = client.oauth_token(code: 'deadbeef585a6edb1f00309d3e1e0fec74973fb0')
+        expect(token).to be_a Strava::Models::Token
+        expect(token.access_token).to eq 'deadbeefd7ab44704fb2a146bd98c7a349a2b43d'
+        expect(token.refresh_token).to eq 'deadbeef9d64b225d0c50db4854a8d6c8757702d'
+        expect(token.token_type).to eq 'Bearer'
+        expect(token.expires_in).to eq 21_600
+        expect(token.expires_at).to eq Time.at(1_542_940_199)
+        expect(token.athlete).to be_a Strava::Models::Athlete
+        expect(token.athlete.updated_at).to eq Time.parse('2018-11-19 01:44:15 UTC')
+        expect(token.athlete.firstname).to eq 'Daniel'
+        expect(token.athlete.lastname).to eq 'Block'
+        expect(token.athlete.city).to eq 'New York'
       end
     end
   end
