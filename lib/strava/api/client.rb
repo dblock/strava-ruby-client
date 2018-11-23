@@ -18,6 +18,12 @@ module Strava
         Strava::Models::Athlete.new(get('athlete'))
       end
 
+      def athlete_activities(options = {})
+        get('athlete/activities', options).map do |activity|
+          Strava::Models::Activity.new(activity)
+        end
+      end
+
       class << self
         def configure
           block_given? ? yield(Config) : Config

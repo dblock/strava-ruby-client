@@ -1,0 +1,57 @@
+module Strava
+  module Models
+    class Activity < Model
+      property 'id'
+      property 'resource_state'
+      property 'athlete', transform_with: ->(v) { Strava::Models::Athlete.new(v) }
+      property 'name'
+      property 'distance'
+      property 'moving_time'
+      property 'elapsed_time'
+      property 'total_elevation_gain'
+      property 'type'
+      property 'workout_type'
+      property 'id'
+      property 'external_id'
+      property 'upload_id'
+      property 'start_date', transform_with: ->(v) { Time.parse(v) }
+      property 'start_date_local', transform_with: ->(v) { Time.parse(v) }
+      property 'timezone'
+      property 'utc_offset'
+      property 'start_latlng'
+      property 'end_latlng'
+      property 'location_city'
+      property 'location_state'
+      property 'location_country'
+      property 'start_latitude'
+      property 'start_longitude'
+      property 'achievement_count'
+      property 'kudos_count'
+      property 'comment_count'
+      property 'athlete_count'
+      property 'photo_count'
+      property 'map', transform_with: ->(v) { Strava::Models::Map.new(v) }
+      property 'trainer'
+      property 'commute'
+      property 'manual'
+      property 'private'
+      property 'visibility'
+      property 'flagged'
+      property 'gear_id'
+      property 'from_accepted_tag'
+      property 'average_speed'
+      property 'max_speed'
+      property 'has_heartrate'
+      property 'average_heartrate'
+      property 'max_heartrate'
+      property 'heartrate_opt_out'
+      property 'display_hide_heartrate_option'
+      property 'elev_high'
+      property 'elev_low'
+      property 'pr_count'
+      property 'total_photo_count'
+      property 'has_kudoed'
+      property 'suffer_score'
+    end
+  end
+end

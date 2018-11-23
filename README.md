@@ -12,9 +12,10 @@ Unlike [strava-api-v3](https://github.com/jaredholdcroft/strava-api-v3) provides
 
 - [Installation](#installation)
 - [Usage](#usage)
-  - [OAuth](#oauth)
   - [API](#api)
     - [Athlete](#athlete)
+    - [Athlete Activities](#athlete-activities)
+  - [OAuth](#oauth)
 - [Configuration](#configuration)
   - [Web Client Options](#web-client-options)
   - [OAuth Client Options](#oauth-client-options)
@@ -35,6 +36,36 @@ gem 'strava-ruby-client'
 Run `bundle install`.
 
 ## Usage
+
+### API
+
+Use an access token obtained from [My API Application](https://www.strava.com/settings/api) in the Strava UI, the [oauth-token tool](#oauth-token) or the [OAuth Workflow](#oauth) in your application.
+
+```ruby
+client = Strava::Api::Client.new(
+  access_token: "12345678987654321"
+)
+```
+
+#### Athlete
+
+Get currently logged-in athlete.
+
+```ruby
+client.athlete # => Strava::Models::Athlete
+```
+
+See [Strava::Models::Athlete](lib/strava/models/athlete.rb) for all available properties.
+
+#### Athlete Activities
+
+Get currently logged-in athlete activities.
+
+```ruby
+client.athlete_activities # => Array[Strava::Models::Activity]
+```
+
+See [Strava::Models::Activity](lib/strava/models/activity.rb) for all available properties.
 
 ### OAuth
 
@@ -68,7 +99,7 @@ response.expires_at # timestamp when the access token expires
 response.athlete # => Strava::Models::Athlete
 ```
 
-See [Strava authentication documentation](https://developers.strava.com/docs/authentication/), [Strava::Models::Token](lib/strava/models/token.rb) and [Strava::Models::Athlete](lib/strava/models/athlete.rb) for all available fields in the response.
+See [Strava authentication documentation](https://developers.strava.com/docs/authentication/), [Strava::Models::Token](lib/strava/models/token.rb) and [Strava::Models::Athlete](lib/strava/models/athlete.rb) for all available properties in the response.
 
 If the access token is expired, refresh it before making any requests. You will get back all new tokens.
 
@@ -82,26 +113,6 @@ response.access_token # new access token
 response.refresh_token # new refresh token
 response.expires_at # new timestamp when the access token expires
 ```
-
-### API
-
-Use a refreshed access token obtained via the OAuth workflow described above.
-
-```ruby
-client = Strava::Api::Client.new(
-  access_token: "12345678987654321"
-)
-```
-
-#### Athlete
-
-Get currently logged-in athlete.
-
-```ruby
-client.athlete # => Strava::Models::Athlete
-```
-
-See [Strava::Models::Athlete](lib/strava/models/athlete.rb) for all available fields.
 
 ## Configuration
 
