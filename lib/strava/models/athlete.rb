@@ -1,25 +1,25 @@
 module Strava
   module Models
     class Athlete < Model
-      property 'badge_type_id'
-      property 'city'
-      property 'country'
-      property 'created_at'
-      property 'email'
-      property 'firstname'
-      property 'follower'
-      property 'friend'
       property 'id'
+      property 'username'
+      property 'resource_state'
+      property 'firstname'
       property 'lastname'
+      property 'city'
+      property 'state'
+      property 'country'
+      property 'sex'
       property 'premium'
+      property 'created_at', transform_with: ->(v) { Time.parse(v) }
+      property 'updated_at', transform_with: ->(v) { Time.parse(v) }
+      property 'badge_type_id'
       property 'profile'
       property 'profile_medium'
-      property 'resource_state'
-      property 'sex'
-      property 'state'
+      property 'email'
+      property 'follower'
+      property 'friend'
       property 'summit'
-      property 'updated_at', transform_with: ->(v) { Time.parse(v) }
-      property 'username'
     end
   end
 end
