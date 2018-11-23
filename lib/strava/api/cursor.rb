@@ -4,12 +4,12 @@ module Strava
       include Enumerable
 
       attr_reader :client
-      attr_reader :path
+      attr_reader :method
       attr_reader :params
 
-      def initialize(client, path, params = {})
+      def initialize(client, method, params = {})
         @client = client
-        @path = path
+        @method = method
         @params = params
       end
 
@@ -17,10 +17,10 @@ module Strava
         next_page = 1
         loop do
           query = params.merge(page: next_page)
-          response = client.get(path, query)
-          yield response
+          response = client.send(method, query)
           break unless response.any?
 
+          yield response
           next_page += 1
         end
       end

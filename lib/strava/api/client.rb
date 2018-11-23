@@ -19,7 +19,7 @@ module Strava
       end
 
       def athlete_activities(options = {}, &block)
-        paginate 'athlete/activities', options, Strava::Models::Activity, &block
+        paginate :athlete_activities, 'athlete/activities', options, Strava::Models::Activity, &block
       end
 
       class << self
@@ -34,12 +34,10 @@ module Strava
 
       private
 
-      def paginate(path, options, model, &_block)
+      def paginate(method, path, options, model, &block)
         if block_given?
-          Cursor.new(self, path, options).each do |page|
-            page.each do |row|
-              yield model.new(row)
-            end
+          Cursor.new(self, method, options).each do |instance|
+            instance.each(&block)
           end
         else
           get(path, options).map do |row|
