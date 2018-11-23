@@ -9,7 +9,7 @@ RSpec.describe Strava::OAuth::Client do
     let(:client) { Strava::OAuth::Client.new }
     describe '#initialize' do
       it 'sets endpoint' do
-        expect(client.endpoint).to eq 'https://www.strava.com/oauth/'
+        expect(client.endpoint).to eq 'https://www.strava.com/oauth'
       end
       Strava::OAuth::Config::ATTRIBUTES.each do |key|
         it "sets #{key}" do

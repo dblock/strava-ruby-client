@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://www.strava.com/oauth//token
+    uri: https://www.strava.com/oauth/token
     body:
       encoding: UTF-8
       string: client_id=client-id&client_secret=client-secret&code=code&grant_type=authorization_code&token
@@ -45,6 +45,6 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"message":"Bad Request","errors":[{"resource":"Application","field":"client_id","code":"invalid"}]}'
-    http_version: 
+    http_version:
   recorded_at: Thu, 22 Nov 2018 20:16:41 GMT
 recorded_with: VCR 4.0.0

@@ -12,7 +12,7 @@ module Strava
       attr_accessor(*Config::ATTRIBUTES)
 
       def reset
-        self.endpoint = 'https://www.strava.com/oauth/'
+        self.endpoint = 'https://www.strava.com/oauth'
         self.client_id = nil
         self.client_secret = nil
       end

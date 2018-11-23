@@ -34,7 +34,7 @@ module Strava
           scope: options[:scope] || 'read'
         )
 
-        "#{endpoint}authorize?#{query.to_query}"
+        [endpoint, "authorize?#{query.to_query}"].join('/')
       end
 
       #
@@ -53,7 +53,7 @@ module Strava
           grant_type: options[:grant_type] || 'authorization_code'
         )
 
-        Strava::Models::Token.new(post("#{endpoint}/token", query))
+        Strava::Models::Token.new(post('token', query))
       end
 
       class << self

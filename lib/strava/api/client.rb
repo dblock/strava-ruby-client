@@ -15,7 +15,7 @@ module Strava
       end
 
       def athlete
-        Strava::Models::Athlete.new(get("#{endpoint}/athlete"))
+        Strava::Models::Athlete.new(get('athlete'))
       end
 
       class << self

@@ -11,7 +11,7 @@ module Strava
       attr_accessor(*Config::ATTRIBUTES)
 
       def reset
-        self.endpoint = 'https://www.strava.com/api/v3/'
+        self.endpoint = 'https://www.strava.com/api/v3'
         self.access_token = nil
       end
     end

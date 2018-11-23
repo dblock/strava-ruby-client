@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://www.strava.com/oauth//token
+    uri: https://www.strava.com/oauth/token
     body:
       encoding: UTF-8
       string: client_id=12345&client_secret=client-secret&code=code&grant_type=authorization_code&token
