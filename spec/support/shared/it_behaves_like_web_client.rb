@@ -12,7 +12,7 @@ RSpec.shared_examples 'web client' do
         expect(client.endpoint).to_not be nil
       end
       it 'includes default http configuration' do
-        expect(client.user_agent).to eq 'Strava Ruby Client/0.1.0'
+        expect(client.user_agent).to eq "Strava Ruby Client/#{Strava::VERSION}"
       end
       it 'sets user-agent' do
         expect(client.user_agent).to eq Strava::Web::Config.user_agent
