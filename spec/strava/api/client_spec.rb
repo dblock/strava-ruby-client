@@ -7,7 +7,7 @@ RSpec.describe Strava::Api::Client do
   it_behaves_like 'web client'
   context 'with a token' do
     let(:client) { Strava::Api::Client.new(access_token: ENV['STRAVA_ACCESS_TOKEN'] || 'access-token') }
-    describe '#athlete', vcr: { cassette_name: 'client_athlete' } do
+    describe '#athlete', vcr: { cassette_name: 'client/athlete' } do
       let(:athlete) { client.athlete }
       it 'returns athlete' do
         expect(athlete).to be_a Strava::Models::Athlete
@@ -20,7 +20,7 @@ RSpec.describe Strava::Api::Client do
         expect(athlete.email).to eq 'dblock@example.com'
       end
     end
-    describe '#athlete_activities', vcr: { cassette_name: 'client_athlete_activities' } do
+    describe '#athlete_activities', vcr: { cassette_name: 'client/athlete_activities' } do
       let(:athlete_activities) { client.athlete_activities }
       it 'returns athlete activities' do
         expect(athlete_activities).to be_a Enumerable

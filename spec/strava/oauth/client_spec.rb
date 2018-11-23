@@ -75,19 +75,19 @@ RSpec.describe Strava::OAuth::Client do
       end
     end
     context '#oauth_token' do
-      it 'errors with an invalid client id', vcr: { cassette_name: 'oauth_token_invalid_client' } do
+      it 'errors with an invalid client id', vcr: { cassette_name: 'oauth/token_invalid_client' } do
         expect { client.oauth_token(code: 'code') }.to raise_error Strava::Errors::Fault do |e|
           expect(e.message).to eq 'Bad Request'
           expect(e.errors).to eq([{ 'code' => 'invalid', 'field' => 'client_id', 'resource' => 'Application' }])
         end
       end
-      it 'errors with an invalid code', vcr: { cassette_name: 'oauth_token_invalid_code' } do
+      it 'errors with an invalid code', vcr: { cassette_name: 'oauth/token_invalid_code' } do
         expect { client.oauth_token(code: 'code') }.to raise_error Faraday::ClientError do |e|
           expect(e.message).to eq 'Bad Request'
           expect(e.errors).to eq([{ 'code' => 'invalid', 'field' => 'code', 'resource' => 'RequestToken' }])
         end
       end
-      it 'performs the initial token exchange', vcr: { cassette_name: 'oauth_token_authorization_code' } do
+      it 'performs the initial token exchange', vcr: { cassette_name: 'oauth/token_authorization_code' } do
         token = client.oauth_token(code: 'deadbeef585a6edb1f00309d3e1e0fec74973fb0')
         expect(token).to be_a Strava::Models::Token
         expect(token.access_token).to eq 'deadbeefd7ab44704fb2a146bd98c7a349a2b43d'
@@ -102,7 +102,7 @@ RSpec.describe Strava::OAuth::Client do
         expect(athlete.lastname).to eq 'Block'
         expect(athlete.city).to eq 'New York'
       end
-      it 'refreshes the token', vcr: { cassette_name: 'oauth_token_refresh_token' } do
+      it 'refreshes the token', vcr: { cassette_name: 'oauth/token_refresh_token' } do
         token = client.oauth_token(
           refresh_token: '8b15b6bb9d64a225d0c50db4854a8d6c8757702d',
           grant_type: 'refresh_token'
