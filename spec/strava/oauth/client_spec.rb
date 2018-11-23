@@ -76,13 +76,15 @@ RSpec.describe Strava::OAuth::Client do
     end
     context '#oauth_token' do
       it 'errors with an invalid client id', vcr: { cassette_name: 'oauth_token_invalid_client' } do
-        expect { client.oauth_token(code: 'code') }.to raise_error Faraday::ClientError do |e|
-          expect(e.response[:body]['errors']).to eq([{ 'code' => 'invalid', 'field' => 'client_id', 'resource' => 'Application' }])
+        expect { client.oauth_token(code: 'code') }.to raise_error Strava::Errors::Fault do |e|
+          expect(e.message).to eq 'Bad Request'
+          expect(e.errors).to eq([{ 'code' => 'invalid', 'field' => 'client_id', 'resource' => 'Application' }])
         end
       end
       it 'errors with an invalid code', vcr: { cassette_name: 'oauth_token_invalid_code' } do
         expect { client.oauth_token(code: 'code') }.to raise_error Faraday::ClientError do |e|
-          expect(e.response[:body]['errors']).to eq([{ 'code' => 'invalid', 'field' => 'code', 'resource' => 'RequestToken' }])
+          expect(e.message).to eq 'Bad Request'
+          expect(e.errors).to eq([{ 'code' => 'invalid', 'field' => 'code', 'resource' => 'RequestToken' }])
         end
       end
       it 'performs the initial token exchange', vcr: { cassette_name: 'oauth_token_authorization_code' } do

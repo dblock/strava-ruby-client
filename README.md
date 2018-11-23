@@ -167,7 +167,16 @@ endpoint            | Defaults to `https://www.strava.com/oauth/`.
 
 ## Errors
 
-All errors that return HTTP codes 400-600 result in either `Faraday::Error::ResourceNotFound`, `Faraday::Error::ConnectionFailed` or `Faraday::ClientError` exceptions.
+All errors that return HTTP codes 400-600 result in either `Faraday::Error::ResourceNotFound`, `Faraday::Error::ConnectionFailed` or a [Strava::Errors::Fault](lib/strava/errors/fault.rb) exceptions.
+
+```ruby
+begin
+  client.oauth_token(code: 'invalid')
+rescue Strava::Errors::Fault => e
+  e.message # => Bad Request
+  e.errors # => [{ 'code' => 'invalid', 'field' => 'code', 'resource' => 'RequestToken' }]
+end
+```
 
 ## Tools
 

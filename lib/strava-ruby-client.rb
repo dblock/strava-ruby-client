@@ -9,12 +9,15 @@ require 'time'
 require_relative 'strava/version'
 require_relative 'strava/logger'
 
+require_relative 'strava/errors/fault'
+
 require_relative 'strava/models/model'
 require_relative 'strava/models/token'
 require_relative 'strava/models/athlete'
 require_relative 'strava/models/map'
 require_relative 'strava/models/activity'
 
+require_relative 'strava/web/raise_error'
 require_relative 'strava/web/connection'
 require_relative 'strava/web/request'
 require_relative 'strava/web/config'
