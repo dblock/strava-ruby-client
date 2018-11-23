@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 RSpec.describe Strava::Models::Activity do
-  let(:fixtures) { 'spec/fixtures/strava/activities' }
-  let(:json) { JSON.load(File.read("#{fixtures}/#{activity_type}.json")) }
+  let(:fixtures) { 'spec/fixtures/strava/models/activities' }
+  let(:json) { JSON.parse(File.read("#{fixtures}/#{activity_type}.json")) }
   let(:activity) { Strava::Models::Activity.new(json) }
   describe 'run' do
     let(:activity_type) { 'run' }
