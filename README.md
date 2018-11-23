@@ -18,6 +18,7 @@ Unlike [strava-api-v3](https://github.com/jaredholdcroft/strava-api-v3) provides
   - [OAuth](#oauth)
 - [Configuration](#configuration)
   - [Web Client Options](#web-client-options)
+  - [API Client Options](#api-client-options)
   - [OAuth Client Options](#oauth-client-options)
 - [Errors](#errors)
 - [Tools](#tools)
@@ -138,6 +139,30 @@ logger              | Optional `Logger` instance that logs HTTP requests.
 timeout             | Optional open/read timeout in seconds.
 open_timeout        | Optional connection open timeout in seconds.
 
+### API Client Options
+
+The API client inherits web client options and provides additional application configuration. These can be configured globally or for a client instance.
+
+```ruby
+Strava::API.configure do |config|
+  config.access_token = "..." # Strava access token
+end
+```
+
+```ruby
+client = Strava::API::Client.new(
+  access_token: "...",
+  user_agent: "..."
+)
+```
+
+The following settings are supported.
+
+setting             | description
+--------------------|------------
+access_token        | Access token to pass in the `Authorization` header.
+endpoint            | Defaults to `https://www.strava.com/api/v3`.
+
 ### OAuth Client Options
 
 The OAuth client inherits web client options and provides additional application configuration. These can be configured globally or for a client instance.
@@ -163,11 +188,11 @@ setting             | description
 --------------------|------------
 client_id           | Application client ID.
 client_secret       | Application client secret.
-endpoint            | Defaults to `https://www.strava.com/oauth/`.
+endpoint            | Defaults to `https://www.strava.com/oauth`.
 
 ## Errors
 
-All errors that return HTTP codes 400-600 result in either `Faraday::Error::ResourceNotFound`, `Faraday::Error::ConnectionFailed` or a [Strava::Errors::Fault](lib/strava/errors/fault.rb) exceptions.
+All errors that return HTTP codes 400-600 result in either `Faraday::Error::ResourceNotFound`, `Faraday::Error::ConnectionFailed` or [Strava::Errors::Fault](lib/strava/errors/fault.rb) exceptions.
 
 ```ruby
 begin
