@@ -1,0 +1,39 @@
+{
+  "resource_state": 2,
+  "athlete": {
+    "id": 29323238,
+    "resource_state": 1
+  },
+  "name": "Evening Swim",
+  "distance": 1874.5,
+  "moving_time": 2220,
+  "elapsed_time": 2220,
+  "total_elevation_gain": 0.0,
+  "type": "Swim",
+  "id": 1493471377,
+  "start_date": "2018-04-07T00:10:00Z",
+  "start_date_local": "2018-04-06T20:10:00Z",
+  "timezone": "(GMT-05:00) America/New_York",
+  "utc_offset": -14400.0,
+  "location_country": "United States",
+  "achievement_count": 0,
+  "kudos_count": 0,
+  "comment_count": 0,
+  "athlete_count": 1,
+  "photo_count": 0,
+  "map": {
+    "id": "a1493471377",
+    "resource_state": 2
+  },
+  "trainer": false,
+  "commute": false,
+  "manual": true,
+  "private": false,
+  "flagged": false,
+  "average_speed": 0.844,
+  "max_speed": 0.0,
+  "has_heartrate": false,
+  "pr_count": 0,
+  "total_photo_count": 0,
+  "has_kudoed": false
+}

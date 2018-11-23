@@ -63,7 +63,19 @@ See [Strava::Models::Athlete](lib/strava/models/athlete.rb) for all available pr
 Get currently logged-in athlete activities.
 
 ```ruby
-client.athlete_activities # => Array[Strava::Models::Activity]
+activities = client.athlete_activities # => Array[Strava::Models::Activity]
+
+activity = activities.first # => Strava::Models::Activity
+
+activity.name # => 'Afternoon Run'
+activity.strava_url # => 'https://www.strava.com/activities/1477353766'
+activity.type_emoji # => '🏃'
+activity.distance_s # => '14.01mi'
+activity.moving_time_in_hours_s # => '2h6m26s'
+activity.elapsed_time_in_hours_s # => '2h8m6s'
+activity.pace_s # => '9m02s/mi'
+activity.speed_s # => '6.6mph'
+activity.total_elevation_gain_s # => '475.4ft'
 ```
 
 See [Strava::Models::Activity](lib/strava/models/activity.rb) for all available properties.
