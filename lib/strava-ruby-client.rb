@@ -27,4 +27,5 @@ require_relative 'strava/oauth/config'
 require_relative 'strava/oauth/client'
 
 require_relative 'strava/api/config'
+require_relative 'strava/api/cursor'
 require_relative 'strava/api/client'

@@ -6,7 +6,7 @@ Strava Ruby Client
 
 A newer Ruby client for the [Strava API v3](https://developers.strava.com).
 
-Unlike [strava-api-v3](https://github.com/jaredholdcroft/strava-api-v3) provides a first class interface to Strava models and more consistent error handling.
+Unlike [strava-api-v3](https://github.com/jaredholdcroft/strava-api-v3) provides complete OAuth refresh token flow support, a richer first class interface to Strava models, natively supports pagination and implements more consistent error handling.
 
 # Table of Contents
 
@@ -15,6 +15,7 @@ Unlike [strava-api-v3](https://github.com/jaredholdcroft/strava-api-v3) provides
   - [API](#api)
     - [Athlete](#athlete)
     - [Athlete Activities](#athlete-activities)
+    - [Pagination](#pagination)
   - [OAuth](#oauth)
 - [Configuration](#configuration)
   - [Web Client Options](#web-client-options)
@@ -79,6 +80,16 @@ activity.total_elevation_gain_s # => '475.4ft'
 ```
 
 See [Strava::Models::Activity](lib/strava/models/activity.rb) for all available properties.
+
+#### Pagination
+
+Some Strava APIs, including [athlete_activities](#athlete-activities) support pagination when supplying an optional `page` and `per_page` parameter. By default the client retrieves one page of data, which Strava currently defaults to 30 items. You can paginate through more data by supplying a block and an optional `per_page` parameter. The underlying implementation makes page-sized calls and increments the `page` argument.
+
+```ruby
+client.athlete_activities(per_page: 30) do |activity|
+  activity # => Strava::Models::Activity
+end
+```
 
 ### OAuth
 
