@@ -19,6 +19,8 @@ Unlike [strava-api-v3](https://github.com/jaredholdcroft/strava-api-v3) provides
   - [Web Client Options](#web-client-options)
   - [OAuth Client Options](#oauth-client-options)
 - [Errors](#errors)
+- [Tools](#tools)
+  - [OAuth Token](#oauth-token)
 - [Contributing](#contributing)
 - [Copyright and License](#copyright-and-license)
 
@@ -155,6 +157,23 @@ endpoint            | Defaults to `https://www.strava.com/oauth/`.
 ## Errors
 
 All errors that return HTTP codes 400-600 result in either `Faraday::Error::ResourceNotFound`, `Faraday::Error::ConnectionFailed` or `Faraday::ClientError` exceptions.
+
+## Tools
+
+### OAuth Token
+
+Use [bin/oauth-token](bin/outh-token) to obtain a token from the command-line.
+
+```bash
+$ STRAVA_CLIENT_ID=... STRAVA_CLIENT_SECRET=... bundle exec bin/oauth-token.rb
+
+Opening browser at https://www.strava.com/oauth/authorize?...
+Copy paste the code from the redirect URL: 1234556789901234567890
+token_type: Bearer
+refresh_token: 013612374123716234842346234
+access_token: 7348562936591928461923619823
+expires_at: 2018-11-23 16:25:52 -0500
+```
 
 ## Contributing
 
