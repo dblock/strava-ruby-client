@@ -1,0 +1,83 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.strava.com/api/v3/clubs/108605/activities
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer access-token
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Strava Ruby Client/0.1.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 24 Nov 2018 15:17:47 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Via:
+      - 1.1 linkerd
+      Strava-Club-Activities-Version:
+      - dfe4b1e5fcc4d4dafff3825619e72570/1543072658491
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '600,30000'
+      X-Request-Id:
+      - 304b411b-eabf-4106-8df3-537d1dc6bd21
+      Etag:
+      - W/"7615345787d633acd72cc5ea68b5d3db"
+      X-Ratelimit-Usage:
+      - '1,7835'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: '[{"resource_state":2,"athlete":{"resource_state":2,"firstname":"Hien
+        Frances","lastname":"T."},"name":"Run for Stand Up To Cancer","distance":7004.3,"moving_time":3659,"elapsed_time":3659,"total_elevation_gain":0.0,"type":"Run","workout_type":null},{"resource_state":2,"athlete":{"resource_state":2,"firstname":"Maggie","lastname":"L."},"name":"Morning
+        Run","distance":1924.3,"moving_time":698,"elapsed_time":891,"total_elevation_gain":35.1,"type":"Run","workout_type":0},{"resource_state":2,"athlete":{"resource_state":2,"firstname":"John","lastname":"F."},"name":"Morning
+        Run","distance":3230.7,"moving_time":1118,"elapsed_time":1118,"total_elevation_gain":5.1,"type":"Run","workout_type":null},{"resource_state":2,"athlete":{"resource_state":2,"firstname":"Young","lastname":"K."},"name":"AC
+        boardwalk","distance":3684.8,"moving_time":1221,"elapsed_time":1240,"total_elevation_gain":32.6,"type":"Run","workout_type":0},{"resource_state":2,"athlete":{"resource_state":2,"firstname":"Davis","lastname":"P."},"name":"Morning
+        Run","distance":5373.3,"moving_time":1739,"elapsed_time":1739,"total_elevation_gain":5.7,"type":"Run","workout_type":0},{"resource_state":2,"athlete":{"resource_state":2,"firstname":"August","lastname":"W."},"name":"Morning
+        Run","distance":5267.0,"moving_time":1712,"elapsed_time":1717,"total_elevation_gain":2.0,"type":"Run","workout_type":null},{"resource_state":2,"athlete":{"resource_state":2,"firstname":"Antonio","lastname":"Q."},"name":"Turkey
+        Trot Roosevelt Island ","distance":4989.0,"moving_time":1750,"elapsed_time":1750,"total_elevation_gain":0.0,"type":"VirtualRun"},{"resource_state":2,"athlete":{"resource_state":2,"firstname":"Molly","lastname":"A."},"name":"Montclair
+        run","distance":6925.0,"moving_time":2281,"elapsed_time":2281,"total_elevation_gain":49.7,"type":"Run","workout_type":0},{"resource_state":2,"athlete":{"resource_state":2,"firstname":"Lucille","lastname":"O."},"name":"Morning
+        Run","distance":5137.5,"moving_time":2103,"elapsed_time":2666,"total_elevation_gain":2.5,"type":"Run","workout_type":0},{"resource_state":2,"athlete":{"resource_state":2,"firstname":"Ashley","lastname":"P."},"name":"Morning
+        Run","distance":6553.1,"moving_time":2257,"elapsed_time":2279,"total_elevation_gain":73.0,"type":"Run","workout_type":null},{"resource_state":2,"athlete":{"resource_state":2,"firstname":"Kristoffer","lastname":"H."},"name":"Morning
+        Run","distance":6878.8,"moving_time":2487,"elapsed_time":2497,"total_elevation_gain":5.9,"type":"Run","workout_type":0},{"resource_state":2,"athlete":{"resource_state":2,"firstname":"Tina","lastname":"A."},"name":"Post
+        thanksgiving run!","distance":7071.8,"moving_time":2758,"elapsed_time":2852,"total_elevation_gain":32.9,"type":"Run","workout_type":0},{"resource_state":2,"athlete":{"resource_state":2,"firstname":"Anthony","lastname":"F."},"name":"Morning
+        Run","distance":11499.1,"moving_time":3130,"elapsed_time":3130,"total_elevation_gain":97.0,"type":"Run","workout_type":null},{"resource_state":2,"athlete":{"resource_state":2,"firstname":"Kinga","lastname":"T."},"name":"Morning
+        Run","distance":7363.3,"moving_time":2909,"elapsed_time":3297,"total_elevation_gain":68.5,"type":"Run","workout_type":null},{"resource_state":2,"athlete":{"resource_state":2,"firstname":"Clayton","lastname":"C."},"name":"Morning
+        Run","distance":13691.5,"moving_time":4065,"elapsed_time":4188,"total_elevation_gain":30.2,"type":"Run","workout_type":null},{"resource_state":2,"athlete":{"resource_state":2,"firstname":"Darío
+        R.","lastname":"L."},"name":"Carrera de mañana","distance":12418.5,"moving_time":4139,"elapsed_time":4156,"total_elevation_gain":140.9,"type":"Run","workout_type":0},{"resource_state":2,"athlete":{"resource_state":2,"firstname":"sebastien","lastname":"B."},"name":"Morning
+        Run","distance":17702.4,"moving_time":4685,"elapsed_time":4693,"total_elevation_gain":66.0,"type":"Run","workout_type":null},{"resource_state":2,"athlete":{"resource_state":2,"firstname":"Alaina","lastname":"P."},"name":"Morning
+        Run","distance":9734.2,"moving_time":4645,"elapsed_time":4912,"total_elevation_gain":33.7,"type":"Run","workout_type":null},{"resource_state":2,"athlete":{"resource_state":2,"firstname":"Alissa","lastname":"S."},"name":"Not
+        as long as I wanted ","distance":10716.8,"moving_time":4064,"elapsed_time":4741,"total_elevation_gain":73.2,"type":"Run","workout_type":0},{"resource_state":2,"athlete":{"resource_state":2,"firstname":"Armando","lastname":"P."},"name":"Sibate
+        - San Benito ","distance":8638.3,"moving_time":2663,"elapsed_time":5800,"total_elevation_gain":280.6,"type":"Run","workout_type":0},{"resource_state":2,"athlete":{"resource_state":2,"firstname":"Sanjay","lastname":"S."},"name":"Again...Tempo
+        run..","distance":2797.7,"moving_time":752,"elapsed_time":6639,"total_elevation_gain":37.0,"type":"Run","workout_type":0},{"resource_state":2,"athlete":{"resource_state":2,"firstname":"Captain","lastname":"J."},"name":"Pelham
+        Half","distance":21846.9,"moving_time":7085,"elapsed_time":8055,"total_elevation_gain":202.2,"type":"Run","workout_type":0},{"resource_state":2,"athlete":{"resource_state":2,"firstname":"Catherine
+        Ann","lastname":"O."},"name":"Afternoon Run","distance":24181.5,"moving_time":8765,"elapsed_time":10210,"total_elevation_gain":239.2,"type":"Run","workout_type":null}]'
+    http_version:
+  recorded_at: Sat, 24 Nov 2018 15:17:47 GMT
+recorded_with: VCR 4.0.0

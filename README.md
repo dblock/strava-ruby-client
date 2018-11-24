@@ -16,6 +16,7 @@ Unlike [strava-api-v3](https://github.com/jaredholdcroft/strava-api-v3) provides
     - [Athlete](#athlete)
     - [Athlete Activities](#athlete-activities)
     - [Athlete Clubs](#athlete-clubs)
+    - [Club Activities](#club-activities)
     - [Pagination](#pagination)
   - [OAuth](#oauth)
 - [Configuration](#configuration)
@@ -96,6 +97,20 @@ activity.strava_url # => 'https://www.strava.com/clubs/nyrr'
 ```
 
 See [Strava::Models::Club](lib/strava/models/club.rb) for all available properties.
+
+#### Club Activities
+
+Get club activities.
+
+```ruby
+activities = client.club_activities(id: 108605) # => Array[Strava::Models::Activity]
+
+activity = activities.first # => Strava::Models::Activity
+
+activity.name # => 'Afternoon Run'
+```
+
+See [Strava::Models::Activity](lib/strava/models/activity.rb) for all available properties. Note that Strava does not return activity or athlete ID via this API.
 
 #### Pagination
 

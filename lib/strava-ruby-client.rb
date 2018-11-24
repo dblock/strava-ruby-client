@@ -4,6 +4,7 @@ require 'json'
 require 'logger'
 require 'hashie'
 require 'active_support/core_ext/object/to_query'
+require 'active_support/core_ext/hash'
 require 'time'
 
 require_relative 'strava/version'

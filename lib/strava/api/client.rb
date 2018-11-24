@@ -14,16 +14,36 @@ module Strava
         { 'Authorization' => "Bearer #{access_token}" }
       end
 
+      #
+      # Get logged-in athlete.
+      #
       def athlete
         Strava::Models::Athlete.new(get('athlete'))
       end
 
+      #
+      # List logged-in athlete activities.
+      #
       def athlete_activities(options = {}, &block)
-        paginate :athlete_activities, 'athlete/activities', options, Strava::Models::Activity, &block
+        paginate 'athlete/activities', options, Strava::Models::Activity, &block
       end
 
+      #
+      # List logged-in athlete clubs.
+      #
       def athlete_clubs(options = {}, &block)
-        paginate :athlete_clubs, 'athlete/clubs', options, Strava::Models::Club, &block
+        paginate 'athlete/clubs', options, Strava::Models::Club, &block
+      end
+
+      #
+      # List club activities.
+      #
+      # @option options [String] :id
+      #   Club id.
+      #
+      def club_activities(options = {}, &block)
+        throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
+        paginate "clubs/#{options[:id]}/activities", options.except(:id), Strava::Models::Activity, &block
       end
 
       class << self
@@ -38,10 +58,12 @@ module Strava
 
       private
 
-      def paginate(method, path, options, model, &block)
+      def paginate(path, options, model)
         if block_given?
-          Cursor.new(self, method, options).each do |instance|
-            instance.each(&block)
+          Cursor.new(self, path, options).each do |page|
+            page.each do |row|
+              yield model.new(row)
+            end
           end
         else
           get(path, options).map do |row|
