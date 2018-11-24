@@ -11,7 +11,7 @@ client = Strava::OAuth::Client.new(
 redirect_url = client.authorize_url(
   redirect_uri: 'http://localhost',
   response_type: 'code',
-  scope: 'activity:read'
+  scope: 'read_all,activity:read_all,profile:read_all'
 )
 
 STDOUT.write "Opening browser at #{redirect_url}\n"

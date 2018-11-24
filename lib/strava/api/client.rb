@@ -22,6 +22,10 @@ module Strava
         paginate :athlete_activities, 'athlete/activities', options, Strava::Models::Activity, &block
       end
 
+      def athlete_clubs(options = {}, &block)
+        paginate :athlete_clubs, 'athlete/clubs', options, Strava::Models::Club, &block
+      end
+
       class << self
         def configure
           block_given? ? yield(Config) : Config

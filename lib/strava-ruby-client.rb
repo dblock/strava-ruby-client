@@ -16,6 +16,7 @@ require_relative 'strava/models/token'
 require_relative 'strava/models/athlete'
 require_relative 'strava/models/map'
 require_relative 'strava/models/activity'
+require_relative 'strava/models/club'
 
 require_relative 'strava/web/raise_error'
 require_relative 'strava/web/connection'
