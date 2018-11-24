@@ -261,17 +261,10 @@ end
 
 ### OAuth Token
 
-Use [bin/oauth-token](bin/outh-token) to obtain a token from the command-line.
+Use [bin/oauth-token](bin/outh-token) to obtain a token from the command-line. This will open a new browser window, navigate to Strava, request the appropriate permissions, then handle OAuth in a local redirect. The token type, refresh token, access token and token expiration will be displayed in the browser.
 
 ```bash
 $ STRAVA_CLIENT_ID=... STRAVA_CLIENT_SECRET=... bundle exec bin/oauth-token.rb
-
-Opening browser at https://www.strava.com/oauth/authorize?...
-Copy paste the code from the redirect URL: 1234556789901234567890
-token_type: Bearer
-refresh_token: 013612374123716234842346234
-access_token: 7348562936591928461923619823
-expires_at: 2018-11-23 16:25:52 -0500
 ```
 
 ## Contributing
