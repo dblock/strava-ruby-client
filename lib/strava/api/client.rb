@@ -29,6 +29,13 @@ module Strava
       end
 
       #
+      # Create an activity.
+      #
+      def create_activity(options = {})
+        Strava::Models::Activity.new(post('activities', options))
+      end
+
+      #
       # List logged-in athlete clubs.
       #
       def athlete_clubs(options = {}, &block)

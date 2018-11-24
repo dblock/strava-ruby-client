@@ -9,6 +9,7 @@ RSpec.describe 'Strava::Api::Client#club_activities' do
       expect(club_activities.count).to eq 23
       activity = club_activities.first
       expect(activity.distance).to eq 7004.3
+      expect(activity.name).to eq 'Run for Stand Up To Cancer'
     end
   end
   describe 'paginated #club_activities', vcr: { cassette_name: 'client/all_club_activities' } do

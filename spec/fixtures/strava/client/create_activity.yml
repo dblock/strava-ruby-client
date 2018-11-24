@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.strava.com/api/v3/activities
+    body:
+      encoding: UTF-8
+      string: commute=false&description=Test+strava-ruby-client+activity.&distance=1000&elapsed_time=1234&name=strava-ruby-client+activity&photo_ids&start_date_local=2018-11-24+15%3A39%3A28+-0500&trainer=false&type=Run
+    headers:
+      Authorization:
+      - Bearer access-token
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Strava Ruby Client/0.1.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Sat, 24 Nov 2018 22:39:28 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Via:
+      - 1.1 linkerd
+      Status:
+      - 201 Created
+      X-Ratelimit-Limit:
+      - '600,30000'
+      X-Request-Id:
+      - 31daa792-a533-4e5f-8189-c1918b3431ad
+      Etag:
+      - W/"8e44d5acfb33ed385048f109756c4cc7"
+      X-Ratelimit-Usage:
+      - '90,11712'
+      X-Frame-Options:
+      - SAMEORIGIN,DENY
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: '{"resource_state":3,"athlete":{"id":29323238,"resource_state":1},"name":"strava-ruby-client
+        activity","distance":1000.0,"moving_time":1234,"elapsed_time":1234,"total_elevation_gain":0.0,"type":"Run","workout_type":null,"id":1982980795,"external_id":null,"upload_id":null,"start_date":"2018-11-24T20:39:28Z","start_date_local":"2018-11-24T15:39:28Z","timezone":"(GMT-05:00)
+        America/New_York","utc_offset":-18000.0,"start_latlng":null,"end_latlng":null,"location_city":null,"location_state":null,"location_country":"United
+        States","start_latitude":null,"start_longitude":null,"achievement_count":0,"kudos_count":0,"comment_count":0,"athlete_count":1,"photo_count":0,"map":{"id":"a1982980795","polyline":null,"resource_state":3},"trainer":false,"commute":false,"manual":true,"private":false,"visibility":"everyone","flagged":false,"gear_id":null,"from_accepted_tag":null,"average_speed":0.81,"max_speed":0.0,"has_heartrate":false,"heartrate_opt_out":false,"display_hide_heartrate_option":false,"pr_count":0,"total_photo_count":0,"has_kudoed":false,"description":"Test
+        strava-ruby-client activity.","calories":0,"segment_efforts":[],"best_efforts":[],"photos":{"primary":null,"count":0},"embed_token":"b88ab5b3fe3cbda4b5e0b74883aff8b88935381d","similar_activities":{"effort_count":0,"average_speed":0,"min_average_speed":0,"mid_average_speed":0,"max_average_speed":0,"pr_rank":null,"frequency_milestone":null,"trend":{"speeds":[],"current_activity_index":null,"min_speed":0,"mid_speed":0,"max_speed":0,"direction":0},"resource_state":2},"available_zones":[]}'
+    http_version:
+  recorded_at: Sat, 24 Nov 2018 22:39:28 GMT
+recorded_with: VCR 4.0.0

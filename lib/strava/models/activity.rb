@@ -5,6 +5,7 @@ module Strava
       property 'resource_state'
       property 'athlete', transform_with: ->(v) { Strava::Models::Athlete.new(v) }
       property 'name'
+      property 'description'
       property 'distance'
       alias distance_in_meters distance
       property 'moving_time'
@@ -53,6 +54,15 @@ module Strava
       property 'total_photo_count'
       property 'has_kudoed'
       property 'suffer_score'
+      property 'calories'
+
+      # TODO: these are objects
+      property 'segment_efforts'
+      property 'best_efforts'
+      property 'photos'
+      property 'embed_token'
+      property 'similar_activities'
+      property 'available_zones'
 
       def distance_in_miles
         distance * 0.00062137

@@ -17,6 +17,7 @@ Unlike [strava-api-v3](https://github.com/jaredholdcroft/strava-api-v3) provides
     - [Athlete Activities](#athlete-activities)
     - [Athlete Clubs](#athlete-clubs)
     - [Club Activities](#club-activities)
+    - [Create Activity](#create-activity)
     - [Pagination](#pagination)
   - [OAuth](#oauth)
 - [Configuration](#configuration)
@@ -111,6 +112,24 @@ activity.name # => 'Afternoon Run'
 ```
 
 See [Strava::Models::Activity](lib/strava/models/activity.rb) for all available properties. Note that Strava does not return activity or athlete ID via this API.
+
+#### Create Activity
+
+Create an activity.
+
+```ruby
+activity = client.create_activity(
+  name: 'Afternoon Run',
+  type: 'Run',
+  start_date_local: Time.now,
+  elapsed_time: 1234, # in seconds
+  description: 'Test run.',
+  distance: 1000 # in meters
+)
+
+activity.name # => 'Afternoon Run'
+activity.strava_url # => 'https://www.strava.com/activities/1982980795'
+```
 
 #### Pagination
 
