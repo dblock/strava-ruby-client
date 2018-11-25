@@ -3,14 +3,20 @@ require 'faraday_middleware'
 require 'json'
 require 'logger'
 require 'hashie'
+require 'time'
+
 require 'active_support/core_ext/object/to_query'
 require 'active_support/core_ext/hash'
-require 'time'
+require 'active_support/concern'
 
 require_relative 'strava/version'
 require_relative 'strava/logger'
 
 require_relative 'strava/errors/fault'
+
+require_relative 'strava/models/mixins/distance'
+require_relative 'strava/models/mixins/elevation'
+require_relative 'strava/models/mixins/time'
 
 require_relative 'strava/models/model'
 require_relative 'strava/models/token'

@@ -1,10 +1,11 @@
 module Strava
   module Models
     class Segment < Model
+      include Mixins::Distance
+
       property 'id'
       property 'resource_state'
       property 'name'
-      property 'distance'
       property 'maximum_grade'
       property 'elevation_high'
       property 'elevation_low'
@@ -23,6 +24,10 @@ module Strava
       property 'private'
       property 'hazardous'
       property 'starred'
+
+      def units
+        :metric
+      end
     end
   end
 end

@@ -72,18 +72,21 @@ activities = client.athlete_activities # => Array[Strava::Models::Activity]
 
 activity = activities.first # => Strava::Models::Activity
 
-activity.name # => 'Afternoon Run'
+activity.name # => 'NYC TCS Marathon 2018'
 activity.strava_url # => 'https://www.strava.com/activities/1477353766'
 activity.type_emoji # => '🏃'
-activity.distance_s # => '14.01mi'
-activity.moving_time_in_hours_s # => '2h6m26s'
-activity.elapsed_time_in_hours_s # => '2h8m6s'
-activity.pace_s # => '9m02s/mi'
-activity.speed_s # => '6.6mph'
-activity.total_elevation_gain_s # => '475.4ft'
+activity.distance_s # => '42.2km'
+activity.moving_time_in_hours_s # => '3h38m5s'
+activity.elapsed_time_in_hours_s # => '3h42m13s'
+activity.pace_s # => '5m15s/km'
+activity.pace_per_mile_s # => '8m28s/mi'
+activity.speed_s # => '11.4km/h'
+activity.miles_per_hour_s # => '7.1mph'
+activity.total_elevation_gain_s # => '270.9m'
+activity.total_elevation_gain_in_feet_s # => '888.8ft'
 ```
 
-See [Strava::Models::Activity](lib/strava/models/activity.rb) for all available properties.
+See [Strava::Models::Activity](lib/strava/models/activity.rb), [Strava::Models::Mixins::Distance](lib/strava/models/mixins/distance.rb), [Strava::Models::Mixins::Elevation](lib/strava/models/mixins/elevation.rb) and [Strava::Models::Mixins::Time](lib/strava/models/mixins/time.rb) for all available properties.
 
 #### Athlete Clubs
 
@@ -134,7 +137,7 @@ activity.strava_url # => 'https://www.strava.com/activities/1982980795'
 
 #### Get Activity
 
-Get a detailed activity by ID.
+Get a detailed activity by ID, including description, photos, gear, splits, segments and laps.
 
 ```ruby
 activity = client.activity(id: 1982980795)

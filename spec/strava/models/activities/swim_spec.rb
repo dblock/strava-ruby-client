@@ -19,8 +19,7 @@ RSpec.describe Strava::Models::Activity do
       expect(activity.distance_in_meters_s).to eq '1874m'
       expect(activity.distance_in_kilometers).to eq 1.8745
       expect(activity.distance_in_kilometers_s).to eq '1.87km'
-      expect(activity.distance_s(:mi)).to eq '2050yd'
-      expect(activity.distance_s(:km)).to eq '1874m'
+      expect(activity.distance_s).to eq '1874m'
     end
     it 'converts pace and speed' do
       expect(activity.moving_time_in_hours_s).to eq '37m'
@@ -29,20 +28,17 @@ RSpec.describe Strava::Models::Activity do
       expect(activity.pace_per_100_yards_s).to eq '1m48s/100yd'
       expect(activity.pace_per_100_meters_s).to eq '1m58s/100m'
       expect(activity.pace_per_kilometer_s).to eq '19m45s/km'
-      expect(activity.pace_s(:mi)).to eq '1m48s/100yd'
-      expect(activity.pace_s(:km)).to eq '1m58s/100m'
+      expect(activity.pace_s).to eq '1m58s/100m'
       expect(activity.kilometer_per_hour_s).to eq '3.0km/h'
       expect(activity.miles_per_hour_s).to eq '1.9mph'
-      expect(activity.speed_s(:mi)).to eq '1.9mph'
-      expect(activity.speed_s(:km)).to eq '3.0km/h'
+      expect(activity.speed_s).to eq '3.0km/h'
     end
     it 'converts elevation' do
       expect(activity.total_elevation_gain_in_feet).to eq 0.0
       expect(activity.total_elevation_gain_in_meters).to eq 0.0
       expect(activity.total_elevation_gain_in_meters_s).to be nil
       expect(activity.total_elevation_gain_in_feet_s).to be nil
-      expect(activity.total_elevation_gain_s(:mi)).to be nil
-      expect(activity.total_elevation_gain_s(:km)).to be nil
+      expect(activity.total_elevation_gain_s).to be nil
     end
   end
 end

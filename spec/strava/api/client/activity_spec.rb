@@ -12,10 +12,38 @@ RSpec.describe 'Strava::Api::Client#activity' do
     expect(activity.athlete.resource_state).to eq 1
     expect(activity.name).to eq 'TCS NYC Marathon 2018'
     expect(activity.description).to eq "Official time 3:42:02. Race got impossibly hard at mile 21 but I never stopped except to pee on mile 9. \r\n\r\nI am so fucking happy that I did this!"
+
     expect(activity.distance).to eq 42_268.1
+    expect(activity.distance_in_miles).to eq 26.264129297
+    expect(activity.distance_in_miles_s).to eq '26.26mi'
+    expect(activity.distance_in_yards).to eq 46_224.816841
+    expect(activity.distance_in_yards_s).to eq '46224.8yd'
+    expect(activity.distance_in_meters).to eq 42_268.1
+    expect(activity.distance_in_meters_s).to eq '42268m'
+    expect(activity.distance_in_kilometers).to eq 42.2681
+    expect(activity.distance_in_kilometers_s).to eq '42.27km'
+    expect(activity.distance_s).to eq '42.27km'
+
     expect(activity.moving_time).to eq 13_085
     expect(activity.elapsed_time).to eq 13_333
+    expect(activity.moving_time_in_hours_s).to eq '3h38m5s'
+    expect(activity.elapsed_time_in_hours_s).to eq '3h42m13s'
+    expect(activity.pace_per_mile_s).to eq '8m28s/mi'
+    expect(activity.pace_per_100_yards_s).to eq '0m29s/100yd'
+    expect(activity.pace_per_100_meters_s).to eq '0m32s/100m'
+    expect(activity.pace_per_kilometer_s).to eq '5m15s/km'
+    expect(activity.pace_s).to eq '5m15s/km'
+    expect(activity.kilometer_per_hour_s).to eq '11.4km/h'
+    expect(activity.miles_per_hour_s).to eq '7.1mph'
+    expect(activity.speed_s).to eq '11.4km/h'
+
     expect(activity.total_elevation_gain).to eq 270.9
+    expect(activity.total_elevation_gain_in_feet).to eq 888.779556
+    expect(activity.total_elevation_gain_in_meters).to eq 270.9
+    expect(activity.total_elevation_gain_in_meters_s).to eq '270.9m'
+    expect(activity.total_elevation_gain_in_feet_s).to eq '888.8ft'
+    expect(activity.total_elevation_gain_s).to eq '270.9m'
+
     expect(activity.type).to eq 'Run'
     expect(activity.workout_type).to eq 1
     expect(activity.external_id).to eq '17900304917.tcx'
@@ -66,8 +94,17 @@ RSpec.describe 'Strava::Api::Client#activity' do
     split_metric = activity.splits_metric.first
     expect(split_metric).to be_a Strava::Models::Split
     expect(split_metric.distance).to eq 1001.6
+    expect(split_metric.distance_in_meters).to eq 1001.6
+    expect(split_metric.distance_in_miles).to eq 0.622364192
     expect(split_metric.elapsed_time).to eq 314
+    expect(split_metric.pace_per_kilometer_s).to eq '5m13s/km'
+    expect(split_metric.pace_per_mile_s).to eq '8m24s/mi'
+    expect(split_metric.kilometer_per_hour_s).to eq '11.5km/h'
+    expect(split_metric.miles_per_hour_s).to eq '7.1mph'
     expect(split_metric.elevation_difference).to eq 15.6
+    expect(split_metric.total_elevation_gain).to eq 15.6
+    expect(split_metric.total_elevation_gain_in_feet).to eq 51.181104
+    expect(split_metric.total_elevation_gain_in_meters).to eq 15.6
     expect(split_metric.moving_time).to eq 314
     expect(split_metric.split).to eq 1
     expect(split_metric.average_speed).to eq 3.19
@@ -78,8 +115,17 @@ RSpec.describe 'Strava::Api::Client#activity' do
     split_standard = activity.splits_standard.first
     expect(split_standard).to be_a Strava::Models::Split
     expect(split_standard.distance).to eq 1609.9
+    expect(split_standard.distance_in_meters).to eq 490.69750429767987
+    expect(split_standard.distance_in_miles).to eq 0.30490530303030305
     expect(split_standard.elapsed_time).to eq 489
+    expect(split_standard.pace_per_kilometer_s).to eq '5m04s/km'
+    expect(split_standard.pace_per_mile_s).to eq '8m09s/mi'
+    expect(split_standard.kilometer_per_hour_s).to eq '11.8km/h'
+    expect(split_standard.miles_per_hour_s).to eq '7.4mph'
     expect(split_standard.elevation_difference).to eq 5.9
+    expect(split_standard.total_elevation_gain).to eq 5.9
+    expect(split_standard.total_elevation_gain_in_feet).to eq 5.9
+    expect(split_standard.total_elevation_gain_in_meters).to eq 1.798319942453762
     expect(split_standard.moving_time).to eq 489
     expect(split_standard.split).to eq 1
     expect(split_standard.average_speed).to eq 3.29
@@ -144,6 +190,7 @@ RSpec.describe 'Strava::Api::Client#activity' do
     expect(segment.resource_state).to eq 2
     expect(segment.name).to eq 'NYC Marathon Mile 1'
     expect(segment.distance).to eq 1558.7
+    expect(segment.distance_s).to eq '1.56km'
     expect(segment.maximum_grade).to eq 8.2
     expect(segment.elevation_high).to eq 34.9
     expect(segment.elevation_low).to eq -0.4
