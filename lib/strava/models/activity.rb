@@ -55,14 +55,17 @@ module Strava
       property 'has_kudoed'
       property 'suffer_score'
       property 'calories'
-
-      # TODO: these are objects
-      property 'segment_efforts'
-      property 'best_efforts'
-      property 'photos'
+      property 'segment_efforts', transform_with: ->(v) { v.map { |r| Strava::Models::SegmentEffort.new(r) } }
+      property 'best_efforts', transform_with: ->(v) { v.map { |r| Strava::Models::SegmentEffort.new(r) } }
+      property 'photos', transform_with: ->(v) { Strava::Models::Photos.new(v) }
+      property 'similar_activities', transform_with: ->(v) { Strava::Models::SimilarActivities.new(v) }
       property 'embed_token'
-      property 'similar_activities'
       property 'available_zones'
+      property 'splits_metric', transform_with: ->(v) { v.map { |r| Strava::Models::Split.new(r) } }
+      property 'splits_standard', transform_with: ->(v) { v.map { |r| Strava::Models::Split.new(r) } }
+      property 'laps', transform_with: ->(v) { v.map { |r| Strava::Models::Lap.new(r) } }
+      property 'gear', transform_with: ->(v) { Strava::Models::Gear.new(v) }
+      property 'device_name'
 
       def distance_in_miles
         distance * 0.00062137

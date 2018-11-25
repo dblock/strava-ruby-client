@@ -22,6 +22,14 @@ module Strava
       end
 
       #
+      # Get logged-in athlete.
+      #
+      def activity(options = {})
+        throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
+        Strava::Models::Activity.new(get("activities/#{options[:id]}", options.except(:id)))
+      end
+
+      #
       # List logged-in athlete activities.
       #
       def athlete_activities(options = {}, &block)

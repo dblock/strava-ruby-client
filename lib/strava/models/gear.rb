@@ -1,10 +1,11 @@
 module Strava
   module Models
-    class Map < Model
+    class Gear < Model
       property 'id'
-      property 'summary_polyline'
       property 'resource_state'
-      property 'polyline'
+      property 'distance'
+      property 'name'
+      property 'primary'
     end
   end
 end

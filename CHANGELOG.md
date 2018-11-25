@@ -1,5 +1,6 @@
 ### 0.1.1 (Next)
 
+* Added `Strava::Api::Client#activity` with segments, photos, similar activities, trends, laps and gear - [@dblock](https://github.com/dblock).
 * Added support for converting and displaying activity distance, elevation, speed and pace - [@dblock](https://github.com/dblock).
 * Added `Activity#type_emoji` and `Activity#strava_url` - [@dblock](https://github.com/dblock).
 * Added `Athlete#name` and `Athlete#strava_url` - [@dblock](https://github.com/dblock).
