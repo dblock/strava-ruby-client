@@ -18,6 +18,7 @@ Unlike [strava-api-v3](https://github.com/jaredholdcroft/strava-api-v3) provides
     - [Athlete Clubs](#athlete-clubs)
     - [Club Activities](#club-activities)
     - [Create Activity](#create-activity)
+    - [Update Activity](#update-activity)
     - [Get Activity](#get-activity)
     - [Activity Comments](#activity-comments)
     - [Activity Kudoers](#activity-kudoers)
@@ -136,6 +137,22 @@ activity = client.create_activity(
 )
 
 activity.name # => 'Afternoon Run'
+activity.strava_url # => 'https://www.strava.com/activities/1982980795'
+```
+
+#### Update Activity
+
+Update an activity.
+
+```ruby
+activity = client.update_activity(
+  id: 1982980795,
+  name: 'Afternoon Run (Updated)',
+  type: 'Run',
+  description: 'It was cold.'
+)
+
+activity.name # => 'Afternoon Run (Updated)'
 activity.strava_url # => 'https://www.strava.com/activities/1982980795'
 ```
 

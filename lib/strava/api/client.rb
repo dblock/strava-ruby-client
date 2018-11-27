@@ -53,6 +53,26 @@ module Strava
       end
 
       #
+      # Update an activity.
+      # @option options [Boolean] :commute
+      #   Whether this activity is a commute.
+      # @option options [Boolean] :trainer
+      #   Whether this activity was recorded on a training machine.
+      # @option options [String] :description
+      #   The description of the activity.
+      # @option options [String] :name
+      #   The name of the activity.
+      # @option options [String] :type
+      #   Activity type.
+      # @option options [String] :gear_id
+      #   Identifier for the gear associated with the activity. Specifying "none" clears gear from activity.
+      #
+      def update_activity(options = {})
+        throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
+        Strava::Models::Activity.new(put("activities/#{options[:id]}", options.except(:id)))
+      end
+
+      #
       # List logged-in athlete clubs.
       #
       # @option options [Integer] :page
