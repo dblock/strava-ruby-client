@@ -8,7 +8,7 @@
 * Added `Strava::Api::Client#athlete_clubs` - [@dblock](https://github.com/dblock).
 * Added `Strava::Api::Client#club_activities` - [@dblock](https://github.com/dblock).
 * Added `Strava::Api::Client#create_activity` - [@dblock](https://github.com/dblock).
-* [#6](https://github.com/dblock/strava-ruby-client/issues/6): The `oauth-token` tool will handle the redirect in the browser - [@dblock](https://github.com/dblock).
+* [#6](https://github.com/dblock/strava-ruby-client/issues/6): The `strava-oauth-token` tool will handle the redirect in the browser - [@dblock](https://github.com/dblock).
 * Your contribution here.
 
 ### 0.1.0 (2018/11/23)

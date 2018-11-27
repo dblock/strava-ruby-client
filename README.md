@@ -27,7 +27,7 @@ Unlike [strava-api-v3](https://github.com/jaredholdcroft/strava-api-v3) provides
   - [OAuth Client Options](#oauth-client-options)
 - [Errors](#errors)
 - [Tools](#tools)
-  - [OAuth Token](#oauth-token)
+  - [Strava OAuth Token](#strava-oauth-token)
 - [Contributing](#contributing)
 - [Copyright and License](#copyright-and-license)
 
@@ -45,7 +45,7 @@ Run `bundle install`.
 
 ### API
 
-Use an access token obtained from [My API Application](https://www.strava.com/settings/api) in the Strava UI, the [oauth-token tool](#oauth-token) or the [OAuth Workflow](#oauth) in your application.
+Use an access token obtained from [My API Application](https://www.strava.com/settings/api) in the Strava UI, the [strava-oauth-token tool](#strava-oauth-token) or the [OAuth Workflow](#oauth) in your application.
 
 ```ruby
 client = Strava::Api::Client.new(
@@ -293,12 +293,12 @@ end
 
 ## Tools
 
-### OAuth Token
+### Strava OAuth Token
 
-Use [bin/oauth-token](bin/outh-token) to obtain a token from the command-line. This will open a new browser window, navigate to Strava, request the appropriate permissions, then handle OAuth in a local redirect. The token type, refresh token, access token and token expiration will be displayed in the browser.
+Use [strava-oauth-token](bin/strava-outh-token.rb) to obtain a token from the command-line. This will open a new browser window, navigate to Strava, request the appropriate permissions, then handle OAuth in a local redirect. The token type, refresh token, access token and token expiration will be displayed in the browser.
 
 ```bash
-$ STRAVA_CLIENT_ID=... STRAVA_CLIENT_SECRET=... bundle exec bin/oauth-token.rb
+$ STRAVA_CLIENT_ID=... STRAVA_CLIENT_SECRET=... strava-oauth-token
 ```
 
 ## Contributing

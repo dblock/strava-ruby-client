@@ -9,8 +9,7 @@ Gem::Specification.new do |s|
   s.email = 'dblock@dblock.org'
   s.platform = Gem::Platform::RUBY
   s.required_rubygems_version = '>= 1.3.6'
-  s.files = `git ls-files`.split("\n")
-  s.test_files = `git ls-files -- spec/*`.split("\n")
+  s.files = Dir['{bin,lib}/**/*'] + ['README.md', 'LICENSE.md', 'CHANGELOG.md']
   s.require_paths = ['lib']
   s.homepage = 'http://github.com/dblock/strava-ruby-client'
   s.licenses = ['MIT']
