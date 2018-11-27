@@ -22,7 +22,10 @@ module Strava
       end
 
       #
-      # Get logged-in athlete.
+      # Get activity.
+      #
+      # @option options [String] :id
+      #   Activity id.
       #
       def activity(options = {})
         throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
@@ -54,6 +57,9 @@ module Strava
 
       #
       # Update an activity.
+      #
+      # @option options [String] :id
+      #   Activity id.
       # @option options [Boolean] :commute
       #   Whether this activity is a commute.
       # @option options [Boolean] :trainer
