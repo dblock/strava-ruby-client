@@ -1,3 +1,7 @@
+### 0.3.0 (Next)
+
+* Your contribution here.
+
 ### 0.2.0 (2018/11/27)
 
 * Added `Strava::Api::Client#activity` with segments, photos, similar activities, trends, laps and gear - [@dblock](https://github.com/dblock).
