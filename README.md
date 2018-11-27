@@ -19,6 +19,10 @@ Unlike [strava-api-v3](https://github.com/jaredholdcroft/strava-api-v3) provides
     - [Club Activities](#club-activities)
     - [Create Activity](#create-activity)
     - [Get Activity](#get-activity)
+    - [Activity Comments](#activity-comments)
+    - [Activity Kudoers](#activity-kudoers)
+    - [Activity Laps](#activity-laps)
+    - [Activity Zones](#activity-zones)
     - [Pagination](#pagination)
   - [OAuth](#oauth)
 - [Configuration](#configuration)
@@ -145,6 +149,65 @@ activity = client.activity(id: 1982980795)
 activity.name # => 'Afternoon Run'
 activity.strava_url # => 'https://www.strava.com/activities/1982980795'
 ```
+
+#### Activity Comments
+
+Get activity comments.
+
+```ruby
+comments = client.activity_comments(id: 1982980795) # => Array[Strava::Models::Comment]
+
+comment = comments.first # => Strava::Models::Comment
+
+comment.text # => 'Молодчина!'
+comment.athlete.username # => 'zolotov'
+```
+
+See [Strava::Models::Comment](lib/strava/models/comment.rb) for all available properties.
+
+#### Activity Kudoers
+
+Get activity kodoers.
+
+```ruby
+kudoers = client.activity_kudos(id: 1982980795) # => Array[Strava::Models::Athlete]
+
+kodoer = kudoers.first # => Strava::Models::Athlete
+
+kudoer.username # => 'zolotov'
+```
+
+#### Activity Laps
+
+Get activity laps.
+
+```ruby
+laps = client.activity_laps(id: 1982980795) # => Array[Strava::Models::Lap]
+
+lap = laps.first # => Strava::Models::Lap
+
+lap.name # => 'Lap 1'
+```
+
+See [Strava::Models::Lap](lib/strava/models/lap.rb) for all available properties.
+
+#### Activity Zones
+
+Get activity zones.
+
+```ruby
+zones = client.activity_zones(id: 1982980795) # => Array[Strava::Models::ActivityZone]
+
+zone = zones.first # => Strava::Models::ActivityZone
+zones.type # => 'heartrate'
+
+distribution_bucket = activity_zone.distribution_buckets.first # => Strava::Models::TimedZoneRange
+distribution_bucket.min # => 0
+distribution_bucket.max # => 123
+distribution_bucket.time # => 20
+```
+
+See [Strava::Models::ActivityZone](lib/strava/models/activity_zone.rb) and [Strava::Models::TimedZoneRange](lib/strava/models/timed_zone_range.rb) for all available properties.
 
 #### Pagination
 

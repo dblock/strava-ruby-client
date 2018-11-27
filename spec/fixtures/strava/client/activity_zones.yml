@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.strava.com/api/v3/activities/1946417534/zones?id=1946417534
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer access-token
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Strava Ruby Client/0.1.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 27 Nov 2018 19:23:43 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Via:
+      - 1.1 linkerd
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '600,30000'
+      X-Request-Id:
+      - 3776b9de-e6c5-4d2e-aaa1-e6df119e090d
+      Etag:
+      - W/"255a7945f2ec003a49be3024cc3a940b"
+      X-Ratelimit-Usage:
+      - '94,10391'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: '[{"score":656,"distribution_buckets":[{"max":123,"min":0,"time":20},{"max":153,"min":123,"time":616},{"max":169,"min":153,"time":3425},{"max":184,"min":169,"time":9003},{"max":-1,"min":184,"time":21}],"type":"heartrate","resource_state":3,"sensor_based":true,"points":452,"custom_zones":false},{"score":8,"distribution_buckets":[{"max":2.993986718815811,"min":0,"time":3649},{"max":3.5223373162538953,"min":2.993986718815811,"time":5960},{"max":3.9271831932512553,"min":3.5223373162538953,"time":2473},{"max":4.508315830392929,"min":3.9271831932512553,"time":680},{"max":-1,"min":4.508315830392929,"time":323}],"type":"pace","resource_state":3,"sensor_based":true}]'
+    http_version:
+  recorded_at: Tue, 27 Nov 2018 19:23:43 GMT
+recorded_with: VCR 4.0.0

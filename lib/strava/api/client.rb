@@ -32,6 +32,15 @@ module Strava
       #
       # List logged-in athlete activities.
       #
+      # @option options [Integer] :before
+      #   An epoch timestamp to use for filtering activities that have taken place before a certain time.
+      # @option options [Integer] :after
+      #   An epoch timestamp to use for filtering activities that have taken place after a certain time.
+      # @option options [Integer] :page
+      #   Page number.
+      # @option options [Integer] :per_page
+      #   Number of items per page. Defaults to 30.
+      #
       def athlete_activities(options = {}, &block)
         paginate 'athlete/activities', options, Strava::Models::Activity, &block
       end
@@ -46,6 +55,11 @@ module Strava
       #
       # List logged-in athlete clubs.
       #
+      # @option options [Integer] :page
+      #   Page number.
+      # @option options [Integer] :per_page
+      #   Number of items per page. Defaults to 30.
+      #
       def athlete_clubs(options = {}, &block)
         paginate 'athlete/clubs', options, Strava::Models::Club, &block
       end
@@ -55,10 +69,70 @@ module Strava
       #
       # @option options [String] :id
       #   Club id.
+      # @option options [Integer] :page
+      #   Page number.
+      # @option options [Integer] :per_page
+      #   Number of items per page. Defaults to 30.
       #
       def club_activities(options = {}, &block)
         throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
         paginate "clubs/#{options[:id]}/activities", options.except(:id), Strava::Models::Activity, &block
+      end
+
+      #
+      # List activity comments.
+      #
+      # @option options [String] :id
+      #   Activity id.
+      # @option options [Integer] :page
+      #   Page number.
+      # @option options [Integer] :per_page
+      #   Number of items per page. Defaults to 30.
+      #
+      def activity_comments(options = {}, &block)
+        throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
+        paginate "activities/#{options[:id]}/comments", options.except(:id), Strava::Models::Comment, &block
+      end
+
+      #
+      # List activity kudoers.
+      #
+      # @option options [String] :id
+      #   Activity id.
+      # @option options [Integer] :page
+      #   Page number.
+      # @option options [Integer] :per_page
+      #   Number of items per page. Defaults to 30.
+      #
+      def activity_kudos(options = {}, &block)
+        throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
+        paginate "activities/#{options[:id]}/kudos", options.except(:id), Strava::Models::Athlete, &block
+      end
+
+      #
+      # Get activity zones.
+      #
+      # @option options [String] :id
+      #   Activity id.
+      #
+      def activity_zones(options = {})
+        throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
+        get("activities/#{options[:id]}/zones", options).map do |row|
+          Strava::Models::ActivityZone.new(row)
+        end
+      end
+
+      #
+      # Get activity laps.
+      #
+      # @option options [String] :id
+      #   Activity id.
+      #
+      def activity_laps(options = {})
+        throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
+        get("activities/#{options[:id]}/laps", options).map do |row|
+          Strava::Models::Lap.new(row)
+        end
       end
 
       class << self

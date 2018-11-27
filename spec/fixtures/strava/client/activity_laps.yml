@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.strava.com/api/v3/activities/1946417534/laps?id=1946417534
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer access-token
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Strava Ruby Client/0.1.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 27 Nov 2018 19:40:36 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Via:
+      - 1.1 linkerd
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '600,30000'
+      X-Request-Id:
+      - 4629dd58-b6ae-46df-a815-f1a99ab2d5a6
+      Etag:
+      - W/"765137367f4be7fad714825122ed5260"
+      X-Ratelimit-Usage:
+      - '92,10483'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: '[{"id":6270116916,"resource_state":2,"name":"Lap 1","activity":{"id":1946417534,"resource_state":1},"athlete":{"id":26462176,"resource_state":1},"elapsed_time":13306,"moving_time":13299,"start_date":"2018-11-04T14:53:46Z","start_date_local":"2018-11-04T09:53:46Z","distance":42882.9,"start_index":0,"end_index":13128,"total_elevation_gain":270.9,"average_speed":3.22,"max_speed":5.6,"average_heartrate":170.1,"max_heartrate":187.0,"lap_index":1,"split":1,"pace_zone":2}]'
+    http_version:
+  recorded_at: Tue, 27 Nov 2018 19:40:36 GMT
+recorded_with: VCR 4.0.0

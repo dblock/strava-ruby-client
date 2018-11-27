@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.strava.com/api/v3/activities/1946417534/comments
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer access-token
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Strava Ruby Client/0.1.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 27 Nov 2018 19:23:41 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Via:
+      - 1.1 linkerd
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '600,30000'
+      X-Request-Id:
+      - 89a9bb10-e44f-4e0c-a739-b47dc2315753
+      Etag:
+      - W/"3d36d36ff4b8ac796b0fad00f72dbcb2"
+      X-Ratelimit-Usage:
+      - '92,10389'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: "[{\"id\":443703635,\"activity_id\":1946417534,\"post_id\":null,\"resource_state\":2,\"text\":\"Молодчина!\",\"mentions_metadata\":null,\"created_at\":\"2018-11-05T02:31:22Z\",\"athlete\":{\"id\":501473,\"username\":\"zolotov\",\"resource_state\":2,\"firstname\":\"Vasili\",\"lastname\":\"Zolotov\",\"city\":\"Sausalito\",\"state\":\"California\",\"country\":\"United
+        States\",\"sex\":\"M\",\"premium\":false,\"summit\":false,\"created_at\":\"2012-05-13T18:59:40Z\",\"updated_at\":\"2018-09-30T19:27:07Z\",\"badge_type_id\":0,\"profile_medium\":\"https://dgalywyr863hv.cloudfront.net/pictures/athletes/501473/4232963/1/medium.jpg\",\"profile\":\"https://dgalywyr863hv.cloudfront.net/pictures/athletes/501473/4232963/1/large.jpg\",\"friend\":\"accepted\",\"follower\":\"accepted\"}},{\"id\":443709988,\"activity_id\":1946417534,\"post_id\":null,\"resource_state\":2,\"text\":\"Way
+        to go Daniel! You beat my first marathon time by 5 min!\",\"mentions_metadata\":null,\"created_at\":\"2018-11-05T03:07:48Z\",\"athlete\":{\"id\":7195689,\"username\":\"mknipes\",\"resource_state\":2,\"firstname\":\"Marlowe\",\"lastname\":\"Knipes\",\"city\":\"East
+        Harlem\",\"state\":\"NY\",\"country\":\"United States\",\"sex\":\"M\",\"premium\":true,\"summit\":true,\"created_at\":\"2014-11-29T21:08:58Z\",\"updated_at\":\"2018-11-16T20:40:35Z\",\"badge_type_id\":1,\"profile_medium\":\"https://dgalywyr863hv.cloudfront.net/pictures/athletes/7195689/2194276/4/medium.jpg\",\"profile\":\"https://dgalywyr863hv.cloudfront.net/pictures/athletes/7195689/2194276/4/large.jpg\",\"friend\":\"accepted\",\"follower\":\"accepted\"}},{\"id\":443716626,\"activity_id\":1946417534,\"post_id\":null,\"resource_state\":2,\"text\":\"Good
+        job! Was this your first?\",\"mentions_metadata\":null,\"created_at\":\"2018-11-05T03:51:24Z\",\"athlete\":{\"id\":3205815,\"username\":\"jean-nicolas_vollmer\",\"resource_state\":2,\"firstname\":\"Jean-Nicolas\",\"lastname\":\"Vollmer\",\"city\":\"San
+        Francisco\",\"state\":\"CA\",\"country\":\"United States\",\"sex\":\"M\",\"premium\":false,\"summit\":false,\"created_at\":\"2013-10-13T20:44:13Z\",\"updated_at\":\"2018-09-27T01:47:04Z\",\"badge_type_id\":0,\"profile_medium\":\"https://dgalywyr863hv.cloudfront.net/pictures/athletes/3205815/5728765/1/medium.jpg\",\"profile\":\"https://dgalywyr863hv.cloudfront.net/pictures/athletes/3205815/5728765/1/large.jpg\",\"friend\":\"accepted\",\"follower\":\"accepted\"}},{\"id\":443726858,\"activity_id\":1946417534,\"post_id\":null,\"resource_state\":2,\"text\":\"Good
+        stuff!! \U0001F44D\",\"mentions_metadata\":null,\"created_at\":\"2018-11-05T05:11:19Z\",\"athlete\":{\"id\":18230818,\"username\":\"marcel_fahle\",\"resource_state\":2,\"firstname\":\"Marcel\",\"lastname\":\"Fahle\",\"city\":\"Denia
+        \",\"state\":\"Comunidad Valenciana \",\"country\":\"\",\"sex\":\"M\",\"premium\":true,\"summit\":true,\"created_at\":\"2016-10-27T04:41:32Z\",\"updated_at\":\"2018-08-02T21:13:34Z\",\"badge_type_id\":1,\"profile_medium\":\"https://dgalywyr863hv.cloudfront.net/pictures/athletes/18230818/5681420/1/medium.jpg\",\"profile\":\"https://dgalywyr863hv.cloudfront.net/pictures/athletes/18230818/5681420/1/large.jpg\",\"friend\":\"accepted\",\"follower\":\"accepted\"}},{\"id\":443808284,\"activity_id\":1946417534,\"post_id\":null,\"resource_state\":2,\"text\":\"Thanks!
+        Was my first but not last. Already have my spot for next year thanks to 9+1.\",\"mentions_metadata\":null,\"created_at\":\"2018-11-05T12:23:16Z\",\"athlete\":{\"id\":26462176,\"username\":\"dblockdotorg\",\"resource_state\":2,\"firstname\":\"Daniel\",\"lastname\":\"Doubrovkine\",\"city\":\"New
+        York\",\"state\":\"NY\",\"country\":\"\",\"sex\":\"M\",\"premium\":true,\"summit\":true,\"created_at\":\"2017-11-28T19:05:35Z\",\"updated_at\":\"2018-11-25T13:43:32Z\",\"badge_type_id\":1,\"profile_medium\":\"https://dgalywyr863hv.cloudfront.net/pictures/athletes/26462176/7677115/2/medium.jpg\",\"profile\":\"https://dgalywyr863hv.cloudfront.net/pictures/athletes/26462176/7677115/2/large.jpg\",\"friend\":null,\"follower\":null,\"email\":\"dblock@dblock.org\"}},{\"id\":444866165,\"activity_id\":1946417534,\"post_id\":null,\"resource_state\":2,\"text\":\"Awesome!!\",\"mentions_metadata\":null,\"created_at\":\"2018-11-09T06:59:44Z\",\"athlete\":{\"id\":35711069,\"username\":null,\"resource_state\":2,\"firstname\":\"Adam\",\"lastname\":\"Healey\",\"city\":null,\"state\":null,\"country\":null,\"sex\":\"M\",\"premium\":true,\"summit\":true,\"created_at\":\"2018-10-14T19:41:41Z\",\"updated_at\":\"2018-10-16T12:09:35Z\",\"badge_type_id\":1,\"profile_medium\":\"https://graph.facebook.com/10161081928960654/picture?height=256\\u0026width=256\",\"profile\":\"https://graph.facebook.com/10161081928960654/picture?height=256\\u0026width=256\",\"friend\":\"accepted\",\"follower\":\"accepted\"}},{\"id\":446632993,\"activity_id\":1946417534,\"post_id\":null,\"resource_state\":2,\"text\":\"Hello
+        Daniel. Congratulations for running this amazing marathon. I invite you to
+        watch the video I published showing this race: https://www.youtube.com/watch?v=_Q_HZtqrX_M\\u0026amp;refStrava=1946417534
+        Maybe you can find you in some scene, or find somone you know. Best regards\",\"mentions_metadata\":null,\"created_at\":\"2018-11-14T04:18:11Z\",\"athlete\":{\"id\":7026966,\"username\":\"fabiomedeiros\",\"resource_state\":2,\"firstname\":\"Fabio\",\"lastname\":\"-
+        Correr é Viver ✅\U0001F3F0\U0001F5FD\",\"city\":\"Barueri\",\"state\":\"SP\",\"country\":\"Brazil\",\"sex\":\"M\",\"premium\":false,\"summit\":false,\"created_at\":\"2014-11-08T19:13:01Z\",\"updated_at\":\"2018-11-23T08:26:35Z\",\"badge_type_id\":0,\"profile_medium\":\"https://dgalywyr863hv.cloudfront.net/pictures/athletes/7026966/2119173/3/medium.jpg\",\"profile\":\"https://dgalywyr863hv.cloudfront.net/pictures/athletes/7026966/2119173/3/large.jpg\",\"friend\":null,\"follower\":null}},{\"id\":446633646,\"activity_id\":1946417534,\"post_id\":null,\"resource_state\":2,\"text\":\"Fabio
+        - Correr é Viver ✅\U0001F3F0\U0001F5FD cool video :)\",\"mentions_metadata\":null,\"created_at\":\"2018-11-14T04:24:53Z\",\"athlete\":{\"id\":26462176,\"username\":\"dblockdotorg\",\"resource_state\":2,\"firstname\":\"Daniel\",\"lastname\":\"Doubrovkine\",\"city\":\"New
+        York\",\"state\":\"NY\",\"country\":\"\",\"sex\":\"M\",\"premium\":true,\"summit\":true,\"created_at\":\"2017-11-28T19:05:35Z\",\"updated_at\":\"2018-11-25T13:43:32Z\",\"badge_type_id\":1,\"profile_medium\":\"https://dgalywyr863hv.cloudfront.net/pictures/athletes/26462176/7677115/2/medium.jpg\",\"profile\":\"https://dgalywyr863hv.cloudfront.net/pictures/athletes/26462176/7677115/2/large.jpg\",\"friend\":null,\"follower\":null,\"email\":\"dblock@dblock.org\"}}]"
+    http_version:
+  recorded_at: Tue, 27 Nov 2018 19:23:41 GMT
+recorded_with: VCR 4.0.0
