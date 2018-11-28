@@ -49,6 +49,13 @@ module Strava
       end
 
       #
+      # Get athlete zones.
+      #
+      def athlete_zones(options = {})
+        Strava::Models::Zones.new(get('athlete/zones', options))
+      end
+
+      #
       # Create an activity.
       #
       def create_activity(options = {})

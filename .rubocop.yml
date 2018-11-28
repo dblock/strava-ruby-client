@@ -12,4 +12,7 @@ Naming/FileName:
 Style/ModuleFunction:
   EnforcedStyle: extend_self
 
+Style/Documentation:
+  Enabled: false
+
 inherit_from: .rubocop_todo.yml

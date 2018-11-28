@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.strava.com/api/v3/athlete/zones
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer access-token
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Strava Ruby Client/0.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 28 Nov 2018 13:35:50 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Via:
+      - 1.1 linkerd
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '600,30000'
+      X-Request-Id:
+      - f2740968-ed85-4056-8042-ba385725440c
+      Etag:
+      - W/"4261668f4f0ab5e0c030c2e03c48ad83"
+      X-Ratelimit-Usage:
+      - '1,7343'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: '{"power":{"zones":[{"min":0,"max":10}]},"heart_rate":{"custom_zones":false,"zones":[{"min":0,"max":123},{"min":123,"max":153},{"min":153,"max":169},{"min":169,"max":184},{"min":184,"max":-1}]}}'
+    http_version:
+  recorded_at: Wed, 28 Nov 2018 13:35:50 GMT
+recorded_with: VCR 4.0.0

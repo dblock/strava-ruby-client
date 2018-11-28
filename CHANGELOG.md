@@ -1,5 +1,6 @@
 ### 0.3.0 (Next)
 
+* Added `Strava::Api::Client#athlete_zones` - [@dblock](https://github.com/dblock).
 * Your contribution here.
 
 ### 0.2.0 (2018/11/27)
