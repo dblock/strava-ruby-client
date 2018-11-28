@@ -40,6 +40,8 @@ require_relative 'strava/models/zones'
 require_relative 'strava/models/heart_rate_zone_ranges'
 require_relative 'strava/models/power_zone_ranges'
 require_relative 'strava/models/zone_range'
+require_relative 'strava/models/activity_total'
+require_relative 'strava/models/activity_stats'
 
 require_relative 'strava/web/raise_error'
 require_relative 'strava/web/connection'

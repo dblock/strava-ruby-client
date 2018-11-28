@@ -16,6 +16,8 @@ Unlike [strava-api-v3](https://github.com/jaredholdcroft/strava-api-v3) provides
     - [Athlete](#athlete)
     - [Athlete Activities](#athlete-activities)
     - [Athlete Clubs](#athlete-clubs)
+    - [Athlete Zones](#athlete-zones)
+    - [Athlete Stats](#athlete-stats)
     - [Club Activities](#club-activities)
     - [Create Activity](#create-activity)
     - [Update Activity](#update-activity)
@@ -107,6 +109,46 @@ activity.strava_url # => 'https://www.strava.com/clubs/nyrr'
 ```
 
 See [Strava::Models::Club](lib/strava/models/club.rb) for all available properties.
+
+#### Athlete Zones
+
+Returns the the authenticated athlete's heart rate and power zones.
+
+```ruby
+athlete_zones = client.athlete_zones # => Strava::Models::Zones
+
+heart_rate = athlete_zones.heart_rate # => Strava::Models::HeartRateZoneRanges
+heart_rate.custom_zone # => false
+
+zone = heart_rate.zones.first # => Strava::Models::ZoneRange
+zone.min # => 0
+zone.max # => 123
+```
+
+See [Strava::Models::Zones](lib/strava/models/zones.rb), [Strava::Models::HeartRateZoneRanges](lib/strava/models/heart_rate_zone_ranges.rb), [Strava::Models::PowerZoneRanges](lib/strava/models/power_zone_ranges.rb) and [Strava::Models::ZoneRange](lib/strava/models/zone_range.rb) for all available properties.
+
+#### Athlete Stats
+
+Returns the activity stats of an athlete.
+
+```ruby
+athlete_stats = client.athlete_stats(id: 26462176) # => Strava::Models::ActivityStats
+
+recent_run_totals = athlete_stats.recent_ride_totals # => Strava::Models::ActivityTotal
+
+recent_run_totals.count # => 7
+recent_run_totals.distance # => 78049.90087890625
+recent_run_totals.distance_s # => '78.05km'
+recent_run_totals.moving_time # => 25647
+recent_run_totals.moving_time_in_hours_s # => '7h7m27s'
+recent_run_totals.elapsed_time # => 26952
+recent_run_totals.elapsed_time_in_hours_s # => '7h29m12s'
+recent_run_totals.elevation_gain # => 595.4644241333008
+recent_run_totals.total_elevation_gain_s # => '595.5m'
+recent_run_totals.achievement_count # => 19
+```
+
+See [Strava::Models::ActivityStats](lib/strava/models/activity_stats.rb) and [Strava::Models::ActivityTotal](lib/strava/models/activity_total.rb) for all available properties.
 
 #### Club Activities
 

@@ -51,6 +51,17 @@ module Strava
       #
       # Get athlete zones.
       #
+      # @option options [String] :id
+      #   Athlete id.
+      #
+      def athlete_stats(options = {})
+        throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
+        Strava::Models::ActivityStats.new(get("athletes/#{options[:id]}/stats", options.except(:id)))
+      end
+
+      #
+      # Get athlete stats.
+      #
       def athlete_zones(options = {})
         Strava::Models::Zones.new(get('athlete/zones', options))
       end
