@@ -1,5 +1,6 @@
 ### 0.3.0 (Next)
 
+* Added webhooks support - [@dblock](https://github.com/dblock).
 * Added `Strava::Api::Client#athlete_zones` - [@dblock](https://github.com/dblock).
 * Added `Strava::Api::Client#athlete_stats` - [@dblock](https://github.com/dblock).
 * Your contribution here.

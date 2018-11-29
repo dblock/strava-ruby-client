@@ -6,7 +6,7 @@ Strava Ruby Client
 
 A newer Ruby client for the [Strava API v3](https://developers.strava.com).
 
-Unlike [strava-api-v3](https://github.com/jaredholdcroft/strava-api-v3) provides complete OAuth refresh token flow support, a richer first class interface to Strava models, natively supports pagination and implements more consistent error handling.
+Unlike [strava-api-v3](https://github.com/jaredholdcroft/strava-api-v3) provides complete OAuth refresh token flow support, webhooks support, a richer first class interface to Strava models, natively supports pagination and implements more consistent error handling.
 
 ## Table of Contents
 
@@ -30,10 +30,12 @@ Unlike [strava-api-v3](https://github.com/jaredholdcroft/strava-api-v3) provides
     - [List Athlete Clubs](#list-athlete-clubs)
   - [Pagination](#pagination)
   - [OAuth](#oauth)
+  - [Webhooks](#webhooks)
 - [Configuration](#configuration)
   - [Web Client Options](#web-client-options)
   - [API Client Options](#api-client-options)
   - [OAuth Client Options](#oauth-client-options)
+  - [Webhooks Client Options](#webhooks-client-options)
 - [Errors](#errors)
 - [Tools](#tools)
   - [Strava OAuth Token](#strava-oauth-token)
@@ -333,6 +335,79 @@ response.refresh_token # new refresh token
 response.expires_at # new timestamp when the access token expires
 ```
 
+### Webhooks
+
+Strava provides a [Webhook Event API](https://developers.strava.com/docs/webhooks/) that requires special access obtained by emailing [developers@strava.com](mailto:developers@strava.com).
+
+A complete example that handles subscription creation, deletion and handling can be found in [strava-webhooks.rb](bin/strava-webhooks.rb), run `strava-webhooks` to see current registrations, `strava-webhooks handle` to run an HTTP server that handles both challenges and event data, `strava-webhooks create [url]` to create a new subscription and `strava-webhooks delete [id]` to delete it.
+
+Before creating a webhook subscription you must implement and run an HTTP server that will handle a `GET` challenge at the subscription URL.
+
+```ruby
+challenge = Strava::Webhooks::Models::Challenge.new(request.query)
+raise 'Bad Request' unless challenge.verify_token == 'token'
+response.content_type = 'application/json'
+response.body = challenge.response.to_json
+```
+
+See [Strava::Webhooks::Models::Challenge](lib/strava/webhooks/models/challenge.rb) for details.
+
+An existing subscription must be handled in the same HTTP server's `POST` request to the subscription URL.
+
+```ruby
+event = Strava::Webhooks::Models::Event.new(JSON.parse(request.body))
+
+event # => Strava::Webhooks::Models::Event
+event.object_type # => 'activity'
+event.object_id # => 1991813808
+event.aspect_type # => 'update'
+event.updates # => { 'type' => 'Walk' }
+event.owner_id # => 29323238
+event.subscription_id # => 131302
+event.event_time # => DateTime
+```
+
+See [Strava::Webhooks::Models::Event](lib/strava/webhooks/models/event.rb) for details.
+
+Subscriptions can be created, listed and deleted.
+
+Create a client.
+
+```ruby
+client = Strava::Webhooks::Client.new(
+  client_id: "12345",
+  client_secret: "12345678987654321"
+)
+```
+
+Create a subscription.
+
+```ruby
+subscription = client.create_push_subscription(callback_url: 'http://example.com/strava', verify_token: 'token')
+
+subscription # => Strava::Webhooks::Models::Subscription
+subscription.id # => 131300
+subscription.callback_url # => 'http://example.com/strava'
+```
+
+See [Strava::Webhooks::Models::Subscription](lib/strava/webhooks/models/subscription.rb) for details.
+
+List an existing subscription. Strava seems to only allow one.
+
+```ruby
+subscriptions = client.push_subscriptions
+
+subscription = subscriptions.first # => Strava::Webhooks::Models::Subscription
+subscription.id # => 131300
+subscription.callback_url # => 'http://example.com/strava'
+```
+
+Delete an existing subscription.
+
+```ruby
+client.delete_push_subscription(id: 131300) # => nil
+```
+
 ## Configuration
 
 ### Web Client Options
@@ -407,6 +482,33 @@ setting             | description
 client_id           | Application client ID.
 client_secret       | Application client secret.
 endpoint            | Defaults to `https://www.strava.com/oauth`.
+
+### Webhooks Client Options
+
+The Webhooks client inherits web client options and provides additional application configuration. These can be configured globally or for a client instance.
+
+```ruby
+Strava::Webhooks.configure do |config|
+  config.client_id = "..." # Strava client ID
+  config.client_secret = "..." # Strava client secret
+end
+```
+
+```ruby
+client = Strava::Webhooks::Client.new(
+  client_id: "...",
+  client_secret: "...",
+  user_agent: "..."
+)
+```
+
+The following settings are supported.
+
+setting             | description
+--------------------|------------
+client_id           | Application client ID.
+client_secret       | Application client secret.
+endpoint            | Defaults to `https://api.strava.com/api/v3`.
 
 ## Errors
 

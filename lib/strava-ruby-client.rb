@@ -52,6 +52,12 @@ require_relative 'strava/web/client'
 require_relative 'strava/oauth/config'
 require_relative 'strava/oauth/client'
 
+require_relative 'strava/webhooks/config'
+require_relative 'strava/webhooks/client'
+require_relative 'strava/webhooks/models/challenge'
+require_relative 'strava/webhooks/models/subscription'
+require_relative 'strava/webhooks/models/event'
+
 require_relative 'strava/api/config'
 require_relative 'strava/api/cursor'
 require_relative 'strava/api/endpoints/activities'

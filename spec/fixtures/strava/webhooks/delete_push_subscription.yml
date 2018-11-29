@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://api.strava.com/api/v3/push_subscriptions/131300?client_id=24523&client_secret=client-secret
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Strava Ruby Client/0.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Cache-Control:
+      - no-cache, private
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 29 Nov 2018 21:58:24 GMT
+      X-Ratelimit-Limit:
+      - '600,30000'
+      X-Ratelimit-Usage:
+      - '0,0'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version:
+  recorded_at: Thu, 29 Nov 2018 21:58:24 GMT
+recorded_with: VCR 4.0.0
