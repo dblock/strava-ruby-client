@@ -8,25 +8,27 @@ A newer Ruby client for the [Strava API v3](https://developers.strava.com).
 
 Unlike [strava-api-v3](https://github.com/jaredholdcroft/strava-api-v3) provides complete OAuth refresh token flow support, a richer first class interface to Strava models, natively supports pagination and implements more consistent error handling.
 
-# Table of Contents
+## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
-  - [API](#api)
-    - [Athlete](#athlete)
-    - [Athlete Activities](#athlete-activities)
-    - [Athlete Clubs](#athlete-clubs)
-    - [Athlete Zones](#athlete-zones)
-    - [Athlete Stats](#athlete-stats)
-    - [Club Activities](#club-activities)
-    - [Create Activity](#create-activity)
-    - [Update Activity](#update-activity)
+  - [Activities](#activities)
+    - [Create an Activity](#create-an-activity)
     - [Get Activity](#get-activity)
-    - [Activity Comments](#activity-comments)
-    - [Activity Kudoers](#activity-kudoers)
-    - [Activity Laps](#activity-laps)
-    - [Activity Zones](#activity-zones)
-    - [Pagination](#pagination)
+    - [List Activity Comments](#list-activity-comments)
+    - [List Activity Kudoers](#list-activity-kudoers)
+    - [List Activity Laps](#list-activity-laps)
+    - [List Athlete Activities](#list-athlete-activities)
+    - [Get Activity Zones](#get-activity-zones)
+    - [Update Activity](#update-activity)
+  - [Athletes](#athletes)
+    - [Get Authenticated Athlete](#get-authenticated-athlete)
+    - [Get Zones](#get-zones)
+    - [Get Athlete Stats](#get-athlete-stats)
+  - [Clubs](#clubs)
+    - [List Club Activities](#list-club-activities)
+    - [List Athlete Clubs](#list-athlete-clubs)
+  - [Pagination](#pagination)
   - [OAuth](#oauth)
 - [Configuration](#configuration)
   - [Web Client Options](#web-client-options)
@@ -50,8 +52,6 @@ Run `bundle install`.
 
 ## Usage
 
-### API
-
 Use an access token obtained from [My API Application](https://www.strava.com/settings/api) in the Strava UI, the [strava-oauth-token tool](#strava-oauth-token) or the [OAuth Workflow](#oauth) in your application.
 
 ```ruby
@@ -60,19 +60,82 @@ client = Strava::Api::Client.new(
 )
 ```
 
-#### Athlete
+### Activities
 
-Get currently logged-in athlete.
+#### Create an Activity
+
+Creates a manual activity for an athlete.
 
 ```ruby
-client.athlete # => Strava::Models::Athlete
+activity = client.create_activity(
+  name: 'Afternoon Run',
+  type: 'Run',
+  start_date_local: Time.now,
+  elapsed_time: 1234, # in seconds
+  description: 'Test run.',
+  distance: 1000 # in meters
+)
+
+activity.name # => 'Afternoon Run'
+activity.strava_url # => 'https://www.strava.com/activities/1982980795'
 ```
 
-See [Strava::Models::Athlete](lib/strava/models/athlete.rb) for all available properties.
+#### Get Activity
 
-#### Athlete Activities
+Returns the given activity that is owned by the authenticated athlete, including description, photos, gear, splits, segments and laps.
 
-Get currently logged-in athlete activities.
+```ruby
+activity = client.activity(id: 1982980795)
+
+activity.name # => 'Afternoon Run'
+activity.strava_url # => 'https://www.strava.com/activities/1982980795'
+```
+
+#### List Activity Comments
+
+Returns the comments on the given activity.
+
+```ruby
+comments = client.activity_comments(id: 1982980795) # => Array[Strava::Models::Comment]
+
+comment = comments.first # => Strava::Models::Comment
+
+comment.text # => 'Молодчина!'
+comment.athlete.username # => 'zolotov'
+```
+
+See [Strava::Models::Comment](lib/strava/models/comment.rb) for all available properties.
+
+#### List Activity Kudoers
+
+Returns the athletes who kudoed an activity identified by an identifier.
+
+```ruby
+kudoers = client.activity_kudos(id: 1982980795) # => Array[Strava::Models::Athlete]
+
+kodoer = kudoers.first # => Strava::Models::Athlete
+
+kudoer.username # => 'zolotov'
+```
+
+#### List Activity Laps
+
+Returns the laps of an activity identified by an identifier.
+
+```ruby
+laps = client.activity_laps(id: 1982980795) # => Array[Strava::Models::Lap]
+
+lap = laps.first # => Strava::Models::Lap
+
+lap.name # => 'Lap 1'
+```
+
+See [Strava::Models::Lap](lib/strava/models/lap.rb) for all available properties.
+
+
+#### List Athlete Activities
+
+Returns the currently logged-in athlete's activities.
 
 ```ruby
 activities = client.athlete_activities # => Array[Strava::Models::Activity]
@@ -95,22 +158,54 @@ activity.total_elevation_gain_in_feet_s # => '888.8ft'
 
 See [Strava::Models::Activity](lib/strava/models/activity.rb), [Strava::Models::Mixins::Distance](lib/strava/models/mixins/distance.rb), [Strava::Models::Mixins::Elevation](lib/strava/models/mixins/elevation.rb) and [Strava::Models::Mixins::Time](lib/strava/models/mixins/time.rb) for all available properties.
 
-#### Athlete Clubs
+#### Get Activity Zones
 
-Get currently logged-in athlete clubs.
+Summit Feature. Returns the zones of a given activity.
 
 ```ruby
-clubs = client.athlete_clubs # => Array[Strava::Models::Club]
+zones = client.activity_zones(id: 1982980795) # => Array[Strava::Models::ActivityZone]
 
-club = clubs.first # => Strava::Models::Activity
+zone = zones.first # => Strava::Models::ActivityZone
+zones.type # => 'heartrate'
 
-activity.name # => 'NYRR'
-activity.strava_url # => 'https://www.strava.com/clubs/nyrr'
+distribution_bucket = activity_zone.distribution_buckets.first # => Strava::Models::TimedZoneRange
+distribution_bucket.min # => 0
+distribution_bucket.max # => 123
+distribution_bucket.time # => 20
 ```
 
-See [Strava::Models::Club](lib/strava/models/club.rb) for all available properties.
+See [Strava::Models::ActivityZone](lib/strava/models/activity_zone.rb) and [Strava::Models::TimedZoneRange](lib/strava/models/timed_zone_range.rb) for all available properties.
 
-#### Athlete Zones
+#### Update Activity
+
+Update an activity.
+
+```ruby
+activity = client.update_activity(
+  id: 1982980795,
+  name: 'Afternoon Run (Updated)',
+  type: 'Run',
+  description: 'It was cold.'
+)
+
+activity.name # => 'Afternoon Run (Updated)'
+activity.strava_url # => 'https://www.strava.com/activities/1982980795'
+```
+
+### Athletes
+
+#### Get Authenticated Athlete
+
+Returns the currently authenticated athlete.
+
+```ruby
+client.athlete # => Strava::Models::Athlete
+```
+
+See [Strava::Models::Athlete](lib/strava/models/athlete.rb) for all available properties.
+
+
+#### Get Zones
 
 Returns the the authenticated athlete's heart rate and power zones.
 
@@ -127,7 +222,7 @@ zone.max # => 123
 
 See [Strava::Models::Zones](lib/strava/models/zones.rb), [Strava::Models::HeartRateZoneRanges](lib/strava/models/heart_rate_zone_ranges.rb), [Strava::Models::PowerZoneRanges](lib/strava/models/power_zone_ranges.rb) and [Strava::Models::ZoneRange](lib/strava/models/zone_range.rb) for all available properties.
 
-#### Athlete Stats
+#### Get Athlete Stats
 
 Returns the activity stats of an athlete.
 
@@ -150,9 +245,11 @@ recent_run_totals.achievement_count # => 19
 
 See [Strava::Models::ActivityStats](lib/strava/models/activity_stats.rb) and [Strava::Models::ActivityTotal](lib/strava/models/activity_total.rb) for all available properties.
 
-#### Club Activities
+### Clubs
 
-Get club activities.
+#### List Club Activities
+
+Retrieve recent activities from members of a specific club.
 
 ```ruby
 activities = client.club_activities(id: 108605) # => Array[Strava::Models::Activity]
@@ -164,111 +261,22 @@ activity.name # => 'Afternoon Run'
 
 See [Strava::Models::Activity](lib/strava/models/activity.rb) for all available properties. Note that Strava does not return activity or athlete ID via this API.
 
-#### Create Activity
+#### List Athlete Clubs
 
-Create an activity.
-
-```ruby
-activity = client.create_activity(
-  name: 'Afternoon Run',
-  type: 'Run',
-  start_date_local: Time.now,
-  elapsed_time: 1234, # in seconds
-  description: 'Test run.',
-  distance: 1000 # in meters
-)
-
-activity.name # => 'Afternoon Run'
-activity.strava_url # => 'https://www.strava.com/activities/1982980795'
-```
-
-#### Update Activity
-
-Update an activity.
+Returns a list of the clubs whose membership includes the authenticated athlete.
 
 ```ruby
-activity = client.update_activity(
-  id: 1982980795,
-  name: 'Afternoon Run (Updated)',
-  type: 'Run',
-  description: 'It was cold.'
-)
+clubs = client.athlete_clubs # => Array[Strava::Models::Club]
 
-activity.name # => 'Afternoon Run (Updated)'
-activity.strava_url # => 'https://www.strava.com/activities/1982980795'
+club = clubs.first # => Strava::Models::Activity
+
+activity.name # => 'NYRR'
+activity.strava_url # => 'https://www.strava.com/clubs/nyrr'
 ```
 
-#### Get Activity
+See [Strava::Models::Club](lib/strava/models/club.rb) for all available properties.
 
-Get a detailed activity by ID, including description, photos, gear, splits, segments and laps.
-
-```ruby
-activity = client.activity(id: 1982980795)
-
-activity.name # => 'Afternoon Run'
-activity.strava_url # => 'https://www.strava.com/activities/1982980795'
-```
-
-#### Activity Comments
-
-Get activity comments.
-
-```ruby
-comments = client.activity_comments(id: 1982980795) # => Array[Strava::Models::Comment]
-
-comment = comments.first # => Strava::Models::Comment
-
-comment.text # => 'Молодчина!'
-comment.athlete.username # => 'zolotov'
-```
-
-See [Strava::Models::Comment](lib/strava/models/comment.rb) for all available properties.
-
-#### Activity Kudoers
-
-Get activity kodoers.
-
-```ruby
-kudoers = client.activity_kudos(id: 1982980795) # => Array[Strava::Models::Athlete]
-
-kodoer = kudoers.first # => Strava::Models::Athlete
-
-kudoer.username # => 'zolotov'
-```
-
-#### Activity Laps
-
-Get activity laps.
-
-```ruby
-laps = client.activity_laps(id: 1982980795) # => Array[Strava::Models::Lap]
-
-lap = laps.first # => Strava::Models::Lap
-
-lap.name # => 'Lap 1'
-```
-
-See [Strava::Models::Lap](lib/strava/models/lap.rb) for all available properties.
-
-#### Activity Zones
-
-Get activity zones.
-
-```ruby
-zones = client.activity_zones(id: 1982980795) # => Array[Strava::Models::ActivityZone]
-
-zone = zones.first # => Strava::Models::ActivityZone
-zones.type # => 'heartrate'
-
-distribution_bucket = activity_zone.distribution_buckets.first # => Strava::Models::TimedZoneRange
-distribution_bucket.min # => 0
-distribution_bucket.max # => 123
-distribution_bucket.time # => 20
-```
-
-See [Strava::Models::ActivityZone](lib/strava/models/activity_zone.rb) and [Strava::Models::TimedZoneRange](lib/strava/models/timed_zone_range.rb) for all available properties.
-
-#### Pagination
+### Pagination
 
 Some Strava APIs, including [athlete_activities](#athlete-activities) support pagination when supplying an optional `page` and `per_page` parameter. By default the client retrieves one page of data, which Strava currently defaults to 30 items. You can paginate through more data by supplying a block and an optional `per_page` parameter. The underlying implementation makes page-sized calls and increments the `page` argument.
 

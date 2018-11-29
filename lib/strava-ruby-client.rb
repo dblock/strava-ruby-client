@@ -54,4 +54,7 @@ require_relative 'strava/oauth/client'
 
 require_relative 'strava/api/config'
 require_relative 'strava/api/cursor'
+require_relative 'strava/api/endpoints/activities'
+require_relative 'strava/api/endpoints/athletes'
+require_relative 'strava/api/endpoints/clubs'
 require_relative 'strava/api/client'
