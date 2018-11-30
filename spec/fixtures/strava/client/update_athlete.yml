@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://www.strava.com/api/v3/athlete
+    body:
+      encoding: UTF-8
+      string: weight=90.1
+    headers:
+      Authorization:
+      - Bearer access-token
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Strava Ruby Client/0.3.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 30 Nov 2018 14:51:24 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Via:
+      - 1.1 linkerd
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '600,30000'
+      X-Request-Id:
+      - 14b63166-cd94-421d-b43a-b96565ffdb46
+      Etag:
+      - W/"45688e28fca450cd1f74a9e9b1859e0e"
+      X-Ratelimit-Usage:
+      - '1,7891'
+      X-Frame-Options:
+      - SAMEORIGIN,DENY
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: '{"id":29323238,"username":"play_play","resource_state":3,"firstname":"Play","lastname":"Play","city":"Brooklyn","state":"New
+        York","country":"United States","sex":"M","premium":false,"summit":false,"created_at":"2018-03-28T20:23:16Z","updated_at":"2018-11-30T14:44:46Z","badge_type_id":0,"profile_medium":"avatar/athlete/medium.png","profile":"avatar/athlete/large.png","friend":null,"follower":null,"email":"dblock+playplay@dblock.org","follower_count":0,"friend_count":0,"mutual_friend_count":0,"athlete_type":1,"date_preference":"%m/%d/%Y","measurement_preference":"feet","clubs":[{"id":194356,"resource_state":2,"name":"NYRR
+        Open Run","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/194356/4154778/2/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/194356/4154778/2/large.jpg","cover_photo":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/194356/5939658/7/large.jpg","cover_photo_small":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/194356/5939658/7/small.jpg","sport_type":"running","city":"","state":"New
+        York","country":"United States","private":false,"member_count":0,"featured":false,"verified":false,"url":"NYRROpenRun","membership":"member","admin":false,"owner":false},{"id":281925,"resource_state":2,"name":"NYRR
+        Group Training","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/281925/6247452/1/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/281925/6247452/1/large.jpg","cover_photo":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/281925/6247467/7/large.jpg","cover_photo_small":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/281925/6247467/7/small.jpg","sport_type":"running","city":"New
+        York","state":"New York","country":"United States","private":false,"member_count":0,"featured":false,"verified":false,"url":"NYRRGroupTraining","membership":"member","admin":false,"owner":false}],"ftp":null,"weight":90.1,"bikes":[{"id":"b5377821","primary":false,"name":"Émonda
+        SLR 9 Disc","resource_state":2,"distance":0.0},{"id":"b5377817","primary":true,"name":"Madone
+        SLR 9 Disc eTap","resource_state":2,"distance":0.0}],"shoes":[{"id":"g3844087","primary":true,"name":"adidas
+        Supernova","resource_state":2,"distance":0.0},{"id":"g3844089","primary":false,"name":"Nike
+        Air Jordans","resource_state":2,"distance":0.0}]}'
+    http_version:
+  recorded_at: Fri, 30 Nov 2018 14:51:24 GMT
+recorded_with: VCR 4.0.0

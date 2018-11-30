@@ -25,6 +25,7 @@ Unlike [strava-api-v3](https://github.com/jaredholdcroft/strava-api-v3) provides
     - [Get Authenticated Athlete](#get-authenticated-athlete)
     - [Get Zones](#get-zones)
     - [Get Athlete Stats](#get-athlete-stats)
+    - [Update Athlete](#update-athlete)
   - [Clubs](#clubs)
     - [List Club Activities](#list-club-activities)
     - [List Athlete Clubs](#list-athlete-clubs)
@@ -246,6 +247,16 @@ recent_run_totals.achievement_count # => 19
 ```
 
 See [Strava::Models::ActivityStats](lib/strava/models/activity_stats.rb) and [Strava::Models::ActivityTotal](lib/strava/models/activity_total.rb) for all available properties.
+
+#### Update Athlete
+
+Update the currently authenticated athlete.
+
+```ruby
+athlete = client.update_athlete(weight: 90.1) # => Strava::Models::Athlete
+```
+
+See [Strava::Models::Athlete](lib/strava/models/athlete.rb) for all available returned properties.
 
 ### Clubs
 

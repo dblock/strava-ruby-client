@@ -17,6 +17,9 @@ module Strava
       property 'featured'
       property 'verified'
       property 'url'
+      property 'membership'
+      property 'admin'
+      property 'owner'
 
       def strava_url
         "https://www.strava.com/clubs/#{url || id}"
