@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.strava.com/api/v3/activities/1946417534/laps?id=1946417534
+    uri: https://www.strava.com/api/v3/activities/1946417534/laps
     body:
       encoding: US-ASCII
       string: ''

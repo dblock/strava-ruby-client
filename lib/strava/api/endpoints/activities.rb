@@ -58,7 +58,7 @@ module Strava
         #
         def activity_laps(options = {})
           throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
-          get("activities/#{options[:id]}/laps", options).map do |row|
+          get("activities/#{options[:id]}/laps", options.except(:id)).map do |row|
             Strava::Models::Lap.new(row)
           end
         end
@@ -87,7 +87,7 @@ module Strava
         #
         def activity_zones(options = {})
           throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
-          get("activities/#{options[:id]}/zones", options).map do |row|
+          get("activities/#{options[:id]}/zones", options.except(:id)).map do |row|
             Strava::Models::ActivityZone.new(row)
           end
         end
