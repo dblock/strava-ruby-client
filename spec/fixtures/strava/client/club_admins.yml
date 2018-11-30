@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.strava.com/api/v3/clubs/108605/admins
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer access-token
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Strava Ruby Client/0.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 30 Nov 2018 15:07:44 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Via:
+      - 1.1 linkerd
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '600,30000'
+      X-Request-Id:
+      - 5470768d-1d51-4939-8034-127a77f2c806
+      Etag:
+      - W/"363aba9b12ff42bfce986b340c707100"
+      X-Ratelimit-Usage:
+      - '90,8070'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: '[{"resource_state":2,"firstname":"Rob","lastname":"S."},{"resource_state":2,"firstname":"Gary","lastname":"M."},{"resource_state":2,"firstname":"Margot","lastname":"I."},{"resource_state":2,"firstname":"New
+        York ","lastname":"R."},{"resource_state":2,"firstname":"Theo","lastname":"D."}]'
+    http_version:
+  recorded_at: Fri, 30 Nov 2018 15:07:44 GMT
+recorded_with: VCR 4.0.0

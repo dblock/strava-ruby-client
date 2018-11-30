@@ -28,6 +28,9 @@ Unlike [strava-api-v3](https://github.com/jaredholdcroft/strava-api-v3) provides
     - [Update Athlete](#update-athlete)
   - [Clubs](#clubs)
     - [List Club Activities](#list-club-activities)
+    - [List Club Administrators](#list-club-administrators)
+    - [Get Club](#get-club)
+    - [List Club Members](#list-club-members)
     - [List Athlete Clubs](#list-athlete-clubs)
   - [Pagination](#pagination)
   - [OAuth](#oauth)
@@ -273,6 +276,44 @@ activity.name # => 'Afternoon Run'
 ```
 
 See [Strava::Models::Activity](lib/strava/models/activity.rb) for all available properties. Note that Strava does not return activity or athlete ID via this API.
+
+#### List Club Administrators
+
+Returns a list of the administrators of a given club.
+
+```ruby
+admins = client.club_admins(id: 108605) # => Array[Strava::Models::Athlete]
+
+admin = admins.first # => Strava::Models::Athlete
+admin.name # => 'Peter Ciaccia'
+```
+
+See [Strava::Models::Athlete](lib/strava/models/athlete.rb) for all available properties.
+
+#### Get Club
+
+Returns a given club using its identifier.
+
+```ruby
+club = client.club(id: 108605) # => Strava::Models::Club
+
+club.name # => 'NYRR'
+```
+
+See [Strava::Models::Club](lib/strava/models/club.rb) for all available properties.
+
+#### List Club Members
+
+Returns a list of the members of a given club.
+
+```ruby
+members = client.club_members(id: 108605) # => Array[Strava::Models::Athlete]
+
+member = members.first # => Strava::Models::Athlete
+member.name # => 'Peter Ciaccia'
+```
+
+See [Strava::Models::Athlete](lib/strava/models/athlete.rb) for all available properties.
 
 #### List Athlete Clubs
 

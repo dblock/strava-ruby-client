@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.strava.com/api/v3/clubs/108605
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer access-token
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Strava Ruby Client/0.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 30 Nov 2018 15:07:45 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Via:
+      - 1.1 linkerd
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '600,30000'
+      X-Request-Id:
+      - 26cfd32b-518b-4147-8eaa-5d16c885d736
+      Etag:
+      - W/"d54a1e05a446de34b9d05983f80f7175"
+      X-Ratelimit-Usage:
+      - '92,8072'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: '{"id":108605,"resource_state":3,"name":"New York Road Runners","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/108605/8433029/1/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/108605/8433029/1/large.jpg","cover_photo":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/108605/5794562/3/large.jpg","cover_photo_small":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/108605/5794562/3/small.jpg","sport_type":"running","city":"New
+        York","state":"New York","country":"United States","private":false,"member_count":21703,"featured":false,"verified":true,"url":"nyrr","membership":null,"admin":false,"owner":false,"description":"New
+        York Road Runners is a non-profit community running organization, founded
+        in 1958, whose mission is to help and inspire people through running. We serve
+        nearly 600,000 people—including 267,000 youth—annually.","club_type":"casual_club","following_count":0}'
+    http_version:
+  recorded_at: Fri, 30 Nov 2018 15:07:45 GMT
+recorded_with: VCR 4.0.0

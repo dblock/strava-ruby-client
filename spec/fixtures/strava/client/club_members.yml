@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.strava.com/api/v3/clubs/108605/members
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer access-token
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Strava Ruby Client/0.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 30 Nov 2018 15:07:45 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Via:
+      - 1.1 linkerd
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '600,30000'
+      X-Request-Id:
+      - 78a92f97-3799-4730-a2c2-d429e3a8df54
+      Etag:
+      - W/"4dd4a9c165aca703d9cebd95232d4cec"
+      X-Ratelimit-Usage:
+      - '91,8071'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: "[{\"resource_state\":2,\"firstname\":\"   Davy-Michel\",\"lastname\":\"
+        .\",\"membership\":\"member\",\"admin\":false,\"owner\":false},{\"resource_state\":2,\"firstname\":\"
+        \ Scott\",\"lastname\":\" .\",\"membership\":\"member\",\"admin\":false,\"owner\":false},{\"resource_state\":2,\"firstname\":\"
+        ALP\",\"lastname\":\"\U0001F1F9.\",\"membership\":\"member\",\"admin\":false,\"owner\":false},{\"resource_state\":2,\"firstname\":\"
+        Christian\",\"lastname\":\"S.\",\"membership\":\"member\",\"admin\":false,\"owner\":false},{\"resource_state\":2,\"firstname\":\"
+        Oguzhan\",\"lastname\":\"O.\",\"membership\":\"member\",\"admin\":false,\"owner\":false},{\"resource_state\":2,\"firstname\":\"
+        Vegan Jo\",\"lastname\":\"P.\",\"membership\":\"member\",\"admin\":false,\"owner\":false},{\"resource_state\":2,\"firstname\":\"
+        ♡↠val\",\"lastname\":\"☾.\",\"membership\":\"member\",\"admin\":false,\"owner\":false},{\"resource_state\":2,\"firstname\":\"!
+        A Nguyen Ba\",\"lastname\":\"V.\",\"membership\":\"member\",\"admin\":false,\"owner\":false},{\"resource_state\":2,\"firstname\":\"\\\"DuSenna\U0001F1E7\U0001F1F7\",\"lastname\":\"R.\",\"membership\":\"member\",\"admin\":false,\"owner\":false},{\"resource_state\":2,\"firstname\":\"#\",\"lastname\":\"A.\",\"membership\":\"member\",\"admin\":false,\"owner\":false},{\"resource_state\":2,\"firstname\":\"#BMC\",\"lastname\":\"F.\",\"membership\":\"member\",\"admin\":false,\"owner\":false},{\"resource_state\":2,\"firstname\":\"#LittleDoc\",\"lastname\":\"..\",\"membership\":\"member\",\"admin\":false,\"owner\":false},{\"resource_state\":2,\"firstname\":\"#RUNPAINFREE\",\"lastname\":\"R.\",\"membership\":\"member\",\"admin\":false,\"owner\":false},{\"resource_state\":2,\"firstname\":\"#TheFunUltraRunner\",\"lastname\":\"O.\",\"membership\":\"member\",\"admin\":false,\"owner\":false},{\"resource_state\":2,\"firstname\":\"$peed$ter\",\"lastname\":\"G.\",\"membership\":\"member\",\"admin\":false,\"owner\":false},{\"resource_state\":2,\"firstname\":\"'Arturo\",\"lastname\":\"P.\",\"membership\":\"member\",\"admin\":false,\"owner\":false},{\"resource_state\":2,\"firstname\":\"'Ferezini'\",\"lastname\":\"R.\",\"membership\":\"member\",\"admin\":false,\"owner\":false},{\"resource_state\":2,\"firstname\":\"'Luis
+        Fernando\",\"lastname\":\"O.\",\"membership\":\"member\",\"admin\":false,\"owner\":false},{\"resource_state\":2,\"firstname\":\"*SR*
+        RAKESH\",\"lastname\":\"M.\",\"membership\":\"member\",\"admin\":false,\"owner\":false},{\"resource_state\":2,\"firstname\":\"-\",\"lastname\":\"G.\",\"membership\":\"member\",\"admin\":false,\"owner\":false},{\"resource_state\":2,\"firstname\":\"-
+        Miguel\",\"lastname\":\"..\",\"membership\":\"member\",\"admin\":false,\"owner\":false},{\"resource_state\":2,\"firstname\":\"-肆貳壹玖伍\",\"lastname\":\"型.\",\"membership\":\"member\",\"admin\":false,\"owner\":false},{\"resource_state\":2,\"firstname\":\".\",\"lastname\":\"..\",\"membership\":\"member\",\"admin\":false,\"owner\":false},{\"resource_state\":2,\"firstname\":\"///ΚΞΝΖⓋ⚡️\",\"lastname\":\"\U0001F919.\",\"membership\":\"member\",\"admin\":false,\"owner\":false},{\"resource_state\":2,\"firstname\":\"33\",\"lastname\":\"W.\",\"membership\":\"member\",\"admin\":false,\"owner\":false},{\"resource_state\":2,\"firstname\":\"\\u003c
+        David\",\"lastname\":\"D.\",\"membership\":\"member\",\"admin\":false,\"owner\":false},{\"resource_state\":2,\"firstname\":\"?Le\",\"lastname\":\"F.\",\"membership\":\"member\",\"admin\":false,\"owner\":false},{\"resource_state\":2,\"firstname\":\"@\",\"lastname\":\"M.\",\"membership\":\"member\",\"admin\":false,\"owner\":false},{\"resource_state\":2,\"firstname\":\"@Ahmed\",\"lastname\":\"A.\",\"membership\":\"member\",\"admin\":false,\"owner\":false},{\"resource_state\":2,\"firstname\":\"@Joel_\",\"lastname\":\"T.\",\"membership\":\"member\",\"admin\":false,\"owner\":false}]"
+    http_version:
+  recorded_at: Fri, 30 Nov 2018 15:07:45 GMT
+recorded_with: VCR 4.0.0
