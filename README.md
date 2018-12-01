@@ -32,6 +32,8 @@ Unlike [strava-api-v3](https://github.com/jaredholdcroft/strava-api-v3) provides
     - [Get Club](#get-club)
     - [List Club Members](#list-club-members)
     - [List Athlete Clubs](#list-athlete-clubs)
+  - [Gears](#gears)
+    - [Get Equipment](#get-equipment)
   - [Pagination](#pagination)
   - [OAuth](#oauth)
   - [Webhooks](#webhooks)
@@ -329,6 +331,26 @@ activity.strava_url # => 'https://www.strava.com/clubs/nyrr'
 ```
 
 See [Strava::Models::Club](lib/strava/models/club.rb) for all available properties.
+
+### Gears
+
+#### Get Equipment
+
+Returns an equipment using its identifier.
+
+```ruby
+gear = client.gear(id: 'g3844087') # => Strava::Models::Gear
+
+gear.id # => 'g3844087'
+gear.name # => 'Adidas Supernova ST'
+gear.distance # => 380939.0
+gear.distance_s # => '380.94km'
+gear.brand_name # => 'Adidas'
+gear.model_name # => 'Supernova'
+gear.description # => 'My NYC TCS Marathon 2018 shoes.'
+```
+
+See [Strava::Models::Gear](lib/strava/models/gear.rb) for all available properties.
 
 ### Pagination
 
