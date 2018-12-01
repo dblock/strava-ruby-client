@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.strava.com/api/v3/athletes/26462176/routes
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer access-token
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Strava Ruby Client/0.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 01 Dec 2018 20:38:20 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Via:
+      - 1.1 linkerd
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '600,30000'
+      X-Request-Id:
+      - e76c0ae8-044c-46e4-8cd1-ff027203050f
+      Etag:
+      - W/"2568d1cba34c36929f51613e027d48c2"
+      X-Ratelimit-Usage:
+      - '108,10934'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: '[{"athlete":{"id":26462176,"username":"dblockdotorg","resource_state":2,"firstname":"Daniel","lastname":"Doubrovkine","city":"New
+        York","state":"NY","country":"","sex":"M","premium":true,"summit":true,"created_at":"2017-11-28T19:05:35Z","updated_at":"2018-11-25T13:43:32Z","badge_type_id":1,"profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/athletes/26462176/7677115/2/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/athletes/26462176/7677115/2/large.jpg","friend":null,"follower":null,"email":"dblock@dblock.org"},"description":"My
+        usual long run when I am too lazy to go to Central Park.","distance":14914.774951561694,"elevation_gain":117.25346822039764,"id":16341573,"map":{"id":"r16341573","summary_polyline":"ixrwF`kqbMv@eCuFsDbA}CiFkDhE_NuBqAxLec@rGaBxKyKn_AxJ~l@zR|EdHJ~j@zJrpAdOd]~Wre@zCrRaIfKsHbBiAbNcGzKiBa@[_C_FgAu@|BwX{D`@qFuGgAk@lG{]sDdA}T{q@mImjA_FcA}CN}k@le@a{AqGgE~@uC","resource_state":2},"name":"Lower
+        Manhattan Loop","private":false,"resource_state":2,"starred":false,"sub_type":1,"timestamp":1543693466,"created_at":"2018-12-01T19:44:26Z","updated_at":"2018-12-01T19:52:14Z","type":2,"estimated_moving_time":4865},{"athlete":{"id":26462176,"username":"dblockdotorg","resource_state":2,"firstname":"Daniel","lastname":"Doubrovkine","city":"New
+        York","state":"NY","country":"","sex":"M","premium":true,"summit":true,"created_at":"2017-11-28T19:05:35Z","updated_at":"2018-11-25T13:43:32Z","badge_type_id":1,"profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/athletes/26462176/7677115/2/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/athletes/26462176/7677115/2/large.jpg","friend":null,"follower":null,"email":"dblock@dblock.org"},"description":"A
+        long loop of Central Park.","distance":9869.63353294095,"elevation_gain":115.3194732870002,"id":16341509,"map":{"id":"r16341509","summary_polyline":"_mywFl}obMvA}JcOoLYgDlAoFyA{EeM_NiKXwGcJcOeDaPmMiCaHM}JeNuJsOyJ}Ia@mFrBgN{MiMgAkEsGuAtAvA|Fo@zBeMsGkF~GcAfKp@jBxCNvCsG~HQ`ElJzElEtCtItKjGlDbGhG`@fEdLrDjDrQ?hI`LdJxAzQdXnOt@bDxHhMxFpM`PxCt@rF}F","resource_state":2},"name":"Central
+        Park Loop","private":false,"resource_state":2,"starred":false,"sub_type":1,"timestamp":1543692950,"created_at":"2018-12-01T19:35:50Z","updated_at":"2018-12-01T19:35:50Z","type":2,"estimated_moving_time":3219}]'
+    http_version:
+  recorded_at: Sat, 01 Dec 2018 20:38:20 GMT
+recorded_with: VCR 4.0.0

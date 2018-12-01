@@ -1,7 +1,7 @@
 module Strava
   module Models
     class Activity < Model
-      include Mixins::Distance
+      include Mixins::MetricDistance
       include Mixins::Time
       include Mixins::Elevation
 
@@ -65,10 +65,16 @@ module Strava
       property 'laps', transform_with: ->(v) { v.map { |r| Strava::Models::Lap.new(r) } }
       property 'gear', transform_with: ->(v) { Strava::Models::Gear.new(v) }
       property 'device_name'
-
-      def units
-        :metric
-      end
+      property 'average_cadence'
+      property 'average_temp'
+      property 'average_watts'
+      property 'weighted_average_watts'
+      property 'kilojoules'
+      property 'device_watts'
+      property 'max_watts'
+      property 'highlighted_kudosers', transform_with: ->(v) { v.map { |r| Strava::Models::Kudoser.new(r) } }
+      property 'segment_leaderboard_opt_out'
+      property 'leaderboard_opt_out'
 
       def distance_s
         if type == 'Swim'

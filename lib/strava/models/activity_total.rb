@@ -1,7 +1,7 @@
 module Strava
   module Models
     class ActivityTotal < Model
-      include Mixins::Distance
+      include Mixins::MetricDistance
       include Mixins::Time
       include Mixins::Elevation
 
@@ -11,10 +11,6 @@ module Strava
 
       def total_elevation_gain
         elevation_gain
-      end
-
-      def units
-        :metric
       end
     end
   end

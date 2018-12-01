@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.strava.com/api/v3/segment_efforts/41494197089/streams?key_by_type=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer access-token
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Strava Ruby Client/0.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 03 Dec 2018 18:39:56 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Via:
+      - 1.1 linkerd
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '600,30000'
+      X-Request-Id:
+      - 146f0d8f-068d-499f-a4c6-662eea6d8b41
+      Etag:
+      - W/"7587c901a07b5e66dd1977bb2b0cfaa6"
+      X-Ratelimit-Usage:
+      - '101,10038'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: '{"distance":{"data":[348.3,352.0,355.5,359.0,362.9,366.6,370.1,373.6,376.9,380.3,383.6,386.9,390.1,393.4,396.7,400.0,403.3,406.6,409.9,413.2,416.5,419.9,423.4,426.8,430.2,433.6,436.9,440.3,443.6,446.9,450.5,454.0,457.5,460.7,464.0,467.6,471.3,475.2,479.0,482.7,486.3,489.7,493.1,496.2,499.4,502.7,505.8,508.9,512.1,515.2,518.3,521.5,524.8,528.3,531.6,535.0,538.5,542.1,545.7,549.3,553.1,557.0,560.9,564.9,568.9,572.9,576.3,579.4,582.5,585.4,588.4,591.5,595.0,598.7,602.3,605.9,609.6,613.2,616.8,620.5,624.0,627.5,631.0,634.6,638.2,641.8,645.3,648.7,652.2,655.7,659.1,662.5,665.9,669.3,672.8,676.3,679.7,683.0,686.4,689.8,693.2,696.5,699.8,703.2,706.5,709.9,713.2,716.5,719.9,723.2,726.6,730.0,733.4,736.8,740.2,743.5,746.9],"series_type":"distance","original_size":117,"resolution":"high"}}'
+    http_version:
+  recorded_at: Mon, 03 Dec 2018 18:39:56 GMT
+recorded_with: VCR 4.0.0

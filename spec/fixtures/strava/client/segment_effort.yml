@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.strava.com/api/v3/segment_efforts/41494197089
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer access-token
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Strava Ruby Client/0.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 02 Dec 2018 18:07:06 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Via:
+      - 1.1 linkerd
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '600,30000'
+      X-Request-Id:
+      - 5a46e5ab-c267-4762-9f84-adffa15c1fdc
+      Etag:
+      - W/"8a32857b6f728836114e7ca7b8c0c160"
+      X-Ratelimit-Usage:
+      - '91,9606'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: '{"id":41494197089,"resource_state":3,"name":"E 14th St Climb","activity":{"id":1655832792,"resource_state":1},"athlete":{"id":26462176,"resource_state":1},"elapsed_time":116,"moving_time":116,"start_date":"2018-06-22T12:42:43Z","start_date_local":"2018-06-22T08:42:43Z","distance":398.6,"start_index":109,"end_index":225,"average_heartrate":152.2,"max_heartrate":158.0,"segment":{"id":1109718,"resource_state":2,"name":"E
+        14th St Climb","activity_type":"Run","distance":419.58,"average_grade":-0.8,"maximum_grade":-0.6,"elevation_high":7.1,"elevation_low":3.8,"start_latlng":[40.73554842732847,-73.98271151818335],"end_latlng":[40.73427177965641,-73.97865023463964],"start_latitude":40.73554842732847,"start_longitude":-73.98271151818335,"end_latitude":40.73427177965641,"end_longitude":-73.97865023463964,"climb_category":0,"city":"New
+        York","state":"NY","country":"United States","private":false,"hazardous":false,"starred":false},"kom_rank":null,"pr_rank":1,"achievements":[{"type_id":3,"type":"pr","rank":1}],"athlete_segment_stats":{"pr_elapsed_time":116,"pr_date":"2018-06-22","effort_count":3}}'
+    http_version:
+  recorded_at: Sun, 02 Dec 2018 18:07:06 GMT
+recorded_with: VCR 4.0.0

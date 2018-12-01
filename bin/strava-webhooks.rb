@@ -50,7 +50,7 @@ when 'handle'
   end
   server.start
 else
-  client.push_subscriptions.each do |subscription|
-    puts subscription
+  client.push_subscriptions.each do |s|
+    puts s
   end
 end

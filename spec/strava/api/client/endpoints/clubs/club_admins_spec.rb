@@ -8,7 +8,7 @@ RSpec.describe 'Strava::Api::Client#club_admins' do
       expect(club_admins).to be_a Enumerable
       expect(club_admins.count).to eq 5
       admin = club_admins.first
-      expect(admin).to be_a Strava::Models::Athlete
+      expect(admin).to be_a Strava::Models::ClubAdmin
       expect(admin.name).to eq 'Rob S.'
     end
   end

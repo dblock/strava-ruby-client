@@ -2,7 +2,7 @@ require 'logger'
 
 module Strava
   class Logger < ::Logger
-    def self.default
+    def self.logger
       @logger ||= begin
         logger = new STDOUT
         logger.level = Logger::WARN

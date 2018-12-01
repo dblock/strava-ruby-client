@@ -21,6 +21,9 @@ module Strava
       property 'lap_index'
       property 'split'
       property 'pace_zone'
+      property 'average_cadence'
+      property 'device_watts'
+      property 'average_watts'
     end
   end
 end

@@ -1,0 +1,110 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.strava.com/api/v3/routes/16341573
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer access-token
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Strava Ruby Client/0.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 02 Dec 2018 16:33:20 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Via:
+      - 1.1 linkerd
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '600,30000'
+      X-Request-Id:
+      - d286389c-3403-4eeb-b04d-bc07d2bf19ef
+      Etag:
+      - W/"50133cfaedab0d6dc3aee3ac78764d3d"
+      X-Ratelimit-Usage:
+      - '31,8783'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: '{"athlete":{"id":26462176,"username":"dblockdotorg","resource_state":2,"firstname":"Daniel","lastname":"Doubrovkine","city":"New
+        York","state":"NY","country":"","sex":"M","premium":true,"summit":true,"created_at":"2017-11-28T19:05:35Z","updated_at":"2018-11-25T13:43:32Z","badge_type_id":1,"profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/athletes/26462176/7677115/2/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/athletes/26462176/7677115/2/large.jpg","friend":null,"follower":null,"email":"dblock@dblock.org"},"description":"My
+        usual long run when I am too lazy to go to Central Park.","distance":14914.774951561694,"elevation_gain":117.25346822039764,"id":16341573,"map":{"id":"r16341573","summary_polyline":"ixrwF`kqbMv@eCuFsDbA}CiFkDhE_NuBqAxLec@rGaBxKyKn_AxJ~l@zR|EdHJ~j@zJrpAdOd]~Wre@zCrRaIfKsHbBiAbNcGzKiBa@[_C_FgAu@|BwX{D`@qFuGgAk@lG{]sDdA}T{q@mImjA_FcA}CN}k@le@a{AqGgE~@uC","resource_state":3,"polyline":"ixrwF`kqbMv@eCuFsDbA}CiFkDhE_NuBqAzDuL`GmRDWUYJo@`Eq@b@Ql@]HOnA}@|@gAvB_DxAgAn@[f@OvAGnEh@bFb@`AR|@^LGhAZv@Q^QdIhAl@Vt@?^b@TH`@?XQhAP`AXVG~AXt@|@^P\\@PAv@c@nBb@V?dARNN\\?|@Rd@XZ?p@PVP^?fAXZX\\l@PFb@F~@MV?ZNr@j@fA?ZP\\XJ@PAn@Pr@l@v@FbAb@~@l@d@?v@XPPHPLj@RRRFDCz@_@hBt@j@Zl@j@x@|@n@nAh@l@PXHb@@v@Jz@TrI}@DD\\RhFl@dQa@bBnAhUVXfCt\\H`DZlE^tEj@xFXxAd@lAjApCjA`CT^PPnAvC@Pf@nATYB?p@`BOPATBTfBpDFG`DnFhBbDdAvAEHlAnBjAvBKVxApCCDFJn@b@nD|GXfAd@nC|AhKAPSFKHKb@OHC|Am@Ca@`@k@nAKAYBO`@k@v@c@^y@Xc@@w@GAXiAQGj@_ARIFYp@SrAGt@JxAAb@OD?zAMfASr@e@v@k@`@BZGX]t@Y^Mx@Ub@?P}@PwAQQOOo@@i@CSIQQ?aAYkCm@u@|B}Bc@oIoAiJgA`@qFuGgAk@lGwFo@cVcCCQl@iIMGh@yI}Di@qDa@a@`@}B[Bg@yOoBuPoB_YsAyFOwAQsAI}B?sJi@uSu@EaCq@EKULK@aDAeS@iRpD_Mz_@amAqGgE~@uC"},"name":"Lower
+        Manhattan Loop","private":false,"resource_state":3,"starred":false,"sub_type":1,"timestamp":1543693466,"created_at":"2018-12-01T19:44:26Z","updated_at":"2018-12-01T19:52:14Z","type":2,"estimated_moving_time":4885,"segments":[{"id":1109718,"resource_state":2,"name":"E
+        14th St Climb","activity_type":"Run","distance":419.58,"average_grade":-0.8,"maximum_grade":-0.6,"elevation_high":7.1,"elevation_low":3.8,"start_latlng":[40.73554842732847,-73.98271151818335],"end_latlng":[40.73427177965641,-73.97865023463964],"start_latitude":40.73554842732847,"start_longitude":-73.98271151818335,"end_latitude":40.73427177965641,"end_longitude":-73.97865023463964,"climb_category":0,"city":"New
+        York","state":"NY","country":"United States","private":false,"hazardous":false,"starred":false},{"id":2379490,"resource_state":2,"name":"East
+        river 14th esplanade north section","activity_type":"Run","distance":605.956,"average_grade":0.0,"maximum_grade":0.7,"elevation_high":0.3,"elevation_low":-0.2,"start_latlng":[40.7258644,-73.9720339],"end_latlng":[40.7205934,-73.973317],"start_latitude":40.7258644,"start_longitude":-73.9720339,"end_latitude":40.7205934,"end_longitude":-73.973317,"climb_category":0,"city":"New
+        York","state":"NY","country":"United States","private":false,"hazardous":false,"starred":false},{"id":16337560,"resource_state":2,"name":"Bridge
+        to Bridge Dash","activity_type":"Run","distance":345.0,"average_grade":0.0,"maximum_grade":1.6,"elevation_high":0.3,"elevation_low":-0.8,"start_latlng":[40.720092,-73.973204],"end_latlng":[40.7171,-73.974226],"start_latitude":40.720092,"start_longitude":-73.973204,"end_latitude":40.7171,"end_longitude":-73.974226,"climb_category":0,"city":null,"state":null,"country":null,"private":false,"hazardous":false,"starred":false},{"id":17613224,"resource_state":2,"name":"lululemon
+        - Lower East Side","activity_type":"Run","distance":1189.1,"average_grade":0.1,"maximum_grade":1.8,"elevation_high":1.2,"elevation_low":-0.8,"start_latlng":[40.72503,-73.97202],"end_latlng":[40.71485,-73.97506],"start_latitude":40.72503,"start_longitude":-73.97202,"end_latitude":40.71485,"end_longitude":-73.97506,"climb_category":0,"city":"New
+        York","state":"New York","country":"United States","private":false,"hazardous":false,"starred":false},{"id":8529683,"resource_state":2,"name":"StuyTown
+        to Williamsburg Bridge","activity_type":"Run","distance":1956.5,"average_grade":0.0,"maximum_grade":0.4,"elevation_high":0.3,"elevation_low":-0.2,"start_latlng":[40.73107,-73.973498],"end_latlng":[40.714436,-73.975355],"start_latitude":40.73107,"start_longitude":-73.973498,"end_latitude":40.714436,"end_longitude":-73.975355,"climb_category":0,"city":"New
+        York","state":"New York","country":"United States","private":false,"hazardous":false,"starred":false},{"id":17435950,"resource_state":2,"name":"East
+        River 800m Southbound","activity_type":"Run","distance":747.4,"average_grade":0.1,"maximum_grade":1.3,"elevation_high":0.8,"elevation_low":-0.8,"start_latlng":[40.720963,-73.972999],"end_latlng":[40.714473,-73.975271],"start_latitude":40.720963,"start_longitude":-73.972999,"end_latitude":40.714473,"end_longitude":-73.975271,"climb_category":0,"city":"New
+        York","state":"New York","country":"United States","private":false,"hazardous":false,"starred":false},{"id":7562376,"resource_state":2,"name":"East
+        River South - 12th to Bridge","activity_type":"Run","distance":1258.6,"average_grade":-0.0,"maximum_grade":2.6,"elevation_high":0.3,"elevation_low":-0.3,"start_latlng":[40.725138,-73.971997],"end_latlng":[40.714212,-73.975446],"start_latitude":40.725138,"start_longitude":-73.971997,"end_latitude":40.714212,"end_longitude":-73.975446,"climb_category":0,"city":"New
+        York","state":"NY","country":"United States","private":false,"hazardous":false,"starred":false},{"id":2110489,"resource_state":2,"name":"East
+        River Promenade","activity_type":"Run","distance":2035.48,"average_grade":0.0,"maximum_grade":1.2,"elevation_high":0.4,"elevation_low":-0.2,"start_latlng":[40.725778732486745,-73.9719743002895],"end_latlng":[40.71037845224208,-73.98038704886471],"start_latitude":40.725778732486745,"start_longitude":-73.9719743002895,"end_latitude":40.71037845224208,"end_longitude":-73.98038704886471,"climb_category":0,"city":"New
+        York","state":"NY","country":"United States","private":false,"hazardous":false,"starred":false},{"id":3994875,"resource_state":2,"name":"East
+        River Promenade (Houston)","activity_type":"Run","distance":915.7,"average_grade":0.0,"maximum_grade":0.4,"elevation_high":0.3,"elevation_low":0.0,"start_latlng":[40.7164,-73.974395],"end_latlng":[40.710484,-73.980081],"start_latitude":40.7164,"start_longitude":-73.974395,"end_latitude":40.710484,"end_longitude":-73.980081,"climb_category":0,"city":"New
+        York","state":"NY","country":"United States","private":false,"hazardous":false,"starred":false},{"id":3746142,"resource_state":2,"name":"East
+        River Park southbound","activity_type":"Run","distance":1772.08,"average_grade":0.0,"maximum_grade":1.1,"elevation_high":0.8,"elevation_low":0.0,"start_latlng":[40.7235937,-73.9724088],"end_latlng":[40.71062,-73.9804274],"start_latitude":40.7235937,"start_longitude":-73.9724088,"end_latitude":40.71062,"end_longitude":-73.9804274,"climb_category":0,"city":"New
+        York","state":"NY","country":"United States","private":false,"hazardous":false,"starred":false},{"id":8617177,"resource_state":2,"name":"East
+        River - StuyTown to Manhattan Bridge","activity_type":"Run","distance":3601.1,"average_grade":0.0,"maximum_grade":1.6,"elevation_high":2.6,"elevation_low":-0.2,"start_latlng":[40.731149,-73.97374],"end_latlng":[40.709457,-73.991389],"start_latitude":40.731149,"start_longitude":-73.97374,"end_latitude":40.709457,"end_longitude":-73.991389,"climb_category":0,"city":"New
+        York","state":"New York","country":"United States","private":false,"hazardous":false,"starred":false},{"id":8586546,"resource_state":2,"name":"East
+        River - StuyTown to Brooklyn Bridge","activity_type":"Run","distance":4356.9,"average_grade":0.0,"maximum_grade":2.7,"elevation_high":2.5,"elevation_low":-0.3,"start_latlng":[40.731239,-73.9735],"end_latlng":[40.70781,-73.998996],"start_latitude":40.731239,"start_longitude":-73.9735,"end_latitude":40.70781,"end_longitude":-73.998996,"climb_category":0,"city":"New
+        York","state":"New York","country":"United States","private":false,"hazardous":false,"starred":false},{"id":10773019,"resource_state":2,"name":"Pier
+        11 Ferry to Governor''s Island Ferry","activity_type":"Run","distance":463.4,"average_grade":0.0,"maximum_grade":1.3,"elevation_high":0.3,"elevation_low":0.1,"start_latlng":[40.703627,-74.006836],"end_latlng":[40.701584,-74.011424],"start_latitude":40.703627,"start_longitude":-74.006836,"end_latitude":40.701584,"end_longitude":-74.011424,"climb_category":0,"city":"New
+        York","state":"New York","country":"United States","private":false,"hazardous":false,"starred":false},{"id":7025007,"resource_state":2,"name":"East
+        River - Stuy Town to SI Ferry","activity_type":"Run","distance":5719.5,"average_grade":0.0,"maximum_grade":2.7,"elevation_high":2.5,"elevation_low":-0.3,"start_latlng":[40.731266,-73.973524],"end_latlng":[40.701313,-74.012448],"start_latitude":40.731266,"start_longitude":-73.973524,"end_latitude":40.701313,"end_longitude":-74.012448,"climb_category":0,"city":"New
+        York","state":"NY","country":"United States","private":false,"hazardous":false,"starred":false},{"id":5682929,"resource_state":2,"name":"Hudson
+        River Stretch in Battery Park ","activity_type":"Run","distance":475.8,"average_grade":0.0,"maximum_grade":1.2,"elevation_high":0.3,"elevation_low":0.1,"start_latlng":[40.708145,-74.018718],"end_latlng":[40.712183,-74.017801],"start_latitude":40.708145,"start_longitude":-74.018718,"end_latitude":40.712183,"end_longitude":-74.017801,"climb_category":0,"city":"New
+        York","state":"NY","country":"United States","private":false,"hazardous":false,"starred":false},{"id":1040724,"resource_state":2,"name":"Esplanade
+        Climb","activity_type":"Run","distance":435.67,"average_grade":-0.0,"maximum_grade":2.0,"elevation_high":0.3,"elevation_low":0.1,"start_latlng":[40.7119844,-74.017878],"end_latlng":[40.7137168,-74.0176807],"start_latitude":40.7119844,"start_longitude":-74.017878,"end_latitude":40.7137168,"end_longitude":-74.0176807,"climb_category":0,"city":"New
+        York","state":"NY","country":"United States","private":false,"hazardous":false,"starred":false},{"id":18492316,"resource_state":2,"name":"Rockefeller
+        Park 200 M","activity_type":"Run","distance":240.3,"average_grade":-1.5,"maximum_grade":1.3,"elevation_high":3.7,"elevation_low":-0.1,"start_latlng":[40.71512,-74.017363],"end_latlng":[40.717259,-74.01695],"start_latitude":40.71512,"start_longitude":-74.017363,"end_latitude":40.717259,"end_longitude":-74.01695,"climb_category":0,"city":"New
+        York","state":"New York","country":"United States","private":false,"hazardous":false,"starred":false},{"id":4389362,"resource_state":2,"name":"Battery
+        Park to Stuy High","activity_type":"Run","distance":2483.1,"average_grade":-0.1,"maximum_grade":1.6,"elevation_high":2.5,"elevation_low":0.0,"start_latlng":[40.704761,-74.01537],"end_latlng":[40.718292,-74.013227],"start_latitude":40.704761,"start_longitude":-74.01537,"end_latitude":40.718292,"end_longitude":-74.013227,"climb_category":0,"city":"New
+        York","state":"NY","country":"United States","private":false,"hazardous":false,"starred":false},{"id":1782874,"resource_state":2,"name":"Hudson
+        River Greenway","activity_type":"Run","distance":189.991,"average_grade":0.0,"maximum_grade":0.0,"elevation_high":0.3,"elevation_low":0.3,"start_latlng":[40.72259385190776,-74.01209179675884],"end_latlng":[40.72425746336216,-74.01179667508526],"start_latitude":40.72259385190776,"start_longitude":-74.01209179675884,"end_latitude":40.72425746336216,"end_longitude":-74.01179667508526,"climb_category":0,"city":"Canal
+        Street","state":"NY","country":"United States","private":false,"hazardous":false,"starred":false},{"id":4538766,"resource_state":2,"name":"Stuyvesant
+        High to Pier 40","activity_type":"Run","distance":1136.0,"average_grade":-0.0,"maximum_grade":0.7,"elevation_high":0.9,"elevation_low":0.1,"start_latlng":[40.718474,-74.013215],"end_latlng":[40.728272,-74.01131],"start_latitude":40.718474,"start_longitude":-74.013215,"end_latitude":40.728272,"end_longitude":-74.01131,"climb_category":0,"city":"New
+        York","state":"NY","country":"United States","private":false,"hazardous":false,"starred":false},{"id":11029316,"resource_state":2,"name":"Corner
+        Stuyvesant High - Pier 40","activity_type":"Run","distance":1246.2,"average_grade":0.1,"maximum_grade":2.0,"elevation_high":1.2,"elevation_low":0.1,"start_latlng":[40.718249,-74.013202],"end_latlng":[40.729198,-74.011224],"start_latitude":40.718249,"start_longitude":-74.013202,"end_latitude":40.729198,"end_longitude":-74.011224,"climb_category":0,"city":"New
+        York","state":"New York","country":"United States","private":false,"hazardous":false,"starred":false},{"id":14455225,"resource_state":2,"name":"HRP
+        - Pier 25 - Pier 40","activity_type":"Run","distance":1213.0,"average_grade":-0.2,"maximum_grade":0.0,"elevation_high":0.4,"elevation_low":-1.5,"start_latlng":[40.719711,-74.012889],"end_latlng":[40.730447,-74.011022],"start_latitude":40.719711,"start_longitude":-74.012889,"end_latitude":40.730447,"end_longitude":-74.011022,"climb_category":0,"city":"New
+        York","state":"New York","country":"United States","private":false,"hazardous":false,"starred":false},{"id":7317877,"resource_state":2,"name":"West
+        Side Pier to Dog Park","activity_type":"Run","distance":1309.6,"average_grade":-0.0,"maximum_grade":1.1,"elevation_high":1.2,"elevation_low":0.1,"start_latlng":[40.720453,-74.01291],"end_latlng":[40.732078,-74.010908],"start_latitude":40.720453,"start_longitude":-74.01291,"end_latitude":40.732078,"end_longitude":-74.010908,"climb_category":0,"city":"New
+        York","state":"NY","country":"United States","private":false,"hazardous":false,"starred":false},{"id":10764125,"resource_state":2,"name":"Final
+        Sprint to Christopher","activity_type":"Run","distance":202.3,"average_grade":0.0,"maximum_grade":1.7,"elevation_high":0.3,"elevation_low":0.0,"start_latlng":[40.730448,-74.011271],"end_latlng":[40.732197,-74.010872],"start_latitude":40.730448,"start_longitude":-74.011271,"end_latitude":40.732197,"end_longitude":-74.010872,"climb_category":0,"city":"New
+        York","state":"New York","country":"United States","private":false,"hazardous":false,"starred":false},{"id":11029334,"resource_state":2,"name":"Pier
+        40 - Pier 45 Cafe","activity_type":"Run","distance":439.3,"average_grade":-0.2,"maximum_grade":0.7,"elevation_high":1.2,"elevation_low":0.1,"start_latlng":[40.729198,-74.011224],"end_latlng":[40.733113,-74.010833],"start_latitude":40.729198,"start_longitude":-74.011224,"end_latitude":40.733113,"end_longitude":-74.010833,"climb_category":0,"city":"New
+        York","state":"New York","country":"United States","private":false,"hazardous":false,"starred":false}]}'
+    http_version:
+  recorded_at: Sun, 02 Dec 2018 16:33:20 GMT
+recorded_with: VCR 4.0.0

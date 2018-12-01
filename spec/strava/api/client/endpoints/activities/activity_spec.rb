@@ -51,14 +51,14 @@ RSpec.describe 'Strava::Api::Client#activity' do
     expect(activity.start_date).to eq Time.new(2018, 11, 0o4, 14, 53, 46, '-00:00').utc
     expect(activity.start_date_local).to eq Time.new(2018, 11, 4, 9, 53, 46, '-00:00').utc
     expect(activity.timezone).to eq '(GMT-05:00) America/New_York'
-    expect(activity.utc_offset).to eq -18_000.0
+    expect(activity.utc_offset).to eq(-18_000.0)
     expect(activity.start_latlng).to eq [40.6, -74.06]
     expect(activity.end_latlng).to eq [40.77, -73.98]
     expect(activity.location_city).to be nil
     expect(activity.location_state).to be nil
     expect(activity.location_country).to eq ''
     expect(activity.start_latitude).to eq 40.6
-    expect(activity.start_longitude).to eq -74.06
+    expect(activity.start_longitude).to eq(-74.06)
     expect(activity.achievement_count).to eq 7
     expect(activity.kudos_count).to eq 33
     expect(activity.comment_count).to eq 8
@@ -83,7 +83,7 @@ RSpec.describe 'Strava::Api::Client#activity' do
     expect(activity.heartrate_opt_out).to be false
     expect(activity.display_hide_heartrate_option).to be false
     expect(activity.elev_high).to eq 54.7
-    expect(activity.elev_low).to eq -8.1
+    expect(activity.elev_low).to eq(-8.1)
     expect(activity.pr_count).to eq 0
     expect(activity.total_photo_count).to eq 9
     expect(activity.has_kudoed).to be false
@@ -193,9 +193,9 @@ RSpec.describe 'Strava::Api::Client#activity' do
     expect(segment.distance_s).to eq '1.56km'
     expect(segment.maximum_grade).to eq 8.2
     expect(segment.elevation_high).to eq 34.9
-    expect(segment.elevation_low).to eq -0.4
+    expect(segment.elevation_low).to eq(-0.4)
     expect(segment.activity_type).to eq 'Run'
-    expect(segment.average_grade).to eq -2.1
+    expect(segment.average_grade).to eq(-2.1)
     expect(segment.climb_category).to eq 0
     expect(segment.city).to eq 'Staten Island'
     expect(segment.state).to eq 'New York'
@@ -203,9 +203,9 @@ RSpec.describe 'Strava::Api::Client#activity' do
     expect(segment.start_latlng).to eq [40.601918, -74.06061]
     expect(segment.end_latlng).to eq [40.607072, -74.043591]
     expect(segment.start_latitude).to eq 40.601918
-    expect(segment.start_longitude).to eq -74.06061
+    expect(segment.start_longitude).to eq(-74.06061)
     expect(segment.end_latitude).to eq 40.607072
-    expect(segment.end_longitude).to eq -74.043591
+    expect(segment.end_longitude).to eq(-74.043591)
     expect(segment.private).to be false
     expect(segment.hazardous).to be false
     expect(segment.starred).to be false

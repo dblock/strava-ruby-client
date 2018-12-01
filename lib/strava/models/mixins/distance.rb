@@ -68,6 +68,24 @@ module Strava
           end
         end
       end
+
+      module MetricDistance
+        extend ActiveSupport::Concern
+        include Strava::Models::Mixins::Distance
+
+        def units
+          :metric
+        end
+      end
+
+      module ImperialDistance
+        extend ActiveSupport::Concern
+        include Strava::Models::Mixins::Distance
+
+        def units
+          :imperial
+        end
+      end
     end
   end
 end

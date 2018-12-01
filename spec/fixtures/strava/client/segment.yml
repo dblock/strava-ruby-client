@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.strava.com/api/v3/segments/1109718
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer access-token
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Strava Ruby Client/0.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 02 Dec 2018 18:23:42 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Via:
+      - 1.1 linkerd
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '600,30000'
+      X-Request-Id:
+      - bb431cf3-695f-4ef1-934a-d08cc6150bc7
+      Etag:
+      - W/"21b4d37b329b6a3fb4af9e61f0fe38e0"
+      X-Ratelimit-Usage:
+      - '90,9785'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: '{"id":1109718,"resource_state":3,"name":"E 14th St Climb","activity_type":"Run","distance":419.58,"average_grade":-0.8,"maximum_grade":-0.6,"elevation_high":7.1,"elevation_low":3.8,"start_latlng":[40.73554842732847,-73.98271151818335],"end_latlng":[40.73427177965641,-73.97865023463964],"start_latitude":40.73554842732847,"start_longitude":-73.98271151818335,"end_latitude":40.73427177965641,"end_longitude":-73.97865023463964,"climb_category":0,"city":"New
+        York","state":"NY","country":"United States","private":false,"hazardous":false,"starred":false,"created_at":"2012-03-19T22:00:20Z","updated_at":"2018-12-02T09:11:21Z","total_elevation_gain":40.2,"map":{"id":"s1109718","polyline":"cdswF~vpbMd@eBJS^QTUf@u@LK\\cADc@FUFMZ[BIOcCQ[[QGAISzAoE","resource_state":3},"effort_count":750,"athlete_count":206,"star_count":1,"athlete_segment_stats":{"pr_elapsed_time":116,"pr_date":"2018-06-22","effort_count":3}}'
+    http_version:
+  recorded_at: Sun, 02 Dec 2018 18:23:42 GMT
+recorded_with: VCR 4.0.0

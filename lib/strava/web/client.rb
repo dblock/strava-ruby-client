@@ -10,7 +10,7 @@ module Strava
         Strava::Web::Config::ATTRIBUTES.each do |key|
           send("#{key}=", options[key] || Strava::Web.config.send(key))
         end
-        @logger ||= Strava::Logger.default
+        @logger ||= Strava::Logger.logger
       end
 
       def endpoint

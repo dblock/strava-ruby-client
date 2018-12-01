@@ -29,7 +29,7 @@ module Strava
         #
         def club_admins(options = {}, &block)
           throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
-          paginate "clubs/#{options[:id]}/admins", options.except(:id), Strava::Models::Athlete, &block
+          paginate "clubs/#{options[:id]}/admins", options.except(:id), Strava::Models::ClubAdmin, &block
         end
 
         #
@@ -55,7 +55,7 @@ module Strava
         #
         def club_members(options = {}, &block)
           throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
-          paginate "clubs/#{options[:id]}/members", options.except(:id), Strava::Models::Athlete, &block
+          paginate "clubs/#{options[:id]}/members", options.except(:id), Strava::Models::ClubMember, &block
         end
 
         #

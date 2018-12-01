@@ -5,6 +5,12 @@ module Strava
       include Endpoints::Athletes
       include Endpoints::Clubs
       include Endpoints::Gears
+      include Endpoints::Routes
+      include Endpoints::RunningRaces
+      include Endpoints::SegmentEfforts
+      include Endpoints::Segments
+      include Endpoints::Streams
+      include Endpoints::Uploads
 
       attr_accessor(*Config::ATTRIBUTES)
 

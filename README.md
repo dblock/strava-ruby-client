@@ -4,9 +4,9 @@ Strava Ruby Client
 [![Gem Version](https://badge.fury.io/rb/strava-ruby-client.svg)](https://badge.fury.io/rb/strava-ruby-client)
 [![Build Status](https://travis-ci.org/dblock/strava-ruby-client.svg?branch=master)](https://travis-ci.org/dblock/strava-ruby-client)
 
-A newer Ruby client for the [Strava API v3](https://developers.strava.com).
+A complete Ruby client for the [Strava API v3](https://developers.strava.com).
 
-Unlike [strava-api-v3](https://github.com/jaredholdcroft/strava-api-v3) provides complete OAuth refresh token flow support, webhooks support, a richer first class interface to Strava models, natively supports pagination and implements more consistent error handling.
+Unlike other clients, including [strava-api-v3](https://github.com/jaredholdcroft/strava-api-v3), provides complete OAuth refresh token flow support, webhooks support, a richer first class interface to Strava models, natively supports pagination, implements more consistent error handling and is built with thorough test coverage using actual Strava data.
 
 ## Table of Contents
 
@@ -34,6 +34,30 @@ Unlike [strava-api-v3](https://github.com/jaredholdcroft/strava-api-v3) provides
     - [List Athlete Clubs](#list-athlete-clubs)
   - [Gears](#gears)
     - [Get Equipment](#get-equipment)
+  - [Routes](#routes)
+    - [Export Route GPX](#export-route-gpx)
+    - [Export Route TCX](#export-route-tcx)
+    - [Get Route](#get-route)
+    - [List Athlete Routes](#list-athlete-routes)
+  - [Running Races](#running-races)
+    - [Get Running Race](#get-running-race)
+    - [List Running Races](#list-running-races)
+  - [Segment Efforts](#segment-efforts)
+    - [List Segment Efforts](#list-segment-efforts)
+    - [Get Segment Effort](#get-segment-effort)
+  - [Segments](#segments)
+    - [Explore Segments](#explore-segments)
+    - [Get Segment Leaderboard](#get-segment-leaderboard)
+    - [List Starred Segments](#list-starred-segments)
+    - [Get Segment](#get-segment)
+    - [Star Segment](#star-segment)
+  - [Streams](#streams)
+    - [Get Activity Streams](#get-activity-streams)
+    - [Get Segment Effort Streams](#get-segment-effort-streams)
+    - [Get Segment Streams](#get-segment-streams)
+  - [Uploads](#uploads)
+    - [Upload Activity](#upload-activity)
+    - [Get Upload](#get-upload)
   - [Pagination](#pagination)
   - [OAuth](#oauth)
   - [Webhooks](#webhooks)
@@ -88,9 +112,11 @@ activity.name # => 'Afternoon Run'
 activity.strava_url # => 'https://www.strava.com/activities/1982980795'
 ```
 
+See [Strava::Models::Activity](lib/strava/models/activity.rb) for all available properties.
+
 #### Get Activity
 
-Returns the given activity that is owned by the authenticated athlete, including description, photos, gear, splits, segments and laps.
+Returns the given activity that is owned by the authenticated athlete.
 
 ```ruby
 activity = client.activity(id: 1982980795)
@@ -98,6 +124,8 @@ activity = client.activity(id: 1982980795)
 activity.name # => 'Afternoon Run'
 activity.strava_url # => 'https://www.strava.com/activities/1982980795'
 ```
+
+See [Strava::Models::Activity](lib/strava/models/activity.rb) for all available properties.
 
 #### List Activity Comments
 
@@ -125,6 +153,8 @@ kodoer = kudoers.first # => Strava::Models::Athlete
 
 kudoer.username # => 'zolotov'
 ```
+
+See [Strava::Models::Athlete](lib/strava/models/athlete.rb) for all available properties.
 
 #### List Activity Laps
 
@@ -168,7 +198,7 @@ See [Strava::Models::Activity](lib/strava/models/activity.rb), [Strava::Models::
 
 #### Get Activity Zones
 
-Summit Feature. Returns the zones of a given activity.
+Returns the zones of a given activity.
 
 ```ruby
 zones = client.activity_zones(id: 1982980795) # => Array[Strava::Models::ActivityZone]
@@ -176,7 +206,10 @@ zones = client.activity_zones(id: 1982980795) # => Array[Strava::Models::Activit
 zone = zones.first # => Strava::Models::ActivityZone
 zones.type # => 'heartrate'
 
-distribution_bucket = activity_zone.distribution_buckets.first # => Strava::Models::TimedZoneRange
+distribution_buckets = activity_zone.distribution_buckets # => Array[Strava::Models::TimedZoneRange]
+
+distribution_bucket = distribution_buckets.first # => Strava::Models::TimedZoneRange
+
 distribution_bucket.min # => 0
 distribution_bucket.max # => 123
 distribution_bucket.time # => 20
@@ -211,7 +244,6 @@ client.athlete # => Strava::Models::Athlete
 ```
 
 See [Strava::Models::Athlete](lib/strava/models/athlete.rb) for all available properties.
-
 
 #### Get Zones
 
@@ -284,13 +316,13 @@ See [Strava::Models::Activity](lib/strava/models/activity.rb) for all available 
 Returns a list of the administrators of a given club.
 
 ```ruby
-admins = client.club_admins(id: 108605) # => Array[Strava::Models::Athlete]
+admins = client.club_admins(id: 108605) # => Array[Strava::Models::ClubAdmin]
 
-admin = admins.first # => Strava::Models::Athlete
+admin = admins.first # => Strava::Models::ClubAdmin
 admin.name # => 'Peter Ciaccia'
 ```
 
-See [Strava::Models::Athlete](lib/strava/models/athlete.rb) for all available properties.
+See [Strava::Models::ClubAdmin](lib/strava/models/club_admin.rb) for all available properties.
 
 #### Get Club
 
@@ -309,13 +341,13 @@ See [Strava::Models::Club](lib/strava/models/club.rb) for all available properti
 Returns a list of the members of a given club.
 
 ```ruby
-members = client.club_members(id: 108605) # => Array[Strava::Models::Athlete]
+members = client.club_members(id: 108605) # => Array[Strava::Models::ClubMember]
 
-member = members.first # => Strava::Models::Athlete
+member = members.first # => Strava::Models::ClubMember
 member.name # => 'Peter Ciaccia'
 ```
 
-See [Strava::Models::Athlete](lib/strava/models/athlete.rb) for all available properties.
+See [Strava::Models::ClubMember](lib/strava/models/club_member.rb) for all available properties.
 
 #### List Athlete Clubs
 
@@ -324,7 +356,7 @@ Returns a list of the clubs whose membership includes the authenticated athlete.
 ```ruby
 clubs = client.athlete_clubs # => Array[Strava::Models::Club]
 
-club = clubs.first # => Strava::Models::Activity
+club = clubs.first # => Strava::Models::Club
 
 activity.name # => 'NYRR'
 activity.strava_url # => 'https://www.strava.com/clubs/nyrr'
@@ -352,9 +384,357 @@ gear.description # => 'My NYC TCS Marathon 2018 shoes.'
 
 See [Strava::Models::Gear](lib/strava/models/gear.rb) for all available properties.
 
+### Routes
+
+#### Export Route GPX
+
+Returns [GPS Exchange Format](https://en.wikipedia.org/wiki/GPS_Exchange_Format) (GPX) data of the route. Combine with [multi_xml](https://github.com/sferik/multi_xml) or [gpx](https://github.com/dougfales/gpx) to parse it.
+
+```ruby
+data = client.export_route_gpx(id: 16341573) # => String
+
+require 'multi_xml'
+xml = MultiXml.parse(data) # => parsed GPX
+
+require 'gpx'
+gpx = GPX::GPXFile.new(gpx_data: data) # => GPX::GPXFile
+
+gpx.name # => 'Lower Manhattan Loop'
+gpx.description # => 'My usual long run when I am too lazy to go to Central Park.'
+gpx.tracks # => Array[GPX::Track]
+```
+
+#### Export Route TCX
+
+Returns a [Training Center XML](https://en.wikipedia.org/wiki/Training_Center_XML) (TCX) data of the route. Combine with [multi_xml](https://github.com/sferik/multi_xml) to parse it.
+
+```ruby
+data = client.export_route_tcx(id: 16341573) # => String
+
+require 'multi_xml'
+xml = MultiXml.parse(data) # => parsed TCX
+```
+
+#### Get Route
+
+Returns a route using its identifier.
+
+```ruby
+route = client.route(id: 16341573) # => Strava::Models::Route
+
+route.name # => 'Lower Manhattan Loop'
+route.description # => 'My usual long run when I am too lazy to go to Central Park.'
+```
+
+See [Strava::Models::Route](lib/strava/models/route.rb) for all available properties.
+
+#### List Athlete Routes
+
+Returns a list of the routes by athlete ID.
+
+```ruby
+routes = client.athlete_routes(id: 26462176) # => Array[Strava::Models::Route]
+
+route = routes.first # => Strava::Models::Route
+
+route.name # => 'Lower Manhattan Loop'
+route.description # => 'My usual long run when I am too lazy to go to Central Park.'
+route.moving_time_in_hours_s # => '1h21m5s'
+```
+
+See [Strava::Models::Route](lib/strava/models/route.rb) for all available properties.
+
+### Running Races
+
+#### Get Running Race
+
+Returns a running race for a given identifier.
+
+```ruby
+running_race = client.running_race(id: 1577) # => Strava::Models::RunningRace
+
+running_race.name # => 'Walt Disney World Marathon 10k'
+running_race.distance # => 10_000.0
+running_race.distance_s # => '10km'
+running_race.city # => 'Orlando'
+running_race.state # => 'FL'
+running_race.country # => 'United States'
+running_race.strava_url # => 'https://www.strava.com/running-races/2018-walt-disney-world-marathon-10k'
+running_race.website_url # => 'https://www.rundisney.com/disneyworld-marathon/'
+```
+
+See [Strava::Models::RunningRace](lib/strava/models/running_race.rb) for all available properties.
+
+#### List Running Races
+
+Returns a list running races based on a set of search criteria.
+
+```ruby
+running_races = client.running_races
+
+running_race = running_races.first # => Strava::Models::RunningRace
+
+running_race.name # => 'Walt Disney World Half Marathon'
+running_race.distance # => 21_097.0
+running_race.measurement_preference # => 'feet'
+running_race.distance_s # => '13.11mi'
+```
+
+See [Strava::Models::RunningRace](lib/strava/models/running_race.rb) for all available properties.
+
+### Segment Efforts
+
+#### List Segment Efforts
+
+Returns a set of the authenticated athlete's segment efforts for a given segment.
+
+```ruby
+segment_efforts = client.segment_efforts(id: 1109718)
+
+segment_effort = segment_efforts.first # => Strava::Models::SegmentEffort
+
+segment_effort.name # => 'E 14th St Climb'
+segment_effort.activity # => Strava::Models::Activity
+segment_effort.athlete # => Strava::Models::Athlete
+segment_effort.elapsed_time # => 116
+segment_effort.distance # => 398.6
+segment_effort.distance_s # => '0.4km'
+segment_effort.average_heartrate # => 152.2
+segment_effort.max_heartrate # => 158.0
+
+segment_effort.achievements # => Enumerable
+
+achievement = segment_effort.achievements.first # => Strava::Models::Achievement
+achievement.rank # => 1
+achievement.type # => 'pr'
+achievement.type_id # => 3
+```
+
+See [Strava::Models::SegmentEffort](lib/strava/models/segment_effort.rb) and [Strava::Models::Achievement](lib/strava/models/achievement.rb) for all available properties.
+
+#### Get Segment Effort
+
+Returns a segment effort from an activity that is owned by the authenticated athlete.
+
+```ruby
+segment_effort = client.segment_effort(id: 41494197089) # => Strava::Models::SegmentEffort
+
+segment_effort.name # => 'E 14th St Climb'
+segment_effort.activity # => Strava::Models::Activity
+segment_effort.elapsed_time # => 116
+
+segment_stats = segment_effort.athlete_segment_stats # => Strava::Models::SegmentStats
+segment_stats.pr_elapsed_time # => 116
+segment_stats.elapsed_time_in_hours_s # => '1m56s'
+segment_stats.pr_date # => Date
+segment_stats.effort_count # => 3
+```
+
+See [Strava::Models::SegmentEffort](lib/strava/models/segment_effort.rb) and [Strava::Models::SegmentStats](lib/strava/models/segment_stats.rb) for all available properties.
+
+### Segments
+
+#### Explore Segments
+
+Returns the top 10 segments matching a specified query.
+
+```ruby
+segments = client.explore_segments(bounds: [36.372975, -94.220234, 36.415949, -94.183670], activity_type: 'running')
+
+segment = segments.first # => Strava::Models::ExplorerSegment
+segment.name # => 'Compton Gardens hill'
+segment.avg_grade # => 4.6
+segment.start_latlng # => [36.377702, -94.207242]
+segment.end_latlng # => [36.375948, -94.207689]
+segment.elev_difference # => 9.6
+```
+
+See [Strava::Models::ExplorerSegment](lib/strava/models/explorer_segment.rb) for all available properties.
+
+#### Get Segment Leaderboard
+
+Returns the specified segment leaderboard.
+
+```ruby
+segment_leaderboard = client.segment_leaderboard(id: 1109718) # => Strava::Models::SegmentLeaderboard
+
+segment_leaderboard.effort_count # => 204
+segment_leaderboard.entry_count # => 204
+segment_leaderboard.kom_type # => 'kom'
+segment_leaderboard.entries # => Enumerable
+
+entry = segment_leaderboard.entries.first # => Strava::Models::SegmentLeaderboardEntry
+entry.athlete_name # => 'Etan B.'
+entry.moving_time_in_hours_s # => '1m32s'
+entry.start_date # => Time
+entry.start_date_local # => Time
+entry.rank # => 1
+```
+
+This API supports pagination through the entire segment leaderboard but wraps entries into a [Strava::Models::SegmentLeaderboard](lib/strava/models/segment_leaderboard.rb) object.
+
+```ruby
+client.segment_leaderboard(id: 1109718) do |row|
+  row # => Strava::Models::SegmentLeaderboard
+  row.entries # => Array[Strava::Models::SegmentLeaderboardEntry]
+end
+```
+
+See [Strava::Models::SegmentLeaderboard](lib/strava/models/segment_leaderboard.rb) and [Strava::Models::SegmentLeaderboardEntry](lib/strava/models/segment_leaderboard_entry.rb) for all available properties.
+
+#### List Starred Segments
+
+List of the authenticated athlete's starred segments.
+
+```ruby
+segments = client.starred_segments
+
+segment = segments.first # => Strava::Models::Segment
+
+segment.pr_time # => 256
+segment.elapsed_time_in_hours_s # => '4m16s'
+segment.starred_date # => Time
+segment.athlete_pr_effort # => Strava::Models::SegmentEffort
+```
+
+See [Strava::Models::Segment](lib/strava/models/segment.rb) and [Strava::Models::SegmentEffort](lib/strava/models/segment_effort.rb) for all available properties.
+
+#### Get Segment
+
+Returns the specified segment.
+
+```ruby
+segment = client.segment(id: 1109718) # => Strava::Models::Segment
+
+segment.name # => 'E 14th St Climb'
+segment.city # => 'New York'
+segment.state # => 'NY'
+segment.country # => 'United States'
+segment.map # => Strava::Models::Map
+segment.effort_count # => 750
+segment.athlete_count # => 206
+segment.star_count # => 1
+segment.athlete_segment_stats # => Strava::Models::SegmentStats
+```
+
+See [Strava::Models::Segment](lib/strava/models/segment.rb) for all available properties.
+
+#### Star Segment
+
+Stars/unstars the given segment for the authenticated athlete.
+
+```ruby
+segment = client.star_segment(id: 50272077110, starred: true) # => Strava::Models::Segment
+
+segment.name # => 'E 14th St Climb'
+segment.starred # => true
+```
+
+See [Strava::Models::Segment](lib/strava/models/segment.rb) for all available properties.
+
+### Streams
+
+Stream APIs can return various streams by key(s).
+
+```ruby
+streams = client.segment_streams(id: 1109718, keys: %w[distance latlng altitude]) # => Strava::Models::StrewamSet
+
+streams.distance # => Strava::Models::Stream
+streams.latlng # => Strava::Models::Stream
+streams.altitude # => Strava::Models::Stream
+```
+
+#### Get Activity Streams
+
+Returns the given activity's streams.
+
+```ruby
+streams = client.activity_streams(id: 1946417534) # => Strava::Models::StreamSet
+
+distance = streams.distance # => Strava::Models::Stream
+distance.original_size # => 13_129
+distance.resolution # => 'high'
+distance.series_type # => 'distance'
+distance.data # => Array[Float]
+```
+
+See [Strava::Models::StreamSet](lib/strava/models/stream_set.rb) and [Strava::Models::Stream](lib/strava/models/stream.rb) for all available properties.
+
+#### Get Segment Effort Streams
+
+Returns a set of streams for a segment effort completed by the authenticated athlete.
+
+```ruby
+streams = client.segment_effort_streams(id: 41494197089)
+
+distance = streams.distance # => Strava::Models::Stream
+distance.original_size # => 117
+distance.resolution # => 'high'
+distance.series_type # => 'distance'
+distance.data # => Array[Float]
+```
+
+See [Strava::Models::StreamSet](lib/strava/models/stream_set.rb) and [Strava::Models::Stream](lib/strava/models/stream.rb) for all available properties.
+
+#### Get Segment Streams
+
+Returns the given segment's streams.
+
+```ruby
+streams = client.segment_streams(id: 1109718) # => Strava::Models::StreamSet
+
+distance = streams.distance # => Strava::Models::Stream
+distance.original_size # => 32
+distance.resolution # => 'high'
+distance.series_type # => 'distance'
+distance.data # => Array[Float]
+```
+
+See [Strava::Models::StreamSet](lib/strava/models/stream_set.rb) and [Strava::Models::Stream](lib/strava/models/stream.rb) for all available properties.
+
+### Uploads
+
+#### Upload Activity
+
+Uploads a new data file to create an activity from.
+
+```ruby
+upload = client.create_upload(
+  file: Faraday::UploadIO.new('17611540601.tcx', 'application/tcx+xml'),
+  name: 'Uploaded Activity',
+  description: 'Uploaded by strava-ruby-client.',
+  data_type: 'tcx',
+  external_id: 'strava-ruby-client-upload-1'
+) # => Strava::Models::Upload
+
+upload.id # => 2136460097
+upload.external_id # => 'strava-ruby-client-upload-1.tcx'
+upload.error # => nil
+upload.status # => 'Your activity is still being processed.'
+upload.activity_id # => nil
+```
+
+See [Strava::Models::Upload](lib/strava/models/upload.rb) for all available properties.
+
+#### Get Upload
+
+Returns an upload for a given identifier.
+
+```ruby
+upload = client.upload(id: 2136460097) # => Strava::Models::Upload
+
+upload.id # => 2_136_460_097
+upload.external_id # => 'strava-ruby-client-upload-1.tcx'
+upload.error # => nil
+upload.status # => 'Your activity is ready.'
+upload.activity_id # => 1_998_557_443
+```
+
+See [Strava::Models::Upload](lib/strava/models/upload.rb) for all available properties.
+
 ### Pagination
 
-Some Strava APIs, including [athlete_activities](#athlete-activities) support pagination when supplying an optional `page` and `per_page` parameter. By default the client retrieves one page of data, which Strava currently defaults to 30 items. You can paginate through more data by supplying a block and an optional `per_page` parameter. The underlying implementation makes page-sized calls and increments the `page` argument.
+Some Strava APIs, including [athlete-activities](#list-athlete-activities) support pagination when supplying an optional `page` and `per_page` parameter. By default the client retrieves one page of data, which Strava currently defaults to 30 items. You can paginate through more data by supplying a block and an optional `per_page` parameter. The underlying implementation makes page-sized calls and increments the `page` argument.
 
 ```ruby
 client.athlete_activities(per_page: 30) do |activity|
@@ -413,7 +793,7 @@ response.expires_at # new timestamp when the access token expires
 
 Strava provides a [Webhook Event API](https://developers.strava.com/docs/webhooks/) that requires special access obtained by emailing [developers@strava.com](mailto:developers@strava.com).
 
-A complete example that handles subscription creation, deletion and handling can be found in [strava-webhooks.rb](bin/strava-webhooks.rb), run `strava-webhooks` to see current registrations, `strava-webhooks handle` to run an HTTP server that handles both challenges and event data, `strava-webhooks create [url]` to create a new subscription and `strava-webhooks delete [id]` to delete it.
+A complete example that handles subscription creation, deletion and handling can be found in [strava-webhooks.rb](bin/strava-webhooks.rb). Run `strava-webhooks` to see current registrations, `strava-webhooks handle` to run an HTTP server that handles both challenges and event data, `strava-webhooks create [url]` to create a new subscription and `strava-webhooks delete [id]` to delete it.
 
 Before creating a webhook subscription you must implement and run an HTTP server that will handle a `GET` challenge at the subscription URL.
 

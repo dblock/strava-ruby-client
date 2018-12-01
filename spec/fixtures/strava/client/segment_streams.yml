@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.strava.com/api/v3/segments/1109718/streams?key_by_type=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer access-token
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Strava Ruby Client/0.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 03 Dec 2018 18:41:18 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Via:
+      - 1.1 linkerd
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '600,30000'
+      X-Request-Id:
+      - 88896c35-5e2b-4b6e-a58c-2113e827942f
+      Etag:
+      - W/"5c8e0d071d59a47989ae0088cc0e9ee3"
+      X-Ratelimit-Usage:
+      - '103,10040'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: '{"latlng":{"data":[[40.735548,-73.982712],[40.735475,-73.982531],[40.73539,-73.982308],[40.735353,-73.9822],[40.735294,-73.982101],[40.735139,-73.982015],[40.735029,-73.981902],[40.734931,-73.981775],[40.734827,-73.981636],[40.734757,-73.98157],[40.734688,-73.981432],[40.7346,-73.981239],[40.734571,-73.981107],[40.734573,-73.981057],[40.734533,-73.980946],[40.734491,-73.98088],[40.734389,-73.980783],[40.734353,-73.980736],[40.73433,-73.98068],[40.734367,-73.980415],[40.734381,-73.980309],[40.734413,-73.980024],[40.734507,-73.979886],[40.734642,-73.979797],[40.734688,-73.979787],[40.73473,-73.979683],[40.734681,-73.979552],[40.734567,-73.979335],[40.734513,-73.979194],[40.73443,-73.979017],[40.734341,-73.978814],[40.734272,-73.97865]],"series_type":"distance","original_size":32,"resolution":"high"},"distance":{"data":[0.0,17.3,38.3,48.2,62.6,77.5,92.6,107.4,123.9,137.1,150.8,166.4,178.1,185.3,197.2,200.2,217.3,220.1,228.0,244.3,256.6,274.6,289.6,306.0,311.1,321.2,333.6,352.7,366.1,383.8,403.6,419.6],"series_type":"distance","original_size":32,"resolution":"high"},"altitude":{"data":[7.1,7.0,6.9,6.8,6.7,6.6,6.5,6.4,6.3,6.2,6.1,6.0,5.9,5.8,5.7,5.7,5.6,5.5,5.5,5.3,5.2,4.9,4.8,4.7,4.7,4.7,4.5,4.4,4.2,4.1,3.9,3.8],"series_type":"distance","original_size":32,"resolution":"high"}}'
+    http_version:
+  recorded_at: Mon, 03 Dec 2018 18:41:18 GMT
+recorded_with: VCR 4.0.0
