@@ -2,7 +2,7 @@ require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#update_athlete' do
   let(:client) { Strava::Api::Client.new(access_token: ENV['STRAVA_ACCESS_TOKEN'] || 'access-token') }
-  it 'returns athlete', vcr: { cassette_name: 'client/update_athlete' } do
+  it 'updates and returns athlete', vcr: { cassette_name: 'client/update_athlete' } do
     athlete = client.update_athlete(weight: 90.1)
     expect(athlete).to be_a Strava::Models::Athlete
     expect(athlete.id).to eq 29_323_238

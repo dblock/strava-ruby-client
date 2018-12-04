@@ -30,9 +30,9 @@ module Strava
         # @option options [String] :id
         #   The identifier of the upload.
         #
-        def upload(options = {})
-          throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
-          Strava::Models::Upload.new(get("uploads/#{options[:id]}", options.except(:id)))
+        def upload(id_or_options, options = {})
+          id, options = parse_args(id_or_options, options)
+          Strava::Models::Upload.new(get("uploads/#{id}", options))
         end
       end
     end

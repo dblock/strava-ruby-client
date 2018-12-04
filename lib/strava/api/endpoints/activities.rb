@@ -15,9 +15,9 @@ module Strava
         # @option options [String] :id
         #   Activity id.
         #
-        def activity(options = {})
-          throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
-          Strava::Models::Activity.new(get("activities/#{options[:id]}", options.except(:id)))
+        def activity(id_or_options, options = {})
+          id, options = parse_args(id_or_options, options)
+          Strava::Models::Activity.new(get("activities/#{id}", options))
         end
 
         #
@@ -30,9 +30,9 @@ module Strava
         # @option options [Integer] :per_page
         #   Number of items per page. Defaults to 30.
         #
-        def activity_comments(options = {}, &block)
-          throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
-          paginate "activities/#{options[:id]}/comments", options.except(:id), Strava::Models::Comment, &block
+        def activity_comments(id_or_options, options = {}, &block)
+          id, options = parse_args(id_or_options, options)
+          paginate "activities/#{id}/comments", options, Strava::Models::Comment, &block
         end
 
         #
@@ -45,9 +45,9 @@ module Strava
         # @option options [Integer] :per_page
         #   Number of items per page. Defaults to 30.
         #
-        def activity_kudos(options = {}, &block)
-          throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
-          paginate "activities/#{options[:id]}/kudos", options.except(:id), Strava::Models::Athlete, &block
+        def activity_kudos(id_or_options, options = {}, &block)
+          id, options = parse_args(id_or_options, options)
+          paginate "activities/#{id}/kudos", options, Strava::Models::Athlete, &block
         end
 
         #
@@ -56,9 +56,9 @@ module Strava
         # @option options [String] :id
         #   Activity id.
         #
-        def activity_laps(options = {})
-          throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
-          get("activities/#{options[:id]}/laps", options.except(:id)).map do |row|
+        def activity_laps(id_or_options, options = {})
+          id, options = parse_args(id_or_options, options)
+          get("activities/#{id}/laps", options).map do |row|
             Strava::Models::Lap.new(row)
           end
         end
@@ -85,9 +85,9 @@ module Strava
         # @option options [String] :id
         #   Activity id.
         #
-        def activity_zones(options = {})
-          throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
-          get("activities/#{options[:id]}/zones", options.except(:id)).map do |row|
+        def activity_zones(id_or_options, options = {})
+          id, options = parse_args(id_or_options, options)
+          get("activities/#{id}/zones", options).map do |row|
             Strava::Models::ActivityZone.new(row)
           end
         end
@@ -110,9 +110,9 @@ module Strava
         # @option options [String] :gear_id
         #   Identifier for the gear associated with the activity. Specifying "none" clears gear from activity.
         #
-        def update_activity(options = {})
-          throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
-          Strava::Models::Activity.new(put("activities/#{options[:id]}", options.except(:id)))
+        def update_activity(id_or_options, options = {})
+          id, options = parse_args(id_or_options, options)
+          Strava::Models::Activity.new(put("activities/#{id}", options))
         end
       end
     end

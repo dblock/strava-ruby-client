@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-RSpec.describe 'Strava::Api::Client#athlete' do
+RSpec.describe 'Strava::Api::Client#athlete', vcr: { cassette_name: 'client/athlete' } do
   let(:client) { Strava::Api::Client.new(access_token: ENV['STRAVA_ACCESS_TOKEN'] || 'access-token') }
-  let(:athlete) { client.athlete }
-  it 'returns athlete', vcr: { cassette_name: 'client/athlete' } do
+  it 'returns athlete' do
+    athlete = client.athlete
     expect(athlete).to be_a Strava::Models::Athlete
     expect(athlete.id).to eq 26_462_176
     expect(athlete.created_at).to eq Time.parse('2017-11-28 19:05:35 UTC')

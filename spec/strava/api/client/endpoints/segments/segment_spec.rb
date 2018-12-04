@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-RSpec.describe 'Strava::Api::Client#segment' do
+RSpec.describe 'Strava::Api::Client#segment', vcr: { cassette_name: 'client/segment' } do
   let(:client) { Strava::Api::Client.new(access_token: ENV['STRAVA_ACCESS_TOKEN'] || 'access-token') }
-  it 'returns a segment', vcr: { cassette_name: 'client/segment' } do
+  it 'returns a segment' do
     segment = client.segment(id: 1_109_718)
     expect(segment.resource_state).to eq 3
     expect(segment.name).to eq 'E 14th St Climb'
@@ -31,5 +31,10 @@ RSpec.describe 'Strava::Api::Client#segment' do
     expect(segment.athlete_count).to eq 206
     expect(segment.star_count).to eq 1
     expect(segment.athlete_segment_stats).to be_a Strava::Models::SegmentStats
+  end
+  it 'returns a segment by id' do
+    segment = client.segment(1_109_718)
+    expect(segment.resource_state).to eq 3
+    expect(segment.name).to eq 'E 14th St Climb'
   end
 end

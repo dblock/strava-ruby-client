@@ -12,9 +12,9 @@ module Strava
         # @option options [Integer] :per_page
         #   Number of items per page. Defaults to 30.
         #
-        def club_activities(options = {}, &block)
-          throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
-          paginate "clubs/#{options[:id]}/activities", options.except(:id), Strava::Models::Activity, &block
+        def club_activities(id_or_options, options = {}, &block)
+          id, options = parse_args(id_or_options, options)
+          paginate "clubs/#{id}/activities", options, Strava::Models::Activity, &block
         end
 
         #
@@ -27,9 +27,9 @@ module Strava
         # @option options [Integer] :per_page
         #   Number of items per page. Defaults to 30.
         #
-        def club_admins(options = {}, &block)
-          throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
-          paginate "clubs/#{options[:id]}/admins", options.except(:id), Strava::Models::ClubAdmin, &block
+        def club_admins(id_or_options, options = {}, &block)
+          id, options = parse_args(id_or_options, options)
+          paginate "clubs/#{id}/admins", options, Strava::Models::ClubAdmin, &block
         end
 
         #
@@ -38,9 +38,9 @@ module Strava
         # @option options [String] :id
         #   Club id.
         #
-        def club(options = {})
-          throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
-          Strava::Models::Club.new(get("clubs/#{options[:id]}", options.except(:id)))
+        def club(id_or_options, options = {})
+          id, options = parse_args(id_or_options, options)
+          Strava::Models::Club.new(get("clubs/#{id}", options))
         end
 
         #
@@ -53,9 +53,9 @@ module Strava
         # @option options [Integer] :per_page
         #   Number of items per page. Defaults to 30.
         #
-        def club_members(options = {}, &block)
-          throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
-          paginate "clubs/#{options[:id]}/members", options.except(:id), Strava::Models::ClubMember, &block
+        def club_members(id_or_options, options = {}, &block)
+          id, options = parse_args(id_or_options, options)
+          paginate "clubs/#{id}/members", options, Strava::Models::ClubMember, &block
         end
 
         #

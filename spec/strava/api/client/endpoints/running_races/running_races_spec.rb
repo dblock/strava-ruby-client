@@ -1,10 +1,11 @@
 require 'spec_helper'
 
-RSpec.describe 'Strava::Api::Client#running_races' do
+RSpec.describe 'Strava::Api::Client#running_races', vcr: { cassette_name: 'client/running_races' } do
   let(:client) { Strava::Api::Client.new(access_token: ENV['STRAVA_ACCESS_TOKEN'] || 'access-token') }
-  it 'returns running races', vcr: { cassette_name: 'client/running_races' } do
+  it 'returns running races' do
     running_races = client.running_races
     expect(running_races).to be_a Enumerable
+    expect(running_races.count).to eq 703
 
     running_race = running_races.first
     expect(running_race).to be_a Strava::Models::RunningRace

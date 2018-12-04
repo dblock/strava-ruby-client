@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-RSpec.describe 'Strava::Api::Client#athlete_routes' do
+RSpec.describe 'Strava::Api::Client#athlete_routes', vcr: { cassette_name: 'client/athlete_routes' } do
   let(:client) { Strava::Api::Client.new(access_token: ENV['STRAVA_ACCESS_TOKEN'] || 'access-token') }
-  it 'returns routes', vcr: { cassette_name: 'client/athlete_routes' } do
+  it 'returns routes' do
     routes = client.athlete_routes(id: 26_462_176)
     expect(routes).to be_a Enumerable
     route = routes.first
@@ -25,5 +25,11 @@ RSpec.describe 'Strava::Api::Client#athlete_routes' do
     expect(route.estimated_moving_time).to eq 4865
     expect(route.moving_time).to eq 4865
     expect(route.moving_time_in_hours_s).to eq '1h21m5s'
+  end
+  it 'returns routes by id' do
+    routes = client.athlete_routes(26_462_176)
+    expect(routes).to be_a Enumerable
+    route = routes.first
+    expect(route).to be_a Strava::Models::Route
   end
 end

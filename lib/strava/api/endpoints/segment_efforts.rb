@@ -8,9 +8,9 @@ module Strava
         # @option options [String] :id
         #   The identifier of the segment effort.
         #
-        def segment_effort(options = {})
-          throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
-          Strava::Models::SegmentEffort.new(get("segment_efforts/#{options[:id]}", options.except(:id)))
+        def segment_effort(id_or_options, options = {})
+          id, options = parse_args(id_or_options, options)
+          Strava::Models::SegmentEffort.new(get("segment_efforts/#{id}", options))
         end
 
         #
@@ -23,9 +23,9 @@ module Strava
         # @option options [Integer] :per_page
         #   Number of items per page. Defaults to 30.
         #
-        def segment_efforts(options = {}, &block)
-          throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
-          paginate "segments/#{options[:id]}/all_efforts", options.except(:id), Strava::Models::SegmentEffort, &block
+        def segment_efforts(id_or_options, options = {}, &block)
+          id, options = parse_args(id_or_options, options)
+          paginate "segments/#{id}/all_efforts", options, Strava::Models::SegmentEffort, &block
         end
       end
     end

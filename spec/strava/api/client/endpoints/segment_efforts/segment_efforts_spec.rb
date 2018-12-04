@@ -1,10 +1,11 @@
 require 'spec_helper'
 
-RSpec.describe 'Strava::Api::Client#segment_efforts' do
+RSpec.describe 'Strava::Api::Client#segment_efforts', vcr: { cassette_name: 'client/segment_efforts' } do
   let(:client) { Strava::Api::Client.new(access_token: ENV['STRAVA_ACCESS_TOKEN'] || 'access-token') }
-  it 'returns segment efforts', vcr: { cassette_name: 'client/segment_efforts' } do
+  it 'returns segment efforts' do
     segment_efforts = client.segment_efforts(id: 1_109_718)
     expect(segment_efforts).to be_a Enumerable
+    expect(segment_efforts.count).to eq 3
     segment_effort = segment_efforts.first
     expect(segment_effort).to be_a Strava::Models::SegmentEffort
     expect(segment_effort.id).to eq 41_494_197_089
@@ -28,5 +29,10 @@ RSpec.describe 'Strava::Api::Client#segment_efforts' do
     expect(segment_effort.end_index).to eq 225
     expect(segment_effort.average_heartrate).to eq 152.2
     expect(segment_effort.max_heartrate).to eq 158.0
+  end
+  it 'returns segment efforts by id' do
+    segment_efforts = client.segment_efforts(1_109_718)
+    expect(segment_efforts).to be_a Enumerable
+    expect(segment_efforts.count).to eq 3
   end
 end

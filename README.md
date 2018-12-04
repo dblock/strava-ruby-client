@@ -119,7 +119,7 @@ See [Strava::Models::Activity](lib/strava/models/activity.rb) for all available 
 Returns the given activity that is owned by the authenticated athlete.
 
 ```ruby
-activity = client.activity(id: 1982980795)
+activity = client.activity(1982980795)
 
 activity.name # => 'Afternoon Run'
 activity.strava_url # => 'https://www.strava.com/activities/1982980795'
@@ -132,7 +132,7 @@ See [Strava::Models::Activity](lib/strava/models/activity.rb) for all available 
 Returns the comments on the given activity.
 
 ```ruby
-comments = client.activity_comments(id: 1982980795) # => Array[Strava::Models::Comment]
+comments = client.activity_comments(1982980795) # => Array[Strava::Models::Comment]
 
 comment = comments.first # => Strava::Models::Comment
 
@@ -147,7 +147,7 @@ See [Strava::Models::Comment](lib/strava/models/comment.rb) for all available pr
 Returns the athletes who kudoed an activity identified by an identifier.
 
 ```ruby
-kudoers = client.activity_kudos(id: 1982980795) # => Array[Strava::Models::Athlete]
+kudoers = client.activity_kudos(1982980795) # => Array[Strava::Models::Athlete]
 
 kodoer = kudoers.first # => Strava::Models::Athlete
 
@@ -161,7 +161,7 @@ See [Strava::Models::Athlete](lib/strava/models/athlete.rb) for all available pr
 Returns the laps of an activity identified by an identifier.
 
 ```ruby
-laps = client.activity_laps(id: 1982980795) # => Array[Strava::Models::Lap]
+laps = client.activity_laps(1982980795) # => Array[Strava::Models::Lap]
 
 lap = laps.first # => Strava::Models::Lap
 
@@ -201,7 +201,7 @@ See [Strava::Models::Activity](lib/strava/models/activity.rb), [Strava::Models::
 Returns the zones of a given activity.
 
 ```ruby
-zones = client.activity_zones(id: 1982980795) # => Array[Strava::Models::ActivityZone]
+zones = client.activity_zones(1982980795) # => Array[Strava::Models::ActivityZone]
 
 zone = zones.first # => Strava::Models::ActivityZone
 zones.type # => 'heartrate'
@@ -267,7 +267,7 @@ See [Strava::Models::Zones](lib/strava/models/zones.rb), [Strava::Models::HeartR
 Returns the activity stats of an athlete.
 
 ```ruby
-athlete_stats = client.athlete_stats(id: 26462176) # => Strava::Models::ActivityStats
+athlete_stats = client.athlete_stats(26462176) # => Strava::Models::ActivityStats
 
 recent_run_totals = athlete_stats.recent_ride_totals # => Strava::Models::ActivityTotal
 
@@ -302,7 +302,7 @@ See [Strava::Models::Athlete](lib/strava/models/athlete.rb) for all available re
 Retrieve recent activities from members of a specific club.
 
 ```ruby
-activities = client.club_activities(id: 108605) # => Array[Strava::Models::Activity]
+activities = client.club_activities(108605) # => Array[Strava::Models::Activity]
 
 activity = activities.first # => Strava::Models::Activity
 
@@ -316,7 +316,7 @@ See [Strava::Models::Activity](lib/strava/models/activity.rb) for all available 
 Returns a list of the administrators of a given club.
 
 ```ruby
-admins = client.club_admins(id: 108605) # => Array[Strava::Models::ClubAdmin]
+admins = client.club_admins(108605) # => Array[Strava::Models::ClubAdmin]
 
 admin = admins.first # => Strava::Models::ClubAdmin
 admin.name # => 'Peter Ciaccia'
@@ -329,7 +329,7 @@ See [Strava::Models::ClubAdmin](lib/strava/models/club_admin.rb) for all availab
 Returns a given club using its identifier.
 
 ```ruby
-club = client.club(id: 108605) # => Strava::Models::Club
+club = client.club(108605) # => Strava::Models::Club
 
 club.name # => 'NYRR'
 ```
@@ -341,7 +341,7 @@ See [Strava::Models::Club](lib/strava/models/club.rb) for all available properti
 Returns a list of the members of a given club.
 
 ```ruby
-members = client.club_members(id: 108605) # => Array[Strava::Models::ClubMember]
+members = client.club_members(108605) # => Array[Strava::Models::ClubMember]
 
 member = members.first # => Strava::Models::ClubMember
 member.name # => 'Peter Ciaccia'
@@ -371,7 +371,7 @@ See [Strava::Models::Club](lib/strava/models/club.rb) for all available properti
 Returns an equipment using its identifier.
 
 ```ruby
-gear = client.gear(id: 'g3844087') # => Strava::Models::Gear
+gear = client.gear('g3844087') # => Strava::Models::Gear
 
 gear.id # => 'g3844087'
 gear.name # => 'Adidas Supernova ST'
@@ -391,7 +391,7 @@ See [Strava::Models::Gear](lib/strava/models/gear.rb) for all available properti
 Returns [GPS Exchange Format](https://en.wikipedia.org/wiki/GPS_Exchange_Format) (GPX) data of the route. Combine with [multi_xml](https://github.com/sferik/multi_xml) or [gpx](https://github.com/dougfales/gpx) to parse it.
 
 ```ruby
-data = client.export_route_gpx(id: 16341573) # => String
+data = client.export_route_gpx(16341573) # => String
 
 require 'multi_xml'
 xml = MultiXml.parse(data) # => parsed GPX
@@ -409,7 +409,7 @@ gpx.tracks # => Array[GPX::Track]
 Returns a [Training Center XML](https://en.wikipedia.org/wiki/Training_Center_XML) (TCX) data of the route. Combine with [multi_xml](https://github.com/sferik/multi_xml) to parse it.
 
 ```ruby
-data = client.export_route_tcx(id: 16341573) # => String
+data = client.export_route_tcx(16341573) # => String
 
 require 'multi_xml'
 xml = MultiXml.parse(data) # => parsed TCX
@@ -420,7 +420,7 @@ xml = MultiXml.parse(data) # => parsed TCX
 Returns a route using its identifier.
 
 ```ruby
-route = client.route(id: 16341573) # => Strava::Models::Route
+route = client.route(16341573) # => Strava::Models::Route
 
 route.name # => 'Lower Manhattan Loop'
 route.description # => 'My usual long run when I am too lazy to go to Central Park.'
@@ -433,7 +433,7 @@ See [Strava::Models::Route](lib/strava/models/route.rb) for all available proper
 Returns a list of the routes by athlete ID.
 
 ```ruby
-routes = client.athlete_routes(id: 26462176) # => Array[Strava::Models::Route]
+routes = client.athlete_routes(26462176) # => Array[Strava::Models::Route]
 
 route = routes.first # => Strava::Models::Route
 
@@ -451,7 +451,7 @@ See [Strava::Models::Route](lib/strava/models/route.rb) for all available proper
 Returns a running race for a given identifier.
 
 ```ruby
-running_race = client.running_race(id: 1577) # => Strava::Models::RunningRace
+running_race = client.running_race(1577) # => Strava::Models::RunningRace
 
 running_race.name # => 'Walt Disney World Marathon 10k'
 running_race.distance # => 10_000.0
@@ -489,7 +489,7 @@ See [Strava::Models::RunningRace](lib/strava/models/running_race.rb) for all ava
 Returns a set of the authenticated athlete's segment efforts for a given segment.
 
 ```ruby
-segment_efforts = client.segment_efforts(id: 1109718)
+segment_efforts = client.segment_efforts(1109718)
 
 segment_effort = segment_efforts.first # => Strava::Models::SegmentEffort
 
@@ -517,7 +517,7 @@ See [Strava::Models::SegmentEffort](lib/strava/models/segment_effort.rb) and [St
 Returns a segment effort from an activity that is owned by the authenticated athlete.
 
 ```ruby
-segment_effort = client.segment_effort(id: 41494197089) # => Strava::Models::SegmentEffort
+segment_effort = client.segment_effort(41494197089) # => Strava::Models::SegmentEffort
 
 segment_effort.name # => 'E 14th St Climb'
 segment_effort.activity # => Strava::Models::Activity
@@ -556,7 +556,7 @@ See [Strava::Models::ExplorerSegment](lib/strava/models/explorer_segment.rb) for
 Returns the specified segment leaderboard.
 
 ```ruby
-segment_leaderboard = client.segment_leaderboard(id: 1109718) # => Strava::Models::SegmentLeaderboard
+segment_leaderboard = client.segment_leaderboard(1109718) # => Strava::Models::SegmentLeaderboard
 
 segment_leaderboard.effort_count # => 204
 segment_leaderboard.entry_count # => 204
@@ -574,7 +574,7 @@ entry.rank # => 1
 This API supports pagination through the entire segment leaderboard but wraps entries into a [Strava::Models::SegmentLeaderboard](lib/strava/models/segment_leaderboard.rb) object.
 
 ```ruby
-client.segment_leaderboard(id: 1109718) do |row|
+client.segment_leaderboard(1109718) do |row|
   row # => Strava::Models::SegmentLeaderboard
   row.entries # => Array[Strava::Models::SegmentLeaderboardEntry]
 end
@@ -604,7 +604,7 @@ See [Strava::Models::Segment](lib/strava/models/segment.rb) and [Strava::Models:
 Returns the specified segment.
 
 ```ruby
-segment = client.segment(id: 1109718) # => Strava::Models::Segment
+segment = client.segment(1109718) # => Strava::Models::Segment
 
 segment.name # => 'E 14th St Climb'
 segment.city # => 'New York'
@@ -624,7 +624,7 @@ See [Strava::Models::Segment](lib/strava/models/segment.rb) for all available pr
 Stars/unstars the given segment for the authenticated athlete.
 
 ```ruby
-segment = client.star_segment(id: 50272077110, starred: true) # => Strava::Models::Segment
+segment = client.star_segment(50272077110, starred: true) # => Strava::Models::Segment
 
 segment.name # => 'E 14th St Climb'
 segment.starred # => true
@@ -637,7 +637,7 @@ See [Strava::Models::Segment](lib/strava/models/segment.rb) for all available pr
 Stream APIs can return various streams by key(s).
 
 ```ruby
-streams = client.segment_streams(id: 1109718, keys: %w[distance latlng altitude]) # => Strava::Models::StrewamSet
+streams = client.segment_streams(1109718, keys: %w[distance latlng altitude]) # => Strava::Models::StrewamSet
 
 streams.distance # => Strava::Models::Stream
 streams.latlng # => Strava::Models::Stream
@@ -649,7 +649,7 @@ streams.altitude # => Strava::Models::Stream
 Returns the given activity's streams.
 
 ```ruby
-streams = client.activity_streams(id: 1946417534) # => Strava::Models::StreamSet
+streams = client.activity_streams(1946417534) # => Strava::Models::StreamSet
 
 distance = streams.distance # => Strava::Models::Stream
 distance.original_size # => 13_129
@@ -665,7 +665,7 @@ See [Strava::Models::StreamSet](lib/strava/models/stream_set.rb) and [Strava::Mo
 Returns a set of streams for a segment effort completed by the authenticated athlete.
 
 ```ruby
-streams = client.segment_effort_streams(id: 41494197089)
+streams = client.segment_effort_streams(41494197089)
 
 distance = streams.distance # => Strava::Models::Stream
 distance.original_size # => 117
@@ -681,7 +681,7 @@ See [Strava::Models::StreamSet](lib/strava/models/stream_set.rb) and [Strava::Mo
 Returns the given segment's streams.
 
 ```ruby
-streams = client.segment_streams(id: 1109718) # => Strava::Models::StreamSet
+streams = client.segment_streams(1109718) # => Strava::Models::StreamSet
 
 distance = streams.distance # => Strava::Models::Stream
 distance.original_size # => 32
@@ -721,7 +721,7 @@ See [Strava::Models::Upload](lib/strava/models/upload.rb) for all available prop
 Returns an upload for a given identifier.
 
 ```ruby
-upload = client.upload(id: 2136460097) # => Strava::Models::Upload
+upload = client.upload(2136460097) # => Strava::Models::Upload
 
 upload.id # => 2_136_460_097
 upload.external_id # => 'strava-ruby-client-upload-1.tcx'
@@ -859,7 +859,7 @@ subscription.callback_url # => 'http://example.com/strava'
 Delete an existing subscription.
 
 ```ruby
-client.delete_push_subscription(id: 131300) # => nil
+client.delete_push_subscription(131300) # => nil
 ```
 
 ## Configuration

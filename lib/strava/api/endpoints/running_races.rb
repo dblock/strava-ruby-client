@@ -8,9 +8,9 @@ module Strava
         # @option options [String] :id
         #   The identifier of the running race.
         #
-        def running_race(options = {})
-          throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
-          Strava::Models::RunningRace.new(get("running_races/#{options[:id]}", options.except(:id)))
+        def running_race(id_or_options, options = {})
+          id, options = parse_args(id_or_options, options)
+          Strava::Models::RunningRace.new(get("running_races/#{id}", options))
         end
 
         #

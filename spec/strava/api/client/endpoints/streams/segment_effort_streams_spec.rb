@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-RSpec.describe 'Strava::Api::Client#segment_effort_streams' do
+RSpec.describe 'Strava::Api::Client#segment_effort_streams', vcr: { cassette_name: 'client/segment_effort_streams' } do
   let(:client) { Strava::Api::Client.new(access_token: ENV['STRAVA_ACCESS_TOKEN'] || 'access-token') }
-  it 'returns segment effort streams', vcr: { cassette_name: 'client/segment_effort_streams' } do
+  it 'returns segment effort streams' do
     streams = client.segment_effort_streams(id: 41_494_197_089)
     expect(streams).to be_a Strava::Models::StreamSet
     distance = streams.distance
@@ -11,5 +11,9 @@ RSpec.describe 'Strava::Api::Client#segment_effort_streams' do
     expect(distance.resolution).to eq 'high'
     expect(distance.series_type).to eq 'distance'
     expect(distance.data.size).to eq 117
+  end
+  it 'returns segment effort streams by id' do
+    streams = client.segment_effort_streams(41_494_197_089)
+    expect(streams).to be_a Strava::Models::StreamSet
   end
 end

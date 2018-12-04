@@ -1,9 +1,10 @@
 require 'spec_helper'
 
-RSpec.describe 'Strava::Api::Client#activity' do
+RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/activity' } do
   let(:client) { Strava::Api::Client.new(access_token: ENV['STRAVA_ACCESS_TOKEN'] || 'access-token') }
-  let(:activity) { client.activity(id: 1_946_417_534) }
-  it 'returns activity', vcr: { cassette_name: 'client/activity' } do
+  it 'returns activity' do
+    activity = client.activity(id: 1_946_417_534)
+
     expect(activity).to be_a Strava::Models::Activity
     expect(activity.id).to eq 1_946_417_534
     expect(activity.resource_state).to eq 3
@@ -258,5 +259,10 @@ RSpec.describe 'Strava::Api::Client#activity' do
     expect(trend.direction).to eq 0
 
     expect(activity.available_zones).to eq %w[heartrate pace]
+  end
+  it 'returns activity by id' do
+    activity = client.activity(1_946_417_534)
+    expect(activity).to be_a Strava::Models::Activity
+    expect(activity.id).to eq 1_946_417_534
   end
 end

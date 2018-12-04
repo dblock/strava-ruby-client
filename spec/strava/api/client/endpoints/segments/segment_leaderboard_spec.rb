@@ -16,9 +16,20 @@ RSpec.describe 'Strava::Api::Client#segment_leaderboard' do
     expect(entry.start_date_local).to be_a Time
     expect(entry.rank).to eq 1
   end
+  it 'returns a page of segment leaderboard by id', vcr: { cassette_name: 'client/segment_leaderboard' } do
+    segment_leaderboard = client.segment_leaderboard(1_109_718)
+    expect(segment_leaderboard.effort_count).to eq 204
+  end
   it 'paginates through the entire segment leaderboard', vcr: { cassette_name: 'client/all_segment_leaderboard' } do
     entries = []
     client.segment_leaderboard(id: 1_109_718, per_page: 100) do |row|
+      entries.concat(row.entries)
+    end
+    expect(entries.count).to eq 204
+  end
+  it 'paginates through the entire segment leaderboard by id', vcr: { cassette_name: 'client/all_segment_leaderboard' } do
+    entries = []
+    client.segment_leaderboard(1_109_718, per_page: 100) do |row|
       entries.concat(row.entries)
     end
     expect(entries.count).to eq 204

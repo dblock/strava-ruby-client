@@ -8,9 +8,9 @@ module Strava
         # @option options [String] :id
         #   Route id.
         #
-        def export_route_gpx(options = {})
-          throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
-          get "routes/#{options[:id]}/export_gpx", options.except(:id)
+        def export_route_gpx(id_or_options, options = {})
+          id, options = parse_args(id_or_options, options)
+          get "routes/#{id}/export_gpx", options
         end
 
         #
@@ -19,9 +19,9 @@ module Strava
         # @option options [String] :id
         #   Route id.
         #
-        def export_route_tcx(options = {})
-          throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
-          get "routes/#{options[:id]}/export_tcx", options.except(:id)
+        def export_route_tcx(id_or_options, options = {})
+          id, options = parse_args(id_or_options, options)
+          get "routes/#{id}/export_tcx", options
         end
 
         #
@@ -30,9 +30,9 @@ module Strava
         # @option options [String] :id
         #   Route id.
         #
-        def route(options = {})
-          throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
-          Strava::Models::Route.new(get("routes/#{options[:id]}", options.except(:id)))
+        def route(id_or_options, options = {})
+          id, options = parse_args(id_or_options, options)
+          Strava::Models::Route.new(get("routes/#{id}", options))
         end
 
         #
@@ -45,9 +45,9 @@ module Strava
         # @option options [Integer] :per_page
         #   Number of items per page. Defaults to 30.
         #
-        def athlete_routes(options = {}, &block)
-          throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
-          paginate "athletes/#{options[:id]}/routes", options.except(:id), Strava::Models::Route, &block
+        def athlete_routes(id_or_options, options = {}, &block)
+          id, options = parse_args(id_or_options, options)
+          paginate "athletes/#{id}/routes", options, Strava::Models::Route, &block
         end
       end
     end

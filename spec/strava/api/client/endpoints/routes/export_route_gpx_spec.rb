@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-RSpec.describe 'Strava::Api::Client#export_route_gpx' do
+RSpec.describe 'Strava::Api::Client#export_route_gpx', vcr: { cassette_name: 'client/export_route_gpx' } do
   let(:client) { Strava::Api::Client.new(access_token: ENV['STRAVA_ACCESS_TOKEN'] || 'access-token') }
-  it 'exports a route file', vcr: { cassette_name: 'client/export_route_gpx' } do
+  it 'exports a route file' do
     route = client.export_route_gpx(id: 16_341_573)
     expect(route).to start_with "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<gpx creator=\"StravaGPX\""
 
@@ -13,5 +13,9 @@ RSpec.describe 'Strava::Api::Client#export_route_gpx' do
     expect(gpx_file).to be_a GPX::GPXFile
     expect(gpx_file.name).to eq 'Lower Manhattan Loop'
     expect(gpx_file.description).to eq 'My usual long run when I am too lazy to go to Central Park.'
+  end
+  it 'exports a route file by id' do
+    route = client.export_route_gpx(16_341_573)
+    expect(route).to start_with "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<gpx creator=\"StravaGPX\""
   end
 end

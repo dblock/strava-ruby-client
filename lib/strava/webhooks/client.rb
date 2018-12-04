@@ -26,9 +26,9 @@ module Strava
       #
       # Delete an existing push subscription.
       #
-      def delete_push_subscription(options = {})
-        throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
-        delete("push_subscriptions/#{options[:id]}", options.except(:id))
+      def delete_push_subscription(id_or_options, options = {})
+        id, options = parse_args(id_or_options, options)
+        delete("push_subscriptions/#{id}", options)
         nil
       end
 

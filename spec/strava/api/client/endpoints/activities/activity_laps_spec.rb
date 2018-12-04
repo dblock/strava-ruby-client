@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-RSpec.describe 'Strava::Api::Client#activity_laps' do
+RSpec.describe 'Strava::Api::Client#activity_laps', vcr: { cassette_name: 'client/activity_laps' } do
   let(:client) { Strava::Api::Client.new(access_token: ENV['STRAVA_ACCESS_TOKEN'] || 'access-token') }
-  let(:activity_laps) { client.activity_laps(id: 1_946_417_534) }
-  it 'returns activity laps', vcr: { cassette_name: 'client/activity_laps' } do
+  it 'returns activity laps' do
+    activity_laps = client.activity_laps(id: 1_946_417_534)
     expect(activity_laps).to be_a Enumerable
     expect(activity_laps.count).to eq 1
     lap = activity_laps.first
@@ -29,5 +29,10 @@ RSpec.describe 'Strava::Api::Client#activity_laps' do
     expect(lap.lap_index).to eq 1
     expect(lap.split).to eq 1
     expect(lap.pace_zone).to eq 2
+  end
+  it 'returns activity laps by id' do
+    activity_laps = client.activity_laps(1_946_417_534)
+    expect(activity_laps).to be_a Enumerable
+    expect(activity_laps.count).to eq 1
   end
 end

@@ -8,9 +8,9 @@ module Strava
         # @option options [String] :id
         #   Gear id.
         #
-        def gear(options = {})
-          throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
-          Strava::Models::Gear.new(get("gear/#{options[:id]}", options.except(:id)))
+        def gear(id_or_options, options = {})
+          id, options = parse_args(id_or_options, options)
+          Strava::Models::Gear.new(get("gear/#{id}", options))
         end
       end
     end

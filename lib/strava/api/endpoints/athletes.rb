@@ -22,9 +22,9 @@ module Strava
         # @option options [String] :id
         #   Athlete id.
         #
-        def athlete_stats(options = {})
-          throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
-          Strava::Models::ActivityStats.new(get("athletes/#{options[:id]}/stats", options.except(:id)))
+        def athlete_stats(id_or_options, options = {})
+          id, options = parse_args(id_or_options, options)
+          Strava::Models::ActivityStats.new(get("athletes/#{id}/stats", options))
         end
 
         #

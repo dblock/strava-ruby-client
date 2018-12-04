@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-RSpec.describe 'Strava::Api::Client#route' do
+RSpec.describe 'Strava::Api::Client#route', vcr: { cassette_name: 'client/route' } do
   let(:client) { Strava::Api::Client.new(access_token: ENV['STRAVA_ACCESS_TOKEN'] || 'access-token') }
-  it 'returns a route', vcr: { cassette_name: 'client/route' } do
+  it 'returns a route' do
     route = client.route(id: 16_341_573)
     expect(route).to be_a Strava::Models::Route
     expect(route.id).to eq 16_341_573
@@ -47,5 +47,9 @@ RSpec.describe 'Strava::Api::Client#route' do
     expect(segment.private).to eq false
     expect(segment.hazardous).to eq false
     expect(segment.starred).to eq false
+  end
+  it 'returns a route by id' do
+    route = client.route(16_341_573)
+    expect(route).to be_a Strava::Models::Route
   end
 end

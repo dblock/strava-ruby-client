@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-RSpec.describe 'Strava::Api::Client#activity_zones' do
+RSpec.describe 'Strava::Api::Client#activity_zones', vcr: { cassette_name: 'client/activity_zones' } do
   let(:client) { Strava::Api::Client.new(access_token: ENV['STRAVA_ACCESS_TOKEN'] || 'access-token') }
-  let(:activity_zones) { client.activity_zones(id: 1_946_417_534) }
-  it 'returns activity zones', vcr: { cassette_name: 'client/activity_zones' } do
+  it 'returns activity zones' do
+    activity_zones = client.activity_zones(id: 1_946_417_534)
     expect(activity_zones).to be_a Enumerable
     expect(activity_zones.count).to eq 2
     activity_zone = activity_zones.first
@@ -20,5 +20,10 @@ RSpec.describe 'Strava::Api::Client#activity_zones' do
     expect(activity_zone.sensor_based).to be true
     expect(activity_zone.points).to eq 452
     expect(activity_zone.custom_zones).to be false
+  end
+  it 'returns activity zones by id' do
+    activity_zones = client.activity_zones(1_946_417_534)
+    expect(activity_zones).to be_a Enumerable
+    expect(activity_zones.count).to eq 2
   end
 end

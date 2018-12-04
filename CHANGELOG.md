@@ -10,6 +10,7 @@
 * Added `Strava::Api::Client#explore_segments`, `segment_leaderboard`, `starred_segments`, `segment` and `star_segment`  - [@dblock](https://github.com/dblock).
 * Added `Strava::Api::Client#activity_streams`, `segment_effort_streams` and `segment_streams`  - [@dblock](https://github.com/dblock).
 * Added `Strava::Api::Client#create_upload` and `upload` - [@dblock](https://github.com/dblock).
+* [#9](https://github.com/dblock/strava-ruby-client/issues/9): All methods that take `id` can take it directly or via options hash - [@dblock](https://github.com/dblock).
 * Your contribution here.
 
 ### 0.2.0 (2018/11/27)

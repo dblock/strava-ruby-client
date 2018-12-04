@@ -47,15 +47,15 @@ module Strava
         # @option options [Integer] :per_page
         #   Number of items per page. Defaults to 30.
         #
-        def segment_leaderboard(options = {})
-          throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
+        def segment_leaderboard(id_or_options, options = {})
+          id, options = parse_args(id_or_options, options)
 
           if block_given?
             next_page = 1
             total_count = 0
             loop do
-              query = options.merge(page: next_page).except(:id)
-              response = Strava::Models::SegmentLeaderboard.new(get("segments/#{options[:id]}/leaderboard", query))
+              query = options.merge(page: next_page)
+              response = Strava::Models::SegmentLeaderboard.new(get("segments/#{id}/leaderboard", query))
               total_count += response.entries.count
               break unless response.entries.any?
 
@@ -65,7 +65,7 @@ module Strava
               next_page += 1
             end
           else
-            Strava::Models::SegmentLeaderboard.new(get("segments/#{options[:id]}/leaderboard", options.except(:id)))
+            Strava::Models::SegmentLeaderboard.new(get("segments/#{id}/leaderboard", options))
           end
         end
 
@@ -87,9 +87,9 @@ module Strava
         # @option options [String] :id
         #   The identifier of the segment.
         #
-        def segment(options = {})
-          throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
-          Strava::Models::Segment.new(get("segments/#{options[:id]}", options.except(:id)))
+        def segment(id_or_options, options = {})
+          id, options = parse_args(id_or_options, options)
+          Strava::Models::Segment.new(get("segments/#{id}", options))
         end
 
         #
@@ -100,10 +100,10 @@ module Strava
         # @option options [Boolean] :starred
         #   If true, star the segment; if false, unstar the segment.
         #
-        def star_segment(options = {})
-          throw ArgumentError.new('Required argument :id missing') if options[:id].nil?
+        def star_segment(id_or_options, options = {})
+          id, options = parse_args(id_or_options, options)
           throw ArgumentError.new('Required argument :starred missing') if options[:starred].nil?
-          Strava::Models::Segment.new(put("segments/#{options[:id]}/starred", options.except(:id)))
+          Strava::Models::Segment.new(put("segments/#{id}/starred", options))
         end
       end
     end
