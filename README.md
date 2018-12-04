@@ -6,7 +6,7 @@ Strava Ruby Client
 
 A complete Ruby client for the [Strava API v3](https://developers.strava.com).
 
-Unlike other clients, including [strava-api-v3](https://github.com/jaredholdcroft/strava-api-v3), provides complete OAuth refresh token flow support, webhooks support, a richer first class interface to Strava models, natively supports pagination, implements more consistent error handling and is built with thorough test coverage using actual Strava data.
+Unlike other clients, including [strava-api-v3](https://github.com/jaredholdcroft/strava-api-v3), provides complete OAuth refresh token flow support, webhooks support, a richer first class interface to Strava models, conversion helpers for distance, time and elevation, natively supports pagination, implements more consistent error handling and is built with thorough test coverage using actual Strava data.
 
 ## Table of Contents
 
