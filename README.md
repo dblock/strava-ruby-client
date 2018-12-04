@@ -127,6 +127,22 @@ activity.strava_url # => 'https://www.strava.com/activities/1982980795'
 
 See [Strava::Models::Activity](lib/strava/models/activity.rb) for all available properties.
 
+Use `map.summary_polyline` and combine with [polylines](https://github.com/joshuaclayton/polylines) to parse the activity map and to construct a Google maps URL with start and end markers.
+
+```ruby
+map = activity.map # => Strava::Models::Map
+
+decoded_summary_polyline = Polylines::Decoder.decode_polyline(map.summary_polyline)
+start_latlng = decoded_summary_polyline[0]
+end_latlng = decoded_summary_polyline[-1]
+
+google_maps_api_key = ENV['GOOGLE_STATIC_MAPS_API_KEY']
+
+google_image_url = "https://maps.googleapis.com/maps/api/staticmap?maptype=roadmap&path=enc:#{map.summary_polyline}&key=#{google_maps_api_key}&size=800x800&markers=color:yellow|label:S|#{start_latlng[0]},#{start_latlng[1]}&markers=color:green|label:F|#{end_latlng[0]},#{end_latlng[1]}"
+```
+
+See [Strava::Models::Map](lib/strava/models/map.rb) for all available properties.
+
 #### List Activity Comments
 
 Returns the comments on the given activity.

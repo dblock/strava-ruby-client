@@ -8,6 +8,7 @@ group :development, :test do
   gem 'dotenv'
   gem 'gpx'
   gem 'multi_xml'
+  gem 'polylines'
   gem 'pry'
   gem 'rake', '~> 10'
   gem 'rspec'

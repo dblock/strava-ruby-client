@@ -65,9 +65,13 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
     expect(activity.comment_count).to eq 8
     expect(activity.athlete_count).to eq 301
     expect(activity.photo_count).to eq 0
-    expect(activity.map).to be_a Strava::Models::Map
-    expect(activity.map.id).to eq 'a1946417534'
-    expect(activity.map.resource_state).to eq 3
+
+    map = activity.map
+    expect(map).to be_a Strava::Models::Map
+    expect(map.id).to eq 'a1946417534'
+    expect(map.resource_state).to eq 3
+    expect(Polylines::Decoder.decode_polyline(map.summary_polyline).size).to eq 86
+
     expect(activity.trainer).to be false
     expect(activity.commute).to be false
     expect(activity.manual).to be false
