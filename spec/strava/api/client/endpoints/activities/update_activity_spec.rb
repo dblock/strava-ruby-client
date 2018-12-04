@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#update_activity', vcr: { cassette_name: 'client/update_activity' } do
-  let(:client) { Strava::Api::Client.new(access_token: ENV['STRAVA_ACCESS_TOKEN'] || 'access-token') }
+  include_context 'API client'
   it 'updates the activity' do
     activity = client.update_activity(
       id: 1_982_980_795,

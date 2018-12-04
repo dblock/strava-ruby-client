@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#gear', vcr: { cassette_name: 'client/gear' } do
-  let(:client) { Strava::Api::Client.new(access_token: ENV['STRAVA_ACCESS_TOKEN'] || 'access-token') }
+  include_context 'API client'
   it 'returns gear' do
     gear = client.gear(id: 'g3423618')
     expect(gear).to be_a Strava::Models::Gear

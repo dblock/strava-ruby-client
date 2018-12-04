@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#get_upload', vcr: { cassette_name: 'client/upload' } do
-  let(:client) { Strava::Api::Client.new(access_token: ENV['STRAVA_ACCESS_TOKEN'] || 'access-token') }
+  include_context 'API client'
   it 'returns a finished upload' do
     upload = client.upload(id: 2_136_460_097)
     expect(upload.id).to eq 2_136_460_097

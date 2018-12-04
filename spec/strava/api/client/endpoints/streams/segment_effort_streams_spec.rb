@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#segment_effort_streams', vcr: { cassette_name: 'client/segment_effort_streams' } do
-  let(:client) { Strava::Api::Client.new(access_token: ENV['STRAVA_ACCESS_TOKEN'] || 'access-token') }
+  include_context 'API client'
   it 'returns segment effort streams' do
     streams = client.segment_effort_streams(id: 41_494_197_089)
     expect(streams).to be_a Strava::Models::StreamSet

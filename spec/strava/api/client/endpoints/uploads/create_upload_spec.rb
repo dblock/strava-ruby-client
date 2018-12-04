@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#upload_activity' do
-  let(:client) { Strava::Api::Client.new(access_token: ENV['STRAVA_ACCESS_TOKEN'] || 'access-token') }
+  include_context 'API client'
   let(:file) { 'spec/fixtures/strava/files/17611540601.tcx' }
   it 'uploads an activity', vcr: { cassette_name: 'client/create_upload' } do
     upload = client.create_upload(

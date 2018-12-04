@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#athlete_clubs', vcr: { cassette_name: 'client/athlete_clubs' } do
-  let(:client) { Strava::Api::Client.new(access_token: ENV['STRAVA_ACCESS_TOKEN'] || 'access-token') }
+  include_context 'API client'
   it 'returns athlete clubs' do
     athlete_clubs = client.athlete_clubs
     expect(athlete_clubs).to be_a Enumerable

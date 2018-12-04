@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#create_activity', vcr: { cassette_name: 'client/create_activity' } do
-  let(:client) { Strava::Api::Client.new(access_token: ENV['STRAVA_ACCESS_TOKEN'] || 'access-token') }
+  include_context 'API client'
   it 'creates an activity' do
     activity = client.create_activity(
       name: 'strava-ruby-client activity',

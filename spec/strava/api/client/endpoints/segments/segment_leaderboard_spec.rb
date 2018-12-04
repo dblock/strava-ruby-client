@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#segment_leaderboard' do
-  let(:client) { Strava::Api::Client.new(access_token: ENV['STRAVA_ACCESS_TOKEN'] || 'access-token') }
+  include_context 'API client'
   it 'returns a page of segment leaderboard', vcr: { cassette_name: 'client/segment_leaderboard' } do
     segment_leaderboard = client.segment_leaderboard(id: 1_109_718)
     expect(segment_leaderboard.effort_count).to eq 204

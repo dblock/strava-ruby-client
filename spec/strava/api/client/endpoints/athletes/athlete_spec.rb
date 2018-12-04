@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#athlete', vcr: { cassette_name: 'client/athlete' } do
-  let(:client) { Strava::Api::Client.new(access_token: ENV['STRAVA_ACCESS_TOKEN'] || 'access-token') }
+  include_context 'API client'
   it 'returns athlete' do
     athlete = client.athlete
     expect(athlete).to be_a Strava::Models::Athlete

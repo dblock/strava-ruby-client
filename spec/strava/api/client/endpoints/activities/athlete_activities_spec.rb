@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#athlete_activities' do
-  let(:client) { Strava::Api::Client.new(access_token: ENV['STRAVA_ACCESS_TOKEN'] || 'access-token') }
+  include_context 'API client'
   describe '#athlete_activities', vcr: { cassette_name: 'client/athlete_activities' } do
     let(:athlete_activities) { client.athlete_activities }
     it 'returns athlete activities' do

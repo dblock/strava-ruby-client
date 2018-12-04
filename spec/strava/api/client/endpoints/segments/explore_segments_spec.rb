@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#explore_segments' do
-  let(:client) { Strava::Api::Client.new(access_token: ENV['STRAVA_ACCESS_TOKEN'] || 'access-token') }
+  include_context 'API client'
   it 'returns segments matching a query', vcr: { cassette_name: 'client/explore_segments' } do
     segments = client.explore_segments(bounds: [36.372975, -94.220234, 36.415949, -94.183670], activity_type: 'running')
     expect(segments).to be_a Enumerable

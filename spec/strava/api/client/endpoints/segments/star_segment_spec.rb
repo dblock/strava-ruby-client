@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#star_segment' do
-  let(:client) { Strava::Api::Client.new(access_token: ENV['STRAVA_ACCESS_TOKEN'] || 'access-token') }
+  include_context 'API client'
   #   it 'stars a segment', vcr: { cassette_name: 'client/star_segment' } do
   #     segment = client.star_segment(id: 50272077110, starred: true)
   #     expect(segment.resource_state).to eq 3
