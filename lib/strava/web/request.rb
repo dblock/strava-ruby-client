@@ -20,7 +20,9 @@ module Strava
       private
 
       def request(method, path, options)
-        path = [endpoint, path].join('/')
+        options = options.dup if options.key?(:request) || options.key?(:endpoint)
+        root = options.delete(:endpoint) || endpoint
+        path = [root, path].join('/')
         response = connection.send(method) do |request|
           case method
           when :get, :delete

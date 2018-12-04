@@ -11,6 +11,7 @@ module Strava
       include Endpoints::Segments
       include Endpoints::Streams
       include Endpoints::Uploads
+      include Endpoints::OAuth
 
       attr_accessor(*Config::ATTRIBUTES)
 

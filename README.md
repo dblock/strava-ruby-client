@@ -60,6 +60,8 @@ Unlike other clients, including [strava-api-v3](https://github.com/jaredholdcrof
     - [Get Upload](#get-upload)
   - [Pagination](#pagination)
   - [OAuth](#oauth)
+    - [OAuth Workflow](#oauth-workflow)
+    - [Deauthorize](#deauthorize)
   - [Webhooks](#webhooks)
 - [Configuration](#configuration)
   - [Web Client Options](#web-client-options)
@@ -760,7 +762,9 @@ end
 
 ### OAuth
 
-Obtain a redirect URL.
+#### OAuth Workflow
+
+Obtain a redirect URL using an instance of `Strava::OAuth::Client`.
 
 ```ruby
 client = Strava::OAuth::Client.new(
@@ -800,9 +804,19 @@ response = client.oauth_token(
   grant_type: 'refresh_token'
 )
 
-response.access_token # new access token
-response.refresh_token # new refresh token
-response.expires_at # new timestamp when the access token expires
+response.access_token # => String, new access token
+response.refresh_token # => String, new refresh token
+response.expires_at # => Time, new timestamp when the access token expires
+```
+
+#### Deauthorize
+
+Revoke access to an athlete's data using an instance of `Strava::API::Client`.
+
+```ruby
+authorization = client.deauthorize
+
+authorization.access_token # => String, access token being revoked
 ```
 
 ### Webhooks

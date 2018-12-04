@@ -1,5 +1,6 @@
 ### 0.3.1 (Next)
 
+* [#2](https://github.com/dblock/strava-ruby-client/issues/2): Added `Strava::Api::Client#deauthorize` - [@dblock](https://github.com/dblock).
 * Your contribution here.
 
 ### 0.3.0 (2018/12/03)
