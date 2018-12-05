@@ -1,11 +1,10 @@
-### 0.3.1 (Next)
+### 0.3.1 (2018/12/05)
 
 * Added `Strava::Api::Client#activity_photos` - [@dblock](https://github.com/dblock).
 * [#2](https://github.com/dblock/strava-ruby-client/issues/2): Added `Strava::Api::Client#deauthorize` - [@dblock](https://github.com/dblock).
 * [#15](https://github.com/dblock/strava-ruby-client/issues/15): Added `strava-oauth-token` and `strava-webhooks` to gem executables - [@dblock](https://github.com/dblock).
 * Fix: `Strava::Models::Activity#total_elevation_gain` no returns blank for negative and zero elevation differences - [@dblock](https://github.com/dblock).
 * Fix: `Strava::Models::Split#distance` and `total_elevation_gain` incorrect for `Strava::Models::Activity#splits_standard` - [@dblock](https://github.com/dblock).
-* Your contribution here.
 
 ### 0.3.0 (2018/12/03)
 
