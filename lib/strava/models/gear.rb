@@ -1,7 +1,7 @@
 module Strava
   module Models
     class Gear < Model
-      include Mixins::MetricDistance
+      include Mixins::Distance
 
       property 'id'
       property 'resource_state'

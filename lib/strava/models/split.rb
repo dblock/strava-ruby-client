@@ -10,20 +10,6 @@ module Strava
       property 'split'
       property 'average_heartrate'
       property 'pace_zone'
-
-      class Standard < Split
-        private
-
-        def units
-          :imperial
-        end
-      end
-
-      class Metric < Split
-        def units
-          :metric
-        end
-      end
     end
   end
 end

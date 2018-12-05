@@ -52,10 +52,7 @@ module Strava
         end
 
         def speed_s
-          case units
-          when :metric then kilometer_per_hour_s
-          when :imperial then miles_per_hour_s
-          end
+          kilometer_per_hour_s
         end
 
         private

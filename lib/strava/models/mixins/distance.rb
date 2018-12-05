@@ -9,24 +9,15 @@ module Strava
         end
 
         def distance_in_meters
-          case units
-          when :metric then distance
-          when :imperial then distance / 3.28084
-          end
+          distance
         end
 
         def distance_in_feet
-          case units
-          when :metric then distance * 3.28084
-          when :imperial then distance
-          end
+          distance * 3.28084
         end
 
         def distance_in_miles
-          case units
-          when :metric then distance_in_meters * 0.00062137
-          when :imperial then distance_in_feet / 5280
-          end
+          distance_in_meters * 0.00062137
         end
 
         def distance_in_miles_s
@@ -62,28 +53,7 @@ module Strava
         end
 
         def distance_s
-          case units
-          when :metric then distance_in_kilometers_s
-          when :imperial then distance_in_miles_s
-          end
-        end
-      end
-
-      module MetricDistance
-        extend ActiveSupport::Concern
-        include Strava::Models::Mixins::Distance
-
-        def units
-          :metric
-        end
-      end
-
-      module ImperialDistance
-        extend ActiveSupport::Concern
-        include Strava::Models::Mixins::Distance
-
-        def units
-          :imperial
+          distance_in_kilometers_s
         end
       end
     end

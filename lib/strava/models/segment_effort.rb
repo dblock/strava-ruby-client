@@ -1,7 +1,7 @@
 module Strava
   module Models
     class SegmentEffort < Model
-      include Mixins::MetricDistance
+      include Mixins::Distance
       include Mixins::Time
 
       property 'id'

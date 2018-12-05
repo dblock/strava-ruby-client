@@ -120,8 +120,8 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
     split_standard = activity.splits_standard.first
     expect(split_standard).to be_a Strava::Models::Split
     expect(split_standard.distance).to eq 1609.9
-    expect(split_standard.distance_in_meters).to eq 490.69750429767987
-    expect(split_standard.distance_in_miles).to eq 0.30490530303030305
+    expect(split_standard.distance_in_meters).to eq 1609.9
+    expect(split_standard.distance_in_miles).to eq 1.0003435630000002
     expect(split_standard.elapsed_time).to eq 489
     expect(split_standard.pace_per_kilometer_s).to eq '5m04s/km'
     expect(split_standard.pace_per_mile_s).to eq '8m09s/mi'
@@ -129,8 +129,8 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
     expect(split_standard.miles_per_hour_s).to eq '7.4mph'
     expect(split_standard.elevation_difference).to eq 5.9
     expect(split_standard.total_elevation_gain).to eq 5.9
-    expect(split_standard.total_elevation_gain_in_feet).to eq 5.9
-    expect(split_standard.total_elevation_gain_in_meters).to eq 1.798319942453762
+    expect(split_standard.total_elevation_gain_in_feet).to eq 19.356956
+    expect(split_standard.total_elevation_gain_in_meters).to eq 5.9
     expect(split_standard.moving_time).to eq 489
     expect(split_standard.split).to eq 1
     expect(split_standard.average_speed).to eq 3.29

@@ -1,7 +1,7 @@
 module Strava
   module Models
     class Activity < Model
-      include Mixins::MetricDistance
+      include Mixins::Distance
       include Mixins::Time
       include Mixins::Elevation
 
@@ -60,8 +60,8 @@ module Strava
       property 'similar_activities', transform_with: ->(v) { Strava::Models::SimilarActivities.new(v) }
       property 'embed_token'
       property 'available_zones'
-      property 'splits_metric', transform_with: ->(v) { v.map { |r| Strava::Models::Split::Metric.new(r) } }
-      property 'splits_standard', transform_with: ->(v) { v.map { |r| Strava::Models::Split::Standard.new(r) } }
+      property 'splits_metric', transform_with: ->(v) { v.map { |r| Strava::Models::Split.new(r) } }
+      property 'splits_standard', transform_with: ->(v) { v.map { |r| Strava::Models::Split.new(r) } }
       property 'laps', transform_with: ->(v) { v.map { |r| Strava::Models::Lap.new(r) } }
       property 'gear', transform_with: ->(v) { Strava::Models::Gear.new(v) }
       property 'device_name'
@@ -78,30 +78,18 @@ module Strava
 
       def distance_s
         if type == 'Swim'
-          case units
-          when :metric then distance_in_meters_s
-          when :imperial then distance_in_yards_s
-          end
+          distance_in_meters_s
         else
-          case units
-          when :metric then distance_in_kilometers_s
-          when :imperial then distance_in_miles_s
-          end
+          distance_in_kilometers_s
         end
       end
 
       def pace_s
         case type
         when 'Swim'
-          case units
-          when :metric then pace_per_100_meters_s
-          when :imperial then pace_per_100_yards_s
-          end
+          pace_per_100_meters_s
         else
-          case units
-          when :metric then pace_per_kilometer_s
-          when :imperial then pace_per_mile_s
-          end
+          pace_per_kilometer_s
         end
       end
 
