@@ -847,7 +847,7 @@ authorization.access_token # => String, access token being revoked
 
 Strava provides a [Webhook Event API](https://developers.strava.com/docs/webhooks/) that requires special access obtained by emailing [developers@strava.com](mailto:developers@strava.com).
 
-A complete example that handles subscription creation, deletion and handling can be found in [strava-webhooks.rb](bin/strava-webhooks.rb). Run `strava-webhooks` to see current registrations, `strava-webhooks handle` to run an HTTP server that handles both challenges and event data, `strava-webhooks create [url]` to create a new subscription and `strava-webhooks delete [id]` to delete it.
+A complete example that handles subscription creation, deletion and handling can be found in [strava-webhooks](bin/strava-webhooks). Run `strava-webhooks` to see current registrations, `strava-webhooks handle` to run an HTTP server that handles both challenges and event data, `strava-webhooks create [url]` to create a new subscription and `strava-webhooks delete [id]` to delete it.
 
 Before creating a webhook subscription you must implement and run an HTTP server that will handle a `GET` challenge at the subscription URL.
 
@@ -1035,7 +1035,7 @@ end
 
 ### Strava OAuth Token
 
-Use [strava-oauth-token](bin/strava-outh-token.rb) to obtain a token from the command-line. This will open a new browser window, navigate to Strava, request the appropriate permissions, then handle OAuth in a local redirect. The token type, refresh token, access token and token expiration will be displayed in the browser.
+Use [strava-oauth-token](bin/strava-outh-token) to obtain a token from the command-line. This will open a new browser window, navigate to Strava, request the appropriate permissions, then handle OAuth in a local redirect. The token type, refresh token, access token and token expiration will be displayed in the browser.
 
 ```bash
 $ STRAVA_CLIENT_ID=... STRAVA_CLIENT_SECRET=... strava-oauth-token
