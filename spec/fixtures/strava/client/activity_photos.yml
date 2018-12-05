@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.strava.com/api/v3/activities/1946417534/photos
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer access-token
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Strava Ruby Client/0.3.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 05 Dec 2018 15:08:54 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Via:
+      - 1.1 linkerd
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '600,30000'
+      X-Request-Id:
+      - 5fac1583-71cc-40d9-bace-97fc6e2df673
+      Etag:
+      - W/"cee0c5146e5c0bb56fc7ee089d1b7a0a"
+      X-Ratelimit-Usage:
+      - '92,8257'
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Origin
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: '[{"id":null,"unique_id":"65889142-538D-4EE5-96F5-3DC3B773B1E3","athlete_id":26462176,"activity_id":1946417534,"activity_name":"TCS
+        NYC Marathon 2018","post_id":null,"resource_state":2,"ref":null,"uid":null,"caption":"","type":null,"source":1,"uploaded_at":"2018-11-05T12:45:43Z","created_at":"2018-11-05T12:44:33Z","created_at_local":"2018-11-05T07:44:33Z","urls":{"0":"https://dgtzuqphqg23d.cloudfront.net/eb4DMJ2hJW3k_g9URZEMfaJ8rZfHagrNlZRuEZz0osU-29x64.jpg"},"sizes":{"0":[29,64]},"default_photo":false},{"id":null,"unique_id":"78d34bd7-a3e6-4ed5-b020-01c0c6c2d1c0","athlete_id":26462176,"activity_id":1946417534,"activity_name":"TCS
+        NYC Marathon 2018","post_id":null,"resource_state":2,"ref":null,"uid":null,"caption":"","type":null,"source":1,"uploaded_at":"2018-11-07T19:09:36Z","created_at":"2018-11-07T17:27:10Z","created_at_local":"2018-11-07T12:27:10Z","urls":{"0":"https://dgtzuqphqg23d.cloudfront.net/6CGG_2DKcxs-EA0zKQFIysWlkV8ljHArNYz2ULXvHaU-62x64.jpg"},"sizes":{"0":[62,64]},"default_photo":false},{"id":null,"unique_id":"5e8006d0-8349-40ad-a4ef-72b5e6e82dfe","athlete_id":26462176,"activity_id":1946417534,"activity_name":"TCS
+        NYC Marathon 2018","post_id":null,"resource_state":2,"ref":null,"uid":null,"caption":"","type":null,"source":1,"uploaded_at":"2018-11-07T19:09:50Z","created_at":"2018-11-07T19:02:19Z","created_at_local":"2018-11-07T14:02:19Z","urls":{"0":"https://dgtzuqphqg23d.cloudfront.net/mo8thQ4Z5qAylUaRZHOWAR1sp16Bo-pp0ggYQKSWiZE-45x64.jpg"},"sizes":{"0":[45,64]},"default_photo":true},{"id":null,"unique_id":"2cd1b3f8-ee99-4ea6-937c-4256965370d0","athlete_id":26462176,"activity_id":1946417534,"activity_name":"TCS
+        NYC Marathon 2018","post_id":null,"resource_state":2,"ref":null,"uid":null,"caption":"","type":null,"source":1,"uploaded_at":"2018-11-07T19:09:36Z","created_at":"2018-11-07T17:26:44Z","created_at_local":"2018-11-07T12:26:44Z","urls":{"0":"https://dgtzuqphqg23d.cloudfront.net/0V4HcNfzHevi8y4-AMGH0bMH7S1py_8SHy7arjUYpCU-64x61.jpg"},"sizes":{"0":[64,61]},"default_photo":false},{"id":null,"unique_id":"e12014a8-1b37-4236-834a-f4233ae22eca","athlete_id":26462176,"activity_id":1946417534,"activity_name":"TCS
+        NYC Marathon 2018","post_id":null,"resource_state":2,"ref":null,"uid":null,"caption":"","type":null,"source":1,"uploaded_at":"2018-11-07T19:11:10Z","created_at":"2018-11-06T21:13:37Z","created_at_local":"2018-11-06T16:13:37Z","urls":{"0":"https://dgtzuqphqg23d.cloudfront.net/nwrHJMtbyZgUUjtO3Ds-n8IevCyCCGtZE_KB-G4dhTs-42x64.jpg"},"sizes":{"0":[42,64]},"default_photo":false},{"id":null,"unique_id":"57840da3-bcab-45ec-a2b4-9b3f4f3a0921","athlete_id":26462176,"activity_id":1946417534,"activity_name":"TCS
+        NYC Marathon 2018","post_id":null,"resource_state":2,"ref":null,"uid":null,"caption":"","type":null,"source":1,"uploaded_at":"2018-11-07T19:10:31Z","created_at":"2018-11-06T21:13:24Z","created_at_local":"2018-11-06T16:13:24Z","urls":{"0":"https://dgtzuqphqg23d.cloudfront.net/T2XFsP1NuO3-2U4xV16eEPZ5Au-0xVeo4cNAtWH9x1g-42x64.jpg"},"sizes":{"0":[42,64]},"default_photo":false},{"id":null,"unique_id":"6d481ea1-6ce6-46f6-bd4e-c18eeab89f61","athlete_id":26462176,"activity_id":1946417534,"activity_name":"TCS
+        NYC Marathon 2018","post_id":null,"resource_state":2,"ref":null,"uid":null,"caption":"","type":null,"source":1,"uploaded_at":"2018-11-07T19:09:58Z","created_at":"2018-11-07T19:02:19Z","created_at_local":"2018-11-07T14:02:19Z","urls":{"0":"https://dgtzuqphqg23d.cloudfront.net/V74FGbnqi2LZn4Yhr9rXiu_X3Ww4601V1WrSi8fpv6g-64x42.jpg"},"sizes":{"0":[64,42]},"default_photo":false},{"id":null,"unique_id":"9614FE75-E9B4-4D99-928D-A48A6533AFF3","athlete_id":26462176,"activity_id":1946417534,"activity_name":"TCS
+        NYC Marathon 2018","post_id":null,"resource_state":2,"ref":null,"uid":null,"caption":"","type":null,"source":1,"uploaded_at":"2018-11-04T20:34:02Z","created_at":"2018-11-04T18:22:00Z","created_at_local":"2018-11-04T13:22:00Z","urls":{"0":"https://dgtzuqphqg23d.cloudfront.net/p701b8h9w_8TuW3IMXnA4mG2TyEU5teUztsP538saIE-48x64.jpg"},"sizes":{"0":[48,64]},"default_photo":false},{"id":null,"unique_id":"84D610CD-1926-43B1-BA74-C114C8F3D621","athlete_id":26462176,"activity_id":1946417534,"activity_name":"TCS
+        NYC Marathon 2018","post_id":null,"resource_state":2,"ref":null,"uid":null,"caption":"","type":null,"source":1,"uploaded_at":"2018-11-16T19:18:25Z","created_at":"2018-11-16T23:16:51Z","created_at_local":"2018-11-16T18:16:51Z","urls":{"0":"https://dgtzuqphqg23d.cloudfront.net/w-AyqCML8cFyjSw435EJgoB8savoem7NC2gTY59skoA-59x64.jpg"},"sizes":{"0":[59,64]},"default_photo":false}]'
+    http_version: 
+  recorded_at: Wed, 05 Dec 2018 15:08:54 GMT
+recorded_with: VCR 4.0.0
