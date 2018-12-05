@@ -36,9 +36,9 @@ RSpec.describe Strava::Models::Activity do
     it 'converts elevation' do
       expect(activity.total_elevation_gain_in_feet).to eq 0.0
       expect(activity.total_elevation_gain_in_meters).to eq 0.0
-      expect(activity.total_elevation_gain_in_meters_s).to be nil
-      expect(activity.total_elevation_gain_in_feet_s).to be nil
-      expect(activity.total_elevation_gain_s).to be nil
+      expect(activity.total_elevation_gain_in_meters_s).to eq '0m'
+      expect(activity.total_elevation_gain_in_feet_s).to eq '0ft'
+      expect(activity.total_elevation_gain_s).to eq '0m'
     end
   end
 end

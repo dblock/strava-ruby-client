@@ -23,13 +23,13 @@ module Strava
         end
 
         def total_elevation_gain_in_meters_s
-          return unless total_elevation_gain && total_elevation_gain.positive?
+          return if total_elevation_gain.nil?
 
           format('%gm', format('%.1f', total_elevation_gain_in_meters))
         end
 
         def total_elevation_gain_in_feet_s
-          return unless total_elevation_gain && total_elevation_gain.positive?
+          return if total_elevation_gain.nil?
 
           format('%gft', format('%.1f', total_elevation_gain_in_feet))
         end
