@@ -4,6 +4,7 @@ require 'strava/version'
 Gem::Specification.new do |s|
   s.name = 'strava-ruby-client'
   s.bindir = 'bin'
+  s.executables = ['strava-oauth-token', 'strava-webhooks']
   s.version = Strava::VERSION
   s.authors = ['Daniel Doubrovkine']
   s.email = 'dblock@dblock.org'
