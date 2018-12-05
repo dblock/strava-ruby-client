@@ -1,5 +1,6 @@
 ### 0.3.2 (Next)
 
+* Automatically convert `before` and `after` arguments of `Strava::Api::Client#athlete_activities` from `Time` to `Integer` - [@dblock](https://github.com/dblock).
 * Your contribution here.
 
 ### 0.3.1 (2018/12/05)
