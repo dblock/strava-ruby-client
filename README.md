@@ -72,6 +72,8 @@ Unlike other clients, including [strava-api-v3](https://github.com/jaredholdcrof
 - [Errors](#errors)
 - [Tools](#tools)
   - [Strava OAuth Token](#strava-oauth-token)
+- [Users](#users)
+- [Resources](#resources)
 - [Contributing](#contributing)
 - [Copyright and License](#copyright-and-license)
 
@@ -1040,6 +1042,18 @@ Use [strava-oauth-token](bin/strava-outh-token) to obtain a token from the comma
 ```bash
 $ STRAVA_CLIENT_ID=... STRAVA_CLIENT_SECRET=... strava-oauth-token
 ```
+
+## Users
+
+* [Slava: Strava integration with Slack](https://slava.playplay.io), [source](https://github.com/dblock/slack-strava).
+* [Jekyll Blog at run.dblock.org](https://run.dblock.org), [source](https://github.com/dblock/run.dblock.org)
+
+## Resources
+
+* [Strava API Documentation](https://developers.strava.com)
+* [Writing a New Strava API Ruby Client](https://code.dblock.org/2018/11/27/writing-a-new-strava-api-ruby-client.html)
+* [Dealing with Strava API OAuth Token Migration](https://code.dblock.org/2018/11/17/dealing-with-strava-api-token-migration.html)
+* [Auto-Publishing Strava Runs to Github Pages](https://code.dblock.org/2018/02/17/auto-publishing-strava-runs-to-github-pages.html)
 
 ## Contributing
 
