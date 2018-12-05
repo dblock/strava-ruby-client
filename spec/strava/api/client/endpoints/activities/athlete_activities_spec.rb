@@ -14,9 +14,9 @@ RSpec.describe 'Strava::Api::Client#athlete_activities' do
       expect(activity.start_date).to be_a Time
     end
     it 'returns athlete activities for December 2018 only', vcr: { cassette_name: 'client/athlete_activities_december_2018' } do
-      athlete_activities = client.athlete_activities(before: Time.parse('2019/1/1'), after: Time.parse('2018/11/1'))
+      athlete_activities = client.athlete_activities(before: Time.at(1_543_683_600), after: Time.at(1_541_088_000))
       expect(athlete_activities).to be_a Enumerable
-      expect(athlete_activities.count).to eq 8
+      expect(athlete_activities.count).to eq 7
     end
   end
   describe 'paginated #athlete_activities', vcr: { cassette_name: 'client/all_athlete_activities' } do

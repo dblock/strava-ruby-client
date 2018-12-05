@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.strava.com/api/v3/athlete/activities?after=1541044800&before=1546318800
+    uri: https://www.strava.com/api/v3/athlete/activities?after=1541088000&before=1543683600
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 05 Dec 2018 19:49:36 GMT
+      - Wed, 05 Dec 2018 19:57:34 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -37,26 +37,24 @@ http_interactions:
       X-Ratelimit-Limit:
       - '600,30000'
       X-Request-Id:
-      - 4bd2281e-20f2-46ad-9787-aa655ec8e39e
+      - 3caceddb-f508-4948-a223-bed270b37b08
       Etag:
-      - W/"75de0a9b576af578870737822a9dee50"
+      - W/"25e572e3e91e7dc6cb8710eebeab3fb1"
       X-Ratelimit-Usage:
-      - '3,10791'
+      - '100,10888'
       X-Frame-Options:
       - DENY
       X-Content-Type-Options:
       - nosniff
       Strava-Athlete-Upload-Version:
-      - e139126451d15dd59a9e10be7f346249
+      - 7f60d553d9b9acf5285e910d0112532f
       Vary:
       - Origin
       X-Xss-Protection:
       - 1; mode=block
     body:
       encoding: UTF-8
-      string: '[{"resource_state":2,"athlete":{"id":26462176,"resource_state":1},"name":"Another
-        Hill Another Night","distance":9820.6,"moving_time":3249,"elapsed_time":3270,"total_elevation_gain":105.3,"type":"Run","workout_type":0,"id":1995207876,"external_id":"18418896538.tcx","upload_id":2132935150,"start_date":"2018-12-01T21:20:13Z","start_date_local":"2018-12-01T16:20:13Z","timezone":"(GMT-05:00)
-        America/New_York","utc_offset":-18000.0,"start_latlng":[40.77,-73.98],"end_latlng":[40.77,-73.98],"location_city":null,"location_state":null,"location_country":"","start_latitude":40.77,"start_longitude":-73.98,"achievement_count":1,"kudos_count":6,"comment_count":0,"athlete_count":2,"photo_count":0,"map":{"id":"a1995207876","summary_polyline":"ufywFd_pbMmAf@uBuBx@qKaN{KZeNkKqOiEeBcHp@eGsIsMkCmR{NsCkH@iJmIqGiU}MsRj@gKkLkMmAqEsGsChBxAtEgAfCyKmG{FdF}@xLt@pBhCXjCcGfI]~DrInE~C|CvJhK`GxDtGnH~@bCvIbDtDbTlAdGnJvKfCdRlWtOlAzBlGjOvHjLxNdEHfEyDtBj@","resource_state":2},"trainer":false,"commute":false,"manual":false,"private":false,"visibility":"everyone","flagged":false,"gear_id":"g3423618","from_accepted_tag":false,"average_speed":3.023,"max_speed":4.5,"has_heartrate":true,"average_heartrate":163.3,"max_heartrate":187.0,"heartrate_opt_out":false,"display_hide_heartrate_option":false,"elev_high":37.1,"elev_low":5.7,"pr_count":0,"total_photo_count":0,"has_kudoed":false,"suffer_score":130},{"resource_state":2,"athlete":{"id":26462176,"resource_state":1},"name":"Regular
+      string: '[{"resource_state":2,"athlete":{"id":26462176,"resource_state":1},"name":"Regular
         Loop #NYRRVirtualRacing","distance":13994.6,"moving_time":4496,"elapsed_time":4626,"total_elevation_gain":87.6,"type":"Run","workout_type":1,"id":1990081217,"external_id":"18360154371.tcx","upload_id":2127579116,"start_date":"2018-11-28T20:11:32Z","start_date_local":"2018-11-28T15:11:32Z","timezone":"(GMT-05:00)
         America/New_York","utc_offset":-18000.0,"start_latlng":[40.73,-73.99],"end_latlng":[40.73,-73.99],"location_city":null,"location_state":null,"location_country":"","start_latitude":40.73,"start_longitude":-73.99,"achievement_count":7,"kudos_count":7,"comment_count":0,"athlete_count":1,"photo_count":0,"map":{"id":"a1990081217","summary_polyline":"gwrwF|gqbM{DoD}@_H`DkL{C_Eb@aDnJkZE{CvGkBxKaKr{@nJh\\nI`PnGvFlF`BdNs@~BbAnUw@pIx@pc@xEhZiArIbAxPzH`IzJ~PlHbOxDpQoEdNkFnCx@`TcBfIuB^oFaF_DtByTkCw@}EmDkBwCv@oApCcRqCkEeGk@gJaFiBevBiSiA}K`B{b@b^_iAtBuKwCoG","resource_state":2},"trainer":false,"commute":false,"manual":false,"private":false,"visibility":"everyone","flagged":false,"gear_id":"g3423618","from_accepted_tag":false,"average_speed":3.025,"max_speed":4.1,"has_heartrate":true,"average_heartrate":159.2,"max_heartrate":200.0,"heartrate_opt_out":false,"display_hide_heartrate_option":false,"elev_high":36.5,"elev_low":-5.2,"pr_count":1,"total_photo_count":0,"has_kudoed":false,"suffer_score":147},{"resource_state":2,"athlete":{"id":26462176,"resource_state":1},"name":"Central
         Park with L","distance":9681.1,"moving_time":3150,"elapsed_time":3150,"total_elevation_gain":105.5,"type":"Run","workout_type":0,"id":1972463847,"external_id":"18177667835.tcx","upload_id":2109231946,"start_date":"2018-11-18T16:30:45Z","start_date_local":"2018-11-18T11:30:45Z","timezone":"(GMT-05:00)
@@ -72,5 +70,5 @@ http_interactions:
         It with Rob","distance":5476.4,"moving_time":1917,"elapsed_time":1935,"total_elevation_gain":44.3,"type":"Run","workout_type":0,"id":1942082742,"external_id":"17855361691.tcx","upload_id":2077904428,"start_date":"2018-11-02T21:16:19Z","start_date_local":"2018-11-02T17:16:19Z","timezone":"(GMT-05:00)
         America/New_York","utc_offset":-14400.0,"start_latlng":[40.77,-73.98],"end_latlng":[40.77,-73.98],"location_city":null,"location_state":null,"location_country":"","start_latitude":40.77,"start_longitude":-73.98,"achievement_count":0,"kudos_count":3,"comment_count":0,"athlete_count":1,"photo_count":0,"map":{"id":"a1942082742","summary_polyline":"ywywFhdpbMaKeLvDbGnHbE|EkFlBoKeNgK{@mEfAmIeMmPkMc@{G{ImIiAe@~@zFrEuFQwL|P~MtQbJObC|AxIkKvOzEbEfGdLbIgArJnBjB","resource_state":2},"trainer":false,"commute":false,"manual":false,"private":false,"visibility":"everyone","flagged":false,"gear_id":"g3423618","from_accepted_tag":false,"average_speed":2.857,"max_speed":3.8,"has_heartrate":true,"average_heartrate":146.4,"max_heartrate":169.0,"heartrate_opt_out":false,"display_hide_heartrate_option":false,"elev_high":32.9,"elev_low":14.8,"pr_count":0,"total_photo_count":0,"has_kudoed":false,"suffer_score":30}]'
     http_version: 
-  recorded_at: Wed, 05 Dec 2018 19:49:36 GMT
+  recorded_at: Wed, 05 Dec 2018 19:57:34 GMT
 recorded_with: VCR 4.0.0
