@@ -1,3 +1,7 @@
+### 0.3.2 (Next)
+
+* Your contribution here.
+
 ### 0.3.1 (2018/12/05)
 
 * Added `Strava::Api::Client#activity_photos` - [@dblock](https://github.com/dblock).
