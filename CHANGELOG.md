@@ -1,6 +1,7 @@
 ### 0.3.2 (Next)
 
 * Automatically convert `before` and `after` arguments of `Strava::Api::Client#athlete_activities` from `Time` to `Integer` - [@dblock](https://github.com/dblock).
+* [#18](https://github.com/dblock/strava-ruby-client/pull/18): Testing against Ruby 2.5.3 and 2.6.0 - [@lucianosousa](https://github.com/lucianosousa).
 * Your contribution here.
 
 ### 0.3.1 (2018/12/05)
