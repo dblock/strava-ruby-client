@@ -3,8 +3,8 @@ source 'http://rubygems.org'
 gemspec
 
 group :development, :test do
-  gem 'danger-changelog', '~> 0.3.0'
-  gem 'danger-toc', '~> 0.1'
+  gem 'danger-changelog', '~> 0.4.2'
+  gem 'danger-toc', '~> 0.1.3'
   gem 'dotenv'
   gem 'gpx'
   gem 'multi_xml'
