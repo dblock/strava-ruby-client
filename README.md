@@ -1035,6 +1035,8 @@ end
 
 ## Tools
 
+For a complete set of command-line tools, check out [strava-ruby-cli](https://github.com/dblock/strava-ruby-cli) built on top of this gem.
+
 ### Strava OAuth Token
 
 Use [strava-oauth-token](bin/strava-oauth-token) to obtain a token from the command-line. This will open a new browser window, navigate to Strava, request the appropriate permissions, then handle OAuth in a local redirect. The token type, refresh token, access token and token expiration will be displayed in the browser.
@@ -1054,6 +1056,7 @@ $ STRAVA_CLIENT_ID=... STRAVA_CLIENT_SECRET=... strava-oauth-token
 * [Writing a New Strava API Ruby Client](https://code.dblock.org/2018/11/27/writing-a-new-strava-api-ruby-client.html)
 * [Dealing with Strava API OAuth Token Migration](https://code.dblock.org/2018/11/17/dealing-with-strava-api-token-migration.html)
 * [Auto-Publishing Strava Runs to Github Pages](https://code.dblock.org/2018/02/17/auto-publishing-strava-runs-to-github-pages.html)
+* [Strava Command-Line Client](https://github.com/dblock/strava-ruby-cli)
 
 ## Contributing
 
