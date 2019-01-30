@@ -90,11 +90,16 @@ module Strava
         # @option options [Integer] :per_page
         #   Number of items per page. Defaults to 30.
         #
-        def athlete_activities(options = {}, &block)
+        def athlete_activities(id_or_options, options = {}, &block)
+          id, options = parse_args(id_or_options, options)
           options = options.dup if options.key?(:after) || options.key?(:before)
           options[:after] = options[:after].to_i if options[:after]
           options[:before] = options[:before].to_i if options[:before]
-          paginate 'athlete/activities', options, Strava::Models::Activity, &block
+          if id
+            paginate "athletes/#{id}/activities", options, Strava::Models::Activity, &block
+          else
+            paginate 'athlete/activities', options, Strava::Models::Activity, &block
+          end
         end
 
         #
