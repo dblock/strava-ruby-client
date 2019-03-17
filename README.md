@@ -63,6 +63,7 @@ Unlike other clients, including [strava-api-v3](https://github.com/jaredholdcrof
   - [OAuth](#oauth)
     - [OAuth Workflow](#oauth-workflow)
     - [Deauthorize](#deauthorize)
+    - [Command Line OAuth Workflow](#command-line-oauth-workflow)
   - [Webhooks](#webhooks)
 - [Configuration](#configuration)
   - [Web Client Options](#web-client-options)
@@ -844,6 +845,12 @@ authorization = client.deauthorize
 
 authorization.access_token # => String, access token being revoked
 ```
+
+#### Command Line OAuth Workflow
+
+The OAuth process is web-based and you cannot obtain a token from a Strava client ID and secret without user intervention. You can, however, start a local web server to handle the OAuth redirect and open a browser from the command-line.
+
+See [strava-oauth-token](/bin/strava-oauth-token) or [strava-ruby-cli](https://github.com/dblock/strava-ruby-cli) for an example.
 
 ### Webhooks
 
