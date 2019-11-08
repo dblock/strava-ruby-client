@@ -5,6 +5,10 @@ module Strava
         response[:body]['message'] || super
       end
 
+      def headers
+        response[:headers]
+      end
+
       def errors
         response[:body]['errors']
       end
