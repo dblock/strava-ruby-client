@@ -78,12 +78,38 @@ RSpec.describe Strava::OAuth::Client do
       it 'errors with an invalid client id', vcr: { cassette_name: 'oauth/token_invalid_client' } do
         expect { client.oauth_token(code: 'code') }.to raise_error Strava::Errors::Fault do |e|
           expect(e.message).to eq 'Bad Request'
+          expect(e.headers).to eq(
+            'cache-control' => 'no-cache',
+            'connection' => 'keep-alive',
+            'content-type' => 'application/json; charset=UTF-8',
+            'date' => 'Thu, 22 Nov 2018 20:16:41 GMT',
+            'status' => '400 Bad Request',
+            'transfer-encoding' => 'chunked',
+            'via' => '1.1 linkerd',
+            'x-content-type-options' => 'nosniff',
+            'x-frame-options' => 'SAMEORIGIN,DENY',
+            'x-request-id' => '168ffeae-9029-4aec-bd50-3a0430e594bd',
+            'x-xss-protection' => '1; mode=block'
+          )
           expect(e.errors).to eq([{ 'code' => 'invalid', 'field' => 'client_id', 'resource' => 'Application' }])
         end
       end
       it 'errors with an invalid code', vcr: { cassette_name: 'oauth/token_invalid_code' } do
         expect { client.oauth_token(code: 'code') }.to raise_error Faraday::ClientError do |e|
           expect(e.message).to eq 'Bad Request'
+          expect(e.headers).to eq(
+            'cache-control' => 'no-cache',
+            'connection' => 'keep-alive',
+            'content-type' => 'application/json; charset=UTF-8',
+            'date' => 'Thu, 22 Nov 2018 20:26:56 GMT',
+            'status' => '400 Bad Request',
+            'transfer-encoding' => 'chunked',
+            'via' => '1.1 linkerd',
+            'x-content-type-options' => 'nosniff',
+            'x-frame-options' => 'SAMEORIGIN,DENY',
+            'x-request-id' => 'd3406a4e-9099-400f-b709-aad0ea2768fe',
+            'x-xss-protection' => '1; mode=block'
+          )
           expect(e.errors).to eq([{ 'code' => 'invalid', 'field' => 'code', 'resource' => 'RequestToken' }])
         end
       end
