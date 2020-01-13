@@ -17,4 +17,18 @@ RSpec.describe 'Strava::Api::Client#upload_activity' do
     expect(upload.status).to eq 'Your activity is still being processed.'
     expect(upload.activity_id).to eq nil
   end
+  it 'returns a Strava::Errors::UploadFailed on upload error', vcr: :all do
+    expect do
+      client.create_upload(
+        file: Faraday::UploadIO.new(file, 'application/tcx+xml'),
+        data_type: 'tcx'
+      )
+    end.to raise_error(Strava::Errors::UploadFailed) do |error| # rubocop:disable Style/MultilineBlockChain
+      expect(error.upload.activity_id).to eq(nil)
+      expect(error.upload.error).to eq('17611540601.tcx duplicate of activity 3008913003')
+      expect(error.upload.external_id).to eq('17611540601.tcx')
+      expect(error.upload.id).to eq(3208301231) # rubocop:disable Style/NumericLiterals
+      expect(error.upload.status).to eq('There was an error processing your activity.')
+    end
+  end
 end

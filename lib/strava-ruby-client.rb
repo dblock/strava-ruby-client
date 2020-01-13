@@ -13,6 +13,7 @@ require_relative 'strava/version'
 require_relative 'strava/logger'
 
 require_relative 'strava/errors/fault'
+require_relative 'strava/errors/upload_failed'
 
 require_relative 'strava/models/mixins/distance'
 require_relative 'strava/models/mixins/elevation'
