@@ -17,6 +17,6 @@ Gem::Specification.new do |s|
   s.summary = 'Strava API Ruby client.'
   s.add_dependency 'activesupport'
   s.add_dependency 'faraday', '>= 1.0.0'
-  s.add_dependency 'faraday_middleware', '~> 1.0.0'
+  s.add_dependency 'faraday_middleware'
   s.add_dependency 'hashie'
 end
