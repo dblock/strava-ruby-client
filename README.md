@@ -1029,7 +1029,7 @@ endpoint            | Defaults to `https://api.strava.com/api/v3`.
 
 ## Errors
 
-All errors that return HTTP codes 400-600 result in either `Faraday::Error::ResourceNotFound`, `Faraday::Error::ConnectionFailed` or [Strava::Errors::Fault](lib/strava/errors/fault.rb) exceptions.
+All errors that return HTTP codes 400-600 result in either `Faraday::ResourceNotFound`, `Faraday::ConnectionFailed` or [Strava::Errors::Fault](lib/strava/errors/fault.rb) exceptions.
 
 ```ruby
 begin
