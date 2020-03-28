@@ -12,7 +12,7 @@ module Strava
       attr_accessor(*Config::ATTRIBUTES)
 
       def reset
-        self.endpoint = 'https://api.strava.com/api/v3'
+        self.endpoint = 'https://www.strava.com/api/v3'
         self.client_id = nil
         self.client_secret = nil
       end

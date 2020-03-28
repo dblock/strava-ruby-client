@@ -1025,7 +1025,7 @@ setting             | description
 --------------------|------------
 client_id           | Application client ID.
 client_secret       | Application client secret.
-endpoint            | Defaults to `https://api.strava.com/api/v3`.
+endpoint            | Defaults to `https://www.strava.com/api/v3`.
 
 ## Errors
 
