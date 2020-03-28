@@ -1,11 +1,10 @@
-### 0.3.2 (Next)
+### 0.3.2 (2020/03/28)
 
 * [#26](https://github.com/dblock/strava-ruby-client/pull/26): Corrected `Strava::Webhooks.config.endpoint` - [@dblock](https://github.com/dblock).
 * Automatically convert `before` and `after` arguments of `Strava::Api::Client#athlete_activities` from `Time` to `Integer` - [@dblock](https://github.com/dblock).
 * [#18](https://github.com/dblock/strava-ruby-client/pull/18): Testing against Ruby 2.5.3 and 2.6.0 - [@lucianosousa](https://github.com/lucianosousa).
 * [#18](https://github.com/dblock/strava-ruby-client/pull/18): Upgraded Rubocop to 0.61.1 - [@lucianosousa](https://github.com/lucianosousa).
 * [#21](https://github.com/dblock/strava-ruby-client/pull/21): Include headers in error response - [@jameschevalier](https://github.com/jameschevalier).
-* Your contribution here.
 
 ### 0.3.1 (2018/12/05)
 
