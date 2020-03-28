@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Strava::Webhooks::Config do
   describe '#defaults' do
     it 'sets endpoint' do
-      expect(Strava::Webhooks.config.endpoint).to eq 'https://api.strava.com/api/v3'
+      expect(Strava::Webhooks.config.endpoint).to eq 'https://www.strava.com/api/v3'
       expect(Strava::Webhooks.config.client_id).to be nil
       expect(Strava::Webhooks.config.client_secret).to be nil
     end
@@ -16,7 +16,7 @@ describe Strava::Webhooks::Config do
       end
     end
     it 'sets client id and secret' do
-      expect(Strava::Webhooks.config.endpoint).to eq 'https://api.strava.com/api/v3'
+      expect(Strava::Webhooks.config.endpoint).to eq 'https://www.strava.com/api/v3'
       expect(Strava::Webhooks.config.client_id).to eq 'client id'
       expect(Strava::Webhooks.config.client_secret).to eq 'client secret'
     end

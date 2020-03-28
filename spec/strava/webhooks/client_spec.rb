@@ -9,7 +9,7 @@ RSpec.describe Strava::Webhooks::Client do
     let(:client) { Strava::Webhooks::Client.new }
     describe '#initialize' do
       it 'sets endpoint' do
-        expect(client.endpoint).to eq 'https://api.strava.com/api/v3'
+        expect(client.endpoint).to eq 'https://www.strava.com/api/v3'
       end
       Strava::Webhooks::Config::ATTRIBUTES.each do |key|
         it "sets #{key}" do

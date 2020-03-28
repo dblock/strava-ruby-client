@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.strava.com/api/v3/push_subscriptions
+    uri: https://www.strava.com/api/v3/push_subscriptions
     body:
       encoding: UTF-8
       string: callback_url=http%3A%2F%2F35d43b4e.ngrok.io%2Fsubscribe&client_id=24523&client_secret=client-secret&verify_token=verify-token

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: delete
-    uri: https://api.strava.com/api/v3/push_subscriptions/131300?client_id=24523&client_secret=client-secret
+    uri: https://www.strava.com/api/v3/push_subscriptions/131300?client_id=24523&client_secret=client-secret
     body:
       encoding: US-ASCII
       string: ''
