@@ -854,7 +854,7 @@ See [strava-oauth-token](/bin/strava-oauth-token) or [strava-ruby-cli](https://g
 
 ### Webhooks
 
-Strava provides a [Webhook Event API](https://developers.strava.com/docs/webhooks/) that requires special access obtained by emailing [developers@strava.com](mailto:developers@strava.com).
+Strava provides a [Webhook Event API](https://developers.strava.com/docs/webhooks/).
 
 A complete example that handles subscription creation, deletion and handling can be found in [strava-webhooks](bin/strava-webhooks). Run `strava-webhooks` to see current registrations, `strava-webhooks handle` to run an HTTP server that handles both challenges and event data, `strava-webhooks create [url]` to create a new subscription and `strava-webhooks delete [id]` to delete it.
 
