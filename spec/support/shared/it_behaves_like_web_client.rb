@@ -18,6 +18,11 @@ RSpec.shared_examples 'web client' do
         expect(client.user_agent).to eq Strava::Web::Config.user_agent
         expect(client.user_agent).to include Strava::VERSION
       end
+      it 'caches the Faraday connection to allow persistent adapters' do
+        first = client.send(:connection)
+        second = client.send(:connection)
+        expect(first).to equal second
+      end
       (Strava::Web::Config::ATTRIBUTES - [:logger]).each do |key|
         it "sets #{key}" do
           expect(client.send(key)).to eq Strava::Web::Config.send(key)

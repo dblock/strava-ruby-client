@@ -10,7 +10,7 @@ group :development, :test do
   gem 'multi_xml'
   gem 'polylines'
   gem 'pry'
-  gem 'rake', '~> 10'
+  gem 'rake'
   gem 'rspec'
   gem 'rubocop', '~> 0.61.1'
   gem 'vcr'

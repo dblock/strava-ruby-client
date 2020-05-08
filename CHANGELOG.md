@@ -1,5 +1,6 @@
 ### 0.3.3 (Next)
 
+* [#29](https://github.com/dblock/strava-ruby-client/pull/29): Cache `Faraday::Connection` for persistent adapters - [@dblock](https://github.com/dblock).
 * Your contribution here.
 
 ### 0.3.2 (2020/03/28)
