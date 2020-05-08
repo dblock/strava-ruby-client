@@ -75,6 +75,7 @@ Unlike other clients, including [strava-api-v3](https://github.com/jaredholdcrof
   - [Strava OAuth Token](#strava-oauth-token)
 - [Users](#users)
 - [Resources](#resources)
+- [Upgrading](#upgrading)
 - [Contributing](#contributing)
 - [Copyright and License](#copyright-and-license)
 
@@ -1029,7 +1030,7 @@ endpoint            | Defaults to `https://www.strava.com/api/v3`.
 
 ## Errors
 
-All errors that return HTTP codes 400-600 result in either `Faraday::Error::ResourceNotFound`, `Faraday::Error::ConnectionFailed` or [Strava::Errors::Fault](lib/strava/errors/fault.rb) exceptions.
+All errors that return HTTP codes 400-600 result in either `Faraday::ResourceNotFound`, `Faraday::ConnectionFailed` or [Strava::Errors::Fault](lib/strava/errors/fault.rb) exceptions.
 
 ```ruby
 begin
@@ -1065,6 +1066,10 @@ $ STRAVA_CLIENT_ID=... STRAVA_CLIENT_SECRET=... strava-oauth-token
 * [Dealing with Strava API OAuth Token Migration](https://code.dblock.org/2018/11/17/dealing-with-strava-api-token-migration.html)
 * [Auto-Publishing Strava Runs to Github Pages](https://code.dblock.org/2018/02/17/auto-publishing-strava-runs-to-github-pages.html)
 * [Strava Command-Line Client](https://github.com/dblock/strava-ruby-cli)
+
+## Upgrading
+
+See [UPGRADING](UPGRADING.md).
 
 ## Contributing
 
