@@ -1,8 +1,7 @@
-### 0.4.0 (Next)
+### 0.4.0 (2020/05/09)
 
 * [#29](https://github.com/dblock/strava-ruby-client/pull/29): Cache `Faraday::Connection` for persistent adapters - [@dblock](https://github.com/dblock).
 * [#30](https://github.com/dblock/strava-ruby-client/pull/30): Require Faraday >= 1.0 - [@dblock](https://github.com/dblock).
-* Your contribution here.
 
 ### 0.3.2 (2020/03/28)
 
