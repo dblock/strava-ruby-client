@@ -27,6 +27,7 @@ module Strava
       property 'date_preference'
       property 'measurement_preference'
       property 'clubs', transform_with: ->(v) { v.map { |r| Strava::Models::Club.new(r) } }
+      property 'ftp'
       property 'weight'
       property 'bikes', transform_with: ->(v) { v.map { |r| Strava::Models::Gear.new(r) } }
       property 'shoes', transform_with: ->(v) { v.map { |r| Strava::Models::Gear.new(r) } }
