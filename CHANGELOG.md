@@ -1,6 +1,7 @@
 ### 0.4.1 (Next)
 
 * Your contribution here.
+* [#34](https://github.com/dblock/strava-ruby-client/pull/34): Added `Athlete#ftp` - [@virae](https://github.com/virae).
 
 ### 0.4.0 (2020/05/09)
 
