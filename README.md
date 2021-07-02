@@ -357,6 +357,20 @@ activity.name # => 'Afternoon Run'
 
 See [Strava::Models::Activity](lib/strava/models/activity.rb) for all available properties. Note that Strava does not return activity or athlete ID via this API.
 
+#### List Club Events
+
+Retrieve recent Events from a specific club.
+
+```ruby
+events = client.club_events(108605) # => Array[Strava::Models::ClubEvent]
+
+event = events.first # => Strava::Models::ClubEvent
+
+event.title # => 'First Group Event Ever! Yippieh!'
+```
+
+See [Strava::Models::ClubEvent](lib/strava/models/club_event.rb) for all available properties.
+
 #### List Club Administrators
 
 Returns a list of the administrators of a given club.
