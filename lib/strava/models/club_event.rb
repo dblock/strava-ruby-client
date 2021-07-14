@@ -5,12 +5,12 @@ module Strava
       property 'resource_state'
       property 'title'
       property 'club_id'
-      property 'club', transform_with: ->(c) { Strava::Model::Club.new(c) }
+      property 'club', transform_with: ->(c) { Strava::Models::Club.new(c) }
       property 'organizing_athlete', transform_with: ->(oa) { Strava::Models::Athlete.new(oa) }
       property 'activity_type'
       property 'created_at'
       property 'route_id'
-      property 'route', transform_with: ->(r) { Strava::Model::Route.new(r) }
+      property 'route', transform_with: ->(r) { Strava::Models::Route.new(r) }
       property 'women_only'
       property 'private'
       property 'skill_levels'
