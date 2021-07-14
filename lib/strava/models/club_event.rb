@@ -19,7 +19,7 @@ module Strava
       property 'zone'
       property 'address'
       property 'start_latlng'
-     
+
       def strava_url
         "https://www.strava.com/clubs/#{club_id}/group_events/#{id}"
       end
