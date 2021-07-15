@@ -4,6 +4,7 @@ RSpec.describe 'Strava::Api::Client#club_events', vcr: { cassette_name: 'client/
   include_context 'API client'
   it 'returns club events' do
     club_events = client.club_events('456773')
+    expect(club_events.size).to eq 107
     expect(club_events).to be_a Enumerable
     event = club_events.first
     expect(event.women_only).to be_a FalseClass
