@@ -8,14 +8,14 @@ module Strava
       property 'club', transform_with: ->(c) { Strava::Models::Club.new(c) }
       property 'organizing_athlete', transform_with: ->(oa) { Strava::Models::Athlete.new(oa) }
       property 'activity_type'
-      property 'created_at'
+      property 'created_at', transform_with: ->(v) { Time.parse(v) }
       property 'route_id'
       property 'route', transform_with: ->(r) { Strava::Models::Route.new(r) }
       property 'women_only'
       property 'private'
       property 'skill_levels'
       property 'terrain'
-      property 'upcoming_occurences'
+      property 'upcoming_occurrences', transform_with: ->(upcoming) { upcoming.map { |o| Time.parse(o) } }
       property 'zone'
       property 'address'
       property 'start_latlng'
