@@ -18,6 +18,21 @@ module Strava
         end
 
         #
+        # List club / group events.
+        #
+        # @option options [String] :id
+        #   Club id.
+        # @option options [Integer] :page
+        #   Page number.
+        # @option options [Integer] :per_page
+        #   Number of items per page. Defaults to 30.
+        #
+        def club_events(id_or_options, options = {}, &block)
+          id, options = parse_args(id_or_options, options)
+          paginate "clubs/#{id}/group_events", options, Strava::Models::ClubEvent, &block
+        end
+
+        #
         # List club administrators.
         #
         # @option options [String] :id
