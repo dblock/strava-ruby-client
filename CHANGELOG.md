@@ -1,3 +1,7 @@
+### 0.4.2 (Next)
+
+* Your contribution here.
+
 ### 0.4.1 (2021/07/11)
 
 * [#37](https://github.com/dblock/strava-ruby-client/pull/38): Added `Club#club_events` - [@simonneutert](https://github.com/simonneutert).
