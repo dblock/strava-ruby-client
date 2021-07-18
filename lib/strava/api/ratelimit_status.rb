@@ -8,7 +8,7 @@ module Strava
       end
 
       def ratelimit?
-        puts !!@headers['x-ratelimit-limit']
+        !!@headers['x-ratelimit-limit']
       end
 
       def ratelimit_limit
