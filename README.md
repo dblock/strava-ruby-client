@@ -1,5 +1,4 @@
-Strava Ruby Client
-==================
+# Strava Ruby Client
 
 [![Gem Version](https://badge.fury.io/rb/strava-ruby-client.svg)](https://badge.fury.io/rb/strava-ruby-client)
 [![Build Status](https://travis-ci.org/dblock/strava-ruby-client.svg?branch=master)](https://travis-ci.org/dblock/strava-ruby-client)
@@ -215,7 +214,6 @@ lap.name # => 'Lap 1'
 ```
 
 See [Strava::Models::Lap](lib/strava/models/lap.rb) for all available properties.
-
 
 #### List Athlete Activities
 
@@ -954,15 +952,15 @@ end
 
 The following settings are supported.
 
-setting             | description
---------------------|------------
-user_agent          | User-agent, defaults to _Strava Ruby Client/version_.
-proxy               | Optional HTTP proxy.
-ca_path             | Optional SSL certificates path.
-ca_file             | Optional SSL certificates file.
-logger              | Optional `Logger` instance that logs HTTP requests.
-timeout             | Optional open/read timeout in seconds.
-open_timeout        | Optional connection open timeout in seconds.
+| setting      | description                                           |
+| ------------ | ----------------------------------------------------- |
+| user_agent   | User-agent, defaults to _Strava Ruby Client/version_. |
+| proxy        | Optional HTTP proxy.                                  |
+| ca_path      | Optional SSL certificates path.                       |
+| ca_file      | Optional SSL certificates file.                       |
+| logger       | Optional `Logger` instance that logs HTTP requests.   |
+| timeout      | Optional open/read timeout in seconds.                |
+| open_timeout | Optional connection open timeout in seconds.          |
 
 ### API Client Options
 
@@ -983,10 +981,10 @@ client = Strava::API::Client.new(
 
 The following settings are supported.
 
-setting             | description
---------------------|------------
-access_token        | Access token to pass in the `Authorization` header.
-endpoint            | Defaults to `https://www.strava.com/api/v3`.
+| setting      | description                                         |
+| ------------ | --------------------------------------------------- |
+| access_token | Access token to pass in the `Authorization` header. |
+| endpoint     | Defaults to `https://www.strava.com/api/v3`.        |
 
 ### OAuth Client Options
 
@@ -1009,11 +1007,24 @@ client = Strava::OAuth::Client.new(
 
 The following settings are supported.
 
-setting             | description
---------------------|------------
-client_id           | Application client ID.
-client_secret       | Application client secret.
-endpoint            | Defaults to `https://www.strava.com/oauth`.
+| setting       | description                                 |
+| ------------- | ------------------------------------------- |
+| client_id     | Application client ID.                      |
+| client_secret | Application client secret.                  |
+| endpoint      | Defaults to `https://www.strava.com/oauth`. |
+
+### OAuth Client Ratelimits
+
+The client stores the headers ratelimits in `@ratelimit_status`, that you can access with `client` being an instance of `Strava::Api::Client`
+
+_Not all responses include ratelimit status!_
+
+```ruby
+current_ratelimits = client.ratelimit_status #=> Strava::Api::RatelimitStatus
+current_ratelimits.ratelimit_included? #=> TrueClass
+current_ratelimits.ratelimit_fiveteen_minutes_remaining #=> 300
+current_ratelimits.ratelimit_total_day_remaining #=> 11337
+```
 
 ### Webhooks Client Options
 
@@ -1036,11 +1047,11 @@ client = Strava::Webhooks::Client.new(
 
 The following settings are supported.
 
-setting             | description
---------------------|------------
-client_id           | Application client ID.
-client_secret       | Application client secret.
-endpoint            | Defaults to `https://www.strava.com/api/v3`.
+| setting       | description                                  |
+| ------------- | -------------------------------------------- |
+| client_id     | Application client ID.                       |
+| client_secret | Application client secret.                   |
+| endpoint      | Defaults to `https://www.strava.com/api/v3`. |
 
 ## Errors
 
@@ -1070,17 +1081,17 @@ $ STRAVA_CLIENT_ID=... STRAVA_CLIENT_SECRET=... strava-oauth-token
 
 ## Users
 
-* [Slava: Strava integration with Slack](https://slava.playplay.io), [source](https://github.com/dblock/slack-strava).
-* [Jekyll Blog at run.dblock.org](https://run.dblock.org), [source](https://github.com/dblock/run.dblock.org)
-* [Secret Strava](https://steele.blue/secret-strava/), [source](https://github.com/mattdsteele/secret-strava)
+- [Slava: Strava integration with Slack](https://slava.playplay.io), [source](https://github.com/dblock/slack-strava).
+- [Jekyll Blog at run.dblock.org](https://run.dblock.org), [source](https://github.com/dblock/run.dblock.org)
+- [Secret Strava](https://steele.blue/secret-strava/), [source](https://github.com/mattdsteele/secret-strava)
 
 ## Resources
 
-* [Strava API Documentation](https://developers.strava.com)
-* [Writing a New Strava API Ruby Client](https://code.dblock.org/2018/11/27/writing-a-new-strava-api-ruby-client.html)
-* [Dealing with Strava API OAuth Token Migration](https://code.dblock.org/2018/11/17/dealing-with-strava-api-token-migration.html)
-* [Auto-Publishing Strava Runs to Github Pages](https://code.dblock.org/2018/02/17/auto-publishing-strava-runs-to-github-pages.html)
-* [Strava Command-Line Client](https://github.com/dblock/strava-ruby-cli)
+- [Strava API Documentation](https://developers.strava.com)
+- [Writing a New Strava API Ruby Client](https://code.dblock.org/2018/11/27/writing-a-new-strava-api-ruby-client.html)
+- [Dealing with Strava API OAuth Token Migration](https://code.dblock.org/2018/11/17/dealing-with-strava-api-token-migration.html)
+- [Auto-Publishing Strava Runs to Github Pages](https://code.dblock.org/2018/02/17/auto-publishing-strava-runs-to-github-pages.html)
+- [Strava Command-Line Client](https://github.com/dblock/strava-ruby-cli)
 
 ## Upgrading
 

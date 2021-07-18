@@ -1,5 +1,4 @@
 require 'spec_helper'
-
 RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/activity' } do
   include_context 'API client'
   it 'returns activity' do
