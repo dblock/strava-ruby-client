@@ -51,7 +51,6 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
     expect(activity.upload_id).to eq 2_082_412_856
     expect(activity.start_date).to eq Time.new(2018, 11, 0o4, 14, 53, 46, '-00:00').utc
     expect(activity.timezone).to eq '(GMT-05:00) America/New_York'
-    binding.pry
     expect(activity.start_date_local).to eq Time.new(2018, 11, 0o4, 9, 53, 46, '-05:00')
 
     expect(activity.utc_offset).to eq(-18_000.0)
