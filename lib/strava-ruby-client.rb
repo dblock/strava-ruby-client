@@ -60,6 +60,7 @@ require_relative 'strava/models/authorization'
 
 require_relative 'strava/web/raise_error'
 require_relative 'strava/web/connection'
+require_relative 'strava/web/response'
 require_relative 'strava/web/request'
 require_relative 'strava/web/config'
 require_relative 'strava/web/client'
@@ -89,4 +90,4 @@ require_relative 'strava/api/endpoints/uploads'
 require_relative 'strava/api/endpoints/oauth'
 
 require_relative 'strava/api/client'
-require_relative 'strava/api/ratelimit_status'
+require_relative 'strava/api/ratelimit_headers'

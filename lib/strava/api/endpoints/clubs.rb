@@ -55,7 +55,7 @@ module Strava
         #
         def club(id_or_options, options = {})
           id, options = parse_args(id_or_options, options)
-          Strava::Models::Club.new(get("clubs/#{id}", options))
+          extract_entity(get("clubs/#{id}", options), Strava::Models::Club)
         end
 
         #

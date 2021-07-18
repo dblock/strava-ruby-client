@@ -1,3 +1,4 @@
+require 'pry'
 module Strava
   module Web
     module Request
@@ -33,9 +34,7 @@ module Strava
           end
           request.options.merge!(options.delete(:request)) if options.key?(:request)
         end
-
-        @ratelimit_status = Strava::Api::RatelimitStatus.new(response.headers)
-        response.body
+        Strava::Web::Response.new(response)
       end
     end
   end

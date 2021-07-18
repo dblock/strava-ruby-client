@@ -6,7 +6,7 @@ module Strava
         # Create an activity.
         #
         def create_activity(options = {})
-          Strava::Models::Activity.new(post('activities', options))
+          extract_entity(post('activities', options), Strava::Models::Activity)
         end
 
         #
@@ -17,7 +17,7 @@ module Strava
         #
         def activity(id_or_options, options = {})
           id, options = parse_args(id_or_options, options)
-          Strava::Models::Activity.new(get("activities/#{id}", options))
+          extract_entity(get("activities/#{id}", options), Strava::Models::Activity)
         end
 
         #
@@ -73,9 +73,7 @@ module Strava
         #
         def activity_laps(id_or_options, options = {})
           id, options = parse_args(id_or_options, options)
-          get("activities/#{id}/laps", options).map do |row|
-            Strava::Models::Lap.new(row)
-          end
+          extract_entities(get("activities/#{id}/laps", options), Strava::Models::Lap)
         end
 
         #
@@ -105,9 +103,7 @@ module Strava
         #
         def activity_zones(id_or_options, options = {})
           id, options = parse_args(id_or_options, options)
-          get("activities/#{id}/zones", options).map do |row|
-            Strava::Models::ActivityZone.new(row)
-          end
+          extract_entities(get("activities/#{id}/zones", options), Strava::Models::ActivityZone)
         end
 
         #
@@ -130,7 +126,7 @@ module Strava
         #
         def update_activity(id_or_options, options = {})
           id, options = parse_args(id_or_options, options)
-          Strava::Models::Activity.new(put("activities/#{id}", options))
+          extract_entity(put("activities/#{id}", options), Strava::Models::Activity)
         end
       end
     end

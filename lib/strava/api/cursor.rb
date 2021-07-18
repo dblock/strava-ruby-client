@@ -18,7 +18,7 @@ module Strava
         loop do
           query = params.merge(page: next_page)
           response = client.get(path, query)
-          break unless response.any?
+          break unless response.body.any?
 
           yield response
           next_page += 1

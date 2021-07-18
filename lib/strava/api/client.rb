@@ -15,8 +15,6 @@ module Strava
 
       attr_accessor(*Config::ATTRIBUTES)
 
-      attr_accessor :ratelimit_status
-
       def initialize(options = {})
         Config::ATTRIBUTES.each do |key|
           send("#{key}=", options[key] || Strava::Api.config.send(key))
@@ -40,17 +38,36 @@ module Strava
 
       private
 
+      def enrich_model_with_headers(model, response)
+        response.ratelimit_headers
+        model._response_headers = response.headers
+        model._response_ratelimit = response.ratelimit_headers
+        model
+      end
+
+      def extract_entity(response, model)
+        m = model.new(response.body)
+        enrich_model_with_headers(m, response)
+      end
+
+      def extract_entities(response, model)
+        response.body.each do |row|
+          m = model.new(row)
+          enrich_model_with_headers(m, response)
+          yield m
+        end
+       end
+
       def paginate(path, options, model)
         if block_given?
           Cursor.new(self, path, options).each do |page|
-            page.each do |row|
-              yield model.new(row)
+            extract_entities(page, model) do |e|
+              yield e
             end
           end
         else
-          get(path, options).map do |row|
-            model.new(row)
-          end
+          response = get(path, options)
+          extract_entities(response, model)
         end
       end
     end

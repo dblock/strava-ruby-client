@@ -53,7 +53,7 @@ module Strava
           grant_type: options[:grant_type] || 'authorization_code'
         )
 
-        Strava::Models::Token.new(post('token', query))
+        Strava::Models::Token.new(post('token', query).body)
       end
 
       class << self

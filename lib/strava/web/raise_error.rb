@@ -1,5 +1,5 @@
 module Strava
-  module Web
+  module Faraday
     module Response
       class RaiseError < ::Faraday::Response::Middleware
         ClientErrorStatuses = (400...600).freeze
@@ -7,10 +7,10 @@ module Strava
         def on_complete(env)
           case env[:status]
           when 404
-            raise Faraday::ResourceNotFound, response_values(env)
+            raise ::Faraday::ResourceNotFound, response_values(env)
           when 407
             # mimic the behavior that we get with proxy requests with HTTPS
-            raise Faraday::ConnectionFailed, %(407 "Proxy Authentication Required ")
+            raise ::Faraday::ConnectionFailed, %(407 "Proxy Authentication Required ")
           when ClientErrorStatuses
             raise Strava::Errors::Fault, response_values(env)
           end
