@@ -1,4 +1,3 @@
-require 'pry'
 module Strava
   module Models
     class Activity < Model
