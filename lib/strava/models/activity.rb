@@ -1,9 +1,10 @@
 module Strava
   module Models
     class Activity < Model
-      include Mixins::Distance
       include Mixins::Time
+      include Mixins::Distance
       include Mixins::Elevation
+      include Mixins::StartDateLocal
 
       property 'id'
       property 'resource_state'
@@ -16,7 +17,6 @@ module Strava
       property 'external_id'
       property 'upload_id'
       property 'start_date', transform_with: ->(v) { Time.parse(v) }
-      property 'start_date_local', transform_with: ->(v) { Time.parse(v) }
       property 'timezone'
       property 'utc_offset'
       property 'start_latlng'
