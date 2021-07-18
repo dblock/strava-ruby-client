@@ -17,6 +17,7 @@ require_relative 'strava/errors/fault'
 require_relative 'strava/models/mixins/distance'
 require_relative 'strava/models/mixins/elevation'
 require_relative 'strava/models/mixins/time'
+require_relative 'strava/models/mixins/start_date_local'
 
 require_relative 'strava/models/model'
 require_relative 'strava/models/token'

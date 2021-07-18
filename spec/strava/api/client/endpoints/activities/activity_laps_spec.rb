@@ -17,7 +17,7 @@ RSpec.describe 'Strava::Api::Client#activity_laps', vcr: { cassette_name: 'clien
     expect(lap.elapsed_time).to eq 13_306
     expect(lap.moving_time).to eq 13_299
     expect(lap.start_date).to eq Time.new(2018, 11, 0o4, 14, 53, 46, '-00:00').utc
-    expect(lap.start_date_local).to eq Time.new(2018, 11, 4, 9, 53, 46, '-00:00').utc
+    expect(lap.start_date_local).to eq Time.new(2018, 11, 4, 9, 53, 46, '-05:00')
     expect(lap.distance).to eq 42_882.9
     expect(lap.start_index).to eq 0
     expect(lap.end_index).to eq 13_128
