@@ -1020,8 +1020,8 @@ The client stores the headers ratelimits in `@ratelimit_status`, that you can ac
 _Not all responses include ratelimit status!_
 
 ```ruby
-current_ratelimits = client.ratelimit_status #=> Strava::Api::RatelimitStatus
-current_ratelimits.ratelimit_included? #=> TrueClass
+current_ratelimits = client.ratelimit_status #=> Strava::Api::RatelimitHeaders
+current_ratelimits.ratelimit? #=> TrueClass
 current_ratelimits.ratelimit_fiveteen_minutes_remaining #=> 300
 current_ratelimits.ratelimit_total_day_remaining #=> 11337
 ```
