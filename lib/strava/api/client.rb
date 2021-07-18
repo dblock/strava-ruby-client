@@ -15,6 +15,8 @@ module Strava
 
       attr_accessor(*Config::ATTRIBUTES)
 
+      attr_accessor :ratelimit_status
+
       def initialize(options = {})
         Config::ATTRIBUTES.each do |key|
           send("#{key}=", options[key] || Strava::Api.config.send(key))

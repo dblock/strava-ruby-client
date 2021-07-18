@@ -89,3 +89,4 @@ require_relative 'strava/api/endpoints/uploads'
 require_relative 'strava/api/endpoints/oauth'
 
 require_relative 'strava/api/client'
+require_relative 'strava/api/ratelimit_status'
