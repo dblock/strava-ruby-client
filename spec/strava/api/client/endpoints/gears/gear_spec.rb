@@ -14,6 +14,7 @@ RSpec.describe 'Strava::Api::Client#gear', vcr: { cassette_name: 'client/gear' }
     expect(gear.brand_name).to eq 'adidas'
     expect(gear.model_name).to eq 'Supernova ST'
     expect(gear.description).to eq 'Marathon 2018.'
+    expect(gear.frame_type).to eq 3
   end
   it 'returns gear by id' do
     gear = client.gear('g3423618')
