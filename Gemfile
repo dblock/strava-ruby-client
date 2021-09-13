@@ -12,7 +12,7 @@ group :development, :test do
   gem 'pry'
   gem 'rake'
   gem 'rspec'
-  gem 'rubocop', '~> 0.61.1'
+  gem 'rubocop'
   gem 'vcr'
   gem 'webmock'
 end
