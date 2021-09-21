@@ -1,6 +1,6 @@
 ### 0.4.2 (Next)
 
-* [#45](https://github.com/dblock/strava-ruby-client/pull/45): Added `Gear#frame_type` `Gear#retired` `Gear#weight`- [@deuber](https://github.com/deuber).
+* [#45](https://github.com/dblock/strava-ruby-client/pull/45): Added `Gear#frame_type` `#retired` `#weight` - [@deuber](https://github.com/deuber).
 
 * Your contribution here.
 

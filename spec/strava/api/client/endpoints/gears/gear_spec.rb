@@ -23,5 +23,3 @@ RSpec.describe 'Strava::Api::Client#gear', vcr: { cassette_name: 'client/gear' }
     expect(gear).to be_a Strava::Models::Gear
   end
 end
-# curl -H 'Accept: application/json' -H "Authorization: Bearer access_token_here " https://www.strava.com/api/v3/gear/b2338517
-# {"id":"b2338517","primary":false,"name":"Trek","nickname":"Trek","resource_state":3,"retired":false,"distance":54349,"converted_distance":54.3,"brand_name":"Trek ","model_name":"Madrone","frame_type":3,"description":"white","weight":9.1}
