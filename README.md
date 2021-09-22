@@ -29,6 +29,7 @@ Unlike other clients, including [strava-api-v3](https://github.com/jaredholdcrof
     - [Update Athlete](#update-athlete)
   - [Clubs](#clubs)
     - [List Club Activities](#list-club-activities)
+    - [List Club Events](#list-club-events)
     - [List Club Administrators](#list-club-administrators)
     - [Get Club](#get-club)
     - [List Club Members](#list-club-members)
@@ -431,15 +432,19 @@ See [Strava::Models::Club](lib/strava/models/club.rb) for all available properti
 Returns an equipment using its identifier.
 
 ```ruby
-gear = client.gear('g3844087') # => Strava::Models::Gear
+gear = client.gear(id: 'b2338517') # => Strava::Models::Gear
 
-gear.id # => 'g3844087'
-gear.name # => 'Adidas Supernova ST'
+gear.id # => 'b2338517'
+gear.name # => 'Trek'
 gear.distance # => 380939.0
 gear.distance_s # => '380.94km'
-gear.brand_name # => 'Adidas'
-gear.model_name # => 'Supernova'
-gear.description # => 'My NYC TCS Marathon 2018 shoes.'
+gear.brand_name # => 'Trek'
+gear.model_name # => 'Madone'
+gear.description # => 'white'
+gear.primary # => 'false'
+gear.frame_type # => '3'
+gear.weight # => '9'
+gear.retired # => 'false'
 ```
 
 See [Strava::Models::Gear](lib/strava/models/gear.rb) for all available properties.
