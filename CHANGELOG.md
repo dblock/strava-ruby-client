@@ -1,3 +1,7 @@
+### 0.4.3 (Next)
+
+* Your contribution here.
+
 ### 0.4.2 (2021/10/03)
 
 * [#45](https://github.com/dblock/strava-ruby-client/pull/45): Added `Gear#frame_type` `#retired` `#weight` - [@deuber](https://github.com/deuber).
