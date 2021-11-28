@@ -38,7 +38,7 @@ end
 redirect_url = client.authorize_url(
   redirect_uri: 'http://localhost:4242/',
   response_type: 'code',
-  scope: 'read_all,activity_read,activity:read_all,profile:read_all,profile:write,activity:write'
+  scope: 'read_all,activity:read,activity:read_all,profile:read_all,profile:write,activity:write'
 )
 
 server.logger.info "opening browser at #{redirect_url}\n"
