@@ -5,6 +5,7 @@ module Strava
       include Mixins::Distance
       include Mixins::Elevation
       include Mixins::StartDateLocal
+
       property 'id'
       property 'resource_state'
       property 'name'

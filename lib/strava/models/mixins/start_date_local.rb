@@ -8,15 +8,21 @@ module Strava
           property 'start_date_local', transform_with: ->(v) { ::Time.parse(v) }
 
           def start_date_local
-            dt = self['start_date_local']
+            extracted_datetime = self['start_date_local']
             # some strava object do not contain a timezone property i.e. `Lap`
-            timezone_shift = conditional_timezone(dt)
-            ::Time.new(dt.year, dt.month, dt.day, dt.hour, dt.min, dt.sec, timezone_shift)
+            timezone_shift = conditional_timezone(extracted_datetime)
+            ::Time.new(extracted_datetime.year,
+                       extracted_datetime.month,
+                       extracted_datetime.day,
+                       extracted_datetime.hour,
+                       extracted_datetime.min,
+                       extracted_datetime.sec,
+                       timezone_shift)
           end
 
           private
 
-          def conditional_timezone(dt)
+          def conditional_timezone(extracted_datetime)
             if key?(:timezone)
               if timezone.include?('+')
                 timezone_shift_string('+')
@@ -26,17 +32,17 @@ module Strava
                 raise ArgumentError 'No operator of timezone correction detectable!'
               end
             else
-              calculate_timezone(dt)
+              calculate_timezone(extracted_datetime)
             end
           end
 
-          def calculate_timezone(dt)
-            if start_date == dt
-              timezone_diff_shift_string((dt - dt), '-')
-            elsif dt < start_date
-              timezone_diff_shift_string((dt - start_date), '-')
-            elsif dt > start_date
-              timezone_diff_shift_string((dt - start_date), '+')
+          def calculate_timezone(extracted_datetime)
+            if start_date == extracted_datetime
+              timezone_diff_shift_string((extracted_datetime - extracted_datetime), '-')
+            elsif extracted_datetime < start_date
+              timezone_diff_shift_string((extracted_datetime - start_date), '-')
+            elsif extracted_datetime > start_date
+              timezone_diff_shift_string((extracted_datetime - start_date), '+')
             else
               raise ArgumentError 'No operator of timezone correction detectable!'
             end
@@ -53,7 +59,7 @@ module Strava
           end
 
           def format_int_leading_zero(int)
-            '%02d' % int
+            format('%02d', int)
           end
         end
       end
