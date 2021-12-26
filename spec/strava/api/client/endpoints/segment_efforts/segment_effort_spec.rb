@@ -35,8 +35,14 @@ RSpec.describe 'Strava::Api::Client#segment_effort', vcr: { cassette_name: 'clie
     expect(segment_stats.pr_date).to eq Date.new(2018, 6, 22)
     expect(segment_stats.effort_count).to eq 3
   end
+
   it 'returns a segment effort by id' do
     segment_effort = client.segment_effort(41_494_197_089)
     expect(segment_effort).to be_a Strava::Models::SegmentEffort
+  end
+  it 'renders a segment\'s date correctly' do
+    segment_effort = client.segment_effort(41_494_197_089)
+    expect(segment_effort.start_date).to eq Time.new(2018, 6, 22, 12, 42, 43, '-00:00').utc
+    expect(segment_effort.start_date_local).to eq Time.new(2018, 6, 22, 8, 42, 43, '-04:00')
   end
 end

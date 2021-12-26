@@ -24,6 +24,7 @@ RSpec.describe 'Strava::Api::Client#running_race', vcr: { cassette_name: 'client
   end
   it 'returns a running race by id' do
     running_race = client.running_race(1577)
+    binding.pry
     expect(running_race).to be_a Strava::Models::RunningRace
   end
 end
