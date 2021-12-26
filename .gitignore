@@ -4,3 +4,5 @@ Gemfile.lock
 .DS_Store
 .bundle
 .idea
+.vscode
+.tool-versions
