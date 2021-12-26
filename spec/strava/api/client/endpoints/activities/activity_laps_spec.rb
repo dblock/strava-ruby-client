@@ -8,7 +8,6 @@ RSpec.describe 'Strava::Api::Client#activity_laps', vcr: { cassette_name: 'clien
     expect(activity_laps.count).to eq 1
     lap = activity_laps.first
     expect(lap).to be_a Strava::Models::Lap
-    expect(lap).to be_a Strava::Models::Lap
     expect(lap.id).to eq 6_270_116_916
     expect(lap.resource_state).to eq 2
     expect(lap.name).to eq 'Lap 1'
