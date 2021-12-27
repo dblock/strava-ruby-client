@@ -49,9 +49,10 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
     expect(activity.workout_type).to eq 1
     expect(activity.external_id).to eq '17900304917.tcx'
     expect(activity.upload_id).to eq 2_082_412_856
-    expect(activity.start_date).to eq Time.new(2018, 11, 0o4, 14, 53, 46, '-00:00').utc
-    expect(activity.start_date_local).to eq Time.new(2018, 11, 4, 9, 53, 46, '-00:00').utc
+    expect(activity.start_date).to eq Time.new(2018, 11, 4, 14, 53, 46, '-00:00').utc
     expect(activity.timezone).to eq '(GMT-05:00) America/New_York'
+    expect(activity.start_date_local).to eq Time.new(2018, 11, 4, 9, 53, 46, '-05:00')
+
     expect(activity.utc_offset).to eq(-18_000.0)
     expect(activity.start_latlng).to eq [40.6, -74.06]
     expect(activity.end_latlng).to eq [40.77, -73.98]
@@ -148,7 +149,7 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
     expect(lap.elapsed_time).to eq 13_306
     expect(lap.moving_time).to eq 13_299
     expect(lap.start_date).to eq Time.new(2018, 11, 0o4, 14, 53, 46, '-00:00').utc
-    expect(lap.start_date_local).to eq Time.new(2018, 11, 4, 9, 53, 46, '-00:00').utc
+    expect(lap.start_date_local).to eq Time.new(2018, 11, 4, 9, 53, 46, '-05:00')
     expect(lap.distance).to eq 42_882.9
     expect(lap.start_index).to eq 0
     expect(lap.end_index).to eq 13_128
@@ -182,7 +183,7 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
     expect(segment_effort.elapsed_time).to eq 461
     expect(segment_effort.moving_time).to eq 461
     expect(segment_effort.start_date).to eq Time.new(2018, 11, 0o4, 14, 53, 46, '-00:00').utc
-    expect(segment_effort.start_date_local).to eq Time.new(2018, 11, 4, 9, 53, 46, '-00:00').utc
+    expect(segment_effort.start_date_local).to eq Time.new(2018, 11, 4, 9, 53, 46, '-05:00')
     expect(segment_effort.distance).to eq 1499.5
     expect(segment_effort.start_index).to eq 0
     expect(segment_effort.end_index).to eq 462
