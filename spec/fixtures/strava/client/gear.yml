@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.strava.com/api/v3/gear/g3423618
+    uri: https://www.strava.com/api/v3/gear/b2338517
     body:
       encoding: US-ASCII
       string: ''
@@ -12,7 +12,7 @@ http_interactions:
       Accept:
       - application/json; charset=utf-8
       User-Agent:
-      - Strava Ruby Client/0.3.0
+      - Strava Ruby Client/0.4.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -21,39 +21,46 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 01 Dec 2018 16:36:05 GMT
+      - Mon, 13 Sep 2021 15:26:33 GMT
       Content-Type:
-      - application/json; charset=UTF-8
+      - application/json; charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Cache-Control:
-      - max-age=0, private, must-revalidate
       Via:
-      - 1.1 linkerd
-      Status:
-      - 200 OK
-      X-Ratelimit-Limit:
-      - '600,30000'
-      X-Request-Id:
-      - e8823e6a-855a-4966-b056-eb7b23c04b18
+      - 1.1 linkerd, 1.1 linkerd
       Etag:
-      - W/"79423fe3220b74234efa94d8b540d128"
-      X-Ratelimit-Usage:
-      - '71,8794'
-      X-Frame-Options:
-      - DENY
-      X-Content-Type-Options:
-      - nosniff
+      - W/"9b4c6f7ac12838baeb083fec060ece88"
       Vary:
       - Origin
+      Server:
+      - nginx/1.19.5
+      Status:
+      - 200 OK
+      X-Request-Id:
+      - a0f51172-b5d4-47da-aabc-c1dd61481aa5
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Frame-Options:
+      - DENY
       X-Xss-Protection:
       - 1; mode=block
+      X-Ratelimit-Limit:
+      - '600,30000'
+      X-Ratelimit-Usage:
+      - '3,2096'
+      X-Download-Options:
+      - noopen
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
     body:
       encoding: UTF-8
-      string: '{"id":"g3423618","primary":true,"name":"adidas Supernova ST","resource_state":3,"distance":380939.0,"brand_name":"adidas","model_name":"Supernova
-        ST","description":"Marathon 2018."}'
-    http_version:
-  recorded_at: Sat, 01 Dec 2018 16:36:05 GMT
-recorded_with: VCR 4.0.0
+      string: '{"id":"b2338517","primary":false,"name":"Trek","nickname":"Trek","resource_state":3,"retired":false,"distance":54349,"converted_distance":54.3,"brand_name":"Trek
+        ","model_name":"Madrone","frame_type":3,"description":"white","weight":9.1}'
+  recorded_at: Mon, 13 Sep 2021 15:26:32 GMT
+recorded_with: VCR 6.0.0

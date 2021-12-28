@@ -11,6 +11,9 @@ module Strava
       property 'brand_name'
       property 'model_name'
       property 'description'
+      property 'frame_type'
+      property 'weight'
+      property 'retired'
     end
   end
 end

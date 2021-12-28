@@ -16,6 +16,10 @@ RSpec.describe 'Strava::Api::Client#segment_leaderboard' do
     expect(entry.start_date_local).to be_a Time
     expect(entry.rank).to eq 1
   end
+  it 'renders the correct local time', vcr: { cassette_name: 'client/segment_leaderboard' } do
+    segment_leaderboard = client.segment_leaderboard(1_109_718)
+    expect(segment_leaderboard.entries.first.start_date_local).to eq Time.new(2016, 6, 24, 6, 56, 16, '-04:00')
+  end
   it 'returns a page of segment leaderboard by id', vcr: { cassette_name: 'client/segment_leaderboard' } do
     segment_leaderboard = client.segment_leaderboard(1_109_718)
     expect(segment_leaderboard.effort_count).to eq 204
