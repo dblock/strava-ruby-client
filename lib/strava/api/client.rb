@@ -56,14 +56,12 @@ module Strava
           enrich_model_with_headers(m, response)
           yield m
         end
-       end
+      end
 
-      def paginate(path, options, model)
+      def paginate(path, options, model, &block)
         if block_given?
           Cursor.new(self, path, options).each do |page|
-            extract_entities(page, model) do |e|
-              yield e
-            end
+            extract_entities(page, model, &block)
           end
         else
           response = get(path, options)
