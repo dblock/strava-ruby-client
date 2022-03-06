@@ -11,13 +11,20 @@ module Strava
         case response.body.class.name
         when 'Array'
           response.body.map! do |elem|
-            elem.merge! Strava::Api::Ratelimit.new(response.headers).ratelimit_hash
+            merge_ratelimit!(elem, response)
           end
         when 'Hash'
-          response.body.merge! Strava::Api::Ratelimit.new(response.headers).ratelimit_hash
+          elem = response.body
+          merge_ratelimit!(elem, response)
         else
           response
         end
+      end
+
+      private
+
+      def merge_ratelimit!(elem, response)
+        elem.merge!(Strava::Api::Ratelimit.new(response.headers).ratelimit_hash)
       end
     end
   end
