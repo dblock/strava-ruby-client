@@ -35,7 +35,29 @@ module Strava
           end
           request.options.merge!(options.delete(:request)) if options.key?(:request)
         end
-        response.body
+
+        Strava::Web::Response.new(conditional_response_upgrade(response))
+      end
+
+      def deep_copy(obj)
+        Marshal.load(Marshal.dump(obj))
+      end
+
+      def conditional_response_upgrade(response_)
+        response = deep_copy(response_)
+
+        case response.body
+        when Array
+          response.body.map! do |body_elem|
+            body_elem ||= {}
+            body_elem['http_response'] = response
+            body_elem
+          end
+        when Hash
+          response.body['http_response'] = response
+        else
+          response.body
+        end
       end
     end
   end

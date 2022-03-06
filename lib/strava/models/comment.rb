@@ -2,7 +2,7 @@
 
 module Strava
   module Models
-    class Comment < Model
+    class Comment < Response
       property 'id'
       property 'activity_id'
       property 'resource_state'

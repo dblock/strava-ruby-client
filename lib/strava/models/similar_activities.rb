@@ -2,7 +2,7 @@
 
 module Strava
   module Models
-    class SimilarActivities < Model
+    class SimilarActivities < Response
       property 'average_speed'
       property 'resource_state'
       property 'effort_count'

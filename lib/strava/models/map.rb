@@ -2,7 +2,7 @@
 
 module Strava
   module Models
-    class Map < Model
+    class Map < Response
       property 'id'
       property 'summary_polyline'
       property 'resource_state'

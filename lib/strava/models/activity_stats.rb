@@ -2,7 +2,7 @@
 
 module Strava
   module Models
-    class ActivityStats < Model
+    class ActivityStats < Response
       property 'biggest_ride_distance'
       property 'biggest_climb_elevation_gain'
       property 'recent_ride_totals', transform_with: ->(v) { Strava::Models::ActivityTotal.new(v) }

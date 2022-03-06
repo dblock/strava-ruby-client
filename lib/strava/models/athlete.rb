@@ -2,7 +2,7 @@
 
 module Strava
   module Models
-    class Athlete < Model
+    class Athlete < Response
       property 'id'
       property 'username'
       property 'resource_state'
