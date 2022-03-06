@@ -35,6 +35,8 @@ module Strava
           end
           request.options.merge!(options.delete(:request)) if options.key?(:request)
         end
+
+        extract_response!(response)
         response.body
       end
     end

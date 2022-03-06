@@ -3,6 +3,7 @@
 module Strava
   module Models
     class ActivityTotal < Model
+      include Mixins::Ratelimit
       include Mixins::Distance
       include Mixins::Time
       include Mixins::Elevation
