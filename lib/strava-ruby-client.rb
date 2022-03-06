@@ -14,6 +14,7 @@ require_relative 'strava/logger'
 
 require_relative 'strava/errors/fault'
 
+require_relative 'strava/models/mixins/ratelimit'
 require_relative 'strava/models/mixins/distance'
 require_relative 'strava/models/mixins/elevation'
 require_relative 'strava/models/mixins/time'
@@ -61,6 +62,7 @@ require_relative 'strava/models/authorization'
 
 require_relative 'strava/web/raise_error'
 require_relative 'strava/web/connection'
+require_relative 'strava/web/response'
 require_relative 'strava/web/request'
 require_relative 'strava/web/config'
 require_relative 'strava/web/client'
@@ -89,4 +91,5 @@ require_relative 'strava/api/endpoints/streams'
 require_relative 'strava/api/endpoints/uploads'
 require_relative 'strava/api/endpoints/oauth'
 
+require_relative 'strava/api/ratelimit'
 require_relative 'strava/api/client'

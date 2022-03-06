@@ -1,6 +1,7 @@
 module Strava
   module Models
     class Route < Model
+      include Mixins::Ratelimit
       include Mixins::Distance
       include Mixins::Elevation
       include Mixins::Time
