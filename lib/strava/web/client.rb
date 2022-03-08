@@ -4,7 +4,6 @@ module Strava
   module Web
     class Client
       include Web::Connection
-      include Web::Response
       include Web::Request
 
       attr_accessor(*Config::ATTRIBUTES)
