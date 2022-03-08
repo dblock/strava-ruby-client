@@ -1,7 +1,7 @@
 module Strava
   module Models
     class Athlete < Model
-      include Mixins::Ratelimit
+      include Mixins::HttpResponse
 
       property 'id'
       property 'username'

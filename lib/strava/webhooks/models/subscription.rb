@@ -2,7 +2,7 @@ module Strava
   module Webhooks
     module Models
       class Subscription < Hashie::Trash
-        include Strava::Models::Mixins::Ratelimit
+        include Strava::Models::Mixins::HttpResponse
 
         property 'id'
         property 'application_id'

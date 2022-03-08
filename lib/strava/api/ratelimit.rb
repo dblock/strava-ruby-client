@@ -1,23 +1,29 @@
 module Strava
   module Api
     class Ratelimit
-      attr_reader :headers
-
-      def initialize(headers)
-        @headers = headers
+      def initialize(response)
+        @response = response
+        @headers = response.headers
+        @body = response.body
       end
 
-      def ratelimit_hash
-        if ratelimit?
+      def to_s
+        to_h.map do |k, v|
+          "#{k}: #{v}"
+        end.join(', ')
+      end
+
+      def to_h
+        if limit?
           {
-            'ratelimit_limit' => limit,
-            'ratelimit_usage' => usage,
-            'ratelimit_fiveteen_minutes' => fiveteen_minutes,
-            'ratelimit_total_day' => total_day,
-            'ratelimit_fiveteen_minutes_usage' => fiveteen_minutes_usage,
-            'ratelimit_total_day_usage' => total_day_usage,
-            'ratelimit_fiveteen_minutes_remaining' => fiveteen_minutes_remaining,
-            'ratelimit_total_day_remaining' => total_day_remaining
+            limit: limit,
+            usage: usage,
+            fiveteen_minutes: fiveteen_minutes,
+            total_day: total_day,
+            fiveteen_minutes_usage: fiveteen_minutes_usage,
+            total_day_usage: total_day_usage,
+            fiveteen_minutes_remaining: fiveteen_minutes_remaining,
+            total_day_remaining: total_day_remaining
           }
         else
           {}
@@ -30,8 +36,8 @@ module Strava
       #
       # @return [TrueClass]
       #
-      def ratelimit?
-        !@headers['x-ratelimit-limit'].nil?
+      def limit?
+        @headers.key?('x-ratelimit-limit')
       end
 
       #
@@ -65,26 +71,30 @@ module Strava
       end
 
       def fiveteen_minutes
-        ratelimit? ? limit.split(',').first.to_i : 0
+        limit? ? limit.split(',').first.to_i : nil
       end
 
       def total_day
-        ratelimit? ? limit.split(',').last.to_i : 0
+        limit? ? limit.split(',').last.to_i : nil
       end
 
       def fiveteen_minutes_usage
-        ratelimit? ? usage.split(',').first.to_i : 0
+        limit? ? usage.split(',').first.to_i : nil
       end
 
       def total_day_usage
-        ratelimit? ? usage.split(',').last.to_i : 0
+        limit? ? usage.split(',').last.to_i : nil
       end
 
       def fiveteen_minutes_remaining
+        return nil unless fiveteen_minutes && fiveteen_minutes_usage
+
         fiveteen_minutes.to_i - fiveteen_minutes_usage.to_i
       end
 
       def total_day_remaining
+        return nil unless total_day && total_day_usage
+
         total_day.to_i - total_day_usage.to_i
       end
     end

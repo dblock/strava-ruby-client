@@ -1,7 +1,7 @@
 module Strava
   module Models
     class Activity < Model
-      include Mixins::Ratelimit
+      include Mixins::HttpResponse
       include Mixins::Time
       include Mixins::Distance
       include Mixins::Elevation

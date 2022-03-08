@@ -1,7 +1,7 @@
 module Strava
   module Models
     class ActivityZone < Model
-      include Mixins::Ratelimit
+      include Mixins::HttpResponse
 
       property 'score'
       property 'distribution_buckets', transform_with: ->(v) { v.map { |r| Strava::Models::TimedZoneRange.new(r) } }
