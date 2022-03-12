@@ -15,24 +15,26 @@ module Strava
         @response.headers
       end
 
-      # rubocop:disable Style/MethodMissingSuper, Style/MissingRespondToMissing
-      def method_missing(m, *args, &block)
-        if @response.class.name == 'Array'
-          @response.send(m, *args, &block)
+      # rubocop:disable Style/MethodMissingSuper
+      # rubocop:disable Style/MissingRespondToMissing
+      def method_missing(method_symbol, *args, &block)
+        if @response.instance_of?(Array)
+          @response.send(method_symbol, *args, &block)
         else
           case @response.body.class.name
           when 'Array'
             @response.body.map do |elem|
-              elem.send(m, *args, &block)
+              elem.send(method_symbol, *args, &block)
             end
           when 'Hash'
-            @response.body.send(m, *args, &block)
+            @response.body.send(method_symbol, *args, &block)
           else
             raise NoMethodError
           end
         end
       end
-      # rubocop:enable Style/MethodMissingSuper, Style/MissingRespondToMissing
+      # rubocop:enable Style/MissingRespondToMissing
+      # rubocop:enable Style/MethodMissingSuper
     end
   end
 end
