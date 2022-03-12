@@ -10,7 +10,7 @@ module Strava
         #
         def export_route_gpx(id_or_options, options = {})
           id, options = parse_args(id_or_options, options)
-          get "routes/#{id}/export_gpx", options
+          get("routes/#{id}/export_gpx", options).response
         end
 
         #
@@ -21,7 +21,7 @@ module Strava
         #
         def export_route_tcx(id_or_options, options = {})
           id, options = parse_args(id_or_options, options)
-          get "routes/#{id}/export_tcx", options
+          get("routes/#{id}/export_tcx", options).response
         end
 
         #
