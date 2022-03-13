@@ -1,7 +1,5 @@
 name: Ruby
-
 on: [pull_request]
-
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -10,7 +8,6 @@ jobs:
         ruby-version:
           - "2.7"
           - "3.0"
-
     steps:
       - uses: actions/checkout@v2
       - name: Set up Ruby
