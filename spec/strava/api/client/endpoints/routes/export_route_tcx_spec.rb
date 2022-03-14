@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#export_route_tcx', vcr: { cassette_name: 'client/export_route_tcx' } do

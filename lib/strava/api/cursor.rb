@@ -1,11 +1,11 @@
+# frozen_string_literal: true
+
 module Strava
   module Api
     class Cursor
       include Enumerable
 
-      attr_reader :client
-      attr_reader :path
-      attr_reader :params
+      attr_reader :client, :path, :params
 
       def initialize(client, path, params = {})
         @client = client

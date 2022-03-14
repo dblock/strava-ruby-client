@@ -2,7 +2,7 @@ Strava Ruby Client
 ==================
 
 [![Gem Version](https://badge.fury.io/rb/strava-ruby-client.svg)](https://badge.fury.io/rb/strava-ruby-client)
-[![Build Status](https://travis-ci.org/dblock/strava-ruby-client.svg?branch=master)](https://travis-ci.org/dblock/strava-ruby-client)
+[![Test](https://github.com/dblock/strava-ruby-client/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/dblock/strava-ruby-client/actions/workflows/test.yml)
 
 A complete Ruby client for the [Strava API v3](https://developers.strava.com).
 

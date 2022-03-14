@@ -1,6 +1,7 @@
 ### 0.4.3 (Next)
 
-* [#46](https://github.com/dblock/strava-ruby-client/pull/46): Add missing activity:read scope from strava-oauth-token - [@xaviershay](https://github.com/xaviershay).
+* [#53](https://github.com/dblock/strava-ruby-client/pull/53): Upgraded to RuboCop 1.26.0 - [@dblock](https://github.com/dblock).
+* [#46](https://github.com/dblock/strava-ruby-client/pull/46): Add missing `activity:read` scope from `strava-oauth-token` - [@xaviershay](https://github.com/xaviershay).
 * Your contribution here.
 
 ### 0.4.2 (2021/10/03)

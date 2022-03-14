@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 RSpec.shared_examples 'web client' do
@@ -98,7 +100,7 @@ RSpec.shared_examples 'web client' do
       end
     end
     context 'logger option' do
-      let(:logger) { Logger.new(STDOUT) }
+      let(:logger) { Logger.new($stdout) }
       before do
         Strava::Web::Client.configure do |config|
           config.logger = logger

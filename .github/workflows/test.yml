@@ -1,13 +1,16 @@
-name: Ruby
-on: [pull_request]
+name: Tests
+on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         ruby-version:
-          - "2.7"
-          - "3.0"
+          - 2.5.3
+          - 2.6.6
+          - 2.7.5
+          - 3.0.2
+          - 3.1.1
     steps:
       - uses: actions/checkout@v2
       - name: Set up Ruby
@@ -15,5 +18,5 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby-version }}
           bundler-cache: true
-      - name: Run tests
+      - name: Run Tests
         run: RACK_ENV=test bundle exec rake
