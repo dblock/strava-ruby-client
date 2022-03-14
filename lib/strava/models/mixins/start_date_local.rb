@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Strava
   module Models
     module Mixins
@@ -38,7 +40,7 @@ module Strava
 
           def calculate_timezone(extracted_datetime)
             if start_date == extracted_datetime
-              timezone_diff_shift_string((extracted_datetime - extracted_datetime), '-')
+              timezone_diff_shift_string(0, '-')
             elsif extracted_datetime < start_date
               timezone_diff_shift_string((extracted_datetime - start_date), '-')
             elsif extracted_datetime > start_date

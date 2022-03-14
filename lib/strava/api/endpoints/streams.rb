@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Strava
   module Api
     module Endpoints
@@ -16,7 +18,7 @@ module Strava
           id, options = parse_args(id_or_options, options)
           query = options.dup
           query[:key_by_type] = true unless options.key?(:key_by_type)
-          query[:keys] = options[:keys].join(',') if options[:keys] && options[:keys].is_a?(Array)
+          query[:keys] = options[:keys].join(',') if options[:keys].is_a?(Array)
           Strava::Models::StreamSet.new(get("activities/#{id}/streams", query))
         end
 
@@ -34,7 +36,7 @@ module Strava
           id, options = parse_args(id_or_options, options)
           query = options.dup
           query[:key_by_type] = true unless options.key?(:key_by_type)
-          query[:keys] = options[:keys].join(',') if options[:keys] && options[:keys].is_a?(Array)
+          query[:keys] = options[:keys].join(',') if options[:keys].is_a?(Array)
           Strava::Models::StreamSet.new(get("segment_efforts/#{id}/streams", query))
         end
 
@@ -52,7 +54,7 @@ module Strava
           id, options = parse_args(id_or_options, options)
           query = options.dup
           query[:key_by_type] = true unless options.key?(:key_by_type)
-          query[:keys] = options[:keys].join(',') if options[:keys] && options[:keys].is_a?(Array)
+          query[:keys] = options[:keys].join(',') if options[:keys].is_a?(Array)
           Strava::Models::StreamSet.new(get("segments/#{id}/streams", query))
         end
       end
