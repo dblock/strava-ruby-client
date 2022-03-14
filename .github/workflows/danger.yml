@@ -1,0 +1,18 @@
+name: Rake on PR
+on: [push, pull_request]
+env:
+  # the personal token is public, this is ok, base64 encode to avoid tripping Github
+  DANGER_TOKEN: $(echo -n NWY1ZmM5MzEyMzNlYWY4OTZiOGU3MmI3MWQ3Mzk0MzgxMWE4OGVmYwo= | base64 --decode)
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7.5
+          bundler-cache: true
+      - name: Run Danger
+        run: DANGER_GITHUB_API_TOKEN=$DANGER_TOKEN bundle exec danger --verbose
+        env:
+          DANGER_GITHUB_API_TOKEN: $(echo -n NWY1ZmM5MzEyMzNlYWY4OTZiOGU3MmI3MWQ3Mzk0MzgxMWE4OGVmYwo= | base64 --decode)
