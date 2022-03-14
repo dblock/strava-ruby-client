@@ -1,10 +1,11 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 require 'dotenv/load'
 require 'strava-ruby-client'
 require 'webrick'
 
-logger = ::Logger.new(STDOUT)
+logger = ::Logger.new($stdout)
 logger.level = Logger::INFO
 
 client = Strava::Webhooks::Client.new(
@@ -14,7 +15,7 @@ client = Strava::Webhooks::Client.new(
 )
 
 case ARGV[0]
-when 'create' then
+when 'create'
   callback_url = ARGV[1]
   raise 'Missing callback_url.' unless callback_url
 
@@ -37,11 +38,11 @@ when 'handle'
 
   server.mount_proc '/' do |req, res|
     case req.request_method
-    when 'GET' then
+    when 'GET'
       challenge = Strava::Webhooks::Models::Challenge.new(req.query)
       res.content_type = 'application/json'
       res.body = challenge.response.to_json
-    when 'POST' then
+    when 'POST'
       event = Strava::Webhooks::Models::Event.new(JSON.parse(req.body))
       server.logger.info event
       res.content_type = 'application/json'

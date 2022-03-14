@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#segment_effort_streams', vcr: { cassette_name: 'client/segment_effort_streams' } do
