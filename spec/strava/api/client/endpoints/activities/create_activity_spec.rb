@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#create_activity', vcr: { cassette_name: 'client/create_activity' } do

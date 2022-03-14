@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Strava
   module Models
     class Activity < Model
@@ -99,15 +101,14 @@ module Strava
 
       def type_emoji
         case type
-        when 'Run' then '🏃'
-        when 'Ride' then '🚴'
+        when 'Run', 'VirtualRun' then '🏃'
+        when 'Ride', 'EBikeRide', 'VirtualRide' then '🚴'
         when 'Swim' then '🏊'
         when 'Walk' then '🚶'
         when 'AlpineSki' then '⛷️'
         when 'BackcountrySki' then '🎿️'
         # when 'Canoeing' then ''
         # when 'Crossfit' then ''
-        when 'EBikeRide' then '🚴'
         # when 'Elliptical' then ''
         # when 'Hike' then ''
         when 'IceSkate' then '⛸️'
@@ -123,8 +124,6 @@ module Strava
         # when 'StairStepper' then ''
         # when 'StandUpPaddling' then ''
         when 'Surfing' then '🏄'
-        when 'VirtualRide' then '🚴'
-        when 'VirtualRun' then '🏃'
         when 'WeightTraining' then '🏋️'
         # when 'Windsurf' then ''
         when 'Wheelchair' then '♿'
