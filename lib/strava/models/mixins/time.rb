@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Strava
   module Models
     module Mixins
@@ -28,11 +30,11 @@ module Strava
         end
 
         def pace_per_100_yards_s
-          convert_meters_per_second_to_pace average_speed, :"100yd"
+          convert_meters_per_second_to_pace average_speed, :'100yd'
         end
 
         def pace_per_100_meters_s
-          convert_meters_per_second_to_pace average_speed, :"100m"
+          convert_meters_per_second_to_pace average_speed, :'100m'
         end
 
         def pace_per_kilometer_s
@@ -40,13 +42,13 @@ module Strava
         end
 
         def kilometer_per_hour_s
-          return unless average_speed && average_speed.positive?
+          return unless average_speed&.positive?
 
           format('%.1fkm/h', average_speed * 3.6)
         end
 
         def miles_per_hour_s
-          return unless average_speed && average_speed.positive?
+          return unless average_speed&.positive?
 
           format('%.1fmph', average_speed * 2.23694)
         end
@@ -73,13 +75,13 @@ module Strava
         # Convert speed (m/s) to pace (min/mile or min/km) in the format of 'x:xx'
         # http://yizeng.me/2017/02/25/convert-speed-to-pace-programmatically-using-ruby
         def convert_meters_per_second_to_pace(speed, unit = :mi)
-          return unless speed && speed.positive?
+          return unless speed&.positive?
 
           total_seconds = case unit
                           when :mi then 1609.344 / speed
                           when :km then 1000 / speed
-                          when :"100yd" then 91.44 / speed
-                          when :"100m" then 100 / speed
+                          when :'100yd' then 91.44 / speed
+                          when :'100m' then 100 / speed
                           end
           minutes, seconds = total_seconds.divmod(60)
           seconds = seconds.round

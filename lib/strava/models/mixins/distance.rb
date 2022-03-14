@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Strava
   module Models
     module Mixins
@@ -21,7 +23,7 @@ module Strava
         end
 
         def distance_in_miles_s
-          return unless distance && distance.positive?
+          return unless distance&.positive?
 
           format('%gmi', format('%.2f', distance_in_miles))
         end
@@ -31,13 +33,13 @@ module Strava
         end
 
         def distance_in_yards_s
-          return unless distance && distance.positive?
+          return unless distance&.positive?
 
           format('%gyd', format('%.1f', distance_in_yards))
         end
 
         def distance_in_meters_s
-          return unless distance && distance.positive?
+          return unless distance&.positive?
 
           format('%gm', format('%d', distance_in_meters))
         end
@@ -47,7 +49,7 @@ module Strava
         end
 
         def distance_in_kilometers_s
-          return unless distance && distance.positive?
+          return unless distance&.positive?
 
           format('%gkm', format('%.2f', distance_in_kilometers))
         end
