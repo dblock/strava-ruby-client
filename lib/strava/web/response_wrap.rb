@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Strava
   module Web
     class ResponseWrap
@@ -15,7 +17,6 @@ module Strava
         @response.headers
       end
 
-      # rubocop:disable Style/MethodMissingSuper
       # rubocop:disable Style/MissingRespondToMissing
       def method_missing(method_symbol, *args, &block)
         if @response.instance_of?(Array)
@@ -34,7 +35,6 @@ module Strava
         end
       end
       # rubocop:enable Style/MissingRespondToMissing
-      # rubocop:enable Style/MethodMissingSuper
     end
   end
 end
