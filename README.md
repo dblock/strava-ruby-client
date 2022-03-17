@@ -42,7 +42,6 @@ Unlike other clients, including [strava-api-v3](https://github.com/jaredholdcrof
     - [List Athlete Routes](#list-athlete-routes)
   - [Running Races](#running-races)
     - [Get Running Race](#get-running-race)
-    - [List Running Races](#list-running-races)
   - [Segment Efforts](#segment-efforts)
     - [List Segment Efforts](#list-segment-efforts)
     - [Get Segment Effort](#get-segment-effort)
