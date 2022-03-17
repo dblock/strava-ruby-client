@@ -49,7 +49,6 @@ Unlike other clients, including [strava-api-v3](https://github.com/jaredholdcrof
     - [Get Segment Effort](#get-segment-effort)
   - [Segments](#segments)
     - [Explore Segments](#explore-segments)
-    - [Get Segment Leaderboard](#get-segment-leaderboard)
     - [List Starred Segments](#list-starred-segments)
     - [Get Segment](#get-segment)
     - [Star Segment](#star-segment)
@@ -615,37 +614,6 @@ segment.elev_difference # => 9.6
 ```
 
 See [Strava::Models::ExplorerSegment](lib/strava/models/explorer_segment.rb) for all available properties.
-
-#### Get Segment Leaderboard
-
-Returns the specified segment leaderboard.
-
-```ruby
-segment_leaderboard = client.segment_leaderboard(1109718) # => Strava::Models::SegmentLeaderboard
-
-segment_leaderboard.effort_count # => 204
-segment_leaderboard.entry_count # => 204
-segment_leaderboard.kom_type # => 'kom'
-segment_leaderboard.entries # => Enumerable
-
-entry = segment_leaderboard.entries.first # => Strava::Models::SegmentLeaderboardEntry
-entry.athlete_name # => 'Etan B.'
-entry.moving_time_in_hours_s # => '1m32s'
-entry.start_date # => Time
-entry.start_date_local # => Time
-entry.rank # => 1
-```
-
-This API supports pagination through the entire segment leaderboard but wraps entries into a [Strava::Models::SegmentLeaderboard](lib/strava/models/segment_leaderboard.rb) object.
-
-```ruby
-client.segment_leaderboard(1109718) do |row|
-  row # => Strava::Models::SegmentLeaderboard
-  row.entries # => Array[Strava::Models::SegmentLeaderboardEntry]
-end
-```
-
-See [Strava::Models::SegmentLeaderboard](lib/strava/models/segment_leaderboard.rb) and [Strava::Models::SegmentLeaderboardEntry](lib/strava/models/segment_leaderboard_entry.rb) for all available properties.
 
 #### List Starred Segments
 
