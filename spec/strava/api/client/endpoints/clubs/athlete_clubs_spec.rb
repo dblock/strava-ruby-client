@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#athlete_clubs', vcr: { cassette_name: 'client/athlete_clubs' } do

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Strava
   module Webhooks
     class Client < Strava::Web::Client
