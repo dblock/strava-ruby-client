@@ -1,6 +1,6 @@
 ### 0.4.3 (Next)
 
-* [#48](https://github.com/dblock/strava-ruby-client/pull/48): Ensure support for large Integer IDs - [@simonneutert](https://github.com/simonneutert).
+* [#48](https://github.com/dblock/strava-ruby-client/pull/55): Removes client.running_races - [@simonneutert](https://github.com/simonneutert).
 * [#51](https://github.com/dblock/strava-ruby-client/pull/51): Ensure support for large Integer IDs - [@simonneutert](https://github.com/simonneutert).
 * [#53](https://github.com/dblock/strava-ruby-client/pull/53): Upgraded to RuboCop 1.26.0 - [@dblock](https://github.com/dblock).
 * [#46](https://github.com/dblock/strava-ruby-client/pull/46): Add missing `activity:read` scope from `strava-oauth-token` - [@xaviershay](https://github.com/xaviershay).
