@@ -1,3 +1,7 @@
+### 0.5.0 (Next)
+
+* Your contribution here.
+
 ### 0.4.3 (2022/03/21)
 
 * [#51](https://github.com/dblock/strava-ruby-client/pull/51): Ensure support for large Integer IDs - [@simonneutert](https://github.com/simonneutert).
