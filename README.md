@@ -1,5 +1,4 @@
-Strava Ruby Client
-==================
+# Strava Ruby Client
 
 [![Gem Version](https://badge.fury.io/rb/strava-ruby-client.svg)](https://badge.fury.io/rb/strava-ruby-client)
 [![Test](https://github.com/dblock/strava-ruby-client/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/dblock/strava-ruby-client/actions/workflows/test.yml)
@@ -43,7 +42,6 @@ Unlike other clients, including [strava-api-v3](https://github.com/jaredholdcrof
     - [List Athlete Routes](#list-athlete-routes)
   - [Running Races](#running-races)
     - [Get Running Race](#get-running-race)
-    - [List Running Races](#list-running-races)
   - [Segment Efforts](#segment-efforts)
     - [List Segment Efforts](#list-segment-efforts)
     - [Get Segment Effort](#get-segment-effort)
@@ -215,7 +213,6 @@ lap.name # => 'Lap 1'
 ```
 
 See [Strava::Models::Lap](lib/strava/models/lap.rb) for all available properties.
-
 
 #### List Athlete Activities
 
@@ -525,23 +522,6 @@ running_race.state # => 'FL'
 running_race.country # => 'United States'
 running_race.strava_url # => 'https://www.strava.com/running-races/2018-walt-disney-world-marathon-10k'
 running_race.website_url # => 'https://www.rundisney.com/disneyworld-marathon/'
-```
-
-See [Strava::Models::RunningRace](lib/strava/models/running_race.rb) for all available properties.
-
-#### List Running Races
-
-Returns a list running races based on a set of search criteria.
-
-```ruby
-running_races = client.running_races
-
-running_race = running_races.first # => Strava::Models::RunningRace
-
-running_race.name # => 'Walt Disney World Half Marathon'
-running_race.distance # => 21_097.0
-running_race.measurement_preference # => 'feet'
-running_race.distance_s # => '13.11mi'
 ```
 
 See [Strava::Models::RunningRace](lib/strava/models/running_race.rb) for all available properties.
@@ -927,15 +907,15 @@ end
 
 The following settings are supported.
 
-setting             | description
---------------------|------------
-user_agent          | User-agent, defaults to _Strava Ruby Client/version_.
-proxy               | Optional HTTP proxy.
-ca_path             | Optional SSL certificates path.
-ca_file             | Optional SSL certificates file.
-logger              | Optional `Logger` instance that logs HTTP requests.
-timeout             | Optional open/read timeout in seconds.
-open_timeout        | Optional connection open timeout in seconds.
+| setting      | description                                           |
+| ------------ | ----------------------------------------------------- |
+| user_agent   | User-agent, defaults to _Strava Ruby Client/version_. |
+| proxy        | Optional HTTP proxy.                                  |
+| ca_path      | Optional SSL certificates path.                       |
+| ca_file      | Optional SSL certificates file.                       |
+| logger       | Optional `Logger` instance that logs HTTP requests.   |
+| timeout      | Optional open/read timeout in seconds.                |
+| open_timeout | Optional connection open timeout in seconds.          |
 
 ### API Client Options
 
@@ -956,10 +936,10 @@ client = Strava::API::Client.new(
 
 The following settings are supported.
 
-setting             | description
---------------------|------------
-access_token        | Access token to pass in the `Authorization` header.
-endpoint            | Defaults to `https://www.strava.com/api/v3`.
+| setting      | description                                         |
+| ------------ | --------------------------------------------------- |
+| access_token | Access token to pass in the `Authorization` header. |
+| endpoint     | Defaults to `https://www.strava.com/api/v3`.        |
 
 ### OAuth Client Options
 
@@ -982,11 +962,11 @@ client = Strava::OAuth::Client.new(
 
 The following settings are supported.
 
-setting             | description
---------------------|------------
-client_id           | Application client ID.
-client_secret       | Application client secret.
-endpoint            | Defaults to `https://www.strava.com/oauth`.
+| setting       | description                                 |
+| ------------- | ------------------------------------------- |
+| client_id     | Application client ID.                      |
+| client_secret | Application client secret.                  |
+| endpoint      | Defaults to `https://www.strava.com/oauth`. |
 
 ### Webhooks Client Options
 
@@ -1009,11 +989,11 @@ client = Strava::Webhooks::Client.new(
 
 The following settings are supported.
 
-setting             | description
---------------------|------------
-client_id           | Application client ID.
-client_secret       | Application client secret.
-endpoint            | Defaults to `https://www.strava.com/api/v3`.
+| setting       | description                                  |
+| ------------- | -------------------------------------------- |
+| client_id     | Application client ID.                       |
+| client_secret | Application client secret.                   |
+| endpoint      | Defaults to `https://www.strava.com/api/v3`. |
 
 ## Errors
 
@@ -1043,17 +1023,17 @@ $ STRAVA_CLIENT_ID=... STRAVA_CLIENT_SECRET=... strava-oauth-token
 
 ## Users
 
-* [Slava: Strava integration with Slack](https://slava.playplay.io), [source](https://github.com/dblock/slack-strava).
-* [Jekyll Blog at run.dblock.org](https://run.dblock.org), [source](https://github.com/dblock/run.dblock.org)
-* [Secret Strava](https://steele.blue/secret-strava/), [source](https://github.com/mattdsteele/secret-strava)
+- [Slava: Strava integration with Slack](https://slava.playplay.io), [source](https://github.com/dblock/slack-strava).
+- [Jekyll Blog at run.dblock.org](https://run.dblock.org), [source](https://github.com/dblock/run.dblock.org)
+- [Secret Strava](https://steele.blue/secret-strava/), [source](https://github.com/mattdsteele/secret-strava)
 
 ## Resources
 
-* [Strava API Documentation](https://developers.strava.com)
-* [Writing a New Strava API Ruby Client](https://code.dblock.org/2018/11/27/writing-a-new-strava-api-ruby-client.html)
-* [Dealing with Strava API OAuth Token Migration](https://code.dblock.org/2018/11/17/dealing-with-strava-api-token-migration.html)
-* [Auto-Publishing Strava Runs to Github Pages](https://code.dblock.org/2018/02/17/auto-publishing-strava-runs-to-github-pages.html)
-* [Strava Command-Line Client](https://github.com/dblock/strava-ruby-cli)
+- [Strava API Documentation](https://developers.strava.com)
+- [Writing a New Strava API Ruby Client](https://code.dblock.org/2018/11/27/writing-a-new-strava-api-ruby-client.html)
+- [Dealing with Strava API OAuth Token Migration](https://code.dblock.org/2018/11/17/dealing-with-strava-api-token-migration.html)
+- [Auto-Publishing Strava Runs to Github Pages](https://code.dblock.org/2018/02/17/auto-publishing-strava-runs-to-github-pages.html)
+- [Strava Command-Line Client](https://github.com/dblock/strava-ruby-cli)
 
 ## Upgrading
 
