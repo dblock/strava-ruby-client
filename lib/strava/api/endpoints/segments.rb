@@ -26,52 +26,6 @@ module Strava
         end
 
         #
-        # Returns the specified segment leaderboard.
-        #
-        # @option options [Integer] :id
-        #   The identifier of the segment leaderboard.
-        # @option options [String] :gender
-        #   Filter by gender.
-        # @option options [String] :age_group
-        #   Filter by age group.
-        # @option options [String] :weight_class
-        #   Filter by weight class.
-        # @option options [Boolean] :following
-        #   Filter by friends of the authenticated athlete.
-        # @option options [Integer] :club_id
-        #   Filter by club.
-        # @option options [String] :date_range
-        #   Filter by date range.
-        # @option options [Integer] :context_entries
-        #   ?
-        # @option options [Integer] :page
-        #   Page number.
-        # @option options [Integer] :per_page
-        #   Number of items per page. Defaults to 30.
-        #
-        def segment_leaderboard(id_or_options, options = {})
-          id, options = parse_args(id_or_options, options)
-
-          if block_given?
-            next_page = 1
-            total_count = 0
-            loop do
-              query = options.merge(page: next_page)
-              response = Strava::Models::SegmentLeaderboard.new(get("segments/#{id}/leaderboard", query))
-              total_count += response.entries.count
-              break unless response.entries.any?
-
-              yield response
-              break if total_count >= response.entry_count
-
-              next_page += 1
-            end
-          else
-            Strava::Models::SegmentLeaderboard.new(get("segments/#{id}/leaderboard", options))
-          end
-        end
-
-        #
         # List of the authenticated athlete's starred segments.
         #
         # @option options [Integer] :page

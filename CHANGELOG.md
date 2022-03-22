@@ -1,5 +1,6 @@
 ### 0.5.0 (Next)
 
+* [#56](https://github.com/dblock/strava-ruby-client/pull/56): Removes `client.segment_leaderboard` - [@simonneutert](https://github.com/simonneutert).
 * Your contribution here.
 
 ### 0.4.3 (2022/03/21)
