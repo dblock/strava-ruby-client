@@ -1,4 +1,5 @@
 AllCops:
+  TargetRubyVersion: 2.7
   NewCops: enable
   Exclude:
     - vendor/**/*
@@ -8,7 +9,7 @@ Naming/MethodName:
 
 Naming/FileName:
   Exclude:
-    - 'lib/strava-ruby-client.rb'
+    - "lib/strava-ruby-client.rb"
 
 Style/ModuleFunction:
   EnforcedStyle: extend_self
@@ -21,5 +22,3 @@ Metrics:
 
 Layout/LineLength:
   Max: 256
-
-inherit_from: .rubocop_todo.yml

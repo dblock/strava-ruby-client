@@ -5,8 +5,6 @@ source 'http://rubygems.org'
 gemspec
 
 group :development, :test do
-  gem 'danger-changelog', '~> 0.4.2'
-  gem 'danger-toc', '~> 0.1.3'
   gem 'dotenv'
   gem 'gpx'
   gem 'multi_xml'
@@ -14,7 +12,7 @@ group :development, :test do
   gem 'pry'
   gem 'rake'
   gem 'rspec'
-  gem 'rubocop', '~> 1.26.0'
+  gem 'rubocop', '1.30.0' # Lock to specific version to avoid breaking cops/changes
   gem 'rubocop-rake'
   gem 'rubocop-rspec'
   gem 'vcr'

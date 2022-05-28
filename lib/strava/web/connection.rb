@@ -25,10 +25,10 @@ module Strava
           options[:request] = request_options if request_options.any?
 
           ::Faraday::Connection.new(endpoint, options) do |connection|
-            connection.use ::Faraday::Request::Multipart
-            connection.use ::Faraday::Request::UrlEncoded
+            connection.request :multipart
+            connection.request :url_encoded
             connection.use ::Strava::Web::Response::RaiseError
-            connection.use ::FaradayMiddleware::ParseJson, content_type: /\bjson$/
+            connection.response :json
             connection.response :logger, logger if logger
             connection.adapter ::Faraday.default_adapter
           end

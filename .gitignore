@@ -1,8 +1,9 @@
-.env
-pkg
-Gemfile.lock
 .DS_Store
 .bundle
+.env
 .idea
-.vscode
+.ruby-version
 .tool-versions
+.vscode
+Gemfile.lock
+pkg

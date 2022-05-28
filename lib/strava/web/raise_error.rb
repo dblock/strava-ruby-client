@@ -3,7 +3,7 @@
 module Strava
   module Web
     module Response
-      class RaiseError < ::Faraday::Response::Middleware
+      class RaiseError < ::Faraday::Middleware
         CLIENT_ERROR_STATUSES = (400...600).freeze
 
         def on_complete(env)
