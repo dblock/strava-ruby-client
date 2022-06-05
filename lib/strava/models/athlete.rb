@@ -18,7 +18,6 @@ module Strava
       property 'badge_type_id'
       property 'profile'
       property 'profile_medium'
-      property 'email'
       property 'follower'
       property 'friend'
       property 'summit'
