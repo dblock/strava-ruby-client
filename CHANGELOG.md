@@ -2,6 +2,7 @@
 
 * [#48](https://github.com/dblock/strava-ruby-client/pull/55): Removed `client.running_races` - [@simonneutert](https://github.com/simonneutert).
 * [#56](https://github.com/dblock/strava-ruby-client/pull/56): Removed `client.segment_leaderboard` - [@simonneutert](https://github.com/simonneutert).
+* [#59](https://github.com/dblock/strava-ruby-client/pull/59): Removed deprecated `athlete.email` field - [@francordie](https://github.com/francordie).
 * Your contribution here.
 
 ### 0.4.3 (2022/03/21)
