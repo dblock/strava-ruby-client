@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.authors = ['Daniel Doubrovkine']
   s.email = 'dblock@dblock.org'
   s.platform = Gem::Platform::RUBY
-  s.required_ruby_version = '>= 2.5'
+  s.required_ruby_version = '>= 2.7'
   s.required_rubygems_version = '>= 1.3.6'
   s.files = Dir['{bin,lib}/**/*'] + ['README.md', 'LICENSE.md', 'CHANGELOG.md']
   s.require_paths = ['lib']
@@ -19,8 +19,8 @@ Gem::Specification.new do |s|
   s.licenses = ['MIT']
   s.summary = 'Strava API Ruby client.'
   s.add_dependency 'activesupport'
-  s.add_dependency 'faraday', '>= 1.0.0'
-  s.add_dependency 'faraday_middleware'
+  s.add_dependency 'faraday', '>= 2.0'
+  s.add_dependency 'faraday-multipart', '>= 1.0'
   s.add_dependency 'hashie'
   s.metadata['rubygems_mfa_required'] = 'true'
 end
