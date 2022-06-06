@@ -13,6 +13,5 @@ RSpec.describe 'Strava::Api::Client#athlete', vcr: { cassette_name: 'client/athl
     expect(athlete.firstname).to eq 'Daniel'
     expect(athlete.lastname).to eq 'Block'
     expect(athlete.city).to eq 'New York'
-    expect(athlete.email).to eq 'dblock@example.com'
   end
 end
