@@ -2,7 +2,7 @@
 
 module Strava
   module Models
-    class Photo < Model
+    class Photo < Response
       property 'id'
       property 'unique_id'
       property 'urls'

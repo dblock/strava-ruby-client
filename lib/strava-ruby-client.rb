@@ -24,6 +24,7 @@ require_relative 'strava/models/mixins/time'
 require_relative 'strava/models/mixins/start_date_local'
 
 require_relative 'strava/models/model'
+require_relative 'strava/models/response'
 require_relative 'strava/models/token'
 require_relative 'strava/models/athlete'
 require_relative 'strava/models/map'

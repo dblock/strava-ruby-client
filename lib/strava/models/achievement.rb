@@ -2,7 +2,7 @@
 
 module Strava
   module Models
-    class Achievement < Model
+    class Achievement < Response
       property 'rank'
       property 'type'
       property 'type_id'

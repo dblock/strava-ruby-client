@@ -2,8 +2,7 @@
 
 module Strava
   module Models
-    class Activity < Model
-      include Mixins::HttpResponse
+    class Activity < Response
       include Mixins::Time
       include Mixins::Distance
       include Mixins::Elevation

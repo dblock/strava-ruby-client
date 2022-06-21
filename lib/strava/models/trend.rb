@@ -2,7 +2,7 @@
 
 module Strava
   module Models
-    class Trend < Model
+    class Trend < Response
       property 'speeds'
       property 'current_activity_index'
       property 'min_speed'
