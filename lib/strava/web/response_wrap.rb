@@ -22,12 +22,11 @@ module Strava
         if @response.instance_of?(Array)
           @response.send(method_symbol, *args, &block)
         else
-          case @response.body.class.name
-          when 'Array'
+          if @response.body.is_a?(Array)
             @response.body.map do |elem|
               elem.send(method_symbol, *args, &block)
             end
-          when 'Hash'
+          elsif @response.body.is_a?(Hash)
             @response.body.send(method_symbol, *args, &block)
           else
             raise NoMethodError

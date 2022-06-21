@@ -6,6 +6,7 @@
 * [#58](https://github.com/dblock/strava-ruby-client/pull/58): Removed support for Ruby 2.5 and 2.6 - [@schinery](https://github.com/slack-ruby/slack-ruby-client/pull/58).
 * [#58](https://github.com/dblock/strava-ruby-client/pull/58): Upgraded Robocop to 1.3.0 - [@schinery](https://github.com/slack-ruby/slack-ruby-client/pull/58).
 * [#59](https://github.com/dblock/strava-ruby-client/pull/59): Removed deprecated `athlete.email` field - [@francordie](https://github.com/francordie).
+* [#61](https://github.com/dblock/strava-ruby-client/pull/61): Adds ratelimit as a property of model(s) - [@simonneutert](https://github.com/simonneutert), [@adamwolf](https://github.com/adamwolf).
 * Your contribution here.
 
 ### 0.4.3 (2022/03/21)
