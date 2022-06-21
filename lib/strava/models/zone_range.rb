@@ -2,7 +2,7 @@
 
 module Strava
   module Models
-    class ZoneRange < Model
+    class ZoneRange < Response
       property 'max'
       property 'min'
     end

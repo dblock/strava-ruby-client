@@ -2,8 +2,8 @@
 
 module Strava
   module Models
-    class Authorization < Response
-      property 'access_token'
+    class Response < Model
+      include Mixins::HttpResponse
     end
   end
 end

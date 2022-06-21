@@ -2,7 +2,7 @@
 
 module Strava
   module Models
-    class Lap < Model
+    class Lap < Response
       include Mixins::Time
       include Mixins::Distance
       include Mixins::Elevation

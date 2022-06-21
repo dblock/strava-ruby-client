@@ -2,9 +2,7 @@
 
 module Strava
   module Models
-    class Athlete < Model
-      include Mixins::HttpResponse
-
+    class Athlete < Response
       property 'id'
       property 'username'
       property 'resource_state'
