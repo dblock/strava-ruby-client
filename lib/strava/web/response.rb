@@ -2,7 +2,7 @@
 
 module Strava
   module Web
-    class ResponseWrap
+    class Response
       attr_accessor :response
 
       def initialize(response)

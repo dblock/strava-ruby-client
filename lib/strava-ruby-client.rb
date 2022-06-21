@@ -68,7 +68,7 @@ require_relative 'strava/web/api_response'
 require_relative 'strava/web/request'
 require_relative 'strava/web/config'
 require_relative 'strava/web/client'
-require_relative 'strava/web/response_wrap'
+require_relative 'strava/web/response'
 
 require_relative 'strava/oauth/config'
 require_relative 'strava/oauth/client'

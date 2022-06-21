@@ -36,7 +36,7 @@ module Strava
           request.options.merge!(options.delete(:request)) if options.key?(:request)
         end
 
-        Strava::Web::ResponseWrap.new(conditional_response_upgrade(response))
+        Strava::Web::Response.new(conditional_response_upgrade(response))
       end
 
       def conditional_response_upgrade(response)
