@@ -7,7 +7,7 @@ RSpec.describe 'Strava::Api::Client#create_activity', vcr: { cassette_name: 'cli
   it 'creates an activity' do
     activity = client.create_activity(
       name: 'strava-ruby-client activity',
-      type: 'Run',
+      sport_type: 'Run',
       start_date_local: Time.now,
       elapsed_time: 1234,
       description: 'Test strava-ruby-client activity.',
