@@ -12,7 +12,7 @@ http_interactions:
       Accept:
       - application/json; charset=utf-8
       User-Agent:
-      - Strava Ruby Client/0.3.0
+      - Strava Ruby Client/0.5.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -20,39 +20,122 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Wed, 28 Nov 2018 13:35:50 GMT
       Content-Type:
-      - application/json; charset=UTF-8
+      - application/json; charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Cache-Control:
-      - max-age=0, private, must-revalidate
+      Date:
+      - Tue, 02 Aug 2022 14:29:40 GMT
       Via:
-      - 1.1 linkerd
-      Status:
-      - 200 OK
-      X-Ratelimit-Limit:
-      - '600,30000'
-      X-Request-Id:
-      - f2740968-ed85-4056-8042-ba385725440c
+      - 1.1 linkerd, 1.1 linkerd, 1.1 0b9e85cfe8fe19b385db56d32b4ce802.cloudfront.net
+        (CloudFront)
       Etag:
-      - W/"4261668f4f0ab5e0c030c2e03c48ad83"
-      X-Ratelimit-Usage:
-      - '1,7343'
-      X-Frame-Options:
-      - DENY
-      X-Content-Type-Options:
-      - nosniff
+      - W/"d691ba870a461d31bb92a3b37cccd791"
       Vary:
       - Origin
+      Server:
+      - nginx/1.21.3
+      Status:
+      - 200 OK
+      X-Request-Id:
+      - 32e91f67-83f1-43b8-9253-b4d0a6996088
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Frame-Options:
+      - DENY
       X-Xss-Protection:
       - 1; mode=block
+      X-Ratelimit-Limit:
+      - '600,30000'
+      X-Ratelimit-Usage:
+      - '7,193'
+      X-Download-Options:
+      - noopen
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Cache:
+      - Miss from cloudfront
+      X-Amz-Cf-Pop:
+      - FRA2-C1
+      X-Amz-Cf-Id:
+      - hoa511Wp2cK70Z3gepFRDMbWs-fh6LL-kl2SURqMtdF9rKBRRFI_4g==
     body:
       encoding: UTF-8
-      string: '{"power":{"zones":[{"min":0,"max":10}]},"heart_rate":{"custom_zones":false,"zones":[{"min":0,"max":123},{"min":123,"max":153},{"min":153,"max":169},{"min":169,"max":184},{"min":184,"max":-1}]}}'
-    http_version:
-  recorded_at: Wed, 28 Nov 2018 13:35:50 GMT
-recorded_with: VCR 4.0.0
+      string: '{"heart_rate":{"custom_zones":false,"zones":[{"min":0,"max":110},{"min":110,"max":146},{"min":146,"max":164},{"min":164,"max":182},{"min":182,"max":-1}]},"power":{"zones":[{"min":0,"max":105},{"min":106,"max":143},{"min":144,"max":171},{"min":172,"max":200},{"min":201,"max":228},{"min":229,"max":285},{"min":286,"max":-1}]}}'
+  recorded_at: Tue, 02 Aug 2022 14:29:40 GMT
+- request:
+    method: get
+    uri: https://www.strava.com/api/v3/athlete/zones
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer access-token
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Strava Ruby Client/0.5.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 02 Aug 2022 14:29:43 GMT
+      Via:
+      - 1.1 linkerd, 1.1 linkerd, 1.1 9568a708c8ab21597698ebe7dce6c42e.cloudfront.net
+        (CloudFront)
+      Etag:
+      - W/"d691ba870a461d31bb92a3b37cccd791"
+      Vary:
+      - Origin
+      Server:
+      - nginx/1.21.3
+      Status:
+      - 200 OK
+      X-Request-Id:
+      - df2744f2-cd7f-40c9-806d-68448c868635
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Ratelimit-Limit:
+      - '600,30000'
+      X-Ratelimit-Usage:
+      - '8,194'
+      X-Download-Options:
+      - noopen
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Cache:
+      - Miss from cloudfront
+      X-Amz-Cf-Pop:
+      - FRA2-C1
+      X-Amz-Cf-Id:
+      - 6yNSbxgZ_dLVe5Ek9e1wFdNCbTY0xiB38FGxhuhs65ttFlgr-raw3g==
+    body:
+      encoding: UTF-8
+      string: '{"heart_rate":{"custom_zones":false,"zones":[{"min":0,"max":110},{"min":110,"max":146},{"min":146,"max":164},{"min":164,"max":182},{"min":182,"max":-1}]},"power":{"zones":[{"min":0,"max":105},{"min":106,"max":143},{"min":144,"max":171},{"min":172,"max":200},{"min":201,"max":228},{"min":229,"max":285},{"min":286,"max":-1}]}}'
+  recorded_at: Tue, 02 Aug 2022 14:29:43 GMT
+recorded_with: VCR 6.1.0

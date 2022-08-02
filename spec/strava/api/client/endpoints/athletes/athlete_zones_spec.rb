@@ -15,7 +15,7 @@ RSpec.describe 'Strava::Api::Client#athlete_zones', vcr: { cassette_name: 'clien
     zone = zones.first
     expect(zone).to be_a Strava::Models::ZoneRange
     expect(zone.min).to eq 0
-    expect(zone.max).to eq 123
+    expect(zone.max).to eq 110
     power = athlete_zones.power
     expect(power).to be_a Strava::Models::PowerZoneRanges
     zones = power.zones
@@ -23,6 +23,10 @@ RSpec.describe 'Strava::Api::Client#athlete_zones', vcr: { cassette_name: 'clien
     zone = power.zones.first
     expect(zone).to be_a Strava::Models::ZoneRange
     expect(zone.min).to eq 0
-    expect(zone.max).to eq 10
+    expect(zone.max).to eq 105
+    last_zone = power.zones.last
+    expect(last_zone).to be_a Strava::Models::ZoneRange
+    expect(last_zone.min).to eq 286
+    expect(last_zone.max).to eq(-1)
   end
 end
