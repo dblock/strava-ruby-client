@@ -1,4 +1,4 @@
 # frozen_string_literal: true
 
-toc.check!
-changelog.check!
+toc.check
+changelog.check
