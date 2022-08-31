@@ -7,7 +7,7 @@
 * [#58](https://github.com/dblock/strava-ruby-client/pull/58): Upgraded Robocop to 1.3.0 - [@schinery](https://github.com/schinery).
 * [#59](https://github.com/dblock/strava-ruby-client/pull/59): Removed deprecated `athlete.email` field - [@francordie](https://github.com/francordie).
 * [#63](https://github.com/dblock/strava-ruby-client/pull/63): Added `activity.sport_type` for Strava API V3 specifications - [@simonneutert](https://github.com/simonneutert).
-
+* Your contribution here.
 
 ### 0.4.3 (2022/03/21)
 
