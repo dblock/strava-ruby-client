@@ -48,6 +48,7 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
     expect(activity.total_elevation_gain_s).to eq '270.9m'
 
     expect(activity.type).to eq 'Run'
+    expect(activity.sport_type).to eq 'Run'
     expect(activity.workout_type).to eq 1
     expect(activity.external_id).to eq '17900304917.tcx'
     expect(activity.upload_id).to eq 2_082_412_856

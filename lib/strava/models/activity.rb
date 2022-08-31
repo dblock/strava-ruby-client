@@ -13,7 +13,8 @@ module Strava
       property 'athlete', transform_with: ->(v) { Strava::Models::Athlete.new(v) }
       property 'name'
       property 'description'
-      property 'type'
+      property 'type' # deprecated
+      property 'sport_type'
       property 'workout_type'
       property 'id'
       property 'external_id'
@@ -99,6 +100,51 @@ module Strava
         "https://www.strava.com/activities/#{id}"
       end
 
+      def sport_type_emoji
+        case sport_type
+        when 'AlpineSki' then '⛷️'
+        when 'BackcountrySki' then '🎿️'
+        # when "Canoeing" then ''
+        # when "Crossfit" then ''
+        # when "Elliptical" then ''
+        when 'Golf' then '🏌️'
+        # when "Handcycle" then ''
+        when 'Hike' then '🥾'
+        when 'IceSkate' then '⛸'
+        when 'InlineSkate' then "\u{1F6FC}"
+        # when "Kayaking" then ''
+        # when "Kitesurf" then ''
+        when 'MountainBikeRide', 'EMountainBikeRide' then '🚵'
+        # when "NordicSki" then ''
+        when 'Ride', 'EBikeRide', 'VirtualRide', 'GravelRide' then '🚴'
+        when 'RockClimbing' then '🧗'
+        # when 'RollerSki' then ''
+        when 'Rowing' then '🚣'
+        when 'Run', 'VirtualRun', 'TrailRun' then '🏃'
+        when 'Sail' then '⛵️'
+        when 'Skateboard' then '🛹'
+        when 'Snowboard' then '🏂'
+        # when 'Snowshoe' then ''
+        when 'Soccer' then '⚽️'
+        # when 'StairStepper' then ''
+        # when 'StandUpPaddling' then ''
+        when 'Surfing' then '🏄'
+        when 'Swim' then '🏊'
+        # when 'Velomobile' then ''
+        when 'Walk' then '🚶'
+        when 'WeightTraining' then '🏋️'
+        when 'Wheelchair' then '♿'
+        # when 'Windsurf' then ''
+        # when 'Workout' then ''
+        when 'Yoga' then '🧘'
+        end
+      end
+
+      #
+      # @deprecated Use {#sport_type_emoji} instead.
+      #
+      # @return [String] precisely an emoji
+      #
       def type_emoji
         case type
         when 'Run', 'VirtualRun' then '🏃'

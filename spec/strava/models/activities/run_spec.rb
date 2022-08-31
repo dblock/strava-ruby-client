@@ -11,6 +11,7 @@ RSpec.describe Strava::Models::Activity do
     it 'exposes custom properties' do
       expect(activity.strava_url).to eq 'https://www.strava.com/activities/1477353766'
       expect(activity.type_emoji).to eq '🏃'
+      expect(activity.sport_type_emoji).to eq '🏃'
     end
     it 'converts distances' do
       expect(activity.distance_in_miles).to eq 14.005431252

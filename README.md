@@ -106,7 +106,7 @@ Creates a manual activity for an athlete.
 ```ruby
 activity = client.create_activity(
   name: 'Afternoon Run',
-  type: 'Run',
+  sport_type: 'Run',
   start_date_local: Time.now,
   elapsed_time: 1234, # in seconds
   description: 'Test run.',
@@ -226,6 +226,7 @@ activity = activities.first # => Strava::Models::Activity
 activity.name # => 'NYC TCS Marathon 2018'
 activity.strava_url # => 'https://www.strava.com/activities/1477353766'
 activity.type_emoji # => '🏃'
+activity.sport_type_emoji # => '🏃'
 activity.distance_s # => '42.2km'
 activity.moving_time_in_hours_s # => '3h38m5s'
 activity.elapsed_time_in_hours_s # => '3h42m13s'
@@ -268,7 +269,7 @@ Update an activity.
 activity = client.update_activity(
   id: 1982980795,
   name: 'Afternoon Run (Updated)',
-  type: 'Run',
+  sport_type: 'Run',
   description: 'It was cold.'
 )
 
@@ -846,7 +847,7 @@ event # => Strava::Webhooks::Models::Event
 event.object_type # => 'activity'
 event.object_id # => 1991813808
 event.aspect_type # => 'update'
-event.updates # => { 'type' => 'Walk' }
+event.updates # => { 'sport_type' => 'Walk' }
 event.owner_id # => 29323238
 event.subscription_id # => 131302
 event.event_time # => DateTime
