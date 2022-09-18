@@ -39,10 +39,24 @@ module Strava
         Strava::Web::Response.new(conditional_response_upgrade(response))
       end
 
+      #
+      # Ruby's way of creating a true deep copy/clone
+      #
+      # @param [Object] obj of any kind
+      #
+      # @return [Object] deep clone of what was passed into
+      #
       def deep_copy(obj)
         Marshal.load(Marshal.dump(obj))
       end
 
+      #
+      # returns a modified deep copy of the Faraday::Response
+      #
+      # @param [Faraday::Response] response_
+      #
+      # @return [Array, Hash{String => any}]
+      #
       def conditional_response_upgrade(response_)
         response = deep_copy(response_)
 
