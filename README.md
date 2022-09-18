@@ -63,6 +63,7 @@ Unlike other clients, including [strava-api-v3](https://github.com/jaredholdcrof
     - [Deauthorize](#deauthorize)
     - [Command Line OAuth Workflow](#command-line-oauth-workflow)
   - [Webhooks](#webhooks)
+  - [Ratelimit](#ratelimit)
 - [Configuration](#configuration)
   - [Web Client Options](#web-client-options)
   - [API Client Options](#api-client-options)
@@ -892,6 +893,31 @@ Delete an existing subscription.
 
 ```ruby
 client.delete_push_subscription(131300) # => nil
+```
+
+## Ratelimit
+
+You can check the given ratelimit details returned from Strava by accessing a models' `http_response` chained with `ratelimit`.
+
+```ruby
+athlete = client.athlete # => Strava::Models::Athlete
+athlete.http_response.ratelimit
+```
+
+Here's an overview of all limits you can access:
+
+```ruby 
+# athlete.http_response.ratelimit.to_h
+{
+  limit: limit,
+  usage: usage,
+  total_day: total_day,
+  total_day_usage: total_day_usage,
+  total_day_remaining: total_day_remaining,
+  fiveteen_minutes: fiveteen_minutes,
+  fiveteen_minutes_usage: fiveteen_minutes_usage,
+  fiveteen_minutes_remaining: fiveteen_minutes_remaining
+}
 ```
 
 ## Configuration
