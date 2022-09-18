@@ -39,17 +39,17 @@ module Strava
         Strava::Web::Response.new(conditional_response_upgrade(response))
       end
 
-      def conditional_response_upgrade(response)
-        if response.body.is_a?(Array)
-          response.dup.body.map! do |body_elem|
+        case response.body
+        when Array
+          response.body.map! do |body_elem|
             body_elem ||= {}
             body_elem['http_response'] = response
             body_elem
           end
-        elsif response.body.is_a?(Hash)
-          response.dup.body['http_response'] = response
+        when Hash
+          response.body['http_response'] = response
         else
-          response.dup.body
+          response.body
         end
       end
     end

@@ -17,23 +17,26 @@ module Strava
         @response.headers
       end
 
-      # rubocop:disable Style/MissingRespondToMissing
       def method_missing(method_symbol, *args, &block)
         if @response.instance_of?(Array)
           @response.send(method_symbol, *args, &block)
         else
-          if @response.body.is_a?(Array)
+          case @response.body
+          when Array
             @response.body.map do |elem|
               elem.send(method_symbol, *args, &block)
             end
-          elsif @response.body.is_a?(Hash)
+          when Hash
             @response.body.send(method_symbol, *args, &block)
           else
             raise NoMethodError
           end
         end
       end
-      # rubocop:enable Style/MissingRespondToMissing
+
+      def respond_to_missing?(method_name, include_private = false)
+        super
+      end
     end
   end
 end
