@@ -25,4 +25,13 @@ RSpec.describe 'Strava::Api::Client#activity_comments', vcr: { cassette_name: 'c
     expect(activity_comments).to be_a Enumerable
     expect(activity_comments.count).to eq 3
   end
+  it 'returns ratelimits with each comment' do
+    activity_comments = client.activity_comments(3_958_491_750)
+
+    expect { activity_comments.http_response }.to raise_error(NoMethodError)
+    expect { activity_comments.http_response.ratelimit }.to raise_error(NoMethodError)
+
+    expect(activity_comments.first.http_response.ratelimit.fiveteen_minutes).to eq 600
+    expect(activity_comments.first.http_response.ratelimit.fiveteen_minutes_usage).to eq 7
+  end
 end
