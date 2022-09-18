@@ -20,12 +20,12 @@ module Strava
           {
             limit: limit,
             usage: usage,
-            fiveteen_minutes: fiveteen_minutes,
             total_day: total_day,
-            fiveteen_minutes_usage: fiveteen_minutes_usage,
             total_day_usage: total_day_usage,
-            fiveteen_minutes_remaining: fiveteen_minutes_remaining,
-            total_day_remaining: total_day_remaining
+            total_day_remaining: total_day_remaining,
+            fiveteen_minutes: fiveteen_minutes,
+            fiveteen_minutes_usage: fiveteen_minutes_usage,
+            fiveteen_minutes_remaining: fiveteen_minutes_remaining
           }
         else
           {}
