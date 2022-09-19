@@ -895,7 +895,7 @@ Delete an existing subscription.
 client.delete_push_subscription(131300) # => nil
 ```
 
-## Ratelimit
+### Ratelimit
 
 You can check the given ratelimit details returned from Strava by accessing a models' `http_response` chained with `ratelimit`.
 
