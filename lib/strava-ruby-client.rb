@@ -14,6 +14,7 @@ require 'active_support/concern'
 
 require_relative 'strava/version'
 require_relative 'strava/logger'
+require_relative 'strava/deep_copyable'
 
 require_relative 'strava/errors/fault'
 
