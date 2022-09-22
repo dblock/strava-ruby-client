@@ -6,15 +6,26 @@ module Strava
     # Wrapper Class around pagination results which are an Array of Models.
     #
     # This class exists to provide a way to provide a high-level abstraction, like
-    # access to API request/reponse data (i.e. ratelimits) for paginated results.
+    # access to API request/response data (i.e. ratelimits) for paginated results.
     #
     class Pagination
       include Enumerable
+      include Strava::DeepCopyable
 
-      attr_reader :collection
+      attr_reader :collection, :http_response
 
-      def initialize(collection)
+      def initialize(collection, http_response)
         @collection = collection
+        @http_response = deep_copy(http_response)
+      end
+
+      #
+      # returns a Ratelimit instance
+      #
+      # @return [Strava::Api::Ratelimit]
+      #
+      def ratelimit
+        Strava::Api::Ratelimit.new(@http_response.http_response)
       end
 
       def size
@@ -23,12 +34,6 @@ module Strava
 
       def each
         @collection.each { |c| yield c if block_given? }
-      end
-
-      def ratelimit
-        return nil unless @collection.first
-
-        @collection.first.ratelimit
       end
 
       private

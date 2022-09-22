@@ -2,22 +2,78 @@
 
 module Strava
   module Web
+    #
+    # wrapper class as abstraction for API response returned from the Faraday Adapter
+    # working with a deep copy, in order to not mutate the original request itself
+    #
     class Response
-      attr_accessor :response
+      include Strava::DeepCopyable
 
-      def initialize(response)
-        @response = response
-      end
+      attr_reader :http_response, :response
 
-      def body
-        @response.body
-      end
-
-      def headers
-        @response.headers
+      #
+      # @param [Faraday::Response] http_response
+      #
+      def initialize(http_response)
+        @http_response = deep_copy(http_response)
+        @response = conditional_response_upgrade!(http_response)
       end
 
       private
+
+      #
+      # returns a modified deep copy of the Faraday::Response
+      #
+      # @param [Faraday::Response] response_
+      #
+      # @return [Array, Hash{String => any}]
+      #
+      def conditional_response_upgrade!(response_)
+        response = deep_copy(response_)
+
+        case response.body
+        when Array
+          upgrade_array_body!(response)
+        when Hash
+          response.body['http_response'] = response
+        else
+          response.body
+        end
+      end
+
+      #
+      # mutates the response when body is_a? Hash
+      #
+      # @param [Symbol] method_symbol
+      # @param [any] *args
+      # @param [Proc] &block
+      #
+      # @raise [NoMethodError]
+      # @return [any]
+      #
+      def operate_on_response_body!(method_symbol, *args, &block)
+        case @response.body
+        when Hash
+          @response.body.send(method_symbol, *args, &block)
+        else
+          raise NoMethodError
+        end
+      end
+
+      #
+      # mutates all responses in the body
+      #
+      # @param [Faraday::Response] response from the Strava API
+      #
+      # @return [Array<Faraday::Response>]
+      #
+      def upgrade_array_body!(response)
+        response.body.map! do |body_elem|
+          body_elem ||= {}
+          body_elem['http_response'] = response
+          body_elem
+        end
+      end
 
       def method_missing(method_symbol, *args, &block)
         case @response
@@ -30,15 +86,6 @@ module Strava
 
       def respond_to_missing?(method_name, include_private = false)
         super
-      end
-
-      def operate_on_response_body!(method_symbol, *args, &block)
-        case @response.body
-        when Hash
-          @response.body.send(method_symbol, *args, &block)
-        else
-          raise NoMethodError
-        end
       end
     end
   end
