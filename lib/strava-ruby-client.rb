@@ -95,4 +95,5 @@ require_relative 'strava/api/endpoints/streams'
 require_relative 'strava/api/endpoints/uploads'
 require_relative 'strava/api/endpoints/oauth'
 
+require_relative 'strava/api/pagination'
 require_relative 'strava/api/client'

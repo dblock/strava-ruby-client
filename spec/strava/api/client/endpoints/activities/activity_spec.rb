@@ -7,14 +7,14 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
   it 'returns activity' do
     activity = client.activity(id: 1_946_417_534)
 
-    expect(activity.http_response.ratelimit.fiveteen_minutes).to eq 600
-    expect(activity.http_response.ratelimit.fiveteen_minutes_remaining).to eq 599
-    expect(activity.http_response.ratelimit.fiveteen_minutes_usage).to eq 1
-    expect(activity.http_response.ratelimit.limit).to eq '600,30000'
-    expect(activity.http_response.ratelimit.total_day).to eq 30_000
-    expect(activity.http_response.ratelimit.total_day_remaining).to eq 22_776
-    expect(activity.http_response.ratelimit.total_day_usage).to eq 7224
-    expect(activity.http_response.ratelimit.usage).to eq '1,7224'
+    expect(activity.ratelimit.fiveteen_minutes).to eq 600
+    expect(activity.ratelimit.fiveteen_minutes_remaining).to eq 599
+    expect(activity.ratelimit.fiveteen_minutes_usage).to eq 1
+    expect(activity.ratelimit.limit).to eq '600,30000'
+    expect(activity.ratelimit.total_day).to eq 30_000
+    expect(activity.ratelimit.total_day_remaining).to eq 22_776
+    expect(activity.ratelimit.total_day_usage).to eq 7224
+    expect(activity.ratelimit.usage).to eq '1,7224'
 
     expect(activity).to be_a Strava::Models::Activity
     expect(activity.id).to eq 1_946_417_534

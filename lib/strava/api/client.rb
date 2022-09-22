@@ -41,17 +41,22 @@ module Strava
       private
 
       def paginate(path, options, model)
+        collection = []
         if block_given?
           Cursor.new(self, path, options).each do |page|
             page.each do |row|
-              yield model.new(row)
+              m = model.new(row)
+              yield m
+              collection << m
             end
           end
+
         else
-          get(path, options).map do |row|
+          collection = get(path, options).map do |row|
             model.new(row)
           end
         end
+        Pagination.new(collection)
       end
     end
   end

@@ -2,36 +2,9 @@
 
 ### Upgrading to >= 0.5.0
 
-Every Model was upgraded with the possibility to check the API ratelimit that was send as a response from the Strava API.
-
-```ruby
-{
-  limit: limit,
-  usage: usage,
-  total_day: total_day,
-  total_day_usage: total_day_usage,
-  total_day_remaining: total_day_remaining,
-  fiveteen_minutes: fiveteen_minutes, # limit for 15 minute range
-  fiveteen_minutes_usage: fiveteen_minutes_usage, # used past 15 minutes
-  fiveteen_minutes_remaining: fiveteen_minutes_remaining,
-}
-```
-
-Every API call returning a single instance and _not multiple instances_, like `client.athlete` will respond to `#http_response`  
-`Strava::Models::Athlete#http_response`
-
-‼️ Please bear in mind, that you might stumble and fall, when trying to access `http_response` and `ratelimit` info for `activity_comments` being an  
-`Array[Strava::Models::Comments]`!
-
-```ruby
-comments = client.activity_comments(id: 123_456_789)
-
-# comments == Array<Strava::Models::Comment>
-comments.http_response.ratelimit.limit #=> NoMethodError
-
-comment = comments.first
-comment.http_response.ratelimit.limit unless comment.nil?
-```
+- lose some words about Strava::Web::Response as return value of get/post/put/delete
+  need to use `.reponse` or `.reponse.body` in order to access the response / response's body
+- lose some words about Strava::Api::Pagination as return value of paginations
 
 ### Upgrading to >= 0.4.0
 

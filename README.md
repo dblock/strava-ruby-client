@@ -897,17 +897,29 @@ client.delete_push_subscription(131300) # => nil
 
 ### Ratelimit
 
-You can check the given ratelimit details returned from Strava by accessing a models' `http_response` chained with `ratelimit`.
+Every Model was upgraded with the possibility to check the API ratelimit that was send as a response from the Strava API.
+
+Every API call returning a single instance and _not multiple instances_, like `client.athlete` will respond to `#http_response`  
+`Strava::Models::Athlete#http_response`
+
+```ruby
+comments = client.activity_comments(id: 123_456_789)
+
+# comments == Array<Strava::Models::Comment>
+comments.ratelimit.to_h
+```
+
+You can check the given ratelimit details returned from Strava by accessing a models' `ratelimit` method.
 
 ```ruby
 athlete = client.athlete # => Strava::Models::Athlete
-athlete.http_response.ratelimit
+athlete.ratelimit
 ```
 
-Here's an overview of all limits you can access:
+Here's an overview of all ratelimits you can access:
 
 ```ruby 
-# athlete.http_response.ratelimit.to_h
+# athlete.ratelimit.to_h
 {
   limit: limit,
   usage: usage,
