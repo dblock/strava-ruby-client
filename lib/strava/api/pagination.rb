@@ -14,7 +14,11 @@ module Strava
 
       attr_reader :collection, :http_response
 
-      def initialize(collection, http_response)
+      #
+      # @param [Array<Strava::Models::>] collection of Models
+      # @param [Strava::Web::Response] web_response
+      #
+      def initialize(collection, web_response)
         @collection = collection
         @web_response = deep_copy(web_response)
       end

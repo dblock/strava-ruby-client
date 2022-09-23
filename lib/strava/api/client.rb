@@ -40,6 +40,18 @@ module Strava
 
       private
 
+      #
+      # paginates requests
+      #
+      # @param [String] path url for request
+      # @param [Hash] options hash containing settings
+      # @param [Class] model by Class
+      #
+      # @example
+      #   paginate("athlete/activities", {per_page: 72}, Strava::Models::Activity)
+      #
+      # @return [Strava::Api::Pagination]
+      #
       def paginate(path, options, model)
         collection = []
         web_response = nil

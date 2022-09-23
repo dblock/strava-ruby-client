@@ -15,6 +15,11 @@ module Strava
         end.join(', ')
       end
 
+      #
+      # represents all valid ratelimits in a Hash
+      #
+      # @return [Hash] of ratelimits
+      #
       def to_h
         if limit?
           {
@@ -72,28 +77,64 @@ module Strava
         @headers['x-ratelimit-usage']
       end
 
+      #
+      # fiveteen minute ratelimit
+      #
+      # @return [NilClass] if no ratelimit in http headers
+      # @return [Integer] representing the ratelimit
+      #
       def fiveteen_minutes
         limit? ? extract_ratelimit!(limit).first : nil
       end
 
+      #
+      # total day ratelimit
+      #
+      # @return [NilClass] if no ratelimit in http headers
+      # @return [Integer] representing the ratelimit
+      #
       def total_day
         limit? ? extract_ratelimit!(limit).last : nil
       end
 
+      #
+      # fiveteen minute ratelimit used
+      #
+      # @return [NilClass] if no ratelimit in http headers
+      # @return [Integer] representing the ratelimit
+      #
       def fiveteen_minutes_usage
         limit? ? extract_ratelimit!(usage).first : nil
       end
 
+      #
+      # total day ratelimit used
+      #
+      # @return [NilClass] if no ratelimit in http headers
+      # @return [Integer] representing the ratelimit
+      #
       def total_day_usage
         limit? ? extract_ratelimit!(usage).last : nil
       end
 
+      #
+      # fiveteen minute ratelimit remaining
+      #
+      # @return [NilClass] if no ratelimit in http headers
+      # @return [Integer] representing the ratelimit
+      #
       def fiveteen_minutes_remaining
         return nil unless fiveteen_minutes && fiveteen_minutes_usage
 
         fiveteen_minutes - fiveteen_minutes_usage
       end
 
+      #
+      # total day ratelimit remaining
+      #
+      # @return [NilClass] if no ratelimit in http headers
+      # @return [Integer] representing the ratelimit
+      #
       def total_day_remaining
         return nil unless total_day && total_day_usage
 
@@ -102,6 +143,13 @@ module Strava
 
       private
 
+      #
+      # ratelimit comes as a String of two Integers separated by comma
+      #
+      # @param [String] ratelimit
+      #
+      # @return [Array<Integer>]
+      #
       def extract_ratelimit!(ratelimit)
         @lookup_table_ratelimits ||= {}
         @lookup_table_ratelimits[ratelimit] ||= ratelimit.split(',').map(&:to_i)
