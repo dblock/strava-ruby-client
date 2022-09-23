@@ -63,7 +63,7 @@ require_relative 'strava/models/stream'
 require_relative 'strava/models/upload'
 require_relative 'strava/models/authorization'
 
-require_relative 'strava/web/raise_error'
+require_relative 'strava/web/raise_response_error'
 require_relative 'strava/web/connection'
 require_relative 'strava/web/api_response'
 require_relative 'strava/web/request'
