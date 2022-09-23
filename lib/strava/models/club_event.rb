@@ -2,7 +2,7 @@
 
 module Strava
   module Models
-    class ClubEvent < Response
+    class ClubEvent < Strava::Models::Response
       property 'id'
       property 'resource_state'
       property 'title'

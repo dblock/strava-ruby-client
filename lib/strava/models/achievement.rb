@@ -2,7 +2,7 @@
 
 module Strava
   module Models
-    class Achievement < Response
+    class Achievement < Strava::Models::Response
       property 'rank'
       property 'type'
       property 'type_id'

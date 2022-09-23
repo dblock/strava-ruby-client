@@ -2,7 +2,7 @@
 
 module Strava
   module Models
-    class Segment < Response
+    class Segment < Strava::Models::Response
       include Mixins::Distance
       include Mixins::Elevation
       include Mixins::Time

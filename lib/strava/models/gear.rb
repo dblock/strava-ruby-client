@@ -2,7 +2,7 @@
 
 module Strava
   module Models
-    class Gear < Response
+    class Gear < Strava::Models::Response
       include Mixins::Distance
 
       property 'id'

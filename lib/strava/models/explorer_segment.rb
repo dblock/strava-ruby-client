@@ -2,7 +2,7 @@
 
 module Strava
   module Models
-    class ExplorerSegment < Response
+    class ExplorerSegment < Strava::Models::Response
       include Mixins::Distance
 
       property 'id'

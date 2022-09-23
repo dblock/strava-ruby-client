@@ -2,7 +2,7 @@
 
 module Strava
   module Models
-    class Split < Response
+    class Split < Strava::Models::Response
       include Mixins::Distance
       include Mixins::Time
       include Mixins::Elevation

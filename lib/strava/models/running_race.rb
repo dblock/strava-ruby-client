@@ -2,7 +2,7 @@
 
 module Strava
   module Models
-    class RunningRace < Response
+    class RunningRace < Strava::Models::Response
       include Mixins::Distance
 
       property 'id'

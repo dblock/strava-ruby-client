@@ -2,7 +2,7 @@
 
 module Strava
   module Models
-    class Authorization < Response
+    class Authorization < Strava::Models::Response
       property 'access_token'
     end
   end

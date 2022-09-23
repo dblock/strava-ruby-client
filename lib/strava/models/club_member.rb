@@ -2,7 +2,7 @@
 
 module Strava
   module Models
-    class ClubMember < Response
+    class ClubMember < Strava::Models::Response
       property 'resource_state'
       property 'firstname'
       property 'lastname'

@@ -2,7 +2,7 @@
 
 module Strava
   module Models
-    class Token < Response
+    class Token < Strava::Models::Response
       property 'token_type'
       property 'access_token'
       property 'refresh_token'

@@ -2,7 +2,7 @@
 
 module Strava
   module Models
-    class Kudoser < Response
+    class Kudoser < Strava::Models::Response
       property 'destination_url'
       property 'display_name'
       property 'avatar_url'

@@ -2,7 +2,7 @@
 
 module Strava
   module Models
-    class TimedZoneRange < Response
+    class TimedZoneRange < Strava::Models::Response
       property 'max'
       property 'min'
       property 'time'
