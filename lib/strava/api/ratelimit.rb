@@ -73,31 +73,38 @@ module Strava
       end
 
       def fiveteen_minutes
-        limit? ? limit.split(',').first.to_i : nil
+        limit? ? extract_ratelimit!(limit).first : nil
       end
 
       def total_day
-        limit? ? limit.split(',').last.to_i : nil
+        limit? ? extract_ratelimit!(limit).last : nil
       end
 
       def fiveteen_minutes_usage
-        limit? ? usage.split(',').first.to_i : nil
+        limit? ? extract_ratelimit!(usage).first : nil
       end
 
       def total_day_usage
-        limit? ? usage.split(',').last.to_i : nil
+        limit? ? extract_ratelimit!(usage).last : nil
       end
 
       def fiveteen_minutes_remaining
         return nil unless fiveteen_minutes && fiveteen_minutes_usage
 
-        fiveteen_minutes.to_i - fiveteen_minutes_usage.to_i
+        fiveteen_minutes - fiveteen_minutes_usage
       end
 
       def total_day_remaining
         return nil unless total_day && total_day_usage
 
-        total_day.to_i - total_day_usage.to_i
+        total_day - total_day_usage
+      end
+
+      private
+
+      def extract_ratelimit!(ratelimit)
+        @lookup_table_ratelimits ||= {}
+        @lookup_table_ratelimits[ratelimit] ||= ratelimit.split(',').map(&:to_i)
       end
     end
   end
