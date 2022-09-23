@@ -16,7 +16,7 @@ module Strava
 
       def initialize(collection, http_response)
         @collection = collection
-        @http_response = deep_copy(http_response)
+        @web_response = deep_copy(web_response)
       end
 
       #
@@ -25,7 +25,7 @@ module Strava
       # @return [Strava::Api::Ratelimit]
       #
       def ratelimit
-        Strava::Api::Ratelimit.new(@http_response.http_response)
+        Strava::Api::Ratelimit.new(@web_response.http_response)
       end
 
       def size

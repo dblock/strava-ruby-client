@@ -42,24 +42,23 @@ module Strava
 
       def paginate(path, options, model)
         collection = []
-        api_response = nil
+        web_response = nil
         if block_given?
           Cursor.new(self, path, options).each do |page|
-            api_response = page # response of the last request made
+            web_response = page # response of the last request made
             page.each do |row|
               m = model.new(row)
               yield m
               collection << m
             end
           end
-
         else
-          api_response = get(path, options)
-          collection = api_response.map do |row|
+          web_response = get(path, options)
+          collection = web_response.map do |row|
             model.new(row)
           end
         end
-        Pagination.new(collection, api_response)
+        Pagination.new(collection, web_response)
       end
     end
   end

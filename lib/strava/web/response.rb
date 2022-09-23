@@ -24,12 +24,12 @@ module Strava
       #
       # returns a modified deep copy of the Faraday::Response
       #
-      # @param [Faraday::Response] response_
+      # @param [Faraday::Response] http_response
       #
       # @return [Array, Hash{String => any}]
       #
-      def conditional_response_upgrade!(response_)
-        response = deep_copy(response_)
+      def conditional_response_upgrade!(http_response)
+        response = deep_copy(http_response)
 
         case response.body
         when Array
