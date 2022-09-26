@@ -7,6 +7,8 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
   it 'returns activity' do
     activity = client.activity(id: 1_946_417_534)
 
+    expect(activity.http_response).to be_a Strava::Web::ApiResponse
+    expect(activity.http_response.ratelimit).to be_a Strava::Api::Ratelimit
     expect(activity.http_response.ratelimit.fiveteen_minutes).to eq 600
     expect(activity.http_response.ratelimit.fiveteen_minutes_remaining).to eq 599
     expect(activity.http_response.ratelimit.fiveteen_minutes_usage).to eq 1
