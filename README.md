@@ -906,20 +906,20 @@ Every API call returning a single instance and _not multiple instances_, like `c
 comments = client.activity_comments(id: 123_456_789)
 
 # comments == Array<Strava::Models::Comment>
-comments.ratelimit.to_h
+comments.http_response.ratelimit.to_h
 ```
 
 You can check the given ratelimit details returned from Strava by accessing a models' `ratelimit` method.
 
 ```ruby
 athlete = client.athlete # => Strava::Models::Athlete
-athlete.ratelimit
+athlete.http_response.ratelimit
 ```
 
 Here's an overview of all ratelimits you can access:
 
-```ruby 
-# athlete.ratelimit.to_h
+```ruby
+# athlete.http_response.ratelimit.to_h
 {
   limit: limit,
   usage: usage,

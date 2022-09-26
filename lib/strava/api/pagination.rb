@@ -12,7 +12,7 @@ module Strava
       include Enumerable
       include Strava::DeepCopyable
 
-      attr_reader :collection, :http_response
+      attr_reader :collection
 
       #
       # @param [Array<Strava::Models::>] collection of Models
@@ -20,18 +20,24 @@ module Strava
       #
       def initialize(collection, web_response)
         @collection = collection
-        @web_response = deep_copy(web_response)
+        @web_response = web_response
       end
 
       #
-      # returns a Ratelimit instance
+      # getter method that calculates on access
       #
-      # @return [Strava::Api::Ratelimit]
+      # @return [Strava::Web::ApiResponse]
       #
-      def ratelimit
-        Strava::Api::Ratelimit.new(@web_response.http_response)
+      def http_response
+        @http_response ||=
+          Strava::Web::ApiResponse.new(deep_copy(@web_response).http_response)
       end
 
+      #
+      # delegates `size` to @collection
+      #
+      # @return [Integer]
+      #
       def size
         @collection.size
       end
