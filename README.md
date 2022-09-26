@@ -897,10 +897,13 @@ client.delete_push_subscription(131300) # => nil
 
 ### Ratelimit
 
-Every Model was upgraded with the possibility to check the API ratelimit that was send as a response from the Strava API.
+Every API call's HTTP Reponse Content, be it a single Model or a list (via pagination), can be accessed by using `#http_response`.
 
-Every API call returning a single instance and _not multiple instances_, like `client.athlete` will respond to `#http_response`  
-`Strava::Models::Athlete#http_response`
+`client.athlete` #=> `Strava::Models::Athlete#http_response` 
+
+`client.activity_comments(id: 1234567)` #=> `Array<Strava::Models::Comment>#http_response`
+
+`http_response` itself is a `Strava::Web::ApiResponse` class. Ratelimits are accessed via this class using `Strava::Web::ApiResponse#ratelimit`. See the examples given below:
 
 ```ruby
 comments = client.activity_comments(id: 123_456_789)
@@ -909,14 +912,26 @@ comments = client.activity_comments(id: 123_456_789)
 comments.http_response.ratelimit.to_h
 ```
 
-You can check the given ratelimit details returned from Strava by accessing a models' `ratelimit` method.
-
 ```ruby
 athlete = client.athlete # => Strava::Models::Athlete
 athlete.http_response.ratelimit
 ```
 
-Here's an overview of all ratelimits you can access:
+#### Strava::Api::Ratelimit public_methods
+
+- `limit`
+- `limit?`
+- `usage`
+- `fiveteen_minutes`
+- `fiveteen_minutes_usage`
+- `fiveteen_minutes_remaining`
+- `total_day`
+- `total_day_usage`
+- `total_day_remaining`
+- `to_h`
+- `to_s`
+
+You can access the Hash containing all limits by calling `to_h`.
 
 ```ruby
 # athlete.http_response.ratelimit.to_h
