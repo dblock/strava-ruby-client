@@ -37,14 +37,14 @@ RSpec.describe 'Strava::Api::Client#activity_comments', vcr: { cassette_name: 'c
   it 'returns ratelimits with paginated comments' do
     expect(activity_comments.http_response).to be_a Strava::Web::ApiResponse
     expect(activity_comments.http_response.ratelimit).to be_a Strava::Api::Ratelimit
-    expect(activity_comments.http_response.ratelimit.fiveteen_minutes).to eq 600
-    expect(activity_comments.http_response.ratelimit.fiveteen_minutes_usage).to eq 7
+    expect(activity_comments.http_response.ratelimit.fifteen_minutes).to eq 600
+    expect(activity_comments.http_response.ratelimit.fifteen_minutes_usage).to eq 7
   end
 
   it 'returns ratelimits with each comment' do
     expect(first_activity_comment.http_response).to be_a Strava::Web::ApiResponse
     expect(first_activity_comment.http_response.ratelimit).to be_a Strava::Api::Ratelimit
-    expect(first_activity_comment.http_response.ratelimit.fiveteen_minutes).to eq 600
-    expect(first_activity_comment.http_response.ratelimit.fiveteen_minutes_usage).to eq 7
+    expect(first_activity_comment.http_response.ratelimit.fifteen_minutes).to eq 600
+    expect(first_activity_comment.http_response.ratelimit.fifteen_minutes_usage).to eq 7
   end
 end

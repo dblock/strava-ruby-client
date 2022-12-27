@@ -28,9 +28,9 @@ module Strava
             total_day: total_day,
             total_day_usage: total_day_usage,
             total_day_remaining: total_day_remaining,
-            fiveteen_minutes: fiveteen_minutes,
-            fiveteen_minutes_usage: fiveteen_minutes_usage,
-            fiveteen_minutes_remaining: fiveteen_minutes_remaining
+            fifteen_minutes: fifteen_minutes,
+            fifteen_minutes_usage: fifteen_minutes_usage,
+            fifteen_minutes_remaining: fifteen_minutes_remaining
           }
         else
           {}
@@ -78,12 +78,12 @@ module Strava
       end
 
       #
-      # fiveteen minute ratelimit
+      # fifteen minute ratelimit
       #
       # @return [NilClass] if no ratelimit in http headers
       # @return [Integer] representing the ratelimit
       #
-      def fiveteen_minutes
+      def fifteen_minutes
         limit? ? extract_ratelimit!(limit).first : nil
       end
 
@@ -98,12 +98,12 @@ module Strava
       end
 
       #
-      # fiveteen minute ratelimit used
+      # fifteen minute ratelimit used
       #
       # @return [NilClass] if no ratelimit in http headers
       # @return [Integer] representing the ratelimit
       #
-      def fiveteen_minutes_usage
+      def fifteen_minutes_usage
         limit? ? extract_ratelimit!(usage).first : nil
       end
 
@@ -118,15 +118,15 @@ module Strava
       end
 
       #
-      # fiveteen minute ratelimit remaining
+      # fifteen minute ratelimit remaining
       #
       # @return [NilClass] if no ratelimit in http headers
       # @return [Integer] representing the ratelimit
       #
-      def fiveteen_minutes_remaining
-        return nil unless fiveteen_minutes && fiveteen_minutes_usage
+      def fifteen_minutes_remaining
+        return nil unless fifteen_minutes && fifteen_minutes_usage
 
-        fiveteen_minutes - fiveteen_minutes_usage
+        fifteen_minutes - fifteen_minutes_usage
       end
 
       #

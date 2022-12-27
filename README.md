@@ -9,74 +9,75 @@ Unlike other clients, including [strava-api-v3](https://github.com/jaredholdcrof
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [Usage](#usage)
-  - [Activities](#activities)
-    - [Create an Activity](#create-an-activity)
-    - [Get Activity](#get-activity)
-    - [List Activity Photos](#list-activity-photos)
-    - [List Activity Comments](#list-activity-comments)
-    - [List Activity Kudoers](#list-activity-kudoers)
-    - [List Activity Laps](#list-activity-laps)
-    - [List Athlete Activities](#list-athlete-activities)
-    - [Get Activity Zones](#get-activity-zones)
-    - [Update Activity](#update-activity)
-  - [Athletes](#athletes)
-    - [Get Authenticated Athlete](#get-authenticated-athlete)
-    - [Get Zones](#get-zones)
-    - [Get Athlete Stats](#get-athlete-stats)
-    - [Update Athlete](#update-athlete)
-  - [Clubs](#clubs)
-    - [List Club Activities](#list-club-activities)
-    - [List Club Events](#list-club-events)
-    - [List Club Administrators](#list-club-administrators)
-    - [Get Club](#get-club)
-    - [List Club Members](#list-club-members)
-    - [List Athlete Clubs](#list-athlete-clubs)
-  - [Gears](#gears)
-    - [Get Equipment](#get-equipment)
-  - [Routes](#routes)
-    - [Export Route GPX](#export-route-gpx)
-    - [Export Route TCX](#export-route-tcx)
-    - [Get Route](#get-route)
-    - [List Athlete Routes](#list-athlete-routes)
-  - [Running Races](#running-races)
-    - [Get Running Race](#get-running-race)
-  - [Segment Efforts](#segment-efforts)
-    - [List Segment Efforts](#list-segment-efforts)
-    - [Get Segment Effort](#get-segment-effort)
-  - [Segments](#segments)
-    - [Explore Segments](#explore-segments)
-    - [List Starred Segments](#list-starred-segments)
-    - [Get Segment](#get-segment)
-    - [Star Segment](#star-segment)
-  - [Streams](#streams)
-    - [Get Activity Streams](#get-activity-streams)
-    - [Get Segment Effort Streams](#get-segment-effort-streams)
-    - [Get Segment Streams](#get-segment-streams)
-  - [Uploads](#uploads)
-    - [Upload Activity](#upload-activity)
-    - [Get Upload](#get-upload)
-  - [Pagination](#pagination)
-  - [OAuth](#oauth)
-    - [OAuth Workflow](#oauth-workflow)
-    - [Deauthorize](#deauthorize)
-    - [Command Line OAuth Workflow](#command-line-oauth-workflow)
-  - [Webhooks](#webhooks)
-  - [Ratelimit](#ratelimit)
-- [Configuration](#configuration)
-  - [Web Client Options](#web-client-options)
-  - [API Client Options](#api-client-options)
-  - [OAuth Client Options](#oauth-client-options)
-  - [Webhooks Client Options](#webhooks-client-options)
-- [Errors](#errors)
-- [Tools](#tools)
-  - [Strava OAuth Token](#strava-oauth-token)
-- [Users](#users)
-- [Resources](#resources)
-- [Upgrading](#upgrading)
-- [Contributing](#contributing)
-- [Copyright and License](#copyright-and-license)
+- [Strava Ruby Client](#strava-ruby-client)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Activities](#activities)
+      - [Create an Activity](#create-an-activity)
+      - [Get Activity](#get-activity)
+      - [List Activity Photos](#list-activity-photos)
+      - [List Activity Comments](#list-activity-comments)
+      - [List Activity Kudoers](#list-activity-kudoers)
+      - [List Activity Laps](#list-activity-laps)
+      - [List Athlete Activities](#list-athlete-activities)
+      - [Get Activity Zones](#get-activity-zones)
+      - [Update Activity](#update-activity)
+    - [Athletes](#athletes)
+      - [Get Authenticated Athlete](#get-authenticated-athlete)
+      - [Get Zones](#get-zones)
+      - [Get Athlete Stats](#get-athlete-stats)
+      - [Update Athlete](#update-athlete)
+    - [Clubs](#clubs)
+      - [List Club Activities](#list-club-activities)
+      - [List Club Events](#list-club-events)
+      - [List Club Administrators](#list-club-administrators)
+      - [Get Club](#get-club)
+      - [List Club Members](#list-club-members)
+      - [List Athlete Clubs](#list-athlete-clubs)
+    - [Gears](#gears)
+      - [Get Equipment](#get-equipment)
+    - [Routes](#routes)
+      - [Export Route GPX](#export-route-gpx)
+      - [Export Route TCX](#export-route-tcx)
+      - [Get Route](#get-route)
+      - [List Athlete Routes](#list-athlete-routes)
+    - [Running Races](#running-races)
+      - [Get Running Race](#get-running-race)
+    - [Segment Efforts](#segment-efforts)
+      - [List Segment Efforts](#list-segment-efforts)
+      - [Get Segment Effort](#get-segment-effort)
+    - [Segments](#segments)
+      - [Explore Segments](#explore-segments)
+      - [List Starred Segments](#list-starred-segments)
+      - [Get Segment](#get-segment)
+      - [Star Segment](#star-segment)
+    - [Streams](#streams)
+      - [Get Activity Streams](#get-activity-streams)
+      - [Get Segment Effort Streams](#get-segment-effort-streams)
+      - [Get Segment Streams](#get-segment-streams)
+    - [Uploads](#uploads)
+      - [Upload Activity](#upload-activity)
+      - [Get Upload](#get-upload)
+    - [Pagination](#pagination)
+    - [OAuth](#oauth)
+      - [OAuth Workflow](#oauth-workflow)
+      - [Deauthorize](#deauthorize)
+      - [Command Line OAuth Workflow](#command-line-oauth-workflow)
+    - [Webhooks](#webhooks)
+    - [Ratelimit](#ratelimit)
+  - [Configuration](#configuration)
+    - [Web Client Options](#web-client-options)
+    - [API Client Options](#api-client-options)
+    - [OAuth Client Options](#oauth-client-options)
+    - [Webhooks Client Options](#webhooks-client-options)
+  - [Errors](#errors)
+  - [Tools](#tools)
+    - [Strava OAuth Token](#strava-oauth-token)
+  - [Users](#users)
+  - [Resources](#resources)
+  - [Upgrading](#upgrading)
+  - [Contributing](#contributing)
+  - [Copyright and License](#copyright-and-license)
 
 ## Installation
 
@@ -899,7 +900,7 @@ client.delete_push_subscription(131300) # => nil
 
 Every API call's HTTP Reponse Content, be it a single Model or a list (via pagination), can be accessed by using `#http_response`.
 
-`client.athlete` #=> `Strava::Models::Athlete#http_response` 
+`client.athlete` #=> `Strava::Models::Athlete#http_response`
 
 `client.activity_comments(id: 1234567)` #=> `Array<Strava::Models::Comment>#http_response`
 
@@ -917,14 +918,14 @@ athlete = client.athlete # => Strava::Models::Athlete
 athlete.http_response.ratelimit
 ```
 
-#### Strava::Api::Ratelimit public_methods
+The following properties are available on Strava::Api::Ratelimit
 
 - `limit`
 - `limit?`
 - `usage`
-- `fiveteen_minutes`
-- `fiveteen_minutes_usage`
-- `fiveteen_minutes_remaining`
+- `fifteen_minutes`
+- `fifteen_minutes_usage`
+- `fifteen_minutes_remaining`
 - `total_day`
 - `total_day_usage`
 - `total_day_remaining`
@@ -941,9 +942,9 @@ You can access the Hash containing all limits by calling `to_h`.
   total_day: total_day,
   total_day_usage: total_day_usage,
   total_day_remaining: total_day_remaining,
-  fiveteen_minutes: fiveteen_minutes,
-  fiveteen_minutes_usage: fiveteen_minutes_usage,
-  fiveteen_minutes_remaining: fiveteen_minutes_remaining
+  fifteen_minutes: fifteen_minutes,
+  fifteen_minutes_usage: fifteen_minutes_usage,
+  fifteen_minutes_remaining: fifteen_minutes_remaining
 }
 ```
 
@@ -1072,7 +1073,7 @@ For a complete set of command-line tools, check out [strava-ruby-cli](https://gi
 Use [strava-oauth-token](bin/strava-oauth-token) to obtain a token from the command-line. This will open a new browser window, navigate to Strava, request the appropriate permissions, then handle OAuth in a local redirect. The token type, refresh token, access token and token expiration will be displayed in the browser.
 
 ```bash
-$ STRAVA_CLIENT_ID=... STRAVA_CLIENT_SECRET=... strava-oauth-token
+STRAVA_CLIENT_ID=... STRAVA_CLIENT_SECRET=... strava-oauth-token
 ```
 
 ## Users
