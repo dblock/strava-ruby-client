@@ -3,9 +3,9 @@
 ### Upgrading to >= 0.5.0
 
 - API request will now raise `Strava::Web::RaiseResponseError` instead of `::Strava::Web::Response::RaiseError`
-- using `get`, `post`, `put`, `delete` directly, changed from `Faraday::Response` to `Strava::Web::Response` as return value.  
+- Using `get`, `post`, `put`, `delete` directly, changed from `Faraday::Response` to `Strava::Web::Response` as return value.  
   In order to access the `Faraday::Reponse` or `Faraday::Reponse#body` you need to call `.response` or `.response.body`.
-- paginated API paths now return `Strava::Api::Pagination`, which is a new wrapper class for the returned collection of entries.
+- Paginated API paths now return `Strava::Api::Pagination`, which is a new wrapper class for the returned collection of entries.
 
 ### Upgrading to >= 0.4.0
 

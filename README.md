@@ -918,7 +918,7 @@ athlete = client.athlete # => Strava::Models::Athlete
 athlete.http_response.ratelimit
 ```
 
-The following properties are available on Strava::Api::Ratelimit
+The following properties are available on Strava::Api::Ratelimit.
 
 - `limit`
 - `limit?`
