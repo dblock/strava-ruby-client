@@ -1,6 +1,6 @@
 # Upgrading Strava-Ruby-Client
 
-### Upgrading to >= 0.5.0
+### Upgrading to >= 1.0.0
 
 - API request will now raise `Strava::Web::RaiseResponseError` instead of `::Strava::Web::Response::RaiseError`
 - Using `get`, `post`, `put`, `delete` directly, changed from `Faraday::Response` to `Strava::Web::Response` as return value.  
