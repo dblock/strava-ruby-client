@@ -1,4 +1,4 @@
-### 0.5.0 (Next)
+### 1.0.0 (Next)
 
 * [#48](https://github.com/dblock/strava-ruby-client/pull/55): Removed `client.running_races` - [@simonneutert](https://github.com/simonneutert).
 * [#56](https://github.com/dblock/strava-ruby-client/pull/56): Removed `client.segment_leaderboard` - [@simonneutert](https://github.com/simonneutert).
