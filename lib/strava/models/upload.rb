@@ -25,7 +25,7 @@ module Strava
       end
 
       def raise_when_background_job_failed!
-        response = self['http_response'].response
+        response = http_response.response
         return unless response_contains_error_message?(response)
 
         raise Strava::Errors::UploadError, response_values(response)
