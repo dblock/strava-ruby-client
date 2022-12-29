@@ -279,9 +279,97 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
 
     expect(activity.available_zones).to eq %w[heartrate pace]
   end
+
   it 'returns activity by id' do
     activity = client.activity(1_946_417_534)
     expect(activity).to be_a Strava::Models::Activity
     expect(activity.id).to eq 1_946_417_534
+  end
+
+  context 'when serialized to JSON' do
+    it 'is serialized without errors' do
+      activity = client.activity(1_946_417_534)
+      expect(activity.to_json).to be_present
+    end
+
+    it 'contains all properties' do
+      activity = client.activity(1_946_417_534)
+      activity_json = JSON.parse(activity.to_json)
+      expect(activity_json.keys).to match_array(
+        %w[moving_time
+           elapsed_time
+           average_speed
+           distance
+           total_elevation_gain
+           start_date_local
+           id
+           resource_state
+           athlete
+           name
+           description
+           sport_type
+           workout_type
+           external_id
+           upload_id
+           start_date
+           timezone
+           utc_offset
+           start_latlng
+           end_latlng
+           location_city
+           location_state
+           location_country
+           start_latitude
+           start_longitude
+           achievement_count
+           kudos_count
+           comment_count
+           athlete_count
+           photo_count
+           map
+           trainer
+           commute
+           manual
+           private
+           visibility
+           flagged
+           gear_id
+           from_accepted_tag
+           max_speed
+           has_heartrate
+           average_heartrate
+           max_heartrate
+           heartrate_opt_out
+           display_hide_heartrate_option
+           elev_high
+           elev_low
+           pr_count
+           total_photo_count
+           has_kudoed
+           suffer_score
+           calories
+           segment_efforts
+           best_efforts
+           photos
+           similar_activities
+           embed_token
+           available_zones
+           splits_metric
+           splits_standard
+           laps
+           gear
+           device_name
+           average_cadence
+           average_temp
+           average_watts
+           weighted_average_watts
+           kilojoules
+           device_watts
+           max_watts
+           highlighted_kudosers
+           segment_leaderboard_opt_out
+           leaderboard_opt_out]
+      )
+    end
   end
 end

@@ -10,7 +10,7 @@ module Strava
       #
       def initialize(http_response)
         @response = http_response
-        @ratelimit = Strava::Api::Ratelimit.new(@response)
+        @ratelimit = Strava::Api::Ratelimit.new(http_response)
       end
     end
   end
