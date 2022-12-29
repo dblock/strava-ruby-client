@@ -25,7 +25,7 @@ module Strava
         options = options.dup if options.key?(:request) || options.key?(:endpoint)
         root = options.delete(:endpoint) || endpoint
         path = [root, path].join('/')
-        response = connection.send(method) do |request|
+        http_response = connection.send(method) do |request|
           case method
           when :get, :delete
             request.url(path, options)
@@ -35,7 +35,8 @@ module Strava
           end
           request.options.merge!(options.delete(:request)) if options.key?(:request)
         end
-        response.body
+
+        Strava::Web::Response.new(http_response)
       end
     end
   end

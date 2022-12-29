@@ -2,7 +2,7 @@
 
 module Strava
   module Models
-    class Stream < Model
+    class Stream < Strava::Models::Response
       property 'original_size'
       property 'resolution'
       property 'series_type'

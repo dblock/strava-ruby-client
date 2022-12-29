@@ -27,7 +27,7 @@ module Strava
           ::Faraday::Connection.new(endpoint, options) do |connection|
             connection.request :multipart
             connection.request :url_encoded
-            connection.use ::Strava::Web::Response::RaiseError
+            connection.use Strava::Web::RaiseResponseError
             connection.response :json
             connection.response :logger, logger if logger
             connection.adapter ::Faraday.default_adapter

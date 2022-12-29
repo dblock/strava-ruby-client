@@ -63,6 +63,7 @@ Unlike other clients, including [strava-api-v3](https://github.com/jaredholdcrof
     - [Deauthorize](#deauthorize)
     - [Command Line OAuth Workflow](#command-line-oauth-workflow)
   - [Webhooks](#webhooks)
+  - [Ratelimit](#ratelimit)
 - [Configuration](#configuration)
   - [Web Client Options](#web-client-options)
   - [API Client Options](#api-client-options)
@@ -894,6 +895,58 @@ Delete an existing subscription.
 client.delete_push_subscription(131300) # => nil
 ```
 
+### Ratelimit
+
+Every API call's HTTP Reponse Content, be it a single Model or a list (via pagination), can be accessed by using `#http_response`.
+
+`client.athlete` #=> `Strava::Models::Athlete#http_response`
+
+`client.activity_comments(id: 1234567)` #=> `Array<Strava::Models::Comment>#http_response`
+
+`http_response` itself is a `Strava::Web::ApiResponse` class. Ratelimits are accessed via this class using `Strava::Web::ApiResponse#ratelimit`. See the examples given below:
+
+```ruby
+comments = client.activity_comments(id: 123_456_789)
+
+# comments == Array<Strava::Models::Comment>
+comments.http_response.ratelimit.to_h
+```
+
+```ruby
+athlete = client.athlete # => Strava::Models::Athlete
+athlete.http_response.ratelimit
+```
+
+The following properties are available on Strava::Api::Ratelimit.
+
+- `limit`
+- `limit?`
+- `usage`
+- `fifteen_minutes`
+- `fifteen_minutes_usage`
+- `fifteen_minutes_remaining`
+- `total_day`
+- `total_day_usage`
+- `total_day_remaining`
+- `to_h`
+- `to_s`
+
+You can access the Hash containing all limits by calling `to_h`.
+
+```ruby
+# athlete.http_response.ratelimit.to_h
+{
+  limit: limit,
+  usage: usage,
+  total_day: total_day,
+  total_day_usage: total_day_usage,
+  total_day_remaining: total_day_remaining,
+  fifteen_minutes: fifteen_minutes,
+  fifteen_minutes_usage: fifteen_minutes_usage,
+  fifteen_minutes_remaining: fifteen_minutes_remaining
+}
+```
+
 ## Configuration
 
 ### Web Client Options
@@ -1019,7 +1072,7 @@ For a complete set of command-line tools, check out [strava-ruby-cli](https://gi
 Use [strava-oauth-token](bin/strava-oauth-token) to obtain a token from the command-line. This will open a new browser window, navigate to Strava, request the appropriate permissions, then handle OAuth in a local redirect. The token type, refresh token, access token and token expiration will be displayed in the browser.
 
 ```bash
-$ STRAVA_CLIENT_ID=... STRAVA_CLIENT_SECRET=... strava-oauth-token
+STRAVA_CLIENT_ID=... STRAVA_CLIENT_SECRET=... strava-oauth-token
 ```
 
 ## Users

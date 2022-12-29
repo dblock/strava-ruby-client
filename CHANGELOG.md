@@ -1,4 +1,4 @@
-### 0.5.0 (Next)
+### 1.0.0 (Next)
 
 * [#48](https://github.com/dblock/strava-ruby-client/pull/55): Removed `client.running_races` - [@simonneutert](https://github.com/simonneutert).
 * [#56](https://github.com/dblock/strava-ruby-client/pull/56): Removed `client.segment_leaderboard` - [@simonneutert](https://github.com/simonneutert).
@@ -7,6 +7,7 @@
 * [#58](https://github.com/dblock/strava-ruby-client/pull/58): Upgraded Robocop to 1.3.0 - [@schinery](https://github.com/schinery).
 * [#59](https://github.com/dblock/strava-ruby-client/pull/59): Removed deprecated `athlete.email` field - [@francordie](https://github.com/francordie).
 * [#63](https://github.com/dblock/strava-ruby-client/pull/63): Added `activity.sport_type` for Strava API V3 specifications - [@simonneutert](https://github.com/simonneutert).
+* [#61](https://github.com/dblock/strava-ruby-client/pull/61): Adds ratelimit as a property of model(s) - [@simonneutert](https://github.com/simonneutert), [@adamwolf](https://github.com/adamwolf).
 * Your contribution here.
 
 ### 0.4.3 (2022/03/21)

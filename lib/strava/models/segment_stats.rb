@@ -2,7 +2,7 @@
 
 module Strava
   module Models
-    class SegmentStats < Model
+    class SegmentStats < Strava::Models::Response
       include Mixins::Time
 
       property 'pr_elapsed_time'

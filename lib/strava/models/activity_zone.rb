@@ -2,7 +2,7 @@
 
 module Strava
   module Models
-    class ActivityZone < Model
+    class ActivityZone < Strava::Models::Response
       property 'score'
       property 'distribution_buckets', transform_with: ->(v) { v.map { |r| Strava::Models::TimedZoneRange.new(r) } }
       property 'type'

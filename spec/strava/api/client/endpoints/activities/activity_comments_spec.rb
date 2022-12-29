@@ -4,8 +4,16 @@ require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#activity_comments', vcr: { cassette_name: 'client/activity_comments' } do
   include_context 'API client'
+
+  let(:activity_comments) do
+    client.activity_comments(id: 3_958_491_750)
+  end
+
+  let(:first_activity_comment) do
+    activity_comments.first
+  end
+
   it 'returns activity comments' do
-    activity_comments = client.activity_comments(id: 3_958_491_750)
     expect(activity_comments).to be_a Enumerable
     expect(activity_comments.count).to eq 3
     activity_comment = activity_comments.first
@@ -20,9 +28,23 @@ RSpec.describe 'Strava::Api::Client#activity_comments', vcr: { cassette_name: 'c
     expect(athlete.lastname).to eq 'S.'
     expect(athlete.id).to(eq(nil)) # privacy restriction cuts off commenting athlete id
   end
+
   it 'returns activity comments by id' do
-    activity_comments = client.activity_comments(3_958_491_750)
     expect(activity_comments).to be_a Enumerable
     expect(activity_comments.count).to eq 3
+  end
+
+  it 'returns ratelimits with paginated comments' do
+    expect(activity_comments.http_response).to be_a Strava::Web::ApiResponse
+    expect(activity_comments.http_response.ratelimit).to be_a Strava::Api::Ratelimit
+    expect(activity_comments.http_response.ratelimit.fifteen_minutes).to eq 600
+    expect(activity_comments.http_response.ratelimit.fifteen_minutes_usage).to eq 7
+  end
+
+  it 'returns ratelimits with each comment' do
+    expect(first_activity_comment.http_response).to be_a Strava::Web::ApiResponse
+    expect(first_activity_comment.http_response.ratelimit).to be_a Strava::Api::Ratelimit
+    expect(first_activity_comment.http_response.ratelimit.fifteen_minutes).to eq 600
+    expect(first_activity_comment.http_response.ratelimit.fifteen_minutes_usage).to eq 7
   end
 end

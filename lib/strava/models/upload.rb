@@ -2,7 +2,7 @@
 
 module Strava
   module Models
-    class Upload < Model
+    class Upload < Strava::Models::Response
       property 'id'
       property 'external_id'
       property 'error'

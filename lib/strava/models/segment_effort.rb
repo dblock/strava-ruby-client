@@ -2,7 +2,7 @@
 
 module Strava
   module Models
-    class SegmentEffort < Model
+    class SegmentEffort < Strava::Models::Response
       include Mixins::Distance
       include Mixins::Time
       include Mixins::StartDateLocal
