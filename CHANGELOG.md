@@ -1,3 +1,7 @@
+### 1.0.1 (Next)
+
+* Your contribution here.
+
 ### 1.0.0 (2022/12/29)
 
 * [#48](https://github.com/dblock/strava-ruby-client/pull/55): Removed `client.running_races` - [@simonneutert](https://github.com/simonneutert).
