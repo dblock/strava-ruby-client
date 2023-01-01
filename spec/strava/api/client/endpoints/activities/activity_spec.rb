@@ -285,3 +285,20 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
     expect(activity.id).to eq 1_946_417_534
   end
 end
+
+# uses the cassette: 'client/activity' but with status changed to 429 and ratelimit exceeded
+RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/activity_with_ratelimit_exceeded' } do
+  include_context 'API client'
+  # rubocop:disable Style/MultilineBlockChain
+  it 'raises Strava::Api::RatelimitError' do
+    expect do
+      client.activity(1_946_417_534)
+    end.to raise_error(Strava::Api::RatelimitError) do |error|
+      expect(error.message).to eql('Too Many Requests')
+      expect(error.ratelimit).to be_a Strava::Api::Ratelimit
+      expect(error.ratelimit.exceeded?).to be(true)
+      expect(error.ratelimit.exceeded).to eql({ fifteen_minutes_remaining: 0 })
+    end
+  end
+  # rubocop:enable Style/MultilineBlockChain
+end
