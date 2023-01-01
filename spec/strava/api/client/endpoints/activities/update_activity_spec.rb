@@ -24,15 +24,18 @@ RSpec.describe 'Strava::Api::Client#update_activity', vcr: { cassette_name: 'cli
     expect(activity.name).to eq 'updated activity'
     expect(activity.description).to eq 'Updated test strava-ruby-client activity.'
   end
+  # rubocop:disable Style/MultilineBlockChain
   it 'fails updating the activity by id using deprecated attribute `type`' do
     expect do
       client.update_activity(
-      1_982_980_795,
-      name: 'updated activity',
-      type: 'running',
-      description: 'Updated test strava-ruby-client activity.')
+        1_982_980_795,
+        name: 'updated activity',
+        type: 'running',
+        description: 'Updated test strava-ruby-client activity.'
+      )
     end.to raise_error(ArgumentError) do |error|
       expect(error.message).to eql "Don't use any of the deprecated attributes: \"type\""
     end
   end
+  # rubocop:enable Style/MultilineBlockChain
 end

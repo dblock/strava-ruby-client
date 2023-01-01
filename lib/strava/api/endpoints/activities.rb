@@ -142,7 +142,10 @@ module Strava
         private
 
         def validate_deprecated_attributes!(options)
-          raise ArgumentError, "Don't use any of the deprecated attributes: \"#{DEPRECATED_ATTRIBUTES.map(&:to_sym).uniq.join(', ')}\"" if attribute_deprecated?(options)
+          return unless attribute_deprecated?(options)
+
+          deprecated_attributes_uniq = DEPRECATED_ATTRIBUTES.map(&:to_sym).uniq.join(', ')
+          raise ArgumentError, "Don't use any of the deprecated attributes: \"#{deprecated_attributes_uniq}\""
         end
 
         def attribute_deprecated?(options)

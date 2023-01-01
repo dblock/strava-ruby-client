@@ -1,5 +1,6 @@
-### 1.0.1 (Next)
+### 2.0.0 (Next)
 
+* [#62](https://github.com/dblock/strava-ruby-client/pull/68): Deprecates `Activity#type` for update and create - [@simonneutert](https://github.com/simonneutert).
 * Your contribution here.
 
 ### 1.0.0 (2022/12/29)

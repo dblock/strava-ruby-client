@@ -21,6 +21,7 @@ RSpec.describe 'Strava::Api::Client#create_activity', vcr: { cassette_name: 'cli
     expect(activity.description).to eq 'Test strava-ruby-client activity.'
     expect(activity.strava_url).to eq 'https://www.strava.com/activities/1982980795'
   end
+  # rubocop:disable Style/MultilineBlockChain
   it 'fails creating an activity by id using deprecated attribute `type`' do
     expect do
       client.create_activity(
@@ -32,9 +33,11 @@ RSpec.describe 'Strava::Api::Client#create_activity', vcr: { cassette_name: 'cli
         distance: 1000,
         photo_ids: nil,
         trainer: false,
-        commute: false)
+        commute: false
+      )
     end.to raise_error(ArgumentError) do |error|
       expect(error.message).to eql "Don't use any of the deprecated attributes: \"type\""
     end
   end
+  # rubocop:enable Style/MultilineBlockChain
 end
