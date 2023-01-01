@@ -1,5 +1,9 @@
 # Upgrading Strava-Ruby-Client
 
+### Upgrading to >= 2.0.0
+
+- Creating or updating Activities requires you to use `sport_type` as `type` is deprecated. See [Create Activity on Strava docs](https://developers.strava.com/docs/reference/#api-Activities-createActivity) and the entry from June 15, 2022 in the [Strava V3 API Changelog](https://developers.strava.com/docs/changelog/) for details.
+
 ### Upgrading to >= 1.0.0
 
 - API request will now raise `Strava::Web::RaiseResponseError` instead of `::Strava::Web::Response::RaiseError`
