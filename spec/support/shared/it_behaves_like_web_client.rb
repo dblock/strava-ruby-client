@@ -111,7 +111,7 @@ RSpec.shared_examples 'web client' do
           expect(client.logger).to eq logger
         end
         it 'creates a connection with a logger' do
-          expect(client.send(:connection).builder.handlers).to include Faraday::Response::Logger
+          expect(client.send(:connection).builder.handlers).to include ::Faraday::Response::Logger
         end
       end
     end
