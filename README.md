@@ -226,7 +226,6 @@ activity = activities.first # => Strava::Models::Activity
 
 activity.name # => 'NYC TCS Marathon 2018'
 activity.strava_url # => 'https://www.strava.com/activities/1477353766'
-activity.type_emoji # => '🏃'
 activity.sport_type_emoji # => '🏃'
 activity.distance_s # => '42.2km'
 activity.moving_time_in_hours_s # => '3h38m5s'
