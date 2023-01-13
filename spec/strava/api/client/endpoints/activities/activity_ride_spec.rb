@@ -46,7 +46,6 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
     expect(activity.total_elevation_gain_in_feet_s).to eq '3399ft'
     expect(activity.total_elevation_gain_s).to eq '1036m'
 
-    expect(activity.type).to eq 'Ride'
     expect(activity.sport_type).to eq 'Ride'
     expect(activity.workout_type).to eq 12
     expect(activity.external_id).to eq '2020-08-24-070352-ELEMNT BOLT 3038-451-0.fit'

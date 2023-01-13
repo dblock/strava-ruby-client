@@ -13,7 +13,6 @@ module Strava
       property 'athlete', transform_with: ->(v) { Strava::Models::Athlete.new(v) }
       property 'name'
       property 'description'
-      property 'type' # deprecated
       property 'sport_type'
       property 'workout_type'
       property 'id'
@@ -80,7 +79,7 @@ module Strava
       property 'leaderboard_opt_out'
 
       def distance_s
-        if type == 'Swim'
+        if sport_type == 'Swim'
           distance_in_meters_s
         else
           distance_in_kilometers_s
@@ -88,7 +87,7 @@ module Strava
       end
 
       def pace_s
-        case type
+        case sport_type
         when 'Swim'
           pace_per_100_meters_s
         else
@@ -137,44 +136,6 @@ module Strava
         # when 'Windsurf' then ''
         # when 'Workout' then ''
         when 'Yoga' then '🧘'
-        end
-      end
-
-      #
-      # @deprecated Use {#sport_type_emoji} instead.
-      #
-      # @return [String] precisely an emoji
-      #
-      def type_emoji
-        case type
-        when 'Run', 'VirtualRun' then '🏃'
-        when 'Ride', 'EBikeRide', 'VirtualRide' then '🚴'
-        when 'Swim' then '🏊'
-        when 'Walk' then '🚶'
-        when 'AlpineSki' then '⛷️'
-        when 'BackcountrySki' then '🎿️'
-        # when 'Canoeing' then ''
-        # when 'Crossfit' then ''
-        # when 'Elliptical' then ''
-        # when 'Hike' then ''
-        when 'IceSkate' then '⛸️'
-        # when 'InlineSkate' then ''
-        # when 'Kayaking' then ''
-        # when 'Kitesurf' then ''
-        # when 'NordicSki' then ''
-        when 'RockClimbing' then '🧗'
-        when 'RollerSki' then ''
-        when 'Rowing' then '🚣'
-        when 'Snowboard' then '🏂'
-        # when 'Snowshoe' then ''
-        # when 'StairStepper' then ''
-        # when 'StandUpPaddling' then ''
-        when 'Surfing' then '🏄'
-        when 'WeightTraining' then '🏋️'
-        # when 'Windsurf' then ''
-        when 'Wheelchair' then '♿'
-          # when 'Workout' then ''
-          # when 'Yoga'' then ''
         end
       end
     end

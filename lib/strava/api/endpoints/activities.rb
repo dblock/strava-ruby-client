@@ -4,13 +4,10 @@ module Strava
   module Api
     module Endpoints
       module Activities
-        DEPRECATED_ATTRIBUTES = [:type, 'type'].freeze
-
         #
         # Create an activity.
         #
         def create_activity(options = {})
-          validate_deprecated_attributes!(options)
           Strava::Models::Activity.new(post('activities', options))
         end
 
@@ -135,23 +132,7 @@ module Strava
         #
         def update_activity(id_or_options, options = {})
           id, options = parse_args(id_or_options, options)
-          validate_deprecated_attributes!(options)
           Strava::Models::Activity.new(put("activities/#{id}", options))
-        end
-
-        private
-
-        def validate_deprecated_attributes!(options)
-          return unless attribute_deprecated?(options)
-
-          deprecated_attributes_uniq = DEPRECATED_ATTRIBUTES.map(&:to_sym).uniq.join(', ')
-          raise ArgumentError, "Don't use any of the deprecated attributes: \"#{deprecated_attributes_uniq}\""
-        end
-
-        def attribute_deprecated?(options)
-          DEPRECATED_ATTRIBUTES.any? do |attribute|
-            options.keys.include?(attribute)
-          end
         end
       end
     end
