@@ -125,7 +125,7 @@ module Strava
         #   The description of the activity.
         # @option options [String] :name
         #   The name of the activity.
-        # @option options [String] :type
+        # @option options [String] :sport_type
         #   Activity type.
         # @option options [String] :gear_id
         #   Identifier for the gear associated with the activity. Specifying "none" clears gear from activity.

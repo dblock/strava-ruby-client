@@ -1,5 +1,9 @@
 # Upgrading Strava-Ruby-Client
 
+### Upgrading to >= 2.0.0
+
+- Dropping `Activity` attribute `type` and `type_emoji` in favor of `sport_type` and `sport_type_emoji`. Creating or updating an `Activity` requires you to use `sport_type` instead of `type`, as refered in the [README](README.md#create-an-activity). For details visit the official [Strava docs: Create Activity](https://developers.strava.com/docs/reference/#api-Activities-createActivity) and the entry from June 15, 2022 in [Strava's V3 API Changelog](https://developers.strava.com/docs/changelog/).
+
 ### Upgrading to >= 1.0.0
 
 - API request will now raise `Strava::Web::RaiseResponseError` instead of `::Strava::Web::Response::RaiseError`
