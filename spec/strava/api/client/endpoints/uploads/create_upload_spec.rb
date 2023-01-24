@@ -47,7 +47,6 @@ RSpec.describe 'Strava::Api::Client#upload_activity' do
     expect(upload_status.processed?).to be(false)
   end
 
-  # rubocop:disable Style/MultilineBlockChain
   it 'uploads a duplicate, that causes a Strava::Errors::UploadError to be raised', vcr: { cassette_name: 'client/create_upload_file_with_error' } do
     upload = client.create_upload(file: Faraday::UploadIO.new(file, 'application/tcx+xml'), data_type: 'tcx')
     expect do
@@ -68,5 +67,4 @@ RSpec.describe 'Strava::Api::Client#upload_activity' do
       expect(upload_error.upload.status).to eql('There was an error processing your activity.')
     end
   end
-  # rubocop:enable Style/MultilineBlockChain
 end

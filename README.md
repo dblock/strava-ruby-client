@@ -64,6 +64,7 @@ Unlike other clients, including [strava-api-v3](https://github.com/jaredholdcrof
     - [Command Line OAuth Workflow](#command-line-oauth-workflow)
   - [Webhooks](#webhooks)
   - [Ratelimit](#ratelimit)
+    - [Exceeded Ratelimit](#exceeded-ratelimit)
 - [Configuration](#configuration)
   - [Web Client Options](#web-client-options)
   - [API Client Options](#api-client-options)
@@ -967,6 +968,16 @@ You can access the Hash containing all limits by calling `to_h`.
   fifteen_minutes_usage: fifteen_minutes_usage,
   fifteen_minutes_remaining: fifteen_minutes_remaining
 }
+```
+
+#### Exceeded Ratelimit
+
+Strava answers with HTTP status code 429, when ratelimits are exceeded. This will in return raise `Strava::Errors::RatelimitError`.
+
+```ruby
+error.is_a?(Strava::Errors::RatelimitError) #=> true
+error.ratelimit.is_a?(Strava::Api::Ratelimit) #=> true
+# see Strava::Api::Ratelimit
 ```
 
 ## Configuration
