@@ -2,15 +2,6 @@
 
 module Strava
   module Api
-    class RatelimitError < StandardError
-      attr_reader :ratelimit
-
-      def initialize(response)
-        super
-        @ratelimit = Strava::Api::Ratelimit.new(response)
-      end
-    end
-
     class Ratelimit
       def initialize(response)
         @response = response

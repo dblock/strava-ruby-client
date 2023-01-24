@@ -18,6 +18,7 @@ require_relative 'strava/deep_copyable'
 
 require_relative 'strava/errors/fault'
 require_relative 'strava/errors/upload_error'
+require_relative 'strava/errors/ratelimit_error'
 
 require_relative 'strava/models/mixins/time'
 require_relative 'strava/models/mixins/distance'
