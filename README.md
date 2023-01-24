@@ -710,7 +710,7 @@ See [Strava::Models::StreamSet](lib/strava/models/stream_set.rb) and [Strava::Mo
 
 #### Upload Activity
 
-Uploads a new data file to create an activity from.
+Uploads a new data file to create an activity from. To check the processing status of the uploaded file, see [Get Upload](#get-upload).
 
 ```ruby
 upload = client.create_upload(
@@ -732,9 +732,10 @@ See [Strava::Models::Upload](lib/strava/models/upload.rb) for all available prop
 
 #### Get Upload
 
-Returns an upload for a given identifier.
+Returns an upload for a given identifier. Raises `Strava::Errors::UploadError` if the upload was faulty and did not result in a created activity. `Strava::Errors::UploadError#upload` contains `Strava::Models::Upload` for further inspection.
 
 ```ruby
+# happy path
 upload = client.upload(2136460097) # => Strava::Models::Upload
 
 upload.id # => 2_136_460_097
@@ -744,7 +745,29 @@ upload.status # => 'Your activity is ready.'
 upload.activity_id # => 1_998_557_443
 ```
 
-See [Strava::Models::Upload](lib/strava/models/upload.rb) for all available properties.
+```ruby
+# with error after upload
+upload = client.upload(2136460097) 
+begin
+  while upload.processing?
+    sleep 1
+    upload = client.upload(2136460097)
+  end
+rescue Strava::Errors::UploadError => upload_error
+  upload_error.status # => 200
+  upload_error.error_status # => 'There was an error processing your activity.'
+  upload_error.message # => '17611540601.tcx duplicate of activity 8309312818'
+  
+  upload_error.upload.external_id # => nil
+  upload_error.upload.activity_id # => nil
+  upload_error.upload.status # => 'There was an error processing your activity.'
+  upload_error.upload.error # => '17611540601.tcx duplicate of activity 8309312818'
+  upload_error.upload.class # => Strava::Models::UploadFailed
+end
+```
+
+See [Strava::Models::Upload](lib/strava/models/upload.rb) for all available properties.  
+See [Strava::Errors::UploadError](lib/strava/errors/upload_failed_error.rb) for all available properties.
 
 ### Pagination
 

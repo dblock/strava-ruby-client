@@ -17,4 +17,5 @@ group :development, :test do
   gem 'rubocop-rspec'
   gem 'vcr'
   gem 'webmock'
+  gem 'webrick', '~> 1.7'
 end

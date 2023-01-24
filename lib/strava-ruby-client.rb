@@ -17,11 +17,12 @@ require_relative 'strava/logger'
 require_relative 'strava/deep_copyable'
 
 require_relative 'strava/errors/fault'
+require_relative 'strava/errors/upload_error'
 
-require_relative 'strava/models/mixins/http_response'
+require_relative 'strava/models/mixins/time'
 require_relative 'strava/models/mixins/distance'
 require_relative 'strava/models/mixins/elevation'
-require_relative 'strava/models/mixins/time'
+require_relative 'strava/models/mixins/http_response'
 require_relative 'strava/models/mixins/start_date_local'
 
 require_relative 'strava/models/model'
