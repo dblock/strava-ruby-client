@@ -2,8 +2,8 @@
 # frozen_string_literal: true
 
 require 'dotenv/load'
-require 'strava-ruby-client'
 require 'webrick'
+require 'strava-ruby-client'
 
 logger = ::Logger.new($stdout)
 logger.level = Logger::INFO
