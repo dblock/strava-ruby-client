@@ -2,8 +2,8 @@
 # frozen_string_literal: true
 
 require 'dotenv/load'
-require 'strava-ruby-client'
 require 'webrick'
+require 'strava-ruby-client'
 
 server = WEBrick::HTTPServer.new(Port: 4242)
 
