@@ -1,5 +1,9 @@
 # Upgrading Strava-Ruby-Client
 
+### Upgrading to >= 2.0.0
+
+- Uploading a file using `create_upload` requires you to check its process `client.updload('your-unique-upload-id')`. As the upload and the processing are two independent steps on Strava's side. From now on, `Strava::Errors::UploadError` will be raised, if Strava failed processing the file, e.g. it being a duplicate.
+
 ### Upgrading to >= 1.0.0
 
 - API request will now raise `Strava::Web::RaiseResponseError` instead of `::Strava::Web::Response::RaiseError`
