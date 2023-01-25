@@ -12,6 +12,8 @@ module Strava
         when 407
           # mimic the behavior that we get with proxy requests with HTTPS
           raise Faraday::ConnectionFailed, %(407 "Proxy Authentication Required ")
+        when 429
+          raise Strava::Errors::RatelimitError.new(env, 'Too Many Requests')
         when CLIENT_ERROR_STATUSES
           raise Strava::Errors::Fault, response_values(env)
         end

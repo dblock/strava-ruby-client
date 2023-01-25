@@ -22,3 +22,7 @@ Metrics:
 
 Layout/LineLength:
   Max: 256
+
+Style/MultilineBlockChain:
+  Exclude:
+    - spec/**/*

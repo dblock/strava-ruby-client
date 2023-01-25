@@ -9,6 +9,20 @@ module Strava
         @body = response.body
       end
 
+      def exceeded
+        return false unless limit?
+
+        @exceeded ||= if fifteen_minutes_remaining && fifteen_minutes_remaining <= 0
+                        { fifteen_minutes_remaining: fifteen_minutes_remaining }
+                      elsif total_day_remaining && total_day_remaining <= 0
+                        { total_day_remaining: total_day_remaining }
+                      end
+      end
+
+      def exceeded?
+        !!exceeded
+      end
+
       def to_s
         to_h.map do |k, v|
           "#{k}: #{v}"
