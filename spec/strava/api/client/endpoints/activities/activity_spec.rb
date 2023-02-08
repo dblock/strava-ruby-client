@@ -307,6 +307,7 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
            athlete
            name
            description
+           type
            sport_type
            workout_type
            external_id
