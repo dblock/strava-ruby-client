@@ -1,3 +1,8 @@
+### 1.0.1 (next)
+
+* [#73](https://github.com/dblock/strava-ruby-client/pull/73): Fixes serialization causing `stack level too deep` - [@simonneutert](https://github.com/simonneutert).
+* Your contribution here.
+
 ### 1.0.0 (2022/12/29)
 
 * [#48](https://github.com/dblock/strava-ruby-client/pull/55): Removed `client.running_races` - [@simonneutert](https://github.com/simonneutert).

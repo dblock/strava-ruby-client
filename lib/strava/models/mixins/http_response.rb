@@ -7,7 +7,16 @@ module Strava
         extend ActiveSupport::Concern
 
         included do
-          property 'http_response', transform_with: ->(v) { Strava::Web::ApiResponse.new(v) }
+          attr_reader :input
+
+          def initialize(obj)
+            @input = obj
+            super
+          end
+
+          def http_response
+            @http_response ||= Strava::Web::ApiResponse.new(input['http_response'])
+          end
         end
       end
     end
