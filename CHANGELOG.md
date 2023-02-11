@@ -1,3 +1,7 @@
+### 1.0.2 (Next)
+
+* Your contribution here.
+
 ### 1.0.1 (2023/02/11)
 
 * [#73](https://github.com/dblock/strava-ruby-client/pull/73): Fixes serialization causing `stack level too deep` - [@simonneutert](https://github.com/simonneutert).
