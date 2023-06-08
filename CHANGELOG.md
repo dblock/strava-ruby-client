@@ -1,6 +1,7 @@
-### 1.0.2 (Next)
+### 1.1.0 (Next)
 
 * Your contribution here.
+* [#78](https://github.com/dblock/strava-ruby-client/pull/78): Drops supported endpoint/method to retrieve photos explicitly - [@simonneutert](https://github.com/simonneutert).
 
 ### 1.0.1 (2023/02/11)
 
