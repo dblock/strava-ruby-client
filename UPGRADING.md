@@ -1,5 +1,9 @@
 # Upgrading Strava-Ruby-Client
 
+### Upgrading to >= 1.1.0
+
+- The method `Client#activity_photos` to retrieve an activity's photos has been removed. The Strava API offers no official support for this. See [#76](https://github.com/dblock/strava-ruby-client/issues/76) for details.
+
 ### Upgrading to >= 1.0.0
 
 - API request will now raise `Strava::Web::RaiseResponseError` instead of `::Strava::Web::Response::RaiseError`
