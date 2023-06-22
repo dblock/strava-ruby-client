@@ -1,4 +1,4 @@
-### 2.0.0 (Next)
+### 2.0.0 (2023/6/22)
 
 * [#77](https://github.com/dblock/strava-ruby-client/pull/77): Drops unsupported endpoint/method `activity_photos` - [@simonneutert](https://github.com/simonneutert).
 * [#62](https://github.com/dblock/strava-ruby-client/pull/68): Drops `Activity#type` attribute as it is being deprecated by Strava, dropping `Activity#type_emoji` with it - [@simonneutert](https://github.com/simonneutert).
@@ -6,7 +6,6 @@
 * [#69](https://github.com/dblock/strava-ruby-client/pull/69): Raises `Strava::Api::RatelimitError`, when API ratelimit exceeded - [@simonneutert](https://github.com/simonneutert).
 * [#74](https://github.com/dblock/strava-ruby-client/pull/74): Fixes serialization causing `stack level too deep` - [@simonneutert](https://github.com/simonneutert).
 * [#75](https://github.com/dblock/strava-ruby-client/pull/75): Fixes DangerBot deprecation warning for `check` of TOC - [@simonneutert](https://github.com/simonneutert).
-* Your contribution here.
 
 ### 1.0.0 (2022/12/29)
 
