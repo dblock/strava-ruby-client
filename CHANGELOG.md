@@ -1,3 +1,7 @@
+### 2.0.1 (Next)
+
+* Your contribution here.
+
 ### 2.0.0 (2023/6/22)
 
 * [#77](https://github.com/dblock/strava-ruby-client/pull/77): Drops unsupported endpoint/method `activity_photos` - [@simonneutert](https://github.com/simonneutert).
