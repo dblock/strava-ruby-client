@@ -1,5 +1,24 @@
 # Upgrading Strava-Ruby-Client
 
+### Upgrading to >= 2.1.0
+
+The change in [#80](https://github.com/dblock/strava-ruby-client/pull/80) removes default values for Faraday's SSL settings `ca_file` and `ca_path`.
+
+If you previously relied on `OpenSSL::X509::DEFAULT_CERT_FILE` or `OpenSSL::X509::DEFAULT_CERT_DIR` to set these values, you must now do so explicitly.
+
+```ruby
+Strava::Web::Client.configure do |config|
+  config.ca_file = OpenSSL::X509::DEFAULT_CERT_FILE
+  config.ca_path = OpenSSL::X509::DEFAULT_CERT_DIR
+end
+```
+
+or
+
+```ruby
+client = Strava::Api::Client.new(ca_file: OpenSSL::X509::DEFAULT_CERT_FILE, ca_path: OpenSSL::X509::DEFAULT_CERT_DIR)
+```
+
 ### Upgrading to >= 2.0.0
 
 - Dropping `Activity` attribute `type` and `type_emoji` in favor of `sport_type` and `sport_type_emoji`. Creating or updating an `Activity` requires you to use `sport_type` instead of `type`, as refered in the [README](README.md#create-an-activity). For details visit the official [Strava docs: Create Activity](https://developers.strava.com/docs/reference/#api-Activities-createActivity) and the entry from June 15, 2022 in [Strava's V3 API Changelog](https://developers.strava.com/docs/changelog/).

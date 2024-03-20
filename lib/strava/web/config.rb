@@ -19,8 +19,8 @@ module Strava
 
       def reset
         self.user_agent = "Strava Ruby Client/#{Strava::VERSION}"
-        self.ca_path = defined?(OpenSSL) ? OpenSSL::X509::DEFAULT_CERT_DIR : nil
-        self.ca_file = defined?(OpenSSL) ? OpenSSL::X509::DEFAULT_CERT_FILE : nil
+        self.ca_path = nil
+        self.ca_file = nil
         self.proxy = nil
         self.logger = nil
         self.timeout = nil

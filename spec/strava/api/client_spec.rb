@@ -15,4 +15,35 @@ RSpec.describe Strava::Api::Client do
       expect { subject.activity(id: 1_946_417_534) }.to raise_error Faraday::ResourceNotFound
     end
   end
+  context 'SSL certificates' do
+    context 'default' do
+      let(:client) { Strava::Api::Client.new }
+      it 'does not set SSL certs' do
+        expect(client.ca_file).to be nil
+        expect(client.ca_path).to be nil
+      end
+    end
+    context 'when set via constructor' do
+      let(:client) { Strava::Api::Client.new(ca_file: OpenSSL::X509::DEFAULT_CERT_FILE, ca_path: OpenSSL::X509::DEFAULT_CERT_DIR) }
+      it 'sets SSL certs' do
+        expect(client.ca_file).to eq OpenSSL::X509::DEFAULT_CERT_FILE
+        expect(client.ca_path).to eq OpenSSL::X509::DEFAULT_CERT_DIR
+        expect(client.send(:connection).ssl.ca_file).to eq OpenSSL::X509::DEFAULT_CERT_FILE
+        expect(client.send(:connection).ssl.ca_path).to eq OpenSSL::X509::DEFAULT_CERT_DIR
+      end
+    end
+    context 'when set via config' do
+      before do
+        Strava::Web.configure do |config|
+          config.ca_file = OpenSSL::X509::DEFAULT_CERT_FILE
+          config.ca_path = OpenSSL::X509::DEFAULT_CERT_DIR
+        end
+      end
+      let(:client) { Strava::Api::Client.new }
+      it 'sets SSL certificates' do
+        expect(client.send(:connection).ssl.ca_file).to eq OpenSSL::X509::DEFAULT_CERT_FILE
+        expect(client.send(:connection).ssl.ca_path).to eq OpenSSL::X509::DEFAULT_CERT_DIR
+      end
+    end
+  end
 end
