@@ -1,3 +1,7 @@
+### 2.1.1 (Next)
+
+* Your contribution here.
+
 ### 2.1.0 (2024/3/20)
 
 * [#80](https://github.com/dblock/strava-ruby-client/pull/80): Removes default values for Faraday's SSL settings `ca_file` and `ca_path` - [@dblock](https://github.com/dblock).
