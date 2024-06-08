@@ -14,6 +14,7 @@ Unlike other clients, including [strava-api-v3](https://github.com/jaredholdcrof
   - [Activities](#activities)
     - [Create an Activity](#create-an-activity)
     - [Get Activity](#get-activity)
+    - [List Activity Photos](#list-activity-photos)
     - [List Activity Comments](#list-activity-comments)
     - [List Activity Kudoers](#list-activity-kudoers)
     - [List Activity Laps](#list-activity-laps)
@@ -148,6 +149,29 @@ google_image_url = "https://maps.googleapis.com/maps/api/staticmap?maptype=roadm
 ```
 
 See [Strava::Models::Map](lib/strava/models/map.rb) for all available properties.
+
+#### List Activity Photos
+
+Returns the photos on the given activity. This API is undocumented.
+
+```ruby
+photos = client.activity_photos(1982980795) # => Array[Strava::Models::Photo]
+
+photo = photos.first # => Strava::Models::Photo
+
+photo.id # => nil
+photo.unique_id # => '65889142-538D-4EE5-96F5-3DC3B773B1E3'
+photo.urls # => { '0' => 'https://dgtzuqphqg23d.cloudfront.net/eb4DMJ2hJW3k_g9URZEMfaJ8rZfHagrNlZRuEZz0osU-29x64.jpg' }
+photo.athlete_id # => 26_462_176
+photo.activity_id # => 1_946_417_534
+photo.activity_name # => 'TCS NYC Marathon 2018'
+photo.created_at # => Time
+photo.uploaded_at # => Time
+photo.sizes # => { '0' => [29, 64] }
+photo.default_photo # => false
+```
+
+See [Strava::Models::Photo](lib/strava/models/photo.rb) for all available properties.
 
 #### List Activity Comments
 
