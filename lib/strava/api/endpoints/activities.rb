@@ -38,6 +38,22 @@ module Strava
         end
 
         #
+        # List activity photos.
+        #
+        # @option options [String] :id
+        #   Activity id.
+        # @option options [Integer] :page
+        #   Page number.
+        # @option options [Integer] :per_page
+        #   Number of items per page. Defaults to 30.
+        #
+        def activity_photos(id_or_options, options = {}, &block)
+          id, options = parse_args(id_or_options, options)
+          options[:size] = 5000 unless options[:size] # to retrieve full size photos
+          paginate "activities/#{id}/photos", options, Strava::Models::Photo, &block
+        end
+
+        #
         # List activity kudoers.
         #
         # @option options [String] :id
