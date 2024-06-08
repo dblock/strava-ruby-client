@@ -6,6 +6,7 @@ gemspec
 
 group :development, :test do
   gem 'dotenv'
+  gem 'faraday-retry'
   gem 'gpx'
   gem 'multi_xml'
   gem 'polylines'
