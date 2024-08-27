@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#activity_comments', vcr: { cassette_name: 'client/activity_comments' } do
-  include_context 'API client'
+  include_context 'with API client'
 
   let(:activity_comments) do
     client.activity_comments(id: 3_958_491_750)
@@ -26,7 +26,7 @@ RSpec.describe 'Strava::Api::Client#activity_comments', vcr: { cassette_name: 'c
     expect(athlete).to be_a Strava::Models::Athlete
     expect(athlete.firstname).to eq 'Dario'
     expect(athlete.lastname).to eq 'S.'
-    expect(athlete.id).to(eq(nil)) # privacy restriction cuts off commenting athlete id
+    expect(athlete.id).to(be_nil) # privacy restriction cuts off commenting athlete id
   end
 
   it 'returns activity comments by id' do

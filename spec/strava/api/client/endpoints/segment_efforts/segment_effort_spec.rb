@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#segment_effort', vcr: { cassette_name: 'client/segment_effort' } do
-  include_context 'API client'
+  include_context 'with API client'
   it 'returns a segment effort' do
     segment_effort = client.segment_effort(id: 41_494_197_089)
     expect(segment_effort).to be_a Strava::Models::SegmentEffort
@@ -42,6 +42,7 @@ RSpec.describe 'Strava::Api::Client#segment_effort', vcr: { cassette_name: 'clie
     segment_effort = client.segment_effort(41_494_197_089)
     expect(segment_effort).to be_a Strava::Models::SegmentEffort
   end
+
   it 'renders a segment\'s date correctly' do
     segment_effort = client.segment_effort(41_494_197_089)
     expect(segment_effort.start_date).to eq Time.new(2018, 6, 22, 12, 42, 43, '-00:00').utc

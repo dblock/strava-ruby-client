@@ -1,3 +1,9 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-rake
+  - rubocop-rspec
+
 AllCops:
   TargetRubyVersion: 2.7
   NewCops: enable
@@ -26,3 +32,21 @@ Layout/LineLength:
 Style/MultilineBlockChain:
   Exclude:
     - spec/**/*
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/FilePath:
+  Exclude:
+    - "spec/strava/version_spec.rb"
+    - "spec/strava/oauth/client_spec.rb"
+    - "spec/strava/oauth/config_spec.rb"
+    - "spec/strava/models/activities/ride_spec.rb"
+    - "spec/strava/models/activities/swim_spec.rb"
+    - "spec/strava/models/activities/run_spec.rb"
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/DescribeClass:
+  Enabled: false

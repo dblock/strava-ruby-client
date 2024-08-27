@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/activity_with_fake_id' } do
-  include_context 'API client'
+  include_context 'with API client'
   it 'returns activity' do
     activity = client.activity(id: 194_641_753_419_464_175_341_946_417_534)
 

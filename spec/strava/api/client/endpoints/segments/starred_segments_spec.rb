@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#starred_segments' do
-  include_context 'API client'
+  include_context 'with API client'
   it 'returns starred segments', vcr: { cassette_name: 'client/starred_segments' } do
     segments = client.starred_segments
     expect(segments).to be_a Enumerable

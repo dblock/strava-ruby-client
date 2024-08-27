@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/activity' } do
-  include_context 'API client'
+  include_context 'with API client'
   it 'returns activity' do
     activity = client.activity(id: 1_946_417_534)
 
@@ -69,8 +69,8 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
     expect(activity.utc_offset).to eq(-18_000.0)
     expect(activity.start_latlng).to eq [40.6, -74.06]
     expect(activity.end_latlng).to eq [40.77, -73.98]
-    expect(activity.location_city).to be nil
-    expect(activity.location_state).to be nil
+    expect(activity.location_city).to be_nil
+    expect(activity.location_state).to be_nil
     expect(activity.location_country).to eq ''
     expect(activity.start_latitude).to eq 40.6
     expect(activity.start_longitude).to eq(-74.06)
@@ -231,7 +231,7 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
 
     expect(segment_effort.achievements).to eq []
     expect(segment_effort.hidden).to be false
-    expect(segment_effort.pr_rank).to eq nil
+    expect(segment_effort.pr_rank).to be_nil
 
     expect(activity.best_efforts).to be_a Enumerable
     best_effort = activity.best_efforts.first
@@ -244,7 +244,7 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
     expect(photos.count).to eq 9
     photo = photos.primary
     expect(photo).to be_a Strava::Models::Photo
-    expect(photo.id).to be nil
+    expect(photo.id).to be_nil
     expect(photo.unique_id).to eq '5e8006d0-8349-40ad-a4ef-72b5e6e82dfe'
     expect(photo.urls).to eq(
       '100' => 'https://dgtzuqphqg23d.cloudfront.net/mo8thQ4Z5qAylUaRZHOWAR1sp16Bo-pp0ggYQKSWiZE-90x128.jpg',
@@ -259,13 +259,13 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
     expect(similar_activities.average_speed).to eq 3.2302713030187236
     expect(similar_activities.resource_state).to eq 2
     expect(similar_activities.effort_count).to eq 1
-    expect(similar_activities.frequency_milestone).to be nil
+    expect(similar_activities.frequency_milestone).to be_nil
     expect(similar_activities.max_average_speed).to eq 3.2302713030187236
     expect(similar_activities.mid_average_speed).to eq 3.2302713030187236
     expect(similar_activities.min_average_speed).to eq 3.2302713030187236
-    expect(similar_activities.mid_speed).to be nil
-    expect(similar_activities.min_speed).to be nil
-    expect(similar_activities.speeds).to be nil
+    expect(similar_activities.mid_speed).to be_nil
+    expect(similar_activities.min_speed).to be_nil
+    expect(similar_activities.speeds).to be_nil
 
     trend = similar_activities.trend
     expect(trend).to be_a Strava::Models::Trend
@@ -375,7 +375,7 @@ end
 
 # uses the cassette: 'client/activity' but with status changed to 429 and ratelimit exceeded
 RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/activity_with_ratelimit_exceeded' } do
-  include_context 'API client'
+  include_context 'with API client'
   it 'raises Strava::Errors::RatelimitError' do
     expect do
       client.activity(1_946_417_534)

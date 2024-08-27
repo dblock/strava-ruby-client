@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#activity_zones', vcr: { cassette_name: 'client/activity_zones' } do
-  include_context 'API client'
+  include_context 'with API client'
   it 'returns activity zones' do
     activity_zones = client.activity_zones(id: 1_946_417_534)
     expect(activity_zones).to be_a Enumerable
@@ -23,6 +23,7 @@ RSpec.describe 'Strava::Api::Client#activity_zones', vcr: { cassette_name: 'clie
     expect(activity_zone.points).to eq 452
     expect(activity_zone.custom_zones).to be false
   end
+
   it 'returns activity zones by id' do
     activity_zones = client.activity_zones(1_946_417_534)
     expect(activity_zones).to be_a Enumerable

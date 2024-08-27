@@ -5,7 +5,7 @@ require 'dotenv/load'
 require 'webrick'
 require 'strava-ruby-client'
 
-logger = ::Logger.new($stdout)
+logger = Logger.new($stdout)
 logger.level = Logger::INFO
 
 client = Strava::Webhooks::Client.new(

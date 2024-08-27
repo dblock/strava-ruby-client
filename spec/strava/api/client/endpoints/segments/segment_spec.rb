@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#segment', vcr: { cassette_name: 'client/segment' } do
-  include_context 'API client'
+  include_context 'with API client'
   it 'returns a segment' do
     segment = client.segment(id: 1_109_718)
     expect(segment.resource_state).to eq 3
@@ -23,9 +23,9 @@ RSpec.describe 'Strava::Api::Client#segment', vcr: { cassette_name: 'client/segm
     expect(segment.start_longitude).to eq(-73.98271151818335)
     expect(segment.end_latitude).to eq 40.73427177965641
     expect(segment.end_longitude).to eq(-73.97865023463964)
-    expect(segment.private).to eq false
-    expect(segment.hazardous).to eq false
-    expect(segment.starred).to eq false
+    expect(segment.private).to be false
+    expect(segment.hazardous).to be false
+    expect(segment.starred).to be false
     expect(segment.created_at).to be_a Time
     expect(segment.updated_at).to be_a Time
     expect(segment.map).to be_a Strava::Models::Map
@@ -34,6 +34,7 @@ RSpec.describe 'Strava::Api::Client#segment', vcr: { cassette_name: 'client/segm
     expect(segment.star_count).to eq 1
     expect(segment.athlete_segment_stats).to be_a Strava::Models::SegmentStats
   end
+
   it 'returns a segment by id' do
     segment = client.segment(1_109_718)
     expect(segment.resource_state).to eq 3

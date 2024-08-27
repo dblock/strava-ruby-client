@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#star_segment' do
-  include_context 'API client'
+  include_context 'with API client'
   #   it 'stars a segment', vcr: { cassette_name: 'client/star_segment' } do
   #     segment = client.star_segment(id: 50272077110, starred: true)
   #     expect(segment.resource_state).to eq 3

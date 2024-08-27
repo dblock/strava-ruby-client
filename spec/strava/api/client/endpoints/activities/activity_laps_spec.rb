@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#activity_laps', vcr: { cassette_name: 'client/activity_laps' } do
-  include_context 'API client'
+  include_context 'with API client'
   it 'returns activity laps' do
     activity_laps = client.activity_laps(id: 1_946_417_534)
     expect(activity_laps).to be_a Enumerable
@@ -31,6 +31,7 @@ RSpec.describe 'Strava::Api::Client#activity_laps', vcr: { cassette_name: 'clien
     expect(lap.split).to eq 1
     expect(lap.pace_zone).to eq 2
   end
+
   it 'returns activity laps by id' do
     activity_laps = client.activity_laps(1_946_417_534)
     expect(activity_laps).to be_a Enumerable

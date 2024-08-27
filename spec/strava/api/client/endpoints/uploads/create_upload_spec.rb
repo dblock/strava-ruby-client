@@ -3,8 +3,9 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#upload_activity' do
-  include_context 'API client'
+  include_context 'with API client'
   let(:file) { 'spec/fixtures/strava/files/17611540601.tcx' }
+
   it 'uploads an activity successfully', vcr: { cassette_name: 'client/create_upload' } do
     upload = client.create_upload(
       file: Faraday::UploadIO.new(file, 'application/tcx+xml'),
@@ -14,9 +15,9 @@ RSpec.describe 'Strava::Api::Client#upload_activity' do
     )
 
     expect(upload.id).to be_a(Integer)
-    expect(upload.error).to be(nil)
+    expect(upload.error).to be_nil
     expect(upload.status).to eq('Your activity is still being processed.')
-    expect(upload.activity_id).to eq(nil)
+    expect(upload.activity_id).to be_nil
 
     # strava needs some time, to process the uploaded file, loop until processing finished
     upload_status = client.upload(upload.id)
@@ -41,8 +42,8 @@ RSpec.describe 'Strava::Api::Client#upload_activity' do
     expect(upload_status).to be_a(Strava::Models::Upload)
     expect(upload_status.status).to eql('Your activity is still being processed.')
     expect(upload_status.id).to be_a(Integer)
-    expect(upload_status.external_id).to be(nil)
-    expect(upload_status.error).to be(nil)
+    expect(upload_status.external_id).to be_nil
+    expect(upload_status.error).to be_nil
     expect(upload_status.processing?).to be(true)
     expect(upload_status.processed?).to be(false)
   end
