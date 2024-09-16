@@ -13,7 +13,7 @@ group :development, :test do
   gem 'pry'
   gem 'rake'
   gem 'rspec'
-  gem 'rubocop', '1.30.0' # Lock to specific version to avoid breaking cops/changes
+  gem 'rubocop', '1.66.1'
   gem 'rubocop-rake'
   gem 'rubocop-rspec'
   gem 'vcr'
