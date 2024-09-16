@@ -36,7 +36,7 @@ Style/MultilineBlockChain:
 RSpec/MultipleExpectations:
   Enabled: false
 
-RSpec/FilePath:
+RSpec/SpecFilePathFormat:
   Exclude:
     - "spec/strava/version_spec.rb"
     - "spec/strava/oauth/client_spec.rb"
