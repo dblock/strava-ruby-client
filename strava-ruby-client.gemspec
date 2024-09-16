@@ -11,8 +11,8 @@ Gem::Specification.new do |s|
   s.authors = ['Daniel Doubrovkine']
   s.email = 'dblock@dblock.org'
   s.platform = Gem::Platform::RUBY
-  s.required_ruby_version = '>= 2.7'
-  s.required_rubygems_version = '>= 1.3.6'
+  s.required_ruby_version = '>= 3.0'
+  s.required_rubygems_version = '>= 2.5'
   s.files = Dir['{bin,lib}/**/*'] + ['README.md', 'LICENSE.md', 'CHANGELOG.md']
   s.require_paths = ['lib']
   s.homepage = 'http://github.com/dblock/strava-ruby-client'
