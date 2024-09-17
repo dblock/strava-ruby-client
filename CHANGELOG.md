@@ -1,3 +1,7 @@
+### 2.2.1 (Next)
+
+* Your contribution here.
+
 ### 2.2.0 (2024/9/17)
 
 * [#83](https://github.com/dblock/strava-ruby-client/pull/83): Adds back activity photos - [@dillon-co](https://github.com/dillon-co).
