@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#gear', vcr: { cassette_name: 'client/gear' } do
-  include_context 'API client'
+  include_context 'with API client'
   it 'returns gear' do
     gear = client.gear(id: 'b2338517')
     expect(gear).to be_a Strava::Models::Gear
@@ -20,6 +20,7 @@ RSpec.describe 'Strava::Api::Client#gear', vcr: { cassette_name: 'client/gear' }
     expect(gear.weight).to eq 9.1
     expect(gear.retired).to be false
   end
+
   it 'returns gear by id' do
     gear = client.gear('b2338517')
     expect(gear).to be_a Strava::Models::Gear

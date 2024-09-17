@@ -52,6 +52,8 @@ Add the next release to [CHANGELOG.md](CHANGELOG.md).
 
 Increment the third version number in [lib/strava/version.rb](lib/strava/version.rb).
 
+Run `bundle install` to update the Gemfile.lock.
+
 Commit your changes.
 
 ```

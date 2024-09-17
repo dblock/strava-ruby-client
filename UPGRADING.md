@@ -1,5 +1,9 @@
 # Upgrading Strava-Ruby-Client
 
+### Upgrading to >= 2.2.0
+
+Support for Ruby 2.x has been dropped. The minimum required Ruby version is now 3.0.0.
+
 ### Upgrading to >= 2.1.0
 
 The change in [#80](https://github.com/dblock/strava-ruby-client/pull/80) removes default values for Faraday's SSL settings `ca_file` and `ca_path`.

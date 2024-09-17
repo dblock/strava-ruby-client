@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/activity_ride' } do
-  include_context 'API client'
+  include_context 'with API client'
   it 'returns activity' do
     activity = client.activity(id: 3_958_491_750)
 
@@ -57,11 +57,11 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
     expect(activity.utc_offset).to eq(7_200.0)
     expect(activity.start_latlng).to eq [49.197681, 7.883777]
     expect(activity.end_latlng).to eq [49.034333, 7.94529]
-    expect(activity.location_city).to be nil
-    expect(activity.location_state).to be nil
+    expect(activity.location_city).to be_nil
+    expect(activity.location_state).to be_nil
     expect(activity.location_country).to eq 'Deutschland'
-    expect(activity.start_latitude).to be nil
-    expect(activity.start_longitude).to be nil
+    expect(activity.start_latitude).to be_nil
+    expect(activity.start_longitude).to be_nil
     expect(activity.achievement_count).to eq 1
     expect(activity.kudos_count).to eq 70
     expect(activity.comment_count).to eq 3
@@ -161,7 +161,7 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
     expect(lap.max_heartrate).to eq 175.0
     expect(lap.lap_index).to eq 1
     expect(lap.split).to eq 1
-    expect(lap.pace_zone).to be nil
+    expect(lap.pace_zone).to be_nil
 
     gear = activity.gear
     expect(gear).to be_a Strava::Models::Gear
@@ -209,17 +209,17 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
     expect(segment.country).to eq 'Germany'
     expect(segment.start_latlng).to eq [49.198008, 7.883581]
     expect(segment.end_latlng).to eq [49.206226, 7.880881]
-    expect(segment.start_latitude).to be nil
-    expect(segment.start_longitude).to be nil
-    expect(segment.end_latitude).to be nil
-    expect(segment.end_longitude).to be nil
+    expect(segment.start_latitude).to be_nil
+    expect(segment.start_longitude).to be_nil
+    expect(segment.end_latitude).to be_nil
+    expect(segment.end_longitude).to be_nil
     expect(segment.private).to be false
     expect(segment.hazardous).to be false
     expect(segment.starred).to be false
 
     expect(segment_effort.achievements).to eq []
     expect(segment_effort.hidden).to be false
-    expect(segment_effort.pr_rank).to be nil
+    expect(segment_effort.pr_rank).to be_nil
 
     expect(activity.photos).to be_a Strava::Models::Photos
     photos = activity.photos
@@ -227,7 +227,7 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
     expect(photos.count).to eq 1
     photo = photos.primary
     expect(photo).to be_a Strava::Models::Photo
-    expect(photo.id).to be nil
+    expect(photo.id).to be_nil
     expect(photo.unique_id).to eq 'F775717B-D1C1-443A-AD99-3D9A80FF11C9'
     expect(photo.urls).to eq(
       '100' => 'https://dgtzuqphqg23d.cloudfront.net/BO0H-YeNRZOfFhc0PctUheAKchsY2ll4vsagU58MNKg-128x96.jpg',
@@ -239,6 +239,7 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
 
     expect(activity.available_zones).to eq %w[heartrate power]
   end
+
   it 'returns activity by id' do
     activity = client.activity(3_958_491_750)
     expect(activity).to be_a Strava::Models::Activity

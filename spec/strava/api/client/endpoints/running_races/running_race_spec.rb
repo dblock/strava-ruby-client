@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#running_race', vcr: { cassette_name: 'client/running_race' } do
-  include_context 'API client'
+  include_context 'with API client'
   it 'returns a running race' do
     running_race = client.running_race(id: 1577)
     expect(running_race).to be_a Strava::Models::RunningRace
@@ -24,6 +24,7 @@ RSpec.describe 'Strava::Api::Client#running_race', vcr: { cassette_name: 'client
     expect(running_race.strava_url).to eq 'https://www.strava.com/running-races/2018-walt-disney-world-marathon-10k'
     expect(running_race.website_url).to eq 'https://www.rundisney.com/disneyworld-marathon/'
   end
+
   it 'returns a running race by id' do
     running_race = client.running_race(1577)
     expect(running_race).to be_a Strava::Models::RunningRace

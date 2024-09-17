@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#route', vcr: { cassette_name: 'client/route' } do
-  include_context 'API client'
+  include_context 'with API client'
   it 'returns a route' do
     route = client.route(id: 16_341_573)
     expect(route).to be_a Strava::Models::Route
@@ -46,10 +46,11 @@ RSpec.describe 'Strava::Api::Client#route', vcr: { cassette_name: 'client/route'
     expect(segment.start_longitude).to eq(-73.98271151818335)
     expect(segment.end_latitude).to eq 40.73427177965641
     expect(segment.end_longitude).to eq(-73.97865023463964)
-    expect(segment.private).to eq false
-    expect(segment.hazardous).to eq false
-    expect(segment.starred).to eq false
+    expect(segment.private).to be false
+    expect(segment.hazardous).to be false
+    expect(segment.starred).to be false
   end
+
   it 'returns a route by id' do
     route = client.route(16_341_573)
     expect(route).to be_a Strava::Models::Route

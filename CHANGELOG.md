@@ -1,7 +1,8 @@
-### 2.1.1 (Next)
+### 2.2.0 (Next)
 
-* [#84](https://github.com/dblock/strava-ruby-client/pull/84): Adds back activity photos (finished PR #83) - [@simonneutert](https://github.com/simonneutert).
 * [#83](https://github.com/dblock/strava-ruby-client/pull/83): Adds back activity photos - [@dillon-co](https://github.com/dillon-co).
+* [#84](https://github.com/dblock/strava-ruby-client/pull/84): Adds back activity photos (finished PR #83) - [@simonneutert](https://github.com/simonneutert).
+* [#85](https://github.com/dblock/strava-ruby-client/pull/85): Lays groundwork to v3.0.0 of the gem (ruby3, newest rubocop, rubocop-rake and rubocop-rspec) - [@simonneutert](https://github.com/simonneutert).
 * Your contribution here.
 
 ### 2.1.0 (2024/3/20)

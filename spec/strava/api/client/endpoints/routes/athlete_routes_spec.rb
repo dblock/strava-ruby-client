@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#athlete_routes', vcr: { cassette_name: 'client/athlete_routes' } do
-  include_context 'API client'
+  include_context 'with API client'
   it 'returns routes' do
     routes = client.athlete_routes(id: 26_462_176)
     expect(routes).to be_a Enumerable
@@ -28,6 +28,7 @@ RSpec.describe 'Strava::Api::Client#athlete_routes', vcr: { cassette_name: 'clie
     expect(route.moving_time).to eq 4865
     expect(route.moving_time_in_hours_s).to eq '1h21m5s'
   end
+
   it 'returns routes by id' do
     routes = client.athlete_routes(26_462_176)
     expect(routes).to be_a Enumerable

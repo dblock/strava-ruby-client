@@ -3,9 +3,11 @@
 require 'spec_helper'
 
 describe Strava::Web::Client do
+  let(:client) { described_class.new }
+
   describe '#endpoint' do
     it 'is not implemented' do
-      expect { subject.endpoint }.to raise_error NotImplementedError
+      expect { client.endpoint }.to raise_error NotImplementedError
     end
   end
 end

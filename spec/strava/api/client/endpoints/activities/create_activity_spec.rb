@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#create_activity', vcr: { cassette_name: 'client/create_activity' } do
-  include_context 'API client'
+  include_context 'with API client'
   it 'creates an activity' do
     activity = client.create_activity(
       name: 'strava-ruby-client activity',

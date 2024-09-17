@@ -3,12 +3,12 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#athlete_stats', vcr: { cassette_name: 'client/athlete_stats' } do
-  include_context 'API client'
+  include_context 'with API client'
   it 'returns athlete stats' do
     athlete_stats = client.athlete_stats(id: 26_462_176)
     expect(athlete_stats).to be_a Strava::Models::ActivityStats
-    expect(athlete_stats.biggest_ride_distance).to eq nil
-    expect(athlete_stats.biggest_climb_elevation_gain).to eq nil
+    expect(athlete_stats.biggest_ride_distance).to be_nil
+    expect(athlete_stats.biggest_climb_elevation_gain).to be_nil
     expect(athlete_stats.recent_ride_totals).to be_a Strava::Models::ActivityTotal
     expect(athlete_stats.recent_run_totals).to be_a Strava::Models::ActivityTotal
     recent_run_totals = athlete_stats.recent_run_totals
@@ -30,6 +30,7 @@ RSpec.describe 'Strava::Api::Client#athlete_stats', vcr: { cassette_name: 'clien
     expect(athlete_stats.all_run_totals).to be_a Strava::Models::ActivityTotal
     expect(athlete_stats.all_swim_totals).to be_a Strava::Models::ActivityTotal
   end
+
   it 'returns athlete stats by id' do
     athlete_stats = client.athlete_stats(26_462_176)
     expect(athlete_stats).to be_a Strava::Models::ActivityStats

@@ -51,10 +51,10 @@ module Strava
       # @raise [NoMethodError]
       # @return [any]
       #
-      def operate_on_response_body!(method_symbol, *args, &block)
+      def operate_on_response_body!(method_symbol, ...)
         case @response.body
         when Hash
-          @response.body.send(method_symbol, *args, &block)
+          @response.body.send(method_symbol, ...)
         else
           raise NoMethodError
         end
@@ -75,12 +75,12 @@ module Strava
         end
       end
 
-      def method_missing(method_symbol, *args, &block)
+      def method_missing(method_symbol, ...)
         case @response
         when Array
-          @response.send(method_symbol, *args, &block)
+          @response.send(method_symbol, ...)
         else
-          operate_on_response_body!(method_symbol, *args, &block)
+          operate_on_response_body!(method_symbol, ...)
         end
       end
 

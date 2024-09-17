@@ -13,7 +13,7 @@ module Strava
       end
 
       def request(method, path, options)
-        super method, path, { client_id: client_id, client_secret: client_secret }.merge(options)
+        super(method, path, { client_id: client_id, client_secret: client_secret }.merge(options))
       end
 
       #

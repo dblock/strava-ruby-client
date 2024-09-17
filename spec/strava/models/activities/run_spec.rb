@@ -5,13 +5,16 @@ require 'spec_helper'
 RSpec.describe Strava::Models::Activity do
   let(:fixtures) { 'spec/fixtures/strava/models/activities' }
   let(:json) { JSON.parse(File.read("#{fixtures}/#{activity_type}.json")) }
-  let(:activity) { Strava::Models::Activity.new(json) }
+  let(:activity) { described_class.new(json) }
+
   describe 'run' do
     let(:activity_type) { 'run' }
+
     it 'exposes custom properties' do
       expect(activity.strava_url).to eq 'https://www.strava.com/activities/1477353766'
       expect(activity.sport_type_emoji).to eq '🏃'
     end
+
     it 'converts distances' do
       expect(activity.distance_in_miles).to eq 14.005431252
       expect(activity.distance_in_miles_s).to eq '14.01mi'
@@ -23,6 +26,7 @@ RSpec.describe Strava::Models::Activity do
       expect(activity.distance_in_kilometers_s).to eq '22.54km'
       expect(activity.distance_s).to eq '22.54km'
     end
+
     it 'converts pace and speed' do
       expect(activity.moving_time_in_hours_s).to eq '2h6m26s'
       expect(activity.elapsed_time_in_hours_s).to eq '2h8m6s'
@@ -35,6 +39,7 @@ RSpec.describe Strava::Models::Activity do
       expect(activity.miles_per_hour_s).to eq '6.6mph'
       expect(activity.speed_s).to eq '10.7km/h'
     end
+
     it 'converts elevation' do
       expect(activity.total_elevation_gain_in_feet).to eq(-475.39371600000004)
       expect(activity.total_elevation_gain_in_meters).to eq(-144.9)

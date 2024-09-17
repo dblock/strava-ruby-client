@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#segment_efforts', vcr: { cassette_name: 'client/segment_efforts' } do
-  include_context 'API client'
+  include_context 'with API client'
   it 'returns segment efforts' do
     segment_efforts = client.segment_efforts(id: 1_109_718)
     expect(segment_efforts).to be_a Enumerable
@@ -32,6 +32,7 @@ RSpec.describe 'Strava::Api::Client#segment_efforts', vcr: { cassette_name: 'cli
     expect(segment_effort.average_heartrate).to eq 152.2
     expect(segment_effort.max_heartrate).to eq 158.0
   end
+
   it 'returns segment efforts by id' do
     segment_efforts = client.segment_efforts(1_109_718)
     expect(segment_efforts).to be_a Enumerable

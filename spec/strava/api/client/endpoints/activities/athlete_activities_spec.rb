@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#athlete_activities' do
-  include_context 'API client'
+  include_context 'with API client'
   describe '#athlete_activities' do
     it 'returns athlete activities', vcr: { cassette_name: 'client/athlete_activities' } do
       athlete_activities = client.athlete_activities
@@ -15,12 +15,14 @@ RSpec.describe 'Strava::Api::Client#athlete_activities' do
       expect(activity.map).to be_a Strava::Models::Map
       expect(activity.start_date).to be_a Time
     end
+
     it 'returns athlete activities for December 2018 only', vcr: { cassette_name: 'client/athlete_activities_december_2018' } do
       athlete_activities = client.athlete_activities(before: Time.at(1_543_683_600), after: Time.at(1_541_088_000))
       expect(athlete_activities).to be_a Enumerable
       expect(athlete_activities.count).to eq 7
     end
   end
+
   describe 'paginated #athlete_activities', vcr: { cassette_name: 'client/all_athlete_activities' } do
     let(:athlete_activities) do
       all = []
@@ -29,6 +31,7 @@ RSpec.describe 'Strava::Api::Client#athlete_activities' do
       end
       all
     end
+
     it 'returns athlete activities' do
       expect(athlete_activities).to be_a Enumerable
       expect(athlete_activities.count).to eq 40
@@ -36,6 +39,7 @@ RSpec.describe 'Strava::Api::Client#athlete_activities' do
       expect(athlete_activities.map(&:id).uniq.count).to eq athlete_activities.count
     end
   end
+
   describe 'paginated #athlete_activities by 72', vcr: { cassette_name: 'client/all_athlete_activities_by_72' } do
     let(:athlete_activities) do
       all = []
@@ -44,6 +48,7 @@ RSpec.describe 'Strava::Api::Client#athlete_activities' do
       end
       all
     end
+
     it 'returns athlete activities' do
       expect(athlete_activities).to be_a Enumerable
       expect(athlete_activities.count).to eq 130

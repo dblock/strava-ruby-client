@@ -48,8 +48,8 @@ module Strava
 
       private
 
-      def method_missing(method_symbol, *args, &block)
-        @collection.send(method_symbol, *args, &block)
+      def method_missing(method_symbol, ...)
+        @collection.send(method_symbol, ...)
       end
 
       def respond_to_missing?(method_name, include_private = false)
