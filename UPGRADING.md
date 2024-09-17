@@ -1,6 +1,6 @@
 # Upgrading Strava-Ruby-Client
 
-### Upgrading to >= 3.0.0
+### Upgrading to >= 2.2.0
 
 Support for Ruby 2.x has been dropped. The minimum required Ruby version is now 3.0.0.
 
