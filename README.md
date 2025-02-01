@@ -154,15 +154,22 @@ See [Strava::Models::Activity](lib/strava/models/activity.rb) for all available 
 Use `map.summary_polyline` and combine with [polylines](https://github.com/joshuaclayton/polylines) to parse the activity map and to construct a Google maps URL with start and end markers.
 
 ```ruby
+require 'CGI'
+require 'polylines'
+
 map = activity.map # => Strava::Models::Map
 
 decoded_summary_polyline = Polylines::Decoder.decode_polyline(map.summary_polyline)
 start_latlng = decoded_summary_polyline[0]
 end_latlng = decoded_summary_polyline[-1]
 
+# Google Maps Static API
 google_maps_api_key = ENV['GOOGLE_STATIC_MAPS_API_KEY']
+google_image_url = "https://maps.googleapis.com/maps/api/staticmap?maptype=roadmap&path=enc:#{CGI.escape(map.summary_polyline)}&size=800x800&markers=color:yellow|label:S|#{start_latlng[0]},#{start_latlng[1]}&markers=color:green|label:F|#{end_latlng[0]},#{end_latlng[1]}&key=#{google_maps_api_key}"
 
-google_image_url = "https://maps.googleapis.com/maps/api/staticmap?maptype=roadmap&path=enc:#{map.summary_polyline}&key=#{google_maps_api_key}&size=800x800&markers=color:yellow|label:S|#{start_latlng[0]},#{start_latlng[1]}&markers=color:green|label:F|#{end_latlng[0]},#{end_latlng[1]}"
+# MapBox Static API
+mapbox_access_token = ENV['MAPBOX_ACCESS_TOKEN']
+mapbox_image_url = "https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/path-5+787af2-1.0(#{CGI.escape(map.summary_polyline)}),pin-s-s+e5b22e(#{start_latlng[1]},#{start_latlng[0]}),pin-s-f+89ae00(#{end_latlng[1]},#{end_latlng[0]})/auto/800x800?access_token=#{mapbox_access_token}"
 ```
 
 See [Strava::Models::Map](lib/strava/models/map.rb) for all available properties.
