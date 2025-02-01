@@ -97,6 +97,23 @@ Use an access token obtained from [My API Application](https://www.strava.com/se
 client = Strava::Api::Client.new(
   access_token: "12345678987654321"
 )
+
+client.athlete # => Strava::Models::Athlete
+```
+
+Note that the token from the Strava website does not have enough permissions to retrieve your own activities. Use the [strava-oauth-token tool](#strava-oauth-token) to obtain a short lived with more access scopes.
+
+```bash
+export STRAVA_CLIENT_ID=...
+export STRAVA_CLIENT_SECRET=...
+bundle exec ruby bin/strava-oauth-token
+```
+
+Note the `access_token` from the browser window.
+
+```bash
+export STRAVA_ACCESS_TOKEN=...
+bundle exec ruby bin/strava-activities.rb
 ```
 
 ### Activities
