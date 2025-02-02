@@ -16,6 +16,7 @@ Naming/MethodName:
 Naming/FileName:
   Exclude:
     - "lib/strava-ruby-client.rb"
+    - 'bin/strava-activities.rb'
 
 Style/ModuleFunction:
   EnforcedStyle: extend_self
