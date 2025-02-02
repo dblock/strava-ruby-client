@@ -154,7 +154,7 @@ See [Strava::Models::Activity](lib/strava/models/activity.rb) for all available 
 Use `map.summary_polyline` and combine with [polylines](https://github.com/joshuaclayton/polylines) to parse the activity map and to construct a Google maps URL with start and end markers.
 
 ```ruby
-require 'CGI'
+require 'cgi'
 require 'polylines'
 
 map = activity.map # => Strava::Models::Map
