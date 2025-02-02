@@ -19,4 +19,4 @@ jobs:
           ruby-version: ${{ matrix.ruby-version }}
           bundler-cache: true
       - name: Run Tests
-        run: RACK_ENV=test bundle exec rake
+        run: RACK_ENV=test bundle exec rake spec
