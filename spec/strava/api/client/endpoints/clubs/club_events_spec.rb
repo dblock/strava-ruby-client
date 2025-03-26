@@ -11,6 +11,7 @@ RSpec.describe 'Strava::Api::Client#club_events', vcr: { cassette_name: 'client/
     event = club_events.first
     expect(event.women_only).to be_a FalseClass
     expect(event.private).to be_a FalseClass
+    expect(event.description).to be_a String
     expect(event.resource_state).to be_a Integer
     expect(event.club_id).to be_a Integer
     expect(event.skill_levels).to be_a Integer

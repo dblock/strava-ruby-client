@@ -1,5 +1,6 @@
 ### 2.2.1 (Next)
 
+* [#86](https://github.com/dblock/strava-ruby-client/pull/86): Add description to club event model - [@tobiaszwaszak](https://github.com/tobiaszwaszak).
 * Your contribution here.
 
 ### 2.2.0 (2024/9/17)

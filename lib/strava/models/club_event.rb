@@ -6,6 +6,7 @@ module Strava
       property 'id'
       property 'resource_state'
       property 'title'
+      property 'description'
       property 'club_id'
       property 'club', transform_with: ->(c) { Strava::Models::Club.new(c) }
       property 'organizing_athlete', transform_with: ->(oa) { Strava::Models::Athlete.new(oa) }
