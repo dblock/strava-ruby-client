@@ -1,5 +1,6 @@
-### 2.2.1 (Next)
+### 2.3.0 (Next)
 
+* [#87](https://github.com/dblock/strava-ruby-client/pull/87): Prepares v2.3.0 by improving the event specs - [@simonneutert](https://github.com/simonneutert).
 * [#86](https://github.com/dblock/strava-ruby-client/pull/86): Add description to club event model - [@tobiaszwaszak](https://github.com/tobiaszwaszak).
 * Your contribution here.
 
