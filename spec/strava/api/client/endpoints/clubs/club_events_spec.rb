@@ -15,7 +15,7 @@ RSpec.describe 'Strava::Api::Client#club_events', vcr: { cassette_name: 'client/
     expect(event.private).to be_a FalseClass
     expect(event.description).to be_a String
     expect(event.description.size).to eq(546)
-    expect(event.description.split.take(5).join(' ')).to eq('Damit die Fahrt stattfindet wird')
+    expect(event.description).to start_with('Damit die Fahrt stattfindet wird')
     expect(event.resource_state).to be_a Integer
     expect(event.resource_state).to eq(2)
     expect(event.club_id).to be_a Integer
