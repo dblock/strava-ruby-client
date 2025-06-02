@@ -11,13 +11,7 @@ module Strava
       property 'club', transform_with: ->(c) { Strava::Models::Club.new(c) }
       property 'organizing_athlete', transform_with: ->(oa) { Strava::Models::Athlete.new(oa) }
       property 'activity_type'
-      property 'created_at', transform_with: lambda { |v|
-        begin
-          Time.parse(v)
-        rescue ArgumentError, TypeError
-          nil
-        end
-      }
+      property 'created_at', transform_with: ->(v) { Time.parse(v) if v['created_at'] }
       property 'route_id'
       property 'route', transform_with: ->(r) { Strava::Models::Route.new(r) }
       property 'women_only'

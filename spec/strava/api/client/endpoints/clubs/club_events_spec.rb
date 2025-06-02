@@ -39,7 +39,7 @@ RSpec.describe 'Strava::Api::Client#club_events', vcr: { cassette_name: 'client/
         'club_id' => 456,
         'organizing_athlete' => { 'id' => 789, 'firstname' => 'John', 'lastname' => 'Doe' },
         'activity_type' => 'Ride',
-        'created_at' => 'invalid-date',
+        'created_at' => nil,
         'route_id' => nil,
         'route' => nil
       }
