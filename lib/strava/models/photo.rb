@@ -17,6 +17,12 @@ module Strava
       property 'uploaded_at', transform_with: ->(v) { Time.parse(v) }
       property 'sizes'
       property 'default_photo'
+      # video attributes
+      property 'duration'
+      property 'location'
+      property 'status'
+      property 'type'
+      property 'video_url'
     end
   end
 end
