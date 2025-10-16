@@ -9,7 +9,7 @@ RSpec.describe Strava::Webhooks::Client do
 
   it_behaves_like 'web client'
   context 'with defaults' do
-    let(:client) { Strava::Webhooks::Client.new }
+    let(:client) { described_class.new }
 
     describe '#initialize' do
       it 'sets endpoint' do
@@ -27,8 +27,8 @@ RSpec.describe Strava::Webhooks::Client do
   context 'with custom settings' do
     describe '#initialize' do
       Strava::Webhooks::Config::ATTRIBUTES.each do |key|
-        context key do
-          let(:client) { Strava::Webhooks::Client.new(key => 'custom') }
+        context key.to_s do
+          let(:client) { described_class.new(key => 'custom') }
 
           it "sets #{key}" do
             expect(client.send(key)).not_to eq Strava::Webhooks::Config.send(key)
@@ -41,14 +41,14 @@ RSpec.describe Strava::Webhooks::Client do
 
   context 'with global config' do
     after do
-      Strava::Webhooks::Client.config.reset
+      described_class.config.reset
     end
 
-    let(:client) { Strava::Webhooks::Client.new }
+    let(:client) { described_class.new }
 
     context 'with client id and secret' do
       before do
-        Strava::Webhooks::Client.configure do |config|
+        described_class.configure do |config|
           config.client_id = 'custom client id'
           config.client_secret = 'custom client secret'
         end
@@ -64,7 +64,7 @@ RSpec.describe Strava::Webhooks::Client do
   end
 
   context 'with a client id and secret' do
-    let(:client) { Strava::Webhooks::Client.new(client_id: ENV.fetch('STRAVA_CLIENT_ID', '24523'), client_secret: ENV.fetch('STRAVA_CLIENT_SECRET', 'client-secret')) }
+    let(:client) { described_class.new(client_id: ENV.fetch('STRAVA_CLIENT_ID', '24523'), client_secret: ENV.fetch('STRAVA_CLIENT_SECRET', 'client-secret')) }
 
     describe '#push_subscriptions' do
       it 'gets an empty set of push subscriptions', vcr: { cassette_name: 'webhooks/no_push_subscriptions' } do

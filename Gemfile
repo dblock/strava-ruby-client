@@ -5,6 +5,7 @@ source 'http://rubygems.org'
 gemspec
 
 group :development, :test do
+  gem 'csv'
   gem 'dotenv'
   gem 'faraday-retry'
   gem 'gpx'

@@ -8,8 +8,9 @@ RSpec.describe Strava::OAuth::Client do
   end
 
   it_behaves_like 'web client'
+
   context 'with defaults' do
-    let(:client) { Strava::OAuth::Client.new }
+    let(:client) { described_class.new }
 
     describe '#initialize' do
       it 'sets endpoint' do
@@ -32,8 +33,8 @@ RSpec.describe Strava::OAuth::Client do
   context 'with custom settings' do
     describe '#initialize' do
       Strava::OAuth::Config::ATTRIBUTES.each do |key|
-        context key do
-          let(:client) { Strava::OAuth::Client.new(key => 'custom') }
+        context key.to_s do
+          let(:client) { described_class.new(key => 'custom') }
 
           it "sets #{key}" do
             expect(client.send(key)).not_to eq Strava::OAuth::Config.send(key)
@@ -46,14 +47,14 @@ RSpec.describe Strava::OAuth::Client do
 
   context 'with global config' do
     after do
-      Strava::OAuth::Client.config.reset
+      described_class.config.reset
     end
 
-    let(:client) { Strava::OAuth::Client.new }
+    let(:client) { described_class.new }
 
     context 'with client id and secret' do
       before do
-        Strava::OAuth::Client.configure do |config|
+        described_class.configure do |config|
           config.client_id = 'custom client id'
           config.client_secret = 'custom client secret'
         end
@@ -69,7 +70,7 @@ RSpec.describe Strava::OAuth::Client do
   end
 
   context 'with a client id and secret' do
-    let(:client) { Strava::OAuth::Client.new(client_id: '12345', client_secret: 'client-secret') }
+    let(:client) { described_class.new(client_id: '12345', client_secret: 'client-secret') }
 
     describe '#authorize_url' do
       it 'returns url' do
