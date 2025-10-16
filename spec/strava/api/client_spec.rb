@@ -49,6 +49,9 @@ RSpec.describe Strava::Api::Client do
           expect(error.ratelimit.exceeded?).to be(true)
           expect(error.ratelimit.exceeded).to eql({ fifteen_minutes_remaining: 0 })
           expect(error.response[:request]).to be_nil
+          expect(error.message).to eq 'Too Many Requests'
+          expect(error.headers).to be_a Hash
+          expect(error.errors).to eq 'Rate Limit Exceeded'
         end
       end
     end

@@ -1122,6 +1122,12 @@ rescue Strava::Errors::Fault => e
 end
 ```
 
+Faraday can optionally exclude HTTP method, path and query params from the errors raised. The client implementation options will now default to `Faraday::Response::RaiseError::DEFAULT_OPTIONS` with `include_request` set to `true`. You can change this behavior by setting `Strava::Web::RaiseResponseError::DEFAULT_OPTIONS`.
+
+```ruby
+Strava::Web::RaiseResponseError::DEFAULT_OPTIONS = { include_request: false }
+```
+
 ## Tools
 
 For a complete set of command-line tools, check out [strava-ruby-cli](https://github.com/dblock/strava-ruby-cli) built on top of this gem.

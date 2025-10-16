@@ -1,5 +1,15 @@
 # Upgrading Strava-Ruby-Client
 
+### Upgrading to >= 2.3.0
+
+Faraday can optionally exclude HTTP method, path and query params from the errors raised. The client implementation options will now default to `Faraday::Response::RaiseError::DEFAULT_OPTIONS` with `include_request` set to `true`. You can change this behavior by setting `Strava::Web::RaiseResponseError::DEFAULT_OPTIONS`.
+
+```ruby
+Strava::Web::RaiseResponseError::DEFAULT_OPTIONS = { include_request: false }
+```
+
+See [#91](https://github.com/dblock/strava-ruby-client/pull/91) for details.
+
 ### Upgrading to >= 2.2.0
 
 Support for Ruby 2.x has been dropped. The minimum required Ruby version is now 3.0.0.
@@ -45,4 +55,4 @@ client = Strava::Api::Client.new(ca_file: OpenSSL::X509::DEFAULT_CERT_FILE, ca_p
 
 The library was upgraded to require Faraday 1.0 or newer. Change all references to `Faraday::Error::ResourceNotFound` or `Faraday::Error::ConnectionFailed` to `Faraday::ConnectionFailed` and `Faraday::ResourceNotFound` respectively.
 
-See [#30](https://github.com/dblock/strava-ruby-client/pull/30) for more details.
+See [#30](https://github.com/dblock/strava-ruby-client/pull/30) for details.

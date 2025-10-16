@@ -9,6 +9,18 @@ module Strava
         @ratelimit = Strava::Api::Ratelimit.new(env.response)
         super(response)
       end
+
+      def message
+        response[:body]['message'] || super
+      end
+
+      def headers
+        response[:headers]
+      end
+
+      def errors
+        response[:body]['errors']
+      end
     end
   end
 end
