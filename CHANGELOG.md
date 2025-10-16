@@ -1,3 +1,7 @@
+### 2.3.1 (Next)
+
+* Your contribution here.
+
 ### 2.3.0 (2025/10/16)
 
 * [#91](https://github.com/dblock/strava-ruby-client/pull/91): Respects `Faraday::Response::RaiseError::DEFAULT_OPTIONS` when raising errors - [@dblock](https://github.com/dblock).
