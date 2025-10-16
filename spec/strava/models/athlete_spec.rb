@@ -5,7 +5,7 @@ require 'spec_helper'
 RSpec.describe Strava::Models::Athlete do
   let(:fixtures) { 'spec/fixtures/strava/models' }
   let(:json) { JSON.parse(File.read("#{fixtures}/athlete.json")) }
-  let(:activity) { Strava::Models::Athlete.new(json) }
+  let(:activity) { described_class.new(json) }
 
   describe 'ride' do
     it 'exposes custom properties' do
