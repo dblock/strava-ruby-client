@@ -1,9 +1,8 @@
-### 2.3.0 (Next)
+### 2.3.0 (2025/10/16)
 
 * [#91](https://github.com/dblock/strava-ruby-client/pull/91): Respects `Faraday::Response::RaiseError::DEFAULT_OPTIONS` when raising errors - [@dblock](https://github.com/dblock).
 * [#87](https://github.com/dblock/strava-ruby-client/pull/87): Prepares v2.3.0 by improving the event specs - [@simonneutert](https://github.com/simonneutert).
 * [#86](https://github.com/dblock/strava-ruby-client/pull/86): Adds description to club event model - [@tobiaszwaszak](https://github.com/tobiaszwaszak).
-* Your contribution here.
 
 ### 2.2.0 (2024/9/17)
 
