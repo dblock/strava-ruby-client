@@ -5,7 +5,7 @@ module Strava
     module Models
       class Event < Hashie::Trash
         property 'object_type'
-        property 'object_id'
+        property 'id', from: 'object_id'
         property 'aspect_type'
         property 'updates'
         property 'owner_id'

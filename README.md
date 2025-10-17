@@ -1,4 +1,4 @@
-# Strava Ruby Client
+# Strava Ruby Client<!-- omit in toc -->
 
 [![Gem Version](https://badge.fury.io/rb/strava-ruby-client.svg)](https://badge.fury.io/rb/strava-ruby-client)
 [![Test](https://github.com/dblock/strava-ruby-client/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/dblock/strava-ruby-client/actions/workflows/test.yml)
@@ -7,7 +7,7 @@ A complete Ruby client for the [Strava API v3](https://developers.strava.com).
 
 Unlike other clients, including [strava-api-v3](https://github.com/jaredholdcroft/strava-api-v3), provides complete OAuth refresh token flow support, webhooks support, a richer first class interface to Strava models, conversion helpers for distance, time and elevation, natively supports pagination, implements more consistent error handling and is built with thorough test coverage using actual Strava data.
 
-## Table of Contents
+## Table of Contents<!-- omit in toc -->
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -895,7 +895,7 @@ event = Strava::Webhooks::Models::Event.new(JSON.parse(request.body))
 
 event # => Strava::Webhooks::Models::Event
 event.object_type # => 'activity'
-event.object_id # => 1991813808
+event.id # => 1991813808
 event.aspect_type # => 'update'
 event.updates # => { 'sport_type' => 'Walk' }
 event.owner_id # => 29323238

@@ -1,5 +1,25 @@
 # Upgrading Strava-Ruby-Client
 
+### Upgrading to >= 3.0.0
+
+The `Strava::Webhooks::Models::Event` model has been refactored to map the `object_id` field to `id` for consistency and to resolve Hashie::Trash serialization warnings.
+
+**Breaking Change**: If you're using webhooks and accessing the `object_id` property, you must now use `id` instead.
+
+**Before (v2.x):**
+```ruby
+event = Strava::Webhooks::Models::Event.new(JSON.parse(request.body))
+event.object_id # => 1991813808
+```
+
+**After (v3.0.0):**
+```ruby
+event = Strava::Webhooks::Models::Event.new(JSON.parse(request.body))
+event.id # => 1991813808
+```
+
+This change fixes the Hashie::Trash serialization warning that occurred when using `object_id` due to conflicts with Ruby's built-in `Object#object_id` method.
+
 ### Upgrading to >= 2.3.0
 
 Faraday can optionally exclude HTTP method, path and query params from the errors raised. The client implementation options will now default to `Faraday::Response::RaiseError::DEFAULT_OPTIONS` with `include_request` set to `true`. You can change this behavior by setting `Strava::Web::RaiseResponseError::DEFAULT_OPTIONS`.

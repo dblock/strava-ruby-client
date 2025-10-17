@@ -1,5 +1,6 @@
-### 2.3.1 (Next)
+### 3.0.0 (Next)
 
+* [#92](https://github.com/dblock/strava-ruby-client/pull/92): Fixes Hashie::Trash serialization warning for `object_id` of `Strava::Webhooks::Models::Event` - [@simonneutert](https://github.com/simonneutert).
 * Your contribution here.
 
 ### 2.3.0 (2025/10/16)
