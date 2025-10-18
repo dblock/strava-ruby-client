@@ -2,6 +2,14 @@
 
 ### Upgrading to >= 3.0.0
 
+#### Removed `id` from `Strava::Models::Photo`
+
+The Strava Photos API returns `unique_id` and does not return `id`. The latter has been removed.
+
+See [#94](https://github.com/dblock/strava-ruby-client/pull/94) for details.
+
+#### Renamed `object_id` to `id` in `Strava::Webhooks::Models::Event`
+
 The `Strava::Webhooks::Models::Event` model has been refactored to map the `object_id` field to `id` for consistency and to resolve `Hashie::Trash` serialization warnings.
 
 **Breaking Change**: If you're using webhooks and accessing the `object_id` property, you must now use `id` instead.

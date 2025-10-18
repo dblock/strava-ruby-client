@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.strava.com/api/v3/activities/7287327028/photos?size=5000
+    uri: https://www.strava.com/api/v3/activities/16181809559/photos?size=5000
     body:
       encoding: US-ASCII
       string: ''
@@ -12,7 +12,7 @@ http_interactions:
       Accept:
       - application/json; charset=utf-8
       User-Agent:
-      - Strava Ruby Client/2.1.1
+      - Strava Ruby Client/3.0.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -27,128 +27,55 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Mon, 16 Sep 2024 09:55:25 GMT
+      - Sat, 18 Oct 2025 20:08:37 GMT
       X-Envoy-Upstream-Service-Time:
-      - '66'
+      - '72'
       Server:
       - istio-envoy
-      Via:
-      - 1.1 linkerd, 1.1 29051585a13addd312c8ac9d527433c6.cloudfront.net (CloudFront)
-      Etag:
-      - W/"cbeec23872d5a48d286f8fba6d505930"
-      Vary:
-      - Accept, Origin
       Status:
       - 200 OK
-      X-Request-Id:
-      - 884a63b9-1047-4a4c-bf2e-05db3a2e109b
+      X-Ratelimit-Usage:
+      - '1,139'
+      X-Ratelimit-Limit:
+      - '200,2000'
+      Vary:
+      - Accept, Origin
       Cache-Control:
       - max-age=0, private, must-revalidate
       Referrer-Policy:
       - strict-origin-when-cross-origin
-      X-Frame-Options:
-      - DENY
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Ratelimit-Limit:
-      - '600,6000'
-      X-Ratelimit-Usage:
-      - '11,11'
-      X-Download-Options:
-      - noopen
-      X-Readratelimit-Limit:
-      - '300,3000'
-      X-Readratelimit-Usage:
-      - '11,11'
-      X-Content-Type-Options:
-      - nosniff
       X-Permitted-Cross-Domain-Policies:
       - none
-      X-Cache:
-      - Miss from cloudfront
-      X-Amz-Cf-Pop:
-      - FRA2-C1
-      X-Amz-Cf-Id:
-      - xgv_HWH_sACuA0be_EzGGbd1Q8gXbPuOaVpMLouNzD58d5EpeIUWRA==
-    body:
-      encoding: UTF-8
-      string: "[{\"unique_id\":\"f5ebd6e7-8c87-4478-86ce-ce5cf31cf519\",\"athlete_id\":24776507,\"activity_id\":7287327028,\"activity_name\":\"Die
-        Rückkehr der Cornichons! \U0001F952\",\"post_id\":null,\"resource_state\":2,\"caption\":\"\",\"type\":1,\"source\":1,\"status\":3,\"uploaded_at\":\"2022-06-10T20:41:21Z\",\"created_at\":\"2022-06-10T20:41:03Z\",\"created_at_local\":\"2022-06-10T22:41:03Z\",\"urls\":{\"5000\":\"https://dgtzuqphqg23d.cloudfront.net/3wt2DyGHKHX6gJSXzpAcVdEI1QE2luP9xoDLD0CX2w4-2048x1536.jpg\"},\"placeholder_image\":null,\"sizes\":{\"5000\":[2048,1536]},\"default_photo\":true,\"cursor\":null},{\"unique_id\":\"67eba19c-c8d1-4cc7-b910-b1b4755eccd1\",\"athlete_id\":24776507,\"activity_id\":7287327028,\"activity_name\":\"Die
-        Rückkehr der Cornichons! \U0001F952\",\"post_id\":null,\"resource_state\":2,\"caption\":\"\",\"type\":1,\"source\":1,\"status\":3,\"uploaded_at\":\"2022-06-10T20:41:20Z\",\"created_at\":\"2022-06-10T20:41:02Z\",\"created_at_local\":\"2022-06-10T22:41:02Z\",\"urls\":{\"5000\":\"https://dgtzuqphqg23d.cloudfront.net/WS55P6XH57QMUGn9-b7cpBQRc9XeDDsLXREDaCKrjig-2048x1536.jpg\"},\"placeholder_image\":null,\"sizes\":{\"5000\":[2048,1536]},\"default_photo\":false,\"cursor\":null}]"
-  recorded_at: Mon, 16 Sep 2024 09:55:25 GMT
-- request:
-    method: get
-    uri: https://www.strava.com/api/v3/activities/3958491750/photos?size=5000
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Authorization:
-      - Bearer access-token
-      Accept:
-      - application/json; charset=utf-8
-      User-Agent:
-      - Strava Ruby Client/2.1.1
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Mon, 16 Sep 2024 09:55:25 GMT
-      X-Envoy-Upstream-Service-Time:
-      - '64'
-      Server:
-      - istio-envoy
-      Via:
-      - 1.1 linkerd, 1.1 41f60102fc29156bc5001d6646f75c02.cloudfront.net (CloudFront)
-      Etag:
-      - W/"d465bb01ee133f9d1241c661cd82d157"
-      Vary:
-      - Accept, Origin
-      Status:
-      - 200 OK
+      X-Xss-Protection:
+      - 1; mode=block
       X-Request-Id:
-      - bad29383-2397-4db2-932c-305d873eea17
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Referrer-Policy:
-      - strict-origin-when-cross-origin
-      X-Frame-Options:
-      - DENY
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Ratelimit-Limit:
-      - '600,6000'
-      X-Ratelimit-Usage:
-      - '12,12'
+      - 9a14311b-d741-4a5a-abfe-f045d7611e21
+      X-Readratelimit-Limit:
+      - '100,1000'
       X-Download-Options:
       - noopen
-      X-Readratelimit-Limit:
-      - '300,3000'
+      Etag:
+      - W/"bec055d0d5b1e69acff6ed01e62d7834"
+      X-Frame-Options:
+      - DENY
       X-Readratelimit-Usage:
-      - '12,12'
+      - '1,139'
       X-Content-Type-Options:
       - nosniff
-      X-Permitted-Cross-Domain-Policies:
-      - none
       X-Cache:
       - Miss from cloudfront
+      Via:
+      - 1.1 90707ba4ec932f1b72abfb5c4f1add2e.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - FRA2-C1
+      - JFK52-P3
       X-Amz-Cf-Id:
-      - 4axSzTVcQ3a-X0P71eTCZXFuqvWKSkOPsjboHqYLv4L9UdP_IJwn_g==
+      - "-ncC9-leXpRjwwClEYQL5TXT6p-FfJbHXD7RyqXcqa_8TjN9ydrODw=="
     body:
       encoding: UTF-8
-      string: "[{\"unique_id\":\"F775717B-D1C1-443A-AD99-3D9A80FF11C9\",\"athlete_id\":24776507,\"activity_id\":3958491750,\"activity_name\":\"Bitche,
-        please \U0001F973\",\"post_id\":null,\"resource_state\":2,\"caption\":\"\",\"type\":1,\"source\":1,\"status\":3,\"uploaded_at\":\"2020-08-24T11:50:25Z\",\"created_at\":\"2020-08-24T09:33:05Z\",\"created_at_local\":\"2020-08-24T11:33:05Z\",\"urls\":{\"5000\":\"https://dgtzuqphqg23d.cloudfront.net/BO0H-YeNRZOfFhc0PctUheAKchsY2ll4vsagU58MNKg-2048x1536.jpg\"},\"placeholder_image\":null,\"sizes\":{\"5000\":[2048,1536]},\"default_photo\":true,\"cursor\":null,\"location\":[49.049816670000006,7.4272883300000005]}]"
-  recorded_at: Mon, 16 Sep 2024 09:55:25 GMT
-recorded_with: VCR 6.1.0
+      string: '[{"unique_id":"6D1E4A0B-0A46-406A-874A-C3ED694DDE55","athlete_id":26462176,"activity_id":16181809559,"activity_name":"Run
+        with Artyom","post_id":null,"resource_state":2,"caption":"","type":1,"source":1,"status":3,"uploaded_at":"2025-10-18T15:28:11Z","created_at":"2025-10-16T22:33:02Z","created_at_local":"2025-10-16T18:33:02Z","urls":{"5000":"https://dgtzuqphqg23d.cloudfront.net/gskSZVRgkpQ-O9HOdMXpYLEfDvRkZBNs_hGKBKbsmds-1536x2048.jpg"},"placeholder_image":null,"sizes":{"5000":[1536,2048]},"default_photo":true,"cursor":null,"location":[40.76128333333333,-73.97162]},{"unique_id":"5F705181-DF0D-444E-8925-87AC3DA4F983","athlete_id":26462176,"activity_id":16181809559,"activity_name":"Run
+        with Artyom","post_id":null,"resource_state":2,"caption":"","type":1,"source":1,"status":3,"uploaded_at":"2025-10-18T15:28:11Z","created_at":"2025-10-16T22:18:39Z","created_at_local":"2025-10-16T18:18:39Z","urls":{"5000":"https://dgtzuqphqg23d.cloudfront.net/37jS2r9iH-D8K53dVzGi6lq-Nv5JRNqpmPnO-Qdtb1s-1536x2048.jpg"},"placeholder_image":null,"sizes":{"5000":[1536,2048]},"default_photo":false,"cursor":null,"location":[40.76137166666667,-73.971825]},{"unique_id":"F5F942E4-DE41-4BFF-842B-99E66D6E4345","athlete_id":26462176,"activity_id":16181809559,"activity_name":"Run
+        with Artyom","post_id":null,"resource_state":2,"caption":"","type":1,"source":1,"status":3,"uploaded_at":"2025-10-18T15:28:11Z","created_at":"2025-10-16T14:07:37Z","created_at_local":"2025-10-16T10:07:37Z","urls":{"5000":"https://dgtzuqphqg23d.cloudfront.net/NSD1vutEd09T0klV_1EPJjvxkRxV2EX7PBTRc26nIQc-1536x2048.jpg"},"placeholder_image":null,"sizes":{"5000":[1536,2048]},"default_photo":false,"cursor":null,"location":[40.755705,-73.99655333333334]},{"unique_id":"077BE6E7-DDA8-4F38-BB4A-DF0F4640C2D5","athlete_id":26462176,"activity_id":16181809559,"activity_name":"Run
+        with Artyom","post_id":null,"resource_state":2,"caption":"","type":2,"source":1,"status":3,"uploaded_at":"2025-10-18T19:52:33Z","created_at":"2025-10-18T19:51:59Z","created_at_local":"2025-10-18T15:51:59Z","urls":{"5000":"https://d35tn3x5zm6xrc.cloudfront.net/LEpTlUieI8wxuKwsdTd_CAHz0i2BccppnSXEfVV5_p4/thumbnails/LEpTlUieI8wxuKwsdTd_CAHz0i2BccppnSXEfVV5_p4_1080x1920.jpg"},"placeholder_image":null,"sizes":{"5000":[1080,1920]},"default_photo":false,"cursor":null,"duration":4.0,"video_url":"https://d35tn3x5zm6xrc.cloudfront.net/LEpTlUieI8wxuKwsdTd_CAHz0i2BccppnSXEfVV5_p4/hls/LEpTlUieI8wxuKwsdTd_CAHz0i2BccppnSXEfVV5_p4.m3u8","location":[40.7557,-73.9966]}]'
+  recorded_at: Sat, 18 Oct 2025 20:08:37 GMT
+recorded_with: VCR 6.3.1
