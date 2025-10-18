@@ -4,24 +4,25 @@ require 'spec_helper'
 
 RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/activity' } do
   include_context 'with API client'
+
   it 'returns activity' do
     activity = client.activity(id: 1_946_417_534)
 
     expect(activity.http_response).to be_a Strava::Web::ApiResponse
     expect(activity.http_response.ratelimit).to be_a Strava::Api::Ratelimit
-    expect(activity.http_response.ratelimit.fifteen_minutes).to eq 600
-    expect(activity.http_response.ratelimit.fifteen_minutes_remaining).to eq 599
-    expect(activity.http_response.ratelimit.fifteen_minutes_usage).to eq 1
-    expect(activity.http_response.ratelimit.limit).to eq '600,30000'
-    expect(activity.http_response.ratelimit.total_day).to eq 30_000
-    expect(activity.http_response.ratelimit.total_day_remaining).to eq 22_776
-    expect(activity.http_response.ratelimit.total_day_usage).to eq 7224
-    expect(activity.http_response.ratelimit.usage).to eq '1,7224'
+    expect(activity.http_response.ratelimit.fifteen_minutes).to eq 200
+    expect(activity.http_response.ratelimit.fifteen_minutes_remaining).to eq 195
+    expect(activity.http_response.ratelimit.fifteen_minutes_usage).to eq 5
+    expect(activity.http_response.ratelimit.limit).to eq '200,2000'
+    expect(activity.http_response.ratelimit.total_day).to eq 2000
+    expect(activity.http_response.ratelimit.total_day_remaining).to eq 1852
+    expect(activity.http_response.ratelimit.total_day_usage).to eq 148
+    expect(activity.http_response.ratelimit.usage).to eq '5,148'
 
-    expect(activity).to be_a Strava::Models::Activity
+    expect(activity).to be_a Strava::Models::DetailedActivity
     expect(activity.id).to eq 1_946_417_534
     expect(activity.resource_state).to eq 3
-    expect(activity.athlete).to be_a Strava::Models::Athlete
+    expect(activity.athlete).to be_a Strava::Models::MetaAthlete
     expect(activity.athlete.id).to eq 26_462_176
     expect(activity.athlete.resource_state).to eq 1
     expect(activity.name).to eq 'TCS NYC Marathon 2018'
@@ -47,9 +48,9 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
     expect(activity.pace_per_100_meters_s).to eq '0m32s/100m'
     expect(activity.pace_per_kilometer_s).to eq '5m15s/km'
     expect(activity.pace_s).to eq '5m15s/km'
-    expect(activity.kilometer_per_hour_s).to eq '11.4km/h'
-    expect(activity.miles_per_hour_s).to eq '7.1mph'
-    expect(activity.speed_s).to eq '11.4km/h'
+    expect(activity.average_speed_kilometer_per_hour_s).to eq '11.4km/h'
+    expect(activity.average_speed_miles_per_hour_s).to eq '7.1mph'
+    expect(activity.average_speed_s).to eq '11.4km/h'
 
     expect(activity.total_elevation_gain).to eq 270.9
     expect(activity.total_elevation_gain_in_feet).to eq 888.779556
@@ -67,17 +68,15 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
     expect(activity.start_date_local).to eq Time.new(2018, 11, 4, 9, 53, 46, '-05:00')
 
     expect(activity.utc_offset).to eq(-18_000.0)
-    expect(activity.start_latlng).to eq [40.6, -74.06]
-    expect(activity.end_latlng).to eq [40.77, -73.98]
+    expect(activity.start_latlng).to eq [40.601937, -74.060052]
+    expect(activity.end_latlng).to eq [40.768444, -73.980915]
     expect(activity.location_city).to be_nil
     expect(activity.location_state).to be_nil
-    expect(activity.location_country).to eq ''
-    expect(activity.start_latitude).to eq 40.6
-    expect(activity.start_longitude).to eq(-74.06)
+    expect(activity.location_country).to be_nil
     expect(activity.achievement_count).to eq 7
-    expect(activity.kudos_count).to eq 33
+    expect(activity.kudos_count).to eq 36
     expect(activity.comment_count).to eq 8
-    expect(activity.athlete_count).to eq 301
+    expect(activity.athlete_count).to eq 250
     expect(activity.photo_count).to eq 0
 
     map = activity.map
@@ -100,7 +99,7 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
     expect(activity.average_heartrate).to eq 170.1
     expect(activity.max_heartrate).to eq 187.0
     expect(activity.heartrate_opt_out).to be false
-    expect(activity.display_hide_heartrate_option).to be false
+    expect(activity.display_hide_heartrate_option).to be true
     expect(activity.elev_high).to eq 54.7
     expect(activity.elev_low).to eq(-8.1)
     expect(activity.pr_count).to eq 0
@@ -118,12 +117,12 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
     expect(split_metric.elapsed_time).to eq 314
     expect(split_metric.pace_per_kilometer_s).to eq '5m13s/km'
     expect(split_metric.pace_per_mile_s).to eq '8m24s/mi'
-    expect(split_metric.kilometer_per_hour_s).to eq '11.5km/h'
-    expect(split_metric.miles_per_hour_s).to eq '7.1mph'
+    expect(split_metric.average_speed_kilometer_per_hour_s).to eq '11.5km/h'
+    expect(split_metric.average_speed_miles_per_hour_s).to eq '7.1mph'
     expect(split_metric.elevation_difference).to eq 15.6
-    expect(split_metric.total_elevation_gain).to eq 15.6
-    expect(split_metric.total_elevation_gain_in_feet).to eq 51.181104
-    expect(split_metric.total_elevation_gain_in_meters).to eq 15.6
+    expect(split_metric.elevation_difference).to eq 15.6
+    expect(split_metric.elevation_difference_in_feet).to eq 51.181104
+    expect(split_metric.elevation_difference_in_meters).to eq 15.6
     expect(split_metric.moving_time).to eq 314
     expect(split_metric.split).to eq 1
     expect(split_metric.average_speed).to eq 3.19
@@ -139,12 +138,11 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
     expect(split_standard.elapsed_time).to eq 489
     expect(split_standard.pace_per_kilometer_s).to eq '5m04s/km'
     expect(split_standard.pace_per_mile_s).to eq '8m09s/mi'
-    expect(split_standard.kilometer_per_hour_s).to eq '11.8km/h'
-    expect(split_standard.miles_per_hour_s).to eq '7.4mph'
+    expect(split_standard.average_speed_kilometer_per_hour_s).to eq '11.8km/h'
+    expect(split_standard.average_speed_miles_per_hour_s).to eq '7.4mph'
     expect(split_standard.elevation_difference).to eq 5.9
-    expect(split_standard.total_elevation_gain).to eq 5.9
-    expect(split_standard.total_elevation_gain_in_feet).to eq 19.356956
-    expect(split_standard.total_elevation_gain_in_meters).to eq 5.9
+    expect(split_standard.elevation_difference_in_feet).to eq 19.356956
+    expect(split_standard.elevation_difference_in_meters).to eq 5.9
     expect(split_standard.moving_time).to eq 489
     expect(split_standard.split).to eq 1
     expect(split_standard.average_speed).to eq 3.29
@@ -157,8 +155,8 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
     expect(lap.id).to eq 6_270_116_916
     expect(lap.resource_state).to eq 2
     expect(lap.name).to eq 'Lap 1'
-    expect(lap.activity).to be_a Strava::Models::Activity
-    expect(lap.athlete).to be_a Strava::Models::Athlete
+    expect(lap.activity).to be_a Strava::Models::MetaActivity
+    expect(lap.athlete).to be_a Strava::Models::MetaAthlete
     expect(lap.elapsed_time).to eq 13_306
     expect(lap.moving_time).to eq 13_299
     expect(lap.start_date).to eq Time.new(2018, 11, 0o4, 14, 53, 46, '-00:00').utc
@@ -176,35 +174,35 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
     expect(lap.pace_zone).to eq 2
 
     gear = activity.gear
-    expect(gear).to be_a Strava::Models::Gear
+    expect(gear).to be_a Strava::Models::SummaryGear
     expect(gear.id).to eq 'g3423618'
     expect(gear.resource_state).to eq 2
-    expect(gear.name).to eq 'adidas Supernova ST'
-    expect(gear.primary).to be true
-    expect(gear.distance).to eq 366_945.0
+    expect(gear.name).to eq 'Adidas Supernova ST'
+    expect(gear.primary).to be false
+    expect(gear.distance).to eq 966_309
 
     expect(activity.device_name).to eq 'Fitbit Ionic'
 
     expect(activity.segment_efforts).to be_a Enumerable
     segment_effort = activity.segment_efforts.first
-    expect(segment_effort).to be_a Strava::Models::SegmentEffort
+    expect(segment_effort).to be_a Strava::Models::DetailedSegmentEffort
     expect(segment_effort.id).to eq 49_065_850_796
     expect(segment_effort.resource_state).to eq 2
     expect(segment_effort.name).to eq 'NYC Marathon Mile 1'
-    expect(segment_effort.activity).to be_a Strava::Models::Activity
-    expect(segment_effort.athlete).to be_a Strava::Models::Athlete
+    expect(segment_effort.activity).to be_a Strava::Models::MetaActivity
+    expect(segment_effort.athlete).to be_a Strava::Models::MetaAthlete
     expect(segment_effort.elapsed_time).to eq 461
     expect(segment_effort.moving_time).to eq 461
     expect(segment_effort.start_date).to eq Time.new(2018, 11, 0o4, 14, 53, 46, '-00:00').utc
     expect(segment_effort.start_date_local).to eq Time.new(2018, 11, 4, 9, 53, 46, '-05:00')
-    expect(segment_effort.distance).to eq 1499.5
+    expect(segment_effort.distance).to eq 1558.7
     expect(segment_effort.start_index).to eq 0
     expect(segment_effort.end_index).to eq 462
     expect(segment_effort.average_heartrate).to eq 161.1
     expect(segment_effort.max_heartrate).to eq 169.0
 
     segment = segment_effort.segment
-    expect(segment).to be_a Strava::Models::Segment
+    expect(segment).to be_a Strava::Models::SummarySegment
     expect(segment.id).to eq 8_457_023
     expect(segment.resource_state).to eq 2
     expect(segment.name).to eq 'NYC Marathon Mile 1'
@@ -221,10 +219,6 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
     expect(segment.country).to eq 'United States'
     expect(segment.start_latlng).to eq [40.601918, -74.06061]
     expect(segment.end_latlng).to eq [40.607072, -74.043591]
-    expect(segment.start_latitude).to eq 40.601918
-    expect(segment.start_longitude).to eq(-74.06061)
-    expect(segment.end_latitude).to eq 40.607072
-    expect(segment.end_longitude).to eq(-74.043591)
     expect(segment.private).to be false
     expect(segment.hazardous).to be false
     expect(segment.starred).to be false
@@ -235,15 +229,15 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
 
     expect(activity.best_efforts).to be_a Enumerable
     best_effort = activity.best_efforts.first
-    expect(best_effort).to be_a Strava::Models::SegmentEffort
-    expect(best_effort.id).to eq 4_155_301_967
+    expect(best_effort).to be_a Strava::Models::DetailedSegmentEffort
+    expect(best_effort.id).to eq 17_368_955_626
 
-    expect(activity.photos).to be_a Strava::Models::Photos
+    expect(activity.photos).to be_a Strava::Models::PhotosSummary
     photos = activity.photos
     expect(photos.use_primary_photo).to be true
     expect(photos.count).to eq 9
     photo = photos.primary
-    expect(photo).to be_a Strava::Models::Photo
+    expect(photo).to be_a Strava::Models::PhotosSummaryPrimary
     expect(photo.unique_id).to eq '5e8006d0-8349-40ad-a4ef-72b5e6e82dfe'
     expect(photo.urls).to eq(
       '100' => 'https://dgtzuqphqg23d.cloudfront.net/mo8thQ4Z5qAylUaRZHOWAR1sp16Bo-pp0ggYQKSWiZE-90x128.jpg',
@@ -255,23 +249,23 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
 
     similar_activities = activity.similar_activities
     expect(similar_activities).to be_a Strava::Models::SimilarActivities
-    expect(similar_activities.average_speed).to eq 3.2302713030187236
+    expect(similar_activities.average_speed).to eq 2.874059649655219
     expect(similar_activities.resource_state).to eq 2
-    expect(similar_activities.effort_count).to eq 1
+    expect(similar_activities.effort_count).to eq 4
     expect(similar_activities.frequency_milestone).to be_nil
     expect(similar_activities.max_average_speed).to eq 3.2302713030187236
-    expect(similar_activities.mid_average_speed).to eq 3.2302713030187236
-    expect(similar_activities.min_average_speed).to eq 3.2302713030187236
+    expect(similar_activities.mid_average_speed).to eq 2.8274158571093633
+    expect(similar_activities.min_average_speed).to eq 2.5139008176951587
     expect(similar_activities.mid_speed).to be_nil
     expect(similar_activities.min_speed).to be_nil
     expect(similar_activities.speeds).to be_nil
 
     trend = similar_activities.trend
     expect(trend).to be_a Strava::Models::Trend
-    expect(trend.speeds).to eq [3.2302713030187236]
+    expect(trend.speeds).to eq [3.2302713030187236, 2.8274158571093633, 2.827738533059389, 2.874895528511787]
     expect(trend.current_activity_index).to eq 0
-    expect(trend.min_speed).to eq 3.2302713030187236
-    expect(trend.mid_speed).to eq 3.2302713030187236
+    expect(trend.min_speed).to eq 2.5139008176951587
+    expect(trend.mid_speed).to eq 2.8274158571093633
     expect(trend.max_speed).to eq 3.2302713030187236
     expect(trend.direction).to eq 0
 
@@ -280,7 +274,7 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
 
   it 'returns activity by id' do
     activity = client.activity(1_946_417_534)
-    expect(activity).to be_a Strava::Models::Activity
+    expect(activity).to be_a Strava::Models::DetailedActivity
     expect(activity.id).to eq 1_946_417_534
   end
 
@@ -294,79 +288,78 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
       activity = client.activity(1_946_417_534)
       activity_json = JSON.parse(activity.to_json)
       expect(activity_json.keys).to match_array(
-        %w[moving_time
-           elapsed_time
-           average_speed
-           distance
-           total_elevation_gain
-           start_date_local
-           id
-           resource_state
-           athlete
-           name
-           description
-           sport_type
-           workout_type
+        %w[id
            external_id
            upload_id
+           athlete
+           name
+           distance
+           moving_time
+           elapsed_time
+           average_speed
+           total_elevation_gain
+           elev_high
+           elev_low
+           sport_type
            start_date
+           start_date_local
            timezone
-           utc_offset
            start_latlng
            end_latlng
-           location_city
-           location_state
-           location_country
-           start_latitude
-           start_longitude
            achievement_count
            kudos_count
            comment_count
            athlete_count
            photo_count
+           total_photo_count
            map
            trainer
            commute
            manual
            private
-           visibility
            flagged
-           gear_id
-           from_accepted_tag
+           workout_type
+           upload_id_str
            max_speed
+           has_kudoed
+           hide_from_home
+           gear_id
+           kilojoules
+           average_watts
+           device_watts
+           max_watts
+           weighted_average_watts
+           description
+           photos
+           gear
+           calories
+           segment_efforts
+           device_name
+           embed_token
+           splits_metric
+           splits_standard
+           laps
+           best_efforts
+           resource_state
+           utc_offset
+           location_city
+           location_state
+           location_country
+           visibility
+           average_temp
            has_heartrate
            average_heartrate
            max_heartrate
            heartrate_opt_out
            display_hide_heartrate_option
-           elev_high
-           elev_low
+           from_accepted_tag
            pr_count
-           total_photo_count
-           has_kudoed
            suffer_score
-           calories
-           segment_efforts
-           best_efforts
-           photos
-           similar_activities
-           embed_token
+           perceived_exertion
+           prefer_perceived_exertion
+           stats_visibility
            available_zones
-           splits_metric
-           splits_standard
-           laps
-           gear
-           device_name
-           average_cadence
-           average_temp
-           average_watts
-           weighted_average_watts
-           kilojoules
-           device_watts
-           max_watts
-           highlighted_kudosers
-           segment_leaderboard_opt_out
-           leaderboard_opt_out]
+           similar_activities]
       )
     end
   end

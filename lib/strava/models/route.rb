@@ -2,28 +2,30 @@
 
 module Strava
   module Models
+    # https://developers.strava.com/docs/reference/#api-models-Route
     class Route < Strava::Models::Response
-      include Mixins::Distance
-      include Mixins::Elevation
-      include Mixins::Time
-
-      property 'id'
-      property 'athlete', transform_with: ->(v) { Strava::Models::Athlete.new(v) }
-      property 'name'
+      property 'athlete', transform_with: ->(v) { Strava::Models::SummaryAthlete.new(v) }
       property 'description'
-      property 'total_elevation_gain', from: 'elevation_gain'
+      include Mixins::Distance
+      include Mixins::ElevationGain
+      property 'id'
+      property 'id_str'
       property 'map', transform_with: ->(v) { Strava::Models::Map.new(v) }
+      property 'name'
       property 'private'
-      property 'resource_state'
       property 'starred'
-      property 'sub_type'
       property 'timestamp', transform_with: ->(v) { Time.at(v) }
+      property 'type'
+      property 'sub_type'
       property 'created_at', transform_with: ->(v) { Time.parse(v) }
       property 'updated_at', transform_with: ->(v) { Time.parse(v) }
-      property 'type'
+      include Mixins::EstimatedMovingTime
+      property 'segments', transform_with: ->(v) { v.map { |r| Strava::Models::SummarySegment.new(r) } }
+      property 'waypoints', transform_with: ->(v) { v.map { |r| Strava::Models::Waypoint.new(r) } }
+      # undocumented
+      property 'map_urls'
+      property 'resource_state'
       property 'estimated_moving_time'
-      property 'moving_time', from: 'estimated_moving_time'
-      property 'segments', transform_with: ->(v) { v.map { |r| Strava::Models::Segment.new(r) } }
     end
   end
 end

@@ -2,6 +2,7 @@
 
 module Strava
   module Models
+    # undocumented
     class Kudoser < Strava::Models::Response
       property 'destination_url'
       property 'display_name'

@@ -1,0 +1,586 @@
+{
+  "athlete": {
+    "id": 26462176,
+    "username": "dblockdotorg",
+    "resource_state": 2,
+    "firstname": "Daniel",
+    "lastname": "Doubrovkine",
+    "bio": "@dblockdotorg everywhere. Running in traffic since 2017 \u0026 blogging about it at http://run.dblock.org. Former CTO @Artsy. NYC marathon in 2018! I also made a Strava bot for Slack, https://slava.playplay.io.",
+    "city": "New York",
+    "state": "NY",
+    "country": "",
+    "sex": "M",
+    "premium": true,
+    "summit": true,
+    "created_at": "2017-11-28T19:05:35Z",
+    "updated_at": "2025-10-18T23:04:28Z",
+    "badge_type_id": 1,
+    "weight": 90.1,
+    "profile_medium": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/26462176/7677115/2/medium.jpg",
+    "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/26462176/7677115/2/large.jpg",
+    "friend": null,
+    "follower": null
+  },
+  "description": "My usual long run when I am too lazy to go to Central Park.",
+  "distance": 14914.774951561694,
+  "elevation_gain": 117.25346822039764,
+  "id": 16341573,
+  "id_str": "16341573",
+  "map": {
+    "id": "r16341573",
+    "summary_polyline": "ixrwF`kqbMv@eCuFsDbA}CiFkDhE_NuBqAxLec@rGaBxKyKn_AxJ~l@zR|EdHJ~j@zJrpAdOd]~Wre@zCrRaIfKsHbBiAbNcGzKiBa@[_C_FgAu@|BwX{D`@qFuGgAk@lG{]sDdA}T{q@mImjA_FcA}CN}k@le@a{AqGgE~@uC",
+    "resource_state": 3,
+    "polyline": "ixrwF`kqbMv@eCuFsDdA}CkFkDhE_N?BuBuAzDuLhGeS[GNaA`Eq@b@Ql@]HOnA}@|@gAvB_DxAgAn@[f@OvAGnEh@bFb@`AR|@^LGhAZv@Q^QdIhAl@Vt@?^b@TH`@?XQhAP`AXVG~AXt@|@^P\\@PAv@c@nBb@V?dARNN\\?|@Rd@XZ?p@PVP^?fAXZZAA^l@RF`@H~@OV?ZNr@j@fA?ZP\\XJ@PAn@Pr@l@v@FbAb@~@l@d@?v@XPPHPLj@RRRF|@k@lB|@j@Zn@j@v@|@n@nA^`@Zd@Hb@@v@Jv@TvI}@@?DFd@t@rWOh@UhAlAhTd@XXtEnB`WH`DZlE^tEj@xFXxAd@lAjApCjA`CT^PPnAvC@Pf@nATYB?p@`BOPATBTfBpDFG`DnFhBbDdAvAEHbA`BxAxBK\\CDxApCCDFJn@b@nD|GXfAd@nCj@zDHXf@rDCLQH?@KHKb@MHDVEdAYEY@mApBIA[BCNIPm@v@c@^m@RYFU?m@GAXsAQGj@_AROPSf@If@KdCDt@Al@OA?xAMfAYt@c@t@g@`@B\\CLWn@c@n@Mx@Ub@?P@?_APwAQQOOu@@c@CSIQUKCDC?KKQAYYIES?_@[a@?[SSTo@bC}Bc@oIoAiJgA`@qFuGgAk@lGwFo@cVcC?G@FEQl@iIMGh@yI}Di@}CYu@V}BYBg@yKuAuTiCcH[CAe@GGFmMs@uGQwAQsAI}B?gLk@eRs@CaCo@EKULK@aD?BAye@Hu@hDcL|_@amAsGgE~@uC"
+  },
+  "map_urls": {
+    "url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/U5UKAEUWEG7GGRP2YVTO4WALL3VKPYFTU6SKDW3WUO6CND6IMC7DAOVID6XUNALPW3FJ5A442H32ZAB6GF4VM3GBMNYPZSI=",
+    "retina_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/UOLB76G5HEF7OOQQYTHDGHMAHUEN2HPGCL5HXKBKAU3S7Y2VMPKKKCGQGPD3RGWGIOJ3NDXJUKI6JWHHPNX7HZ7P5NDGJBA=",
+    "light_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/UOLB76G5HEF7OOQQYTHDGHMAHUEN2HPGCL5HXKBKAU3S7Y2VMPKKKCGQGPD3RGWGIOJ3NDXJUKI6JWHHPNX7HZ7P5NDGJBA=",
+    "dark_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/C6QNTY7HE7J3ULTUKRU4QAY3TW72NMPB2KUJ56D3P6OCDYL6L4CPFS6N6N3TYADAJ7CNLFZIPZSYIDW3O4QRGTUUEZABYWY="
+  },
+  "name": "Lower Manhattan Loop",
+  "private": false,
+  "resource_state": 3,
+  "starred": false,
+  "sub_type": 1,
+  "created_at": "2018-12-01T19:44:26Z",
+  "updated_at": "2025-03-14T08:47:31Z",
+  "timestamp": 1543693466,
+  "type": 2,
+  "estimated_moving_time": 5282,
+  "waypoints": [],
+  "segments": [
+    {
+      "id": 1040724,
+      "resource_state": 2,
+      "name": "Esplanade Climb",
+      "activity_type": "Run",
+      "distance": 435.67,
+      "average_grade": -0.0,
+      "maximum_grade": 2.0,
+      "elevation_high": 0.3,
+      "elevation_low": 0.1,
+      "start_latlng": [
+        40.7119844,
+        -74.017878
+      ],
+      "end_latlng": [
+        40.7137168,
+        -74.0176807
+      ],
+      "elevation_profile": null,
+      "elevation_profiles": null,
+      "climb_category": 0,
+      "city": "New York",
+      "state": "NY",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": false
+    },
+    {
+      "id": 1109718,
+      "resource_state": 2,
+      "name": "E 14th St Climb",
+      "activity_type": "Run",
+      "distance": 419.58,
+      "average_grade": -0.8,
+      "maximum_grade": -0.6,
+      "elevation_high": 7.1,
+      "elevation_low": 3.8,
+      "start_latlng": [
+        40.73554842732847,
+        -73.98271151818335
+      ],
+      "end_latlng": [
+        40.73427177965641,
+        -73.97865023463964
+      ],
+      "elevation_profile": null,
+      "elevation_profiles": null,
+      "climb_category": 0,
+      "city": "New York",
+      "state": "NY",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": false
+    },
+    {
+      "id": 1782874,
+      "resource_state": 2,
+      "name": "Hudson River Greenway",
+      "activity_type": "Run",
+      "distance": 189.991,
+      "average_grade": 0.0,
+      "maximum_grade": 0.0,
+      "elevation_high": 0.3,
+      "elevation_low": 0.3,
+      "start_latlng": [
+        40.72259385190776,
+        -74.01209179675884
+      ],
+      "end_latlng": [
+        40.72425746336216,
+        -74.01179667508526
+      ],
+      "elevation_profile": null,
+      "elevation_profiles": null,
+      "climb_category": 0,
+      "city": "Canal Street",
+      "state": "NY",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": false
+    },
+    {
+      "id": 2379490,
+      "resource_state": 2,
+      "name": "East river 14th esplanade north section",
+      "activity_type": "Run",
+      "distance": 605.956,
+      "average_grade": 0.0,
+      "maximum_grade": 0.7,
+      "elevation_high": 0.3,
+      "elevation_low": -0.2,
+      "start_latlng": [
+        40.7258644,
+        -73.9720339
+      ],
+      "end_latlng": [
+        40.7205934,
+        -73.973317
+      ],
+      "elevation_profile": null,
+      "elevation_profiles": null,
+      "climb_category": 0,
+      "city": "New York",
+      "state": "NY",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": false
+    },
+    {
+      "id": 3746142,
+      "resource_state": 2,
+      "name": "East River Park southbound",
+      "activity_type": "Run",
+      "distance": 1772.08,
+      "average_grade": 0.0,
+      "maximum_grade": 1.1,
+      "elevation_high": 0.8,
+      "elevation_low": 0.0,
+      "start_latlng": [
+        40.7235937,
+        -73.9724088
+      ],
+      "end_latlng": [
+        40.71062,
+        -73.9804274
+      ],
+      "elevation_profile": null,
+      "elevation_profiles": null,
+      "climb_category": 0,
+      "city": "New York",
+      "state": "NY",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": false
+    },
+    {
+      "id": 3994875,
+      "resource_state": 2,
+      "name": "East River Promenade (Houston)",
+      "activity_type": "Run",
+      "distance": 915.7,
+      "average_grade": 0.0,
+      "maximum_grade": 0.4,
+      "elevation_high": 0.3,
+      "elevation_low": 0.0,
+      "start_latlng": [
+        40.7164,
+        -73.974395
+      ],
+      "end_latlng": [
+        40.710484,
+        -73.980081
+      ],
+      "elevation_profile": null,
+      "elevation_profiles": null,
+      "climb_category": 0,
+      "city": "New York",
+      "state": "NY",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": false
+    },
+    {
+      "id": 4389362,
+      "resource_state": 2,
+      "name": "Battery Park to Stuy High",
+      "activity_type": "Run",
+      "distance": 2483.1,
+      "average_grade": -0.1,
+      "maximum_grade": 1.6,
+      "elevation_high": 2.5,
+      "elevation_low": 0.0,
+      "start_latlng": [
+        40.704761,
+        -74.01537
+      ],
+      "end_latlng": [
+        40.718292,
+        -74.013227
+      ],
+      "elevation_profile": null,
+      "elevation_profiles": null,
+      "climb_category": 0,
+      "city": "New York",
+      "state": "NY",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": false
+    },
+    {
+      "id": 4538766,
+      "resource_state": 2,
+      "name": "Stuyvesant High to Pier 40",
+      "activity_type": "Run",
+      "distance": 1136.0,
+      "average_grade": -0.0,
+      "maximum_grade": 0.7,
+      "elevation_high": 0.9,
+      "elevation_low": 0.1,
+      "start_latlng": [
+        40.718474,
+        -74.013215
+      ],
+      "end_latlng": [
+        40.728272,
+        -74.01131
+      ],
+      "elevation_profile": null,
+      "elevation_profiles": null,
+      "climb_category": 0,
+      "city": "New York",
+      "state": "NY",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": false
+    },
+    {
+      "id": 5682929,
+      "resource_state": 2,
+      "name": "Hudson River Stretch in Battery Park ",
+      "activity_type": "Run",
+      "distance": 475.8,
+      "average_grade": 0.0,
+      "maximum_grade": 1.2,
+      "elevation_high": 0.3,
+      "elevation_low": 0.1,
+      "start_latlng": [
+        40.708145,
+        -74.018718
+      ],
+      "end_latlng": [
+        40.712183,
+        -74.017801
+      ],
+      "elevation_profile": null,
+      "elevation_profiles": null,
+      "climb_category": 0,
+      "city": "New York",
+      "state": "NY",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": false
+    },
+    {
+      "id": 7025007,
+      "resource_state": 2,
+      "name": "East River - Stuy Town to SI Ferry",
+      "activity_type": "Run",
+      "distance": 5719.5,
+      "average_grade": 0.0,
+      "maximum_grade": 2.7,
+      "elevation_high": 2.5,
+      "elevation_low": -0.3,
+      "start_latlng": [
+        40.731266,
+        -73.973524
+      ],
+      "end_latlng": [
+        40.701313,
+        -74.012448
+      ],
+      "elevation_profile": null,
+      "elevation_profiles": null,
+      "climb_category": 0,
+      "city": "New York",
+      "state": "NY",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": false
+    },
+    {
+      "id": 7317877,
+      "resource_state": 2,
+      "name": "West Side Pier to Dog Park",
+      "activity_type": "Run",
+      "distance": 1309.6,
+      "average_grade": -0.0,
+      "maximum_grade": 1.1,
+      "elevation_high": 1.2,
+      "elevation_low": 0.1,
+      "start_latlng": [
+        40.720453,
+        -74.01291
+      ],
+      "end_latlng": [
+        40.732078,
+        -74.010908
+      ],
+      "elevation_profile": null,
+      "elevation_profiles": null,
+      "climb_category": 0,
+      "city": "New York",
+      "state": "NY",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": false
+    },
+    {
+      "id": 7562376,
+      "resource_state": 2,
+      "name": "East River South - 12th to Bridge",
+      "activity_type": "Run",
+      "distance": 1258.6,
+      "average_grade": -0.0,
+      "maximum_grade": 2.6,
+      "elevation_high": 0.3,
+      "elevation_low": -0.3,
+      "start_latlng": [
+        40.725138,
+        -73.971997
+      ],
+      "end_latlng": [
+        40.714212,
+        -73.975446
+      ],
+      "elevation_profile": null,
+      "elevation_profiles": null,
+      "climb_category": 0,
+      "city": "New York",
+      "state": "NY",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": false
+    },
+    {
+      "id": 8529683,
+      "resource_state": 2,
+      "name": "StuyTown to Williamsburg Bridge",
+      "activity_type": "Run",
+      "distance": 1956.5,
+      "average_grade": 0.0,
+      "maximum_grade": 0.4,
+      "elevation_high": 0.3,
+      "elevation_low": -0.2,
+      "start_latlng": [
+        40.73107,
+        -73.973498
+      ],
+      "end_latlng": [
+        40.714436,
+        -73.975355
+      ],
+      "elevation_profile": null,
+      "elevation_profiles": null,
+      "climb_category": 0,
+      "city": "New York",
+      "state": "New York",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": false
+    },
+    {
+      "id": 8617177,
+      "resource_state": 2,
+      "name": "East River - StuyTown to Manhattan Bridge",
+      "activity_type": "Run",
+      "distance": 3601.1,
+      "average_grade": 0.0,
+      "maximum_grade": 1.6,
+      "elevation_high": 2.6,
+      "elevation_low": -0.2,
+      "start_latlng": [
+        40.731149,
+        -73.97374
+      ],
+      "end_latlng": [
+        40.709457,
+        -73.991389
+      ],
+      "elevation_profile": null,
+      "elevation_profiles": null,
+      "climb_category": 0,
+      "city": "New York",
+      "state": "New York",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": false
+    },
+    {
+      "id": 10764125,
+      "resource_state": 2,
+      "name": "Final Sprint to Christopher",
+      "activity_type": "Run",
+      "distance": 202.3,
+      "average_grade": 0.0,
+      "maximum_grade": 1.7,
+      "elevation_high": 0.3,
+      "elevation_low": 0.0,
+      "start_latlng": [
+        40.730448,
+        -74.011271
+      ],
+      "end_latlng": [
+        40.732197,
+        -74.010872
+      ],
+      "elevation_profile": null,
+      "elevation_profiles": null,
+      "climb_category": 0,
+      "city": "New York",
+      "state": "New York",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": false
+    },
+    {
+      "id": 11029334,
+      "resource_state": 2,
+      "name": "Pier 40 - Pier 45 Cafe",
+      "activity_type": "Run",
+      "distance": 439.3,
+      "average_grade": -0.2,
+      "maximum_grade": 0.7,
+      "elevation_high": 1.2,
+      "elevation_low": 0.1,
+      "start_latlng": [
+        40.729198,
+        -74.011224
+      ],
+      "end_latlng": [
+        40.733113,
+        -74.010833
+      ],
+      "elevation_profile": null,
+      "elevation_profiles": null,
+      "climb_category": 0,
+      "city": "New York",
+      "state": "New York",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": false
+    },
+    {
+      "id": 16337560,
+      "resource_state": 2,
+      "name": "Bridge to Bridge Dash",
+      "activity_type": "Run",
+      "distance": 345.0,
+      "average_grade": 0.0,
+      "maximum_grade": 1.6,
+      "elevation_high": 0.3,
+      "elevation_low": -0.8,
+      "start_latlng": [
+        40.720092,
+        -73.973204
+      ],
+      "end_latlng": [
+        40.7171,
+        -73.974226
+      ],
+      "elevation_profile": null,
+      "elevation_profiles": null,
+      "climb_category": 0,
+      "city": null,
+      "state": null,
+      "country": null,
+      "private": false,
+      "hazardous": false,
+      "starred": false
+    },
+    {
+      "id": 17435950,
+      "resource_state": 2,
+      "name": "East River 800m Southbound",
+      "activity_type": "Run",
+      "distance": 747.4,
+      "average_grade": 0.1,
+      "maximum_grade": 1.3,
+      "elevation_high": 0.8,
+      "elevation_low": -0.8,
+      "start_latlng": [
+        40.720963,
+        -73.972999
+      ],
+      "end_latlng": [
+        40.714473,
+        -73.975271
+      ],
+      "elevation_profile": null,
+      "elevation_profiles": null,
+      "climb_category": 0,
+      "city": "New York",
+      "state": "New York",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": false
+    },
+    {
+      "id": 18492316,
+      "resource_state": 2,
+      "name": "Rockefeller Park 200 M",
+      "activity_type": "Run",
+      "distance": 240.3,
+      "average_grade": -1.5,
+      "maximum_grade": 1.3,
+      "elevation_high": 3.7,
+      "elevation_low": -0.1,
+      "start_latlng": [
+        40.71512,
+        -74.017363
+      ],
+      "end_latlng": [
+        40.717259,
+        -74.01695
+      ],
+      "elevation_profile": null,
+      "elevation_profiles": null,
+      "climb_category": 0,
+      "city": "New York",
+      "state": "New York",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": false
+    }
+  ]
+}

@@ -12,7 +12,7 @@ http_interactions:
       Accept:
       - application/json; charset=utf-8
       User-Agent:
-      - Strava Ruby Client/0.3.0
+      - Strava Ruby Client/3.0.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -20,49 +20,68 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Mon, 03 Dec 2018 15:09:27 GMT
       Content-Type:
-      - application/json; charset=UTF-8
+      - application/json; charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Via:
-      - 1.1 linkerd
+      Date:
+      - Sun, 19 Oct 2025 16:13:59 GMT
+      X-Envoy-Upstream-Service-Time:
+      - '527'
+      Server:
+      - istio-envoy
       Status:
       - 200 OK
-      X-Ratelimit-Limit:
-      - '600,30000'
-      X-Request-Id:
-      - 25e4aad4-e357-4c2b-9a88-ff3b87806aee
-      Etag:
-      - W/"b2b0be39a4a2cf36b37e9da5104ddf3f"
       X-Ratelimit-Usage:
-      - '96,8090'
-      X-Frame-Options:
-      - DENY
-      X-Content-Type-Options:
-      - nosniff
+      - '1,17'
+      X-Ratelimit-Limit:
+      - '200,2000'
       Vary:
-      - Origin
+      - Accept, Origin
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Permitted-Cross-Domain-Policies:
+      - none
       X-Xss-Protection:
       - 1; mode=block
+      X-Request-Id:
+      - 908130a5-3792-4230-b304-43b82350b3cd
+      X-Readratelimit-Limit:
+      - '100,1000'
+      X-Download-Options:
+      - noopen
+      Etag:
+      - W/"49c5004e723291416e257609c7d88fcd"
+      X-Frame-Options:
+      - DENY
+      X-Readratelimit-Usage:
+      - '1,17'
+      X-Content-Type-Options:
+      - nosniff
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 fb71bc40c2ca2e3f3af674bf6527ac8a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - JFK52-P3
+      X-Amz-Cf-Id:
+      - zqqx5kLMqmYrFUY2U73lXPqfn4jGuZew5pejVgR-SKtHQvlgydx8_w==
     body:
       encoding: UTF-8
-      string: '{"segments":[{"id":5699008,"resource_state":2,"name":"Compton Gardens
-        hill","climb_category":0,"climb_category_desc":"NC","avg_grade":4.6,"start_latlng":[36.377702,-94.207242],"end_latlng":[36.375948,-94.207689],"elev_difference":9.6,"distance":203.4,"points":"s_`}Ehz~}PRFv@P`@Bj@Xd@Fh@PVFhAHLCDG","starred":false},{"id":8794067,"resource_state":2,"name":"The
-        Full Crystal Bridges Hill Segment","climb_category":0,"climb_category_desc":"NC","avg_grade":4.8,"start_latlng":[36.385755,-94.203054],"end_latlng":[36.383246,-94.204826],"elev_difference":18.6,"distance":384.9,"points":"}qa}Eb`~}Pp@FdA^RJt@nARPVHb@Bb@JFLALS^?`@THv@OT?VLNR\\x@FFL?LI","starred":false},{"id":1694444,"resource_state":2,"name":"Old
-        Tiger Track","climb_category":0,"climb_category_desc":"NC","avg_grade":0.0,"start_latlng":[36.38524957004598,-94.21501611368191],"end_latlng":[36.385216000523776,-94.21505089858007],"elev_difference":0.6,"distance":1667.7,"points":"wna}Ezj`~PGA_@}@@IGCMCM?QFOJMPAd@Dx@Ap@JnAEf@Fd@JNNJPDN@VGJIHOF[@cAEk@EkBCOBg@GO[SW?_@JKHINCTGl@DZEnBBp@CNDRHRJNPHL@\\E^QHK?i@E_@@}AAa@@QDg@ASMe@UWIEMAOBOFG`@M^ARFd@BbA@~@G^@T^t@H@RE`@WFOBOIq@B}@?c@Gg@Jg@?QIc@IKYKQCOB]TKVHf@@`AAPJpACdAPXNNF?JCTKVWFQ?sABc@E_A?g@","starred":false},{"id":10167172,"resource_state":2,"name":"Bark
-        Park to the Tunnel","climb_category":0,"climb_category_desc":"NC","avg_grade":-1.3,"start_latlng":[36.402078,-94.215548],"end_latlng":[36.408051,-94.214715],"elev_difference":10.4,"distance":685.7,"points":"}wd}Edn`~PsADuBAqCOe@@e@GqCNg@FmAAc@DOFe@?a@QeB{@aAm@cA_@_@K]AWHc@EYQ","starred":false},{"id":9008085,"resource_state":2,"name":"Bentonville
-        Half - Mile 13","climb_category":0,"climb_category_desc":"NC","avg_grade":2.6,"start_latlng":[36.387284,-94.20343],"end_latlng":[36.37507,-94.207915],"elev_difference":42.8,"distance":1610.8,"points":"o{a}Elb~}PfAMh@OTC?CFCRCZB?BVDDDR@HBNADOIS?S@CF@LGL@ZCTBl@PH?\\RNP`@dARXHD^BLALDJ?XLDHALS^CL?NHND@XAn@QRBf@XZz@LNNCNOTCTDVPd@Hp@?z@NBCZBj@E\\Hf@?RB|@^TD^b@\\h@VNVLh@FRJdALPJL@h@TLDd@f@PDNNPXTPRB^?p@DNTl@f@`Ah@XBRJD?f@Lf@FZAn@BhAL^LFABSBEj@Gb@ARGV?HFFXHl@@b@","starred":false},{"id":9008097,"resource_state":2,"name":"Bentonville
-        Half - Mile 12","climb_category":0,"climb_category_desc":"NC","avg_grade":1.2,"start_latlng":[36.401452,-94.202714],"end_latlng":[36.387284,-94.20343],"elev_difference":19.2,"distance":1614.1,"points":"atd}E~}}}P|@SJIDERq@NQvAe@z@a@RKRE`Ac@f@ExAHn@JhBJ|@DpACp@Ff@@`@Dr@L^?xALjCj@~Ah@XDZA\\Jt@PVHl@NH?^NPLr@R`@@|@H`@Jd@FFBL?v@RR@n@NH?XLVDF?RBTC\\?rCVbA?~@DNDd@Ch@?f@Cr@Iv@BrAQb@BTD^?\\E","starred":false},{"id":1161162,"resource_state":2,"name":"Bentonville
-        1/2 M - Climb to the end","climb_category":0,"climb_category_desc":"NC","avg_grade":1.7,"start_latlng":[36.4048366,-94.2076503],"end_latlng":[36.3757307,-94.2074432],"elev_difference":63.4,"distance":3746.5,"points":"eie}Ez|~}Pj@kBRgAL]PUd@gAX{@LWj@i@RIt@m@x@kADKXOr@UXWR[J_@VuA\\q@fAuA`@a@p@a@`@IRKX{@VWvA_@pAk@jA_@X?nCRrANjABpBTrADx@NzALp@@n@L`BNfBj@j@At@H|@d@VFb@HjBf@~@Nv@R\\DfD`An@Jr@?z@QtAEhCR`@@n@C`@?l@EjA?vASz@HlA@t@GbB_@|Ab@HEAUO]L[r@GVBpAp@NR`@v@NTh@RbALJDBFIXKPAXHJXBp@IFGP?`@VDF^bALDFATWRGR@RJRNZL^ETAh@Rt@?\\CZF\\Bb@An@Vp@j@\\j@b@d@l@PvARnAXTL|@p@PVNXTP^@z@GZLLZXRp@`@VHhAN\\H\\?\\D^@d@E`ARTPJCHUHI","starred":false},{"id":13092961,"resource_state":2,"name":"straight
-        shot","climb_category":0,"climb_category_desc":"NC","avg_grade":-0.3,"start_latlng":[36.374483,-94.187892],"end_latlng":[36.376865,-94.188433],"elev_difference":0.9,"distance":268.9,"points":"ok_}Eja{}PoDAm@Fm@Rw@`@k@To@N{@H","starred":false},{"id":13264802,"resource_state":2,"name":"\"Old
-        Dump\" - Northeast J Street Climb Part 2","climb_category":0,"climb_category_desc":"NC","avg_grade":5.4,"start_latlng":[36.397592,-94.192576],"end_latlng":[36.395267,-94.195974],"elev_difference":32.8,"distance":605.7,"points":"}{c}Er~{}Pu@nDG`BFl@Al@Cp@[rDFn@ZZd@DzCBf@DlAGzCAp@@","starred":false},{"id":13092979,"resource_state":2,"name":"J
-        street hill","climb_category":0,"climb_category_desc":"NC","avg_grade":0.6,"start_latlng":[36.385865,-94.196272],"end_latlng":[36.388862,-94.196165],"elev_difference":4.0,"distance":331.3,"points":"sra}Evu|}PgEEs@?g@@e@E{@AcBBmBM","starred":false}]}'
-    http_version:
-  recorded_at: Mon, 03 Dec 2018 15:09:27 GMT
-recorded_with: VCR 4.0.0
+      string: '{"segments":[{"id":8794067,"resource_state":2,"name":"The Full Crystal
+        Bridges Hill Segment","climb_category":0,"climb_category_desc":"NC","avg_grade":4.8,"start_latlng":[36.385755,-94.203054],"end_latlng":[36.383246,-94.204826],"elev_difference":18.6,"distance":384.9,"points":"}qa}Eb`~}Pp@FdA^RJt@nARPVHb@Bb@JFLALS^?`@THv@OT?VLNR\\x@FFL?LI","starred":false,"elevation_profile":"https://d3o5xota0a1fcr.cloudfront.net/v6/charts/D3JEH6HBWDBTKRYLIKNLJKS3GQGWLZSD2MC7GIAEOPPBS6GPVMZRTISRUGF344JNKPVAJM6FPH7FNJIA3XTEDI4K","local_legend_enabled":true},{"id":9008085,"resource_state":2,"name":"Bentonville
+        Half - Mile 13","climb_category":0,"climb_category_desc":"NC","avg_grade":2.6,"start_latlng":[36.387284,-94.20343],"end_latlng":[36.37507,-94.207915],"elev_difference":42.8,"distance":1610.8,"points":"o{a}Elb~}PfAMh@OTC?CFCRCZB?BVDDDR@HBNADOIS?S@CF@LGL@ZCTBl@PH?\\RNP`@dARXHD^BLALDJ?XLDHALS^CL?NHND@XAn@QRBf@XZz@LNNCNOTCTDVPd@Hp@?z@NBCZBj@E\\Hf@?RB|@^TD^b@\\h@VNVLh@FRJdALPJL@h@TLDd@f@PDNNPXTPRB^?p@DNTl@f@`Ah@XBRJD?f@Lf@FZAn@BhAL^LFABSBEj@Gb@ARGV?HFFXHl@@b@","starred":false,"elevation_profile":"https://d3o5xota0a1fcr.cloudfront.net/v6/charts/AGVUJ556JZF2CTNIMJRDDJDPZ7EF33YKAVQEAXGGNDWWR3ESRHR5FUEWXQH57I2RUMPSCSPE42EABH6Y7QUD2WI=","local_legend_enabled":true},{"id":5699008,"resource_state":2,"name":"Compton
+        Gardens hill","climb_category":0,"climb_category_desc":"NC","avg_grade":4.6,"start_latlng":[36.377702,-94.207242],"end_latlng":[36.375948,-94.207689],"elev_difference":9.6,"distance":203.4,"points":"s_`}Ehz~}PRFv@P`@Bj@Xd@Fh@PVFhAHLCDG","starred":false,"elevation_profile":"https://d3o5xota0a1fcr.cloudfront.net/v6/charts/RS3NTB4ZRM2BR4A3K2XUOBBILVCLB5KLAHE5UH6D4HC3HUC42DSFGL2SB4CQVBFWFETBNH4AKI34SWOYNDKIL4UY","local_legend_enabled":true},{"id":9008097,"resource_state":2,"name":"Bentonville
+        Half - Mile 12","climb_category":0,"climb_category_desc":"NC","avg_grade":1.2,"start_latlng":[36.401452,-94.202714],"end_latlng":[36.387284,-94.20343],"elev_difference":19.2,"distance":1614.1,"points":"atd}E~}}}P|@SJIDERq@NQvAe@z@a@RKRE`Ac@f@ExAHn@JhBJ|@DpACp@Ff@@`@Dr@L^?xALjCj@~Ah@XDZA\\Jt@PVHl@NH?^NPLr@R`@@|@H`@Jd@FFBL?v@RR@n@NH?XLVDF?RBTC\\?rCVbA?~@DNDd@Ch@?f@Cr@Iv@BrAQb@BTD^?\\E","starred":false,"elevation_profile":"https://d3o5xota0a1fcr.cloudfront.net/v6/charts/EHWZEWES6U43LNS2DJTP77DIDW6ZHSS3H3NUY5BSGIN2VEKHCXBSGOUMI2ARYQRA4MTELQZUPR4ERVNATFNSBAI=","local_legend_enabled":true},{"id":4305681,"resource_state":2,"name":"Bentonville
+        Bark Park ","climb_category":0,"climb_category_desc":"NC","avg_grade":-1.3,"start_latlng":[36.402212,-94.215656],"end_latlng":[36.405823,-94.215713],"elev_difference":5.5,"distance":416.5,"points":"yxd}Ezn`~PG?GI_@As@HOGcAG_@Hk@CaAHKCa@BMEW?SFQUKAw@JOJMBGC[AwACa@DQJ","starred":false,"elevation_profile":"https://d3o5xota0a1fcr.cloudfront.net/v6/charts/POMARRHRCNRCI4CTBTHLU6V5LESOJ6ET7GQZVQUX6BRGWAWA6SM46YXJOVKNTA74M6XMOPWIWHUIEESG7C5ZA6Y=","local_legend_enabled":true},{"id":9008103,"resource_state":2,"name":"Bentonville
+        Half - Mile 11","climb_category":0,"climb_category_desc":"NC","avg_grade":0.5,"start_latlng":[36.406917,-94.215163],"end_latlng":[36.40141,-94.202693],"elev_difference":13.4,"distance":1614.3,"points":"eve}Exk`~PYOSAo@Wi@?[Jq@AEe@IK]MQCu@Ag@_D@q@Fc@H[`@w@x@qAHQPWLYb@w@^{@Ji@f@aAFYDWX}@Fc@V{@?MPs@Vy@Ha@rAuDNQNGp@CjAOzA_@ZQJKVk@Lc@^{AHk@FSVe@Za@b@w@\\s@|@w@LOTMZ]Zg@Pa@VOh@Qb@c@Ve@Nq@D[J_@`@s@Xa@Pk@V_@d@a@TK","starred":false,"elevation_profile":"https://d3o5xota0a1fcr.cloudfront.net/v6/charts/O76GF3HOX5WZ2IHCNZYU72GJPSSOWP3IUK3EKBXVBZ4W4QTWWEVHNCZ6Y55SRHOKT5PW7ASCQ4FKQFRIVRC5V5A=","local_legend_enabled":true},{"id":19014197,"resource_state":2,"name":"BV
+        - Tiger to 5th","climb_category":0,"climb_category_desc":"NC","avg_grade":0.1,"start_latlng":[36.385961,-94.217116],"end_latlng":[36.377989,-94.216434],"elev_difference":3.8,"distance":899.7,"points":"gsa}E~w`~Pr@KhCU^GpFI`ABp@JNDl@VdBL~@@dAFT?ZDL?f@IhC}@j@MnASr@Gb@IrBMhBETERI","starred":false,"elevation_profile":"https://d3o5xota0a1fcr.cloudfront.net/v6/charts/CL72NKVRK54J6SKWPAK2Y3NZ4WWEJ7SO7STV7YQFIVZFVZN7BV7UVNXCH7KO73PBUOOCNWBEVMQWTCSHLGFYSGA=","local_legend_enabled":true},{"id":13092979,"resource_state":2,"name":"J
+        street hill","climb_category":0,"climb_category_desc":"NC","avg_grade":0.6,"start_latlng":[36.385865,-94.196272],"end_latlng":[36.388862,-94.196165],"elev_difference":4.0,"distance":331.3,"points":"sra}Evu|}PgEEs@?g@@e@E{@AcBBmBM","starred":false,"elevation_profile":"https://d3o5xota0a1fcr.cloudfront.net/v6/charts/EO6YQR4WXR4FD26K7NFPORAV2OECEUYMQJ7S6BRD3NI6EBERTXY7O6RERWAXO2QJJVQLN63RTHUKPBT7J6L3GARD","local_legend_enabled":true},{"id":25918550,"resource_state":2,"name":"Orchards
+        and Memorial Park Loop","climb_category":0,"climb_category_desc":"NC","avg_grade":0.0,"start_latlng":[36.373278,-94.196708],"end_latlng":[36.373191,-94.196544],"elev_difference":15.6,"distance":4409.5,"points":"}c_}Elx|}Pi@FuBCg@FyAO_@Cc@D]?a@MU@}@EiBAc@CwAEa@GaCJ_@I_@KQQMi@MaAJuBA}@BkCh@{CRa@ZaBRy@n@aAJSFUHo@RiG?iALcDBSDmAEw@@cBEaACiB?yCBo@Nw@nAiK@m@Es@Jo@KoAAs@GsAG}@I]?uAUsB?UKsAMe@c@aAI_@Ig@BMLKdA@d@HhAD~JDf@FbAZx@`@TRnBrBjDdDr@x@`A~@Zf@Xl@Tj@Pt@Ht@An@In@?V?jCQpG?`FWbQDbBArGHdICn@Dr@S|AM~GOhAYpAOh@]^]@i@EwDH_@C","starred":false,"elevation_profile":"https://d3o5xota0a1fcr.cloudfront.net/v6/charts/G3F2EGB333V5MIYLEPEPQRZBG6T3WUTBV4GZKZSGAQATRLRNXEXN67ZTEPZN6IXUMJXWPTVVXRAJZN4Z4U6WEBT7","local_legend_enabled":true},{"id":23718846,"resource_state":2,"name":"Home
+        Stretch III","climb_category":0,"climb_category_desc":"NC","avg_grade":0.2,"start_latlng":[36.377717,-94.216383],"end_latlng":[36.377627,-94.214424],"elev_difference":1.6,"distance":184.2,"points":"u_`}Els`~PMg@@o@Ck@J}@DiDN[","starred":false,"elevation_profile":"https://d3o5xota0a1fcr.cloudfront.net/v6/charts/T7WNTCTGBVF4CS23TC6WZJCUWRKNLEDUQVOXIFYY6ZJ35K4T73MTPB3GPXEA34NX47TKXZKHN2OVLULCB4BNZTDX","local_legend_enabled":true}]}'
+  recorded_at: Sun, 19 Oct 2025 16:13:59 GMT
+recorded_with: VCR 6.3.1

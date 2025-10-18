@@ -1,5 +1,6 @@
 ### 3.0.0 (Next)
 
+* [#96](https://github.com/dblock/strava-ruby-client/pull/96): Update and refactor models to spec - [@dblock](https://github.com/dblock).
 * [#94](https://github.com/dblock/strava-ruby-client/pull/94): Adds video fields to `Strava::Models::Photo` - [@dblock](https://github.com/dblock).
 * [#92](https://github.com/dblock/strava-ruby-client/pull/92): Fixes `Hashie::Trash` serialization warning for `object_id` of `Strava::Webhooks::Models::Event` - [@simonneutert](https://github.com/simonneutert).
 * [#95](https://github.com/dblock/strava-ruby-client/pull/95): Fixed `club_events` returning `Strava::Models::ClubEvent` with an empty string in `created_at` - [@dblock](https://github.com/dblock).

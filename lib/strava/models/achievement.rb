@@ -2,6 +2,7 @@
 
 module Strava
   module Models
+    # Undocumented
     class Achievement < Strava::Models::Response
       property 'rank'
       property 'type'

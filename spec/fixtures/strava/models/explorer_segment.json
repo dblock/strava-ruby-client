@@ -1,0 +1,22 @@
+{
+  "id": 8794067,
+  "resource_state": 2,
+  "name": "The Full Crystal Bridges Hill Segment",
+  "climb_category": 0,
+  "climb_category_desc": "NC",
+  "avg_grade": 4.8,
+  "start_latlng": [
+    36.385755,
+    -94.203054
+  ],
+  "end_latlng": [
+    36.383246,
+    -94.204826
+  ],
+  "elev_difference": 18.6,
+  "distance": 384.9,
+  "points": "}qa}Eb`~}Pp@FdA^RJt@nARPVHb@Bb@JFLALS^?`@THv@OT?VLNR\\x@FFL?LI",
+  "starred": false,
+  "elevation_profile": "https://d3o5xota0a1fcr.cloudfront.net/v6/charts/D3JEH6HBWDBTKRYLIKNLJKS3GQGWLZSD2MC7GIAEOPPBS6GPVMZRTISRUGF344JNKPVAJM6FPH7FNJIA3XTEDI4K",
+  "local_legend_enabled": true
+}

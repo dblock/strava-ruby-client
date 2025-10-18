@@ -1,0 +1,23 @@
+{
+  "effort_count": 4,
+  "average_speed": 2.874059649655219,
+  "min_average_speed": 2.5139008176951587,
+  "mid_average_speed": 2.8274158571093633,
+  "max_average_speed": 3.2302713030187236,
+  "pr_rank": 1,
+  "frequency_milestone": null,
+  "trend": {
+    "speeds": [
+      3.2302713030187236,
+      2.8274158571093633,
+      2.827738533059389,
+      2.874895528511787
+    ],
+    "current_activity_index": 0,
+    "min_speed": 2.5139008176951587,
+    "mid_speed": 2.8274158571093633,
+    "max_speed": 3.2302713030187236,
+    "direction": 0
+  },
+  "resource_state": 2
+}

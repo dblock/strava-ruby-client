@@ -8,7 +8,7 @@ module Strava
         # Returns the currently authenticated athlete.
         #
         def athlete
-          Strava::Models::Athlete.new(get('athlete'))
+          Strava::Models::DetailedAthlete.new(get('athlete'))
         end
 
         #
@@ -36,7 +36,7 @@ module Strava
         #   The weight of the athlete in kilograms.
         #
         def update_athlete(options = {})
-          Strava::Models::Athlete.new(put('athlete', options))
+          Strava::Models::DetailedAthlete.new(put('athlete', options))
         end
       end
     end

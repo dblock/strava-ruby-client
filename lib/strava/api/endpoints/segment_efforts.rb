@@ -12,7 +12,7 @@ module Strava
         #
         def segment_effort(id_or_options, options = {})
           id, options = parse_args(id_or_options, options)
-          Strava::Models::SegmentEffort.new(get("segment_efforts/#{id}", options))
+          Strava::Models::DetailedSegmentEffort.new(get("segment_efforts/#{id}", options))
         end
 
         #
@@ -27,7 +27,7 @@ module Strava
         #
         def segment_efforts(id_or_options, options = {}, &block)
           id, options = parse_args(id_or_options, options)
-          paginate "segments/#{id}/all_efforts", options, Strava::Models::SegmentEffort, &block
+          paginate "segments/#{id}/all_efforts", options, Strava::Models::DetailedSegmentEffort, &block
         end
       end
     end

@@ -1,0 +1,35 @@
+{
+  "score": 656.0,
+  "distribution_buckets": [
+    {
+      "min": 0,
+      "max": 116,
+      "time": 19.0
+    },
+    {
+      "min": 117,
+      "max": 144,
+      "time": 57.0
+    },
+    {
+      "min": 145,
+      "max": 158,
+      "time": 1390.0
+    },
+    {
+      "min": 159,
+      "max": 173,
+      "time": 6934.0
+    },
+    {
+      "min": 174,
+      "max": -1,
+      "time": 4685.0
+    }
+  ],
+  "type": "heartrate",
+  "resource_state": 3,
+  "sensor_based": true,
+  "points": 582,
+  "custom_zones": false
+}

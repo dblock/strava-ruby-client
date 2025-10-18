@@ -8,6 +8,8 @@ client = Strava::Api::Client.new(
   access_token: access_token
 )
 
+puts "Logged in as #{client.athlete.name}."
+
 client.athlete_activities.each do |activity|
   puts activity.name
 end

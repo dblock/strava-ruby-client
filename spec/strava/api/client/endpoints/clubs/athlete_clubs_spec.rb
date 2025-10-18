@@ -7,7 +7,7 @@ RSpec.describe 'Strava::Api::Client#athlete_clubs', vcr: { cassette_name: 'clien
   it 'returns athlete clubs' do
     athlete_clubs = client.athlete_clubs
     expect(athlete_clubs).to be_a Enumerable
-    expect(athlete_clubs.count).to eq 6
+    expect(athlete_clubs.count).to eq 9
     club = athlete_clubs.first
     expect(club.id).to eq 108_605
     expect(club.url).to eq 'nyrr'

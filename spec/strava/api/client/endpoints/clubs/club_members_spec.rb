@@ -9,8 +9,8 @@ RSpec.describe 'Strava::Api::Client#club_members', vcr: { cassette_name: 'client
     expect(club_members).to be_a Enumerable
     expect(club_members.count).to eq 30
     member = club_members.first
-    expect(member).to be_a Strava::Models::ClubMember
-    expect(member.firstname).to eq '   Davy-Michel'
+    expect(member).to be_a Strava::Models::ClubAthlete
+    expect(member.firstname).to eq 'Alexandra'
   end
 
   it 'returns club members by id' do

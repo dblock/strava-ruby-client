@@ -1,0 +1,15 @@
+{
+  "id": "b16988545",
+  "primary": false,
+  "name": "Trek",
+  "nickname": "Trek",
+  "resource_state": 3,
+  "retired": false,
+  "distance": 0,
+  "converted_distance": 0.0,
+  "brand_name": "Trek",
+  "model_name": "450",
+  "frame_type": 3,
+  "description": "Favorite Trek.",
+  "weight": 9.0
+}

@@ -5,18 +5,16 @@ require 'spec_helper'
 RSpec.describe 'Strava::Api::Client#activity_kudos', vcr: { cassette_name: 'client/activity_kudos' } do
   include_context 'with API client'
   it 'returns activity kodoers' do
-    activity_kudos = client.activity_kudos(id: 3_958_491_750)
+    activity_kudos = client.activity_kudos(id: 15_605_032_352)
     expect(activity_kudos).to be_a Enumerable
-    expect(activity_kudos.count).to eq 70
+    expect(activity_kudos.count).to eq 2
     activity_kudoer = activity_kudos.first
-    expect(activity_kudoer).to be_a Strava::Models::Athlete
-    expect(activity_kudoer.id).to be_nil # strava cuts it off due to user privacy
-    expect(activity_kudoer.username).to be_nil
+    expect(activity_kudoer).to be_a Strava::Models::SummaryAthlete
   end
 
   it 'returns activity kodoers by id' do
-    activity_kudos = client.activity_kudos(3_958_491_750)
+    activity_kudos = client.activity_kudos(15_605_032_352)
     expect(activity_kudos).to be_a Enumerable
-    expect(activity_kudos.count).to eq 70
+    expect(activity_kudos.count).to eq 2
   end
 end

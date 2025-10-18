@@ -2,8 +2,10 @@
 
 module Strava
   module Models
+    # https://developers.strava.com/docs/reference/#api-models-Upload
     class Upload < Strava::Models::Response
       property 'id'
+      property 'id_str'
       property 'external_id'
       property 'error'
       property 'status'

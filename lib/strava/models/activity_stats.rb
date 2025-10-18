@@ -2,6 +2,7 @@
 
 module Strava
   module Models
+    # https://developers.strava.com/docs/reference/#api-models-ActivityStats
     class ActivityStats < Strava::Models::Response
       property 'biggest_ride_distance'
       property 'biggest_climb_elevation_gain'

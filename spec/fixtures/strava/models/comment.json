@@ -1,0 +1,17 @@
+{
+    "id": 2257523290,
+    "activity_id": 15605032352,
+    "post_id": null,
+    "resource_state": 2,
+    "text": "youpass?",
+    "mentions_metadata": null,
+    "created_at": "2025-08-27T18:36:59Z",
+    "cursor": null,
+    "athlete": {
+        "resource_state": 2,
+        "firstname": "Sasha",
+        "lastname": "C."
+    },
+    "reaction_count": 0,
+    "has_reacted": false
+}

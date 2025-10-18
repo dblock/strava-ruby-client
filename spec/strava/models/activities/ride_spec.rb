@@ -2,8 +2,8 @@
 
 require 'spec_helper'
 
-RSpec.describe Strava::Models::Activity do
-  let(:fixtures) { 'spec/fixtures/strava/models/activities' }
+RSpec.describe Strava::Models::DetailedActivity do
+  let(:fixtures) { 'spec/fixtures/strava/models/detailed_activities' }
   let(:json) { JSON.parse(File.read("#{fixtures}/#{activity_type}.json")) }
   let(:activity) { described_class.new(json) }
 
@@ -35,9 +35,9 @@ RSpec.describe Strava::Models::Activity do
       expect(activity.pace_per_100_meters_s).to eq '0m15s/100m'
       expect(activity.pace_per_kilometer_s).to eq '2m30s/km'
       expect(activity.pace_s).to eq '2m30s/km'
-      expect(activity.kilometer_per_hour_s).to eq '24.0km/h'
-      expect(activity.miles_per_hour_s).to eq '14.9mph'
-      expect(activity.speed_s).to eq '24.0km/h'
+      expect(activity.average_speed_kilometer_per_hour_s).to eq '24.0km/h'
+      expect(activity.average_speed_miles_per_hour_s).to eq '14.9mph'
+      expect(activity.average_speed_s).to eq '24.0km/h'
     end
 
     it 'converts elevation' do

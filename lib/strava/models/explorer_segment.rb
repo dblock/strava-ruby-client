@@ -2,11 +2,9 @@
 
 module Strava
   module Models
+    # https://developers.strava.com/docs/reference/#api-models-ExplorerSegment
     class ExplorerSegment < Strava::Models::Response
-      include Mixins::Distance
-
       property 'id'
-      property 'resource_state'
       property 'name'
       property 'climb_category'
       property 'climb_category_desc'
@@ -14,8 +12,13 @@ module Strava
       property 'start_latlng'
       property 'end_latlng'
       property 'elev_difference'
+      include Mixins::Distance
       property 'points'
+      # undocumented
+      property 'resource_state'
       property 'starred'
+      property 'elevation_profile'
+      property 'local_legend_enabled'
     end
   end
 end

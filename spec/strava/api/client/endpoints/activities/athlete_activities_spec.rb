@@ -10,8 +10,8 @@ RSpec.describe 'Strava::Api::Client#athlete_activities' do
       expect(athlete_activities).to be_a Enumerable
       expect(athlete_activities.count).to eq 30
       activity = athlete_activities.first
-      expect(activity.id).to eq 1_972_463_847
-      expect(activity.athlete).to be_a Strava::Models::Athlete
+      expect(activity.id).to eq 16_181_809_559
+      expect(activity.athlete).to be_a Strava::Models::MetaAthlete
       expect(activity.map).to be_a Strava::Models::Map
       expect(activity.start_date).to be_a Time
     end
@@ -34,8 +34,8 @@ RSpec.describe 'Strava::Api::Client#athlete_activities' do
 
     it 'returns athlete activities' do
       expect(athlete_activities).to be_a Enumerable
-      expect(athlete_activities.count).to eq 40
-      expect(athlete_activities.all? { |a| a.athlete.is_a?(Strava::Models::Athlete) }).to be true
+      expect(athlete_activities.count).to eq 1131
+      expect(athlete_activities.all? { |a| a.athlete.is_a?(Strava::Models::MetaAthlete) }).to be true
       expect(athlete_activities.map(&:id).uniq.count).to eq athlete_activities.count
     end
   end
@@ -51,7 +51,7 @@ RSpec.describe 'Strava::Api::Client#athlete_activities' do
 
     it 'returns athlete activities' do
       expect(athlete_activities).to be_a Enumerable
-      expect(athlete_activities.count).to eq 130
+      expect(athlete_activities.count).to eq 1131
       expect(athlete_activities.map(&:id).uniq.count).to eq athlete_activities.count
     end
   end

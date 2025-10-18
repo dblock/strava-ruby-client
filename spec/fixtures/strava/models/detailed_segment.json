@@ -1,0 +1,72 @@
+{
+  "id": 1109718,
+  "resource_state": 3,
+  "name": "E 14th St Climb",
+  "activity_type": "Run",
+  "distance": 419.58,
+  "average_grade": -0.8,
+  "maximum_grade": -0.6,
+  "elevation_high": 7.1,
+  "elevation_low": 3.8,
+  "start_latlng": [
+    40.73554842732847,
+    -73.98271151818335
+  ],
+  "end_latlng": [
+    40.73427177965641,
+    -73.97865023463964
+  ],
+  "elevation_profile": "https://d3o5xota0a1fcr.cloudfront.net/v6/charts/OHJYY3JE4RNNTF7QXK4BRSB5S4ITAJ4UMZQLHKW55TJBXAIWBSGT5Q37O7XNH4MXWVVSN7NFH5G6ZA5V2VDRTVA=",
+  "elevation_profiles": {
+    "light_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/charts/OHJYY3JE4RNNTF7QXK4BRSB5S4ITAJ4UMZQLHKW55TJBXAIWBSGT5Q37O7XNH4MXWVVSN7NFH5G6ZA5V2VDRTVA=",
+    "dark_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/charts/ZOSHFDPWQTT3V3LUOM4T7ERPMPYUBGPO4TLQQ6GPT5CARH4G6U2PGH66FLTTPFVZS5NIXROJNTNS755AK6HTSDA="
+  },
+  "climb_category": 0,
+  "city": "New York",
+  "state": "NY",
+  "country": "United States",
+  "private": false,
+  "hazardous": false,
+  "starred": true,
+  "created_at": "2012-03-19T22:00:20Z",
+  "updated_at": "2021-05-15T08:02:38Z",
+  "total_elevation_gain": 40.2,
+  "map": {
+    "id": "s1109718",
+    "polyline": "cdswF~vpbMd@eBJS^QTUf@u@LK\\cADc@FUFMZ[BIOcCQ[[QGAISzAoE",
+    "resource_state": 3
+  },
+  "effort_count": 3964,
+  "athlete_count": 1144,
+  "star_count": 3,
+  "athlete_segment_stats": {
+    "pr_elapsed_time": 116,
+    "pr_date": "2018-06-22",
+    "pr_visibility": "everyone",
+    "pr_activity_id": 1655832792,
+    "pr_activity_visibility": "everyone",
+    "effort_count": 5
+  },
+  "xoms": {
+    "kom": "1:09",
+    "qom": "1:31",
+    "overall": "1:09",
+    "destination": {
+      "href": "strava://segments/1109718/leaderboard",
+      "type": "overall",
+      "name": "All-Time"
+    }
+  },
+  "local_legend": {
+    "athlete_id": 149514149,
+    "title": "Alonzo Rodriguez",
+    "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/149514149/33600350/2/large.jpg",
+    "effort_description": "22 efforts in the last 90 days",
+    "effort_count": "22",
+    "effort_counts": {
+      "overall": "22 efforts",
+      "female": "3 efforts"
+    },
+    "destination": "strava://segments/1109718/local_legend?categories%5B%5D=overall"
+  }
+}

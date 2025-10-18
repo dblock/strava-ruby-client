@@ -7,7 +7,7 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
   it 'returns activity' do
     activity = client.activity(id: 194_641_753_419_464_175_341_946_417_534)
 
-    expect(activity).to be_a Strava::Models::Activity
+    expect(activity).to be_a Strava::Models::DetailedActivity
     expect(activity.id).to eq 194_641_753_419_464_175_341_946_417_534
 
     map = activity.map
@@ -17,7 +17,7 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
 
   it 'returns activity by id' do
     activity = client.activity(194_641_753_419_464_175_341_946_417_534)
-    expect(activity).to be_a Strava::Models::Activity
+    expect(activity).to be_a Strava::Models::DetailedActivity
     expect(activity.id).to eq 194_641_753_419_464_175_341_946_417_534
   end
 end

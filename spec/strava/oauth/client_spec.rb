@@ -140,7 +140,7 @@ RSpec.describe Strava::OAuth::Client do
         expect(token.expires_in).to eq 21_600
         expect(token.expires_at).to eq Time.at(1_542_940_199)
         athlete = token.athlete
-        expect(athlete).to be_a Strava::Models::Athlete
+        expect(athlete).to be_a Strava::Models::SummaryAthlete
         expect(athlete.updated_at).to eq Time.parse('2018-11-19 01:44:15 UTC')
         expect(athlete.firstname).to eq 'Daniel'
         expect(athlete.lastname).to eq 'Block'

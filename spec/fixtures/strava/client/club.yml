@@ -12,7 +12,7 @@ http_interactions:
       Accept:
       - application/json; charset=utf-8
       User-Agent:
-      - Strava Ruby Client/0.3.0
+      - Strava Ruby Client/3.0.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -20,43 +20,63 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Fri, 30 Nov 2018 15:07:45 GMT
       Content-Type:
-      - application/json; charset=UTF-8
+      - application/json; charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Via:
-      - 1.1 linkerd
+      Date:
+      - Sat, 18 Oct 2025 23:04:42 GMT
+      X-Envoy-Upstream-Service-Time:
+      - '101'
+      Server:
+      - istio-envoy
       Status:
       - 200 OK
-      X-Ratelimit-Limit:
-      - '600,30000'
-      X-Request-Id:
-      - 26cfd32b-518b-4147-8eaa-5d16c885d736
-      Etag:
-      - W/"d54a1e05a446de34b9d05983f80f7175"
       X-Ratelimit-Usage:
-      - '92,8072'
-      X-Frame-Options:
-      - DENY
-      X-Content-Type-Options:
-      - nosniff
+      - '78,221'
+      X-Ratelimit-Limit:
+      - '200,2000'
       Vary:
-      - Origin
+      - Accept, Origin
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Permitted-Cross-Domain-Policies:
+      - none
       X-Xss-Protection:
       - 1; mode=block
+      X-Request-Id:
+      - bc688ae7-e329-44da-a478-961af2d6db7a
+      X-Readratelimit-Limit:
+      - '100,1000'
+      X-Download-Options:
+      - noopen
+      Etag:
+      - W/"17eca33531577c140e8c066142c31fa4"
+      X-Frame-Options:
+      - DENY
+      X-Readratelimit-Usage:
+      - '77,220'
+      X-Content-Type-Options:
+      - nosniff
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 fb71bc40c2ca2e3f3af674bf6527ac8a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - JFK52-P3
+      X-Amz-Cf-Id:
+      - CIWwlviKXcH39jkh_-rRaHkkNja-Ddkisf4FP8Wwjf97SXDEVglEYQ==
     body:
       encoding: UTF-8
-      string: '{"id":108605,"resource_state":3,"name":"New York Road Runners","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/108605/8433029/1/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/108605/8433029/1/large.jpg","cover_photo":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/108605/5794562/3/large.jpg","cover_photo_small":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/108605/5794562/3/small.jpg","sport_type":"running","city":"New
-        York","state":"New York","country":"United States","private":false,"member_count":21703,"featured":false,"verified":true,"url":"nyrr","membership":null,"admin":false,"owner":false,"description":"New
-        York Road Runners is a non-profit community running organization, founded
-        in 1958, whose mission is to help and inspire people through running. We serve
-        nearly 600,000 people—including 267,000 youth—annually.","club_type":"casual_club","following_count":0}'
-    http_version:
-  recorded_at: Fri, 30 Nov 2018 15:07:45 GMT
-recorded_with: VCR 4.0.0
+      string: '{"id":108605,"resource_state":3,"name":"New York Road Runners","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/108605/8433029/2/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/108605/8433029/2/large.jpg","cover_photo":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/108605/5794562/3/large.jpg","cover_photo_small":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/108605/5794562/3/small.jpg","activity_types":["Run","VirtualRun","Wheelchair"],"activity_types_icon":"sports_run_normal","dimensions":["distance","num_activities","best_activities_distance","elev_gain","moving_time","velocity"],"sport_type":"running","localized_sport_type":"Running","city":"New
+        York","state":"New York","country":"United States","private":false,"member_count":327744,"featured":false,"verified":true,"url":"nyrr","membership":"member","admin":false,"owner":false,"description":"NYRR’s
+        vision is to build healthier lives and stronger communities through the transformative
+        power of running.\r\n \r\nAs a New York City-based nonprofit, we’re dedicated
+        to transforming the health and well-being of our communities through inclusive
+        and accessible running experiences, empowering all to achieve their potential.","club_type":"casual_club","following_count":44,"website":"http://www.nyrr.org"}'
+  recorded_at: Sat, 18 Oct 2025 23:04:42 GMT
+recorded_with: VCR 6.3.1

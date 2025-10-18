@@ -1,0 +1,39 @@
+{
+  "id": 1436274,
+  "resource_state": 2,
+  "name": "eastSideofReservoir",
+  "activity_type": "Run",
+  "distance": 1052.5,
+  "average_grade": -0.2,
+  "maximum_grade": 3.8,
+  "elevation_high": 35.2,
+  "elevation_low": 28.8,
+  "start_latlng": [
+    40.7816035,
+    -73.9623794
+  ],
+  "end_latlng": [
+    40.7890287,
+    -73.9572087
+  ],
+  "elevation_profile": null,
+  "elevation_profiles": null,
+  "climb_category": 0,
+  "city": "New York",
+  "state": "NY",
+  "country": "United States",
+  "private": false,
+  "hazardous": false,
+  "starred": true,
+  "pr_time": 256,
+  "athlete_pr_effort": {
+    "id": 38072446364,
+    "activity_id": 1524689861,
+    "elapsed_time": 256,
+    "distance": 1052.5,
+    "start_date": "2018-04-22T12:38:15Z",
+    "start_date_local": "2018-04-22T08:38:15Z",
+    "is_kom": false
+  },
+  "starred_date": "2018-12-02T19:23:20Z"
+}

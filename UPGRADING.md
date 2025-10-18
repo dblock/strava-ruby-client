@@ -2,6 +2,56 @@
 
 ### Upgrading to >= 3.0.0
 
+#### Breaking Model Changes
+
+The models have been updated and now closer align to the API documentation.
+
+- `Activity` was renamed to `DetailedActivity`, and `SummaryActivity`, `ClubActivity` and `MetaActivity` were added
+- `Athlete` was renamed to `DetailedAthlete`, and `SummaryAthlete`, and `MetaAthlete` were added
+- `Club` was renamed to `DetailedClub`, and `SummaryClub`, and `MetaClub` were added
+- `Gear` was renamed to `DetailedGear` and `SummaryGear` was added
+- `Photo` was renamed to `DetailedPhoto`, and `Photos` was renamed to `DetailedPhotos`, `PhotosSummary` and `PhotosSummaryPrimary` were added
+- `Segment` was renamed to `DetailedSegment`, `SummarySegment` was added and `SegmentStats` was removed
+- `SegmentEffort` was renamed to `DetailedSegmentEffort` and `SummarySegmentEffort` was added
+- `ClubMember` was renamed to `ClubAthlete`, and `ClubAdmin` was removed
+- `RunningRace` was removed, `BaseStream`, `StatsVisibility`, `SummaryPRSegmentEffort`, `UpdatableActivity`, and `Waypoint` were added.
+
+There are several API changes.
+
+- **Activities:**
+  - `create_activity()` now returns `DetailedActivity` instead of `Activity`
+  - `activity()` now returns `DetailedActivity` instead of `Activity`
+  - `activity_photos()` now returns `DetailedPhoto` instead of `Photo`
+  - `activity_kudos()` now returns `SummaryAthlete` instead of `Athlete`
+
+- **Athletes:**
+  - `athlete()` now returns `DetailedAthlete` instead of `Athlete`
+  - `update_athlete()` now returns `DetailedAthlete` instead of `Athlete`
+
+- **Clubs:**
+  - `club_activities()` now returns `ClubActivity` instead of `Activity`
+  - `club_admins()` now returns `ClubAthlete` instead of `ClubAdmin`
+  - `club()` now returns `DetailedClub` instead of `Club`
+  - `club_members()` now returns `ClubAthlete` instead of `ClubMember`
+
+- **Gears:**
+  - `gear()` now returns `DetailedGear` instead of `Gear`
+
+- **Segment Efforts:**
+  - `segment_effort()` now returns `DetailedSegmentEffort` instead of `SegmentEffort`
+  - `segment_efforts()` now returns `DetailedSegmentEffort` instead of `SegmentEffort`
+
+- **Segments:**
+  - `starred_segments()` now returns `SummarySegment` instead of `Segment`
+  - `segment()` now returns `DetailedSegment` instead of `Segment`
+  - `star_segment()` now returns `DetailedSegment` instead of `Segment`
+
+**Removed Methods:**
+
+- **`running_race(id)`** - The `client.running_race(id)` method has been removed along with the entire `RunningRaces` endpoint module.
+
+See [#96](https://github.com/dblock/strava-ruby-client/pull/96) for details.
+
 #### Removed `id` from `Strava::Models::Photo`
 
 The Strava Photos API returns `unique_id` and does not return `id`. The latter has been removed.

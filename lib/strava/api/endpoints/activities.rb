@@ -8,7 +8,7 @@ module Strava
         # Create an activity.
         #
         def create_activity(options = {})
-          Strava::Models::Activity.new(post('activities', options))
+          Strava::Models::DetailedActivity.new(post('activities', options))
         end
 
         #
@@ -19,7 +19,7 @@ module Strava
         #
         def activity(id_or_options, options = {})
           id, options = parse_args(id_or_options, options)
-          Strava::Models::Activity.new(get("activities/#{id}", options))
+          Strava::Models::DetailedActivity.new(get("activities/#{id}", options))
         end
 
         #
@@ -50,7 +50,7 @@ module Strava
         def activity_photos(id_or_options, options = {}, &block)
           id, options = parse_args(id_or_options, options)
           options[:size] = 5000 unless options[:size] # to retrieve full size photos
-          paginate "activities/#{id}/photos", options, Strava::Models::Photo, &block
+          paginate "activities/#{id}/photos", options, Strava::Models::DetailedPhoto, &block
         end
 
         #
@@ -65,7 +65,7 @@ module Strava
         #
         def activity_kudos(id_or_options, options = {}, &block)
           id, options = parse_args(id_or_options, options)
-          paginate "activities/#{id}/kudos", options, Strava::Models::Athlete, &block
+          paginate "activities/#{id}/kudos", options, Strava::Models::SummaryAthlete, &block
         end
 
         #
@@ -97,7 +97,7 @@ module Strava
           options = options.dup if options.key?(:after) || options.key?(:before)
           options[:after] = options[:after].to_i if options[:after]
           options[:before] = options[:before].to_i if options[:before]
-          paginate 'athlete/activities', options, Strava::Models::Activity, &block
+          paginate 'athlete/activities', options, Strava::Models::SummaryActivity, &block
         end
 
         #
@@ -133,7 +133,7 @@ module Strava
         #
         def update_activity(id_or_options, options = {})
           id, options = parse_args(id_or_options, options)
-          Strava::Models::Activity.new(put("activities/#{id}", options))
+          Strava::Models::DetailedActivity.new(put("activities/#{id}", options))
         end
       end
     end

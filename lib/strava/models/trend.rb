@@ -2,6 +2,7 @@
 
 module Strava
   module Models
+    # Undocumented
     class Trend < Strava::Models::Response
       property 'speeds'
       property 'current_activity_index'

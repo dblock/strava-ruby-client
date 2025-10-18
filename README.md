@@ -40,8 +40,6 @@ Unlike other clients, including [strava-api-v3](https://github.com/jaredholdcrof
     - [Export Route TCX](#export-route-tcx)
     - [Get Route](#get-route)
     - [List Athlete Routes](#list-athlete-routes)
-  - [Running Races](#running-races)
-    - [Get Running Race](#get-running-race)
   - [Segment Efforts](#segment-efforts)
     - [List Segment Efforts](#list-segment-efforts)
     - [Get Segment Effort](#get-segment-effort)
@@ -98,7 +96,7 @@ client = Strava::Api::Client.new(
   access_token: "12345678987654321"
 )
 
-client.athlete # => Strava::Models::Athlete
+client.athlete # => Strava::Models::DetailedAthlete
 ```
 
 Note that the token from the Strava website does not have enough permissions to retrieve your own activities. Use the [strava-oauth-token tool](#strava-oauth-token) to obtain a short lived with more access scopes.
@@ -136,7 +134,7 @@ activity.name # => 'Afternoon Run'
 activity.strava_url # => 'https://www.strava.com/activities/1982980795'
 ```
 
-See [Strava::Models::Activity](lib/strava/models/activity.rb) for all available properties.
+See [Strava::Models::DetailedActivity](lib/strava/models/detailed_activity.rb) for all available properties.
 
 #### Get Activity
 
@@ -149,7 +147,7 @@ activity.name # => 'Afternoon Run'
 activity.strava_url # => 'https://www.strava.com/activities/1982980795'
 ```
 
-See [Strava::Models::Activity](lib/strava/models/activity.rb) for all available properties.
+See [Strava::Models::DetailedActivity](lib/strava/models/detailed_activity.rb) for all available properties.
 
 Use `map.summary_polyline` and combine with [polylines](https://github.com/joshuaclayton/polylines) to parse the activity map and to construct a Google maps URL with start and end markers.
 
@@ -179,11 +177,11 @@ See [Strava::Models::Map](lib/strava/models/map.rb) for all available properties
 Returns the photos on the given activity. This API is undocumented in Strava's docs. But there is a discussion in the [strava community hub](https://communityhub.strava.com/t5/developer-discussions/download-all-photos-of-my-own-activities/m-p/11262).
 
 ```ruby
-photos = client.activity_photos(1982980795) # => Array[Strava::Models::Photo]
+photos = client.activity_photos(1982980795) # => Array[Strava::Models::DetailedPhoto]
 # in order to request a certain size (by default it will return the biggest size possible):
-# photos = client.activity_photos(1982980795, {size: 1920}) # => Array[Strava::Models::Photo]
+# photos = client.activity_photos(1982980795, {size: 1920}) # => Array[Strava::Models::DetailedPhoto]
 
-photo = photos.first # => Strava::Models::Photo
+photo = photos.first # => Strava::Models::DetailedPhoto
 
 photo.id # => nil
 photo.unique_id # => '65889142-538D-4EE5-96F5-3DC3B773B1E3'
@@ -197,7 +195,7 @@ photo.sizes # => { '0' => [29, 64] }
 photo.default_photo # => false
 ```
 
-See [Strava::Models::Photo](lib/strava/models/photo.rb) for all available properties.
+See [Strava::Models::DetailedPhoto](lib/strava/models/detailed_photo.rb) for all available properties.
 
 #### List Activity Comments
 
@@ -219,14 +217,14 @@ See [Strava::Models::Comment](lib/strava/models/comment.rb) for all available pr
 Returns the athletes who kudoed an activity identified by an identifier.
 
 ```ruby
-kudoers = client.activity_kudos(1982980795) # => Array[Strava::Models::Athlete]
+kudoers = client.activity_kudos(1982980795) # => Array[Strava::Models::SummaryAthlete]
 
-kodoer = kudoers.first # => Strava::Models::Athlete
+kodoer = kudoers.first # => Strava::Models::SummaryAthlete
 
 kudoer.username # => 'zolotov'
 ```
 
-See [Strava::Models::Athlete](lib/strava/models/athlete.rb) for all available properties.
+See [Strava::Models::SummaryAthlete](lib/strava/models/summary_athlete.rb) for all available properties.
 
 #### List Activity Laps
 
@@ -247,9 +245,9 @@ See [Strava::Models::Lap](lib/strava/models/lap.rb) for all available properties
 Returns the currently logged-in athlete's activities.
 
 ```ruby
-activities = client.athlete_activities # => Array[Strava::Models::Activity]
+activities = client.athlete_activities # => Array[Strava::Models::SummaryActivity]
 
-activity = activities.first # => Strava::Models::Activity
+activity = activities.first # => Strava::Models::SummaryActivity
 
 activity.name # => 'NYC TCS Marathon 2018'
 activity.strava_url # => 'https://www.strava.com/activities/1477353766'
@@ -259,13 +257,13 @@ activity.moving_time_in_hours_s # => '3h38m5s'
 activity.elapsed_time_in_hours_s # => '3h42m13s'
 activity.pace_s # => '5m15s/km'
 activity.pace_per_mile_s # => '8m28s/mi'
-activity.speed_s # => '11.4km/h'
-activity.miles_per_hour_s # => '7.1mph'
+activity.average_speed_s # => '11.4km/h'
+activity.average_speed_miles_per_hour_s # => '7.1mph'
 activity.total_elevation_gain_s # => '270.9m'
 activity.total_elevation_gain_in_feet_s # => '888.8ft'
 ```
 
-See [Strava::Models::Activity](lib/strava/models/activity.rb), [Strava::Models::Mixins::Distance](lib/strava/models/mixins/distance.rb), [Strava::Models::Mixins::Elevation](lib/strava/models/mixins/elevation.rb) and [Strava::Models::Mixins::Time](lib/strava/models/mixins/time.rb) for all available properties.
+See [Strava::Models::SummaryActivity](lib/strava/models/summary_activity.rb), [Strava::Models::Mixins::Distance](lib/strava/models/mixins/distance.rb), [Strava::Models::Mixins::TotalElevationGain](lib/strava/models/mixins/total_elevation_gain.rb), [Strava::Models::Mixins::ElapsedTime](lib/strava/models/mixins/elapsed_time.rb)  and [Strava::Models::Mixins::MovingTime](lib/strava/models/mixins/moving_time.rb) for all available properties.
 
 #### Get Activity Zones
 
@@ -311,10 +309,10 @@ activity.strava_url # => 'https://www.strava.com/activities/1982980795'
 Returns the currently authenticated athlete.
 
 ```ruby
-client.athlete # => Strava::Models::Athlete
+client.athlete # => Strava::Models::DetailedAthlete
 ```
 
-See [Strava::Models::Athlete](lib/strava/models/athlete.rb) for all available properties.
+See [Strava::Models::DetailedAthlete](lib/strava/models/detailed_athlete.rb) for all available properties.
 
 #### Get Zones
 
@@ -364,7 +362,7 @@ Update the currently authenticated athlete.
 athlete = client.update_athlete(weight: 90.1) # => Strava::Models::Athlete
 ```
 
-See [Strava::Models::Athlete](lib/strava/models/athlete.rb) for all available returned properties.
+See [Strava::Models::DetailedAthlete](lib/strava/models/detailed_athlete.rb) for all available returned properties.
 
 ### Clubs
 
@@ -373,14 +371,14 @@ See [Strava::Models::Athlete](lib/strava/models/athlete.rb) for all available re
 Retrieve recent activities from members of a specific club.
 
 ```ruby
-activities = client.club_activities(108605) # => Array[Strava::Models::Activity]
+activities = client.club_activities(108605) # => Array[Strava::Models::ClubActivity]
 
-activity = activities.first # => Strava::Models::Activity
+activity = activities.first # => Strava::Models::ClubActivity
 
 activity.name # => 'Afternoon Run'
 ```
 
-See [Strava::Models::Activity](lib/strava/models/activity.rb) for all available properties. Note that Strava does not return activity or athlete ID via this API.
+See [Strava::Models::ClubActivity](lib/strava/models/club_activity.rb) for all available properties. Note that Strava does not return activity or athlete ID via this API.
 
 #### List Club Events
 
@@ -401,53 +399,53 @@ See [Strava::Models::ClubEvent](lib/strava/models/club_event.rb) for all availab
 Returns a list of the administrators of a given club.
 
 ```ruby
-admins = client.club_admins(108605) # => Array[Strava::Models::ClubAdmin]
+admins = client.club_admins(108605) # => Array[Strava::Models::ClubAthlete]
 
-admin = admins.first # => Strava::Models::ClubAdmin
+admin = admins.first # => Strava::Models::ClubAthlete
 admin.name # => 'Peter Ciaccia'
 ```
 
-See [Strava::Models::ClubAdmin](lib/strava/models/club_admin.rb) for all available properties.
+See [Strava::Models::ClubAthlete](lib/strava/models/club_athlete.rb) for all available properties.
 
 #### Get Club
 
 Returns a given club using its identifier.
 
 ```ruby
-club = client.club(108605) # => Strava::Models::Club
+club = client.club(108605) # => Strava::Models::DetailedClub
 
 club.name # => 'NYRR'
 ```
 
-See [Strava::Models::Club](lib/strava/models/club.rb) for all available properties.
+See [Strava::Models::DetailedClub](lib/strava/models/detailed_club.rb) for all available properties.
 
 #### List Club Members
 
 Returns a list of the members of a given club.
 
 ```ruby
-members = client.club_members(108605) # => Array[Strava::Models::ClubMember]
+members = client.club_members(108605) # => Array[Strava::Models::ClubAthlete]
 
-member = members.first # => Strava::Models::ClubMember
+member = members.first # => Strava::Models::ClubAthlete
 member.name # => 'Peter Ciaccia'
 ```
 
-See [Strava::Models::ClubMember](lib/strava/models/club_member.rb) for all available properties.
+See [Strava::Models::ClubAthlete](lib/strava/models/club_athlete.rb) for all available properties.
 
 #### List Athlete Clubs
 
 Returns a list of the clubs whose membership includes the authenticated athlete.
 
 ```ruby
-clubs = client.athlete_clubs # => Array[Strava::Models::Club]
+clubs = client.athlete_clubs # => Array[Strava::Models::SummaryClub]
 
-club = clubs.first # => Strava::Models::Club
+club = clubs.first # => Strava::Models::SummaryClub
 
 activity.name # => 'NYRR'
 activity.strava_url # => 'https://www.strava.com/clubs/nyrr'
 ```
 
-See [Strava::Models::Club](lib/strava/models/club.rb) for all available properties.
+See [Strava::Models::SummaryClub](lib/strava/models/summary_club.rb) for all available properties.
 
 ### Gears
 
@@ -456,7 +454,7 @@ See [Strava::Models::Club](lib/strava/models/club.rb) for all available properti
 Returns an equipment using its identifier.
 
 ```ruby
-gear = client.gear(id: 'b2338517') # => Strava::Models::Gear
+gear = client.gear(id: 'b2338517') # => Strava::Models::DetailedGear
 
 gear.id # => 'b2338517'
 gear.name # => 'Trek'
@@ -471,7 +469,7 @@ gear.weight # => '9'
 gear.retired # => 'false'
 ```
 
-See [Strava::Models::Gear](lib/strava/models/gear.rb) for all available properties.
+See [Strava::Models::DetailedGear](lib/strava/models/detailed_gear.rb) for all available properties.
 
 ### Routes
 
@@ -533,27 +531,6 @@ route.moving_time_in_hours_s # => '1h21m5s'
 
 See [Strava::Models::Route](lib/strava/models/route.rb) for all available properties.
 
-### Running Races
-
-#### Get Running Race
-
-Returns a running race for a given identifier.
-
-```ruby
-running_race = client.running_race(1577) # => Strava::Models::RunningRace
-
-running_race.name # => 'Walt Disney World Marathon 10k'
-running_race.distance # => 10_000.0
-running_race.distance_s # => '10km'
-running_race.city # => 'Orlando'
-running_race.state # => 'FL'
-running_race.country # => 'United States'
-running_race.strava_url # => 'https://www.strava.com/running-races/2018-walt-disney-world-marathon-10k'
-running_race.website_url # => 'https://www.rundisney.com/disneyworld-marathon/'
-```
-
-See [Strava::Models::RunningRace](lib/strava/models/running_race.rb) for all available properties.
-
 ### Segment Efforts
 
 #### List Segment Efforts
@@ -563,7 +540,7 @@ Returns a set of the authenticated athlete's segment efforts for a given segment
 ```ruby
 segment_efforts = client.segment_efforts(1109718)
 
-segment_effort = segment_efforts.first # => Strava::Models::SegmentEffort
+segment_effort = segment_efforts.first # => Strava::Models::DetailedSegmentEffort
 
 segment_effort.name # => 'E 14th St Climb'
 segment_effort.activity # => Strava::Models::Activity
@@ -582,27 +559,27 @@ achievement.type # => 'pr'
 achievement.type_id # => 3
 ```
 
-See [Strava::Models::SegmentEffort](lib/strava/models/segment_effort.rb) and [Strava::Models::Achievement](lib/strava/models/achievement.rb) for all available properties.
+See [Strava::Models::DetailedSegmentEffort](lib/strava/models/detailed_segment_effort.rb) and [Strava::Models::Achievement](lib/strava/models/achievement.rb) for all available properties.
 
 #### Get Segment Effort
 
 Returns a segment effort from an activity that is owned by the authenticated athlete.
 
 ```ruby
-segment_effort = client.segment_effort(41494197089) # => Strava::Models::SegmentEffort
+segment_effort = client.segment_effort(41494197089) # => Strava::Models::DetailedSegmentEffort
 
 segment_effort.name # => 'E 14th St Climb'
 segment_effort.activity # => Strava::Models::Activity
 segment_effort.elapsed_time # => 116
 
-segment_stats = segment_effort.athlete_segment_stats # => Strava::Models::SegmentStats
+segment_stats = segment_effort.athlete_segment_stats # => Strava::Models::SummaryPRSegmentEffort
 segment_stats.pr_elapsed_time # => 116
 segment_stats.elapsed_time_in_hours_s # => '1m56s'
 segment_stats.pr_date # => Date
 segment_stats.effort_count # => 3
 ```
 
-See [Strava::Models::SegmentEffort](lib/strava/models/segment_effort.rb) and [Strava::Models::SegmentStats](lib/strava/models/segment_stats.rb) for all available properties.
+See [Strava::Models::DetailedSegmentEffort](lib/strava/models/detailed_segment_effort.rb) and [Strava::Models::SummaryPRSegmentEffort](lib/strava/models/summary_pr_segment_effort.rb) for all available properties.
 
 ### Segments
 
@@ -630,22 +607,23 @@ List of the authenticated athlete's starred segments.
 ```ruby
 segments = client.starred_segments
 
-segment = segments.first # => Strava::Models::Segment
+segment = segments.first # => Strava::Models::SummarySegment
 
 segment.pr_time # => 256
 segment.elapsed_time_in_hours_s # => '4m16s'
 segment.starred_date # => Time
-segment.athlete_pr_effort # => Strava::Models::SegmentEffort
+segment.athlete_segment_stats # => Strava::Models::SummarySegmentEffort
+segment.athlete_pr_effort # => Strava::Models::SummaryPRSegmentEffort
 ```
 
-See [Strava::Models::Segment](lib/strava/models/segment.rb) and [Strava::Models::SegmentEffort](lib/strava/models/segment_effort.rb) for all available properties.
+See [Strava::Models::Segment](lib/strava/models/segment.rb), [Strava::Models::SummarySegmentEffort](lib/strava/models/summary_segment_effort.rb) and [Strava::Models::SummaryPRSegmentEffort](lib/strava/models/summary_pr_segment_effort.rb) for all available properties.
 
 #### Get Segment
 
 Returns the specified segment.
 
 ```ruby
-segment = client.segment(1109718) # => Strava::Models::Segment
+segment = client.segment(1109718) # => Strava::Models::DetailedSegment
 
 segment.name # => 'E 14th St Climb'
 segment.city # => 'New York'
@@ -655,23 +633,23 @@ segment.map # => Strava::Models::Map
 segment.effort_count # => 750
 segment.athlete_count # => 206
 segment.star_count # => 1
-segment.athlete_segment_stats # => Strava::Models::SegmentStats
+segment.athlete_segment_stats # => Strava::Models::SummarySegmentEffort
 ```
 
-See [Strava::Models::Segment](lib/strava/models/segment.rb) for all available properties.
+See [Strava::Models::DetailedSegment](lib/strava/models/detailed_segment.rb) for all available properties.
 
 #### Star Segment
 
 Stars/unstars the given segment for the authenticated athlete.
 
 ```ruby
-segment = client.star_segment(50272077110, starred: true) # => Strava::Models::Segment
+segment = client.star_segment(50272077110, starred: true) # => Strava::Models::DetailedSegment
 
 segment.name # => 'E 14th St Climb'
 segment.starred # => true
 ```
 
-See [Strava::Models::Segment](lib/strava/models/segment.rb) for all available properties.
+See [Strava::Models::DetailedSegment](lib/strava/models/detailed_segment.rb) for all available properties.
 
 ### Streams
 
@@ -837,10 +815,10 @@ response # => Strava::Models::Token
 response.access_token # access token
 response.refresh_token # refresh token
 response.expires_at # timestamp when the access token expires
-response.athlete # => Strava::Models::Athlete
+response.athlete # => Strava::Models::SummaryAthlete
 ```
 
-See [Strava authentication documentation](https://developers.strava.com/docs/authentication/), [Strava::Models::Token](lib/strava/models/token.rb) and [Strava::Models::Athlete](lib/strava/models/athlete.rb) for all available properties in the response.
+See [Strava authentication documentation](https://developers.strava.com/docs/authentication/), [Strava::Models::Token](lib/strava/models/token.rb) and [Strava::Models::SummaryAthlete](lib/strava/models/summary_athlete.rb) for all available properties in the response.
 
 If the access token is expired, refresh it before making any requests. You will get back all new tokens.
 
@@ -1164,6 +1142,6 @@ See [CONTRIBUTING](CONTRIBUTING.md).
 
 ## Copyright and License
 
-Copyright (c) 2018, [Daniel Doubrovkine](https://twitter.com/dblockdotorg) and [Contributors](CHANGELOG.md).
+Copyright (c) 2018-2025, [Daniel Doubrovkine](https://twitter.com/dblockdotorg) and [Contributors](CHANGELOG.md).
 
 This project is licensed under the [MIT License](LICENSE.md).

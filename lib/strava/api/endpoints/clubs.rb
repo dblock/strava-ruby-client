@@ -16,7 +16,7 @@ module Strava
         #
         def club_activities(id_or_options, options = {}, &block)
           id, options = parse_args(id_or_options, options)
-          paginate "clubs/#{id}/activities", options, Strava::Models::Activity, &block
+          paginate "clubs/#{id}/activities", options, Strava::Models::ClubActivity, &block
         end
 
         #
@@ -46,7 +46,7 @@ module Strava
         #
         def club_admins(id_or_options, options = {}, &block)
           id, options = parse_args(id_or_options, options)
-          paginate "clubs/#{id}/admins", options, Strava::Models::ClubAdmin, &block
+          paginate "clubs/#{id}/admins", options, Strava::Models::ClubAthlete, &block
         end
 
         #
@@ -57,7 +57,7 @@ module Strava
         #
         def club(id_or_options, options = {})
           id, options = parse_args(id_or_options, options)
-          Strava::Models::Club.new(get("clubs/#{id}", options))
+          Strava::Models::DetailedClub.new(get("clubs/#{id}", options))
         end
 
         #
@@ -72,7 +72,7 @@ module Strava
         #
         def club_members(id_or_options, options = {}, &block)
           id, options = parse_args(id_or_options, options)
-          paginate "clubs/#{id}/members", options, Strava::Models::ClubMember, &block
+          paginate "clubs/#{id}/members", options, Strava::Models::ClubAthlete, &block
         end
 
         #
@@ -84,7 +84,7 @@ module Strava
         #   Number of items per page. Defaults to 30.
         #
         def athlete_clubs(options = {}, &block)
-          paginate 'athlete/clubs', options, Strava::Models::Club, &block
+          paginate 'athlete/clubs', options, Strava::Models::SummaryClub, &block
         end
       end
     end

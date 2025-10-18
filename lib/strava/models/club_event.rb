@@ -2,14 +2,15 @@
 
 module Strava
   module Models
+    # Unodcumented
     class ClubEvent < Strava::Models::Response
       property 'id'
       property 'resource_state'
       property 'title'
       property 'description'
       property 'club_id'
-      property 'club', transform_with: ->(c) { Strava::Models::Club.new(c) }
-      property 'organizing_athlete', transform_with: ->(oa) { Strava::Models::Athlete.new(oa) }
+      property 'club', transform_with: ->(c) { Strava::Models::SummaryClub.new(c) }
+      property 'organizing_athlete', transform_with: ->(oa) { Strava::Models::SummaryAthlete.new(oa) }
       property 'activity_type'
       property 'created_at', transform_with: ->(v) { Time.parse(v) if v&.length&.positive? }
       property 'route_id'

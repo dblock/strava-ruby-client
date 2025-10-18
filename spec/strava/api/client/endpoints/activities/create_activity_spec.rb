@@ -16,9 +16,9 @@ RSpec.describe 'Strava::Api::Client#create_activity', vcr: { cassette_name: 'cli
       trainer: false,
       commute: false
     )
-    expect(activity).to be_a Strava::Models::Activity
+    expect(activity).to be_a Strava::Models::DetailedActivity
     expect(activity.name).to eq 'strava-ruby-client activity'
     expect(activity.description).to eq 'Test strava-ruby-client activity.'
-    expect(activity.strava_url).to eq 'https://www.strava.com/activities/1982980795'
+    expect(activity.strava_url).to eq 'https://www.strava.com/activities/16185205521'
   end
 end

@@ -34,7 +34,7 @@ module Strava
         #   Number of items per page. Defaults to 30.
         #
         def starred_segments(options = {}, &block)
-          paginate 'segments/starred', options, Strava::Models::Segment, &block
+          paginate 'segments/starred', options, Strava::Models::SummarySegment, &block
         end
 
         #
@@ -45,7 +45,7 @@ module Strava
         #
         def segment(id_or_options, options = {})
           id, options = parse_args(id_or_options, options)
-          Strava::Models::Segment.new(get("segments/#{id}", options))
+          Strava::Models::DetailedSegment.new(get("segments/#{id}", options))
         end
 
         #
@@ -59,7 +59,7 @@ module Strava
         def star_segment(id_or_options, options = {})
           id, options = parse_args(id_or_options, options)
           throw ArgumentError.new('Required argument :starred missing') if options[:starred].nil?
-          Strava::Models::Segment.new(put("segments/#{id}/starred", options))
+          Strava::Models::DetailedSegment.new(put("segments/#{id}/starred", options))
         end
       end
     end

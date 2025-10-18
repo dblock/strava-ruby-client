@@ -10,7 +10,7 @@ RSpec.describe 'Strava::Api::Client#update_activity', vcr: { cassette_name: 'cli
       name: 'updated activity',
       description: 'Updated test strava-ruby-client activity.'
     )
-    expect(activity).to be_a Strava::Models::Activity
+    expect(activity).to be_a Strava::Models::DetailedActivity
     expect(activity.name).to eq 'updated activity'
     expect(activity.description).to eq 'Updated test strava-ruby-client activity.'
   end
@@ -21,7 +21,7 @@ RSpec.describe 'Strava::Api::Client#update_activity', vcr: { cassette_name: 'cli
       name: 'updated activity',
       description: 'Updated test strava-ruby-client activity.'
     )
-    expect(activity).to be_a Strava::Models::Activity
+    expect(activity).to be_a Strava::Models::DetailedActivity
     expect(activity.name).to eq 'updated activity'
     expect(activity.description).to eq 'Updated test strava-ruby-client activity.'
   end

@@ -2,9 +2,10 @@
 
 module Strava
   module Models
+    # https://developers.strava.com/docs/reference/#api-models-StreamSet
     class StreamSet < Strava::Models::Response
-      property 'distance', transform_with: ->(v) { Strava::Models::Stream.new(v) }
       property 'time', transform_with: ->(v) { Strava::Models::Stream.new(v) }
+      property 'distance', transform_with: ->(v) { Strava::Models::Stream.new(v) }
       property 'latlng', transform_with: ->(v) { Strava::Models::Stream.new(v) }
       property 'altitude', transform_with: ->(v) { Strava::Models::Stream.new(v) }
       property 'velocity_smooth', transform_with: ->(v) { Strava::Models::Stream.new(v) }

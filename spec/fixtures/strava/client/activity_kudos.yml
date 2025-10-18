@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.strava.com/api/v3/activities/3958491750/kudos
+    uri: https://www.strava.com/api/v3/activities/15605032352/kudos
     body:
       encoding: US-ASCII
       string: ''
@@ -12,7 +12,7 @@ http_interactions:
       Accept:
       - application/json; charset=utf-8
       User-Agent:
-      - Strava Ruby Client/0.5.0
+      - Strava Ruby Client/3.0.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -27,48 +27,52 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Tue, 02 Aug 2022 09:19:09 GMT
-      Via:
-      - 1.1 linkerd, 1.1 linkerd, 1.1 59d92388a3a66e5f245f384a437fa024.cloudfront.net
-        (CloudFront)
-      Etag:
-      - W/"03e282d88d6e9b053a9bf4592519f11f"
-      Vary:
-      - Origin
+      - Sat, 18 Oct 2025 23:28:07 GMT
+      X-Envoy-Upstream-Service-Time:
+      - '79'
       Server:
-      - nginx/1.21.3
+      - istio-envoy
       Status:
       - 200 OK
-      X-Request-Id:
-      - bc8f1e5b-9e5e-4585-8331-0765accc6ddb
+      X-Ratelimit-Usage:
+      - '2,224'
+      X-Ratelimit-Limit:
+      - '200,2000'
+      Vary:
+      - Accept, Origin
       Cache-Control:
       - max-age=0, private, must-revalidate
       Referrer-Policy:
       - strict-origin-when-cross-origin
-      X-Frame-Options:
-      - DENY
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Ratelimit-Limit:
-      - '600,30000'
-      X-Ratelimit-Usage:
-      - '3,125'
-      X-Download-Options:
-      - noopen
-      X-Content-Type-Options:
-      - nosniff
       X-Permitted-Cross-Domain-Policies:
       - none
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Request-Id:
+      - da99c641-d99f-4965-9e51-5a3d3acbd2c1
+      X-Readratelimit-Limit:
+      - '100,1000'
+      X-Download-Options:
+      - noopen
+      Etag:
+      - W/"7da726566f91cbdf0667a193170fe518"
+      X-Frame-Options:
+      - DENY
+      X-Readratelimit-Usage:
+      - '2,223'
+      X-Content-Type-Options:
+      - nosniff
       X-Cache:
       - Miss from cloudfront
+      Via:
+      - 1.1 255e8a45aff6633687f7e4911e918abc.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - FRA2-C1
+      - JFK52-P3
       X-Amz-Cf-Id:
-      - W6zQKhVIEBekaVIvF-I8FiUikDlstqa3a8OnB8jWPObv3uCODtSNew==
+      - qInjFMQETSvq5zrv8z020Unwt2Q1y0W9JxcI74tQazZ_KL57WDchKQ==
     body:
       encoding: UTF-8
-      string: '[{"resource_state":2,"firstname":"Simon","lastname":"B."},{"resource_state":2,"firstname":"Valentin","lastname":"F."},{"resource_state":2,"firstname":"Walter","lastname":"W."},{"resource_state":2,"firstname":"Lena","lastname":"G."},{"resource_state":2,"firstname":"H.J.","lastname":"R."},{"resource_state":2,"firstname":"Mario","lastname":"C."},{"resource_state":2,"firstname":"Jochen","lastname":"K."},{"resource_state":2,"firstname":"Olga","lastname":"K."},{"resource_state":2,"firstname":"Melanie","lastname":"H."},{"resource_state":2,"firstname":"Thomas","lastname":"B."},{"resource_state":2,"firstname":"Philipp","lastname":"V."},{"resource_state":2,"firstname":"Steppen","lastname":"D."},{"resource_state":2,"firstname":"Ben","lastname":"B."},{"resource_state":2,"firstname":"Andreas","lastname":"W."},{"resource_state":2,"firstname":"Sarah","lastname":"B."},{"resource_state":2,"firstname":"Andy","lastname":"T."},{"resource_state":2,"firstname":"Michelle","lastname":"H."},{"resource_state":2,"firstname":"Stefan","lastname":"G."},{"resource_state":2,"firstname":"Basti","lastname":"A."},{"resource_state":2,"firstname":"Kai","lastname":"B."},{"resource_state":2,"firstname":"Andy","lastname":"M."},{"resource_state":2,"firstname":"Thomas","lastname":"L."},{"resource_state":2,"firstname":"Lana","lastname":"W."},{"resource_state":2,"firstname":"Wojciech","lastname":"W."},{"resource_state":2,"firstname":"Julia","lastname":"D."},{"resource_state":2,"firstname":"Juergen","lastname":"D."},{"resource_state":2,"firstname":"Schweini","lastname":"B."},{"resource_state":2,"firstname":"Murphy","lastname":"D."},{"resource_state":2,"firstname":"Steffen","lastname":"R."},{"resource_state":2,"firstname":"Peter
-        Paul","lastname":"P."},{"resource_state":2,"firstname":"Danny","lastname":"P."},{"resource_state":2,"firstname":"Jens","lastname":"V."},{"resource_state":2,"firstname":"Holger","lastname":"S."},{"resource_state":2,"firstname":"Betti","lastname":"S."},{"resource_state":2,"firstname":"Flo","lastname":"H."},{"resource_state":2,"firstname":"Harald
-        Posselmann","lastname":"(."},{"resource_state":2,"firstname":"Marko","lastname":"J."},{"resource_state":2,"firstname":"Do","lastname":"P."},{"resource_state":2,"firstname":"Tobias","lastname":"Z."},{"resource_state":2,"firstname":"Thomas","lastname":"B."},{"resource_state":2,"firstname":"Laura","lastname":"R."},{"resource_state":2,"firstname":"Patrick","lastname":"W."},{"resource_state":2,"firstname":"Dirk","lastname":"B."},{"resource_state":2,"firstname":"Jo","lastname":"G."},{"resource_state":2,"firstname":"Doro","lastname":"B."},{"resource_state":2,"firstname":"Florian","lastname":"B."},{"resource_state":2,"firstname":"Tobias","lastname":"E."},{"resource_state":2,"firstname":"Antje","lastname":"V."},{"resource_state":2,"firstname":"Peter","lastname":"B."},{"resource_state":2,"firstname":"Felix","lastname":"M."},{"resource_state":2,"firstname":"Konrad","lastname":"W."},{"resource_state":2,"firstname":"fillsoko","lastname":"⚡."},{"resource_state":2,"firstname":"Cynthia","lastname":"W."},{"resource_state":2,"firstname":"Toni","lastname":"B."},{"resource_state":2,"firstname":"Verena","lastname":"H."},{"resource_state":2,"firstname":"Alex","lastname":"G."},{"resource_state":2,"firstname":"Linn","lastname":"T."},{"resource_state":2,"firstname":"Corina","lastname":"K."},{"resource_state":2,"firstname":"Frank","lastname":"Z."},{"resource_state":2,"firstname":"Mathis","lastname":"H."},{"resource_state":2,"firstname":"David","lastname":".."},{"resource_state":2,"firstname":"Tanja","lastname":"W."},{"resource_state":2,"firstname":"Bernd","lastname":"W."},{"resource_state":2,"firstname":"Y","lastname":"X."},{"resource_state":2,"firstname":"#","lastname":"C."},{"resource_state":2,"firstname":"Nico","lastname":"N."},{"resource_state":2,"firstname":"Dario","lastname":"S."},{"resource_state":2,"firstname":"Sebastian","lastname":"W."},{"resource_state":2,"firstname":"Torsten","lastname":"S."},{"resource_state":2,"firstname":"Eva","lastname":"L."}]'
-  recorded_at: Tue, 02 Aug 2022 09:19:09 GMT
-recorded_with: VCR 6.1.0
+      string: "[{\"resource_state\":2,\"firstname\":\"Artyom\",\"lastname\":\"A.\"},{\"resource_state\":2,\"firstname\":\"Sergej
+        \U0001F90D❤️\U0001F90D\",\"lastname\":\"P.\"}]"
+  recorded_at: Sat, 18 Oct 2025 23:28:07 GMT
+recorded_with: VCR 6.3.1

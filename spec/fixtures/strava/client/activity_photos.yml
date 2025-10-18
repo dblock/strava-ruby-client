@@ -27,15 +27,15 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Sat, 18 Oct 2025 20:08:37 GMT
+      - Sun, 19 Oct 2025 16:33:09 GMT
       X-Envoy-Upstream-Service-Time:
-      - '72'
+      - '83'
       Server:
       - istio-envoy
       Status:
       - 200 OK
       X-Ratelimit-Usage:
-      - '1,139'
+      - '2,20'
       X-Ratelimit-Limit:
       - '200,2000'
       Vary:
@@ -49,7 +49,7 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Request-Id:
-      - 9a14311b-d741-4a5a-abfe-f045d7611e21
+      - bc7ed6a3-f783-496a-b522-f61c214143a6
       X-Readratelimit-Limit:
       - '100,1000'
       X-Download-Options:
@@ -59,17 +59,17 @@ http_interactions:
       X-Frame-Options:
       - DENY
       X-Readratelimit-Usage:
-      - '1,139'
+      - '2,20'
       X-Content-Type-Options:
       - nosniff
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 90707ba4ec932f1b72abfb5c4f1add2e.cloudfront.net (CloudFront)
+      - 1.1 def26d054ec95b961e8352e3cd4fae7e.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - JFK52-P3
       X-Amz-Cf-Id:
-      - "-ncC9-leXpRjwwClEYQL5TXT6p-FfJbHXD7RyqXcqa_8TjN9ydrODw=="
+      - kN6XO7F597QVt9HTiuaAkxUyOx6bg-zlDu5n_MHIC_faiNvD2jQuAQ==
     body:
       encoding: UTF-8
       string: '[{"unique_id":"6D1E4A0B-0A46-406A-874A-C3ED694DDE55","athlete_id":26462176,"activity_id":16181809559,"activity_name":"Run
@@ -77,5 +77,5 @@ http_interactions:
         with Artyom","post_id":null,"resource_state":2,"caption":"","type":1,"source":1,"status":3,"uploaded_at":"2025-10-18T15:28:11Z","created_at":"2025-10-16T22:18:39Z","created_at_local":"2025-10-16T18:18:39Z","urls":{"5000":"https://dgtzuqphqg23d.cloudfront.net/37jS2r9iH-D8K53dVzGi6lq-Nv5JRNqpmPnO-Qdtb1s-1536x2048.jpg"},"placeholder_image":null,"sizes":{"5000":[1536,2048]},"default_photo":false,"cursor":null,"location":[40.76137166666667,-73.971825]},{"unique_id":"F5F942E4-DE41-4BFF-842B-99E66D6E4345","athlete_id":26462176,"activity_id":16181809559,"activity_name":"Run
         with Artyom","post_id":null,"resource_state":2,"caption":"","type":1,"source":1,"status":3,"uploaded_at":"2025-10-18T15:28:11Z","created_at":"2025-10-16T14:07:37Z","created_at_local":"2025-10-16T10:07:37Z","urls":{"5000":"https://dgtzuqphqg23d.cloudfront.net/NSD1vutEd09T0klV_1EPJjvxkRxV2EX7PBTRc26nIQc-1536x2048.jpg"},"placeholder_image":null,"sizes":{"5000":[1536,2048]},"default_photo":false,"cursor":null,"location":[40.755705,-73.99655333333334]},{"unique_id":"077BE6E7-DDA8-4F38-BB4A-DF0F4640C2D5","athlete_id":26462176,"activity_id":16181809559,"activity_name":"Run
         with Artyom","post_id":null,"resource_state":2,"caption":"","type":2,"source":1,"status":3,"uploaded_at":"2025-10-18T19:52:33Z","created_at":"2025-10-18T19:51:59Z","created_at_local":"2025-10-18T15:51:59Z","urls":{"5000":"https://d35tn3x5zm6xrc.cloudfront.net/LEpTlUieI8wxuKwsdTd_CAHz0i2BccppnSXEfVV5_p4/thumbnails/LEpTlUieI8wxuKwsdTd_CAHz0i2BccppnSXEfVV5_p4_1080x1920.jpg"},"placeholder_image":null,"sizes":{"5000":[1080,1920]},"default_photo":false,"cursor":null,"duration":4.0,"video_url":"https://d35tn3x5zm6xrc.cloudfront.net/LEpTlUieI8wxuKwsdTd_CAHz0i2BccppnSXEfVV5_p4/hls/LEpTlUieI8wxuKwsdTd_CAHz0i2BccppnSXEfVV5_p4.m3u8","location":[40.7557,-73.9966]}]'
-  recorded_at: Sat, 18 Oct 2025 20:08:37 GMT
+  recorded_at: Sun, 19 Oct 2025 16:33:09 GMT
 recorded_with: VCR 6.3.1

@@ -12,7 +12,7 @@ http_interactions:
       Accept:
       - application/json; charset=utf-8
       User-Agent:
-      - Strava Ruby Client/0.3.0
+      - Strava Ruby Client/3.0.0
       Content-Type:
       - application/x-www-form-urlencoded
       Accept-Encoding:
@@ -22,48 +22,81 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Fri, 30 Nov 2018 14:51:24 GMT
       Content-Type:
-      - application/json; charset=UTF-8
+      - application/json; charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Via:
-      - 1.1 linkerd
+      Date:
+      - Sat, 18 Oct 2025 23:04:28 GMT
+      X-Envoy-Upstream-Service-Time:
+      - '246'
+      Server:
+      - istio-envoy
       Status:
       - 200 OK
-      X-Ratelimit-Limit:
-      - '600,30000'
-      X-Request-Id:
-      - 14b63166-cd94-421d-b43a-b96565ffdb46
-      Etag:
-      - W/"45688e28fca450cd1f74a9e9b1859e0e"
       X-Ratelimit-Usage:
-      - '1,7891'
-      X-Frame-Options:
-      - SAMEORIGIN,DENY
-      X-Content-Type-Options:
-      - nosniff
+      - '71,214'
+      X-Ratelimit-Limit:
+      - '200,2000'
       Vary:
-      - Origin
+      - Accept, Origin
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Permitted-Cross-Domain-Policies:
+      - none
       X-Xss-Protection:
       - 1; mode=block
+      X-Request-Id:
+      - 31fc0740-cb81-4ae2-a662-0a38069501df
+      X-Readratelimit-Limit:
+      - '100,1000'
+      X-Download-Options:
+      - noopen
+      Etag:
+      - W/"fdccc0c665d726064374cdb15cba65fa"
+      X-Frame-Options:
+      - DENY
+      X-Readratelimit-Usage:
+      - '70,213'
+      X-Content-Type-Options:
+      - nosniff
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 def26d054ec95b961e8352e3cd4fae7e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - JFK52-P3
+      X-Amz-Cf-Id:
+      - g-IipVoIONO8WDMrThs8v_pEtu3--9UziN1-DnFw_wO1a0lZipjzQQ==
     body:
       encoding: UTF-8
-      string: '{"id":29323238,"username":"play_play","resource_state":3,"firstname":"Play","lastname":"Play","city":"Brooklyn","state":"New
-        York","country":"United States","sex":"M","premium":false,"summit":false,"created_at":"2018-03-28T20:23:16Z","updated_at":"2018-11-30T14:44:46Z","badge_type_id":0,"profile_medium":"avatar/athlete/medium.png","profile":"avatar/athlete/large.png","friend":null,"follower":null,"follower_count":0,"friend_count":0,"mutual_friend_count":0,"athlete_type":1,"date_preference":"%m/%d/%Y","measurement_preference":"feet","clubs":[{"id":194356,"resource_state":2,"name":"NYRR
-        Open Run","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/194356/4154778/2/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/194356/4154778/2/large.jpg","cover_photo":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/194356/5939658/7/large.jpg","cover_photo_small":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/194356/5939658/7/small.jpg","sport_type":"running","city":"","state":"New
-        York","country":"United States","private":false,"member_count":0,"featured":false,"verified":false,"url":"NYRROpenRun","membership":"member","admin":false,"owner":false},{"id":281925,"resource_state":2,"name":"NYRR
-        Group Training","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/281925/6247452/1/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/281925/6247452/1/large.jpg","cover_photo":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/281925/6247467/7/large.jpg","cover_photo_small":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/281925/6247467/7/small.jpg","sport_type":"running","city":"New
-        York","state":"New York","country":"United States","private":false,"member_count":0,"featured":false,"verified":false,"url":"NYRRGroupTraining","membership":"member","admin":false,"owner":false}],"ftp":null,"weight":90.1,"bikes":[{"id":"b5377821","primary":false,"name":"Émonda
-        SLR 9 Disc","resource_state":2,"distance":0.0},{"id":"b5377817","primary":true,"name":"Madone
-        SLR 9 Disc eTap","resource_state":2,"distance":0.0}],"shoes":[{"id":"g3844087","primary":true,"name":"adidas
-        Supernova","resource_state":2,"distance":0.0},{"id":"g3844089","primary":false,"name":"Nike
-        Air Jordans","resource_state":2,"distance":0.0}]}'
-    http_version:
-  recorded_at: Fri, 30 Nov 2018 14:51:24 GMT
-recorded_with: VCR 4.0.0
+      string: '{"id":26462176,"username":"dblockdotorg","resource_state":3,"firstname":"Daniel","lastname":"Doubrovkine","bio":"@dblockdotorg
+        everywhere. Running in traffic since 2017 \u0026 blogging about it at http://run.dblock.org.
+        Former CTO @Artsy. NYC marathon in 2018! I also made a Strava bot for Slack,
+        https://slava.playplay.io.","city":"New York","state":"NY","country":"","sex":"M","premium":true,"summit":true,"created_at":"2017-11-28T19:05:35Z","updated_at":"2025-10-18T23:04:28Z","badge_type_id":1,"weight":90.1,"profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/athletes/26462176/7677115/2/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/athletes/26462176/7677115/2/large.jpg","friend":null,"follower":null,"blocked":false,"can_follow":true,"follower_count":211,"friend_count":286,"mutual_friend_count":0,"athlete_type":1,"date_preference":"%m/%d/%Y","measurement_preference":"feet","clubs":[{"id":108605,"resource_state":2,"name":"New
+        York Road Runners","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/108605/8433029/2/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/108605/8433029/2/large.jpg","cover_photo":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/108605/5794562/3/large.jpg","cover_photo_small":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/108605/5794562/3/small.jpg","activity_types":["Run","VirtualRun","Wheelchair"],"activity_types_icon":"sports_run_normal","dimensions":["distance","num_activities","best_activities_distance","elev_gain","moving_time","velocity"],"sport_type":"running","localized_sport_type":"Running","city":"New
+        York","state":"New York","country":"United States","private":false,"member_count":0,"featured":false,"verified":true,"url":"nyrr","membership":"member","admin":false,"owner":false},{"id":329962,"resource_state":2,"name":"2018
+        United NYC Half Marathon Runners","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/329962/7773687/1/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/329962/7773687/1/large.jpg","cover_photo":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/329962/7773664/2/large.jpg","cover_photo_small":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/329962/7773664/2/small.jpg","activity_types":["Run","VirtualRun","Wheelchair"],"activity_types_icon":"sports_run_normal","dimensions":["distance","num_activities","best_activities_distance","elev_gain","moving_time","velocity"],"sport_type":"running","localized_sport_type":"Running","city":"New
+        York","state":"New York","country":"United States","private":false,"member_count":0,"featured":false,"verified":false,"url":"2018UnitedNYCHalfRunners","membership":"member","admin":false,"owner":false},{"id":209437,"resource_state":2,"name":"TCS
+        New York City Marathon","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/209437/4601003/4/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/209437/4601003/4/large.jpg","cover_photo":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/209437/4601008/4/large.jpg","cover_photo_small":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/209437/4601008/4/small.jpg","activity_types":["Run","VirtualRun","Wheelchair"],"activity_types_icon":"sports_run_normal","dimensions":["distance","num_activities","best_activities_distance","elev_gain","moving_time","velocity"],"sport_type":"running","localized_sport_type":"Running","city":"New
+        York","state":"New York","country":"United States","private":false,"member_count":0,"featured":false,"verified":true,"url":"nycmarathon","membership":"member","admin":false,"owner":false},{"id":143380,"resource_state":2,"name":"nyctechrunners","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/143380/3010565/1/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/143380/3010565/1/large.jpg","cover_photo":null,"cover_photo_small":null,"activity_types":["Run","VirtualRun","Wheelchair"],"activity_types_icon":"sports_run_normal","dimensions":["distance","num_activities","best_activities_distance","elev_gain","moving_time","velocity"],"sport_type":"running","localized_sport_type":"Running","city":"New
+        York","state":"New York","country":"United States","private":false,"member_count":0,"featured":false,"verified":false,"url":"nyctechrunners","membership":"member","admin":false,"owner":false},{"id":340519,"resource_state":2,"name":"2018
+        Popular Brooklyn Half Marathon","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/340519/8108762/1/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/340519/8108762/1/large.jpg","cover_photo":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/340519/8108768/1/large.jpg","cover_photo_small":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/340519/8108768/1/small.jpg","activity_types":["Run","VirtualRun","Wheelchair"],"activity_types_icon":"sports_run_normal","dimensions":["distance","num_activities","best_activities_distance","elev_gain","moving_time","velocity"],"sport_type":"running","localized_sport_type":"Running","city":"","state":"New
+        York","country":"United States","private":false,"member_count":0,"featured":false,"verified":false,"url":"2018PopularBrooklynHalfRunners","membership":"member","admin":false,"owner":false},{"id":584679,"resource_state":2,"name":"Artsy
+        Running","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/584679/13615594/1/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/584679/13615594/1/large.jpg","cover_photo":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/584679/13615628/3/large.jpg","cover_photo_small":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/584679/13615628/3/small.jpg","activity_types":["Run","VirtualRun","Wheelchair"],"activity_types_icon":"sports_run_normal","dimensions":["distance","num_activities","best_activities_distance","elev_gain","moving_time","velocity"],"sport_type":"running","localized_sport_type":"Running","city":"New
+        York","state":"New York","country":"United States","private":true,"member_count":0,"featured":false,"verified":false,"url":"artsy-running","membership":"member","admin":true,"owner":false},{"id":332379,"resource_state":2,"name":"Runderwear","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/332379/25277705/2/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/332379/25277705/2/large.jpg","cover_photo":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/332379/7855515/20/large.jpg","cover_photo_small":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/332379/7855515/20/small.jpg","activity_types":["Run","VirtualRun","Wheelchair"],"activity_types_icon":"sports_run_normal","dimensions":["distance","num_activities","best_activities_distance","elev_gain","moving_time","velocity"],"sport_type":"running","localized_sport_type":"Running","city":"Poole","state":"England","country":"United
+        Kingdom","private":false,"member_count":0,"featured":false,"verified":true,"url":"Runderwear","membership":"member","admin":false,"owner":false},{"id":1084920,"resource_state":2,"name":"PitchandRun","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/1084920/25752752/1/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/1084920/25752752/1/large.jpg","cover_photo":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/1084920/25752754/1/large.jpg","cover_photo_small":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/1084920/25752754/1/small.jpg","activity_types":["Run","VirtualRun","Wheelchair"],"activity_types_icon":"sports_run_normal","dimensions":["distance","num_activities","best_activities_distance","elev_gain","moving_time","velocity"],"sport_type":"running","localized_sport_type":"Running","city":"New
+        York","state":"New York","country":"United States","private":false,"member_count":0,"featured":false,"verified":false,"url":"pitchandrun","membership":"member","admin":false,"owner":false},{"id":1323115,"resource_state":2,"name":"United
+        Airlines NYC Half","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/1323115/34123747/5/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/1323115/34123747/5/large.jpg","cover_photo":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/1323115/34123906/6/large.jpg","cover_photo_small":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/1323115/34123906/6/small.jpg","activity_types":["Run","VirtualRun","Wheelchair"],"activity_types_icon":"sports_run_normal","dimensions":["distance","num_activities","best_activities_distance","elev_gain","moving_time","velocity"],"sport_type":"running","localized_sport_type":"Running","city":"New
+        York","state":"New York","country":"United States","private":false,"member_count":0,"featured":false,"verified":true,"url":"UnitedAirlinesNYCHalf","membership":"member","admin":false,"owner":false}],"postable_clubs_count":7,"ftp":null,"bikes":[],"shoes":[{"id":"g20051782","primary":false,"name":"Adidas
+        Ultraboost 5X","nickname":null,"resource_state":2,"retired":false,"distance":452834,"converted_distance":281.4},{"id":"g23013319","primary":false,"name":"Vibram
+        V-Run","nickname":null,"resource_state":2,"retired":false,"distance":152039,"converted_distance":94.5},{"id":"g26020551","primary":false,"name":"Adidas
+        Adizero SL2","nickname":null,"resource_state":2,"retired":false,"distance":336329,"converted_distance":209.0},{"id":"g3372292","primary":false,"name":"Nike
+        Fitsole Lite 3","nickname":"","resource_state":2,"retired":false,"distance":551884,"converted_distance":342.9},{"id":"g19999385","primary":false,"name":"Adidas
+        Switch FWD 2","nickname":"","resource_state":2,"retired":false,"distance":752427,"converted_distance":467.5}]}'
+  recorded_at: Sat, 18 Oct 2025 23:04:28 GMT
+recorded_with: VCR 6.3.1

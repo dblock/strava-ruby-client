@@ -2,6 +2,7 @@
 
 module Strava
   module Models
+    # Undocumented
     class SimilarActivities < Strava::Models::Response
       property 'average_speed'
       property 'resource_state'
@@ -14,6 +15,7 @@ module Strava
       property 'min_speed'
       property 'speeds'
       property 'trend', transform_with: ->(v) { Strava::Models::Trend.new(v) }
+      property 'pr_rank'
     end
   end
 end

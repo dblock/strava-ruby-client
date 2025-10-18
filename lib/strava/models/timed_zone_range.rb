@@ -2,6 +2,7 @@
 
 module Strava
   module Models
+    # https://developers.strava.com/docs/reference/#api-models-TimedZoneRange
     class TimedZoneRange < Strava::Models::Response
       property 'max'
       property 'min'

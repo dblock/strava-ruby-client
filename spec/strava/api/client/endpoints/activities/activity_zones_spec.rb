@@ -15,12 +15,12 @@ RSpec.describe 'Strava::Api::Client#activity_zones', vcr: { cassette_name: 'clie
     distribution_bucket = activity_zone.distribution_buckets.first
     expect(distribution_bucket).to be_a Strava::Models::TimedZoneRange
     expect(distribution_bucket.min).to eq 0
-    expect(distribution_bucket.max).to eq 123
-    expect(distribution_bucket.time).to eq 20
+    expect(distribution_bucket.max).to eq 116
+    expect(distribution_bucket.time).to eq 19.0
     expect(activity_zone.type).to eq 'heartrate'
     expect(activity_zone.resource_state).to eq 3
     expect(activity_zone.sensor_based).to be true
-    expect(activity_zone.points).to eq 452
+    expect(activity_zone.points).to eq 582
     expect(activity_zone.custom_zones).to be false
   end
 

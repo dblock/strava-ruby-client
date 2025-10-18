@@ -12,7 +12,7 @@ http_interactions:
       Accept:
       - application/json; charset=utf-8
       User-Agent:
-      - Strava Ruby Client/0.5.0
+      - Strava Ruby Client/3.0.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -27,115 +27,51 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Tue, 02 Aug 2022 14:29:40 GMT
-      Via:
-      - 1.1 linkerd, 1.1 linkerd, 1.1 0b9e85cfe8fe19b385db56d32b4ce802.cloudfront.net
-        (CloudFront)
-      Etag:
-      - W/"d691ba870a461d31bb92a3b37cccd791"
-      Vary:
-      - Origin
+      - Sat, 18 Oct 2025 23:04:28 GMT
+      X-Envoy-Upstream-Service-Time:
+      - '79'
       Server:
-      - nginx/1.21.3
+      - istio-envoy
       Status:
       - 200 OK
-      X-Request-Id:
-      - 32e91f67-83f1-43b8-9253-b4d0a6996088
+      X-Ratelimit-Usage:
+      - '70,213'
+      X-Ratelimit-Limit:
+      - '200,2000'
+      Vary:
+      - Accept, Origin
       Cache-Control:
       - max-age=0, private, must-revalidate
       Referrer-Policy:
       - strict-origin-when-cross-origin
-      X-Frame-Options:
-      - DENY
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Ratelimit-Limit:
-      - '600,30000'
-      X-Ratelimit-Usage:
-      - '7,193'
-      X-Download-Options:
-      - noopen
-      X-Content-Type-Options:
-      - nosniff
       X-Permitted-Cross-Domain-Policies:
       - none
-      X-Cache:
-      - Miss from cloudfront
-      X-Amz-Cf-Pop:
-      - FRA2-C1
-      X-Amz-Cf-Id:
-      - hoa511Wp2cK70Z3gepFRDMbWs-fh6LL-kl2SURqMtdF9rKBRRFI_4g==
-    body:
-      encoding: UTF-8
-      string: '{"heart_rate":{"custom_zones":false,"zones":[{"min":0,"max":110},{"min":110,"max":146},{"min":146,"max":164},{"min":164,"max":182},{"min":182,"max":-1}]},"power":{"zones":[{"min":0,"max":105},{"min":106,"max":143},{"min":144,"max":171},{"min":172,"max":200},{"min":201,"max":228},{"min":229,"max":285},{"min":286,"max":-1}]}}'
-  recorded_at: Tue, 02 Aug 2022 14:29:40 GMT
-- request:
-    method: get
-    uri: https://www.strava.com/api/v3/athlete/zones
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Authorization:
-      - Bearer access-token
-      Accept:
-      - application/json; charset=utf-8
-      User-Agent:
-      - Strava Ruby Client/0.5.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Tue, 02 Aug 2022 14:29:43 GMT
-      Via:
-      - 1.1 linkerd, 1.1 linkerd, 1.1 9568a708c8ab21597698ebe7dce6c42e.cloudfront.net
-        (CloudFront)
-      Etag:
-      - W/"d691ba870a461d31bb92a3b37cccd791"
-      Vary:
-      - Origin
-      Server:
-      - nginx/1.21.3
-      Status:
-      - 200 OK
+      X-Xss-Protection:
+      - 1; mode=block
       X-Request-Id:
-      - df2744f2-cd7f-40c9-806d-68448c868635
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Referrer-Policy:
-      - strict-origin-when-cross-origin
-      X-Frame-Options:
-      - DENY
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Ratelimit-Limit:
-      - '600,30000'
-      X-Ratelimit-Usage:
-      - '8,194'
+      - 91b5be1f-e77d-4668-a96e-093119008474
+      X-Readratelimit-Limit:
+      - '100,1000'
       X-Download-Options:
       - noopen
+      Etag:
+      - W/"f11459eb09817f5955d5fcf00894afb6"
+      X-Frame-Options:
+      - DENY
+      X-Readratelimit-Usage:
+      - '69,212'
       X-Content-Type-Options:
       - nosniff
-      X-Permitted-Cross-Domain-Policies:
-      - none
       X-Cache:
       - Miss from cloudfront
+      Via:
+      - 1.1 932c2b3276a26e6c28876ec88fecf714.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - FRA2-C1
+      - JFK52-P3
       X-Amz-Cf-Id:
-      - 6yNSbxgZ_dLVe5Ek9e1wFdNCbTY0xiB38FGxhuhs65ttFlgr-raw3g==
+      - woj3guBEcGtLl7hx3st8yLmxIk7GDR55sGEnL24Idqwa9Od6E7U6Hg==
     body:
       encoding: UTF-8
-      string: '{"heart_rate":{"custom_zones":false,"zones":[{"min":0,"max":110},{"min":110,"max":146},{"min":146,"max":164},{"min":164,"max":182},{"min":182,"max":-1}]},"power":{"zones":[{"min":0,"max":105},{"min":106,"max":143},{"min":144,"max":171},{"min":172,"max":200},{"min":201,"max":228},{"min":229,"max":285},{"min":286,"max":-1}]}}'
-  recorded_at: Tue, 02 Aug 2022 14:29:43 GMT
-recorded_with: VCR 6.1.0
+      string: '{"heart_rate":{"custom_zones":false,"zones":[{"min":0,"max":111},{"min":111,"max":139},{"min":139,"max":152},{"min":152,"max":166},{"min":166,"max":-1}]}}'
+  recorded_at: Sat, 18 Oct 2025 23:04:28 GMT
+recorded_with: VCR 6.3.1

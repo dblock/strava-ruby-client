@@ -1,76 +1,80 @@
 ---
 http_interactions:
-  - request:
-      method: get
-      uri: https://www.strava.com/api/v3/activities/3958491750/comments
-      body:
-        encoding: US-ASCII
-        string: ""
-      headers:
-        Authorization:
-          - Bearer access-token
-        Accept:
-          - application/json; charset=utf-8
-        User-Agent:
-          - Strava Ruby Client/0.5.0
-        Accept-Encoding:
-          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-    response:
-      status:
-        code: 200
-        message: OK
-      headers:
-        Content-Type:
-          - application/json; charset=utf-8
-        Transfer-Encoding:
-          - chunked
-        Connection:
-          - keep-alive
-        Date:
-          - Tue, 02 Aug 2022 08:55:45 GMT
-        Via:
-          - 1.1 linkerd, 1.1 linkerd, 1.1 adb1b226e6965f6206603ba087bd4a0a.cloudfront.net
-            (CloudFront)
-        Etag:
-          - W/"d877f8f5778c9f4c7b648621554565ac"
-        Vary:
-          - Origin
-        Server:
-          - nginx/1.21.3
-        Status:
-          - 200 OK
-        X-Request-Id:
-          - b3aff1bd-1383-4f04-90aa-3dcd42e6abcc
-        Cache-Control:
-          - max-age=0, private, must-revalidate
-        Referrer-Policy:
-          - strict-origin-when-cross-origin
-        X-Frame-Options:
-          - DENY
-        X-Xss-Protection:
-          - 1; mode=block
-        X-Ratelimit-Limit:
-          - "600,30000"
-        X-Ratelimit-Usage:
-          - "7,117"
-        X-Download-Options:
-          - noopen
-        X-Content-Type-Options:
-          - nosniff
-        X-Permitted-Cross-Domain-Policies:
-          - none
-        X-Cache:
-          - Miss from cloudfront
-        X-Amz-Cf-Pop:
-          - FRA2-C1
-        X-Amz-Cf-Id:
-          - CnJFbryZXCWd2OX9SgJ6ww8rONbfVxA6aWGY8uMAD4OebeW-oVX8Zg==
-      body:
-        encoding: UTF-8
-        string:
-          '[{"id":808412522,"activity_id":3958491750,"post_id":null,"resource_state":2,"text":"ich
-          mag Bitche","mentions_metadata":null,"created_at":"2020-08-24T12:04:23Z","athlete":{"resource_state":2,"firstname":"Dario","lastname":"S."},"reaction_count":0,"has_reacted":false},{"id":808420060,"activity_id":3958491750,"post_id":null,"resource_state":2,"text":"Wundervolle
-          Strecke! Kenne ich!","mentions_metadata":null,"created_at":"2020-08-24T12:20:20Z","athlete":{"resource_state":2,"firstname":"Bernd","lastname":"W."},"reaction_count":0,"has_reacted":false},{"id":808471991,"activity_id":3958491750,"post_id":null,"resource_state":2,"text":"Bernd
-          Wildemann wirklich ein Filetstück ❤️","mentions_metadata":null,"created_at":"2020-08-24T14:08:57Z","athlete":{"resource_state":2,"firstname":"Simon","lastname":"N."},"reaction_count":0,"has_reacted":false}]'
-    recorded_at: Tue, 02 Aug 2022 08:55:45 GMT
-recorded_with: VCR 6.1.0
+- request:
+    method: get
+    uri: https://www.strava.com/api/v3/activities/15605032352/comments
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer access-token
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Strava Ruby Client/3.0.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Sat, 18 Oct 2025 23:17:42 GMT
+      X-Envoy-Upstream-Service-Time:
+      - '116'
+      Server:
+      - istio-envoy
+      Status:
+      - 200 OK
+      X-Ratelimit-Usage:
+      - '1,223'
+      X-Ratelimit-Limit:
+      - '200,2000'
+      Vary:
+      - Accept, Origin
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Request-Id:
+      - ce262baf-8cd0-4015-9fe8-e50a2a4828ad
+      X-Readratelimit-Limit:
+      - '100,1000'
+      X-Download-Options:
+      - noopen
+      Etag:
+      - W/"4905847ef1d5e766be3729893df7a92a"
+      X-Frame-Options:
+      - DENY
+      X-Readratelimit-Usage:
+      - '1,222'
+      X-Content-Type-Options:
+      - nosniff
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 90707ba4ec932f1b72abfb5c4f1add2e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - JFK52-P3
+      X-Amz-Cf-Id:
+      - LCC9WZesIoK6GyphWPMwUibq7ci9zPtCRr7gIx2PqNtElWRLUlEwkQ==
+    body:
+      encoding: UTF-8
+      string: '[{"id":2257523290,"activity_id":15605032352,"post_id":null,"resource_state":2,"text":"you
+        pass?","mentions_metadata":null,"created_at":"2025-08-27T18:36:59Z","cursor":null,"athlete":{"resource_state":2,"firstname":"Sasha","lastname":"C."},"reaction_count":0,"has_reacted":false},{"id":2257703241,"activity_id":15605032352,"post_id":null,"resource_state":2,"text":"Sasha
+        Caskey I will live another day!","mentions_metadata":null,"created_at":"2025-08-27T21:55:13Z","cursor":null,"athlete":{"resource_state":2,"firstname":"Daniel","lastname":"D."},"reaction_count":1,"has_reacted":false},{"id":2257782099,"activity_id":15605032352,"post_id":null,"resource_state":2,"text":"I
+        didn''t know they do competitive EKG Stress Test","mentions_metadata":null,"created_at":"2025-08-28T00:38:04Z","cursor":null,"athlete":{"resource_state":2,"firstname":"Vlad","lastname":"Z."},"reaction_count":0,"has_reacted":false}]'
+  recorded_at: Sat, 18 Oct 2025 23:17:42 GMT
+recorded_with: VCR 6.3.1

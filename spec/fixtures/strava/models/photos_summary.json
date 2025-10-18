@@ -1,0 +1,13 @@
+{
+  "primary": {
+    "unique_id": "54FF646F-9E6A-4BDC-845E-11553B814383",
+    "urls": {
+      "600": "https://dgtzuqphqg23d.cloudfront.net/DS-vccluHuiI0udXQo_39w7srsPlAP7bzdpzPuqshvo-768x768.jpg",
+      "100": "https://dgtzuqphqg23d.cloudfront.net/DS-vccluHuiI0udXQo_39w7srsPlAP7bzdpzPuqshvo-128x128.jpg"
+    },
+    "source": 1,
+    "media_type": 1
+  },
+  "use_primary_photo": true,
+  "count": 1
+}

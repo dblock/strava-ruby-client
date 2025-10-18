@@ -19,20 +19,16 @@ RSpec.describe 'Strava::Api::Client#segment', vcr: { cassette_name: 'client/segm
     expect(segment.country).to eq 'United States'
     expect(segment.start_latlng).to eq [40.73554842732847, -73.98271151818335]
     expect(segment.end_latlng).to eq [40.73427177965641, -73.97865023463964]
-    expect(segment.start_latitude).to eq 40.73554842732847
-    expect(segment.start_longitude).to eq(-73.98271151818335)
-    expect(segment.end_latitude).to eq 40.73427177965641
-    expect(segment.end_longitude).to eq(-73.97865023463964)
     expect(segment.private).to be false
     expect(segment.hazardous).to be false
-    expect(segment.starred).to be false
+    expect(segment.starred).to be true
     expect(segment.created_at).to be_a Time
     expect(segment.updated_at).to be_a Time
     expect(segment.map).to be_a Strava::Models::Map
-    expect(segment.effort_count).to eq 750
-    expect(segment.athlete_count).to eq 206
-    expect(segment.star_count).to eq 1
-    expect(segment.athlete_segment_stats).to be_a Strava::Models::SegmentStats
+    expect(segment.effort_count).to eq 3964
+    expect(segment.athlete_count).to eq 1144
+    expect(segment.star_count).to eq 3
+    expect(segment.athlete_segment_stats).to be_a Strava::Models::SummarySegmentEffort
   end
 
   it 'returns a segment by id' do

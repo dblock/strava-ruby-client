@@ -1,0 +1,2135 @@
+{
+  "resource_state": 3,
+  "athlete": {
+    "id": 26462176,
+    "resource_state": 1
+  },
+  "name": "First Time Breaking 14",
+  "distance": 22539.6,
+  "moving_time": 7586,
+  "elapsed_time": 7686,
+  "total_elevation_gain": 144.9,
+  "type": "Run",
+  "sport_type": "Run",
+  "workout_type": null,
+  "id": 1477353766,
+  "start_date": "2018-03-28T23:51:34Z",
+  "start_date_local": "2018-03-28T19:51:34Z",
+  "timezone": "(GMT-05:00) America/New_York",
+  "utc_offset": -14400.0,
+  "location_city": null,
+  "location_state": null,
+  "location_country": null,
+  "achievement_count": 2,
+  "kudos_count": 6,
+  "comment_count": 0,
+  "athlete_count": 1,
+  "photo_count": 0,
+  "map": {
+    "id": "a1477353766",
+    "polyline": "k{hwFzmcbMRg@FDLA^Q^Kf@Wp@GPBfAQXBXELINCPDHGLA`AC|@Sb@SP@LDJAr@WVDH?LGp@@^IV?t@SF@HABG?[BRAZZC\\Ir@CPDR?NFR?ZHREf@Bb@E`@BDAXN`@Fz@Hj@@TEH@PMDADHh@CJJJAPLZD@GF@RCbABDB^A\\Jh@@^JHAJBPEp@Jp@GVBZAJD\\@JAJDr@D^?PBV^dAnDFZFHn@lB@JH\\\\x@Pl@Dd@Ln@ZfAp@xA@PPL\\n@FRBZZ~@Hb@Vz@?HRd@BVN^`@r@^hAFZHTLh@\\hAHTV~@P`@Nl@RpAJ`@B^E|@B~@Ej@C`ADt@E^ChACb@@n@K`A?XALAfECV@LCF?d@EnA@b@KbAAZGPBR?|@Cl@?v@Ev@?vAEnA?n@InAK\\DJBt@KbABRA~@K`ACnBDVCn@G`A?n@E\\BhBGhAMz@D~@Ah@M~A?d@Ch@DhDClAEn@EpAArAC^CB?JAx@BrBA`AKpAElB?~@ADBTUnC@l@K`D?~@B^KzBE^BRAr@Gj@BpAE\\CdA?TEr@@f@Cd@BPAX?bBIn@GzAElFEZAr@K`@JP?LG~AA`CEZBx@I^Ap@?h@EZ?d@Il@@`@EzABf@Gd@Cx@@~@Gr@@VIx@Kf@Ch@@d@Sr@IP]fDQt@Ab@I`@@HGv@GPAZO`AAZ[tAEbACHAZGJKpA?ZCPYt@Er@GRIz@UxAI\\Ep@Y~@MlB@\\C^EHI\\Gf@M^Mt@Qj@GD[t@G^MfBOlA[jAKx@e@jCIjA@TG~B@r@BFXJN^R`ADf@Ef@M^ECGg@PFHVBb@?dAGxAO`@GAEDMPUPg@RGCUFgBNw@I}@S_Bs@SAQ\\ARCFKL]PQ@QGUBi@\\K@KJE?]N_@n@MJKPMEW?k@Ro@ZQBo@|@EBGPo@l@o@Pk@^[@GBYXGNCPIPOHGAMD[RUJSRM?KJ_@J_@VOPCHCRc@`@MDOEK?GCQHa@b@YROTEPEB?FMLM@[LSRGBQREBG?SVGASFa@\\IDGPQDICULEFUHOR_@PON[Jo@ZEFIRQT[Nc@LSBi@d@UJEFEPOFGJ_@XWRUDYNUR[H_@TQ@SVKTUNWHEC_@XQBIFGAg@Rc@f@Qj@QLI?OJORa@BKF]h@GVKFi@dAe@TGACB[EYPG?IGo@RG?GBKNUD[Vc@RIHIDw@z@UHK?a@\\QCOBQLq@XU?o@TgATCD]Tq@f@IPIDi@RGD_@WUAIHUr@KHSGm@LY\\UJUNe@f@EHME[Re@TWF[RO@a@^GDSAMHi@h@MC?GCBc@FiAj@OASUEI@OMEy@IKD?Hc@jAQv@QPk@J{Ab@a@DWAI@WD_@LCDIDQAMBm@f@c@h@G?OLq@RMBCECFH@FAf@DZE@j@AFK[KaAAs@Hc@CQGCWb@s@^EHGECSS_A_@vA_@RGFITG@Dc@HOFCLOf@_ALo@DgA?yBDcAFQEiAAGMDY?i@Em@N[DM?WI_@WE@a@M_@JU?GCS@SLQPMBOGG?c@NUBMEQOKCCKI_A?_AU}AG{B@k@Hk@`@q@TSTMZGRAxAJNAb@IZFnADP?h@Gj@Nl@@h@OFEBGF{@BqBAsAHk@?[E[BgADsAEs@HuA?q@Fy@AwACu@Bw@BM?WBs@AaAFK@K?{ABWGk@DaCCmAEy@BeAAq@Bk@FYFe@@]Gg@BmABWLi@FsBD_@DwCA[FqBEi@DkEFy@@gBNoACY?}@]gDSgASgBGs@Cm@K{@MaCJM?SIc@QqBGsBOoAMq@Cq@S{AIc@EI@s@_@gC[kDCuAMuB?_@EgAQiBQaAGo@I{CKg@EEUISJo@b@WLK@IFE?SRc@j@u@jAi@`@S\\i@n@y@d@MRUTWb@]RMPiA`Bi@l@AFYRc@l@a@X]d@EDIAIF]d@g@`@]^QRc@z@IJI@KTc@r@G@MHQTSTYPUHGFc@r@]^K\\[h@_@d@KFO@IHGRKPg@n@QLM@QHGFOj@MTGFKBINGA[VIBWR_@z@EDENGJKBUbCE@UCi@F_@AGEMEI?IDU?]M[Ac@IYOKA]HQEa@Sa@Cm@@DAGFCJIlAKf@GLMHIZAhAC`@GVEHIAWc@OIm@j@c@p@EPAl@Od@EFG\\Wn@ATIXE`@KVS|@ARg@jBCd@[v@MTKHGVATM^Mv@Q`@Ut@Ox@Cl@YbA?PI`@EDANQ^]zAC`@GNA\\EVUp@ATGVMVKdASj@?LSz@Ip@EDAHKt@Sp@?XCJMPEPKn@Of@OdAM\\?PCDIr@Wv@UrAQd@A\\M`@Mr@GTMnAe@bAc@hCU|@ALEJ?NMHWr@m@fDMf@CXOl@[pBk@fCO^AVMb@CZKh@If@Kb@KPQ`AEFCXGTEXGXIn@Ur@QfA?HKl@ITKl@Md@Ch@Ij@Ef@@RGNG`@CKBGLWNMJSZa@HSZcAXqCToAZgAVqBDKDWHSLu@FMNe@?IZs@?UDWDGBK@UNc@PYZoA@MLe@?OJUHaATs@CO@GJSBQRg@AMHSDQ?GH[CIZo@DOAIVw@?KFKf@a@FYd@wADeAHWBWOM?GE?LCPBAG_@KK@_@O]c@AG?k@Hm@@e@EQB[A]IKMAa@WE?_@MWOE@KEmAk@K@GEKBYKG@YKC@YKOSIGI?UMc@CWEOKGC_@KE@QIM@WQQIOAe@KK@GEs@MI?i@SGBOA]Q]GE@UIE@m@QKAE@UKGDo@WGJQKYEKGE@[EGBo@UG?SEGBWIE@a@KGFWGG@OKQESEKBWKE@o@SEBOIkAIQGi@GMGI?EDo@OIIEBYKQ?CCi@GEBOGu@QMCKDSII?EBMGWAMEEBMEYBa@d@WHQPEBIASKKKo@_@OMMGQ?[Ig@Gq@BOI]@YCQ?WFI?]Ce@IWOIK]KYC}@AMGw@Ke@Ao@Ha@TUD{@f@UPMPIDu@jAy@dAIPu@x@QVg@^W\\IZJv@FBC\\]Eu@Te@HS?i@Lo@HEDQh@GDSj@KLOt@W`@?FYj@ER_@l@EBIPKh@INEX@TYl@Oh@O\\E^IRA\\]`AGXOZQVUh@Gn@Ub@QdAGNE^QXAHKPCNb@f@VHX@LJ^HVP|@v@^JNJLBPJLRLDLJFB^@TNPl@^\\n@^`@h@JD@RIf@AXOn@g@bAGXIJM\\KfAQ^Uz@Q\\QNGHYx@EMC]M[MMk@c@s@a@m@MIAIDQVET@RRTLR^XVTt@b@^JVCHGJM?SIe@EOKOq@g@QGYUi@WKAMBSVERFf@vAlAf@VNBR@\\GBC?OAUG]GMYSOQo@g@i@UQCK@KJKL",
+    "resource_state": 3,
+    "summary_polyline": "k{hwFzmcbMb[cGfg@pCbUrt@wIhkEsPzjA^tU_FnAiFsAccAxo@{F|GoZxKiNrIoFUsAdDcNpEtAr@[kEqAlA_@yAyAjCzAwDJiJoNZiAyJxAkD~LL|@yAvBs{AyJmhAwn@hq@uAdFkM_AiA~HiCv@{h@zgC~Rov@\\kCmBmAFkEe_@gKgv@mIwFtBaGrHDtBgFp@wDrIeHzVbPfL}EnOyEmClEfDOgBuDcA`C`DdAEQqAyDkA"
+  },
+  "trainer": false,
+  "commute": false,
+  "manual": false,
+  "private": false,
+  "visibility": "everyone",
+  "flagged": false,
+  "gear_id": "g3372291",
+  "start_latlng": [
+    40.682943,
+    -73.914698
+  ],
+  "end_latlng": [
+    40.734301,
+    -73.984049
+  ],
+  "average_speed": 2.971,
+  "max_speed": 9.3,
+  "has_heartrate": false,
+  "heartrate_opt_out": false,
+  "display_hide_heartrate_option": false,
+  "elev_high": 50.8,
+  "elev_low": -0.8,
+  "upload_id": 1591925390,
+  "upload_id_str": "1591925390",
+  "external_id": "A0254694-2A56-49FE-BACE-97CE937D748D",
+  "from_accepted_tag": false,
+  "pr_count": 0,
+  "total_photo_count": 1,
+  "has_kudoed": false,
+  "description": "Starting uphill. After the United Airlines Half 26.2mi seemed feasible. But today 14mi stood like a brick wall in front of me.",
+  "calories": 2594.0,
+  "perceived_exertion": null,
+  "prefer_perceived_exertion": null,
+  "segment_efforts": [
+    {
+      "id": 2693271924383944911,
+      "resource_state": 2,
+      "name": "Prospect to Lincoln on Eastern",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 222,
+      "moving_time": 222,
+      "start_date": "2018-03-28T23:58:58Z",
+      "start_date_local": "2018-03-28T19:58:58Z",
+      "distance": 691.4,
+      "start_index": 291,
+      "end_index": 452,
+      "device_watts": false,
+      "segment": {
+        "id": 23867079,
+        "resource_state": 2,
+        "name": "Prospect to Lincoln on Eastern",
+        "activity_type": "Run",
+        "distance": 691.4,
+        "average_grade": 0.0,
+        "maximum_grade": 19.3,
+        "elevation_high": 198.2,
+        "elevation_low": 194.0,
+        "start_latlng": [
+          40.672243,
+          -73.914
+        ],
+        "end_latlng": [
+          40.669148,
+          -73.920977
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Brooklyn",
+        "state": "New York",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 36812838515,
+      "resource_state": 2,
+      "name": "Utica to Washington via Eastern",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 890,
+      "moving_time": 890,
+      "start_date": "2018-03-29T00:07:33Z",
+      "start_date_local": "2018-03-28T20:07:33Z",
+      "distance": 2514.9,
+      "start_index": 666,
+      "end_index": 1308,
+      "device_watts": false,
+      "segment": {
+        "id": 4488092,
+        "resource_state": 2,
+        "name": "Utica to Washington via Eastern",
+        "activity_type": "Run",
+        "distance": 2514.9,
+        "average_grade": 0.5,
+        "maximum_grade": 4.8,
+        "elevation_high": 46.4,
+        "elevation_low": 28.3,
+        "start_latlng": [
+          40.669043,
+          -73.931123
+        ],
+        "end_latlng": [
+          40.671741,
+          -73.962633
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Brooklyn",
+        "state": "NY",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 36812838504,
+      "resource_state": 2,
+      "name": "Troy to Nostrand on Eastern Parkway",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 386,
+      "moving_time": 386,
+      "start_date": "2018-03-29T00:09:58Z",
+      "start_date_local": "2018-03-28T20:09:58Z",
+      "distance": 1173.6,
+      "start_index": 786,
+      "end_index": 1071,
+      "device_watts": false,
+      "segment": {
+        "id": 6127709,
+        "resource_state": 2,
+        "name": "Troy to Nostrand on Eastern Parkway",
+        "activity_type": "Run",
+        "distance": 1173.6,
+        "average_grade": 0.2,
+        "maximum_grade": 3.4,
+        "elevation_high": 34.3,
+        "elevation_low": 28.3,
+        "start_latlng": [
+          40.669268,
+          -73.936637
+        ],
+        "end_latlng": [
+          40.669971,
+          -73.950608
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "New York",
+        "state": "NY",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 79689182735,
+      "resource_state": 2,
+      "name": "Eastern Parkway, Brooklyn Ave to Grand Army",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 701,
+      "moving_time": 701,
+      "start_date": "2018-03-29T00:13:44Z",
+      "start_date_local": "2018-03-28T20:13:44Z",
+      "distance": 2068.8,
+      "start_index": 960,
+      "end_index": 1430,
+      "device_watts": false,
+      "segment": {
+        "id": 23122229,
+        "resource_state": 2,
+        "name": "Eastern Parkway, Brooklyn Ave to Grand Army",
+        "activity_type": "Run",
+        "distance": 2068.8,
+        "average_grade": 0.7,
+        "maximum_grade": 8.1,
+        "elevation_high": 50.6,
+        "elevation_low": 28.3,
+        "start_latlng": [
+          40.669714,
+          -73.945047
+        ],
+        "end_latlng": [
+          40.673142,
+          -73.968712
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Brooklyn",
+        "state": "New York",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 61161526046,
+      "resource_state": 2,
+      "name": "NY to Rogers Punch",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 151,
+      "moving_time": 151,
+      "start_date": "2018-03-29T00:15:04Z",
+      "start_date_local": "2018-03-28T20:15:04Z",
+      "distance": 435.9,
+      "start_index": 1016,
+      "end_index": 1116,
+      "device_watts": false,
+      "segment": {
+        "id": 20789724,
+        "resource_state": 2,
+        "name": "NY to Rogers Punch",
+        "activity_type": "Run",
+        "distance": 435.9,
+        "average_grade": 2.3,
+        "maximum_grade": 4.7,
+        "elevation_high": 40.8,
+        "elevation_low": 30.8,
+        "start_latlng": [
+          40.669865,
+          -73.947828
+        ],
+        "end_latlng": [
+          40.670104,
+          -73.952936
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": null,
+        "country": null,
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 60339616847,
+      "resource_state": 2,
+      "name": "Brooklyn Half Marathon KM3",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 350,
+      "moving_time": 350,
+      "start_date": "2018-03-29T00:15:51Z",
+      "start_date_local": "2018-03-28T20:15:51Z",
+      "distance": 1023.7,
+      "start_index": 1050,
+      "end_index": 1282,
+      "device_watts": false,
+      "segment": {
+        "id": 20669772,
+        "resource_state": 2,
+        "name": "Brooklyn Half Marathon KM3",
+        "activity_type": "Run",
+        "distance": 1023.7,
+        "average_grade": 1.2,
+        "maximum_grade": 4.2,
+        "elevation_high": 45.6,
+        "elevation_low": 32.6,
+        "start_latlng": [
+          40.669758,
+          -73.949504
+        ],
+        "end_latlng": [
+          40.671308,
+          -73.961359
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Brooklyn",
+        "state": "New York",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 36812838527,
+      "resource_state": 2,
+      "name": "Eastern Pkwy To Park",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 242,
+      "moving_time": 242,
+      "start_date": "2018-03-29T00:21:41Z",
+      "start_date_local": "2018-03-28T20:21:41Z",
+      "distance": 684.499,
+      "start_index": 1282,
+      "end_index": 1442,
+      "device_watts": false,
+      "segment": {
+        "id": 2627253,
+        "resource_state": 2,
+        "name": "Eastern Pkwy To Park",
+        "activity_type": "Run",
+        "distance": 684.499,
+        "average_grade": -0.1,
+        "maximum_grade": 3.7,
+        "elevation_high": 51.2,
+        "elevation_low": 44.6,
+        "start_latlng": [
+          40.67124742,
+          -73.96141212
+        ],
+        "end_latlng": [
+          40.67252322,
+          -73.96889051
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Manhattan",
+        "state": "NY",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 2693271924412897363,
+      "resource_state": 2,
+      "name": "The Avalanche To Antonio''s Pizza",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 83,
+      "moving_time": 83,
+      "start_date": "2018-03-29T00:28:21Z",
+      "start_date_local": "2018-03-28T20:28:21Z",
+      "distance": 253.4,
+      "start_index": 1560,
+      "end_index": 1627,
+      "device_watts": false,
+      "segment": {
+        "id": 23869190,
+        "resource_state": 2,
+        "name": "The Avalanche To Antonio''s Pizza",
+        "activity_type": "Run",
+        "distance": 253.4,
+        "average_grade": -2.7,
+        "maximum_grade": 0.0,
+        "elevation_high": 47.0,
+        "elevation_low": 40.2,
+        "start_latlng": [
+          40.675301,
+          -73.970912
+        ],
+        "end_latlng": [
+          40.677251,
+          -73.972374
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Brooklyn",
+        "state": "New York",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 36812838538,
+      "resource_state": 2,
+      "name": "navy to vanderbilt",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 265,
+      "moving_time": 260,
+      "start_date": "2018-03-29T00:52:35Z",
+      "start_date_local": "2018-03-28T20:52:35Z",
+      "distance": 784.2,
+      "start_index": 2578,
+      "end_index": 2762,
+      "device_watts": false,
+      "segment": {
+        "id": 5988727,
+        "resource_state": 2,
+        "name": "navy to vanderbilt",
+        "activity_type": "Run",
+        "distance": 784.2,
+        "average_grade": 0.1,
+        "maximum_grade": 3.1,
+        "elevation_high": 4.8,
+        "elevation_low": 2.9,
+        "start_latlng": [
+          40.698313,
+          -73.980429
+        ],
+        "end_latlng": [
+          40.698055,
+          -73.97125
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "New York",
+        "state": "NY",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 36812838549,
+      "resource_state": 2,
+      "name": "Flushing stretch",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 502,
+      "moving_time": 497,
+      "start_date": "2018-03-29T00:52:37Z",
+      "start_date_local": "2018-03-28T20:52:37Z",
+      "distance": 1525.6,
+      "start_index": 2579,
+      "end_index": 2928,
+      "device_watts": false,
+      "segment": {
+        "id": 10703307,
+        "resource_state": 2,
+        "name": "Flushing stretch",
+        "activity_type": "Run",
+        "distance": 1525.6,
+        "average_grade": 0.1,
+        "maximum_grade": 3.9,
+        "elevation_high": 8.8,
+        "elevation_low": 2.9,
+        "start_latlng": [
+          40.698247,
+          -73.980381
+        ],
+        "end_latlng": [
+          40.698074,
+          -73.962946
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Brooklyn",
+        "state": "New York",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 64868758815,
+      "resource_state": 2,
+      "name": "Lee - 12 Blocks",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 382,
+      "moving_time": 382,
+      "start_date": "2018-03-29T01:06:22Z",
+      "start_date_local": "2018-03-28T21:06:22Z",
+      "distance": 1098.1,
+      "start_index": 3132,
+      "end_index": 3370,
+      "device_watts": false,
+      "segment": {
+        "id": 21348744,
+        "resource_state": 2,
+        "name": "Lee - 12 Blocks",
+        "activity_type": "Run",
+        "distance": 1098.1,
+        "average_grade": 1.0,
+        "maximum_grade": 16.0,
+        "elevation_high": 16.5,
+        "elevation_low": 3.5,
+        "start_latlng": [
+          40.700244,
+          -73.953884
+        ],
+        "end_latlng": [
+          40.707429,
+          -73.961942
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Brooklyn",
+        "state": "New York",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 36812838572,
+      "resource_state": 2,
+      "name": "Williamsburg Bridge - Westbound",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 744,
+      "moving_time": 744,
+      "start_date": "2018-03-29T01:16:01Z",
+      "start_date_local": "2018-03-28T21:16:01Z",
+      "distance": 2033.1,
+      "start_index": 3496,
+      "end_index": 3971,
+      "device_watts": false,
+      "segment": {
+        "id": 6254102,
+        "resource_state": 2,
+        "name": "Williamsburg Bridge - Westbound",
+        "activity_type": "Run",
+        "distance": 2033.1,
+        "average_grade": -0.2,
+        "maximum_grade": 1.8,
+        "elevation_high": 13.9,
+        "elevation_low": 0.0,
+        "start_latlng": [
+          40.710731,
+          -73.963866
+        ],
+        "end_latlng": [
+          40.717729,
+          -73.986007
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "New York",
+        "state": "NY",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 36812838554,
+      "resource_state": 2,
+      "name": "WBurg Bridge Pedestrian Half Uphill - Steep Part Only",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 127,
+      "moving_time": 127,
+      "start_date": "2018-03-29T01:16:03Z",
+      "start_date_local": "2018-03-28T21:16:03Z",
+      "distance": 316.9,
+      "start_index": 3497,
+      "end_index": 3567,
+      "device_watts": false,
+      "segment": {
+        "id": 9958334,
+        "resource_state": 2,
+        "name": "WBurg Bridge Pedestrian Half Uphill - Steep Part Only",
+        "activity_type": "Run",
+        "distance": 316.9,
+        "average_grade": -2.1,
+        "maximum_grade": 0.0,
+        "elevation_high": 14.1,
+        "elevation_low": 7.5,
+        "start_latlng": [
+          40.710835,
+          -73.96384
+        ],
+        "end_latlng": [
+          40.711963,
+          -73.967257
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Brooklyn",
+        "state": "New York",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 36812838560,
+      "resource_state": 2,
+      "name": "Willie B uphill Bk--\u003emanh",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 303,
+      "moving_time": 303,
+      "start_date": "2018-03-29T01:16:05Z",
+      "start_date_local": "2018-03-28T21:16:05Z",
+      "distance": 752.589,
+      "start_index": 3498,
+      "end_index": 3667,
+      "device_watts": false,
+      "segment": {
+        "id": 966627,
+        "resource_state": 2,
+        "name": "Willie B uphill Bk--\u003emanh",
+        "activity_type": "Run",
+        "distance": 752.589,
+        "average_grade": -2.0,
+        "maximum_grade": 0.0,
+        "elevation_high": 14.7,
+        "elevation_low": 0.0,
+        "start_latlng": [
+          40.7111454,
+          -73.9634579
+        ],
+        "end_latlng": [
+          40.7134574,
+          -73.9718839
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "Brooklyn",
+        "state": "NY",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 49453903667,
+      "resource_state": 2,
+      "name": "Williamsburg Bridge down to Delancey St",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 351,
+      "moving_time": 351,
+      "start_date": "2018-03-29T01:21:23Z",
+      "start_date_local": "2018-03-28T21:21:23Z",
+      "distance": 1041.0,
+      "start_index": 3676,
+      "end_index": 3921,
+      "device_watts": false,
+      "segment": {
+        "id": 19320177,
+        "resource_state": 2,
+        "name": "Williamsburg Bridge down to Delancey St",
+        "activity_type": "Run",
+        "distance": 1041.0,
+        "average_grade": 0.6,
+        "maximum_grade": 6.4,
+        "elevation_high": 6.0,
+        "elevation_low": 0.0,
+        "start_latlng": [
+          40.713641,
+          -73.972363
+        ],
+        "end_latlng": [
+          40.717167,
+          -73.9838
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": null,
+        "state": null,
+        "country": null,
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 2725205512343993908,
+      "resource_state": 2,
+      "name": "WBurg Bridge Downhill Sprint (Westbound)",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 189,
+      "moving_time": 189,
+      "start_date": "2018-03-29T01:24:44Z",
+      "start_date_local": "2018-03-28T21:24:44Z",
+      "distance": 582.4,
+      "start_index": 3813,
+      "end_index": 3949,
+      "device_watts": false,
+      "segment": {
+        "id": 25155508,
+        "resource_state": 2,
+        "name": "WBurg Bridge Downhill Sprint (Westbound)",
+        "activity_type": "Run",
+        "distance": 582.4,
+        "average_grade": 0.8,
+        "maximum_grade": 3.6,
+        "elevation_high": 7.5,
+        "elevation_low": 1.6,
+        "start_latlng": [
+          40.71576,
+          -73.978787
+        ],
+        "end_latlng": [
+          40.717521,
+          -73.985183
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "New York",
+        "state": "New York",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 36812838593,
+      "resource_state": 2,
+      "name": "1 min Wburg bridge hill run",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 119,
+      "moving_time": 119,
+      "start_date": "2018-03-29T01:28:46Z",
+      "start_date_local": "2018-03-28T21:28:46Z",
+      "distance": 337.7,
+      "start_index": 3986,
+      "end_index": 4068,
+      "device_watts": false,
+      "segment": {
+        "id": 3981231,
+        "resource_state": 2,
+        "name": "1 min Wburg bridge hill run",
+        "activity_type": "Run",
+        "distance": 337.7,
+        "average_grade": -0.9,
+        "maximum_grade": 0.0,
+        "elevation_high": 8.5,
+        "elevation_low": 5.5,
+        "start_latlng": [
+          40.71749,
+          -73.985388
+        ],
+        "end_latlng": [
+          40.716407,
+          -73.981675
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "New York",
+        "state": "NY",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 36812838598,
+      "resource_state": 2,
+      "name": "East River - Williamsburg Bridge to StuyTown",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 690,
+      "moving_time": 690,
+      "start_date": "2018-03-29T01:35:19Z",
+      "start_date_local": "2018-03-28T21:35:19Z",
+      "distance": 2017.1,
+      "start_index": 4230,
+      "end_index": 4680,
+      "device_watts": false,
+      "segment": {
+        "id": 8597588,
+        "resource_state": 2,
+        "name": "East River - Williamsburg Bridge to StuyTown",
+        "activity_type": "Run",
+        "distance": 2017.1,
+        "average_grade": 0.0,
+        "maximum_grade": 0.5,
+        "elevation_high": 0.3,
+        "elevation_low": -0.3,
+        "start_latlng": [
+          40.714423,
+          -73.975086
+        ],
+        "end_latlng": [
+          40.731556,
+          -73.973636
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "New York",
+        "state": "New York",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 2764873664788402310,
+      "resource_state": 2,
+      "name": "Williamsburg Br. to Park Start",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 420,
+      "moving_time": 420,
+      "start_date": "2018-03-29T01:35:19Z",
+      "start_date_local": "2018-03-28T21:35:19Z",
+      "distance": 1229.1,
+      "start_index": 4230,
+      "end_index": 4501,
+      "device_watts": false,
+      "segment": {
+        "id": 26470523,
+        "resource_state": 2,
+        "name": "Williamsburg Br. to Park Start",
+        "activity_type": "Run",
+        "distance": 1229.1,
+        "average_grade": 0.0,
+        "maximum_grade": 0.8,
+        "elevation_high": 2.4,
+        "elevation_low": 1.8,
+        "start_latlng": [
+          40.71466,
+          -73.975148
+        ],
+        "end_latlng": [
+          40.725226,
+          -73.972089
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "New York",
+        "state": "New York",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 2947197241971379348,
+      "resource_state": 2,
+      "name": "East 100m",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 35,
+      "moving_time": 35,
+      "start_date": "2018-03-29T01:39:38Z",
+      "start_date_local": "2018-03-28T21:39:38Z",
+      "distance": 106.3,
+      "start_index": 4400,
+      "end_index": 4424,
+      "device_watts": false,
+      "segment": {
+        "id": 31429443,
+        "resource_state": 2,
+        "name": "East 100m",
+        "activity_type": "Run",
+        "distance": 106.3,
+        "average_grade": 0.1,
+        "maximum_grade": 0.2,
+        "elevation_high": 1.5,
+        "elevation_low": 1.4,
+        "start_latlng": [
+          40.721196,
+          -73.973115
+        ],
+        "end_latlng": [
+          40.722142,
+          -73.972929
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "New York",
+        "state": "New York",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 2900454136031184922,
+      "resource_state": 2,
+      "name": "15th to 20th St homestretch strides",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 245,
+      "moving_time": 240,
+      "start_date": "2018-03-29T01:44:01Z",
+      "start_date_local": "2018-03-28T21:44:01Z",
+      "distance": 639.6,
+      "start_index": 4570,
+      "end_index": 4728,
+      "device_watts": false,
+      "segment": {
+        "id": 30497935,
+        "resource_state": 2,
+        "name": "15th to 20th St homestretch strides",
+        "activity_type": "Run",
+        "distance": 639.6,
+        "average_grade": -0.1,
+        "maximum_grade": 1.0,
+        "elevation_high": 3.4,
+        "elevation_low": 2.2,
+        "start_latlng": [
+          40.72768,
+          -73.971736
+        ],
+        "end_latlng": [
+          40.732614,
+          -73.974084
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "New York",
+        "state": "New York",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 2819611118813034284,
+      "resource_state": 2,
+      "name": "Green Bike path whilst passing Stuytown",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 178,
+      "moving_time": 178,
+      "start_date": "2018-03-29T01:48:13Z",
+      "start_date_local": "2018-03-28T21:48:13Z",
+      "distance": 479.9,
+      "start_index": 4732,
+      "end_index": 4848,
+      "device_watts": false,
+      "segment": {
+        "id": 28099488,
+        "resource_state": 2,
+        "name": "Green Bike path whilst passing Stuytown",
+        "activity_type": "Run",
+        "distance": 479.9,
+        "average_grade": 0.5,
+        "maximum_grade": 0.9,
+        "elevation_high": 4.9,
+        "elevation_low": 2.3,
+        "start_latlng": [
+          40.732896,
+          -73.974683
+        ],
+        "end_latlng": [
+          40.734945,
+          -73.979649
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "New York",
+        "state": "New York",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 2827212962975011482,
+      "resource_state": 2,
+      "name": "Stuyvesant Square.. but make it a circle",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 108,
+      "moving_time": 108,
+      "start_date": "2018-03-29T01:56:17Z",
+      "start_date_local": "2018-03-28T21:56:17Z",
+      "distance": 289.5,
+      "start_index": 5037,
+      "end_index": 5113,
+      "device_watts": false,
+      "segment": {
+        "id": 28391317,
+        "resource_state": 2,
+        "name": "Stuyvesant Square.. but make it a circle",
+        "activity_type": "Run",
+        "distance": 289.5,
+        "average_grade": 0.0,
+        "maximum_grade": 0.9,
+        "elevation_high": 8.8,
+        "elevation_low": 8.1,
+        "start_latlng": [
+          40.734247,
+          -73.984071
+        ],
+        "end_latlng": [
+          40.734287,
+          -73.984037
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "New York",
+        "state": "New York",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": null,
+      "achievements": [],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    },
+    {
+      "id": 2827212962979043994,
+      "resource_state": 2,
+      "name": "Stuyvesant Square.. but make it a circle",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 95,
+      "moving_time": 95,
+      "start_date": "2018-03-29T01:58:05Z",
+      "start_date_local": "2018-03-28T21:58:05Z",
+      "distance": 289.5,
+      "start_index": 5113,
+      "end_index": 5186,
+      "device_watts": false,
+      "segment": {
+        "id": 28391317,
+        "resource_state": 2,
+        "name": "Stuyvesant Square.. but make it a circle",
+        "activity_type": "Run",
+        "distance": 289.5,
+        "average_grade": 0.0,
+        "maximum_grade": 0.9,
+        "elevation_high": 8.8,
+        "elevation_low": 8.1,
+        "start_latlng": [
+          40.734247,
+          -73.984071
+        ],
+        "end_latlng": [
+          40.734287,
+          -73.984037
+        ],
+        "elevation_profile": null,
+        "elevation_profiles": null,
+        "climb_category": 0,
+        "city": "New York",
+        "state": "New York",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "pr_rank": 3,
+      "achievements": [
+        {
+          "type_id": 3,
+          "type": "pr",
+          "rank": 3
+        }
+      ],
+      "visibility": "everyone",
+      "kom_rank": null,
+      "hidden": false
+    }
+  ],
+  "splits_metric": [
+    {
+      "distance": 1002.8,
+      "elapsed_time": 370,
+      "elevation_difference": 15.5,
+      "moving_time": 336,
+      "split": 1,
+      "average_speed": 2.98,
+      "average_grade_adjusted_speed": 3.14,
+      "pace_zone": 0
+    },
+    {
+      "distance": 998.1,
+      "elapsed_time": 311,
+      "elevation_difference": -8.1,
+      "moving_time": 311,
+      "split": 2,
+      "average_speed": 3.21,
+      "average_grade_adjusted_speed": 3.16,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1000.5,
+      "elapsed_time": 324,
+      "elevation_difference": 11.5,
+      "moving_time": 324,
+      "split": 3,
+      "average_speed": 3.09,
+      "average_grade_adjusted_speed": 3.18,
+      "pace_zone": 0
+    },
+    {
+      "distance": 999.0,
+      "elapsed_time": 313,
+      "elevation_difference": -5.3,
+      "moving_time": 313,
+      "split": 4,
+      "average_speed": 3.19,
+      "average_grade_adjusted_speed": 3.16,
+      "pace_zone": 0
+    },
+    {
+      "distance": 999.9,
+      "elapsed_time": 334,
+      "elevation_difference": 14.0,
+      "moving_time": 334,
+      "split": 5,
+      "average_speed": 2.99,
+      "average_grade_adjusted_speed": 3.13,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1000.3,
+      "elapsed_time": 340,
+      "elevation_difference": 2.9,
+      "moving_time": 340,
+      "split": 6,
+      "average_speed": 2.94,
+      "average_grade_adjusted_speed": 2.99,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1003.6,
+      "elapsed_time": 319,
+      "elevation_difference": -16.6,
+      "moving_time": 319,
+      "split": 7,
+      "average_speed": 3.15,
+      "average_grade_adjusted_speed": 3.05,
+      "pace_zone": 0
+    },
+    {
+      "distance": 999.9,
+      "elapsed_time": 313,
+      "elevation_difference": -16.0,
+      "moving_time": 313,
+      "split": 8,
+      "average_speed": 3.19,
+      "average_grade_adjusted_speed": 3.1,
+      "pace_zone": 0
+    },
+    {
+      "distance": 996.6,
+      "elapsed_time": 314,
+      "elevation_difference": 1.0,
+      "moving_time": 310,
+      "split": 9,
+      "average_speed": 3.21,
+      "average_grade_adjusted_speed": 3.25,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1002.3,
+      "elapsed_time": 347,
+      "elevation_difference": 4.5,
+      "moving_time": 328,
+      "split": 10,
+      "average_speed": 3.06,
+      "average_grade_adjusted_speed": 3.13,
+      "pace_zone": 0
+    },
+    {
+      "distance": 999.0,
+      "elapsed_time": 324,
+      "elevation_difference": -14.1,
+      "moving_time": 324,
+      "split": 11,
+      "average_speed": 3.08,
+      "average_grade_adjusted_speed": 3.01,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1002.1,
+      "elapsed_time": 333,
+      "elevation_difference": 0.9,
+      "moving_time": 328,
+      "split": 12,
+      "average_speed": 3.06,
+      "average_grade_adjusted_speed": 3.07,
+      "pace_zone": 0
+    },
+    {
+      "distance": 997.1,
+      "elapsed_time": 341,
+      "elevation_difference": 0.2,
+      "moving_time": 337,
+      "split": 13,
+      "average_speed": 2.96,
+      "average_grade_adjusted_speed": 2.97,
+      "pace_zone": 0
+    },
+    {
+      "distance": 999.9,
+      "elapsed_time": 356,
+      "elevation_difference": 4.0,
+      "moving_time": 356,
+      "split": 14,
+      "average_speed": 2.81,
+      "average_grade_adjusted_speed": 2.85,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1001.1,
+      "elapsed_time": 361,
+      "elevation_difference": 5.0,
+      "moving_time": 361,
+      "split": 15,
+      "average_speed": 2.77,
+      "average_grade_adjusted_speed": 2.88,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1001.4,
+      "elapsed_time": 389,
+      "elevation_difference": -13.1,
+      "moving_time": 389,
+      "split": 16,
+      "average_speed": 2.57,
+      "average_grade_adjusted_speed": 2.53,
+      "pace_zone": 0
+    },
+    {
+      "distance": 996.6,
+      "elapsed_time": 328,
+      "elevation_difference": 7.2,
+      "moving_time": 328,
+      "split": 17,
+      "average_speed": 3.04,
+      "average_grade_adjusted_speed": 3.11,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1001.8,
+      "elapsed_time": 337,
+      "elevation_difference": -4.7,
+      "moving_time": 337,
+      "split": 18,
+      "average_speed": 2.97,
+      "average_grade_adjusted_speed": 2.95,
+      "pace_zone": 0
+    },
+    {
+      "distance": 998.1,
+      "elapsed_time": 383,
+      "elevation_difference": -3.4,
+      "moving_time": 359,
+      "split": 19,
+      "average_speed": 2.78,
+      "average_grade_adjusted_speed": 2.79,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1001.1,
+      "elapsed_time": 348,
+      "elevation_difference": -0.3,
+      "moving_time": 348,
+      "split": 20,
+      "average_speed": 2.88,
+      "average_grade_adjusted_speed": 2.88,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1003.0,
+      "elapsed_time": 356,
+      "elevation_difference": 4.1,
+      "moving_time": 351,
+      "split": 21,
+      "average_speed": 2.86,
+      "average_grade_adjusted_speed": 2.89,
+      "pace_zone": 0
+    },
+    {
+      "distance": 998.6,
+      "elapsed_time": 375,
+      "elevation_difference": 5.1,
+      "moving_time": 370,
+      "split": 22,
+      "average_speed": 2.7,
+      "average_grade_adjusted_speed": 2.74,
+      "pace_zone": 0
+    },
+    {
+      "distance": 536.8,
+      "elapsed_time": 170,
+      "elevation_difference": -1.0,
+      "moving_time": 170,
+      "split": 23,
+      "average_speed": 3.16,
+      "average_grade_adjusted_speed": 3.15,
+      "pace_zone": 0
+    }
+  ],
+  "splits_standard": [
+    {
+      "distance": 1611.2,
+      "elapsed_time": 559,
+      "elevation_difference": 5.5,
+      "moving_time": 525,
+      "split": 1,
+      "average_speed": 3.07,
+      "average_grade_adjusted_speed": 3.13,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1609.4,
+      "elapsed_time": 515,
+      "elevation_difference": 12.3,
+      "moving_time": 515,
+      "split": 2,
+      "average_speed": 3.13,
+      "average_grade_adjusted_speed": 3.19,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1611.0,
+      "elapsed_time": 524,
+      "elevation_difference": 10.4,
+      "moving_time": 524,
+      "split": 3,
+      "average_speed": 3.07,
+      "average_grade_adjusted_speed": 3.15,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1607.7,
+      "elapsed_time": 541,
+      "elevation_difference": -0.2,
+      "moving_time": 541,
+      "split": 4,
+      "average_speed": 2.97,
+      "average_grade_adjusted_speed": 2.99,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1611.4,
+      "elapsed_time": 500,
+      "elevation_difference": -32.2,
+      "moving_time": 500,
+      "split": 5,
+      "average_speed": 3.22,
+      "average_grade_adjusted_speed": 3.11,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1608.7,
+      "elapsed_time": 508,
+      "elevation_difference": 5.5,
+      "moving_time": 495,
+      "split": 6,
+      "average_speed": 3.25,
+      "average_grade_adjusted_speed": 3.3,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1608.3,
+      "elapsed_time": 550,
+      "elevation_difference": -12.3,
+      "moving_time": 540,
+      "split": 7,
+      "average_speed": 2.98,
+      "average_grade_adjusted_speed": 2.96,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1607.2,
+      "elapsed_time": 544,
+      "elevation_difference": 1.1,
+      "moving_time": 535,
+      "split": 8,
+      "average_speed": 3.0,
+      "average_grade_adjusted_speed": 3.02,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1612.2,
+      "elapsed_time": 572,
+      "elevation_difference": 11.3,
+      "moving_time": 572,
+      "split": 9,
+      "average_speed": 2.82,
+      "average_grade_adjusted_speed": 2.92,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1607.1,
+      "elapsed_time": 609,
+      "elevation_difference": -12.8,
+      "moving_time": 609,
+      "split": 10,
+      "average_speed": 2.64,
+      "average_grade_adjusted_speed": 2.61,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1608.7,
+      "elapsed_time": 533,
+      "elevation_difference": 2.7,
+      "moving_time": 533,
+      "split": 11,
+      "average_speed": 3.02,
+      "average_grade_adjusted_speed": 3.05,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1611.1,
+      "elapsed_time": 587,
+      "elevation_difference": -5.2,
+      "moving_time": 563,
+      "split": 12,
+      "average_speed": 2.86,
+      "average_grade_adjusted_speed": 2.86,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1609.8,
+      "elapsed_time": 573,
+      "elevation_difference": 2.3,
+      "moving_time": 568,
+      "split": 13,
+      "average_speed": 2.83,
+      "average_grade_adjusted_speed": 2.85,
+      "pace_zone": 0
+    },
+    {
+      "distance": 1610.1,
+      "elapsed_time": 569,
+      "elevation_difference": 4.9,
+      "moving_time": 564,
+      "split": 14,
+      "average_speed": 2.85,
+      "average_grade_adjusted_speed": 2.88,
+      "pace_zone": 0
+    },
+    {
+      "distance": 5.7,
+      "elapsed_time": 2,
+      "elevation_difference": 0.0,
+      "moving_time": 2,
+      "split": 15,
+      "average_speed": 2.85,
+      "average_grade_adjusted_speed": 2.85,
+      "pace_zone": 0
+    }
+  ],
+  "laps": [
+    {
+      "id": 4733822143,
+      "resource_state": 2,
+      "name": "Lap 1",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 7686,
+      "moving_time": 7586,
+      "start_date": "2018-03-28T23:51:34Z",
+      "start_date_local": "2018-03-28T19:51:34Z",
+      "distance": 22539.6,
+      "average_speed": 2.97,
+      "max_speed": 9.3,
+      "lap_index": 1,
+      "split": 1,
+      "start_index": 0,
+      "end_index": 5186,
+      "total_elevation_gain": 159.9,
+      "device_watts": false,
+      "pace_zone": 0
+    }
+  ],
+  "best_efforts": [
+    {
+      "id": 17368889809,
+      "resource_state": 2,
+      "name": "400m",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 116,
+      "moving_time": 116,
+      "start_date": "2018-03-29T00:36:41Z",
+      "start_date_local": "2018-03-28T20:36:41Z",
+      "distance": 400,
+      "pr_rank": null,
+      "achievements": [],
+      "start_index": 1929,
+      "end_index": 2020
+    },
+    {
+      "id": 17368890291,
+      "resource_state": 2,
+      "name": "1/2 mile",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 244,
+      "moving_time": 244,
+      "start_date": "2018-03-28T23:55:29Z",
+      "start_date_local": "2018-03-28T19:55:29Z",
+      "distance": 805,
+      "pr_rank": null,
+      "achievements": [],
+      "start_index": 124,
+      "end_index": 315
+    },
+    {
+      "id": 17368888776,
+      "resource_state": 2,
+      "name": "1K",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 307,
+      "moving_time": 307,
+      "start_date": "2018-03-29T00:27:04Z",
+      "start_date_local": "2018-03-28T20:27:04Z",
+      "distance": 1000,
+      "pr_rank": null,
+      "achievements": [],
+      "start_index": 1496,
+      "end_index": 1736
+    },
+    {
+      "id": 17368889243,
+      "resource_state": 2,
+      "name": "1 mile",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 500,
+      "moving_time": 500,
+      "start_date": "2018-03-28T23:55:28Z",
+      "start_date_local": "2018-03-28T19:55:28Z",
+      "distance": 1609,
+      "pr_rank": null,
+      "achievements": [],
+      "start_index": 123,
+      "end_index": 507
+    },
+    {
+      "id": 17368890690,
+      "resource_state": 2,
+      "name": "2 mile",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 1015,
+      "moving_time": 1015,
+      "start_date": "2018-03-28T23:55:28Z",
+      "start_date_local": "2018-03-28T19:55:28Z",
+      "distance": 3219,
+      "pr_rank": null,
+      "achievements": [],
+      "start_index": 123,
+      "end_index": 896
+    },
+    {
+      "id": 17368891132,
+      "resource_state": 2,
+      "name": "5K",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 1603,
+      "moving_time": 1603,
+      "start_date": "2018-03-29T00:16:26Z",
+      "start_date_local": "2018-03-28T20:16:26Z",
+      "distance": 5000,
+      "pr_rank": null,
+      "achievements": [],
+      "start_index": 1072,
+      "end_index": 2208
+    },
+    {
+      "id": 17368891423,
+      "resource_state": 2,
+      "name": "10K",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 3239,
+      "moving_time": 3239,
+      "start_date": "2018-03-28T23:57:38Z",
+      "start_date_local": "2018-03-28T19:57:38Z",
+      "distance": 10000,
+      "pr_rank": null,
+      "achievements": [],
+      "start_index": 222,
+      "end_index": 2536
+    },
+    {
+      "id": 17368888260,
+      "resource_state": 2,
+      "name": "15K",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 4969,
+      "moving_time": 4969,
+      "start_date": "2018-03-28T23:53:12Z",
+      "start_date_local": "2018-03-28T19:53:12Z",
+      "distance": 15000,
+      "pr_rank": null,
+      "achievements": [],
+      "start_index": 43,
+      "end_index": 3496
+    },
+    {
+      "id": 17368888345,
+      "resource_state": 2,
+      "name": "10 mile",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 5369,
+      "moving_time": 5369,
+      "start_date": "2018-03-28T23:55:28Z",
+      "start_date_local": "2018-03-28T19:55:28Z",
+      "distance": 16090,
+      "pr_rank": null,
+      "achievements": [],
+      "start_index": 123,
+      "end_index": 3821
+    },
+    {
+      "id": 17368888400,
+      "resource_state": 2,
+      "name": "20K",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 6746,
+      "moving_time": 6746,
+      "start_date": "2018-03-28T23:55:28Z",
+      "start_date_local": "2018-03-28T19:55:28Z",
+      "distance": 20000,
+      "pr_rank": null,
+      "achievements": [],
+      "start_index": 123,
+      "end_index": 4722
+    },
+    {
+      "id": 17368888448,
+      "resource_state": 2,
+      "name": "Half-Marathon",
+      "activity": {
+        "id": 1477353766,
+        "visibility": "everyone",
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 26462176,
+        "resource_state": 1
+      },
+      "elapsed_time": 7155,
+      "moving_time": 7155,
+      "start_date": "2018-03-28T23:55:28Z",
+      "start_date_local": "2018-03-28T19:55:28Z",
+      "distance": 21097,
+      "pr_rank": null,
+      "achievements": [],
+      "start_index": 123,
+      "end_index": 4982
+    }
+  ],
+  "gear": {
+    "id": "g3372291",
+    "primary": false,
+    "name": "Adidas Supernova Glide Boost Adidas Blue",
+    "nickname": "Adidas Blue",
+    "resource_state": 2,
+    "retired": true,
+    "distance": 850909,
+    "converted_distance": 528.7
+  },
+  "photos": {
+    "primary": {
+      "unique_id": "287E696B-0EAA-455B-9D2F-D7C45EFB91C2",
+      "urls": {
+        "600": "https://dgtzuqphqg23d.cloudfront.net/Xgpq1D8yXq7vntT885QtzklYjqnPlFkNK2mQeISk6ek-701x768.jpg",
+        "100": "https://dgtzuqphqg23d.cloudfront.net/Xgpq1D8yXq7vntT885QtzklYjqnPlFkNK2mQeISk6ek-116x128.jpg"
+      },
+      "source": 1,
+      "media_type": 1
+    },
+    "use_primary_photo": true,
+    "count": 1
+  },
+  "stats_visibility": [
+    {
+      "type": "heart_rate",
+      "visibility": "everyone"
+    },
+    {
+      "type": "pace",
+      "visibility": "everyone"
+    },
+    {
+      "type": "power",
+      "visibility": "everyone"
+    },
+    {
+      "type": "speed",
+      "visibility": "everyone"
+    },
+    {
+      "type": "calories",
+      "visibility": "everyone"
+    }
+  ],
+  "hide_from_home": false,
+  "device_name": "Strava iPhone App",
+  "embed_token": "0dd4d519d141acacbbd3dd130fac21dfb14ae937",
+  "similar_activities": {
+    "effort_count": 1,
+    "average_speed": 2.97121012391247,
+    "min_average_speed": 2.97121012391247,
+    "mid_average_speed": 2.97121012391247,
+    "max_average_speed": 2.97121012391247,
+    "pr_rank": null,
+    "frequency_milestone": null,
+    "trend": {
+      "speeds": [
+        2.97121012391247
+      ],
+      "current_activity_index": 0,
+      "min_speed": 2.97121012391247,
+      "mid_speed": 2.97121012391247,
+      "max_speed": 2.97121012391247,
+      "direction": 0
+    },
+    "resource_state": 2
+  },
+  "available_zones": [
+    "pace"
+  ]
+}

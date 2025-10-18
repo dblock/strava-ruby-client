@@ -12,7 +12,7 @@ module Strava
         #
         def gear(id_or_options, options = {})
           id, options = parse_args(id_or_options, options)
-          Strava::Models::Gear.new(get("gear/#{id}", options))
+          Strava::Models::DetailedGear.new(get("gear/#{id}", options))
         end
       end
     end

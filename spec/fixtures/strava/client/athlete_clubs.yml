@@ -12,7 +12,7 @@ http_interactions:
       Accept:
       - application/json; charset=utf-8
       User-Agent:
-      - Strava Ruby Client/0.1.1
+      - Strava Ruby Client/3.0.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -20,49 +20,72 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Sat, 24 Nov 2018 14:59:22 GMT
       Content-Type:
-      - application/json; charset=UTF-8
+      - application/json; charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Via:
-      - 1.1 linkerd
+      Date:
+      - Sat, 18 Oct 2025 23:04:28 GMT
+      X-Envoy-Upstream-Service-Time:
+      - '82'
+      Server:
+      - istio-envoy
       Status:
       - 200 OK
-      X-Ratelimit-Limit:
-      - '600,30000'
-      X-Request-Id:
-      - 79ca0f8e-2958-40c4-959b-b75decbb2fbb
-      Etag:
-      - W/"a2c4981a1ca163168d17fdec0f0257cf"
       X-Ratelimit-Usage:
-      - '175,7742'
-      X-Frame-Options:
-      - DENY
-      X-Content-Type-Options:
-      - nosniff
+      - '72,215'
+      X-Ratelimit-Limit:
+      - '200,2000'
       Vary:
-      - Origin
+      - Accept, Origin
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Permitted-Cross-Domain-Policies:
+      - none
       X-Xss-Protection:
       - 1; mode=block
+      X-Request-Id:
+      - 1acd033d-4ca9-42c5-8b78-87caec82c81e
+      X-Readratelimit-Limit:
+      - '100,1000'
+      X-Download-Options:
+      - noopen
+      Etag:
+      - W/"6486f380e6452ef843b249664a1d099b"
+      X-Frame-Options:
+      - DENY
+      X-Readratelimit-Usage:
+      - '71,214'
+      X-Content-Type-Options:
+      - nosniff
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 2e60669cf4a63082b5e4935391509354.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - JFK52-P3
+      X-Amz-Cf-Id:
+      - fdGLxakwYh3J8aNG9zzWpXHAXuhh-DZxnw7_1lsxEXTjv7iXdz0ahQ==
     body:
       encoding: UTF-8
-      string: '[{"id":108605,"resource_state":2,"name":"New York Road Runners","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/108605/8433029/1/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/108605/8433029/1/large.jpg","cover_photo":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/108605/5794562/3/large.jpg","cover_photo_small":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/108605/5794562/3/small.jpg","sport_type":"running","city":"New
-        York","state":"New York","country":"United States","private":false,"member_count":21193,"featured":false,"verified":true,"url":"nyrr"},{"id":43749,"resource_state":2,"name":"Orchard
-        Street Runners","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/43749/1121181/4/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/43749/1121181/4/large.jpg","cover_photo":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/43749/8867279/3/large.jpg","cover_photo_small":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/43749/8867279/3/small.jpg","sport_type":"running","city":"New
-        York","state":"New York","country":"United States","private":false,"member_count":233,"featured":false,"verified":false,"url":"OrchardStreetRunners"},{"id":329962,"resource_state":2,"name":"2018
-        United NYC Half Marathon Runners","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/329962/7773687/1/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/329962/7773687/1/large.jpg","cover_photo":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/329962/7773664/2/large.jpg","cover_photo_small":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/329962/7773664/2/small.jpg","sport_type":"running","city":"New
-        York","state":"New York","country":"United States","private":false,"member_count":553,"featured":false,"verified":false,"url":"2018UnitedNYCHalfRunners"},{"id":209437,"resource_state":2,"name":"TCS
-        New York City Marathon","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/209437/4601003/1/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/209437/4601003/1/large.jpg","cover_photo":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/209437/4601008/1/large.jpg","cover_photo_small":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/209437/4601008/1/small.jpg","sport_type":"running","city":"","state":"","country":"United
-        States","private":false,"member_count":4786,"featured":false,"verified":true,"url":"nycmarathon"},{"id":143380,"resource_state":2,"name":"nyctechrunners","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/143380/3010565/1/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/143380/3010565/1/large.jpg","cover_photo":null,"cover_photo_small":null,"sport_type":"running","city":"New
-        York","state":"New York","country":"United States","private":false,"member_count":22,"featured":false,"verified":false,"url":"nyctechrunners"},{"id":340519,"resource_state":2,"name":"2018
-        Popular Brooklyn Half Marathon","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/340519/8108762/1/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/340519/8108762/1/large.jpg","cover_photo":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/340519/8108768/1/large.jpg","cover_photo_small":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/340519/8108768/1/small.jpg","sport_type":"running","city":"","state":"New
-        York","country":"United States","private":false,"member_count":682,"featured":false,"verified":false,"url":"2018PopularBrooklynHalfRunners"}]'
-    http_version:
-  recorded_at: Sat, 24 Nov 2018 14:59:22 GMT
-recorded_with: VCR 4.0.0
+      string: '[{"id":108605,"resource_state":2,"name":"New York Road Runners","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/108605/8433029/2/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/108605/8433029/2/large.jpg","cover_photo":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/108605/5794562/3/large.jpg","cover_photo_small":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/108605/5794562/3/small.jpg","activity_types":["Run","VirtualRun","Wheelchair"],"activity_types_icon":"sports_run_normal","dimensions":["distance","num_activities","best_activities_distance","elev_gain","moving_time","velocity"],"sport_type":"running","localized_sport_type":"Running","city":"New
+        York","state":"New York","country":"United States","private":false,"member_count":327744,"featured":false,"verified":true,"url":"nyrr"},{"id":329962,"resource_state":2,"name":"2018
+        United NYC Half Marathon Runners","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/329962/7773687/1/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/329962/7773687/1/large.jpg","cover_photo":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/329962/7773664/2/large.jpg","cover_photo_small":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/329962/7773664/2/small.jpg","activity_types":["Run","VirtualRun","Wheelchair"],"activity_types_icon":"sports_run_normal","dimensions":["distance","num_activities","best_activities_distance","elev_gain","moving_time","velocity"],"sport_type":"running","localized_sport_type":"Running","city":"New
+        York","state":"New York","country":"United States","private":false,"member_count":743,"featured":false,"verified":false,"url":"2018UnitedNYCHalfRunners"},{"id":209437,"resource_state":2,"name":"TCS
+        New York City Marathon","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/209437/4601003/4/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/209437/4601003/4/large.jpg","cover_photo":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/209437/4601008/4/large.jpg","cover_photo_small":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/209437/4601008/4/small.jpg","activity_types":["Run","VirtualRun","Wheelchair"],"activity_types_icon":"sports_run_normal","dimensions":["distance","num_activities","best_activities_distance","elev_gain","moving_time","velocity"],"sport_type":"running","localized_sport_type":"Running","city":"New
+        York","state":"New York","country":"United States","private":false,"member_count":38885,"featured":false,"verified":true,"url":"nycmarathon"},{"id":143380,"resource_state":2,"name":"nyctechrunners","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/143380/3010565/1/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/143380/3010565/1/large.jpg","cover_photo":null,"cover_photo_small":null,"activity_types":["Run","VirtualRun","Wheelchair"],"activity_types_icon":"sports_run_normal","dimensions":["distance","num_activities","best_activities_distance","elev_gain","moving_time","velocity"],"sport_type":"running","localized_sport_type":"Running","city":"New
+        York","state":"New York","country":"United States","private":false,"member_count":24,"featured":false,"verified":false,"url":"nyctechrunners"},{"id":340519,"resource_state":2,"name":"2018
+        Popular Brooklyn Half Marathon","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/340519/8108762/1/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/340519/8108762/1/large.jpg","cover_photo":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/340519/8108768/1/large.jpg","cover_photo_small":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/340519/8108768/1/small.jpg","activity_types":["Run","VirtualRun","Wheelchair"],"activity_types_icon":"sports_run_normal","dimensions":["distance","num_activities","best_activities_distance","elev_gain","moving_time","velocity"],"sport_type":"running","localized_sport_type":"Running","city":"","state":"New
+        York","country":"United States","private":false,"member_count":1118,"featured":false,"verified":false,"url":"2018PopularBrooklynHalfRunners"},{"id":584679,"resource_state":2,"name":"Artsy
+        Running","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/584679/13615594/1/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/584679/13615594/1/large.jpg","cover_photo":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/584679/13615628/3/large.jpg","cover_photo_small":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/584679/13615628/3/small.jpg","activity_types":["Run","VirtualRun","Wheelchair"],"activity_types_icon":"sports_run_normal","dimensions":["distance","num_activities","best_activities_distance","elev_gain","moving_time","velocity"],"sport_type":"running","localized_sport_type":"Running","city":"New
+        York","state":"New York","country":"United States","private":true,"member_count":13,"featured":false,"verified":false,"url":"artsy-running"},{"id":332379,"resource_state":2,"name":"Runderwear","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/332379/25277705/2/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/332379/25277705/2/large.jpg","cover_photo":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/332379/7855515/20/large.jpg","cover_photo_small":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/332379/7855515/20/small.jpg","activity_types":["Run","VirtualRun","Wheelchair"],"activity_types_icon":"sports_run_normal","dimensions":["distance","num_activities","best_activities_distance","elev_gain","moving_time","velocity"],"sport_type":"running","localized_sport_type":"Running","city":"Poole","state":"England","country":"United
+        Kingdom","private":false,"member_count":59744,"featured":false,"verified":true,"url":"Runderwear"},{"id":1084920,"resource_state":2,"name":"PitchandRun","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/1084920/25752752/1/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/1084920/25752752/1/large.jpg","cover_photo":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/1084920/25752754/1/large.jpg","cover_photo_small":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/1084920/25752754/1/small.jpg","activity_types":["Run","VirtualRun","Wheelchair"],"activity_types_icon":"sports_run_normal","dimensions":["distance","num_activities","best_activities_distance","elev_gain","moving_time","velocity"],"sport_type":"running","localized_sport_type":"Running","city":"New
+        York","state":"New York","country":"United States","private":false,"member_count":374,"featured":false,"verified":false,"url":"pitchandrun"},{"id":1323115,"resource_state":2,"name":"United
+        Airlines NYC Half","profile_medium":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/1323115/34123747/5/medium.jpg","profile":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/1323115/34123747/5/large.jpg","cover_photo":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/1323115/34123906/6/large.jpg","cover_photo_small":"https://dgalywyr863hv.cloudfront.net/pictures/clubs/1323115/34123906/6/small.jpg","activity_types":["Run","VirtualRun","Wheelchair"],"activity_types_icon":"sports_run_normal","dimensions":["distance","num_activities","best_activities_distance","elev_gain","moving_time","velocity"],"sport_type":"running","localized_sport_type":"Running","city":"New
+        York","state":"New York","country":"United States","private":false,"member_count":3674,"featured":false,"verified":true,"url":"UnitedAirlinesNYCHalf"}]'
+  recorded_at: Sat, 18 Oct 2025 23:04:28 GMT
+recorded_with: VCR 6.3.1

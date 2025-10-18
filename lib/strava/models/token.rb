@@ -8,7 +8,7 @@ module Strava
       property 'refresh_token'
       property 'expires_in'
       property 'expires_at', transform_with: ->(v) { Time.at(v) }
-      property 'athlete', transform_with: ->(v) { Strava::Models::Athlete.new(v) }
+      property 'athlete', transform_with: ->(v) { Strava::Models::SummaryAthlete.new(v) }
     end
   end
 end
