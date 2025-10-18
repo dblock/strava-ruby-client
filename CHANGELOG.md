@@ -2,6 +2,7 @@
 
 * [#94](https://github.com/dblock/strava-ruby-client/pull/94): Adds video fields to `Strava::Models::Photo` - [@dblock](https://github.com/dblock).
 * [#92](https://github.com/dblock/strava-ruby-client/pull/92): Fixes `Hashie::Trash` serialization warning for `object_id` of `Strava::Webhooks::Models::Event` - [@simonneutert](https://github.com/simonneutert).
+* [#95](https://github.com/dblock/strava-ruby-client/pull/95): Fixed `club_events` returning `Strava::Models::ClubEvent` with an empty string in `created_at` - [@dblock](https://github.com/dblock).
 * [#93](https://github.com/dblock/strava-ruby-client/pull/93): Updates GitHub Actions workflows - [@simonneutert](https://github.com/simonneutert).
 * Your contribution here.
 

@@ -11,7 +11,7 @@ module Strava
       property 'club', transform_with: ->(c) { Strava::Models::Club.new(c) }
       property 'organizing_athlete', transform_with: ->(oa) { Strava::Models::Athlete.new(oa) }
       property 'activity_type'
-      property 'created_at', transform_with: ->(v) { Time.parse(v) }
+      property 'created_at', transform_with: ->(v) { Time.parse(v) if v&.length&.positive? }
       property 'route_id'
       property 'route', transform_with: ->(r) { Strava::Models::Route.new(r) }
       property 'women_only'
@@ -21,6 +21,7 @@ module Strava
       property 'upcoming_occurrences', transform_with: ->(upcoming) { upcoming.map { |o| Time.parse(o) } }
       property 'zone'
       property 'address'
+      property 'joined'
       property 'start_latlng'
 
       def strava_url
