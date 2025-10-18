@@ -1,5 +1,6 @@
 ### 2.3.1 (Next)
 
+* [#93](https://github.com/dblock/strava-ruby-client/pull/93): Updates GitHub Actions workflows - [@simonneutert](https://github.com/simonneutert).
 * Your contribution here.
 
 ### 2.3.0 (2025/10/16)
