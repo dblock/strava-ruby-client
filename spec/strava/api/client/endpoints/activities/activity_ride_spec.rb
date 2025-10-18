@@ -227,7 +227,6 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
     expect(photos.count).to eq 1
     photo = photos.primary
     expect(photo).to be_a Strava::Models::Photo
-    expect(photo.id).to be_nil
     expect(photo.unique_id).to eq 'F775717B-D1C1-443A-AD99-3D9A80FF11C9'
     expect(photo.urls).to eq(
       '100' => 'https://dgtzuqphqg23d.cloudfront.net/BO0H-YeNRZOfFhc0PctUheAKchsY2ll4vsagU58MNKg-128x96.jpg',

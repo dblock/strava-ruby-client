@@ -64,7 +64,7 @@ RSpec.describe Strava::Webhooks::Client do
   end
 
   context 'with a client id and secret' do
-    let(:client) { described_class.new(client_id: ENV.fetch('STRAVA_CLIENT_ID', '24523'), client_secret: ENV.fetch('STRAVA_CLIENT_SECRET', 'client-secret')) }
+    let(:client) { described_class.new(client_id: '24523', client_secret: 'client-secret') }
 
     describe '#push_subscriptions' do
       it 'gets an empty set of push subscriptions', vcr: { cassette_name: 'webhooks/no_push_subscriptions' } do
