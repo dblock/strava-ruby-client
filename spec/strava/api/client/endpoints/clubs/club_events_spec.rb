@@ -18,6 +18,7 @@ RSpec.describe 'Strava::Api::Client#club_events', vcr: { cassette_name: 'client/
 
       it 'returns a club event' do
         expect(event).to be_a Strava::Models::ClubEvent
+        expect(event.title).to eq 'Gran Fondo Challenge Juni'
         expect(event.id).to be_a Integer
         expect(event.id).to eq(340_487)
         expect(event.created_at).to be_nil
@@ -38,6 +39,7 @@ RSpec.describe 'Strava::Api::Client#club_events', vcr: { cassette_name: 'client/
         expect(event.upcoming_occurrences.first).to be_a Time
         expect(event.upcoming_occurrences.first).to eq(Time.new(2018, 6, 23, 8, 30, 0, '+00:00'))
         expect(event.joined).to be false
+        expect(event.strava_url).to eq 'https://www.strava.com/clubs/456773/group_events/340487'
       end
     end
   end

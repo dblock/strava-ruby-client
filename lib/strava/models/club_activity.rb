@@ -17,10 +17,6 @@ module Strava
       property 'workout_type'
       # undocumented
       property 'resource_state'
-
-      def strava_url
-        "https://www.strava.com/activities/#{id}"
-      end
     end
   end
 end

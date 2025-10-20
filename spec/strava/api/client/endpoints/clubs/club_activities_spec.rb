@@ -10,6 +10,7 @@ RSpec.describe 'Strava::Api::Client#club_activities' do
       expect(club_activities).to be_a Enumerable
       expect(club_activities.count).to eq 30
       activity = club_activities.first
+      expect(activity).to be_a Strava::Models::ClubActivity
       expect(activity.distance).to eq 10_399.9
       expect(activity.name).to eq 'Run for The Nature Conservancy'
     end

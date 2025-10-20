@@ -24,7 +24,7 @@ module Strava
       end
 
       def strava_url
-        "https://www.strava.com/athletes/#{username || id}"
+        "https://www.strava.com/athletes/#{id}"
       end
     end
   end

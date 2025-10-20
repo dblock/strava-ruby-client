@@ -27,6 +27,7 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
     expect(activity.athlete.resource_state).to eq 1
     expect(activity.name).to eq 'TCS NYC Marathon 2018'
     expect(activity.description).to eq "Official time 3:42:02. Race got impossibly hard at mile 21 but I never stopped except to pee on mile 9. \r\n\r\nI am so fucking happy that I did this!"
+    expect(activity.strava_url).to eq 'https://www.strava.com/activities/1946417534'
 
     expect(activity.distance).to eq 42_268.1
     expect(activity.distance_in_miles).to eq 26.264129297

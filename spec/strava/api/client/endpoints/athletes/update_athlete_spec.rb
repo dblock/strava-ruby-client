@@ -14,6 +14,7 @@ RSpec.describe 'Strava::Api::Client#update_athlete' do
     club = clubs.first
     expect(club).to be_a Strava::Models::SummaryClub
     expect(club.name).to eq 'New York Road Runners'
+    expect(club.strava_url).to eq 'https://www.strava.com/clubs/nyrr'
     shoes = athlete.shoes
     expect(shoes).to be_a Enumerable
     shoe = shoes.first

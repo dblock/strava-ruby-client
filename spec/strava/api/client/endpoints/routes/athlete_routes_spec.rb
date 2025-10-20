@@ -12,6 +12,7 @@ RSpec.describe 'Strava::Api::Client#athlete_routes', vcr: { cassette_name: 'clie
     expect(route).to be_a Strava::Models::Route
     expect(route.id).to eq 3_329_485_690_369_457_990
     expect(route.athlete).to be_a Strava::Models::SummaryAthlete
+    expect(route.athlete.strava_url).to eq 'https://www.strava.com/athletes/26462176'
     expect(route.name).to eq 'Little Island'
     expect(route.description).to be_nil
     expect(route.elevation_gain).to eq 19.770000000000003

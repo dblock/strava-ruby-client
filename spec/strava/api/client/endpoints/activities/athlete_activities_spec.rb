@@ -10,7 +10,9 @@ RSpec.describe 'Strava::Api::Client#athlete_activities' do
       expect(athlete_activities).to be_a Enumerable
       expect(athlete_activities.count).to eq 30
       activity = athlete_activities.first
+      expect(activity).to be_a(Strava::Models::SummaryActivity)
       expect(activity.id).to eq 16_181_809_559
+      expect(activity.strava_url).to eq 'https://www.strava.com/activities/16181809559'
       expect(activity.athlete).to be_a Strava::Models::MetaAthlete
       expect(activity.map).to be_a Strava::Models::Map
       expect(activity.start_date).to be_a Time

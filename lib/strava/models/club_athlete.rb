@@ -16,10 +16,6 @@ module Strava
       def name
         [firstname, lastname].compact.join(' ') if firstname || lastname
       end
-
-      def strava_url
-        "https://www.strava.com/athletes/#{username || id}"
-      end
     end
   end
 end
