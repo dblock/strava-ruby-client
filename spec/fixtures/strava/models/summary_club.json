@@ -1,0 +1,33 @@
+{
+  "id": 108605,
+  "resource_state": 2,
+  "name": "New York Road Runners",
+  "profile_medium": "https://dgalywyr863hv.cloudfront.net/pictures/clubs/108605/8433029/2/medium.jpg",
+  "profile": "https://dgalywyr863hv.cloudfront.net/pictures/clubs/108605/8433029/2/large.jpg",
+  "cover_photo": "https://dgalywyr863hv.cloudfront.net/pictures/clubs/108605/5794562/3/large.jpg",
+  "cover_photo_small": "https://dgalywyr863hv.cloudfront.net/pictures/clubs/108605/5794562/3/small.jpg",
+  "activity_types": [
+    "Run",
+    "VirtualRun",
+    "Wheelchair"
+  ],
+  "activity_types_icon": "sports_run_normal",
+  "dimensions": [
+    "distance",
+    "num_activities",
+    "best_activities_distance",
+    "elev_gain",
+    "moving_time",
+    "velocity"
+  ],
+  "sport_type": "running",
+  "localized_sport_type": "Running",
+  "city": "New York",
+  "state": "New York",
+  "country": "United States",
+  "private": false,
+  "member_count": 327744,
+  "featured": false,
+  "verified": true,
+  "url": "nyrr"
+}

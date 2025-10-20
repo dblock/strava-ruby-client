@@ -20,6 +20,11 @@ module Strava
       property 'featured'
       property 'verified'
       property 'url'
+      # undocumented
+      property 'profile'
+      property 'activity_types_icon'
+      property 'dimensions'
+      property 'localized_sport_type'
 
       def strava_url
         "https://www.strava.com/clubs/#{url || id}"
