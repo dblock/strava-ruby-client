@@ -1,0 +1,31 @@
+{
+  "unique_id": "6D1E4A0B-0A46-406A-874A-C3ED694DDE55",
+  "athlete_id": 26462176,
+  "activity_id": 16181809559,
+  "activity_name": "Run with Artyom",
+  "post_id": null,
+  "resource_state": 2,
+  "caption": "",
+  "type": 1,
+  "source": 1,
+  "status": 3,
+  "uploaded_at": "2025-10-18T15:28:11Z",
+  "created_at": "2025-10-16T22:33:02Z",
+  "created_at_local": "2025-10-16T18:33:02Z",
+  "urls": {
+    "5000": "https://dgtzuqphqg23d.cloudfront.net/gskSZVRgkpQ-O9HOdMXpYLEfDvRkZBNs_hGKBKbsmds-1536x2048.jpg"
+  },
+  "placeholder_image": null,
+  "sizes": {
+    "5000": [
+      1536,
+      2048
+    ]
+  },
+  "default_photo": true,
+  "cursor": null,
+  "location": [
+    40.76128333333333,
+    -73.97162
+  ]
+}
