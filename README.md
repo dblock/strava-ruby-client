@@ -71,6 +71,7 @@ Unlike other clients, including [strava-api-v3](https://github.com/jaredholdcrof
 - [Errors](#errors)
 - [Tools](#tools)
   - [Strava OAuth Token](#strava-oauth-token)
+  - [Strava Refresh Token](#strava-refresh-token)
 - [Users](#users)
 - [Resources](#resources)
 - [Upgrading](#upgrading)
@@ -1148,6 +1149,14 @@ Use [strava-oauth-token](bin/strava-oauth-token) to obtain a token from the comm
 
 ```bash
 STRAVA_CLIENT_ID=... STRAVA_CLIENT_SECRET=... strava-oauth-token
+```
+
+### Strava Refresh Token
+
+Use [strava-refresh-token](bin/strava-refresh-token) to obtain a token from the command-line using an existing refresh token.
+
+```bash
+STRAVA_CLIENT_ID=... STRAVA_CLIENT_SECRET=... STRAVA_API_REFRESH_TOKEN=... strava-refresh-token
 ```
 
 ## Users
