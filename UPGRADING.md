@@ -2,7 +2,9 @@
 
 ### Upgrading to >= 3.0.0
 
-#### Breaking Model Changes
+The 3.0 version introduces numerous improvements along with several *breaking changes*.
+
+#### Model Changes
 
 The models have been updated and now closer align to the API documentation.
 
@@ -14,9 +16,10 @@ The models have been updated and now closer align to the API documentation.
 - `Segment` was renamed to `DetailedSegment`, `SummarySegment` was added and `SegmentStats` was removed
 - `SegmentEffort` was renamed to `DetailedSegmentEffort` and `SummarySegmentEffort` was added
 - `ClubMember` was renamed to `ClubAthlete`, and `ClubAdmin` was removed
-- `RunningRace` was removed, `BaseStream`, `StatsVisibility`, `SummaryPRSegmentEffort`, `UpdatableActivity`, `Xoms`, `Destination`, `LocalLegend` and `Waypoint` were added.
+- `BaseStream`, `StatsVisibility`, `SummaryPRSegmentEffort`, `UpdatableActivity`, `Xoms`, `Destination`, `LocalLegend` and `Waypoint` were added
+- `RunningRace` was removed
 
-There are several API changes.
+#### API Changes
 
 - **Activities:**
   - `create_activity()` now returns `DetailedActivity` instead of `Activity`
@@ -46,9 +49,8 @@ There are several API changes.
   - `segment()` now returns `DetailedSegment` instead of `Segment`
   - `star_segment()` now returns `DetailedSegment` instead of `Segment`
 
-**Removed Methods:**
-
-- **`running_race(id)`** - The `client.running_race(id)` method has been removed along with the entire `RunningRaces` endpoint module.
+- **Running Races:**
+  - `running_race(id)` has been removed
 
 See [#96](https://github.com/dblock/strava-ruby-client/pull/96) for details.
 
@@ -75,7 +77,7 @@ See [#94](https://github.com/dblock/strava-ruby-client/pull/94) for details.
 
 The `Strava::Webhooks::Models::Event` model has been refactored to map the `object_id` field to `id` for consistency and to resolve `Hashie::Trash` serialization warnings.
 
-**Breaking Change**: If you're using webhooks and accessing the `object_id` property, you must now use `id` instead.
+If you're using webhooks and accessing the `object_id` property, you must now use `id` instead.
 
 **Before (v2.x):**
 ```ruby
