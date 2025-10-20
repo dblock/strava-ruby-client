@@ -25,6 +25,7 @@ module Strava
       # undocumented
       property 'resource_state'
       property 'device_watts'
+      property 'average_watts'
       property 'average_heartrate'
       property 'max_heartrate'
     end

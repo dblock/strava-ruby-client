@@ -15,6 +15,8 @@ module Strava
       include Mixins::TotalElevationGain
       include Mixins::SportType
       property 'workout_type'
+      # undocumented
+      property 'resource_state'
 
       def strava_url
         "https://www.strava.com/activities/#{id}"

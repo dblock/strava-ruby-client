@@ -45,6 +45,8 @@ module Strava
       property 'device_watts'
       property 'max_watts'
       property 'weighted_average_watts'
+      # undocumented
+      property 'resource_state'
 
       def strava_url
         "https://www.strava.com/activities/#{id}"

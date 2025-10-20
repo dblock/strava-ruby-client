@@ -25,7 +25,6 @@ module Strava
       # undocumented
       property 'map_urls'
       property 'resource_state'
-      property 'estimated_moving_time'
     end
   end
 end

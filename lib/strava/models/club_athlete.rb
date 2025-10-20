@@ -10,6 +10,8 @@ module Strava
       property 'member'
       property 'admin'
       property 'owner'
+      # undocumented
+      property 'membership'
 
       def name
         [firstname, lastname].compact.join(' ') if firstname || lastname

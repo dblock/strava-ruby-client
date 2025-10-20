@@ -8,6 +8,8 @@ module Strava
       property 'source'
       property 'unique_id'
       property 'urls'
+      # undocumented
+      property 'media_type'
     end
   end
 end

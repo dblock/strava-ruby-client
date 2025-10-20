@@ -7,6 +7,7 @@ module Strava
         extend ActiveSupport::Concern
 
         included do
+          # deprecated, property 'type'
           property 'sport_type'
         end
 

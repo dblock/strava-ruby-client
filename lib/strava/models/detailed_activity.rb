@@ -78,6 +78,10 @@ module Strava
       property 'stats_visibility', transform_with: ->(v) { v.map { |r| Strava::Models::StatsVisibility.new(r) } }
       property 'available_zones'
       property 'similar_activities', transform_with: ->(v) { Strava::Models::SimilarActivities.new(v) }
+      property 'average_cadence'
+      property 'highlighted_kudosers'
+      property 'segment_leaderboard_opt_out'
+      property 'leaderboard_opt_out'
 
       def strava_url
         "https://www.strava.com/activities/#{id}"
