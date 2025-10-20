@@ -977,7 +977,7 @@ athlete = client.athlete # => Strava::Models::Athlete
 athlete.http_response.ratelimit
 ```
 
-The following properties are available on Strava::Api::Ratelimit.
+The following properties are available on [Strava::Api::Ratelimit](lib/strava/api/ratelimit.rb).
 
 - `limit`
 - `limit?`
@@ -1025,7 +1025,7 @@ You can configure web client options used in the OAuth and API clients, globally
 
 ```ruby
 Strava::Web::Client.configure do |config|
-  config.user_agent = 'Strava Ruby Client/1.0'
+  config.user_agent = 'Strava Ruby Client/3.0'
 end
 ```
 
@@ -1162,6 +1162,7 @@ STRAVA_CLIENT_ID=... STRAVA_CLIENT_SECRET=... STRAVA_API_REFRESH_TOKEN=... strav
 ## Users
 
 - [Slava: Strava integration with Slack](https://slava.playplay.io), [source](https://github.com/dblock/slack-strava).
+- [Strada: Strava integration with Discord](https://strada.playplay.io), [source](https://github.com/dblock/discord-strava).
 - [Jekyll Blog at run.dblock.org](https://run.dblock.org), [source](https://github.com/dblock/run.dblock.org)
 - [Secret Strava](https://steele.blue/secret-strava/), [source](https://github.com/mattdsteele/secret-strava)
 
