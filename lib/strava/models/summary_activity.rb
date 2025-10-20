@@ -47,6 +47,21 @@ module Strava
       property 'weighted_average_watts'
       # undocumented
       property 'resource_state'
+      property 'visibility'
+      property 'utc_offset'
+      property 'location_city'
+      property 'location_state'
+      property 'location_country'
+      property 'average_cadence'
+      property 'average_temp'
+      property 'has_heartrate'
+      property 'average_heartrate'
+      property 'max_heartrate'
+      property 'heartrate_opt_out'
+      property 'display_hide_heartrate_option'
+      property 'from_accepted_tag'
+      property 'pr_count'
+      property 'suffer_score'
 
       def strava_url
         "https://www.strava.com/activities/#{id}"

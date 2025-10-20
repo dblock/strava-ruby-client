@@ -16,6 +16,7 @@ RSpec.describe 'Strava::Api::Client#athlete_activities' do
       expect(activity.athlete).to be_a Strava::Models::MetaAthlete
       expect(activity.map).to be_a Strava::Models::Map
       expect(activity.start_date).to be_a Time
+      expect(activity.visibility).to eq 'everyone'
     end
 
     it 'returns athlete activities for December 2018 only', vcr: { cassette_name: 'client/athlete_activities_december_2018' } do
