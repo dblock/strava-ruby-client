@@ -1,0 +1,32 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'dotenv/load'
+require 'webrick'
+require 'strava-ruby-client'
+
+begin
+  client_id = ENV.fetch('STRAVA_CLIENT_ID', nil) || raise('Missing STRAVA_CLIENT_ID.')
+  client_secret = ENV.fetch('STRAVA_CLIENT_SECRET', nil) || raise('Missing STRAVA_CLIENT_SECRET.')
+  refresh_token = ENV.fetch('STRAVA_API_REFRESH_TOKEN', nil) || raise('Missing STRAVA_API_REFRESH_TOKEN.')
+
+  client = Strava::OAuth::Client.new(
+    client_id: client_id,
+    client_secret: client_secret
+  )
+
+  response = client.oauth_token(
+    refresh_token: refresh_token,
+    grant_type: 'refresh_token'
+  )
+
+  puts 'The Strava API refresh token has changed, it will need to be updated.' if refresh_token != response.refresh_token
+
+  puts "token_type: #{response.token_type}"
+  puts "refresh_token: #{response.refresh_token}"
+  puts "access_token: #{response.access_token}"
+  puts "expires_at: #{response.expires_at}"
+rescue Faraday::ClientError => e
+  puts e.message
+  puts e.response[:body]
+end

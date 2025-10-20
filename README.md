@@ -104,15 +104,29 @@ Note that the token from the Strava website does not have enough permissions to 
 ```bash
 export STRAVA_CLIENT_ID=...
 export STRAVA_CLIENT_SECRET=...
+
 bundle exec ruby bin/strava-oauth-token
 ```
 
-Note the `access_token` from the browser window.
+Set `STRAVA_ACCESS_TOKEN` to the value of `access_token` from the browser window and save `refresh_token` in a secure location.
 
 ```bash
 export STRAVA_ACCESS_TOKEN=...
+
 bundle exec ruby bin/strava-activities.rb
 ```
+
+You can repeat the process above when the token expires, or use the `refresh_token`, which is faster.
+
+```bash
+export STRAVA_CLIENT_ID=...
+export STRAVA_CLIENT_SECRET=...
+export STRAVA_API_REFRESH_TOKEN=...
+
+bundle exec ./bin/strava-refresh-token
+```
+
+Set `STRAVA_ACCESS_TOKEN` to the value of `access_token`.
 
 ### Activities
 

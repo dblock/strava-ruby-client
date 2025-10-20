@@ -29,22 +29,36 @@ bundle exec rake
 
 ### Obtain a Strava Token
 
-The token from the Strava website does not have enough permissions to retrieve your own activities. 
-Use the [strava-oauth-token tool](#strava-oauth-token) to obtain a short lived with more access scopes.
+The token from the Strava website does not have enough permissions to retrieve your own activities, therefore you need to complete the OAuth workflow with additional permissions.
+
+Use the [strava-oauth-token tool](#strava-oauth-token) once.
 
 Obtain `STRAVA_CLIENT_ID` and `STRAVA_CLIENT_SECRET` from [My API Application](https://www.strava.com/settings/api).
 
 ```bash
 export STRAVA_CLIENT_ID=...
 export STRAVA_CLIENT_SECRET=...
+
 bundle exec ruby bin/strava-oauth-token
 ```
 
-This will open a browser window. Complete the OAuth workflow and note `access_token`.
+This will open a browser window. Complete the OAuth workflow and note `refresh_token` and `access_token`. Set `STRAVA_ACCESS_TOKEN` to the value of `access_token`.
 
 ```
 export STRAVA_ACCESS_TOKEN=...
 ```
+
+You can repeat the process above when the token expires, or use the `refresh_token`, which is faster.
+
+```bash
+export STRAVA_CLIENT_ID=...
+export STRAVA_CLIENT_SECRET=...
+export STRAVA_API_REFRESH_TOKEN=...
+
+bundle exec ./bin/strava-refresh-token
+```
+
+Set `STRAVA_ACCESS_TOKEN` to the value of `access_token`.
 
 ### Create a Topic Branch
 
