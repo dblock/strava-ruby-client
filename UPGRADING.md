@@ -93,6 +93,31 @@ This change fixes the `Hashie::Trash` serialization warning that occurred when u
 
 See [#92](https://github.com/dblock/strava-ruby-client/pull/92) for details.
 
+#### Always Paginate with `per_page` or `page_size`
+
+The client will always paginate data if `per_page` or `page_size` are provided.
+
+**Before (v2.x):**
+```ruby
+# one request for a page of 10 items
+client.activity_comments(id: 1982980795, page_size: 10) # => [Strava::Models::Comment]
+```
+
+**After (v3.0.0):**
+```ruby
+# all pages, multiple requests, potentially more than 10 items
+client.activity_comments(id: 1982980795, page_size: 10) # => [Strava::Models::Comment]
+```
+
+Use `limit` in combination with `page_size` to both paginate and retrieve a certain number of items.
+
+```ruby
+# all pages, 10 items per page, no more than 20 items
+client.activity_comments(id: 1982980795, page_size: 10, limit: 20) # => [Strava::Models::Comment]
+```
+
+See [#99](https://github.com/dblock/strava-ruby-client/pull/99) for details.
+
 ### Upgrading to >= 2.3.0
 
 Faraday can optionally exclude HTTP method, path and query params from the errors raised. The client implementation options will now default to `Faraday::Response::RaiseError::DEFAULT_OPTIONS` with `include_request` set to `true`. You can change this behavior by setting `Strava::Web::RaiseResponseError::DEFAULT_OPTIONS`.

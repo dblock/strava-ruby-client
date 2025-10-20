@@ -29,12 +29,15 @@ module Strava
         #   Activity id.
         # @option options [Integer] :page
         #   Page number.
+        # @option options [Integer] :page_size
+        #   Number of items per page. Defaults to 30.
         # @option options [Integer] :per_page
         #   Number of items per page. Defaults to 30.
+        #   @deprecated use {page_size}
         #
         def activity_comments(id_or_options, options = {}, &block)
           id, options = parse_args(id_or_options, options)
-          paginate "activities/#{id}/comments", options, Strava::Models::Comment, &block
+          paginate_with_cursor "activities/#{id}/comments", options, Strava::Models::Comment, &block
         end
 
         #

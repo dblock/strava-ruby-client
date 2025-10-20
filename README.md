@@ -790,12 +790,30 @@ See [Strava::Errors::UploadError](lib/strava/errors/upload_failed_error.rb) for 
 
 ### Pagination
 
-Some Strava APIs, including [athlete-activities](#list-athlete-activities) support pagination when supplying an optional `page` and `per_page` parameter. By default the client retrieves one page of data, which Strava currently defaults to 30 items. You can paginate through more data by supplying a block and an optional `per_page` parameter. The underlying implementation makes page-sized calls and increments the `page` argument.
+Some Strava APIs, including [athlete-activities](#list-athlete-activities) support pagination when supplying an optional `page` and `per_page` parameter. By default the client retrieves one page of data, which Strava currently defaults to 30 items. If you supply `per_page`, the client will retrieve all pages. You can paginate through items incrementally by supplying a block. Use `limit` to limit the number of items returned. The underlying implementation makes page-sized calls and increments the `page` argument.
 
 ```ruby
 client.athlete_activities(per_page: 30) do |activity|
   activity # => Strava::Models::Activity
 end
+```
+
+```ruby
+client.athlete_activities(per_page: 30) # => [Strava::Models::Activity], all pages
+client.athlete_activities(per_page: 30, limit: 50) # => [Strava::Models::Activity], all pages, stop at 50 items
+```
+
+Some Strava APIs, including [activity-comments](#list-activity-comments) support cursor-based pagination when supplying optional `after_cursor` and `page_size` parameters. By default the client retrieves one page of data, which Strava currently defaults to 30 items. If you supply `page_size`, the client will retrieve all pages. You can paginate through items incrementally by supplying a block. Use `limit` to limit the number of items returned. The underlying implementation makes page-sized calls and uses the returned `cursor` as `after_cursor`.
+
+```ruby
+client.activity_comments(id: 1982980795, page_size: 30) do |comment|
+  comment # => Strava::Models::Comment
+end
+```
+
+```ruby
+client.activity_comments(id: 1982980795, page_size: 30) # => [Strava::Models::Comment], all pages
+client.activity_comments(id: 1982980795, page_size: 30, limit: 100) # => [Strava::Models::Comment], paginated, stop at 100 items
 ```
 
 ### OAuth

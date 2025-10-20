@@ -29,8 +29,7 @@ module Strava
       # @return [Strava::Web::ApiResponse]
       #
       def http_response
-        @http_response ||=
-          Strava::Web::ApiResponse.new(deep_copy(@web_response).http_response)
+        @http_response ||= Strava::Web::ApiResponse.new(deep_copy(@web_response).http_response)
       end
 
       #

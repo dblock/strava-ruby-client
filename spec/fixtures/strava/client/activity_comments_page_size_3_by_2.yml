@@ -1,0 +1,154 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.strava.com/api/v3/activities/15605032352/comments?page_size=3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer access-token
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Strava Ruby Client/3.0.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 20 Oct 2025 16:57:07 GMT
+      X-Envoy-Upstream-Service-Time:
+      - '899'
+      Server:
+      - istio-envoy
+      Status:
+      - 200 OK
+      X-Ratelimit-Usage:
+      - '2,225'
+      X-Ratelimit-Limit:
+      - '200,2000'
+      Vary:
+      - Accept, Origin
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Request-Id:
+      - d24db2d6-e60a-4708-94e1-21dbedbc2b14
+      X-Readratelimit-Limit:
+      - '100,1000'
+      X-Download-Options:
+      - noopen
+      Etag:
+      - W/"259744c12678c860f34011e9fe3f044d"
+      X-Frame-Options:
+      - DENY
+      X-Readratelimit-Usage:
+      - '2,225'
+      X-Content-Type-Options:
+      - nosniff
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 90707ba4ec932f1b72abfb5c4f1add2e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - JFK52-P3
+      X-Amz-Cf-Id:
+      - ZUSSOBszR1KJqdobouGkGhcI8jI98cgma20TqeJuHIKPQwX6KtNfGQ==
+    body:
+      encoding: UTF-8
+      string: '[{"id":2257523290,"activity_id":15605032352,"post_id":null,"resource_state":2,"text":"you
+        pass?","mentions_metadata":null,"created_at":"2025-08-27T18:36:59Z","cursor":"eyJpZCI6MjI1NzUyMzI5MCwiY3JlYXRlZEF0IjoxNzU2MzE5ODE5MDAwfQ%3D%3D","athlete":{"resource_state":2,"firstname":"Sasha","lastname":"C."},"reaction_count":0,"has_reacted":false},{"id":2257703241,"activity_id":15605032352,"post_id":null,"resource_state":2,"text":"Sasha
+        Caskey I will live another day!","mentions_metadata":null,"created_at":"2025-08-27T21:55:13Z","cursor":"eyJpZCI6MjI1NzcwMzI0MSwiY3JlYXRlZEF0IjoxNzU2MzMxNzEzMDAwfQ%3D%3D","athlete":{"resource_state":2,"firstname":"Daniel","lastname":"D."},"reaction_count":1,"has_reacted":false},{"id":2257782099,"activity_id":15605032352,"post_id":null,"resource_state":2,"text":"I
+        didn''t know they do competitive EKG Stress Test","mentions_metadata":null,"created_at":"2025-08-28T00:38:04Z","cursor":"eyJpZCI6MjI1Nzc4MjA5OSwiY3JlYXRlZEF0IjoxNzU2MzQxNDg0MDAwfQ%3D%3D","athlete":{"resource_state":2,"firstname":"Vlad","lastname":"Z."},"reaction_count":0,"has_reacted":false}]'
+  recorded_at: Mon, 20 Oct 2025 16:57:07 GMT
+- request:
+    method: get
+    uri: https://www.strava.com/api/v3/activities/15605032352/comments?after_cursor=eyJpZCI6MjI1Nzc4MjA5OSwiY3JlYXRlZEF0IjoxNzU2MzQxNDg0MDAwfQ%253D%253D&page_size=3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer access-token
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Strava Ruby Client/3.0.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 20 Oct 2025 17:02:42 GMT
+      X-Envoy-Upstream-Service-Time:
+      - '555'
+      Server:
+      - istio-envoy
+      Status:
+      - 200 OK
+      X-Ratelimit-Usage:
+      - '3,233'
+      X-Ratelimit-Limit:
+      - '200,2000'
+      Vary:
+      - Accept, Origin
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Request-Id:
+      - 27b7fcc2-dd5c-4d3d-a8d9-2450306ff6aa
+      X-Readratelimit-Limit:
+      - '100,1000'
+      X-Download-Options:
+      - noopen
+      Etag:
+      - W/"4f53cda18c2baa0c0354bb5f9a3ecbe5"
+      X-Frame-Options:
+      - DENY
+      X-Readratelimit-Usage:
+      - '3,233'
+      X-Content-Type-Options:
+      - nosniff
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 145a3c1a881b9a37bb761d4b0890859a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - JFK52-P3
+      X-Amz-Cf-Id:
+      - 8_TTRLtS7_l4Z0kNa9meul3TEDsrb1A06oqfz1AICxS-Wus2ESJByw==
+    body:
+      encoding: UTF-8
+      string: "[]"
+  recorded_at: Mon, 20 Oct 2025 17:02:42 GMT
+recorded_with: VCR 6.3.1
