@@ -7,6 +7,8 @@ module Strava
       property 'id'
       # undocumented
       property 'resource_state'
+      property 'firstname'
+      property 'lastname'
     end
   end
 end

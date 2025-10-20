@@ -13,6 +13,9 @@ RSpec.describe 'Strava::Api::Client#club_activities' do
       expect(activity).to be_a Strava::Models::ClubActivity
       expect(activity.distance).to eq 10_399.9
       expect(activity.name).to eq 'Run for The Nature Conservancy'
+      expect(activity.athlete).to be_a Strava::Models::MetaAthlete
+      expect(activity.athlete.firstname).to eq 'ethan'
+      expect(activity.athlete.lastname).to eq 'L.'
     end
 
     it 'returns club activities by id' do
