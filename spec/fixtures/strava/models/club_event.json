@@ -1,0 +1,53 @@
+{
+  "id": 339353,
+  "resource_state": 2,
+  "title": "Erste Gruppenfahrt (Ø25kmh)",
+  "description": "",
+  "club_id": 456773,
+  "club": {
+    "id": 456773,
+    "resource_state": 1,
+    "name": "Rennrad Mainz Wiesbaden Rheinhessen"
+  },
+  "organizing_athlete": {
+    "id": 24776507,
+    "username": "simimi",
+    "resource_state": 2,
+    "firstname": "Watthias",
+    "lastname": "Wadle",
+    "bio": "",
+    "city": "Ingelheim am Rhein",
+    "state": "Rhineland-Palatinate",
+    "country": "Germany",
+    "sex": "M",
+    "premium": false,
+    "summit": false,
+    "created_at": "2017-09-05T10:41:23Z",
+    "updated_at": "2025-10-10T20:48:20Z",
+    "badge_type_id": 0,
+    "profile_medium": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/24776507/36369246/1/medium.jpg",
+    "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/24776507/36369246/1/large.jpg",
+    "friend": null,
+    "follower": null,
+    "blocked": false,
+    "can_follow": true
+  },
+  "activity_type": "Ride",
+  "created_at": "",
+  "route_id": null,
+  "route": null,
+  "women_only": false,
+  "private": false,
+  "skill_levels": 1,
+  "terrain": 0,
+  "upcoming_occurrences": [
+    "2018-06-13T15:00:00Z"
+  ],
+  "zone": "Europe/Berlin",
+  "address": "Bootshaus, Mainz",
+  "joined": false,
+  "start_latlng": [
+    49.99241,
+    8.28793
+  ]
+}
