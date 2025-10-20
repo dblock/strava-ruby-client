@@ -1,0 +1,79 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.strava.com/api/v3/athlete/activities?page=1&per_page=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer access-token
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Strava Ruby Client/3.0.0.pre
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 20 Oct 2025 21:31:21 GMT
+      X-Envoy-Upstream-Service-Time:
+      - '138'
+      Server:
+      - istio-envoy
+      Status:
+      - 200 OK
+      X-Ratelimit-Usage:
+      - '26,362'
+      X-Ratelimit-Limit:
+      - '200,2000'
+      Vary:
+      - Accept, Origin
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Request-Id:
+      - 19a40686-a300-45ef-9619-6422facb3011
+      X-Readratelimit-Limit:
+      - '100,1000'
+      X-Download-Options:
+      - noopen
+      Etag:
+      - W/"05c99cc21211251a47044a940ac8b3fa"
+      X-Frame-Options:
+      - DENY
+      X-Readratelimit-Usage:
+      - '26,362'
+      X-Content-Type-Options:
+      - nosniff
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 08c35fba3c05c07f78b1292e4a5f949a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - JFK52-P3
+      X-Amz-Cf-Id:
+      - e0lx2XFWTyB8Ly7hsWgVApO00Gu7hOsVAk94smcwGcQbm2-Xv7kfEw==
+    body:
+      encoding: UTF-8
+      string: '[{"resource_state":2,"athlete":{"id":26462176,"resource_state":1},"name":"Should
+        Not Have","distance":6764.8,"moving_time":2151,"elapsed_time":2178,"total_elevation_gain":34.0,"type":"Run","sport_type":"Run","workout_type":0,"id":16195505756,"start_date":"2025-10-19T20:00:00Z","start_date_local":"2025-10-19T16:00:00Z","timezone":"(GMT-05:00)
+        America/New_York","utc_offset":-14400.0,"location_city":null,"location_state":null,"location_country":null,"achievement_count":1,"kudos_count":7,"comment_count":1,"athlete_count":1,"photo_count":0,"map":{"id":"a16195505756","summary_polyline":"y_wwFbstbM@b@DDDACZI\\a@fAeAtDWp@_@zA@HCLSSw@c@[MK@GFI^Sb@@VPNZNVBp@R|@t@j@T\\\\t@d@d@h@`@T`Ax@\\^x@b@jATFDXbABDvAZt@^r@LZJZBf@Ld@FxAZ`Ah@J@rCGJCz@El@JVLXJ`@b@PETc@`@SnBL\\L\\X^Lt@BJPAFFF@b@Sb@E\\Db@ADUXYVS^BTXp@H|@Ph@JFXABCD[GYFm@Pk@@q@Cs@Vw@@e@AJFB~@]j@@HCa@MNhA@p@GTARDTCFUTFlBHh@FJ`@^HFBCBKAKJkA^eB@g@Jk@CGKNjBcHAGLBBDHBJJLj@Fj@?RCRBn@q@fEEnAQtBJ\\ZDXGJYDsBA[HkBHy@?i@L{@HGLETHJAR_ALy@`@Gl@@p@_@h@EVBzAE\\Df@CRFpAHd@R?XCDmA?IBIx@Ft@ADc@RM?IAIYi@|PJ^KKo@kACR[QMg@HwAL{@@CPAJOH[BiALu@FCFMsB{AAKTYTINCMFI?KGCGE_@Lc@CIQIe@Gg@[o@YKAc@NQPM\\UlAW@u@MEBEN?tAFhB?z@Bv@M`CADGBq@AICGQDyBHeACO@yAE{@Lw@Ja@KKy@Ba@?EE?CB?BJ?f@EhB@`@J`B@l@Dr@L\\GCONUJc@BEAMDUAOQAGDmACi@NiADG?aABg@Ge@ZgAGOMMk@Gu@A]HmBa@GREFi@Cw@Ky@Ya@Wc@E]HYXWLWSu@]k@Ku@Ae@CiBHa@Am@Kq@Ye@KuBo@uA]e@Oc@Qm@Ma@[GIE[SUo@QiBcAe@_@YQaAa@YYe@]qC_B_@[k@[i@e@KSDg@Vy@Vk@Zg@XeADCJk@n@yBdAyBLi@p@y@BAL@BBVj@DA@BTZFD@CRC@GACBKFE","resource_state":2},"trainer":false,"commute":false,"manual":false,"private":false,"visibility":"everyone","flagged":false,"gear_id":"g26020551","start_latlng":[40.75533,-74.002571],"end_latlng":[40.754903,-74.002226],"average_speed":3.145,"max_speed":11.486,"average_cadence":78.4,"average_temp":28,"has_heartrate":true,"average_heartrate":146.8,"max_heartrate":162.0,"heartrate_opt_out":false,"display_hide_heartrate_option":true,"elev_high":15.0,"elev_low":-6.2,"upload_id":17279496051,"upload_id_str":"17279496051","external_id":"garmin_ping_492699828617","from_accepted_tag":false,"pr_count":1,"total_photo_count":3,"has_kudoed":false,"suffer_score":76.0}]'
+  recorded_at: Mon, 20 Oct 2025 21:31:21 GMT
+recorded_with: VCR 6.3.1

@@ -37,25 +37,29 @@ RSpec.describe 'Strava::Api::Client#athlete_activities' do
 
     it 'returns athlete activities' do
       expect(athlete_activities).to be_a Enumerable
-      expect(athlete_activities.count).to eq 1131
+      expect(athlete_activities.count).to eq 1132
       expect(athlete_activities.all? { |a| a.athlete.is_a?(Strava::Models::MetaAthlete) }).to be true
       expect(athlete_activities.map(&:id).uniq.count).to eq athlete_activities.count
     end
   end
 
   describe 'paginated #athlete_activities by 72', vcr: { cassette_name: 'client/all_athlete_activities_by_72' } do
-    let(:athlete_activities) do
-      all = []
-      client.athlete_activities(per_page: 72) do |activity|
-        all << activity
-      end
-      all
-    end
+    let(:athlete_activities) { client.athlete_activities(per_page: 72) }
 
     it 'returns athlete activities' do
       expect(athlete_activities).to be_a Enumerable
-      expect(athlete_activities.count).to eq 1131
+      expect(athlete_activities.count).to eq 1132
       expect(athlete_activities.map(&:id).uniq.count).to eq athlete_activities.count
+    end
+  end
+
+  describe 'one activity', vcr: { cassette_name: 'client/all_athlete_activities_latest' } do
+    let(:athlete_activities) { client.athlete_activities(page: 1, per_page: 1, limit: 1) }
+
+    it 'returns athlete activities' do
+      expect(athlete_activities).to be_a Enumerable
+      expect(athlete_activities.count).to eq 1
+      expect(athlete_activities.map(&:id).uniq.count).to eq 1
     end
   end
 end

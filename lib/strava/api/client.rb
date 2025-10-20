@@ -72,11 +72,18 @@ module Strava
       #
       def paginate_with_cursor(path, options, model)
         # avoid retrieving unnecessary items
-        options = options.merge(per_page: options[:limit]) if options.key?(:per_page) && options.key(:limit) && options[:per_page] > options[:limit]
-        options = options.merge(page_size: options[:limit]) if options.key?(:page_size) && options.key(:limit) && options[:page_size] > options[:limit]
+        if options.key?(:limit)
+          if options.key?(:per_page) && options[:per_page] > options[:limit]
+            options = options.merge(per_page: options[:limit])
+          elsif options.key?(:page_size) && options[:page_size] > options[:limit]
+            options = options.merge(page_size: options[:limit])
+          end
+        end
+
         collection = []
         web_response = nil
-        if block_given? || options.key?(:page_size) || options.key(:per_page)
+
+        if block_given? || options.key?(:page_size) || options.key?(:per_page)
           Cursor.new(self, path, options).each do |page|
             web_response = page # response of the last request made
             page.each do |row|
@@ -86,6 +93,7 @@ module Strava
               yield m if block_given?
               collection << m
             end
+            break if options.key?(:limit) && collection.size >= options[:limit]
           end
         else
           page_options = if options.key?(:limit)
