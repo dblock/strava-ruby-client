@@ -1,0 +1,10 @@
+{
+    "kom": "1:09",
+    "qom": "1:31",
+    "overall": "1:09",
+    "destination": {
+        "href": "strava://segments/1109718/leaderboard",
+        "type": "overall",
+        "name": "All-Time"
+    }
+}

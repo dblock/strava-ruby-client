@@ -14,7 +14,7 @@ The models have been updated and now closer align to the API documentation.
 - `Segment` was renamed to `DetailedSegment`, `SummarySegment` was added and `SegmentStats` was removed
 - `SegmentEffort` was renamed to `DetailedSegmentEffort` and `SummarySegmentEffort` was added
 - `ClubMember` was renamed to `ClubAthlete`, and `ClubAdmin` was removed
-- `RunningRace` was removed, `BaseStream`, `StatsVisibility`, `SummaryPRSegmentEffort`, `UpdatableActivity`, and `Waypoint` were added.
+- `RunningRace` was removed, `BaseStream`, `StatsVisibility`, `SummaryPRSegmentEffort`, `UpdatableActivity`, `Xoms`, `Destination`, `LocalLegend` and `Waypoint` were added.
 
 There are several API changes.
 

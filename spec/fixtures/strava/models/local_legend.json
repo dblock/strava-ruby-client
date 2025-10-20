@@ -1,0 +1,12 @@
+{
+  "athlete_id": 149514149,
+  "title": "Alonzo Rodriguez",
+  "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/149514149/33600350/2/large.jpg",
+  "effort_description": "22 efforts in the last 90 days",
+  "effort_count": "22",
+  "effort_counts": {
+    "overall": "22 efforts",
+    "female": "3 efforts"
+  },
+  "destination": "strava://segments/1109718/local_legend?categories%5B%5D=overall"
+}

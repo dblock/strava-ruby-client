@@ -34,8 +34,8 @@ module Strava
       property 'elevation_profile'
       property 'elevation_profiles'
       property 'starred'
-      property 'xoms' # TODO
-      property 'local_legend' # TODO
+      property 'xoms', transform_with: ->(v) { Strava::Models::Xoms.new(v) }
+      property 'local_legend', transform_with: ->(v) { Strava::Models::LocalLegend.new(v) }
     end
   end
 end

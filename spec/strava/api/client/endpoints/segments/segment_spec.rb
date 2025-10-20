@@ -29,6 +29,15 @@ RSpec.describe 'Strava::Api::Client#segment', vcr: { cassette_name: 'client/segm
     expect(segment.athlete_count).to eq 1144
     expect(segment.star_count).to eq 3
     expect(segment.athlete_segment_stats).to be_a Strava::Models::SummarySegmentEffort
+    expect(segment.xoms).to be_a Strava::Models::Xoms
+    expect(segment.xoms.kom).to eq '1:09'
+    expect(segment.xoms.qom).to eq '1:31'
+    expect(segment.xoms.overall).to eq '1:09'
+    expect(segment.xoms.destination).to be_a Strava::Models::Destination
+    expect(segment.xoms.destination.name).to eq 'All-Time'
+    expect(segment.xoms.destination.href).to eq 'strava://segments/1109718/leaderboard'
+    expect(segment.local_legend).to be_a Strava::Models::LocalLegend
+    expect(segment.local_legend.athlete_id).to eq 149_514_149
   end
 
   it 'returns a segment by id' do
