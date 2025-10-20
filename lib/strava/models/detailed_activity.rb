@@ -20,8 +20,8 @@ module Strava
       property 'start_date', transform_with: ->(v) { Time.parse(v) }
       include Mixins::StartDateLocal
       property 'timezone'
-      property 'start_latlng'
-      property 'end_latlng'
+      property 'start_latlng', transform_with: ->(v) { Strava::Models::LatLng.new(v) }
+      property 'end_latlng', transform_with: ->(v) { Strava::Models::LatLng.new(v) }
       property 'achievement_count'
       property 'kudos_count'
       property 'comment_count'

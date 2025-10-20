@@ -38,6 +38,7 @@ require_relative 'strava/models/response'
 require_relative 'strava/models/token'
 require_relative 'strava/models/authorization'
 
+require_relative 'strava/models/lat_lng'
 require_relative 'strava/models/achievement'
 require_relative 'strava/models/activity_stats'
 require_relative 'strava/models/activity_total'

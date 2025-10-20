@@ -9,8 +9,8 @@ module Strava
       property 'climb_category'
       property 'climb_category_desc'
       property 'avg_grade'
-      property 'start_latlng'
-      property 'end_latlng'
+      property 'start_latlng', transform_with: ->(v) { Strava::Models::LatLng.new(v) }
+      property 'end_latlng', transform_with: ->(v) { Strava::Models::LatLng.new(v) }
       property 'elev_difference'
       include Mixins::Distance
       property 'points'

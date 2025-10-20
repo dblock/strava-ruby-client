@@ -23,7 +23,7 @@ module Strava
       property 'zone'
       property 'address'
       property 'joined'
-      property 'start_latlng'
+      property 'start_latlng', transform_with: ->(v) { Strava::Models::LatLng.new(v) }
 
       def strava_url
         "https://www.strava.com/clubs/#{club_id}/group_events/#{id}"

@@ -55,6 +55,8 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
     expect(activity.start_date_local).to eq Time.parse('2022-05-14 14:21:19 -0400')
 
     expect(activity.utc_offset).to eq(-14_400.0)
+    expect(activity.start_latlng.lat).to eq 49.197681
+    expect(activity.start_latlng.lng).to eq 7.883777
     expect(activity.start_latlng).to eq [49.197681, 7.883777]
     expect(activity.end_latlng).to eq [49.034333, 7.94529]
     expect(activity.location_city).to be_nil

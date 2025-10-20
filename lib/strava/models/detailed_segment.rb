@@ -12,8 +12,8 @@ module Strava
       property 'maximum_grade'
       property 'elevation_high'
       property 'elevation_low'
-      property 'start_latlng'
-      property 'end_latlng'
+      property 'start_latlng', transform_with: ->(v) { Strava::Models::LatLng.new(v) }
+      property 'end_latlng', transform_with: ->(v) { Strava::Models::LatLng.new(v) }
       property 'climb_category'
       property 'city'
       property 'state'

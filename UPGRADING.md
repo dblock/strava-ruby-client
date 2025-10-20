@@ -52,6 +52,19 @@ There are several API changes.
 
 See [#96](https://github.com/dblock/strava-ruby-client/pull/96) for details.
 
+#### Latitude and Longitude are now instances of `Strava::Models::LatLng`
+
+Properties, such as `DetailedActivity#start_latlng` are now of the `Strava::Models::LatLng` type. 
+
+```ruby
+activity.start_latlng # Strava::Models::LatLng
+activity.start_latlng.to_a # [36.377702, -94.207242]
+activity.start_latlng.lat # 36.377702
+activity.start_latlng.lng # -94.207242
+```
+
+See [#98](https://github.com/dblock/strava-ruby-client/pull/98) for details.
+
 #### Removed `id` from `Strava::Models::Photo`
 
 The Strava Photos API returns `unique_id` and does not return `id`. The latter has been removed.
