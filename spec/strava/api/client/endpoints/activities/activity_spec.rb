@@ -181,6 +181,8 @@ RSpec.describe 'Strava::Api::Client#activity', vcr: { cassette_name: 'client/act
     expect(gear.name).to eq 'Adidas Supernova ST'
     expect(gear.primary).to be false
     expect(gear.distance).to eq 966_309
+    expect(gear.nickname).to eq ''
+    expect(gear.retired).to be true
 
     expect(activity.device_name).to eq 'Fitbit Ionic'
 

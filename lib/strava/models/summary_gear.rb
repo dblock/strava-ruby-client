@@ -9,6 +9,10 @@ module Strava
       property 'primary'
       property 'name'
       include Mixins::Distance
+      # undocumented
+      property 'nickname'
+      property 'retired'
+      property 'converted_distance'
     end
   end
 end
