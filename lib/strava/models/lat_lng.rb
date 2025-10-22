@@ -38,6 +38,19 @@ module Strava
         @latlng
       end
 
+      alias to_h to_a
+      alias as_json to_a
+
+      def to_json(*args)
+        as_json.to_json(args)
+      end
+
+      def inspect
+        @latlng.inspect
+      end
+
+      alias to_s inspect
+
       def initialize(latlng = nil)
         @latlng = latlng
       end

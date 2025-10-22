@@ -102,4 +102,29 @@ RSpec.describe Strava::Models::LatLng do
       expect(latlng.to_a).to eq([40.7128, -74.0060])
     end
   end
+
+  describe '#to_h' do
+    it 'returns the latlng array' do
+      expect(latlng.to_h).to eq([40.7128, -74.0060])
+    end
+  end
+
+  describe '#json' do
+    it 'returns the array JSON' do
+      expect(latlng.as_json).to eq([40.7128, -74.0060])
+      expect(latlng.to_json).to eq([40.7128, -74.0060].to_json)
+    end
+  end
+
+  describe '#inspect' do
+    it 'returns the array inspect' do
+      expect(latlng.inspect).to eq([40.7128, -74.0060].inspect)
+    end
+  end
+
+  describe 'to_s' do
+    it 'returns the array to_s' do
+      expect(latlng.to_s).to eq([40.7128, -74.0060].to_s)
+    end
+  end
 end
