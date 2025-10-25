@@ -508,13 +508,18 @@ gpx.tracks # => Array[GPX::Track]
 
 #### Export Route TCX
 
-Returns a [Training Center XML](https://en.wikipedia.org/wiki/Training_Center_XML) (TCX) data of the route. Combine with [multi_xml](https://github.com/sferik/multi_xml) to parse it.
+Returns a [Training Center XML](https://en.wikipedia.org/wiki/Training_Center_XML) (TCX) data of the route. Combine with [multi_xml](https://github.com/sferik/multi_xml) or [tcx](https://github.com/dblock/tcx) to parse it.
 
 ```ruby
 data = client.export_route_tcx(16341573) # => String
 
 require 'multi_xml'
 xml = MultiXml.parse(data) # => parsed TCX
+
+require 'tcx'
+tcx = Tcx.load(data) # => Tcx::Database
+
+tcx.courses.first.name # => 'Lower Manhattan'
 ```
 
 #### Get Route
