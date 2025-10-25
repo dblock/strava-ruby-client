@@ -1,4 +1,4 @@
-### 3.0.0 (Next)
+### 3.0.0 (2025/10/24)
 
 * [#96](https://github.com/dblock/strava-ruby-client/pull/96): Updates and refactors models to spec - [@dblock](https://github.com/dblock).
 * [#98](https://github.com/dblock/strava-ruby-client/pull/98): Changes all `latlng` properties to return an instance of `Strava::Models::LatLng` - [@dblock](https://github.com/dblock).
@@ -8,7 +8,6 @@
 * [#92](https://github.com/dblock/strava-ruby-client/pull/92): Fixes `Hashie::Trash` serialization warning for `object_id` of `Strava::Webhooks::Models::Event` - [@simonneutert](https://github.com/simonneutert).
 * [#95](https://github.com/dblock/strava-ruby-client/pull/95): Fixes `club_events` returning `Strava::Models::ClubEvent` with an empty string in `created_at` - [@dblock](https://github.com/dblock).
 * [#93](https://github.com/dblock/strava-ruby-client/pull/93): Updates GitHub Actions workflows - [@simonneutert](https://github.com/simonneutert).
-* Your contribution here.
 
 ### 2.3.0 (2025/10/16)
 
