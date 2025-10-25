@@ -1,3 +1,7 @@
+### 3.0.1 (Next)
+
+* Your contribution here.
+
 ### 3.0.0 (2025/10/24)
 
 * [#96](https://github.com/dblock/strava-ruby-client/pull/96): Updates and refactors models to spec - [@dblock](https://github.com/dblock).
