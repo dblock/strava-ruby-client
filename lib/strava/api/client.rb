@@ -2,6 +2,33 @@
 
 module Strava
   module Api
+    #
+    # Main API client for interacting with the Strava API v3.
+    #
+    # This class provides a complete Ruby interface to the Strava API, including support for:
+    # * Activities (create, read, update, list)
+    # * Athletes (profile, stats, zones)
+    # * Clubs (details, members, activities)
+    # * Gear (equipment details)
+    # * Routes (details, GPX/TCX export)
+    # * Segments and Segment Efforts
+    # * Streams (activity, route, segment data)
+    # * Uploads (activity file uploads)
+    # * OAuth (token refresh, deauthorization)
+    #
+    # @example Create a client with an access token
+    #   client = Strava::Api::Client.new(access_token: "your_access_token")
+    #   athlete = client.athlete
+    #   activities = client.athlete_activities(per_page: 10)
+    #
+    # @example Configure globally
+    #   Strava::Api::Client.configure do |config|
+    #     config.access_token = "your_access_token"
+    #   end
+    #   client = Strava::Api::Client.new
+    #
+    # @see https://developers.strava.com/docs/reference/ Strava API Documentation
+    #
     class Client < Strava::Web::Client
       include Endpoints::Activities
       include Endpoints::Athletes
@@ -16,6 +43,26 @@ module Strava
 
       attr_accessor(*Config::ATTRIBUTES)
 
+      #
+      # Initialize a new API client.
+      #
+      # @param [Hash] options Configuration options for the client
+      # @option options [String] :access_token OAuth access token for API authentication (required)
+      # @option options [String] :endpoint API endpoint URL (defaults to https://www.strava.com/api/v3)
+      # @option options [String] :user_agent User agent string for HTTP requests
+      # @option options [Logger] :logger Logger instance for request/response logging
+      # @option options [Integer] :timeout HTTP request timeout in seconds
+      # @option options [Integer] :open_timeout HTTP connection timeout in seconds
+      # @option options [String] :proxy HTTP proxy URL
+      # @option options [String] :ca_path Path to SSL CA certificates
+      # @option options [String] :ca_file Path to SSL CA certificate file
+      #
+      # @example
+      #   client = Strava::Api::Client.new(
+      #     access_token: "your_access_token",
+      #     user_agent: "My Strava App/1.0"
+      #   )
+      #
       def initialize(options = {})
         Config::ATTRIBUTES.each do |key|
           send("#{key}=", options[key] || Strava::Api.config.send(key))
@@ -23,15 +70,37 @@ module Strava
         super
       end
 
+      #
+      # Returns HTTP headers for API requests.
+      #
+      # @return [Hash] Headers including OAuth bearer token authorization
+      # @api private
+      #
       def headers
         { 'Authorization' => "Bearer #{access_token}" }
       end
 
       class << self
+        #
+        # Configure the API client globally.
+        #
+        # @yield [Config] Configuration object
+        # @return [Strava::Api::Config] Configuration object
+        #
+        # @example
+        #   Strava::Api::Client.configure do |config|
+        #     config.access_token = "your_access_token"
+        #   end
+        #
         def configure
           block_given? ? yield(Config) : Config
         end
 
+        #
+        # Returns the configuration object.
+        #
+        # @return [Strava::Api::Config] Configuration object
+        #
         def config
           Config
         end

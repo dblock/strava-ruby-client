@@ -1,5 +1,6 @@
-### 3.0.1 (Next)
+### 3.1.0 (Next)
 
+* [#100](https://github.com/dblock/strava-ruby-client/pull/100): Adds comprehensive rdoc documentation - [@dblock](https://github.com/dblock).
 * Your contribution here.
 
 ### 3.0.0 (2025/10/24)

@@ -2,7 +2,41 @@
 
 module Strava
   module Api
+    #
+    # Handles Strava API rate limit information from HTTP responses.
+    #
+    # Strava enforces rate limits on API requests with two windows:
+    # - 15-minute window: 600 requests per 15 minutes (short-term limit)
+    # - Daily window: 30,000 requests per day (long-term limit)
+    #
+    # This class extracts and provides easy access to rate limit data from
+    # HTTP response headers.
+    #
+    # @see Strava::Web::ApiResponse
+    # @see https://developers.strava.com/docs/rate-limits/ Strava API Rate Limiting documentation
+    #
+    # @example Checking rate limits after an API call
+    #   activity = client.activity(1234567890)
+    #   ratelimit = activity.http_response.ratelimit
+    #
+    #   puts "15-minute limit: #{ratelimit.fifteen_minutes_limit}"
+    #   puts "15-minute usage: #{ratelimit.fifteen_minutes_usage}"
+    #   puts "15-minute remaining: #{ratelimit.fifteen_minutes_remaining}"
+    #
+    #   puts "Daily limit: #{ratelimit.total_day}"
+    #   puts "Daily usage: #{ratelimit.total_day_usage}"
+    #   puts "Daily remaining: #{ratelimit.total_day_remaining}"
+    #
+    #   if ratelimit.exceeded?
+    #     puts "Rate limit exceeded!"
+    #   end
+    #
     class Ratelimit
+      #
+      # Initialize a new Ratelimit instance from an HTTP response.
+      #
+      # @param response [Faraday::Response] HTTP response containing rate limit headers
+      #
       def initialize(response)
         @response = response
         @headers = response.headers
