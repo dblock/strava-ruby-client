@@ -3,6 +3,16 @@
 module Strava
   module Api
     module Endpoints
+      #
+      # API endpoints for Strava uploads.
+      #
+      # Uploads allow you to create activities by uploading activity files in various
+      # formats such as FIT, TCX, and GPX. After uploading, the file is processed
+      # asynchronously and you can check the upload status to determine when the
+      # activity has been created.
+      #
+      # @see https://developers.strava.com/docs/reference/#api-Uploads
+      #
       module Uploads
         #
         # Uploads a new data file to create an activity from.
@@ -29,8 +39,8 @@ module Strava
         #
         # Returns an upload for a given identifier.
         #
-        # @option options [String] :id
-        #   The identifier of the upload.
+        # @param id_or_options [String, Integer, Hash] Either an upload ID or a hash of options including :id
+        # @param options [Hash] Additional options (if first parameter is an ID)
         #
         def upload(id_or_options, options = {})
           id, options = parse_args(id_or_options, options)

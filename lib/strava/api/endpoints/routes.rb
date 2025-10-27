@@ -3,12 +3,21 @@
 module Strava
   module Api
     module Endpoints
+      #
+      # API endpoints for Strava routes.
+      #
+      # Routes are manually-created paths on Strava that can be used for planning.
+      # Routes can be exported in GPX or TCX format and can include waypoints,
+      # elevation data, and other metadata.
+      #
+      # @see https://developers.strava.com/docs/reference/#api-Routes
+      #
       module Routes
         #
         # Returns a GPX file of the route.
         #
-        # @option options [String] :id
-        #   Route id.
+        # @param id_or_options [String, Integer, Hash] Either a route ID or a hash of options including :id
+        # @param options [Hash] Additional options (if first parameter is an ID)
         #
         def export_route_gpx(id_or_options, options = {})
           id, options = parse_args(id_or_options, options)
@@ -16,10 +25,10 @@ module Strava
         end
 
         #
-        # Returns a TCS file of the route.
+        # Returns a TCX file of the route.
         #
-        # @option options [String] :id
-        #   Route id.
+        # @param id_or_options [String, Integer, Hash] Either a route ID or a hash of options including :id
+        # @param options [Hash] Additional options (if first parameter is an ID)
         #
         def export_route_tcx(id_or_options, options = {})
           id, options = parse_args(id_or_options, options)
@@ -29,8 +38,8 @@ module Strava
         #
         # Returns a route using its identifier.
         #
-        # @option options [String] :id
-        #   Route id.
+        # @param id_or_options [String, Integer, Hash] Either a route ID or a hash of options including :id
+        # @param options [Hash] Additional options (if first parameter is an ID)
         #
         def route(id_or_options, options = {})
           id, options = parse_args(id_or_options, options)
@@ -40,12 +49,10 @@ module Strava
         #
         # Returns a list of the routes created by the authenticated athlete using their athlete ID.
         #
-        # @option options [Integer] :id
-        #   The identifier of the athlete.
-        # @option options [Integer] :page
-        #   Page number.
-        # @option options [Integer] :per_page
-        #   Number of items per page. Defaults to 30.
+        # @param id_or_options [String, Integer, Hash] Either an athlete ID or a hash of options including :id
+        # @param options [Hash] Additional options (if first parameter is an ID)
+        # @option options [Integer] :page Page number
+        # @option options [Integer] :per_page Number of items per page. Defaults to 30
         #
         def athlete_routes(id_or_options, options = {}, &block)
           id, options = parse_args(id_or_options, options)

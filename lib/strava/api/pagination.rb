@@ -41,16 +41,41 @@ module Strava
         @collection.size
       end
 
+      #
+      # Iterates over each item in the paginated collection.
+      #
+      # @yield [Object] Yields each item in the collection
+      # @return [void]
+      #
       def each
         @collection.each { |c| yield c if block_given? }
       end
 
       private
 
+      #
+      # Delegates missing methods to the underlying collection.
+      #
+      # Allows the Pagination object to respond to array methods by
+      # forwarding them to the internal collection array.
+      #
+      # @api private
+      # @param method_symbol [Symbol] The method name to forward
+      # @param args [Array] Arguments to pass to the method
+      # @return [Object] Result from the delegated method
+      #
       def method_missing(method_symbol, ...)
         @collection.send(method_symbol, ...)
       end
 
+      #
+      # Checks if the underlying collection responds to a method.
+      #
+      # @api private
+      # @param method_name [Symbol] The method name to check
+      # @param include_private [Boolean] Whether to include private methods
+      # @return [Boolean] true if the collection responds to the method
+      #
       def respond_to_missing?(method_name, include_private = false)
         super
       end

@@ -3,16 +3,29 @@
 module Strava
   module Api
     module Endpoints
+      #
+      # API endpoints for Strava clubs.
+      #
+      # Clubs represent groups of athletes on Strava. Club API endpoints allow
+      # you to retrieve club information, list club members and administrators,
+      # and view recent club activities and events.
+      #
+      # @see https://developers.strava.com/docs/reference/#api-Clubs
+      #
       module Clubs
         #
         # List club activities.
         #
-        # @option options [String] :id
-        #   Club id.
-        # @option options [Integer] :page
-        #   Page number.
-        # @option options [Integer] :per_page
-        #   Number of items per page. Defaults to 30.
+        # @param id_or_options [String, Integer, Hash] Either a club ID or a hash of options including :id
+        # @param options [Hash] Additional options (if first parameter is an ID)
+        # @option options [Integer] :page Page number
+        # @option options [Integer] :per_page Number of items per page. Defaults to 30
+        #
+        # @example With ID and options as separate arguments
+        #   client.club_activities('12345', per_page: 10)
+        #
+        # @example With ID in options hash
+        #   client.club_activities(id: '12345', per_page: 10)
         #
         def club_activities(id_or_options, options = {}, &block)
           id, options = parse_args(id_or_options, options)
@@ -22,12 +35,10 @@ module Strava
         #
         # List club / group events.
         #
-        # @option options [String] :id
-        #   Club id.
-        # @option options [Integer] :page
-        #   Page number.
-        # @option options [Integer] :per_page
-        #   Number of items per page. Defaults to 30.
+        # @param id_or_options [String, Integer, Hash] Either a club ID or a hash of options including :id
+        # @param options [Hash] Additional options (if first parameter is an ID)
+        # @option options [Integer] :page Page number
+        # @option options [Integer] :per_page Number of items per page. Defaults to 30
         #
         def club_events(id_or_options, options = {}, &block)
           id, options = parse_args(id_or_options, options)
@@ -37,12 +48,10 @@ module Strava
         #
         # List club administrators.
         #
-        # @option options [String] :id
-        #   Club id.
-        # @option options [Integer] :page
-        #   Page number.
-        # @option options [Integer] :per_page
-        #   Number of items per page. Defaults to 30.
+        # @param id_or_options [String, Integer, Hash] Either a club ID or a hash of options including :id
+        # @param options [Hash] Additional options (if first parameter is an ID)
+        # @option options [Integer] :page Page number
+        # @option options [Integer] :per_page Number of items per page. Defaults to 30
         #
         def club_admins(id_or_options, options = {}, &block)
           id, options = parse_args(id_or_options, options)
@@ -52,8 +61,8 @@ module Strava
         #
         # Get club.
         #
-        # @option options [String] :id
-        #   Club id.
+        # @param id_or_options [String, Integer, Hash] Either a club ID or a hash of options including :id
+        # @param options [Hash] Additional options (if first parameter is an ID)
         #
         def club(id_or_options, options = {})
           id, options = parse_args(id_or_options, options)
@@ -63,12 +72,10 @@ module Strava
         #
         # List club members.
         #
-        # @option options [String] :id
-        #   Club id.
-        # @option options [Integer] :page
-        #   Page number.
-        # @option options [Integer] :per_page
-        #   Number of items per page. Defaults to 30.
+        # @param id_or_options [String, Integer, Hash] Either a club ID or a hash of options including :id
+        # @param options [Hash] Additional options (if first parameter is an ID)
+        # @option options [Integer] :page Page number
+        # @option options [Integer] :per_page Number of items per page. Defaults to 30
         #
         def club_members(id_or_options, options = {}, &block)
           id, options = parse_args(id_or_options, options)
