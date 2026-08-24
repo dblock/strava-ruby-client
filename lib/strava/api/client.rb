@@ -48,7 +48,7 @@ module Strava
       #
       # @param [Hash] options Configuration options for the client
       # @option options [String] :access_token OAuth access token for API authentication (required)
-      # @option options [String] :endpoint API endpoint URL (defaults to https://www.strava.com/api/v3)
+      # @option options [String] :endpoint API endpoint URL (defaults to https://www.api-v3.strava.com)
       # @option options [String] :user_agent User agent string for HTTP requests
       # @option options [Logger] :logger Logger instance for request/response logging
       # @option options [Integer] :timeout HTTP request timeout in seconds

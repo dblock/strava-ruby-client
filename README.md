@@ -58,6 +58,7 @@ Unlike other clients, including [strava-api-v3](https://github.com/jaredholdcrof
   - [Pagination](#pagination)
   - [OAuth](#oauth)
     - [OAuth Workflow](#oauth-workflow)
+    - [Revoke](#revoke)
     - [Deauthorize](#deauthorize)
     - [Command Line OAuth Workflow](#command-line-oauth-workflow)
   - [Webhooks](#webhooks)
@@ -871,6 +872,16 @@ response.refresh_token # => String, new refresh token
 response.expires_at # => Time, new timestamp when the access token expires
 ```
 
+#### Revoke
+
+Revoke access to an athlete's data using an instance of `Strava::API::Client`.
+
+```ruby
+authorization = client.revoke
+
+authorization.access_token # => String, access token being revoked
+```
+
 #### Deauthorize
 
 Revoke access to an athlete's data using an instance of `Strava::API::Client`.
@@ -880,6 +891,8 @@ authorization = client.deauthorize
 
 authorization.access_token # => String, access token being revoked
 ```
+
+_Deprecated: use [`revoke`](#revoke) instead. The `oauth/deauthorize` endpoint will be retired on June 1, 2027 in favor of `oauth/revoke`._
 
 #### Command Line OAuth Workflow
 
@@ -1068,7 +1081,7 @@ The following settings are supported.
 | setting      | description                                         |
 | ------------ | --------------------------------------------------- |
 | access_token | Access token to pass in the `Authorization` header. |
-| endpoint     | Defaults to `https://www.strava.com/api/v3`.        |
+| endpoint     | Defaults to `https://www.api-v3.strava.com`.        |
 
 ### OAuth Client Options
 
@@ -1122,7 +1135,7 @@ The following settings are supported.
 | ------------- | -------------------------------------------- |
 | client_id     | Application client ID.                       |
 | client_secret | Application client secret.                   |
-| endpoint      | Defaults to `https://www.strava.com/api/v3`. |
+| endpoint      | Defaults to `https://www.api-v3.strava.com`. |
 
 ## Errors
 

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: https://www.strava.com/api/v3/activities/1982980795
+    uri: https://www.api-v3.strava.com/activities/1982980795
     body:
       encoding: UTF-8
       string: description=Updated+test+strava-ruby-client+activity.&name=updated+activity

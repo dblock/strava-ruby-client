@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://www.strava.com/api/v3/activities
+    uri: https://www.api-v3.strava.com/activities
     body:
       encoding: UTF-8
       string: commute=false&description=Test+strava-ruby-client+activity.&distance=1000&elapsed_time=1234&name=strava-ruby-client+activity&photo_ids&sport_type=Run&start_date_local=2025-10-18+19%3A04%3A26+-0400&trainer=false
