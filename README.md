@@ -684,6 +684,17 @@ streams.latlng # => Strava::Models::Stream
 streams.altitude # => Strava::Models::Stream
 ```
 
+The Strava API doesn't return a total elevation loss (descent) property for streams, but it can be computed from an altitude stream's data.
+
+```ruby
+streams = client.activity_streams(1946417534, keys: %w[altitude]) # => Strava::Models::StreamSet
+
+streams.altitude.total_elevation_gain # => 725.3
+streams.altitude.total_elevation_loss # => 680.1
+streams.altitude.total_elevation_gain_s # => "725.3m"
+streams.altitude.total_elevation_loss_s # => "680.1m"
+```
+
 #### Get Activity Streams
 
 Returns the given activity's streams.
