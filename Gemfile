@@ -25,3 +25,7 @@ group :development, :test do
   gem 'webmock'
   gem 'webrick', '~> 1.9'
 end
+
+group :test do
+  gem 'coveralls_reborn', require: false
+end
