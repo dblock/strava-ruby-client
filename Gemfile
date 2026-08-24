@@ -23,5 +23,5 @@ group :development, :test do
   gem 'tcx'
   gem 'vcr'
   gem 'webmock'
-  gem 'webrick', '~> 1.7'
+  gem 'webrick', '~> 1.9'
 end
