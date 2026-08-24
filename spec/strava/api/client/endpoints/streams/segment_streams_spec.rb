@@ -32,6 +32,10 @@ RSpec.describe 'Strava::Api::Client#segment_streams' do
     expect(streams.distance).to be_a Strava::Models::Stream
     expect(streams.latlng).to be_a Strava::Models::Stream
     expect(streams.altitude).to be_a Strava::Models::Stream
+    expect(streams.altitude.total_elevation_gain).to eq 0
+    expect(streams.altitude.total_elevation_loss).to eq 3.3
+    expect(streams.altitude.total_elevation_gain_s).to eq '0m'
+    expect(streams.altitude.total_elevation_loss_s).to eq '3.3m'
   end
 
   it 'returns multiple keys by id', vcr: { cassette_name: 'client/segment_streams_keys' } do
@@ -46,5 +50,7 @@ RSpec.describe 'Strava::Api::Client#segment_streams' do
     expect(streams.distance).to be_a Strava::Models::Stream
     expect(streams.latlng).to be_a Strava::Models::Stream
     expect(streams.altitude).to be_a Strava::Models::Stream
+    expect(streams.altitude.total_elevation_gain).to eq 0
+    expect(streams.altitude.total_elevation_loss).to eq 3.3
   end
 end

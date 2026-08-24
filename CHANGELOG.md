@@ -4,6 +4,7 @@
 * [#103](https://github.com/dblock/strava-ruby-client/pull/103): Migrate Danger to use the `danger-pr-comment` reusable workflow - [@dblock](https://github.com/dblock), [@Copilot](https://github.com/apps/copilot-swe-agent).
 * [#104](https://github.com/dblock/strava-ruby-client/pull/104): Fixes `Danger Comment` workflow failing with a `contents: none` permissions error - [@dblock](https://github.com/dblock).
 * [#102](https://github.com/dblock/strava-ruby-client/pull/102): Changes default API base URL to `https://www.api-v3.strava.com` and adds `revoke`, deprecating `deauthorize`, per Strava's June 2026/2027 developer program changes - [@dblock](https://github.com/dblock).
+* [#105](https://github.com/dblock/strava-ruby-client/pull/105): Adds `total_elevation_gain`, `total_elevation_loss` and formatted helpers to `Strava::Models::Stream`, computed from altitude stream data - [@dblock](https://github.com/dblock).
 * Your contribution here.
 
 ### 3.0.0 (2025/10/24)
