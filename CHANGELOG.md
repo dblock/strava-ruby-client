@@ -1,6 +1,7 @@
 ### 3.1.0 (Next)
 
 * [#100](https://github.com/dblock/strava-ruby-client/pull/100): Adds comprehensive rdoc documentation - [@dblock](https://github.com/dblock).
+* [#103](https://github.com/dblock/strava-ruby-client/pull/103): Migrate Danger to use the `danger-pr-comment` reusable workflow - [@dblock](https://github.com/dblock), [@Copilot](https://github.com/apps/copilot-swe-agent).
 * Your contribution here.
 
 ### 3.0.0 (2025/10/24)
