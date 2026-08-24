@@ -6,6 +6,9 @@ gemspec
 
 group :development, :test do
   gem 'csv'
+  gem 'danger-changelog', '~> 0.8.0'
+  gem 'danger-pr-comment'
+  gem 'danger-toc', '~> 0.2.0'
   gem 'dotenv'
   gem 'faraday-retry'
   gem 'gpx'
