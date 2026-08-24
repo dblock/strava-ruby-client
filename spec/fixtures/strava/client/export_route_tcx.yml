@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.api-v3.strava.com/routes/16341573/export_tcx
+    uri: https://www.strava.com/api/v3/routes/16341573/export_tcx
     body:
       encoding: US-ASCII
       string: ''

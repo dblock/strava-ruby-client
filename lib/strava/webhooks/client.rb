@@ -43,7 +43,7 @@ module Strava
       # @param [Hash] options Configuration options
       # @option options [String] :client_id Strava application client ID (required)
       # @option options [String] :client_secret Strava application client secret (required)
-      # @option options [String] :endpoint API endpoint URL (defaults to https://www.api-v3.strava.com)
+      # @option options [String] :endpoint API endpoint URL (defaults to https://www.strava.com/api/v3)
       #
       def initialize(options = {})
         Strava::Webhooks::Config::ATTRIBUTES.each do |key|

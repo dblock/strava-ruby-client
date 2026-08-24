@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.api-v3.strava.com/athlete/activities?page=1&per_page=72
+    uri: https://www.strava.com/api/v3/athlete/activities?page=1&per_page=72
     body:
       encoding: US-ASCII
       string: ''
@@ -212,7 +212,7 @@ http_interactions:
   recorded_at: Mon, 20 Oct 2025 21:30:43 GMT
 - request:
     method: get
-    uri: https://www.api-v3.strava.com/athlete/activities?page=2&per_page=72
+    uri: https://www.strava.com/api/v3/athlete/activities?page=2&per_page=72
     body:
       encoding: US-ASCII
       string: ''
@@ -412,7 +412,7 @@ http_interactions:
   recorded_at: Mon, 20 Oct 2025 21:30:46 GMT
 - request:
     method: get
-    uri: https://www.api-v3.strava.com/athlete/activities?page=3&per_page=72
+    uri: https://www.strava.com/api/v3/athlete/activities?page=3&per_page=72
     body:
       encoding: US-ASCII
       string: ''
@@ -619,7 +619,7 @@ http_interactions:
   recorded_at: Mon, 20 Oct 2025 21:30:48 GMT
 - request:
     method: get
-    uri: https://www.api-v3.strava.com/athlete/activities?page=4&per_page=72
+    uri: https://www.strava.com/api/v3/athlete/activities?page=4&per_page=72
     body:
       encoding: US-ASCII
       string: ''
@@ -824,7 +824,7 @@ http_interactions:
   recorded_at: Mon, 20 Oct 2025 21:30:51 GMT
 - request:
     method: get
-    uri: https://www.api-v3.strava.com/athlete/activities?page=5&per_page=72
+    uri: https://www.strava.com/api/v3/athlete/activities?page=5&per_page=72
     body:
       encoding: US-ASCII
       string: ''
@@ -1037,7 +1037,7 @@ http_interactions:
   recorded_at: Mon, 20 Oct 2025 21:30:53 GMT
 - request:
     method: get
-    uri: https://www.api-v3.strava.com/athlete/activities?page=6&per_page=72
+    uri: https://www.strava.com/api/v3/athlete/activities?page=6&per_page=72
     body:
       encoding: US-ASCII
       string: ''
@@ -1245,7 +1245,7 @@ http_interactions:
   recorded_at: Mon, 20 Oct 2025 21:30:57 GMT
 - request:
     method: get
-    uri: https://www.api-v3.strava.com/athlete/activities?page=7&per_page=72
+    uri: https://www.strava.com/api/v3/athlete/activities?page=7&per_page=72
     body:
       encoding: US-ASCII
       string: ''
@@ -1453,7 +1453,7 @@ http_interactions:
   recorded_at: Mon, 20 Oct 2025 21:30:59 GMT
 - request:
     method: get
-    uri: https://www.api-v3.strava.com/athlete/activities?page=8&per_page=72
+    uri: https://www.strava.com/api/v3/athlete/activities?page=8&per_page=72
     body:
       encoding: US-ASCII
       string: ''
@@ -1666,7 +1666,7 @@ http_interactions:
   recorded_at: Mon, 20 Oct 2025 21:31:01 GMT
 - request:
     method: get
-    uri: https://www.api-v3.strava.com/athlete/activities?page=9&per_page=72
+    uri: https://www.strava.com/api/v3/athlete/activities?page=9&per_page=72
     body:
       encoding: US-ASCII
       string: ''
@@ -1875,7 +1875,7 @@ http_interactions:
   recorded_at: Mon, 20 Oct 2025 21:31:04 GMT
 - request:
     method: get
-    uri: https://www.api-v3.strava.com/athlete/activities?page=10&per_page=72
+    uri: https://www.strava.com/api/v3/athlete/activities?page=10&per_page=72
     body:
       encoding: US-ASCII
       string: ''
@@ -2080,7 +2080,7 @@ http_interactions:
   recorded_at: Mon, 20 Oct 2025 21:31:08 GMT
 - request:
     method: get
-    uri: https://www.api-v3.strava.com/athlete/activities?page=11&per_page=72
+    uri: https://www.strava.com/api/v3/athlete/activities?page=11&per_page=72
     body:
       encoding: US-ASCII
       string: ''
@@ -2286,7 +2286,7 @@ http_interactions:
   recorded_at: Mon, 20 Oct 2025 21:31:10 GMT
 - request:
     method: get
-    uri: https://www.api-v3.strava.com/athlete/activities?page=12&per_page=72
+    uri: https://www.strava.com/api/v3/athlete/activities?page=12&per_page=72
     body:
       encoding: US-ASCII
       string: ''
@@ -2497,7 +2497,7 @@ http_interactions:
   recorded_at: Mon, 20 Oct 2025 21:31:11 GMT
 - request:
     method: get
-    uri: https://www.api-v3.strava.com/athlete/activities?page=13&per_page=72
+    uri: https://www.strava.com/api/v3/athlete/activities?page=13&per_page=72
     body:
       encoding: US-ASCII
       string: ''
@@ -2710,7 +2710,7 @@ http_interactions:
   recorded_at: Mon, 20 Oct 2025 21:31:13 GMT
 - request:
     method: get
-    uri: https://www.api-v3.strava.com/athlete/activities?page=14&per_page=72
+    uri: https://www.strava.com/api/v3/athlete/activities?page=14&per_page=72
     body:
       encoding: US-ASCII
       string: ''
@@ -2917,7 +2917,7 @@ http_interactions:
   recorded_at: Mon, 20 Oct 2025 21:31:16 GMT
 - request:
     method: get
-    uri: https://www.api-v3.strava.com/athlete/activities?page=15&per_page=72
+    uri: https://www.strava.com/api/v3/athlete/activities?page=15&per_page=72
     body:
       encoding: US-ASCII
       string: ''
@@ -3133,7 +3133,7 @@ http_interactions:
   recorded_at: Mon, 20 Oct 2025 21:31:18 GMT
 - request:
     method: get
-    uri: https://www.api-v3.strava.com/athlete/activities?page=16&per_page=72
+    uri: https://www.strava.com/api/v3/athlete/activities?page=16&per_page=72
     body:
       encoding: US-ASCII
       string: ''
@@ -3324,7 +3324,7 @@ http_interactions:
   recorded_at: Mon, 20 Oct 2025 21:31:20 GMT
 - request:
     method: get
-    uri: https://www.api-v3.strava.com/athlete/activities?page=17&per_page=72
+    uri: https://www.strava.com/api/v3/athlete/activities?page=17&per_page=72
     body:
       encoding: US-ASCII
       string: ''

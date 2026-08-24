@@ -15,7 +15,7 @@ module Strava
     #
     # @example Access current configuration
     #   Strava::Api.config.endpoint
-    #   # => 'https://www.api-v3.strava.com'
+    #   # => 'https://www.strava.com/api/v3'
     #
     module Config
       extend self
@@ -37,7 +37,7 @@ module Strava
       # @return [void]
       #
       def reset
-        self.endpoint = 'https://www.api-v3.strava.com'
+        self.endpoint = 'https://www.strava.com/api/v3'
         self.access_token = nil
       end
     end

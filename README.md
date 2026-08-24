@@ -1093,7 +1093,7 @@ The following settings are supported.
 | setting      | description                                         |
 | ------------ | --------------------------------------------------- |
 | access_token | Access token to pass in the `Authorization` header. |
-| endpoint     | Defaults to `https://www.api-v3.strava.com`.        |
+| endpoint     | Defaults to `https://www.strava.com/api/v3`.        |
 
 ### OAuth Client Options
 
@@ -1147,7 +1147,7 @@ The following settings are supported.
 | ------------- | -------------------------------------------- |
 | client_id     | Application client ID.                       |
 | client_secret | Application client secret.                   |
-| endpoint      | Defaults to `https://www.api-v3.strava.com`. |
+| endpoint      | Defaults to `https://www.strava.com/api/v3`. |
 
 ## Errors
 

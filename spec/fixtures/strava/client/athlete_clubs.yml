@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.api-v3.strava.com/athlete/clubs
+    uri: https://www.strava.com/api/v3/athlete/clubs
     body:
       encoding: US-ASCII
       string: ''
