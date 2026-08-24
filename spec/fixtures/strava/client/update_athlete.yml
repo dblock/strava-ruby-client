@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: https://www.strava.com/api/v3/athlete
+    uri: https://www.api-v3.strava.com/athlete
     body:
       encoding: UTF-8
       string: weight=90.1

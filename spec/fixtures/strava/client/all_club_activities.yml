@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.strava.com/api/v3/clubs/209437/activities?page=1
+    uri: https://www.api-v3.strava.com/clubs/209437/activities?page=1
     body:
       encoding: US-ASCII
       string: ''
@@ -107,7 +107,7 @@ http_interactions:
   recorded_at: Sun, 19 Oct 2025 15:24:36 GMT
 - request:
     method: get
-    uri: https://www.strava.com/api/v3/clubs/209437/activities?page=2
+    uri: https://www.api-v3.strava.com/clubs/209437/activities?page=2
     body:
       encoding: US-ASCII
       string: ''
@@ -209,7 +209,7 @@ http_interactions:
   recorded_at: Sun, 19 Oct 2025 15:24:41 GMT
 - request:
     method: get
-    uri: https://www.strava.com/api/v3/clubs/209437/activities?page=3
+    uri: https://www.api-v3.strava.com/clubs/209437/activities?page=3
     body:
       encoding: US-ASCII
       string: ''
@@ -312,7 +312,7 @@ http_interactions:
   recorded_at: Sun, 19 Oct 2025 15:24:45 GMT
 - request:
     method: get
-    uri: https://www.strava.com/api/v3/clubs/209437/activities?page=4
+    uri: https://www.api-v3.strava.com/clubs/209437/activities?page=4
     body:
       encoding: US-ASCII
       string: ''
@@ -391,7 +391,7 @@ http_interactions:
   recorded_at: Sun, 19 Oct 2025 15:24:49 GMT
 - request:
     method: get
-    uri: https://www.strava.com/api/v3/clubs/209437/activities?page=5
+    uri: https://www.api-v3.strava.com/clubs/209437/activities?page=5
     body:
       encoding: US-ASCII
       string: ''

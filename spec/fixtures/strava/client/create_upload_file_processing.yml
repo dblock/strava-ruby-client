@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://www.strava.com/api/v3/uploads
+    uri: https://www.api-v3.strava.com/uploads
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -77,7 +77,7 @@ http_interactions:
   recorded_at: Sun, 01 Jan 2023 06:25:51 GMT
 - request:
     method: get
-    uri: https://www.strava.com/api/v3/uploads/8919699210
+    uri: https://www.api-v3.strava.com/uploads/8919699210
     body:
       encoding: US-ASCII
       string: ''

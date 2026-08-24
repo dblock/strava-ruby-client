@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.strava.com/api/v3/segments/1109718/streams?key_by_type=true&keys=distance,latlng,altitude
+    uri: https://www.api-v3.strava.com/segments/1109718/streams?key_by_type=true&keys=distance,latlng,altitude
     body:
       encoding: US-ASCII
       string: ''

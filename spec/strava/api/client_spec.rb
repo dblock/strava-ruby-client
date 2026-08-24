@@ -24,8 +24,8 @@ RSpec.describe Strava::Api::Client do
       expect { client.activity(id: 1_946_417_534) }.to raise_error Faraday::ResourceNotFound do |error|
         request = error.response[:request]
         expect(request[:method]).to eq :get
-        expect(request[:url]).to eq URI('https://www.strava.com/api/v3/activities/1946417534')
-        expect(request[:url_path]).to eq '/api/v3/activities/1946417534'
+        expect(request[:url]).to eq URI('https://www.api-v3.strava.com/activities/1946417534')
+        expect(request[:url_path]).to eq '/activities/1946417534'
       end
     end
 
@@ -65,8 +65,8 @@ RSpec.describe Strava::Api::Client do
         expect(error.ratelimit.exceeded).to eql({ fifteen_minutes_remaining: 0 })
         request = error.response[:request]
         expect(request[:method]).to eq :get
-        expect(request[:url]).to eq URI('https://www.strava.com/api/v3/activities/1946417534')
-        expect(request[:url_path]).to eq '/api/v3/activities/1946417534'
+        expect(request[:url]).to eq URI('https://www.api-v3.strava.com/activities/1946417534')
+        expect(request[:url_path]).to eq '/activities/1946417534'
       end
     end
   end

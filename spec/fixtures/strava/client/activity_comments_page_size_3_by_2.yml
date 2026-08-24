@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.strava.com/api/v3/activities/15605032352/comments?page_size=2
+    uri: https://www.api-v3.strava.com/activities/15605032352/comments?page_size=2
     body:
       encoding: US-ASCII
       string: ''
@@ -78,7 +78,7 @@ http_interactions:
   recorded_at: Mon, 20 Oct 2025 21:18:03 GMT
 - request:
     method: get
-    uri: https://www.strava.com/api/v3/activities/15605032352/comments?after_cursor=eyJpZCI6MjI1NzcwMzI0MSwiY3JlYXRlZEF0IjoxNzU2MzMxNzEzMDAwfQ%253D%253D&page_size=2
+    uri: https://www.api-v3.strava.com/activities/15605032352/comments?after_cursor=eyJpZCI6MjI1NzcwMzI0MSwiY3JlYXRlZEF0IjoxNzU2MzMxNzEzMDAwfQ%253D%253D&page_size=2
     body:
       encoding: US-ASCII
       string: ''

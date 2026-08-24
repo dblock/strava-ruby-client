@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.strava.com/api/v3/segments/explore?activity_type=running&bounds=36.372975,-94.220234,36.415949,-94.18367
+    uri: https://www.api-v3.strava.com/segments/explore?activity_type=running&bounds=36.372975,-94.220234,36.415949,-94.18367
     body:
       encoding: US-ASCII
       string: ''

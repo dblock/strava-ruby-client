@@ -41,7 +41,7 @@ module Strava
       # @return [void]
       #
       def reset
-        self.endpoint = 'https://www.strava.com/api/v3'
+        self.endpoint = 'https://www.api-v3.strava.com'
         self.client_id = nil
         self.client_secret = nil
       end
