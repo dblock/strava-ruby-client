@@ -10,7 +10,11 @@ require 'rspec/core'
 require 'rspec/core/rake_task'
 
 RSpec::Core::RakeTask.new(:spec) do |spec|
-  spec.pattern = FileList['spec/**/*_spec.rb']
+  spec.pattern = FileList['spec/**/*_spec.rb'].exclude('spec/integration/**/*_spec.rb')
+end
+
+RSpec::Core::RakeTask.new(:'spec:integration') do |spec|
+  spec.pattern = FileList['spec/integration/**/*_spec.rb']
 end
 
 require 'rubocop/rake_task'

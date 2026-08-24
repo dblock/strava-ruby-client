@@ -13,3 +13,15 @@ VCR.configure do |config|
     i.response.body.force_encoding('UTF-8')
   end
 end
+
+RSpec.configure do |config|
+  # Specs tagged `:integration` make real network calls and should bypass
+  # VCR/WebMock entirely rather than being recorded or stubbed.
+  config.around(:each, :integration) do |example|
+    VCR.turn_off!
+    WebMock.allow_net_connect!
+    example.run
+    WebMock.disable_net_connect!
+    VCR.turn_on!
+  end
+end

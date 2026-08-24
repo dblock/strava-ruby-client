@@ -9,7 +9,7 @@ describe Strava::Api::Config do
 
   describe '#defaults' do
     it 'sets endpoint' do
-      expect(Strava::Api.config.endpoint).to eq 'https://www.api-v3.strava.com'
+      expect(Strava::Api.config.endpoint).to eq 'https://www.strava.com/api/v3'
     end
   end
 

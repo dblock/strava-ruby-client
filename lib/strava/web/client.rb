@@ -58,7 +58,7 @@ module Strava
         #
         # @example Configure the client
         #   Strava::Web::Client.configure do |config|
-        #     config.endpoint = 'https://www.api-v3.strava.com'
+        #     config.endpoint = 'https://www.strava.com/api/v3'
         #   end
         #
         def configure
