@@ -3,6 +3,10 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..'))
 
 require 'rubygems'
+
+require 'coveralls'
+Coveralls.wear!
+
 require 'rspec'
 require 'strava-ruby-client'
 

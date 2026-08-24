@@ -2,6 +2,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/strava-ruby-client.svg)](https://badge.fury.io/rb/strava-ruby-client)
 [![Test](https://github.com/dblock/strava-ruby-client/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/dblock/strava-ruby-client/actions/workflows/test.yml)
+[![Coverage Status](https://coveralls.io/repos/github/dblock/strava-ruby-client/badge.svg?branch=master)](https://coveralls.io/github/dblock/strava-ruby-client?branch=master)
 
 A complete Ruby client for the [Strava API v3](https://developers.strava.com).
 
