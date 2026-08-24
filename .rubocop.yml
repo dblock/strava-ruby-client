@@ -37,14 +37,11 @@ Style/MultilineBlockChain:
 RSpec/MultipleExpectations:
   Enabled: false
 
+RSpec/VerifiedDoubles:
+  Enabled: false
+
 RSpec/SpecFilePathFormat:
-  Exclude:
-    - "spec/strava/version_spec.rb"
-    - "spec/strava/oauth/client_spec.rb"
-    - "spec/strava/oauth/config_spec.rb"
-    - "spec/strava/models/activities/ride_spec.rb"
-    - "spec/strava/models/activities/swim_spec.rb"
-    - "spec/strava/models/activities/run_spec.rb"
+  Enabled: false
 
 RSpec/ExampleLength:
   Enabled: false

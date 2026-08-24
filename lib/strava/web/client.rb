@@ -99,10 +99,12 @@ module Strava
       #
       def parse_args(id_or_options, options = {})
         if id_or_options.is_a?(Hash)
-          throw ArgumentError.new('Required argument :id missing') if id_or_options[:id].nil?
+          raise ArgumentError, 'Required argument :id missing' if id_or_options[:id].nil?
+
           [id_or_options[:id], id_or_options.except(:id)]
         else
-          throw ArgumentError.new('Required argument :id missing') if id_or_options.nil?
+          raise ArgumentError, 'Required argument :id missing' if id_or_options.nil?
+
           [id_or_options, options]
         end
       end

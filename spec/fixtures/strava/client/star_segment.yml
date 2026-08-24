@@ -1,0 +1,83 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://www.strava.com/api/v3/segments/1109718/starred
+    body:
+      encoding: UTF-8
+      string: starred=true
+    headers:
+      Authorization:
+      - Bearer access-token
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Strava Ruby Client/3.1.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 25 Aug 2026 02:06:53 GMT
+      X-Envoy-Upstream-Service-Time:
+      - '350'
+      Server:
+      - istio-envoy
+      Status:
+      - 200 OK
+      X-Ratelimit-Usage:
+      - '1,21'
+      X-Ratelimit-Limit:
+      - '200,2000'
+      Vary:
+      - Accept, Origin
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Request-Id:
+      - 6486c9a8-fc8e-4109-adad-b811dd2143a7
+      X-Readratelimit-Limit:
+      - '100,1000'
+      X-Download-Options:
+      - noopen
+      Etag:
+      - W/"b96a93afa7f36f3fd6b5fdfd51ac79c2"
+      X-Frame-Options:
+      - DENY
+      X-Readratelimit-Usage:
+      - '1,21'
+      X-Content-Type-Options:
+      - nosniff
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 4e1c4d133adc8d8214916eeaddd7af66.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - JFK52-P3
+      X-Amz-Cf-Id:
+      - _Rp1izZOTF1pDk2k6slWjJT26IoblY6asQYeglw8P0yedrNzqQMcKQ==
+    body:
+      encoding: UTF-8
+      string: '{"id":1109718,"resource_state":3,"name":"E 14th St Climb","activity_type":"Run","distance":419.58,"average_grade":-0.8,"maximum_grade":-0.6,"elevation_high":7.1,"elevation_low":3.8,"start_latlng":[40.73554842732847,-73.98271151818335],"end_latlng":[40.73427177965641,-73.97865023463964],"elevation_profile":null,"elevation_profiles":null,"climb_category":0,"city":"New
+        York","state":"NY","country":"United States","private":false,"hazardous":false,"starred":true,"pr_time":116,"athlete_pr_effort":{"id":41494197089,"activity_id":1655832792,"activity_id_str":"1655832792","elapsed_time":116,"distance":419.58,"start_date":"2018-06-22T12:42:43Z","start_date_local":"2018-06-22T08:42:43Z","is_kom":false},"starred_date":"2025-10-19T16:17:16Z","created_at":"2012-03-19T22:00:20Z","updated_at":"2021-05-15T08:02:38Z","total_elevation_gain":40.2,"map":{"id":"s1109718","polyline":"cdswF~vpbMd@eBJS^QTUf@u@LK\\cADc@FUFMZ[BIOcCQ[[QGAISzAoE","resource_state":3},"effort_count":4497,"athlete_count":1329,"star_count":3,"athlete_segment_stats":{"pr_elapsed_time":116,"pr_date":"2018-06-22","pr_visibility":"everyone","pr_activity_id":1655832792,"pr_activity_id_str":"1655832792","pr_activity_visibility":"everyone","effort_count":5},"xoms":{"kom":"1:09","qom":"1:31","overall":"1:09","destination":{"href":"strava://segments/1109718/leaderboard","type":"overall","name":"All-Time"}},"local_legend":{"athlete_id":149514149,"athlete_id_str":"149514149","title":"Alonzo
+        Rodriguez","profile":"https://dgalywyr863hv.cloudfront.net/pictures/athletes/149514149/33600350/3/large.jpg","effort_description":"13
+        efforts in the last 90 days","effort_count":"13","effort_counts":{"overall":"13
+        efforts","female":"11 efforts"},"destination":"strava://segments/1109718/local_legend?categories%5B%5D=overall"}}'
+  recorded_at: Tue, 25 Aug 2026 02:06:53 GMT
+recorded_with: VCR 6.3.1

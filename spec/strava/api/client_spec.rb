@@ -11,6 +11,29 @@ RSpec.describe Strava::Api::Client do
 
   it_behaves_like 'web client'
 
+  describe '.configure' do
+    after do
+      described_class.config.access_token = nil
+    end
+
+    it 'yields the config when a block is given' do
+      described_class.configure do |config|
+        config.access_token = 'token'
+      end
+      expect(described_class.config.access_token).to eq 'token'
+    end
+
+    it 'returns the config when no block is given' do
+      expect(described_class.configure).to eq Strava::Api::Config
+    end
+  end
+
+  describe '.config' do
+    it 'returns the config' do
+      expect(described_class.config).to eq Strava::Api::Config
+    end
+  end
+
   context 'with errors' do
     it 'handles authorization errors', vcr: { cassette_name: 'client/authorization_error' } do
       expect { client.activity(id: 1_946_417_534) }.to raise_error Strava::Errors::Fault, /Authorization Error/

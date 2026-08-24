@@ -35,7 +35,8 @@ module Strava
         # @see https://developers.strava.com/docs/reference/#api-Segments-exploreSegments
         #
         def explore_segments(options = {})
-          throw ArgumentError.new('Required argument :bounds missing') if options[:bounds].nil?
+          raise ArgumentError, 'Required argument :bounds missing' if options[:bounds].nil?
+
           bounds = options[:bounds]
           bounds = bounds.map(&:to_s).join(',') if bounds.is_a?(Array)
           get('segments/explore', options.merge(bounds: bounds))['segments'].map do |row|
@@ -109,7 +110,8 @@ module Strava
         #
         def star_segment(id_or_options, options = {})
           id, options = parse_args(id_or_options, options)
-          throw ArgumentError.new('Required argument :starred missing') if options[:starred].nil?
+          raise ArgumentError, 'Required argument :starred missing' if options[:starred].nil?
+
           Strava::Models::DetailedSegment.new(put("segments/#{id}/starred", options))
         end
       end
