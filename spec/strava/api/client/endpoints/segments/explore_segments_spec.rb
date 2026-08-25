@@ -20,4 +20,8 @@ RSpec.describe 'Strava::Api::Client#explore_segments' do
     expect(segment.points).to eq '}qa}Eb`~}Pp@FdA^RJt@nARPVHb@Bb@JFLALS^?`@THv@OT?VLNR\\x@FFL?LI' # TODO: polyline
     expect(segment.starred).to be false
   end
+
+  it 'raises an error when :bounds is missing' do
+    expect { client.explore_segments }.to raise_error ArgumentError, 'Required argument :bounds missing'
+  end
 end

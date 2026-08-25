@@ -9,10 +9,15 @@ RSpec.describe 'Strava::Api::Client#route', vcr: { cassette_name: 'client/route'
     expect(route).to be_a Strava::Models::Route
     expect(route.id).to eq 16_341_573
     expect(route.athlete).to be_a Strava::Models::SummaryAthlete
+    expect(route.athlete.name).to eq 'Daniel Doubrovkine'
     expect(route.name).to eq 'Lower Manhattan Loop'
     expect(route.description).to eq 'My usual long run when I am too lazy to go to Central Park.'
     expect(route.elevation_gain).to eq 117.25346822039764
     expect(route.elevation_gain_s).to eq '117.3m'
+    expect(route.elevation_gain_in_feet).to eq 384.68986867620936
+    expect(route.elevation_gain_in_meters).to eq 117.25346822039764
+    expect(route.elevation_gain_in_meters_s).to eq '117.3m'
+    expect(route.elevation_gain_in_feet_s).to eq '384.7ft'
     expect(route.map).to be_a Strava::Models::Map
     expect(route.private).to be false
     expect(route.resource_state).to eq 3
