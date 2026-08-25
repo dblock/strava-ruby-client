@@ -4,6 +4,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         ruby-version:
           - "3.1"
@@ -21,7 +22,17 @@ jobs:
           ruby-version: ${{ matrix.ruby-version }}
           bundler-cache: true
       - name: Run Tests
-        run: RACK_ENV=test bundle exec rake spec
+        env:
+          RACK_ENV: test
+          CI: true
+        run: bundle exec rake spec
+      - name: Report coverage to Coveralls
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: coverage/lcov.info
+          flag-name: ${{ matrix.ruby-version }}
+          parallel: true
   integration:
     runs-on: ubuntu-latest
     steps:
@@ -33,3 +44,12 @@ jobs:
           bundler-cache: true
       - name: Run Integration Tests
         run: RACK_ENV=test bundle exec rake spec:integration
+  coverage-finished:
+    needs: [test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Report coverage build as finished
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          parallel-finished: true

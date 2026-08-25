@@ -27,5 +27,6 @@ group :development, :test do
 end
 
 group :test do
-  gem 'coveralls_reborn', require: false
+  gem 'simplecov'
+  gem 'simplecov-lcov', require: false
 end
