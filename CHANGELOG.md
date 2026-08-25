@@ -9,6 +9,7 @@
 * [#108](https://github.com/dblock/strava-ruby-client/pull/108): Adds an integration test that verifies the real Strava API endpoint is reachable, run in CI on every push and pull request via `rake spec:integration` - [@dblock](https://github.com/dblock).
 * [#107](https://github.com/dblock/strava-ruby-client/pull/107): Fixes `explore_segments` and `star_segment` raising `UncaughtThrowError` instead of `ArgumentError` for missing required arguments - [@dblock](https://github.com/dblock).
 * [#107](https://github.com/dblock/strava-ruby-client/pull/107): Fixes `start_date_local` to always derive the timezone offset from the difference between `start_date` and `start_date_local`, since Strava's `timezone` property does not account for daylight saving time - [@dblock](https://github.com/dblock).
+* [#109](https://github.com/dblock/strava-ruby-client/pull/109): Fixed coverage reporting to Coveralls not running on pull requests, and to report coverage from every Ruby/JRuby test matrix job merged into a single build, by switching from `coveralls_reborn`/`COVERALLS_REPO_TOKEN` to `coverallsapp/github-action`/`GITHUB_TOKEN` - [@dblock](https://github.com/dblock).
 * Your contribution here.
 
 ### 3.0.0 (2025/10/24)
