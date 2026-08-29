@@ -28,9 +28,9 @@ Unlike other clients, including [strava-api-v3](https://github.com/jaredholdcrof
     - [Get Athlete Stats](#get-athlete-stats)
     - [Update Athlete](#update-athlete)
   - [Clubs](#clubs)
-    - [List Club Events](#list-club-events)
-    - [Get Club](#get-club)
     - [List Athlete Clubs](#list-athlete-clubs)
+    - [Get Club](#get-club)
+    - [List Club Events](#list-club-events)
   - [Gears](#gears)
     - [Get Equipment](#get-equipment)
   - [Routes](#routes)
@@ -382,32 +382,6 @@ See [Strava::Models::DetailedAthlete](lib/strava/models/detailed_athlete.rb) for
 
 Strava removed the Club Activities, Club Members, and Club Admins endpoints on September 1, 2026 (see the [Strava API changelog](https://developers.strava.com/docs/changelog/)). The corresponding `club_activities`, `club_members`, and `club_admins` methods have been removed from this gem.
 
-#### List Club Events
-
-Retrieve recent Events from a specific club.
-
-```ruby
-events = client.club_events(108605) # => Array[Strava::Models::ClubEvent]
-
-event = events.first # => Strava::Models::ClubEvent
-
-event.title # => 'First Group Event Ever! Yippieh!'
-```
-
-See [Strava::Models::ClubEvent](lib/strava/models/club_event.rb) for all available properties.
-
-#### Get Club
-
-Returns a given club using its identifier.
-
-```ruby
-club = client.club(108605) # => Strava::Models::DetailedClub
-
-club.name # => 'NYRR'
-```
-
-See [Strava::Models::DetailedClub](lib/strava/models/detailed_club.rb) for all available properties.
-
 #### List Athlete Clubs
 
 Returns a list of the clubs whose membership includes the authenticated athlete.
@@ -422,6 +396,32 @@ activity.strava_url # => 'https://www.strava.com/clubs/nyrr'
 ```
 
 See [Strava::Models::SummaryClub](lib/strava/models/summary_club.rb) for all available properties.
+
+#### Get Club
+
+Returns a given club using its identifier.
+
+```ruby
+club = client.club(108605) # => Strava::Models::DetailedClub
+
+club.name # => 'NYRR'
+```
+
+See [Strava::Models::DetailedClub](lib/strava/models/detailed_club.rb) for all available properties.
+
+#### List Club Events
+
+Retrieve recent Events from a specific club.
+
+```ruby
+events = client.club_events(108605) # => Array[Strava::Models::ClubEvent]
+
+event = events.first # => Strava::Models::ClubEvent
+
+event.title # => 'First Group Event Ever! Yippieh!'
+```
+
+See [Strava::Models::ClubEvent](lib/strava/models/club_event.rb) for all available properties.
 
 ### Gears
 

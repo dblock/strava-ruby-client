@@ -17,16 +17,15 @@ module Strava
       #
       module Clubs
         #
-        # List club / group events.
+        # List logged-in athlete clubs.
         #
-        # @param id_or_options [String, Integer, Hash] Either a club ID or a hash of options including :id
-        # @param options [Hash] Additional options (if first parameter is an ID)
-        # @option options [Integer] :page Page number
-        # @option options [Integer] :per_page Number of items per page. Defaults to 30
+        # @option options [Integer] :page
+        #   Page number.
+        # @option options [Integer] :per_page
+        #   Number of items per page. Defaults to 30.
         #
-        def club_events(id_or_options, options = {}, &block)
-          id, options = parse_args(id_or_options, options)
-          paginate "clubs/#{id}/group_events", options, Strava::Models::ClubEvent, &block
+        def athlete_clubs(options = {}, &block)
+          paginate 'athlete/clubs', options, Strava::Models::SummaryClub, &block
         end
 
         #
@@ -41,15 +40,16 @@ module Strava
         end
 
         #
-        # List logged-in athlete clubs.
+        # List club / group events.
         #
-        # @option options [Integer] :page
-        #   Page number.
-        # @option options [Integer] :per_page
-        #   Number of items per page. Defaults to 30.
+        # @param id_or_options [String, Integer, Hash] Either a club ID or a hash of options including :id
+        # @param options [Hash] Additional options (if first parameter is an ID)
+        # @option options [Integer] :page Page number
+        # @option options [Integer] :per_page Number of items per page. Defaults to 30
         #
-        def athlete_clubs(options = {}, &block)
-          paginate 'athlete/clubs', options, Strava::Models::SummaryClub, &block
+        def club_events(id_or_options, options = {}, &block)
+          id, options = parse_args(id_or_options, options)
+          paginate "clubs/#{id}/group_events", options, Strava::Models::ClubEvent, &block
         end
       end
     end
