@@ -1,5 +1,14 @@
 # Upgrading Strava-Ruby-Client
 
+### Upgrading to >= 3.1.0
+
+Strava removed the Club Activities, Club Members, and Club Admins API endpoints on September 1, 2026 (see the [Strava API changelog](https://developers.strava.com/docs/changelog/)). As a result:
+
+- `club_activities`, `club_members`, and `club_admins` methods were removed from `Strava::Client`
+- `Strava::Models::ClubActivity` and `Strava::Models::ClubAthlete` were removed
+
+`club`, `club_events`, and `athlete_clubs` are unaffected and continue to work.
+
 ### Upgrading to >= 3.0.0
 
 The 3.0 version introduces numerous improvements along with several *breaking changes*.
