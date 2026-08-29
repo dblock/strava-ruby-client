@@ -1,3 +1,7 @@
+### 3.1.1 (Next)
+
+* Your contribution here.
+
 ### 3.1.0 (2026/08/29)
 
 * [#110](https://github.com/dblock/strava-ruby-client/pull/110): Removes `club_activities`, `club_members`, and `club_admins`, which Strava retired on September 1, 2026 - [@dblock](https://github.com/dblock), [@Copilot](https://github.com/apps/copilot-swe-agent).
