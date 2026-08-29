@@ -1,5 +1,6 @@
 ### 3.1.0 (Next)
 
+* [#110](https://github.com/dblock/strava-ruby-client/pull/110): Removes `club_activities`, `club_members`, and `club_admins`, which Strava retired on September 1, 2026 - [@dblock](https://github.com/dblock), [@Copilot](https://github.com/apps/copilot-swe-agent).
 * [#100](https://github.com/dblock/strava-ruby-client/pull/100): Adds comprehensive rdoc documentation - [@dblock](https://github.com/dblock).
 * [#103](https://github.com/dblock/strava-ruby-client/pull/103): Migrate Danger to use the `danger-pr-comment` reusable workflow - [@dblock](https://github.com/dblock), [@Copilot](https://github.com/apps/copilot-swe-agent).
 * [#104](https://github.com/dblock/strava-ruby-client/pull/104): Fixes `Danger Comment` workflow failing with a `contents: none` permissions error - [@dblock](https://github.com/dblock).
