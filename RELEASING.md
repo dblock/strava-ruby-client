@@ -40,6 +40,12 @@ Pushed git commits and tags.
 Pushed strava-ruby-client 0.2.2 to rubygems.org.
 ```
 
+Create a [GitHub release](https://github.com/dblock/strava-ruby-client/releases) for the new tag, using the corresponding CHANGELOG.md section as the release notes.
+
+```
+gh release create v0.2.2 --title "v0.2.2" --notes-file <(sed -n '/^### 0.2.2/,/^### /p' CHANGELOG.md | sed '1d;$d')
+```
+
 ### Prepare for the Next Version
 
 Add the next release to [CHANGELOG.md](CHANGELOG.md).
