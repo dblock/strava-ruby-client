@@ -28,11 +28,8 @@ Unlike other clients, including [strava-api-v3](https://github.com/jaredholdcrof
     - [Get Athlete Stats](#get-athlete-stats)
     - [Update Athlete](#update-athlete)
   - [Clubs](#clubs)
-    - [List Club Activities](#list-club-activities)
     - [List Club Events](#list-club-events)
-    - [List Club Administrators](#list-club-administrators)
     - [Get Club](#get-club)
-    - [List Club Members](#list-club-members)
     - [List Athlete Clubs](#list-athlete-clubs)
   - [Gears](#gears)
     - [Get Equipment](#get-equipment)
@@ -383,19 +380,7 @@ See [Strava::Models::DetailedAthlete](lib/strava/models/detailed_athlete.rb) for
 
 ### Clubs
 
-#### List Club Activities
-
-Retrieve recent activities from members of a specific club.
-
-```ruby
-activities = client.club_activities(108605) # => Array[Strava::Models::ClubActivity]
-
-activity = activities.first # => Strava::Models::ClubActivity
-
-activity.name # => 'Afternoon Run'
-```
-
-See [Strava::Models::ClubActivity](lib/strava/models/club_activity.rb) for all available properties. Note that Strava does not return activity or athlete ID via this API.
+Strava removed the Club Activities, Club Members, and Club Admins endpoints on September 1, 2026 (see the [Strava API changelog](https://developers.strava.com/docs/changelog/)). The corresponding `club_activities`, `club_members`, and `club_admins` methods have been removed from this gem.
 
 #### List Club Events
 
@@ -411,19 +396,6 @@ event.title # => 'First Group Event Ever! Yippieh!'
 
 See [Strava::Models::ClubEvent](lib/strava/models/club_event.rb) for all available properties.
 
-#### List Club Administrators
-
-Returns a list of the administrators of a given club.
-
-```ruby
-admins = client.club_admins(108605) # => Array[Strava::Models::ClubAthlete]
-
-admin = admins.first # => Strava::Models::ClubAthlete
-admin.name # => 'Peter Ciaccia'
-```
-
-See [Strava::Models::ClubAthlete](lib/strava/models/club_athlete.rb) for all available properties.
-
 #### Get Club
 
 Returns a given club using its identifier.
@@ -435,19 +407,6 @@ club.name # => 'NYRR'
 ```
 
 See [Strava::Models::DetailedClub](lib/strava/models/detailed_club.rb) for all available properties.
-
-#### List Club Members
-
-Returns a list of the members of a given club.
-
-```ruby
-members = client.club_members(108605) # => Array[Strava::Models::ClubAthlete]
-
-member = members.first # => Strava::Models::ClubAthlete
-member.name # => 'Peter Ciaccia'
-```
-
-See [Strava::Models::ClubAthlete](lib/strava/models/club_athlete.rb) for all available properties.
 
 #### List Athlete Clubs
 
