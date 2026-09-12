@@ -17,14 +17,13 @@ jobs:
         gemfile:
           - Gemfile
         include:
-          # See https://github.com/dblock/strava-ruby-client/issues/113: json
-          # 2.x is the version this gem currently supports. json_3 is
-          # commented out until Faraday's :json middleware supports json >=
-          # 3.0, since it currently fails (Faraday::ParsingError).
+          # See https://github.com/dblock/strava-ruby-client/issues/113: this
+          # gem no longer relies on Faraday's built-in :json response
+          # middleware, so it works with both json < 3.0 and json >= 3.0.
           - ruby-version: "3.4"
             gemfile: gemfiles/json_2.gemfile
-          # - ruby-version: "3.4"
-          #   gemfile: gemfiles/json_3.gemfile
+          - ruby-version: "3.4"
+            gemfile: gemfiles/json_3.gemfile
     env:
       BUNDLE_GEMFILE: ${{ matrix.gemfile }}
     steps:
