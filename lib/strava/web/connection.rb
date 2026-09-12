@@ -67,7 +67,7 @@ module Strava
             connection.request :multipart
             connection.request :url_encoded
             connection.use Strava::Web::RaiseResponseError
-            connection.response :json
+            connection.use Strava::Web::JsonResponse
             connection.response :logger, logger if logger
             connection.adapter ::Faraday.default_adapter
           end

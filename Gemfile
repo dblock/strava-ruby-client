@@ -4,12 +4,6 @@ source 'http://rubygems.org'
 
 gemspec
 
-# Faraday's :json response middleware is incompatible with json >= 3.0 (see
-# https://github.com/dblock/strava-ruby-client/issues/113), so pin json here
-# rather than relying on rubocop's own transitive constraint. The `json-3`
-# appraisal (see Appraisals) is used to track when this can be removed.
-gem 'json', '~> 2.3'
-
 group :development, :test do
   gem 'appraisal'
   gem 'csv'
