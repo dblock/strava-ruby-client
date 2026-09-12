@@ -6,5 +6,6 @@
 .tool-versions
 .vscode
 Gemfile.lock
+gemfiles/*.gemfile.lock
 pkg
 coverage

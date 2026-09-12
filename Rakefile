@@ -17,7 +17,9 @@ RSpec::Core::RakeTask.new(:'spec:integration') do |spec|
   spec.pattern = FileList['spec/integration/**/*_spec.rb']
 end
 
-require 'rubocop/rake_task'
-RuboCop::RakeTask.new
+# Rubocop lives in its own Gemfile (gemfiles/rubocop.gemfile), not the main
+# Gemfile, so it doesn't constrain dependency resolution there (see
+# https://github.com/dblock/strava-ruby-client/issues/113). Run it with
+# `BUNDLE_GEMFILE=gemfiles/rubocop.gemfile bundle exec rubocop`.
 
-task default: %i[rubocop spec]
+task default: %i[spec]

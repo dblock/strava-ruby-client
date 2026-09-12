@@ -14,6 +14,19 @@ jobs:
           - "4.0"
           - "jruby-9.4"
           - "jruby-10"
+        gemfile:
+          - Gemfile
+        include:
+          # See https://github.com/dblock/strava-ruby-client/issues/113: json
+          # 2.x is the version this gem currently supports. json_3 is
+          # commented out until Faraday's :json middleware supports json >=
+          # 3.0, since it currently fails (Faraday::ParsingError).
+          - ruby-version: "3.4"
+            gemfile: gemfiles/json_2.gemfile
+          # - ruby-version: "3.4"
+          #   gemfile: gemfiles/json_3.gemfile
+    env:
+      BUNDLE_GEMFILE: ${{ matrix.gemfile }}
     steps:
       - uses: actions/checkout@v7
       - name: Set up Ruby
@@ -31,7 +44,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path-to-lcov: coverage/lcov.info
-          flag-name: ${{ matrix.ruby-version }}
+          flag-name: ${{ matrix.gemfile == 'Gemfile' && matrix.ruby-version || format('{0}-{1}', matrix.ruby-version, matrix.gemfile) }}
           parallel: true
   integration:
     runs-on: ubuntu-latest

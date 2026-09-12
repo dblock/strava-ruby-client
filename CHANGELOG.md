@@ -1,5 +1,6 @@
 ### 3.1.1 (Next)
 
+* [#113](https://github.com/dblock/strava-ruby-client/issues/113): Adds Appraisals (`json-2`, `json-3`) - [@dblock](https://github.com/dblock).
 * Your contribution here.
 
 ### 3.1.0 (2026/08/29)
