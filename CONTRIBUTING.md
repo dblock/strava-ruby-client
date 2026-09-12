@@ -25,6 +25,26 @@ bundle install
 bundle exec rake
 ```
 
+Rubocop uses its own `gemfiles/rubocop.gemfile`, kept separate so its pinned version doesn't constrain the main Gemfile's dependency resolution.
+
+```
+BUNDLE_GEMFILE=gemfiles/rubocop.gemfile bundle install
+BUNDLE_GEMFILE=gemfiles/rubocop.gemfile bundle exec rubocop
+```
+
+This gem is tested against multiple `json` gem versions using [Appraisal](https://github.com/thoughtbot/appraisal), defined in `Appraisals`. To run the test suite against a specific `json` version, e.g. to reproduce [#113](https://github.com/dblock/strava-ruby-client/issues/113):
+
+```
+BUNDLE_GEMFILE=gemfiles/json_3.gemfile bundle install
+BUNDLE_GEMFILE=gemfiles/json_3.gemfile bundle exec rake spec
+```
+
+If you add or change a runtime/test dependency in the main `Gemfile`, regenerate the appraisal gemfiles.
+
+```
+bundle exec appraisal generate
+```
+
 ## Contribute Code
 
 ### Obtain a Strava Token

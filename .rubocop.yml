@@ -9,6 +9,7 @@ AllCops:
   NewCops: enable
   Exclude:
     - vendor/**/*
+    - gemfiles/**/*
 
 Naming/MethodName:
   Enabled: false

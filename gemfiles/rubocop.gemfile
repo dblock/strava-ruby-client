@@ -1,0 +1,13 @@
+# frozen_string_literal: true
+
+# Rubocop is kept in its own Gemfile, separate from the main Gemfile, so that
+# its exact pinned version (and its own transitive dependency constraints,
+# e.g. on json) don't participate in dependency resolution for the gem's
+# runtime/test Gemfile or its Appraisals. See
+# https://github.com/dblock/strava-ruby-client/issues/113.
+
+source 'http://rubygems.org'
+
+gem 'rubocop', '1.68.0'
+gem 'rubocop-rake'
+gem 'rubocop-rspec'
