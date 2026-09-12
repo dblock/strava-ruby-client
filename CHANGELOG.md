@@ -1,6 +1,7 @@
 ### 3.1.1 (Next)
 
 * [#113](https://github.com/dblock/strava-ruby-client/issues/113): Adds Appraisals (`json-2`, `json-3`) - [@dblock](https://github.com/dblock).
+* [#113](https://github.com/dblock/strava-ruby-client/issues/113): Fixed `ArgumentError` when parsing JSON responses with `json` gem >= 3.0 by replacing Faraday's built-in `:json` response middleware with a compatible one - [@dblock](https://github.com/dblock).
 * Your contribution here.
 
 ### 3.1.0 (2026/08/29)
