@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.licenses = ['MIT']
   s.summary = 'Strava API Ruby client.'
   s.add_dependency 'activesupport'
-  s.add_dependency 'faraday', '>= 2.0'
+  s.add_dependency 'faraday', '>= 2.14.4'
   s.add_dependency 'faraday-multipart', '>= 1.0'
   s.add_dependency 'hashie'
   s.metadata['rubygems_mfa_required'] = 'true'

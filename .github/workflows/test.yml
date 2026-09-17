@@ -17,9 +17,7 @@ jobs:
         gemfile:
           - Gemfile
         include:
-          # See https://github.com/dblock/strava-ruby-client/issues/113: this
-          # gem no longer relies on Faraday's built-in :json response
-          # middleware, so it works with both json < 3.0 and json >= 3.0.
+          # See https://github.com/dblock/strava-ruby-client/issues/113.
           - ruby-version: "3.4"
             gemfile: gemfiles/json_2.gemfile
           - ruby-version: "3.4"
