@@ -8,8 +8,10 @@ RSpec.describe Strava::Webhooks::Models::Event do
       'aspect_type' => 'update',
       'event_time' => 1_516_126_040,
       'object_id' => 1_360_128_428,
+      'object_id_str' => '1360128428',
       'object_type' => 'activity',
       'owner_id' => 134_815,
+      'owner_id_str' => '134815',
       'subscription_id' => 120_475,
       'updates' => {
         'title' => 'Messy'
@@ -21,11 +23,17 @@ RSpec.describe Strava::Webhooks::Models::Event do
 
   it 'parses event' do
     expect(event.id).to eq 1_360_128_428
+    expect(event.id_str).to eq '1360128428'
     expect(event.aspect_type).to eq 'update'
     expect(event.event_time).to eq Time.at(1_516_126_040)
     expect(event.object_type).to eq 'activity'
     expect(event.owner_id).to eq 134_815
+    expect(event.owner_id_str).to eq '134815'
     expect(event.subscription_id).to eq 120_475
     expect(event.updates).to eq('title' => 'Messy')
+  end
+
+  it 'ignores undeclared properties' do
+    expect { described_class.new(event_data.merge('unknown_field' => 'value')) }.not_to raise_error
   end
 end
