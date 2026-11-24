@@ -11,7 +11,8 @@ logger.level = Logger::INFO
 client = Strava::Webhooks::Client.new(
   client_id: ENV.fetch('STRAVA_CLIENT_ID', nil),
   client_secret: ENV.fetch('STRAVA_CLIENT_SECRET', nil),
-  logger: logger
+  logger: logger,
+  log_formatter: Strava::Web::LogFormatter
 )
 
 begin

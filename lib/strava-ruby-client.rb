@@ -90,6 +90,7 @@ require_relative 'strava/models/zone_range'
 require_relative 'strava/models/zones'
 
 require_relative 'strava/web/filter'
+require_relative 'strava/web/log_formatter'
 require_relative 'strava/web/raise_response_error'
 require_relative 'strava/web/connection'
 require_relative 'strava/web/api_response'

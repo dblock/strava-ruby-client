@@ -29,6 +29,7 @@ module Strava
         timeout
         open_timeout
         filter_credentials
+        log_formatter
       ].freeze
 
       attr_accessor(*Config::ATTRIBUTES)
@@ -50,6 +51,7 @@ module Strava
         self.timeout = nil
         self.open_timeout = nil
         self.filter_credentials = true
+        self.log_formatter = nil
       end
     end
 

@@ -10,6 +10,7 @@
 * [#120](https://github.com/dblock/strava-ruby-client/pull/120): Simplifies README usage and moves the API reference to [docs/USAGE.md](docs/USAGE.md) - [@dblock](https://github.com/dblock).
 * [#122](https://github.com/dblock/strava-ruby-client/pull/122): Displays the reason a request failed and logs raw event JSON in `strava-webhooks`, adds `PORT` to `strava-webhooks handle` - [@dblock](https://github.com/dblock).
 * [#123](https://github.com/dblock/strava-ruby-client/pull/123): Filters client secrets, tokens and authorization codes from logs and request data in errors, unless `filter_credentials` is `false` - [@dblock](https://github.com/dblock).
+* [#124](https://github.com/dblock/strava-ruby-client/pull/124): Adds `Strava::Web::LogFormatter` and a `log_formatter` Web client setting to use it, which adds a blank line after headers in logs - [@dblock](https://github.com/dblock).
 * Your contribution here.
 
 ### 3.1.0 (2026/08/29)

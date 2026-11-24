@@ -116,6 +116,7 @@ The following settings are supported.
 | logger             | Optional `Logger` instance that logs HTTP requests.                               |
 | timeout            | Optional open/read timeout in seconds.                                            |
 | open_timeout       | Optional connection open timeout in seconds.                                      |
+| log_formatter      | Optional `Faraday::Logging::Formatter` class, e.g. `Strava::Web::LogFormatter`.   |
 | filter_credentials | Filter client secrets, tokens and codes from logs and errors, defaults to `true`. |
 
 ### API Client Options
