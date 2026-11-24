@@ -22,7 +22,7 @@ RSpec.describe 'Strava::Api::Client#upload_activity' do
     # strava needs some time, to process the uploaded file, loop until processing finished
     upload_status = client.upload(upload.id)
     while upload_status.processing?
-      sleep 1
+      sleep 1 if VCR.current_cassette.recording?
       upload_status = client.upload(upload.id)
     end
 
@@ -53,7 +53,7 @@ RSpec.describe 'Strava::Api::Client#upload_activity' do
     expect do
       upload_status = client.upload(upload.id)
       while upload_status.processing?
-        sleep 1
+        sleep 1 if VCR.current_cassette.recording?
         upload_status = client.upload(upload.id)
       end
     end.to raise_error(Strava::Errors::UploadError) do |upload_error|

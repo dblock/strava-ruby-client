@@ -4,6 +4,7 @@
 * [#113](https://github.com/dblock/strava-ruby-client/issues/113): Supports `json` gem >= 3.0 by requiring Faraday >= 2.14.4 - [@dblock](https://github.com/dblock).
 * [#116](https://github.com/dblock/strava-ruby-client/pull/116): Adds `Strava::Webhooks::Models::Event#id_str` and `#owner_id_str`, ignores undeclared webhook event properties - [@rvd-kentaa](https://github.com/rvd-kentaa).
 * [#116](https://github.com/dblock/strava-ruby-client/pull/116): Supports `hashie` >= 6.0 with explicit `map`, `count`, `min` and `max` readers, adds Appraisals (`hashie-5`, `hashie-6`) - [@dblock](https://github.com/dblock).
+* [#117](https://github.com/dblock/strava-ruby-client/pull/117): Speeds up CI by skipping duplicate push builds of PR branches, canceling superseded PR builds, using `JRUBY_OPTS=--dev` and not sleeping in replayed upload specs - [@dblock](https://github.com/dblock).
 * Your contribution here.
 
 ### 3.1.0 (2026/08/29)

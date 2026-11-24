@@ -1,5 +1,11 @@
 name: Tests
-on: [push, pull_request]
+on:
+  push:
+    branches: [master]
+  pull_request:
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -28,6 +34,8 @@ jobs:
             gemfile: gemfiles/hashie_6.gemfile
     env:
       BUNDLE_GEMFILE: ${{ matrix.gemfile }}
+      # Faster JRuby startup for short-lived test runs, ignored by MRI.
+      JRUBY_OPTS: --dev
     steps:
       - uses: actions/checkout@v7
       - name: Set up Ruby
