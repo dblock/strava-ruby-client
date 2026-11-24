@@ -1,4 +1,4 @@
-### 3.2.0 (Next)
+### 3.2.0 (2026/11/24)
 
 * [#113](https://github.com/dblock/strava-ruby-client/issues/113): Adds Appraisals (`json-2`, `json-3`) - [@dblock](https://github.com/dblock).
 * [#113](https://github.com/dblock/strava-ruby-client/issues/113): Supports `json` gem >= 3.0 by requiring Faraday >= 2.14.4 - [@dblock](https://github.com/dblock).
@@ -12,7 +12,6 @@
 * [#123](https://github.com/dblock/strava-ruby-client/pull/123): Filters client secrets, tokens and authorization codes from logs and request data in errors, unless `filter_credentials` is `false` - [@dblock](https://github.com/dblock).
 * [#124](https://github.com/dblock/strava-ruby-client/pull/124): Adds `Strava::Web::LogFormatter` and a `log_formatter` Web client setting to use it, which adds a blank line after headers in logs - [@dblock](https://github.com/dblock).
 * [#126](https://github.com/dblock/strava-ruby-client/pull/126): Upgrades to [danger-pr-comment](https://github.com/danger/danger-pr-comment) 0.3.0, which doesn't post empty comments and comments on stacked PRs - [@dblock](https://github.com/dblock).
-* Your contribution here.
 
 ### 3.1.0 (2026/08/29)
 
