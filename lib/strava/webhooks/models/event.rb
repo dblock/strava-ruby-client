@@ -41,11 +41,16 @@ module Strava
       # @see https://developers.strava.com/docs/webhooks/
       #
       class Event < Hashie::Trash
+        include Hashie::Extensions::IgnoreUndeclared
+
         # @return [String] Type of object (e.g., "activity", "athlete")
         property 'object_type'
 
         # @return [Integer] ID of the object (activity ID, athlete ID, etc.)
         property 'id', from: 'object_id'
+
+        # @return [String] ID of the object as a string
+        property 'id_str', from: 'object_id_str'
 
         # @return [String] Type of event: "create", "update", or "delete"
         property 'aspect_type'
@@ -55,6 +60,9 @@ module Strava
 
         # @return [Integer] Athlete ID who owns the object
         property 'owner_id'
+
+        # @return [String] Athlete ID who owns the object, as a string
+        property 'owner_id_str'
 
         # @return [Integer] ID of the webhook subscription
         property 'subscription_id'
