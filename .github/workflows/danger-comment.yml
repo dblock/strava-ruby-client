@@ -13,5 +13,10 @@ permissions:
 
 jobs:
   comment:
-    uses: numbata/danger-pr-comment/.github/workflows/danger-comment.yml@v0.1.0
+    uses: danger/danger-pr-comment/.github/workflows/danger-comment.yml@v0.3.0
     secrets: inherit
+    with:
+      # Don't create comments for empty reports. Existing report comments are still updated.
+      comment-empty: false
+      # Comment on stacked PRs, whose base is another PR's branch.
+      base-branch: '*'
