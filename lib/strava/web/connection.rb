@@ -66,9 +66,13 @@ module Strava
           ::Faraday::Connection.new(endpoint, options) do |connection|
             connection.request :multipart
             connection.request :url_encoded
-            connection.use Strava::Web::RaiseResponseError
+            connection.use Strava::Web::RaiseResponseError, filter_credentials: filter_credentials
             connection.response :json
-            connection.response :logger, logger if logger
+            if logger
+              connection.response(:logger, logger) do |formatter|
+                Strava::Web::Filter.logger(formatter) if filter_credentials
+              end
+            end
             connection.adapter ::Faraday.default_adapter
           end
         end

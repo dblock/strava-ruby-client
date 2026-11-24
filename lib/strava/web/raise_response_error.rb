@@ -72,15 +72,32 @@ module Strava
         # configured to _not_ include request data, then omit it.
         return response unless options[:include_request]
 
-        response.merge(
-          request: {
-            method: env.method,
-            url: env.url,
-            url_path: env.url.path,
-            params: query_params(env),
-            headers: env.request_headers,
-            body: env.request_body
-          }
+        response.merge(request: request_values(env))
+      end
+
+      #
+      # Extracts request values from the Faraday environment, filtering
+      # credentials unless the middleware is configured with `filter_credentials: false`.
+      #
+      # @param env [Faraday::Env] The Faraday request/response environment
+      # @return [Hash] Request method, URL, path, params, headers and body
+      #
+      def request_values(env)
+        request = {
+          method: env.method,
+          url: env.url,
+          url_path: env.url.path,
+          params: query_params(env),
+          headers: env.request_headers,
+          body: env.request_body
+        }
+        return request unless options.fetch(:filter_credentials, true)
+
+        request.merge(
+          url: URI(Strava::Web::Filter.string(env.url)),
+          params: Strava::Web::Filter.params(request[:params]),
+          headers: Strava::Web::Filter.headers(request[:headers]),
+          body: Strava::Web::Filter.body(request[:body])
         )
       end
 

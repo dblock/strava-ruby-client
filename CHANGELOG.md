@@ -1,4 +1,4 @@
-### 3.1.1 (Next)
+### 3.2.0 (Next)
 
 * [#113](https://github.com/dblock/strava-ruby-client/issues/113): Adds Appraisals (`json-2`, `json-3`) - [@dblock](https://github.com/dblock).
 * [#113](https://github.com/dblock/strava-ruby-client/issues/113): Supports `json` gem >= 3.0 by requiring Faraday >= 2.14.4 - [@dblock](https://github.com/dblock).
@@ -9,6 +9,7 @@
 * [#119](https://github.com/dblock/strava-ruby-client/pull/119): Releases with [ruby-gem-release](https://github.com/dblock/ruby-gem-release) and RubyGems Trusted Publishing - [@dblock](https://github.com/dblock).
 * [#120](https://github.com/dblock/strava-ruby-client/pull/120): Simplifies README usage and moves the API reference to [docs/USAGE.md](docs/USAGE.md) - [@dblock](https://github.com/dblock).
 * [#122](https://github.com/dblock/strava-ruby-client/pull/122): Displays the reason a request failed and logs raw event JSON in `strava-webhooks`, adds `PORT` to `strava-webhooks handle` - [@dblock](https://github.com/dblock).
+* [#123](https://github.com/dblock/strava-ruby-client/pull/123): Filters client secrets, tokens and authorization codes from logs and request data in errors, unless `filter_credentials` is `false` - [@dblock](https://github.com/dblock).
 * Your contribution here.
 
 ### 3.1.0 (2026/08/29)

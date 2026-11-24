@@ -107,15 +107,16 @@ end
 
 The following settings are supported.
 
-| setting      | description                                           |
-| ------------ | ----------------------------------------------------- |
-| user_agent   | User-agent, defaults to _Strava Ruby Client/version_. |
-| proxy        | Optional HTTP proxy.                                  |
-| ca_path      | Optional SSL certificates path.                       |
-| ca_file      | Optional SSL certificates file.                       |
-| logger       | Optional `Logger` instance that logs HTTP requests.   |
-| timeout      | Optional open/read timeout in seconds.                |
-| open_timeout | Optional connection open timeout in seconds.          |
+| setting            | description                                                                       |
+| ------------------ | --------------------------------------------------------------------------------- |
+| user_agent         | User-agent, defaults to _Strava Ruby Client/version_.                             |
+| proxy              | Optional HTTP proxy.                                                              |
+| ca_path            | Optional SSL certificates path.                                                   |
+| ca_file            | Optional SSL certificates file.                                                   |
+| logger             | Optional `Logger` instance that logs HTTP requests.                               |
+| timeout            | Optional open/read timeout in seconds.                                            |
+| open_timeout       | Optional connection open timeout in seconds.                                      |
+| filter_credentials | Filter client secrets, tokens and codes from logs and errors, defaults to `true`. |
 
 ### API Client Options
 
