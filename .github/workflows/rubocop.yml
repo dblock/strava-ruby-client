@@ -1,5 +1,11 @@
 name: Rubocop
-on: [push, pull_request]
+on:
+  push:
+    branches: [master]
+  pull_request:
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
   lint:
     runs-on: ubuntu-latest
