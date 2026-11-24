@@ -59,11 +59,7 @@ Run selected scenarios with `bundle exec ruby benchmark/client.rb activity club_
 
 ### Obtain a Strava Token
 
-The token from the Strava website does not have enough permissions to retrieve your own activities, therefore you need to complete the OAuth workflow with additional permissions.
-
-Use the [strava-oauth-token tool](#strava-oauth-token) once.
-
-Obtain `STRAVA_CLIENT_ID` and `STRAVA_CLIENT_SECRET` from [My API Application](https://www.strava.com/settings/api).
+Recording new VCR cassettes or running `bin/strava-activities.rb` requires a token with access to your activities. Get `STRAVA_CLIENT_ID` and `STRAVA_CLIENT_SECRET` from [My API Application](https://www.strava.com/settings/api), then complete the OAuth workflow in the browser window that opens.
 
 ```bash
 export STRAVA_CLIENT_ID=...
@@ -72,23 +68,11 @@ export STRAVA_CLIENT_SECRET=...
 bundle exec ruby bin/strava-oauth-token
 ```
 
-This will open a browser window. Complete the OAuth workflow and note `refresh_token` and `access_token`. Set `STRAVA_ACCESS_TOKEN` to the value of `access_token`.
-
-```
-export STRAVA_ACCESS_TOKEN=...
-```
-
-You can repeat the process above when the token expires, or use the `refresh_token`, which is faster.
+Set `STRAVA_ACCESS_TOKEN` to the displayed `access_token` and save the `refresh_token`. When the access token expires, get a new one with the refresh token.
 
 ```bash
-export STRAVA_CLIENT_ID=...
-export STRAVA_CLIENT_SECRET=...
-export STRAVA_API_REFRESH_TOKEN=...
-
-bundle exec ./bin/strava-refresh-token
+STRAVA_API_REFRESH_TOKEN=... bundle exec ruby bin/strava-refresh-token
 ```
-
-Set `STRAVA_ACCESS_TOKEN` to the value of `access_token`.
 
 ### Create a Topic Branch
 
@@ -110,13 +94,13 @@ We definitely appreciate pull requests that highlight or reproduce a problem, ev
 
 Implement your feature or bug fix.
 
-Ruby style is enforced with [Rubocop](https://github.com/bbatsov/rubocop). Run `bundle exec rubocop` and fix any style issues highlighted, auto-correct issues when possible with `bundle exec rubocop -a`. To silence generally ingored issues, including line lengths or code complexity metrics, run `bundle exec rubocop --auto-gen-config`.
+Ruby style is enforced with [RuboCop](https://github.com/rubocop/rubocop). Run `BUNDLE_GEMFILE=gemfiles/rubocop.gemfile bundle exec rubocop` and fix any style issues highlighted, auto-correcting them when possible with `-a`.
 
 Make sure that `bundle exec rake` completes without errors.
 
 ### Write Documentation
 
-Document any external behavior in the [README](README.md).
+Document any external behavior in the [README](README.md) or the [usage documentation](docs/USAGE.md).
 
 ### Update Changelog
 
