@@ -24,7 +24,7 @@ module Strava
         extend ActiveSupport::Concern
 
         included do
-          property 'start_date_local', transform_with: ->(v) { ::Time.parse(v) }
+          property 'start_date_local', transform_with: ->(v) { ::Strava::Model.parse_time(v) }
 
           #
           # Returns the start date/time in the local timezone.

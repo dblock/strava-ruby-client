@@ -64,7 +64,7 @@ module Strava
       property 'split'
 
       # @return [Time] Start date and time (UTC)
-      property 'start_date', transform_with: ->(v) { Time.parse(v) }
+      property 'start_date', transform_with: ->(v) { Strava::Model.parse_time(v) }
 
       include Mixins::StartDateLocal
       include Mixins::TotalElevationGain

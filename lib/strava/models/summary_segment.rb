@@ -102,7 +102,7 @@ module Strava
 
       # @return [Time, nil] Date when the athlete starred this segment
       # @note Not documented by Strava API
-      property 'starred_date', transform_with: ->(v) { Time.parse(v) }
+      property 'starred_date', transform_with: ->(v) { Strava::Model.parse_time(v) }
 
       # @return [Integer, nil] Athlete's PR time on this segment in seconds
       # @note Not documented by Strava API

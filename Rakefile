@@ -22,4 +22,9 @@ end
 # https://github.com/dblock/strava-ruby-client/issues/113). Run it with
 # `BUNDLE_GEMFILE=gemfiles/rubocop.gemfile bundle exec rubocop`.
 
+desc 'Run benchmarks, see benchmark/client.rb.'
+task :benchmark do
+  ruby 'benchmark/client.rb'
+end
+
 task default: %i[spec]
