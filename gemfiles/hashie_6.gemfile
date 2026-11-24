@@ -23,6 +23,8 @@ group :development, :test do
   gem "vcr"
   gem "webmock"
   gem "webrick", "~> 1.9"
+  gem "commonmarker", "~> 2.10", require: false
+  gem "ruby-gem-release", "0.9.0", require: false
 end
 
 group :test do
