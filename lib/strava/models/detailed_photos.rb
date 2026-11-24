@@ -35,6 +35,13 @@ module Strava
       # @return [Integer, nil] Total number of photos attached to the activity
       # @note Not documented by Strava API
       property 'count'
+
+      # Hashie >= 6 does not define property readers that conflict with existing methods.
+      if Gem::Version.new(Hashie::VERSION) >= Gem::Version.new('6.0')
+        def count
+          self['count']
+        end
+      end
     end
   end
 end

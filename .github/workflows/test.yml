@@ -22,6 +22,10 @@ jobs:
             gemfile: gemfiles/json_2.gemfile
           - ruby-version: "3.4"
             gemfile: gemfiles/json_3.gemfile
+          - ruby-version: "3.4"
+            gemfile: gemfiles/hashie_5.gemfile
+          - ruby-version: "3.4"
+            gemfile: gemfiles/hashie_6.gemfile
     env:
       BUNDLE_GEMFILE: ${{ matrix.gemfile }}
     steps:

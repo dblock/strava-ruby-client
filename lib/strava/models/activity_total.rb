@@ -27,6 +27,13 @@ module Strava
       # @return [Integer] Number of activities
       property 'count'
 
+      # Hashie >= 6 does not define property readers that conflict with existing methods.
+      if Gem::Version.new(Hashie::VERSION) >= Gem::Version.new('6.0')
+        def count
+          self['count']
+        end
+      end
+
       include Mixins::Distance
       include Mixins::MovingTime
       include Mixins::ElapsedTime

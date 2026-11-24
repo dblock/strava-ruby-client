@@ -25,6 +25,13 @@ module Strava
       # @return [Integer] Total number of photos attached to the activity
       property 'count'
 
+      # Hashie >= 6 does not define property readers that conflict with existing methods.
+      if Gem::Version.new(Hashie::VERSION) >= Gem::Version.new('6.0')
+        def count
+          self['count']
+        end
+      end
+
       # @return [Boolean, nil] Whether to use the primary photo for display
       # @note Not documented by Strava API
       property 'use_primary_photo'

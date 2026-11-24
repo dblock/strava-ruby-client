@@ -47,6 +47,13 @@ module Strava
       # @return [Integer, nil] Maximum value recorded (e.g., max heart rate in bpm)
       property 'max'
 
+      # Hashie >= 6 does not define property readers that conflict with existing methods.
+      if Gem::Version.new(Hashie::VERSION) >= Gem::Version.new('6.0')
+        def max
+          self['max']
+        end
+      end
+
       # @return [Integer] Resource state indicator
       # @note Not documented by Strava API
       property 'resource_state'
