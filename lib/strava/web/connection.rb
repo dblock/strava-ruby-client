@@ -69,7 +69,8 @@ module Strava
             connection.use Strava::Web::RaiseResponseError, filter_credentials: filter_credentials
             connection.response :json
             if logger
-              connection.response(:logger, logger) do |formatter|
+              logger_options = log_formatter ? { formatter: log_formatter } : {}
+              connection.response(:logger, logger, **logger_options) do |formatter|
                 Strava::Web::Filter.logger(formatter) if filter_credentials
               end
             end
