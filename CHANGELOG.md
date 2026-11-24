@@ -8,6 +8,7 @@
 * [#118](https://github.com/dblock/strava-ruby-client/pull/118): Adds `rake benchmark`, speeds up responses 2-30x by not deep copying them and parsing ISO 8601 timestamps with `Time.iso8601` - [@dblock](https://github.com/dblock).
 * [#119](https://github.com/dblock/strava-ruby-client/pull/119): Releases with [ruby-gem-release](https://github.com/dblock/ruby-gem-release) and RubyGems Trusted Publishing - [@dblock](https://github.com/dblock).
 * [#120](https://github.com/dblock/strava-ruby-client/pull/120): Simplifies README usage and moves the API reference to [docs/USAGE.md](docs/USAGE.md) - [@dblock](https://github.com/dblock).
+* [#122](https://github.com/dblock/strava-ruby-client/pull/122): Displays the reason a request failed and logs raw event JSON in `strava-webhooks`, adds `PORT` to `strava-webhooks handle` - [@dblock](https://github.com/dblock).
 * Your contribution here.
 
 ### 3.1.0 (2026/08/29)

@@ -14,44 +14,55 @@ client = Strava::Webhooks::Client.new(
   logger: logger
 )
 
-case ARGV[0]
-when 'create'
-  callback_url = ARGV[1]
-  raise 'Missing callback_url.' unless callback_url
+begin
+  case ARGV[0]
+  when 'create'
+    callback_url = ARGV[1]
+    raise 'Missing callback_url.' unless callback_url
 
-  client.logger.info "Subscribing to #{callback_url} ..."
-  subscription = client.create_push_subscription(callback_url: callback_url, verify_token: 'token')
-  puts subscription
-when 'delete'
-  id = ARGV[1]
-  raise 'Missing id.' unless id
+    client.logger.info "Subscribing to #{callback_url} ..."
+    subscription = client.create_push_subscription(callback_url: callback_url, verify_token: 'token')
+    puts subscription
+  when 'delete'
+    id = ARGV[1]
+    raise 'Missing id.' unless id
 
-  client.logger.info "Unsubscribing #{id} ..."
-  client.delete_push_subscription(id: id)
-  client.logger.info 'Done.'
-when 'handle'
-  server = WEBrick::HTTPServer.new(Port: 4242)
+    client.logger.info "Unsubscribing #{id} ..."
+    client.delete_push_subscription(id: id)
+    client.logger.info 'Done.'
+  when 'handle'
+    server = WEBrick::HTTPServer.new(Port: Integer(ENV.fetch('PORT', 4242)))
 
-  trap 'INT' do
-    server.shutdown
-  end
+    trap 'INT' do
+      server.shutdown
+    end
 
-  server.mount_proc '/' do |req, res|
-    case req.request_method
-    when 'GET'
-      challenge = Strava::Webhooks::Models::Challenge.new(req.query)
-      res.content_type = 'application/json'
-      res.body = challenge.response.to_json
-    when 'POST'
-      event = Strava::Webhooks::Models::Event.new(JSON.parse(req.body))
-      server.logger.info event
-      res.content_type = 'application/json'
-      res.body = { ok: true }.to_json
+    server.mount_proc '/' do |req, res|
+      case req.request_method
+      when 'GET'
+        challenge = Strava::Webhooks::Models::Challenge.new(req.query)
+        res.content_type = 'application/json'
+        res.body = challenge.response.to_json
+      when 'POST'
+        event = Strava::Webhooks::Models::Event.new(JSON.parse(req.body))
+        server.logger.info event
+        server.logger.info req.body
+        res.content_type = 'application/json'
+        res.body = { ok: true }.to_json
+      end
+    end
+    server.start
+  else
+    client.push_subscriptions.each do |s|
+      puts s
     end
   end
-  server.start
-else
-  client.push_subscriptions.each do |s|
-    puts s
-  end
+rescue Faraday::Error => e
+  # Display only the response body, since request URLs may include client_secret.
+  body = e.response&.dig(:body)
+  body = {} unless body.is_a?(Hash)
+  message = body['message'] || "Request failed with status #{e.response&.dig(:status) || 'unknown'}"
+  reasons = Array(body['errors']).map { |error| error.values_at('resource', 'field', 'code').reject { |v| v.to_s.empty? }.join(' ') }
+  warn reasons.empty? ? "#{message}." : "#{message}: #{reasons.join(', ')}."
+  exit 1
 end
