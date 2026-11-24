@@ -896,9 +896,11 @@ event = Strava::Webhooks::Models::Event.new(JSON.parse(request.body))
 event # => Strava::Webhooks::Models::Event
 event.object_type # => 'activity'
 event.id # => 1991813808
+event.id_str # => '1991813808'
 event.aspect_type # => 'update'
 event.updates # => { 'sport_type' => 'Walk' }
 event.owner_id # => 29323238
+event.owner_id_str # => '29323238'
 event.subscription_id # => 131302
 event.event_time # => DateTime
 ```

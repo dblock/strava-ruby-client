@@ -32,7 +32,7 @@ BUNDLE_GEMFILE=gemfiles/rubocop.gemfile bundle install
 BUNDLE_GEMFILE=gemfiles/rubocop.gemfile bundle exec rubocop
 ```
 
-This gem is tested against multiple `json` gem versions using [Appraisal](https://github.com/thoughtbot/appraisal), defined in `Appraisals`. To run the test suite against a specific `json` version, e.g. to reproduce [#113](https://github.com/dblock/strava-ruby-client/issues/113):
+This gem is tested against multiple `json` and `hashie` gem versions using [Appraisal](https://github.com/thoughtbot/appraisal), defined in `Appraisals`. To run the test suite against a specific dependency version, e.g. to reproduce [#113](https://github.com/dblock/strava-ruby-client/issues/113):
 
 ```
 BUNDLE_GEMFILE=gemfiles/json_3.gemfile bundle install

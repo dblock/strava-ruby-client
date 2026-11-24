@@ -88,6 +88,13 @@ module Strava
       # @return [Map] Segment map with polyline data
       property 'map', transform_with: ->(v) { Strava::Models::Map.new(v) }
 
+      # Hashie >= 6 does not define property readers that conflict with existing methods.
+      if Gem::Version.new(Hashie::VERSION) >= Gem::Version.new('6.0')
+        def map
+          self['map']
+        end
+      end
+
       # @return [Integer] Total number of efforts on this segment
       property 'effort_count'
 
