@@ -73,10 +73,10 @@ module Strava
       property 'sub_type'
 
       # @return [Time] When the route was created
-      property 'created_at', transform_with: ->(v) { Time.parse(v) }
+      property 'created_at', transform_with: ->(v) { Strava::Model.parse_time(v) }
 
       # @return [Time] When the route was last updated
-      property 'updated_at', transform_with: ->(v) { Time.parse(v) }
+      property 'updated_at', transform_with: ->(v) { Strava::Model.parse_time(v) }
 
       include Mixins::EstimatedMovingTime
 

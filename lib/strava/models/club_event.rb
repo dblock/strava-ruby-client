@@ -48,7 +48,7 @@ module Strava
       property 'activity_type'
 
       # @return [Time] When the event was created
-      property 'created_at', transform_with: ->(v) { Time.parse(v) if v&.length&.positive? }
+      property 'created_at', transform_with: ->(v) { Strava::Model.parse_time(v) if v&.length&.positive? }
 
       # @return [Integer, nil] Associated route identifier
       property 'route_id'
@@ -69,7 +69,7 @@ module Strava
       property 'terrain'
 
       # @return [Array<Time>] Upcoming scheduled occurrences of this event
-      property 'upcoming_occurrences', transform_with: ->(upcoming) { upcoming.map { |o| Time.parse(o) } }
+      property 'upcoming_occurrences', transform_with: ->(upcoming) { upcoming.map { |o| Strava::Model.parse_time(o) } }
 
       # @return [String] Timezone for the event
       property 'zone'

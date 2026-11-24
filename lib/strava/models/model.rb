@@ -17,5 +17,20 @@ module Strava
   #
   class Model < Hashie::Trash
     include Hashie::Extensions::IgnoreUndeclared
+
+    #
+    # Parses a timestamp from the Strava API.
+    #
+    # Strava returns ISO 8601 timestamps, which Time.iso8601 parses much faster
+    # than Time.parse. Other formats fall back to Time.parse.
+    #
+    # @param value [String] timestamp, e.g. "2018-02-20T18:02:13Z"
+    # @return [Time]
+    #
+    def self.parse_time(value)
+      Time.iso8601(value)
+    rescue ArgumentError
+      Time.parse(value)
+    end
   end
 end

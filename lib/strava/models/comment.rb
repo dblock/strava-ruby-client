@@ -28,7 +28,7 @@ module Strava
       property 'text'
 
       # @return [Time] When the comment was created
-      property 'created_at', transform_with: ->(v) { Time.parse(v) }
+      property 'created_at', transform_with: ->(v) { Strava::Model.parse_time(v) }
 
       # @return [SummaryAthlete] The athlete who made the comment
       property 'athlete', transform_with: ->(v) { Strava::Models::SummaryAthlete.new(v) }

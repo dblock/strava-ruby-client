@@ -32,7 +32,7 @@ module Strava
       include Mixins::ElapsedTime
 
       # @return [Time] Start time of the segment effort in UTC
-      property 'start_date', transform_with: ->(v) { Time.parse(v) }
+      property 'start_date', transform_with: ->(v) { Strava::Model.parse_time(v) }
 
       # Includes start_date_local with timezone handling
       include Mixins::StartDateLocal

@@ -54,13 +54,13 @@ module Strava
       property 'status'
 
       # @return [Time] When the photo was uploaded to Strava
-      property 'uploaded_at', transform_with: ->(v) { Time.parse(v) }
+      property 'uploaded_at', transform_with: ->(v) { Strava::Model.parse_time(v) }
 
       # @return [Time] When the photo was created/taken
-      property 'created_at', transform_with: ->(v) { Time.parse(v) }
+      property 'created_at', transform_with: ->(v) { Strava::Model.parse_time(v) }
 
       # @return [Time] Local time when photo was created
-      property 'created_at_local', transform_with: ->(v) { Time.parse(v) }
+      property 'created_at_local', transform_with: ->(v) { Strava::Model.parse_time(v) }
 
       # @return [Hash] Map of size keys to photo URLs (e.g., {"0" => "https://...", "1000" => "https://..."})
       property 'urls'

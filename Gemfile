@@ -6,6 +6,7 @@ gemspec
 
 group :development, :test do
   gem 'appraisal'
+  gem 'benchmark-ips'
   gem 'csv'
   gem 'danger-changelog', '~> 0.8.0'
   gem 'danger-pr-comment'

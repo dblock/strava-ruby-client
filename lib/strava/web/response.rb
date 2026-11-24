@@ -3,46 +3,44 @@
 module Strava
   module Web
     #
-    # wrapper class as abstraction for API response returned from the Faraday Adapter
-    # working with a deep copy, in order to not mutate the original request itself
+    # Wraps a Faraday response from the Strava API.
+    #
+    # Each Hash in the response body is copied with an added `http_response` key,
+    # so models can access the response, e.g. for rate limits, without mutating
+    # or deep copying the original response.
     #
     class Response
-      include Strava::DeepCopyable
-
       attr_reader :http_response, :response
 
       #
       # @param [Faraday::Response] http_response
       #
       def initialize(http_response)
-        @http_response = deep_copy(http_response)
-        @response = conditional_response_upgrade!(http_response)
+        @http_response = http_response
+        @response = upgrade_response(http_response)
       end
 
       private
 
       #
-      # returns a modified deep copy of the Faraday::Response
-      #
       # @param [Faraday::Response] http_response
       #
-      # @return [Array, Hash{String => any}]
+      # @return [Array<Hash>, Faraday::Response, Object] rows of an Array body,
+      #   a copy of the response with a Hash body, or any other body
       #
-      def conditional_response_upgrade!(http_response)
-        response = deep_copy(http_response)
-
-        case response.body
+      def upgrade_response(http_response)
+        case (body = http_response.body)
         when Array
-          upgrade_array_body!(response)
+          body.map { |row| (row || {}).merge('http_response' => http_response) }
         when Hash
-          response.body['http_response'] = response
+          env = http_response.env.dup
+          env.body = body.merge('http_response' => http_response)
+          Faraday::Response.new(env)
         else
-          response.body
+          body
         end
       end
 
-      #
-      # mutates the response when body is_a? Hash
       #
       # @param [Symbol] method_symbol
       # @param [any] *args
@@ -57,21 +55,6 @@ module Strava
           @response.body.send(method_symbol, ...)
         else
           raise NoMethodError
-        end
-      end
-
-      #
-      # mutates all responses in the body
-      #
-      # @param [Faraday::Response] response from the Strava API
-      #
-      # @return [Array<Faraday::Response>]
-      #
-      def upgrade_array_body!(response)
-        response.body.map! do |body_elem|
-          body_elem ||= {}
-          body_elem['http_response'] = response
-          body_elem
         end
       end
 

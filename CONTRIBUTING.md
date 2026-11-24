@@ -45,6 +45,16 @@ If you add or change a runtime/test dependency in the main `Gemfile`, regenerate
 bundle exec appraisal generate
 ```
 
+### Run Benchmarks
+
+Benchmark the client end to end, from the HTTP response through JSON parsing and model construction, against responses replayed from the VCR cassettes in `spec/fixtures`. No network access or Strava token is needed.
+
+```
+bundle exec rake benchmark
+```
+
+Run selected scenarios with `bundle exec ruby benchmark/client.rb activity club_events`. Set `BENCHMARK_SAVE` to a file path to compare results across runs, e.g. before and after a change, and `BENCHMARK_TIME` to change the measurement time in seconds.
+
 ## Contribute Code
 
 ### Obtain a Strava Token

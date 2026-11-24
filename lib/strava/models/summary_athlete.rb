@@ -57,10 +57,10 @@ module Strava
       property 'summit'
 
       # @return [Time] When the athlete account was created
-      property 'created_at', transform_with: ->(v) { Time.parse(v) }
+      property 'created_at', transform_with: ->(v) { Strava::Model.parse_time(v) }
 
       # @return [Time] When the athlete account was last updated
-      property 'updated_at', transform_with: ->(v) { Time.parse(v) }
+      property 'updated_at', transform_with: ->(v) { Strava::Model.parse_time(v) }
 
       #
       # Returns the athlete's full name.
