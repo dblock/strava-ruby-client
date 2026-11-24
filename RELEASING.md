@@ -2,68 +2,49 @@
 
 There're no hard rules about when to release strava-ruby-client. Release bug fixes frequently, features not so frequently and breaking API changes rarely.
 
-### Release
+Releases use [ruby-gem-release](https://github.com/dblock/ruby-gem-release) 0.9.0 through a manually dispatched [Release workflow](.github/workflows/release.yml). Keep the `ruby-gem-release` version in [Gemfile](Gemfile) and the reusable workflow pinned to the same release. The workflow publishes with RubyGems Trusted Publishing, so no RubyGems API key or one-time password is needed. It only runs from `master` in `dblock/strava-ruby-client`. The local `rake release`, `rake release:rubygem_push` and `rake release:source_control_push` tasks are disabled.
 
-Run tests, check that all tests succeed locally.
+### One-Time Setup
+
+Before the first automated release, a maintainer must:
+
+1. Create the GitHub environment `release` and restrict its deployment branches to `master`, optionally with required reviewers.
+2. Add a GitHub Actions trusted publisher at [strava-ruby-client's trusted publishers](https://rubygems.org/gems/strava-ruby-client/trusted_publishers) with repository owner `dblock`, repository `strava-ruby-client`, workflow filename `release.yml`, environment `release`, and workflow repository owner `dblock` and name `ruby-gem-release`.
+3. Allow GitHub Actions to push release commits and `v*` tags to `master`.
+
+Verify the setup without releasing.
+
+```
+gh workflow run release.yml --repo dblock/strava-ruby-client --ref master -f dry-run=true
+```
+
+See [ruby-gem-release's setup guidance](https://github.com/dblock/ruby-gem-release/blob/v0.9.0/RELEASING.md#one-time-setup) for details.
+
+### Prepare
+
+Start with a clean, up-to-date `master` and check that the last [CI build](https://github.com/dblock/strava-ruby-client/actions/workflows/test.yml) succeeded for all supported platforms.
+
+Check that `Strava::VERSION` in [lib/strava/version.rb](lib/strava/version.rb) matches the `### x.y.z (Next)` heading in [CHANGELOG.md](CHANGELOG.md). Increment the patch version for bug fixes, the minor version for features, and the major version for breaking changes, and describe breaking changes in [UPGRADING.md](UPGRADING.md). Keep `(Next)` and `* Your contribution here.`; the workflow dates the release and removes the placeholder.
+
+Release automation requires MRI Ruby 3.3 or newer.
 
 ```
 bundle install
-rake
+bundle exec rake
 ```
 
-Check that the last build succeeded in [Travis CI](https://travis-ci.org/dblock/strava-ruby-client) for all supported platforms.
+### Release
 
-Change "Next" in [CHANGELOG.md](CHANGELOG.md) to the current date.
-
-```
-### 0.2.2 (2015/12/31)
-```
-
-Remove the line with "Your contribution here.", since there will be no more contributions to this release.
-
-Commit your changes.
+Dispatch the checked-in version. This is a real release, not a dry run.
 
 ```
-git add CHANGELOG.md
-git commit -m "Preparing for release, 0.2.2."
-git push origin master
+gh workflow run release.yml --repo dblock/strava-ruby-client --ref master
 ```
 
-Release.
+To release a different version, pass `-f version=x.y.z`.
 
-```
-$ rake release
+The workflow dates the CHANGELOG section, runs tests and RuboCop, builds and publishes the gem, pushes the release commit and `v` tag, and creates a [GitHub release](https://github.com/dblock/strava-ruby-client/releases) with the release notes and gem. It then increments the patch version, adds a new `(Next)` section to CHANGELOG.md, and pushes to `master`. Don't merge into `master` while it runs.
 
-strava-ruby-client 0.2.2 built to pkg/strava-ruby-client-0.2.2.gem.
-Tagged v0.2.2.
-Pushed git commits and tags.
-Pushed strava-ruby-client 0.2.2 to rubygems.org.
-```
+Afterwards, verify the gem on [RubyGems](https://rubygems.org/gems/strava-ruby-client), the tag, the GitHub release, and the next development commit on `master`.
 
-Create a [GitHub release](https://github.com/dblock/strava-ruby-client/releases) for the new tag, using the corresponding CHANGELOG.md section as the release notes.
-
-```
-gh release create v0.2.2 --title "v0.2.2" --notes-file <(sed -n '/^### 0.2.2/,/^### /p' CHANGELOG.md | sed '1d;$d')
-```
-
-### Prepare for the Next Version
-
-Add the next release to [CHANGELOG.md](CHANGELOG.md).
-
-```
-### 0.2.3 (Next)
-
-* Your contribution here.
-```
-
-Increment the third version number in [lib/strava/version.rb](lib/strava/version.rb).
-
-Run `bundle install` to update the Gemfile.lock.
-
-Commit your changes.
-
-```
-git add CHANGELOG.md lib/strava/version.rb
-git commit -m "Preparing for next development iteration, 0.2.3."
-git push origin master
-```
+If a release fails partway, inspect what was published before retrying, never move tags, and see [recovery artifacts](https://github.com/dblock/ruby-gem-release/blob/v0.9.0/docs/actions/release.md#recovery-artifacts).
