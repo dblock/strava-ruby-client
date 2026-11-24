@@ -33,7 +33,7 @@ module Strava
       #
       def initialize(options = {})
         Strava::Web::Config::ATTRIBUTES.each do |key|
-          send("#{key}=", options[key] || Strava::Web.config.send(key))
+          send("#{key}=", options[key].nil? ? Strava::Web.config.send(key) : options[key])
         end
         @logger ||= Strava::Logger.logger
       end
